@@ -4,3 +4,4 @@ tools/*.zip
 out/
 __pycache__/
 *.log
+tools/pylib/

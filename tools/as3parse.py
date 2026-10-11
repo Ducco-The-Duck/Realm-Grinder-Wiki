@@ -16,7 +16,7 @@ class Method:
 class Cls:
     def __init__(self):
         self.pkg = ''; self.name = ''; self.parent = None; self.imports = {}
-        self.ids = []; self.parent_raw = None; self.statics = {}; self.ctor = []; self.methods = []
+        self.ids = []; self.wild = []; self.vars = []; self.path = None; self.parent_raw = None; self.statics = {}; self.ctor = []; self.methods = []
     @property
     def q(self):
         return f'{self.pkg}.{self.name}' if self.pkg else self.name
@@ -24,9 +24,10 @@ class Cls:
 IDENT = r'(?:§[^§]*§|[A-Za-z_]\w*)'
 RE_PKG = re.compile(r'^package[ \t]*([^\n{]*?)[ \t]*$', re.M)
 RE_IMPORT = re.compile(r'^\s*import\s+(.+?);\s*$', re.M)
-RE_CLASS = re.compile(r'^\s*(?:public\s+)?(?:final\s+)?(?:dynamic\s+)?(class|interface)\s+(' + IDENT + r')(?:\s+extends\s+([^\s{]+))?', re.M)
+RE_CLASS = re.compile(r'^\s*(?:public\s+)?(?:final\s+)?(?:dynamic\s+)?(class|interface)\s+(' + IDENT + r')(?:\s+extends\s+((?:§[^§]*§|[A-Za-z_][\w]*)(?:\.(?:§[^§]*§|[A-Za-z_]\w*))*))?', re.M)
 RE_FUNC = re.compile(r'^(\s+)((?:(?:override|public|private|protected|internal|static|final)\s+)*)function\s+(?:(get|set)\s+)?(' + IDENT + r')\s*\(([^)]*)\)\s*(?::\s*([^\s{]+))?\s*$', re.M)
 RE_STATIC = re.compile(r'^\s+(?:public|private|protected|internal)\s+static\s+(?:var|const)\s+(' + IDENT + r')(?::[^=;\s]+)?\s*(?:=\s*(.+?))?;\s*$', re.M)
+RE_VAR = re.compile(r'^ {6}((?:(?:public|private|protected|internal|static|const|override|final)\s+)*)(var|const)\s+(' + IDENT + r')(?:\s*:\s*((?:§[^§]*§|[^\s=;§])+))?(?:\s*=\s*(.+?))?;\s*$', re.M)
 RE_ASSIGN = re.compile(r'^\s+(' + IDENT + r'(?:\.' + IDENT + r')*)(?:\[(\d+)\])?\s*=\s*(.+?);\s*$')
 
 
@@ -55,7 +56,9 @@ def parse_file(path):
     c = Cls()
     m = RE_PKG.search(t); c.pkg = m.group(1) if m else ''
     for im in RE_IMPORT.finditer(t):
-        q = im.group(1); c.imports[q.rsplit('.', 1)[-1]] = q
+        q = im.group(1)
+        if q.endswith('.*'): c.wild.append(q[:-2])
+        else: c.imports[q.rsplit('.', 1)[-1]] = q
     m = RE_CLASS.search(t)
     if not m: return None
     c.name = m.group(2)
@@ -79,6 +82,10 @@ def parse_file(path):
             for line in meth.body.split('\n'):
                 am = RE_ASSIGN.match(line)
                 if am: c.ctor.append((am.group(1), am.group(2), am.group(3)))
+    for vm in RE_VAR.finditer(body):
+        mods = vm.group(1).split()
+        c.vars.append({'name': vm.group(3), 'static': 'static' in mods, 'type': vm.group(4), 'init': vm.group(5)})
+    c.path = path
     ids = c.statics.get('ids')
     if ids: c.ids = re.findall(r'"([^"]+)"', ids)
     return c
@@ -92,7 +99,7 @@ def parse_all():
     for c in out.values():
         p = c.parent_raw
         if not p: continue
-        cands = [c.imports.get(p), f'{c.pkg}.{p}' if c.pkg else None, p]
+        cands = [c.imports.get(p), f'{c.pkg}.{p}' if c.pkg else None, p] + [f'{w}.{p}' for w in c.wild]
         c.parent = next((x for x in cands if x and x in out), c.imports.get(p, p))
     return out
 
@@ -100,6 +107,8 @@ def resolve(c, short, cl):
     """Resolve a short class name used inside class c to a qualified key in cl (or None)."""
     for x in (c.imports.get(short), f'{c.pkg}.{short}' if c.pkg else None, short):
         if x and x in cl: return x
+    for w in c.wild:
+        if f'{w}.{short}' in cl: return f'{w}.{short}'
     return None
 
 
