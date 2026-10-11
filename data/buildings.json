@@ -1,0 +1,663 @@
+[
+ {
+  "class": "§-!N§.§&S§",
+  "kind": "building",
+  "ids": [
+   "b:AlchemistLab"
+  ],
+  "num_id": 1,
+  "name": "Alchemist Lab",
+  "name_plural": "Alchemist Labs",
+  "internal_name": "AlchemistLab",
+  "building_index": 6,
+  "cost": 38000,
+  "base_production": 21.666666666666668,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Nexus"
+  },
+  "unique_names_plural_list": {
+   "0": "Nexuses"
+  },
+  "refs": [
+   "Nexus"
+  ]
+ },
+ {
+  "class": "§-!N§.§7A§",
+  "kind": "building",
+  "ids": [
+   "b:AncientPyramid"
+  ],
+  "num_id": 2,
+  "name": "Ancient Pyramid",
+  "name_plural": "Ancient Pyramids",
+  "internal_name": "AncientPyramid",
+  "building_index": 10,
+  "cost": 3200000000,
+  "base_production": 40000,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Ziggurat"
+  },
+  "unique_names_plural_list": {
+   "0": "Ziggurats"
+  },
+  "refs": [
+   "Demon Perk 2",
+   "Hellfire Blast",
+   "Ziggurat"
+  ]
+ },
+ {
+  "class": "§-!N§.§[!_§",
+  "kind": "building",
+  "ids": [
+   "b:Blacksmith"
+  ],
+  "num_id": 3,
+  "name": "Blacksmith",
+  "name_plural": "Blacksmiths",
+  "internal_name": "Blacksmith",
+  "building_index": 3,
+  "cost": 600,
+  "base_production": 0.6666666666666666,
+  "unique_names_list": {
+   "0": "Dwarven Forge"
+  },
+  "unique_names_plural_list": {
+   "0": "Dwarven Forges"
+  },
+  "refs": [
+   "Dwarven Forge",
+   "Fairy Chanting"
+  ]
+ },
+ {
+  "class": "§-!N§.§8a§",
+  "kind": "building",
+  "ids": [
+   "b:Cathedral"
+  ],
+  "num_id": 4,
+  "name": "Cathedral",
+  "name_plural": "Cathedrals",
+  "internal_name": "Cathedral",
+  "building_index": 7,
+  "cost": 442000,
+  "base_production": 66.66666666666667,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "Holy Site"
+  },
+  "unique_names_plural_list": {
+   "0": "Holy Sites"
+  },
+  "refs": [
+   "Holy Site"
+  ]
+ },
+ {
+  "class": "§-!N§.§<#§",
+  "kind": "building",
+  "ids": [
+   "b:Citadel"
+  ],
+  "num_id": 5,
+  "name": "Citadel",
+  "name_plural": "Citadels",
+  "internal_name": "Citadel",
+  "building_index": 8,
+  "cost": 7300000,
+  "base_production": 283.3333333333333,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "Arboreal City"
+  },
+  "unique_names_plural_list": {
+   "0": "Arboreal Cities"
+  },
+  "refs": [
+   "Arboreal City"
+  ]
+ },
+ {
+  "class": "§-!N§.§+?§",
+  "kind": "building",
+  "ids": [
+   "b:DarkTemple"
+  ],
+  "num_id": 6,
+  "name": "Dark Temple",
+  "name_plural": "Dark Temples",
+  "internal_name": "DarkTemple",
+  "building_index": 7,
+  "cost": 442000,
+  "base_production": 66.66666666666667,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Spider Sanctuary"
+  },
+  "unique_names_plural_list": {
+   "0": "Spider Sanctuaries"
+  },
+  "refs": [
+   "Spider Sanctuary"
+  ]
+ },
+ {
+  "class": "§-!N§.§[l§",
+  "kind": "building",
+  "ids": [
+   "b:DeepMine"
+  ],
+  "num_id": 7,
+  "name": "Deep Mine",
+  "name_plural": "Deep Mines",
+  "internal_name": "DeepMine",
+  "building_index": 4,
+  "cost": 1800,
+  "base_production": 2.1666666666666665,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Mountain Palace",
+   "1": "Pavilion"
+  },
+  "unique_names_plural_list": {
+   "0": "Mountain Palaces",
+   "1": "Pavilions"
+  },
+  "refs": [
+   "Mountain Palace",
+   "Pavilion"
+  ]
+ },
+ {
+  "class": "§-!N§.§1!O§",
+  "kind": "building",
+  "ids": [
+   "b:EvilFortress"
+  ],
+  "num_id": 8,
+  "name": "Evil Fortress",
+  "name_plural": "Evil Fortresses",
+  "internal_name": "EvilFortress",
+  "building_index": 9,
+  "cost": 145000000,
+  "base_production": 3333.3333333333335,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Tyrant Garrison"
+  },
+  "unique_names_plural_list": {
+   "0": "Tyrant Garrisons"
+  },
+  "refs": [
+   "Hellfire Blast",
+   "Tyrant Garrison"
+  ]
+ },
+ {
+  "class": "§-!N§.§8!d§",
+  "kind": "building",
+  "ids": [
+   "b:Farm"
+  ],
+  "num_id": 9,
+  "name": "Farm",
+  "name_plural": "Farms",
+  "internal_name": "Farm",
+  "building_index": 1,
+  "cost": 10,
+  "base_production": 0.06666666666666667,
+  "unique_names_list": {
+   "0": "Enchanted Field",
+   "1": "Dragon Pasture"
+  },
+  "unique_names_plural_list": {
+   "0": "Enchanted Fields",
+   "1": "Dragon Pastures"
+  },
+  "refs": [
+   "Dragon Pasture",
+   "Enchanted Field",
+   "Fairy Chanting"
+  ]
+ },
+ {
+  "class": "§-!N§.§>!O§",
+  "kind": "building",
+  "ids": [
+   "b:HallOfLegends"
+  ],
+  "num_id": 10,
+  "name": "Hall of Legends",
+  "name_plural": "Halls of Legends",
+  "internal_name": "HallOfLegends",
+  "building_index": 11,
+  "cost": 200000000000,
+  "alignment": 0,
+  "alignment_name": "None",
+  "unique_names_list": {
+   "0": "Olympian Hall",
+   "1": "Burning Abyss",
+   "2": "Hall of Origination"
+  },
+  "unique_names_plural_list": {
+   "0": "Olympian Halls",
+   "1": "Burning Abysses",
+   "2": "Halls of Origination"
+  },
+  "refs": [
+   "Burning Abyss",
+   "Hall of Origination",
+   "Hell Rush",
+   "Hellfire Blast",
+   "Lightning Rod",
+   "Lightning Strike",
+   "Olympian Hall"
+  ]
+ },
+ {
+  "class": "§-!N§.§0-§",
+  "kind": "building",
+  "ids": [
+   "b:HeavensGate"
+  ],
+  "num_id": 11,
+  "name": "Heaven's Gate",
+  "name_plural": "Heaven's Gates",
+  "internal_name": "HeavensGate",
+  "building_index": 10,
+  "cost": 3200000000,
+  "base_production": 40000,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "Heaven's Domain"
+  },
+  "unique_names_plural_list": {
+   "0": "Heaven's Domains"
+  },
+  "refs": [
+   "Critical Strike",
+   "Demon Perk 2",
+   "Heaven's Domain",
+   "Hellfire Blast",
+   "Holy Light"
+  ]
+ },
+ {
+  "class": "§-!N§.§^!7§",
+  "kind": "building",
+  "ids": [
+   "b:HellPortal"
+  ],
+  "num_id": 12,
+  "name": "Hell Portal",
+  "name_plural": "Hell Portals",
+  "internal_name": "HellPortal",
+  "building_index": 10,
+  "cost": 3200000000,
+  "base_production": 40000,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Infernal Realm"
+  },
+  "unique_names_plural_list": {
+   "0": "Infernal Realms"
+  },
+  "refs": [
+   "Hellfire Blast",
+   "Infernal Realm"
+  ]
+ },
+ {
+  "class": "§-!N§.§2!+§",
+  "kind": "building",
+  "ids": [
+   "b:Inn"
+  ],
+  "num_id": 13,
+  "name": "Inn",
+  "name_plural": "Inns",
+  "internal_name": "Inn",
+  "building_index": 2,
+  "cost": 125,
+  "base_production": 0.2,
+  "unique_names_list": {
+   "0": "Brothel",
+   "1": "Freemason's Hall"
+  },
+  "unique_names_plural_list": {
+   "0": "Brothels",
+   "1": "Freemason's Halls"
+  },
+  "refs": [
+   "Brothel",
+   "Fairy Chanting",
+   "Freemason's Hall"
+  ]
+ },
+ {
+  "class": "§-!N§.§>!`§",
+  "kind": "building",
+  "ids": [
+   "b:IronStronghold"
+  ],
+  "num_id": 14,
+  "name": "Iron Stronghold",
+  "name_plural": "Iron Strongholds",
+  "internal_name": "IronStronghold",
+  "building_index": 9,
+  "cost": 145000000,
+  "base_production": 3333.3333333333335,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Wyrm's Den"
+  },
+  "unique_names_plural_list": {
+   "0": "Wyrm's Dens"
+  },
+  "refs": [
+   "Demon Perk 2",
+   "Hellfire Blast",
+   "Wyrm's Den"
+  ]
+ },
+ {
+  "class": "§-!N§.§]+§",
+  "kind": "building",
+  "ids": [
+   "b:KnightsJoust"
+  ],
+  "num_id": 15,
+  "name": "Knights Joust",
+  "name_plural": "Knights Jousts",
+  "internal_name": "KnightsJoust",
+  "building_index": 5,
+  "cost": 5600,
+  "base_production": 6.666666666666667,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "Mercenary Camp"
+  },
+  "unique_names_plural_list": {
+   "0": "Mercenary Camps"
+  },
+  "refs": [
+   "Mercenary Camp"
+  ]
+ },
+ {
+  "class": "§-!N§.§2X§",
+  "kind": "building",
+  "ids": [
+   "b:Labyrinth"
+  ],
+  "num_id": 16,
+  "name": "Labyrinth",
+  "name_plural": "Labyrinths",
+  "internal_name": "Labyrinth",
+  "building_index": 8,
+  "cost": 7300000,
+  "base_production": 283.3333333333333,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Sunken City"
+  },
+  "unique_names_plural_list": {
+   "0": "Sunken Cities"
+  },
+  "refs": [
+   "Sunken City"
+  ]
+ },
+ {
+  "class": "§-!N§.§>!M§",
+  "kind": "building",
+  "ids": [
+   "b:Monastery"
+  ],
+  "num_id": 17,
+  "name": "Monastery",
+  "name_plural": "Monasteries",
+  "internal_name": "Monastery",
+  "building_index": 7,
+  "cost": 442000,
+  "base_production": 66.66666666666667,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Forbidden Library"
+  },
+  "unique_names_plural_list": {
+   "0": "Forbidden Libraries"
+  },
+  "refs": [
+   "Forbidden Library"
+  ]
+ },
+ {
+  "class": "§-!N§.§@y§",
+  "kind": "building",
+  "ids": [
+   "b:Necropolis"
+  ],
+  "num_id": 18,
+  "name": "Necropolis",
+  "name_plural": "Necropolises",
+  "internal_name": "Necropolis",
+  "building_index": 8,
+  "cost": 7300000,
+  "base_production": 283.3333333333333,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Undercity"
+  },
+  "unique_names_plural_list": {
+   "0": "Undercities"
+  },
+  "refs": [
+   "Undercity"
+  ]
+ },
+ {
+  "class": "§-!N§.§,!W§",
+  "kind": "building",
+  "ids": [
+   "b:OrcishArena"
+  ],
+  "num_id": 19,
+  "name": "Orcish Arena",
+  "name_plural": "Orcish Arenas",
+  "internal_name": "OrcishArena",
+  "building_index": 5,
+  "cost": 5600,
+  "base_production": 6.666666666666667,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Flesh Workshop"
+  },
+  "unique_names_plural_list": {
+   "0": "Flesh Workshops"
+  },
+  "refs": [
+   "Flesh Workshop"
+  ]
+ },
+ {
+  "class": "§-!N§.§?!V§",
+  "kind": "building",
+  "ids": [
+   "b:RoyalCastle"
+  ],
+  "num_id": 20,
+  "name": "Royal Castle",
+  "name_plural": "Royal Castles",
+  "internal_name": "RoyalCastle",
+  "building_index": 9,
+  "cost": 145000000,
+  "base_production": 3333.3333333333335,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "High Bastion"
+  },
+  "unique_names_plural_list": {
+   "0": "High Bastions"
+  },
+  "refs": [
+   "Demon Perk 2",
+   "Hellfire Blast",
+   "High Bastion"
+  ]
+ },
+ {
+  "class": "§-!N§.§6J§",
+  "kind": "building",
+  "ids": [
+   "b:SlavePen"
+  ],
+  "num_id": 21,
+  "name": "Slave Pen",
+  "name_plural": "Slave Pens",
+  "internal_name": "SlavePen",
+  "building_index": 4,
+  "cost": 1800,
+  "base_production": 2.1666666666666665,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Slave Market",
+   "1": "Pavilion"
+  },
+  "unique_names_plural_list": {
+   "0": "Slave Markets",
+   "1": "Pavilions"
+  },
+  "refs": [
+   "Pavilion",
+   "Slave Market"
+  ]
+ },
+ {
+  "class": "§-!N§.§8!M§",
+  "kind": "building",
+  "ids": [
+   "b:StonePillars"
+  ],
+  "num_id": 22,
+  "name": "Stone Pillars",
+  "internal_name": "StonePillars",
+  "building_index": 5,
+  "cost": 5600,
+  "base_production": 6.666666666666667,
+  "alignment": 3,
+  "alignment_name": "Neutral",
+  "unique_names_list": {
+   "0": "Stonehenge"
+  },
+  "unique_names_plural_list": {
+   "0": "Stonehenge"
+  },
+  "refs": [
+   "Stonehenge"
+  ]
+ },
+ {
+  "class": "§-!N§.§1!G§",
+  "kind": "building",
+  "ids": [
+   "b:WarriorBarracks"
+  ],
+  "num_id": 23,
+  "name": "Warrior Barracks",
+  "internal_name": "WarriorBarracks",
+  "building_index": 4,
+  "cost": 1800,
+  "base_production": 2.1666666666666665,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_plural_list": {
+   "0": "Training Grounds",
+   "1": "Pavilions"
+  },
+  "unique_names_list": {
+   "1": "Pavilion"
+  },
+  "refs": [
+   "Pavilion",
+   "Training Grounds"
+  ]
+ },
+ {
+  "class": "§-!N§.§[X§",
+  "kind": "building",
+  "ids": [
+   "b:WitchConclave"
+  ],
+  "num_id": 24,
+  "name": "Witch Conclave",
+  "name_plural": "Witch Conclaves",
+  "internal_name": "WitchConclave",
+  "building_index": 6,
+  "cost": 38000,
+  "base_production": 21.666666666666668,
+  "alignment": 2,
+  "alignment_name": "Evil",
+  "unique_names_list": {
+   "0": "Goblin Bank",
+   "1": "Nexus"
+  },
+  "unique_names_plural_list": {
+   "0": "Goblin Banks",
+   "1": "Nexuses"
+  },
+  "refs": [
+   "Goblin Bank",
+   "Nexus"
+  ]
+ },
+ {
+  "class": "§-!N§.§@E§",
+  "kind": "building",
+  "ids": [
+   "b:WizardTower"
+  ],
+  "num_id": 25,
+  "name": "Wizard Tower",
+  "name_plural": "Wizard Towers",
+  "internal_name": "WizardTower",
+  "building_index": 6,
+  "cost": 38000,
+  "base_production": 21.666666666666668,
+  "alignment": 1,
+  "alignment_name": "Good",
+  "unique_names_list": {
+   "0": "Swarming Tower",
+   "1": "Nexus"
+  },
+  "unique_names_plural_list": {
+   "0": "Swarming Towers",
+   "1": "Nexuses"
+  },
+  "refs": [
+   "Nexus",
+   "Swarming Tower"
+  ]
+ }
+]

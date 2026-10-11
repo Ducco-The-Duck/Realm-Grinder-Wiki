@@ -1,0 +1,22 @@
+{
+ "factions": {
+  "0": "Fairy",
+  "1": "Elf",
+  "2": "Angel",
+  "3": "Goblin",
+  "4": "Undead",
+  "5": "Demon",
+  "6": "Titan",
+  "7": "Druid",
+  "8": "Faceless",
+  "9": "Dwarf",
+  "10": "Drow",
+  "11": "Mercenary"
+ },
+ "alignments": {
+  "0": "None",
+  "1": "Good",
+  "2": "Evil",
+  "3": "Neutral"
+ }
+}

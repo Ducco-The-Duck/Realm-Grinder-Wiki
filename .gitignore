@@ -1,0 +1,6 @@
+raw/
+tools/ffdec/
+tools/*.zip
+out/
+__pycache__/
+*.log
