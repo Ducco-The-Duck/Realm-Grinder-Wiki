@@ -272,7 +272,7 @@
   "num_id": 15,
   "tag": "ClickingBase",
   "category": 1,
-  "icon": "\"MouseClickUpgrade\" + §\"!U§.toString()",
+  "icon": "MouseClickUpgrade6",
   "cost": "param5",
   "texts": [
    {
@@ -300,6 +300,7 @@
    "§[!W§": "param4",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -309,7 +310,7 @@
   "tag": "ClickingProduction25",
   "tag2": "ClickingProduction",
   "category": 1,
-  "icon": "\"MouseCoinUpgrade\" + §\"!U§.toString()",
+  "icon": "MouseCoinUpgrade5",
   "cost": "param3",
   "texts": [
    {
@@ -327,6 +328,7 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -336,7 +338,7 @@
   "tag": "ClickingTotalProduction2",
   "tag2": "ClickingTotalProduction",
   "category": 1,
-  "icon": "\"TreasureCoinUpgrade\" + §\"!U§.toString()",
+  "icon": "TreasureCoinUpgrade5",
   "cost": "param3",
   "texts": [
    {
@@ -352,6 +354,7 @@
    "§\"!U§": "int(§+!!§())",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -454,7 +457,7 @@
   "kind": "upgrade",
   "num_id": 23,
   "tag": "\"HallOfLegendsPrestige\" + param5.toString()",
-  "icon": "\"HallOfLegendsPrestigeUpgrade\" + param1.toString()",
+  "icon": "HallOfLegendsPrestigeUpgrade3",
   "tag2": "HallOfLegendsPrestige",
   "category": 3,
   "cost": "param6",
@@ -493,6 +496,7 @@
    "§^!]§": "param3",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -500,7 +504,7 @@
   "kind": "upgrade",
   "num_id": 24,
   "tag": "\"HallOfLegendsProduction\" + param4.toString()",
-  "icon": "\"HallOfLegendsUpgrade\" + param1.toString()",
+  "icon": "HallOfLegendsUpgrade23",
   "tag2": "HallOfLegendsProduction",
   "category": 3,
   "cost": "param6",
@@ -539,6 +543,7 @@
    "§#!m§": "§>=§",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -588,7 +593,7 @@
   "num_id": 28,
   "tag": "ManaProduction20",
   "tag2": "ManaProduction",
-  "icon": "\"ManaUpgrade\" + §\"!U§.toString()",
+  "icon": "ManaUpgrade16",
   "cost": "param5",
   "category": 2,
   "texts": [
@@ -608,6 +613,7 @@
    "§>#§": "param4",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -658,7 +664,7 @@
   "tag": "NeutralProduction100",
   "tag2": "NeutralProduction",
   "category": 3,
-  "icon": "\"NeutralProductionUpgrade\" + §\"!U§.toString()",
+  "icon": "NeutralProductionUpgrade4",
   "alignment": 0,
   "cost": "param3",
   "alignment_name": "None",
@@ -677,6 +683,7 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -3998,9 +4005,12 @@
    "Demons Alliance",
    "Elven Alliance",
    "Fairies Alliance",
+   "Goblin Bank",
    "Goblins Alliance",
+   "Infernal Realm",
    "Secrets of the Underworld",
-   "Undead Alliance"
+   "Undead Alliance",
+   "Undercity"
   ],
   "raw": {
    "§3e§": false,
@@ -4953,9 +4963,12 @@
    "Archeology Dwarf Trophy",
    "Demons Alliance",
    "Elven Alliance",
+   "Enchanted Field",
    "Fairies Alliance",
    "Goblins Alliance",
+   "Heaven's Domain",
    "Secrets of the Underworld",
+   "Training Grounds",
    "Undead Alliance"
   ],
   "raw": {
@@ -5826,7 +5839,7 @@
   "tag": "EvilProduction100",
   "tag2": "EvilProduction",
   "category": 3,
-  "icon": "\"EvilProductionUpgrade\" + §\"!U§.toString()",
+  "icon": "EvilProductionUpgrade4",
   "alignment": 2,
   "cost": "param3",
   "alignment_name": "Evil",
@@ -5846,6 +5859,7 @@
    "§#!m§": "param3",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -7452,7 +7466,7 @@
   "tag": "GoodProduction100",
   "tag2": "GoodProduction",
   "category": 3,
-  "icon": "\"GoodProductionUpgrade\" + §\"!U§.toString()",
+  "icon": "GoodProductionUpgrade4",
   "alignment": 1,
   "cost": "param3",
   "alignment_name": "Good",
@@ -7472,6 +7486,7 @@
    "§#!m§": "param3",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11452,7 +11467,7 @@
   "num_id": 473,
   "tag": "RubyUpgrade",
   "tag2": "RubyUpgrade",
-  "icon": "\"RubyUpgrade\" + §\"!U§.toString()",
+  "icon": "RubyUpgrade50",
   "category": 1,
   "cost": "param4",
   "texts": [
@@ -11471,6 +11486,7 @@
    "§=A§": 100,
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11580,7 +11596,7 @@
   "tag": "GemUpgrade",
   "tag2": "GemUpgrade",
   "category": 1,
-  "icon": "\"GemUpgrade\" + §\"!U§.toString()",
+  "icon": "GemUpgrade3",
   "cost": "param4",
   "texts": [
    {
@@ -11601,6 +11617,7 @@
    "§=A§": 2,
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11610,7 +11627,7 @@
   "tag": "OfflineUpgrade",
   "tag2": "OfflineUpgrade",
   "category": 1,
-  "icon": "\"OfflineUpgrade\" + §\"!U§.toString()",
+  "icon": "OfflineUpgrade3",
   "cost": "param4",
   "texts": [
    {
@@ -11627,6 +11644,7 @@
    "§>#§": "param3",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11744,7 +11762,7 @@
   "num_id": 481,
   "tag": "AssistantUpgrade",
   "tag2": "AssistantUpgrade",
-  "icon": "\"AssistantUpgrade\" + §\"!U§.toString()",
+  "icon": "AssistantUpgrade3",
   "cost": "param3",
   "category": 1,
   "texts": [
@@ -11774,6 +11792,7 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11783,7 +11802,7 @@
   "tag": "TrophyUpgrade",
   "tag2": "TrophyUpgrade",
   "category": 3,
-  "icon": "\"TrophyUpgrade\" + §\"!U§.toString()",
+  "icon": "TrophyUpgrade3",
   "cost": "param4",
   "texts": [
    {
@@ -11804,6 +11823,7 @@
    "§>#§": "param3",
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -13907,7 +13927,7 @@
   "kind": "upgrade",
   "num_id": 563,
   "tag": "AFUpgrade",
-  "icon": "\"AprilFoolsUpgrade\" + §\"!U§.toString()",
+  "icon": "AprilFoolsUpgrade6",
   "cost": 1,
   "category": 1,
   "raw": {
@@ -13917,6 +13937,7 @@
    "§?T§": true,
    "§3e§": false
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -15022,7 +15043,7 @@
   "num_id": 581,
   "building_index": "param2",
   "name": "_loc6_.§1i§ + \" \" + (§`r§ + 1).toString()",
-  "icon": "_loc6_.§ r§ + \"Tier\" + (§`r§ + 1).toString()",
+  "icon": "Infinite SpiralTier5",
   "tag": "_loc6_.§ r§ + \"MultipleCasting\"",
   "category": 2,
   "formulas": {
@@ -15323,11 +15344,35 @@
    }
   ],
   "refs": [
+   "All Creation",
+   "Blood Frenzy",
+   "Brainwave",
+   "Call to Arms",
+   "Combo Strike",
+   "Diamond Pickaxe",
    "Dragon",
+   "Dragon's Breath",
    "Drakeling",
    "Elder Dragon",
+   "Fairy Chanting",
+   "Gem Grinder",
+   "Goblin's Greed",
+   "God's Hand",
+   "Grand Balance",
    "Hatch!",
-   "Iron Stronghold"
+   "Hellfire Blast",
+   "Holy Light",
+   "Infinite Spiral",
+   "Iron Stronghold",
+   "Lightning Strike",
+   "Limited Wish",
+   "Maelstrom",
+   "Moon Blessing",
+   "Night Time",
+   "Precognition",
+   "Spiritual Surge",
+   "Tax Collection",
+   "Temporal Flux"
   ],
   "raw": {
    "§`g§": "param1",
@@ -15339,7 +15384,8 @@
    "§\"!U§": "int(§+!!§())",
    "§+!9§": true,
    "§0!d§": true
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§3?§.§9-§",
@@ -30637,6 +30683,120 @@
   ]
  },
  {
+  "class": "§;!J§.§9\"3§",
+  "kind": "upgrade",
+  "num_id": 1024,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Athanor",
+  "icon": "FacilityAlchemy2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 4,
+   "§^!C§": 4,
+   "§&\"L§": 2,
+   "§'\"L§": 4
+  }
+ },
+ {
+  "class": "§;!J§.§<\"5§",
+  "kind": "upgrade",
+  "num_id": 1025,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Factory",
+  "icon": "FacilityCraftsmanship2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 1,
+   "§^!C§": 1,
+   "§&\"L§": 1,
+   "§'\"L§": 6
+  }
+ },
+ {
+  "class": "§;!J§.§4\"3§",
+  "kind": "upgrade",
+  "num_id": 1026,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Mythos",
+  "icon": "FacilityDivine2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 2,
+   "§^!C§": 2,
+   "§&\"L§": 1,
+   "§'\"L§": 4
+  }
+ },
+ {
+  "class": "§;!J§.§!\"5§",
+  "kind": "upgrade",
+  "num_id": 1027,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Vault",
+  "icon": "FacilityEconomics2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 3,
+   "§^!C§": 3,
+   "§&\"L§": 2,
+   "§'\"L§": 6
+  }
+ },
+ {
+  "class": "§;!J§.§,\"4§",
+  "kind": "upgrade",
+  "num_id": 1028,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Mana Loom",
+  "icon": "FacilitySpellcraft2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 0,
+   "§^!C§": 0,
+   "§&\"L§": 1,
+   "§'\"L§": 5
+  }
+ },
+ {
+  "class": "§;!J§.§-\"4§",
+  "kind": "upgrade",
+  "num_id": 1030,
+  "tag": "ResearchFacilityUpgrade",
+  "category": 1,
+  "name": "Battlefield",
+  "icon": "FacilityWarfare2",
+  "raw": {
+   "§#\"-§": 1e+100,
+   "§%!>§": true,
+   "§?T§": true,
+   "§3e§": false,
+   "§!G§": 5,
+   "§^!C§": 5,
+   "§&\"L§": 2,
+   "§'\"L§": 5
+  }
+ },
+ {
   "class": "§;!J§.§4\"5§",
   "kind": "upgrade",
   "num_id": 1031,
@@ -33833,7 +33993,7 @@
   "kind": "upgrade",
   "building_index": "param1",
   "name": "_(\"Mercenary Upgrade %0\",§`r§.toString())",
-  "icon": "\"MercenaryUpgrade\" + §`r§.toString()",
+  "icon": "MercenaryUpgrade16",
   "tag": "MercenaryUpgrade",
   "alignment": 0,
   "faction": 11,
@@ -33894,7 +34054,8 @@
    "§3e§": false,
    "§<`§": "§`r§ <= 12",
    "§!!n§": "§`r§ > 12"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§3?§.§\"!-§",
@@ -33902,7 +34063,7 @@
   "building_index": "param1",
   "alignment": "param2.§,!Y§",
   "tag": "§%<§.§ r§ + \"Production\"",
-  "icon": "§%<§.§ r§ + \"Upgrade\" + §`r§.toString()",
+  "icon": "AncientPyramidUpgrade23",
   "tag2": "§%<§.§ r§ + \"Production\"",
   "category": 3,
   "cost": "Math.round(§%<§.§>=§ * Math.pow(§%<§.§,'§,§&Z§[§`r§ - 1])) * 10 * §`r§",
@@ -33930,6 +34091,7 @@
    "§=A§": 1,
    "§+!9§": true
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -34302,7 +34464,7 @@
   "class": "§;!J§.§1!7§",
   "kind": "upgrade",
   "name": "§-D§.§?+§[§!G§]",
-  "icon": "\"Research\" + §-D§.§^-§[§!G§]",
+  "icon": "ResearchForbidden",
   "texts": [
    {
     "method": "§@\"§",
@@ -34352,20 +34514,27 @@
   ],
   "refs": [
    "Apeiron",
+   "Athanor",
+   "Battlefield",
    "Carpentry",
    "Exchequer",
+   "Factory",
    "Laboratory",
+   "Mana Loom",
+   "Mythos",
    "Pantheon",
    "Secrets of the Ancients",
    "Secrets of the Underworld",
    "Spellweavery",
-   "Strategy Room"
+   "Strategy Room",
+   "Vault"
   ],
   "raw": {
    "§!G§": "param1",
    "§>E§": "\"ResearchUpgrade\" + §-D§.§^-§[§!G§]",
    "§3e§": false
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§]7§.§ O§",
@@ -34466,7 +34635,7 @@
   "kind": "upgrade",
   "name": "Timewarp",
   "tag": "ShopTimewarp",
-  "icon": "param4",
+  "icon": "TimewarpIcon3",
   "texts": [
    {
     "method": "§@\"§",
@@ -34538,7 +34707,8 @@
    "§3e§": false,
    "§1>§": "param3",
    "§4w§": "_n(\"%0 Hour\",\"%0 Hours\",param2,param2.toString())"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§]7§.§\"b§",
@@ -34671,7 +34841,7 @@
   "kind": "upgrade",
   "name": "param3.toString() + \" \" + param8",
   "tag": "SeasonalResource",
-  "icon": "param9",
+  "icon": "IdilliumPack",
   "texts": [
    {
     "method": "§@\"§",
@@ -34857,7 +35027,8 @@
    "§?Y§": "param5",
    "§@Z§": "param6",
    "§'!H§": "param7"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§]7§.§+>§",
@@ -35088,7 +35259,7 @@
   "kind": "upgrade",
   "name": "Buy Rubies",
   "tag": "ShopRuby",
-  "icon": "param5",
+  "icon": "GainRubyTrophy9",
   "texts": [
    {
     "method": "§@\"§",
@@ -35114,7 +35285,8 @@
    "§3!R§": true,
    "§^c§": "param4",
    "§3e§": false
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§]7§.§9\"P§",

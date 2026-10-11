@@ -658,6 +658,7 @@
   "refs": [
    "Angel Perk 2",
    "God's Plan",
+   "God's Rest",
    "Precognition",
    "Tax Collection"
   ],
@@ -2220,10 +2221,25 @@
    }
   ],
   "refs": [
+   "Angel Lineage",
+   "Archon Lineage",
+   "Demon Lineage",
+   "Djinn Lineage",
+   "Dragon Lineage",
+   "Drow Lineage",
+   "Druid Lineage",
+   "Dwarven Lineage",
+   "Elven Lineage",
+   "Faceless Lineage",
+   "Fairy Lineage",
+   "Goblin Lineage",
    "God's Hand",
    "God's Rest",
+   "Makers Lineage",
    "Tax Collection",
-   "The Source of Magic"
+   "The Source of Magic",
+   "Titan Lineage",
+   "Undead Lineage"
   ],
   "raw": {
    "§4W§": true

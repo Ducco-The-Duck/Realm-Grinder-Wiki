@@ -6529,6 +6529,11 @@
 "_x_19": "Smash 6 Halloween Pumpkins."
 }
 },
+"§3v§.§ !?§": {
+"rendered": {
+"_x_19": "Grow all monsters to level INF.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
+}
+},
 "§!7§.§4!4§": {
 "rendered": {
 "_x_19": "Research 10000 times across all fields."
@@ -6617,6 +6622,16 @@
 "§[!Y§.§>!k§": {
 "rendered": {
 "_x_19": "Collect at least 10 Goblin Crowns in a single click while affiliated with any 6 different factions. Prestige and Elite factions not included.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar."
+}
+},
+"§3v§.§9!k§": {
+"rendered": {
+"_x_19": "Fight the Goblin Army INF times.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
+}
+},
+"§3v§.§!!k§": {
+"rendered": {
+"_x_19": "Support the Goblin Army INF times.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
 }
 },
 "§[Y§.§!!o§": {
@@ -6852,6 +6867,21 @@
 "§[!Y§.§ \"1§": {
 "rendered": {
 "_x_19": "Cast Remnant spells at least 1000 times. (Times cast: INF)\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar."
+}
+},
+"§3v§.§9\"1§": {
+"rendered": {
+"_x_19": "Upgrade Balance Remnant to level INF.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
+}
+},
+"§3v§.§\"\"2§": {
+"rendered": {
+"_x_19": "Upgrade Chaos Remnant to level INF.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
+}
+},
+"§3v§.§1\"2§": {
+"rendered": {
+"_x_19": "Upgrade Order Remnant to level INF.\n\nCompleting this Quest step will increase your Event bonus by an additional -1%,\nwhich will be added to your Cumulative Event bonus."
 }
 },
 "§[!Y§.§-\"1§": {

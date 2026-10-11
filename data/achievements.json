@@ -233,7 +233,7 @@
   "ids": [
    "t:BuildAlchemistLab"
   ],
-  "icon": "param2",
+  "icon": "AlchemistLabTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -245,7 +245,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§!!?§",
@@ -253,7 +254,7 @@
   "ids": [
    "t:BuildAncientPyramid"
   ],
-  "icon": "param2",
+  "icon": "AncientPyramidTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -265,7 +266,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§@!>§",
@@ -273,7 +275,7 @@
   "ids": [
    "t:BuildBlacksmith"
   ],
-  "icon": "param2",
+  "icon": "BlacksmithTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -283,7 +285,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§=!\"§",
@@ -292,12 +295,13 @@
    "t:BuildBuilding"
   ],
   "num_id": 17,
-  "icon": "param3",
+  "icon": "BuildBuildingTrophy15",
   "category": 3,
   "tag": "BuildBuilding",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -306,7 +310,7 @@
   "ids": [
    "t:BuildCathedral"
   ],
-  "icon": "param2",
+  "icon": "CathedralTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -318,7 +322,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§%F§",
@@ -326,7 +331,7 @@
   "ids": [
    "t:BuildCitadel"
   ],
-  "icon": "param2",
+  "icon": "CitadelTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -338,7 +343,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§+D§",
@@ -346,7 +352,7 @@
   "ids": [
    "t:BuildDarkTemple"
   ],
-  "icon": "param2",
+  "icon": "DarkTempleTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -358,7 +364,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§,y§",
@@ -366,7 +373,7 @@
   "ids": [
    "t:BuildDeepMine"
   ],
-  "icon": "param2",
+  "icon": "DeepMineTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -378,7 +385,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§9U§",
@@ -386,7 +394,7 @@
   "ids": [
    "t:BuildEvilFortress"
   ],
-  "icon": "param2",
+  "icon": "EvilFortressTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -398,7 +406,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§`[§",
@@ -406,7 +415,7 @@
   "ids": [
    "t:BuildFarm"
   ],
-  "icon": "param2",
+  "icon": "FarmTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -416,7 +425,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§30§",
@@ -424,7 +434,7 @@
   "ids": [
    "t:BuildHallOfLegends"
   ],
-  "icon": "param2",
+  "icon": "HallOfLegendsTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -434,7 +444,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§\"Y§",
@@ -442,7 +453,7 @@
   "ids": [
    "t:BuildHeavensGate"
   ],
-  "icon": "param2",
+  "icon": "HeavensGateTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -454,7 +465,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§\"`§",
@@ -462,7 +474,7 @@
   "ids": [
    "t:BuildHellPortal"
   ],
-  "icon": "param2",
+  "icon": "HellPortalTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -474,7 +486,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§6!N§",
@@ -482,7 +495,7 @@
   "ids": [
    "t:BuildInn"
   ],
-  "icon": "param2",
+  "icon": "InnTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -492,7 +505,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§&m§",
@@ -500,7 +514,7 @@
   "ids": [
    "t:BuildIronStronghold"
   ],
-  "icon": "param2",
+  "icon": "IronStrongholdTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -512,7 +526,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§ 7§",
@@ -520,7 +535,7 @@
   "ids": [
    "t:BuildKnightsJoust"
   ],
-  "icon": "param2",
+  "icon": "KnightsJoustTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -532,7 +547,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§73§",
@@ -540,7 +556,7 @@
   "ids": [
    "t:BuildLabyrinth"
   ],
-  "icon": "param2",
+  "icon": "LabyrinthTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -552,7 +568,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§`!§",
@@ -560,7 +577,7 @@
   "ids": [
    "t:BuildMonastery"
   ],
-  "icon": "param2",
+  "icon": "MonasteryTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -572,7 +589,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§>0§",
@@ -580,7 +598,7 @@
   "ids": [
    "t:BuildNecropolis"
   ],
-  "icon": "param2",
+  "icon": "NecropolisTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -592,7 +610,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§-!H§",
@@ -600,7 +619,7 @@
   "ids": [
    "t:BuildOrcishArena"
   ],
-  "icon": "param2",
+  "icon": "OrcishArenaTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -612,7 +631,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§7!4§",
@@ -620,7 +640,7 @@
   "ids": [
    "t:BuildRoyalCastle"
   ],
-  "icon": "param2",
+  "icon": "RoyalCastleTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -632,7 +652,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§2E§",
@@ -640,7 +661,7 @@
   "ids": [
    "t:BuildSlavePen"
   ],
-  "icon": "param2",
+  "icon": "SlavePenTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -652,7 +673,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§&!A§",
@@ -660,7 +682,7 @@
   "ids": [
    "t:BuildStonePillars"
   ],
-  "icon": "param2",
+  "icon": "StonePillarsTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -672,7 +694,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§]!K§",
@@ -680,7 +703,7 @@
   "ids": [
    "t:BuildWarriorBarracks"
   ],
-  "icon": "param2",
+  "icon": "WarriorBarracksTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -692,7 +715,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§0a§",
@@ -700,7 +724,7 @@
   "ids": [
    "t:BuildWitchConclave"
   ],
-  "icon": "param2",
+  "icon": "WitchConclaveTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -712,7 +736,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§<!S§",
@@ -720,7 +745,7 @@
   "ids": [
    "t:BuildWizardTower"
   ],
-  "icon": "param2",
+  "icon": "WizardTowerTrophy22",
   "category": 3,
   "name": "Translation._mn(\"%0 \" + §%<§.§1i§,\"%0 \" + §%<§.§-v§,§5w§,§&c§.§8!Z§(§5w§))",
   "description": "_(\"Build %0 in a single Era.\",§1i§)",
@@ -732,7 +757,8 @@
   "raw": {
    "§5w§": "param1",
    "§%<§": "_loc3_"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§>!N§",
@@ -741,12 +767,13 @@
    "t:CastSpell"
   ],
   "num_id": 40,
-  "icon": "param3",
+  "icon": "CastSpellTrophy16",
   "tag": "CastSpell",
   "category": 2,
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -756,7 +783,7 @@
    "t:ClickTreasure"
   ],
   "num_id": 41,
-  "icon": "param3",
+  "icon": "TreasureClickTrophy9",
   "category": 1,
   "tag": "ClickTreasure",
   "texts": [
@@ -774,6 +801,7 @@
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -801,12 +829,13 @@
    "t:FindFactionCoin"
   ],
   "num_id": 45,
-  "icon": "param3",
+  "icon": "FactionCoinTrophy21",
   "category": 1,
   "tag": "FindFactionCoin",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -816,12 +845,13 @@
    "t:GainCoin"
   ],
   "num_id": 46,
-  "icon": "param3",
+  "icon": "GainCoinTrophy20",
   "category": 1,
   "tag": "GainCoin",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -831,12 +861,13 @@
    "t:GainCoinClicking"
   ],
   "num_id": 47,
-  "icon": "param3",
+  "icon": "GainClickTrophy19",
   "category": 1,
   "tag": "GainCoinClicking",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -846,12 +877,13 @@
    "t:GainGem"
   ],
   "num_id": 49,
-  "icon": "param3",
+  "icon": "GainGemTrophy23",
   "category": 1,
   "tag": "GainGem",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -862,12 +894,13 @@
   ],
   "num_id": 50,
   "name": "_n(\"%0 Reincarnation\",\"%0 Reincarnations\",§5w§,§5w§.toString())",
-  "icon": "param2",
+  "icon": "ReincarnationTrophy20",
   "category": 1,
   "tag": "GainReincarnate",
   "raw": {
    "§5w§": "param1"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§,!_§",
@@ -876,12 +909,13 @@
    "t:HaveAssistants"
   ],
   "num_id": 51,
-  "icon": "param3",
+  "icon": "AssistantTrophy18",
   "category": 1,
   "tag": "HaveAssistants",
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -918,7 +952,7 @@
    "t:PurchaseFactionUpgrade"
   ],
   "num_id": 54,
-  "icon": "param3",
+  "icon": "BuyDragonUpgradesTrophy2",
   "category": 0,
   "description": "_(\"Purchase all %0 Upgrades while having %1 Lineage at least at level 30.\\n\\n1 hour of activity time with this faction\\'s spell will unlock its Advanced Heritage.\",§-D§.§45§[§%!G§],§-D§.§45§[§%!G§])",
   "refs": [
@@ -940,6 +974,7 @@
    "§%!G§": "param1",
    "§'!v§": "param4"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -950,12 +985,13 @@
   ],
   "num_id": 55,
   "name": "_n(\"%0 Upgrade\",\"%0 Upgrades\",§5w§,§5w§.toString())",
-  "icon": "param2",
+  "icon": "BuyUpgradesTrophy11",
   "tag": "PurchaseUpgrade",
   "category": 1,
   "raw": {
    "§5w§": "param1"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§>!X§",
@@ -1813,7 +1849,7 @@
    "t:SpendMana"
   ],
   "num_id": 112,
-  "icon": "param3",
+  "icon": "ManaUpgrade16",
   "tag": "SpendMana",
   "category": 2,
   "texts": [
@@ -1839,6 +1875,7 @@
    "§5w§": "param1",
    "§[2§": "param4"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -2689,12 +2726,13 @@
   "kind": "achievement",
   "num_id": 162,
   "name": "_n(\"%0 Ruby\",\"%0 Rubies\",§5w§,§5w§.toString())",
-  "icon": "param2",
+  "icon": "GainRubyTrophy4",
   "category": 1,
   "tag": "GainRuby",
   "raw": {
    "§5w§": "param1"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§[!Y§.§[!-§",
@@ -2753,6 +2791,32 @@
   }
  },
  {
+  "class": "§3v§.§;k§",
+  "kind": "achievement",
+  "num_id": 167,
+  "icon": "param3",
+  "tag": "GiftCollector",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 2
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§1!A§",
+  "kind": "achievement",
+  "num_id": 168,
+  "icon": "param3",
+  "tag": "Snowpile",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 2
+  },
+  "templated": true
+ },
+ {
   "class": "§!7§.§>N§",
   "kind": "achievement",
   "num_id": 169,
@@ -2766,12 +2830,13 @@
   "kind": "achievement",
   "num_id": 170,
   "name": "_n(\"%0 Artifact\",\"%0 Artifacts\",§5w§,§5w§.toString())",
-  "icon": "param2",
+  "icon": "ArtifactTrophy7",
   "category": 1,
   "tag": "FindArtifact",
   "raw": {
    "§5w§": "param1"
-  }
+  },
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§#r§",
@@ -2835,6 +2900,19 @@
    "§?!,§": true,
    "§'!H§": 3
   }
+ },
+ {
+  "class": "§3v§.§=S§",
+  "kind": "achievement",
+  "num_id": 176,
+  "icon": "param3",
+  "tag": "FeelTheLove",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 3
+  },
+  "templated": true
  },
  {
   "class": "§[Y§.§&!H§",
@@ -3095,6 +3173,32 @@
   }
  },
  {
+  "class": "§3v§.§9Z§",
+  "kind": "achievement",
+  "num_id": 195,
+  "icon": "param3",
+  "tag": "EggHunter",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 4
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§[!F§",
+  "kind": "achievement",
+  "num_id": 196,
+  "icon": "param3",
+  "tag": "EggCollection",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 4
+  },
+  "templated": true
+ },
+ {
   "class": "§!7§.§=_§",
   "kind": "achievement",
   "num_id": 197,
@@ -3286,6 +3390,32 @@
    "§?!,§": true,
    "§'!H§": 6
   }
+ },
+ {
+  "class": "§3v§.§@O§",
+  "kind": "achievement",
+  "num_id": 208,
+  "icon": "param3",
+  "tag": "SummeraanChampion",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 6
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§-W§",
+  "kind": "achievement",
+  "num_id": 209,
+  "icon": "param3",
+  "tag": "WinterlyChampion",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 6
+  },
+  "templated": true
  },
  {
   "class": "§!7§.§[r§",
@@ -3762,6 +3892,41 @@
   }
  },
  {
+  "class": "§3v§.§ !?§",
+  "kind": "achievement",
+  "num_id": 224,
+  "icon": "param3",
+  "tag": "MonsterBreeder",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Grow all monsters to level %0.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 7
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§;!=§",
+  "kind": "achievement",
+  "num_id": 225,
+  "icon": "param3",
+  "tag": "PumpkinSmasher",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 7
+  },
+  "templated": true
+ },
+ {
   "class": "§!7§.§ !7§",
   "kind": "achievement",
   "num_id": 227,
@@ -3844,7 +4009,7 @@
   "class": "§!7§.§1&§",
   "kind": "achievement",
   "num_id": 232,
-  "icon": "param3",
+  "icon": "ArcaneBrillianceTrophy4",
   "category": 2,
   "tag": "UnlockSpellTier",
   "texts": [
@@ -3867,6 +4032,7 @@
   "raw": {
    "§5w§": "param1"
   },
+  "icon_runtime": true,
   "templated": true
  },
  {
@@ -3913,7 +4079,7 @@
   "num_id": 235,
   "faction": "param1",
   "name": "_(\"%0 Grand Champion\",§-D§.§45§[§-!^§])",
-  "icon": "§-D§.§@G§[§-!^§] + \"GrandChampion\"",
+  "icon": "DragonGrandChampion",
   "category": 0,
   "texts": [
    {
@@ -3924,7 +4090,8 @@
      "_loc1_"
     ]
    }
-  ]
+  ],
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§=[§",
@@ -3946,6 +4113,17 @@
     "text": "Can only be unlocked after Ascension 1 at Reincarnation 40+.",
     "args": []
    }
+  ],
+  "refs": [
+   "Brainwave",
+   "Fairy Chanting",
+   "Goblin's Greed",
+   "God's Hand",
+   "Grand Balance",
+   "Hellfire Blast",
+   "Lightning Strike",
+   "Moon Blessing",
+   "Night Time"
   ]
  },
  {
@@ -4135,6 +4313,32 @@
   }
  },
  {
+  "class": "§3v§.§,!i§",
+  "kind": "achievement",
+  "num_id": 247,
+  "icon": "param3",
+  "tag": "AsmodeanChampion",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 8
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§ !i§",
+  "kind": "achievement",
+  "num_id": 248,
+  "icon": "param3",
+  "tag": "SeraphimChampion",
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 8
+  },
+  "templated": true
+ },
+ {
   "class": "§!7§.§;!h§",
   "kind": "achievement",
   "num_id": 249,
@@ -4240,6 +4444,50 @@
    "§?!,§": true,
    "§'!H§": 9
   }
+ },
+ {
+  "class": "§3v§.§9!k§",
+  "kind": "achievement",
+  "num_id": 254,
+  "icon": "param3",
+  "tag": "GoblinsBane",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Fight the Goblin Army %0 times.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 9
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§!!k§",
+  "kind": "achievement",
+  "num_id": 255,
+  "icon": "param3",
+  "tag": "GoblinsCommander",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Support the Goblin Army %0 times.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 9
+  },
+  "templated": true
  },
  {
   "class": "§[Y§.§!!o§",
@@ -5391,7 +5639,9 @@
   ],
   "refs": [
    "Archon Quest Trophy"
-  ]
+  ],
+  "icon": "ChronoLoadingTrophy",
+  "icon_runtime": true
  },
  {
   "class": "§!7§.§7\"'§",
@@ -5679,6 +5929,72 @@
   }
  },
  {
+  "class": "§3v§.§9\"1§",
+  "kind": "achievement",
+  "num_id": 337,
+  "icon": "param3",
+  "tag": "BalanceRestoration",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Upgrade Balance Remnant to level %0.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 11
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§\"\"2§",
+  "kind": "achievement",
+  "num_id": 338,
+  "icon": "param3",
+  "tag": "ChaosRestoration",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Upgrade Chaos Remnant to level %0.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 11
+  },
+  "templated": true
+ },
+ {
+  "class": "§3v§.§1\"2§",
+  "kind": "achievement",
+  "num_id": 339,
+  "icon": "param3",
+  "tag": "OrderRestoration",
+  "texts": [
+   {
+    "method": "§@\"§",
+    "text": "Upgrade Order Remnant to level %0.",
+    "args": [
+     "§&c§.§8!Z§(§5w§)"
+    ]
+   }
+  ],
+  "raw": {
+   "§@!Z§": true,
+   "§5w§": "param1",
+   "§'!H§": 11
+  },
+  "templated": true
+ },
+ {
   "class": "§[!Y§.§-\"1§",
   "kind": "achievement",
   "num_id": 340,
@@ -5840,7 +6156,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§9\"3§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Athanor])))",
      "§-D§.§?+§[4]"
     ]
    },
@@ -5867,7 +6183,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§-\"4§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Battlefield])))",
      "§-D§.§?+§[5]"
     ]
    },
@@ -5894,7 +6210,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§<\"5§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Factory])))",
      "§-D§.§?+§[1]"
     ]
    },
@@ -5921,7 +6237,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§,\"4§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Mana Loom])))",
      "§-D§.§?+§[0]"
     ]
    },
@@ -5948,7 +6264,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§4\"3§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Mythos])))",
      "§-D§.§?+§[2]"
     ]
    },
@@ -5975,7 +6291,7 @@
     "method": "§@\"§",
     "text": "Provides %0 budget in the %1 branch.",
     "args": [
-     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([§!\"5§])))",
+     "§&c§.§8!Z§(§ \"5§.§+\"L§(§8G§.§!!H§([Vault])))",
      "§-D§.§?+§[3]"
     ]
    },

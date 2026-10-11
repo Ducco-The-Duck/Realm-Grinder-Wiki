@@ -94,6 +94,8 @@ def main():
             return f'[{short_name.get(q, m.group(1))}]'
         return re.sub(r'(§[^§]*§)\.id\b', sub, expr)
 
+    rt_path = os.path.join(DATA, 'runtime_icons.json')  # from tools/runtime_icons.py (needs engine.js)
+    runtime_icons = json.load(open(rt_path, encoding='utf8')) if os.path.exists(rt_path) else {}
     out = collections.defaultdict(list)
     for q, (kind, c, _f) in sorted(ents.items(), key=lambda kv: kv[0]):
         f = merged(c)
@@ -146,6 +148,8 @@ def main():
         refs.discard(short_name.get(q))
         if refs: rec['refs'] = sorted(refs)
         if raw: rec['raw'] = raw
+        if q in runtime_icons:
+            rec['icon'] = runtime_icons[q]; rec['icon_runtime'] = True
         if isinstance(rec.get('name'), str) and re.fullmatch(r'param\d+', rec['name']):
             del rec['name']; rec['templated'] = True  # name supplied by a subclass/instantiation
         if 'name' not in rec and not c.ids and not rec.get('templated'): continue  # abstract base class
