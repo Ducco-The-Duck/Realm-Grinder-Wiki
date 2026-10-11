@@ -15,7 +15,7 @@ VARS = [
     (r'§&c§\.§1",§\(\)', ('P', 'Research points you have spent')),
     (r'§#!!§\.§,d§\(\)', ('O', 'Your Offline production bonus')),
     (r'§&c§\.§\]!s§\(2,false,false,true\)',
-     ('T', 'Total activity time of all Evil spells in this Reincarnation (seconds, before bonuses)')),
+     ('T', 'Total number of casts of all Evil spells in this Reincarnation (before bonus multipliers)')),
     (r'§8G§\.§5!V§\[4\]', ('C', 'Clicks made in this Era')),
     (r'§8G§\.§5!V§\[1\]', ('E', 'Time played in this Era (seconds)')),
     (r'§#!!§\.§@!\?§\(\)', ('X', 'Your Royal Exchange bonus')),
@@ -36,7 +36,7 @@ def convert(expr, spell_name_of):
         name = spell_name_of(m.group(1))
         if not name: return m.group(0)
         sym = 'S'
-        used[sym] = f'Time the spell "{name}" has been active in this Era (seconds)'
+        used[sym] = f'Number of times you have cast "{name}" in this Era'
         return sym
     s = SPELL_TIME.sub(spell, s)
     for pat, (sym, desc) in VARS:

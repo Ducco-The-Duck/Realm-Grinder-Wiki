@@ -324,7 +324,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Fairy Chanting\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Fairy Chanting\" in this Era"
 }
 ]
 },
@@ -454,7 +454,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Tax Collection\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Tax Collection\" in this Era"
 }
 ]
 },
@@ -562,7 +562,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Lightning Strike\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Lightning Strike\" in this Era"
 }
 ]
 },
@@ -634,7 +634,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Grand Balance\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Grand Balance\" in this Era"
 }
 ]
 },
@@ -660,7 +660,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Brainwave\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Brainwave\" in this Era"
 }
 ]
 },
@@ -846,7 +846,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Dragon's Breath\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Dragon's Breath\" in this Era"
 }
 ]
 },
@@ -1672,7 +1672,7 @@
 "vars": [
 {
 "symbol": "T",
-"text": "Total activity time of all Evil spells in this Reincarnation (seconds, before bonuses)"
+"text": "Total number of casts of all Evil spells in this Reincarnation (before bonus multipliers)"
 }
 ]
 },
@@ -1759,7 +1759,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Time the spell \"Tax Collection\" has been active in this Era (seconds)"
+"text": "Number of times you have cast \"Tax Collection\" in this Era"
 }
 ]
 },
