@@ -117,7 +117,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     m = re.fullmatch(G + r'§#3§ == (-?\d+)', s)
     if m:
         v = int(m.group(1))
-        reqs.append('No bloodline selected' if v == -1 else f'{FACTION.get(v, "#" + str(v))} bloodline'); return
+        reqs.append('No prestige faction' if v == -1 else f'{FACTION.get(v, "#" + str(v))} as prestige faction'); return
     m = re.fullmatch(G + r'§9!m§ == (\d)', s)
     if m and int(m.group(1)) in PATH:
         reqs.append(f'{PATH[int(m.group(1))]} alignment'); return

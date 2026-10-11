@@ -178,7 +178,7 @@
 },
 "requirements": [
 "Make 3,250 excavations",
-"Dwarf bloodline",
+"Dwarf as prestige faction",
 "Requires upgrade \"Dwarven Forge\""
 ],
 "undecoded_conditions": 0,
@@ -198,7 +198,7 @@
 },
 "requirements": [
 "Make 3,000 excavations",
-"Drow bloodline",
+"Drow as prestige faction",
 "Requires upgrade \"Spider Sanctuary\""
 ],
 "undecoded_conditions": 0,
@@ -298,7 +298,7 @@
 },
 "requirements": [
 "Playing as Fairy",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -316,7 +316,7 @@
 },
 "requirements": [
 "Playing as Fairy",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -334,7 +334,7 @@
 },
 "requirements": [
 "Playing as Elf",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -352,7 +352,7 @@
 },
 "requirements": [
 "Playing as Elf",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -370,7 +370,7 @@
 },
 "requirements": [
 "Playing as Angel",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -388,7 +388,7 @@
 },
 "requirements": [
 "Playing as Angel",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -408,7 +408,7 @@
 },
 "requirements": [
 "Playing as Goblin",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -426,7 +426,7 @@
 },
 "requirements": [
 "Playing as Goblin",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -444,7 +444,7 @@
 },
 "requirements": [
 "Playing as Undead",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -462,7 +462,7 @@
 },
 "requirements": [
 "Playing as Undead",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -483,7 +483,7 @@
 },
 "requirements": [
 "Playing as Demon",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -503,7 +503,7 @@
 },
 "requirements": [
 "Playing as Demon",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -523,7 +523,7 @@
 },
 "requirements": [
 "Playing as Titan",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -541,7 +541,7 @@
 },
 "requirements": [
 "Playing as Titan",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -579,7 +579,7 @@
 },
 "requirements": [
 "Playing as Druid",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -597,7 +597,7 @@
 },
 "requirements": [
 "Playing as Faceless",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -615,7 +615,7 @@
 },
 "requirements": [
 "Playing as Faceless",
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -632,7 +632,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dwarf bloodline"
+"Dwarf as prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -649,7 +649,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dwarf bloodline"
+"Dwarf as prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -667,7 +667,7 @@
 "percent": 2.0
 },
 "requirements": [
-"Drow bloodline"
+"Drow as prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -686,7 +686,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Drow bloodline"
+"Drow as prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -743,7 +743,7 @@
 },
 "requirements": [
 "Reincarnation 50 or higher",
-"Dragon bloodline"
+"Dragon as prestige faction"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -761,7 +761,7 @@
 },
 "requirements": [
 "Reincarnation 50 or higher",
-"Dragon bloodline"
+"Dragon as prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -896,7 +896,7 @@
 "percent": 0.1
 },
 "requirements": [
-"No bloodline selected"
+"No prestige faction"
 ],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -1263,7 +1263,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dwarf bloodline",
+"Dwarf as prestige faction",
 "Ascension 2 or higher",
 "Make 2,000 excavations",
 "Requires trophy \"Dwarven Bow\"",
@@ -1284,7 +1284,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Drow bloodline",
+"Drow as prestige faction",
 "Ascension 2 or higher",
 "Make 2,000 excavations",
 "Requires trophy \"Ceremonial Dagger\"",
@@ -1305,7 +1305,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dragon bloodline",
+"Dragon as prestige faction",
 "Ascension 2 or higher",
 "Make 2,000 excavations",
 "Requires trophy \"Dragon Fang\"",
@@ -1968,7 +1968,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dwarf bloodline",
+"Dwarf as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
 "Make 10,000 excavations"
@@ -1988,7 +1988,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Drow bloodline",
+"Drow as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
 "Make 10,000 excavations"
@@ -2008,7 +2008,7 @@
 "mode": "variable"
 },
 "requirements": [
-"Dragon bloodline",
+"Dragon as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
 "Make 10,000 excavations"
