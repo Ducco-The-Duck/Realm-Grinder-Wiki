@@ -27,7 +27,7 @@ python -I tools/eval_formulas.py   # engine.js  -> data/formula_values.json
 | `engine.js` | The game's formulas and helper code transpiled to JavaScript (~1,870 classes). Call `__boot()` once, then use `__byQ[class]`, `__byId["u:FastForward"]`. Game state lives in the `K8G` static fields. |
 | `engine_names.json` | Obfuscated token -> JavaScript identifier used in `engine.js` (and `formulas` keys, via the `_` prefix). |
 | `engine_report.json` | Members that could not be transpiled (6) and why. |
-| `sprites.json` | Sprite index `{name: [{atlas, file, width, height}]}` for the sliced atlases. Entity `icon` values are sprite names. The PNGs live in `assets/sprites/` (git-ignored; regenerate with `tools/slice_atlases.py`). |
+| `sprites.json` | Sprite index `{name: [{atlas, file, width, height}]}` for the sliced atlases. Entity `icon` values are sprite names. The full set lives in `assets/sprites/` (git-ignored; regenerate with `tools/slice_atlases.py`). `assets/icons/` + `icons.json` (sprite name -> file) hold the committed subset used by entity `icon` fields (`tools/export_icons.py`). |
 | `formula_values.json` | Results of every zero-argument static formula and every rendered description, at fresh-game state. Keys are `class` values from the entity files. |
 
 ## Record fields
