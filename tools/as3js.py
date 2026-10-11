@@ -422,10 +422,17 @@ def main():
     r9 = classmap.get(next((q for q in order if cl[q].name == '§9!A§'), None))
     regs = [NM.get(t) for t in ('§8!D§', '§ !U§', '§-z§', '§-!1§')]
     p4 = NM.get('§4P§')
+    hc = classmap.get(next((q for q in order if cl[q].name == '§&c§'), None))
+    init = NM.get('§[!C§')
+    regs_lists = [NM.get(t) for t in ('§0!A§', '§%<§', '§-!4§', '§0Q§')]
     out.append('function __boot() {')
     out.append(f'  try {{ var a = {g8}.{p4}; for (var i = 0; i <= 43; i++) a.push(0); a[3] = 1; a[29] = 1; }} catch (e) {{ __bootErr.push("4P: " + e); }}')
     for r in regs:
         out.append(f'  try {{ {r9}.{r}(); }} catch (e) {{ __bootErr.push("{r}: " + String(e) + " | " + (e.stack || "")); }}')
+    # mirrors the tail of the game's own init: helper tables, then per-entity init for every registry
+    out.append(f'  try {{ {hc}.{init}(); }} catch (e) {{ __bootErr.push("helpers: " + String(e) + " | " + (e.stack || "")); }}')
+    for lst in regs_lists:
+        out.append(f'  try {{ var L = {g8}.{lst}; for (var i = 0; i < L.length; i++) {{ try {{ L[i].{init}(); }} catch (e) {{ __bootErr.push("{lst}[" + i + "]: " + String(e)); }} }} }} catch (e) {{}}')
     out.append('}')
     with open(OUT, 'w', encoding='utf8') as f:
         f.write('\n'.join(out) + '\n')

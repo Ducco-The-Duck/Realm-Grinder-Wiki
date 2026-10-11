@@ -23284,4 +23284,9 @@ function __boot() {
   try { K9_A_2._U_16(); } catch (e) { __bootErr.push("_U_16: " + String(e) + " | " + (e.stack || "")); }
   try { K9_A_2._z_12(); } catch (e) { __bootErr.push("_z_12: " + String(e) + " | " + (e.stack || "")); }
   try { K9_A_2._1_58(); } catch (e) { __bootErr.push("_1_58: " + String(e) + " | " + (e.stack || "")); }
+  try { Kc_4._C(); } catch (e) { __bootErr.push("helpers: " + String(e) + " | " + (e.stack || "")); }
+  try { var L = K8G._0_A; for (var i = 0; i < L.length; i++) { try { L[i]._C(); } catch (e) { __bootErr.push("_0_A[" + i + "]: " + String(e)); } } } catch (e) {}
+  try { var L = K8G._x_42; for (var i = 0; i < L.length; i++) { try { L[i]._C(); } catch (e) { __bootErr.push("_x_42[" + i + "]: " + String(e)); } } } catch (e) {}
+  try { var L = K8G._4_5; for (var i = 0; i < L.length; i++) { try { L[i]._C(); } catch (e) { __bootErr.push("_4_5[" + i + "]: " + String(e)); } } } catch (e) {}
+  try { var L = K8G._0Q; for (var i = 0; i < L.length; i++) { try { L[i]._C(); } catch (e) { __bootErr.push("_0Q[" + i + "]: " + String(e)); } } } catch (e) {}
 }

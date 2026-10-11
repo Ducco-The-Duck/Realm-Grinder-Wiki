@@ -33,7 +33,9 @@
    "§!G§": 4,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3!`§",
@@ -75,7 +77,9 @@
    "§!G§": 4,
    "§^!C§": 4,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"4§",
@@ -135,7 +139,9 @@
    "§!G§": 4,
    "§^!C§": 5,
    "§%w§": 25
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;!a§",
@@ -190,7 +196,9 @@
    "§!G§": 4,
    "§^!C§": 0,
    "§%w§": 30
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^[§",
@@ -226,7 +234,9 @@
    "§!G§": 4,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>!R§",
@@ -265,7 +275,9 @@
    "§\"!U§": 6,
    "§!G§": 4,
    "§%w§": 105
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§9!R§",
@@ -316,7 +328,9 @@
    "§!G§": 4,
    "§^!C§": 4,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§',§",
@@ -352,7 +366,9 @@
    "§!G§": 4,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?k§",
@@ -393,7 +409,9 @@
    "§!G§": 4,
    "§^!C§": 4,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4!G§",
@@ -434,7 +452,9 @@
    "§\"!U§": 5,
    "§!G§": 4,
    "§%w§": 55
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!\"§",
@@ -475,7 +495,9 @@
    "§^!C§": 4,
    "§%w§": 175,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`!>§",
@@ -536,7 +558,9 @@
    "§!G§": 4,
    "§^!C§": 3,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5!K§",
@@ -577,7 +601,9 @@
    "§\"!U§": 7,
    "§!G§": 4,
    "§%w§": 120
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4,§",
@@ -618,7 +644,9 @@
    "§\"!U§": 4,
    "§!G§": 1,
    "§%w§": 80
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<L§",
@@ -662,7 +690,9 @@
    "§^!C§": 1,
    "§%w§": 225,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=!U§",
@@ -727,7 +757,9 @@
    "§!G§": 1,
    "§^!C§": 0,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7!!§",
@@ -768,7 +800,9 @@
    "§!G§": 1,
    "§^!C§": 1,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"v§",
@@ -809,7 +843,9 @@
    "§^!C§": 3,
    "§%w§": 175,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2!2§",
@@ -843,7 +879,9 @@
    "§!G§": 1,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ I§",
@@ -889,7 +927,9 @@
    "§!G§": 1,
    "§^!C§": 2,
    "§%w§": 25
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+v§",
@@ -936,7 +976,9 @@
    "§!G§": 1,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3!=§",
@@ -987,7 +1029,9 @@
    "§!G§": 1,
    "§^!C§": 1,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!#§",
@@ -1029,7 +1073,9 @@
    "§!G§": 1,
    "§^!C§": 1,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!Y§",
@@ -1070,7 +1116,9 @@
    "§\"!U§": 6,
    "§!G§": 1,
    "§%w§": 120
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^e§",
@@ -1106,7 +1154,9 @@
    "§!G§": 1,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,9§",
@@ -1147,7 +1197,9 @@
    "§\"!U§": 5,
    "§!G§": 1,
    "§%w§": 105
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§9!$§",
@@ -1188,7 +1240,9 @@
    "§!G§": 2,
    "§^!C§": 2,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§'!A§",
@@ -1253,7 +1307,9 @@
    "§!G§": 2,
    "§%w§": 205,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3!C§",
@@ -1299,7 +1355,9 @@
    "§!G§": 2,
    "§^!C§": 4,
    "§%w§": 25
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8i§",
@@ -1335,7 +1393,9 @@
    "§!G§": 2,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8X§",
@@ -1386,7 +1446,9 @@
    "§!G§": 2,
    "§^!C§": 2,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0=§",
@@ -1428,7 +1490,9 @@
    "§!G§": 2,
    "§^!C§": 2,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0$§",
@@ -1489,7 +1553,9 @@
    "§!G§": 2,
    "§^!C§": 5,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;b§",
@@ -1531,7 +1597,9 @@
    "§^!C§": 2,
    "§%w§": 175,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@-§",
@@ -1578,7 +1646,9 @@
    "§!G§": 2,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1[§",
@@ -1625,7 +1695,9 @@
    "§!G§": 2,
    "§%w§": 245,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&<§",
@@ -1670,7 +1742,9 @@
    "§!G§": 2,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"§",
@@ -1711,7 +1785,9 @@
    "§\"!U§": 4,
    "§!G§": 2,
    "§%w§": 55
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§'A§",
@@ -1755,7 +1831,9 @@
    "§^!C§": 0,
    "§%w§": 225,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6! §",
@@ -1791,7 +1869,9 @@
    "§!G§": 3,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]V§",
@@ -1832,7 +1912,9 @@
    "§!G§": 3,
    "§^!C§": 3,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"%§",
@@ -1866,7 +1948,9 @@
    "§!G§": 3,
    "§^!C§": 3,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ U§",
@@ -1907,7 +1991,9 @@
    "§^!C§": 5,
    "§%w§": 230,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!!O§",
@@ -1948,7 +2034,9 @@
    "§!G§": 3,
    "§^!C§": 3,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5$§",
@@ -1994,7 +2082,9 @@
    "§!G§": 3,
    "§^!C§": 1,
    "§%w§": 25
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<M§",
@@ -2035,7 +2125,9 @@
    "§\"!U§": 5,
    "§!G§": 3,
    "§%w§": 80
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;%§",
@@ -2092,7 +2184,9 @@
    "§\"!U§": 3,
    "§!G§": 3,
    "§%w§": 30
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7?§",
@@ -2136,7 +2230,9 @@
    "§^!C§": 3,
    "§%w§": 225,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-!T§",
@@ -2172,7 +2268,9 @@
    "§!G§": 3,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8!]§",
@@ -2233,7 +2331,9 @@
    "§!G§": 3,
    "§^!C§": 4,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@!D§",
@@ -2276,7 +2376,9 @@
    "§!G§": 3,
    "§%w§": 145,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`!$§",
@@ -2312,7 +2414,9 @@
    "§!G§": 3,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,!M§",
@@ -2348,7 +2452,9 @@
    "§!G§": 0,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1T§",
@@ -2390,7 +2496,9 @@
    "§!G§": 0,
    "§^!C§": 0,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%!+§",
@@ -2451,7 +2559,9 @@
    "§!G§": 0,
    "§^!C§": 2,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0!Y§",
@@ -2510,7 +2620,9 @@
    "§!G§": 0,
    "§^!C§": 0,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[^§",
@@ -2546,7 +2658,9 @@
    "§!G§": 0,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@6§",
@@ -2598,7 +2712,9 @@
    "§^!C§": 1,
    "§%w§": 175,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ n§",
@@ -2639,7 +2755,9 @@
    "§!G§": 0,
    "§^!C§": 0,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§'!5§",
@@ -2680,7 +2798,9 @@
    "§^!C§": 0,
    "§%w§": 180,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<!E§",
@@ -2721,7 +2841,9 @@
    "§\"!U§": 4,
    "§!G§": 0,
    "§%w§": 105
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!D§",
@@ -2765,7 +2887,9 @@
    "§^!C§": 4,
    "§%w§": 225,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[8§",
@@ -2814,7 +2938,9 @@
    "§!G§": 0,
    "§%w§": 215,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!i§",
@@ -2850,7 +2976,9 @@
    "§!G§": 0,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!2§",
@@ -2902,7 +3030,9 @@
    "§\"!U§": 3,
    "§!G§": 0,
    "§%w§": 30
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3!6§",
@@ -2944,7 +3074,9 @@
    "§!G§": 5,
    "§^!C§": 5,
    "§%w§": 1
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`e§",
@@ -3004,7 +3136,9 @@
    "§!G§": 5,
    "§%w§": 205,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!!§",
@@ -3045,7 +3179,9 @@
    "§\"!U§": 4,
    "§!G§": 5,
    "§%w§": 120
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"=§",
@@ -3090,7 +3226,9 @@
    "§^!C§": 2,
    "§%w§": 225,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1e§",
@@ -3126,7 +3264,9 @@
    "§!G§": 5,
    "§%w§": 200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-'§",
@@ -3187,7 +3327,9 @@
    "§!G§": 5,
    "§^!C§": 1,
    "§%w§": 10
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<C§",
@@ -3238,7 +3380,9 @@
    "§!G§": 5,
    "§^!C§": 5,
    "§%w§": 50
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%!P§",
@@ -3281,7 +3425,9 @@
    "§!G§": 5,
    "§%w§": 180,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8Q§",
@@ -3317,7 +3463,9 @@
    "§!G§": 5,
    "§%w§": 150,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6V§",
@@ -3358,7 +3506,9 @@
    "§^!C§": 5,
    "§%w§": 175,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1!W§",
@@ -3400,7 +3550,9 @@
    "§!G§": 5,
    "§^!C§": 5,
    "§%w§": 135
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`K§",
@@ -3445,7 +3597,9 @@
    "§!G§": 5,
    "§%w§": 250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<2§",
@@ -3494,7 +3648,9 @@
    "§!G§": 5,
    "§^!C§": 3,
    "§%w§": 25
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]f§",
@@ -3527,7 +3683,9 @@
    "§!G§": 4,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<!T§",
@@ -3571,7 +3729,9 @@
    "§!G§": 4,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7@§",
@@ -3614,7 +3774,9 @@
    "§!G§": 4,
    "§^!C§": 7,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@d§",
@@ -3667,7 +3829,9 @@
    "§!G§": 4,
    "§^!C§": 7,
    "§%w§": 305
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"z§",
@@ -3705,7 +3869,9 @@
    "§!G§": 4,
    "§^!C§": 7,
    "§%w§": 281
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#!#§",
@@ -3750,7 +3916,9 @@
    "§\"!U§": 14,
    "§!G§": 4,
    "§%w§": 270
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3!A§",
@@ -3797,7 +3965,9 @@
    "§^!C§": 7,
    "§%w§": 375,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!\"§",
@@ -3835,7 +4005,9 @@
    "§!G§": 1,
    "§^!C§": 6,
    "§%w§": 281
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!5§",
@@ -3878,7 +4050,9 @@
    "§!G§": 1,
    "§%w§": 340,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#!8§",
@@ -3917,7 +4091,9 @@
    "§!G§": 1,
    "§^!C§": 6,
    "§%w§": 305
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!L§",
@@ -3964,7 +4140,9 @@
    "§!G§": 1,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+z§",
@@ -3995,7 +4173,9 @@
    "§^!C§": 6,
    "§%w§": 375,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@b§",
@@ -4028,7 +4208,9 @@
    "§!G§": 1,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[!X§",
@@ -4085,7 +4267,9 @@
    "§!G§": 1,
    "§^!C§": 6,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^V§",
@@ -4123,7 +4307,9 @@
    "§\"!U§": 16,
    "§!G§": 2,
    "§%w§": 320
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!E§",
@@ -4164,7 +4350,9 @@
    "§^!C§": 6,
    "§%w§": 350,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@g§",
@@ -4195,7 +4383,9 @@
    "§!G§": 2,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=!d§",
@@ -4247,7 +4437,9 @@
    "§!G§": 2,
    "§^!C§": 7,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!!§",
@@ -4296,7 +4488,9 @@
    "§!G§": 2,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5!W§",
@@ -4354,7 +4548,9 @@
    "§!G§": 2,
    "§^!C§": 8,
    "§%w§": 290
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+%§",
@@ -4400,7 +4596,9 @@
    "§\"!U§": 15,
    "§!G§": 2,
    "§%w§": 270
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§08§",
@@ -4433,7 +4631,9 @@
    "§!G§": 3,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2!`§",
@@ -4466,7 +4666,9 @@
    "§!G§": 3,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^\"§",
@@ -4509,7 +4711,9 @@
    "§!G§": 3,
    "§^!C§": 6,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]R§",
@@ -4547,7 +4751,9 @@
    "§^!C§": 8,
    "§%w§": 350,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7z§",
@@ -4605,7 +4811,9 @@
    "§!G§": 3,
    "§^!C§": 7,
    "§%w§": 290
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5!Z§",
@@ -4657,7 +4865,9 @@
    "§\"!U§": 16,
    "§!G§": 3,
    "§%w§": 320
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2x§",
@@ -4693,7 +4903,9 @@
    "§\"!U§": 15,
    "§!G§": 3,
    "§%w§": 270
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[!]§",
@@ -4731,7 +4943,9 @@
    "§!G§": 0,
    "§^!C§": 8,
    "§%w§": 281
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]u§",
@@ -4764,7 +4978,9 @@
    "§!G§": 0,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ Y§",
@@ -4813,7 +5029,9 @@
    "§!G§": 0,
    "§^!C§": 8,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%!I§",
@@ -4846,7 +5064,9 @@
    "§^!C§": 8,
    "§%w§": 375,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!I§",
@@ -4885,7 +5105,9 @@
    "§!G§": 0,
    "§^!C§": 8,
    "§%w§": 305
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7!C§",
@@ -4923,7 +5145,9 @@
    "§!G§": 0,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@0§",
@@ -4961,7 +5185,9 @@
    "§\"!U§": 14,
    "§!G§": 0,
    "§%w§": 270
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!!R§",
@@ -5019,7 +5245,9 @@
    "§!G§": 5,
    "§^!C§": 6,
    "§%w§": 290
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8b§",
@@ -5076,7 +5304,9 @@
    "§!G§": 5,
    "§^!C§": 8,
    "§%w§": 300
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<!I§",
@@ -5114,7 +5344,9 @@
    "§\"!U§": 15,
    "§!G§": 5,
    "§%w§": 270
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§32§",
@@ -5147,7 +5379,9 @@
    "§!G§": 5,
    "§%w§": 330,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2v§",
@@ -5185,7 +5419,9 @@
    "§\"!U§": 16,
    "§!G§": 5,
    "§%w§": 320
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;!3§",
@@ -5212,7 +5448,9 @@
    "§!G§": 5,
    "§%w§": 400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[!E§",
@@ -5253,7 +5491,9 @@
    "§^!C§": 7,
    "§%w§": 350,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!N§",
@@ -5301,7 +5541,9 @@
    "§^!C§": 9,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"i§",
@@ -5339,7 +5581,9 @@
    "§^!C§": 9,
    "§%w§": 600,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@?§",
@@ -5377,7 +5621,9 @@
    "§\"!U§": 21,
    "§!G§": 1,
    "§%w§": 425
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[q§",
@@ -5416,7 +5662,9 @@
    "§!G§": 1,
    "§^!C§": 9,
    "§%w§": 501
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ !W§",
@@ -5454,7 +5702,9 @@
    "§\"!U§": 22,
    "§!G§": 1,
    "§%w§": 475
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-!S§",
@@ -5497,7 +5747,9 @@
    "§!G§": 4,
    "§^!C§": 10,
    "§%w§": 575
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%!F§",
@@ -5541,7 +5793,9 @@
    "§^!C§": 10,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3B§",
@@ -5579,7 +5833,9 @@
    "§\"!U§": 23,
    "§!G§": 4,
    "§%w§": 550
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1!a§",
@@ -5637,7 +5893,9 @@
    "§!G§": 4,
    "§^!C§": 10,
    "§%w§": 510
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%B§",
@@ -5675,7 +5933,9 @@
    "§\"!U§": 21,
    "§!G§": 4,
    "§%w§": 450
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6B§",
@@ -5713,7 +5973,9 @@
    "§\"!U§": 21,
    "§!G§": 2,
    "§%w§": 450
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!G§",
@@ -5769,7 +6031,9 @@
    "§!G§": 2,
    "§^!C§": 9,
    "§%w§": 525
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8@§",
@@ -5813,7 +6077,9 @@
    "§^!C§": 9,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7b§",
@@ -5858,7 +6124,9 @@
    "§!G§": 2,
    "§%w§": 625,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%S§",
@@ -5896,7 +6164,9 @@
    "§^!C§": 10,
    "§%w§": 650,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!R§",
@@ -5934,7 +6204,9 @@
    "§\"!U§": 21,
    "§!G§": 3,
    "§%w§": 425
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7!,§",
@@ -5982,7 +6254,9 @@
    "§!G§": 3,
    "§^!C§": 9,
    "§%w§": 575
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?!b§",
@@ -6040,7 +6314,9 @@
    "§!G§": 3,
    "§^!C§": 9,
    "§%w§": 510
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!>§",
@@ -6084,7 +6360,9 @@
    "§^!C§": 10,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!H§",
@@ -6122,7 +6400,9 @@
    "§\"!U§": 22,
    "§!G§": 3,
    "§%w§": 450
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7y§",
@@ -6160,7 +6440,9 @@
    "§\"!U§": 21,
    "§!G§": 0,
    "§%w§": 425
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,!1§",
@@ -6203,7 +6485,9 @@
    "§\"!U§": 22,
    "§!G§": 0,
    "§%w§": 475
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5'§",
@@ -6233,7 +6517,9 @@
    "§\"!U§": 23,
    "§!G§": 0,
    "§%w§": 550
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,x§",
@@ -6290,7 +6576,9 @@
    "§!G§": 0,
    "§^!C§": 10,
    "§%w§": 525
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§@8§",
@@ -6334,7 +6622,9 @@
    "§^!C§": 9,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"!Y§",
@@ -6372,7 +6662,9 @@
    "§!G§": 5,
    "§^!C§": 10,
    "§%w§": 501
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§61§",
@@ -6417,7 +6709,9 @@
    "§!G§": 5,
    "§%w§": 625,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^!H§",
@@ -6455,7 +6749,9 @@
    "§^!C§": 9,
    "§%w§": 650,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!b§",
@@ -6494,7 +6790,9 @@
    "§^!C§": 10,
    "§%w§": 600,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ !F§",
@@ -6538,7 +6836,9 @@
    "§^!C§": 10,
    "§%w§": 700,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[n§",
@@ -6576,7 +6876,9 @@
    "§\"!U§": 26,
    "§!G§": 4,
    "§%w§": 1325
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7L§",
@@ -6634,7 +6936,9 @@
    "§!G§": 4,
    "§^!C§": 12,
    "§%w§": 1200
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<!A§",
@@ -6684,7 +6988,9 @@
    "§^!C§": 12,
    "§%w§": 1500,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1!!§",
@@ -6733,7 +7039,9 @@
    "§^!C§": 12,
    "§%w§": 1500,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;!\"§",
@@ -6771,7 +7079,9 @@
    "§\"!U§": 26,
    "§!G§": 1,
    "§%w§": 1325
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§9J§",
@@ -6816,7 +7126,9 @@
    "§!G§": 1,
    "§^!C§": 12,
    "§%w§": 1300
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-]§",
@@ -6854,7 +7166,9 @@
    "§!G§": 2,
    "§^!C§": 12,
    "§%w§": 1175
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<b§",
@@ -6895,7 +7209,9 @@
    "§\"!U§": 27,
    "§!G§": 2,
    "§%w§": 1375
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;R§",
@@ -6932,7 +7248,9 @@
    "§\"!U§": 26,
    "§!G§": 2,
    "§%w§": 1275
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,![§",
@@ -6980,7 +7298,9 @@
    "§!G§": 3,
    "§^!C§": 12,
    "§%w§": 1225
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]@§",
@@ -7010,7 +7330,9 @@
    "§\"!U§": 26,
    "§!G§": 3,
    "§%w§": 1325
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=l§",
@@ -7055,7 +7377,9 @@
    "§!G§": 3,
    "§%w§": 1425,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>!L§",
@@ -7104,7 +7428,9 @@
    "§^!C§": 12,
    "§%w§": 1500,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&i§",
@@ -7134,7 +7460,9 @@
    "§\"!U§": 25,
    "§!G§": 0,
    "§%w§": 1275
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`!R§",
@@ -7172,7 +7500,9 @@
    "§^!C§": 12,
    "§%w§": 1450,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#>§",
@@ -7214,7 +7544,9 @@
    "§\"!U§": 25,
    "§!G§": 5,
    "§%w§": 1275
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`!]§",
@@ -7252,7 +7584,9 @@
    "§^!C§": 12,
    "§%w§": 1400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0M§",
@@ -7304,7 +7638,9 @@
    "§\"!U§": 26,
    "§!G§": 5,
    "§%w§": 1375
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%!j§",
@@ -7362,7 +7698,9 @@
    "§!G§": 4,
    "§%w§": 3400,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4!h§",
@@ -7409,7 +7747,9 @@
    "§!G§": 4,
    "§^!C§": 11,
    "§%w§": 2950
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=!h§",
@@ -7453,7 +7793,9 @@
    "§!G§": 1,
    "§^!C§": 11,
    "§%w§": 3000
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`!h§",
@@ -7494,7 +7836,9 @@
    "§\"!U§": 29,
    "§!G§": 1,
    "§%w§": 3100
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]!h§",
@@ -7528,7 +7872,9 @@
    "§!G§": 2,
    "§^!C§": 11,
    "§%w§": 2850
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?!j§",
@@ -7577,7 +7923,9 @@
    "§!G§": 2,
    "§%w§": 3350,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1!j§",
@@ -7622,7 +7970,9 @@
    "§!G§": 3,
    "§%w§": 3300,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+!j§",
@@ -7658,7 +8008,9 @@
    "§^!C§": 11,
    "§%w§": 3250,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5!h§",
@@ -7716,7 +8068,9 @@
    "§!G§": 0,
    "§%w§": 3200,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-!h§",
@@ -7766,7 +8120,9 @@
    "§!G§": 0,
    "§^!C§": 11,
    "§%w§": 2900
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&!h§",
@@ -7813,7 +8169,9 @@
    "§^!C§": 11,
    "§%w§": 3050,
    "§=z§": false
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6!j§",
@@ -7853,7 +8211,9 @@
    "§\"!U§": 29,
    "§!G§": 5,
    "§%w§": 3150
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&\"4§",
@@ -7885,7 +8245,9 @@
    "§\"!U§": 31,
    "§!G§": 4,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%\"5§",
@@ -7921,7 +8283,9 @@
    "§\"!U§": 33,
    "§!G§": 4,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=\"4§",
@@ -7957,7 +8321,9 @@
    "§\"!U§": 30,
    "§!G§": 4,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<\"4§",
@@ -7985,7 +8351,9 @@
    "§\"!U§": 32,
    "§!G§": 4,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=\"3§",
@@ -8021,7 +8389,9 @@
    "§\"!U§": 32,
    "§!G§": 1,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6\"5§",
@@ -8057,7 +8427,9 @@
    "§\"!U§": 33,
    "§!G§": 1,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^\"2§",
@@ -8095,7 +8467,9 @@
    "§\"!U§": 31,
    "§!G§": 1,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8\"4§",
@@ -8131,7 +8505,9 @@
    "§\"!U§": 30,
    "§!G§": 1,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4\"4§",
@@ -8182,7 +8558,9 @@
    "§\"!U§": 33,
    "§!G§": 2,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^\"4§",
@@ -8218,7 +8596,9 @@
    "§\"!U§": 32,
    "§!G§": 2,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3\"4§",
@@ -8254,7 +8634,9 @@
    "§\"!U§": 30,
    "§!G§": 2,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[\"3§",
@@ -8287,7 +8669,9 @@
    "§\"!U§": 31,
    "§!G§": 2,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[\"4§",
@@ -8315,7 +8699,9 @@
    "§\"!U§": 30,
    "§!G§": 3,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§'\"3§",
@@ -8351,7 +8737,9 @@
    "§\"!U§": 32,
    "§!G§": 3,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&\"5§",
@@ -8387,7 +8775,9 @@
    "§\"!U§": 33,
    "§!G§": 3,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#\"5§",
@@ -8425,7 +8815,9 @@
    "§\"!U§": 31,
    "§!G§": 3,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"\"4§",
@@ -8476,7 +8868,9 @@
    "§\"!U§": 2,
    "§!G§": 6,
    "§%w§": 5750
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=\"5§",
@@ -8512,7 +8906,9 @@
    "§\"!U§": 0,
    "§!G§": 6,
    "§%w§": 5250
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2\"4§",
@@ -8548,7 +8944,9 @@
    "§\"!U§": 1,
    "§!G§": 6,
    "§%w§": 5500
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;\"3§",
@@ -8587,7 +8985,9 @@
    "§!G§": 6,
    "§^!C§": 11,
    "§%w§": 6000
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,\"3§",
@@ -8621,7 +9021,9 @@
    "§\"!U§": 31,
    "§!G§": 0,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§]\"2§",
@@ -8657,7 +9059,9 @@
    "§\"!U§": 32,
    "§!G§": 0,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§!\"4§",
@@ -8693,7 +9097,9 @@
    "§\"!U§": 33,
    "§!G§": 0,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>\"3§",
@@ -8730,7 +9136,9 @@
    "§\"!U§": 30,
    "§!G§": 0,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;\"4§",
@@ -8775,7 +9183,9 @@
    "§\"!U§": 32,
    "§!G§": 5,
    "§%w§": 5625
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§<\"3§",
@@ -8808,7 +9218,9 @@
    "§\"!U§": 31,
    "§!G§": 5,
    "§%w§": 5375
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`\"3§",
@@ -8857,7 +9269,9 @@
    "§\"!U§": 33,
    "§!G§": 5,
    "§%w§": 5875
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§,\"5§",
@@ -8894,7 +9308,9 @@
    "§\"!U§": 30,
    "§!G§": 5,
    "§%w§": 5125
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3\"?§",
@@ -8927,7 +9343,9 @@
    "§\"!U§": 35,
    "§!G§": 4,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6\"9§",
@@ -8960,7 +9378,9 @@
    "§\"!U§": 37,
    "§!G§": 4,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#\"A§",
@@ -8993,7 +9413,9 @@
    "§\"!U§": 36,
    "§!G§": 4,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+\"A§",
@@ -9021,7 +9443,9 @@
    "§\"!U§": 34,
    "§!G§": 4,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6\"A§",
@@ -9054,7 +9478,9 @@
    "§\"!U§": 36,
    "§!G§": 1,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&\"A§",
@@ -9079,7 +9505,9 @@
    "§\"!U§": 35,
    "§!G§": 1,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"@§",
@@ -9107,7 +9535,9 @@
    "§\"!U§": 34,
    "§!G§": 1,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§^\";§",
@@ -9143,7 +9573,9 @@
    "§\"!U§": 37,
    "§!G§": 1,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?\"?§",
@@ -9176,7 +9608,9 @@
    "§\"!U§": 37,
    "§!G§": 2,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§#\">§",
@@ -9215,7 +9649,9 @@
    "§\"!U§": 36,
    "§!G§": 2,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[\"?§",
@@ -9241,7 +9677,9 @@
    "§\"!U§": 34,
    "§!G§": 2,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0\"D§",
@@ -9274,7 +9712,9 @@
    "§\"!U§": 35,
    "§!G§": 2,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>\"M§",
@@ -9307,7 +9747,9 @@
    "§\"!U§": 35,
    "§!G§": 3,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§9\"?§",
@@ -9340,7 +9782,9 @@
    "§\"!U§": 36,
    "§!G§": 3,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2\"D§",
@@ -9368,7 +9812,9 @@
    "§\"!U§": 34,
    "§!G§": 3,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§`\"?§",
@@ -9401,7 +9847,9 @@
    "§\"!U§": 37,
    "§!G§": 3,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"\"<§",
@@ -9429,7 +9877,9 @@
    "§\"!U§": 4,
    "§!G§": 6,
    "§%w§": 11000
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[\"=§",
@@ -9454,7 +9904,9 @@
    "§\"!U§": 7,
    "§!G§": 6,
    "§%w§": 11750
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3\"B§",
@@ -9504,7 +9956,9 @@
    "§\"!U§": 6,
    "§!G§": 6,
    "§%w§": 11500
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;\"A§",
@@ -9537,7 +9991,9 @@
    "§\"!U§": 5,
    "§!G§": 6,
    "§%w§": 11250
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=\"=§",
@@ -9570,7 +10026,9 @@
    "§\"!U§": 37,
    "§!G§": 0,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§=\"@§",
@@ -9603,7 +10061,9 @@
    "§\"!U§": 36,
    "§!G§": 0,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-\"=§",
@@ -9631,7 +10091,9 @@
    "§\"!U§": 34,
    "§!G§": 0,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"B§",
@@ -9664,7 +10126,9 @@
    "§\"!U§": 35,
    "§!G§": 0,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"I§",
@@ -9697,7 +10161,9 @@
    "§\"!U§": 37,
    "§!G§": 5,
    "§%w§": 11625
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"9§",
@@ -9730,7 +10196,9 @@
    "§\"!U§": 36,
    "§!G§": 5,
    "§%w§": 11375
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-\">§",
@@ -9758,7 +10226,9 @@
    "§\"!U§": 34,
    "§!G§": 5,
    "§%w§": 10875
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>\"9§",
@@ -9794,7 +10264,9 @@
    "§\"!U§": 35,
    "§!G§": 5,
    "§%w§": 11125
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§9\"E§",
@@ -9831,7 +10303,9 @@
    "§\"!U§": 39,
    "§!G§": 4,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1\"E§",
@@ -9868,7 +10342,9 @@
    "§\"!U§": 38,
    "§!G§": 4,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"\"F§",
@@ -9898,7 +10374,9 @@
    "§\"!U§": 39,
    "§!G§": 1,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&\"F§",
@@ -9934,7 +10412,9 @@
    "§\"!U§": 38,
    "§!G§": 1,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§[\"E§",
@@ -9971,7 +10451,9 @@
    "§\"!U§": 39,
    "§!G§": 2,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§7\"E§",
@@ -10009,7 +10491,9 @@
    "§\"!U§": 38,
    "§!G§": 2,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?\"E§",
@@ -10042,7 +10526,9 @@
    "§\"!U§": 39,
    "§!G§": 3,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§2\"F§",
@@ -10074,7 +10560,9 @@
    "§\"!U§": 38,
    "§!G§": 3,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4\"E§",
@@ -10107,7 +10595,9 @@
    "§\"!U§": 9,
    "§!G§": 6,
    "§%w§": 12500
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6\"E§",
@@ -10132,7 +10622,9 @@
    "§\"!U§": 8,
    "§!G§": 6,
    "§%w§": 12000
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§ \"F§",
@@ -10157,7 +10649,9 @@
    "§\"!U§": 38,
    "§!G§": 0,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§-\"F§",
@@ -10190,7 +10684,9 @@
    "§\"!U§": 39,
    "§!G§": 0,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§3\"E§",
@@ -10223,7 +10719,9 @@
    "§\"!U§": 39,
    "§!G§": 5,
    "§%w§": 12250
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0\"F§",
@@ -10256,7 +10754,9 @@
    "§\"!U§": 38,
    "§!G§": 5,
    "§%w§": 11875
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§>\"G§",
@@ -10293,7 +10793,9 @@
    "§\"!U§": 40,
    "§!G§": 4,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§1\"G§",
@@ -10338,7 +10840,9 @@
    "§\"!U§": 41,
    "§!G§": 4,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchAlchemy",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§+\"G§",
@@ -10374,7 +10878,9 @@
    "§\"!U§": 41,
    "§!G§": 1,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§0\"G§",
@@ -10410,7 +10916,9 @@
    "§\"!U§": 40,
    "§!G§": 1,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchCraftsmanship",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§4\"G§",
@@ -10446,7 +10954,9 @@
    "§\"!U§": 41,
    "§!G§": 2,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§6\"G§",
@@ -10474,7 +10984,9 @@
    "§\"!U§": 40,
    "§!G§": 2,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchDivine",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§%\"G§",
@@ -10502,7 +11014,9 @@
    "§\"!U§": 40,
    "§!G§": 3,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§8\"G§",
@@ -10529,7 +11043,9 @@
    "§\"!U§": 41,
    "§!G§": 3,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchEconomics",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§&\"G§",
@@ -10565,7 +11081,9 @@
    "§\"!U§": 10,
    "§!G§": 6,
    "§%w§": 13250
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§'\"G§",
@@ -10597,7 +11115,9 @@
    "§\"!U§": 11,
    "§!G§": 6,
    "§%w§": 13750
-  }
+  },
+  "icon": "ResearchForbidden",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§?\"G§",
@@ -10630,7 +11150,9 @@
    "§\"!U§": 40,
    "§!G§": 0,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§5\"G§",
@@ -10666,7 +11188,9 @@
    "§\"!U§": 41,
    "§!G§": 0,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchSpellcraft",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§\"\"G§",
@@ -10699,7 +11223,9 @@
    "§\"!U§": 40,
    "§!G§": 5,
    "§%w§": 13125
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  },
  {
   "class": "§;!J§.§;\"G§",
@@ -10767,6 +11293,8 @@
    "§\"!U§": 41,
    "§!G§": 5,
    "§%w§": 13500
-  }
+  },
+  "icon": "ResearchWarfare",
+  "icon_runtime": true
  }
 ]

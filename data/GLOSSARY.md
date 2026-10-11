@@ -27,8 +27,9 @@ python -I tools/eval_formulas.py   # engine.js  -> data/formula_values.json
 | `engine.js` | The game's formulas and helper code transpiled to JavaScript (~1,870 classes). Call `__boot()` once, then use `__byQ[class]`, `__byId["u:FastForward"]`. Game state lives in the `K8G` static fields. |
 | `engine_names.json` | Obfuscated token -> JavaScript identifier used in `engine.js` (and `formulas` keys, via the `_` prefix). |
 | `engine_report.json` | Members that could not be transpiled (6) and why. |
-| `sprites.json` | Sprite index `{name: [{atlas, file, width, height}]}` for the sliced atlases. Entity `icon` values are sprite names. The full set lives in `assets/sprites/` (git-ignored; regenerate with `tools/slice_atlases.py`). `assets/icons/` + `icons.json` (sprite name -> file) hold the committed subset used by entity `icon` fields (`tools/export_icons.py`). |
+| `sprites.json` | Sprite index `{name: [{atlas, file, width, height}]}` for the sliced atlases. Entity `icon` values are sprite names. The full set lives in `assets/sprites/` (git-ignored; regenerate with `tools/slice_atlases.py`). `docs/assets/icons/` + `icons.json` (sprite name -> file) hold the committed subset used by entity and trophy `icon` fields (`tools/export_icons.py`). |
 | `runtime_icons.json` | `{class: sprite name}` for icons the game assigns at runtime (read off registered instances by `tools/runtime_icons.py`); `build_data.py` merges them into `icon` with `icon_runtime: true`. |
+| `trophies.json` | Every entry in the game's trophy registry (1,220): `name`, `requirement` (rendered game text), `icon`, `type`, `alignment`, `group`, `listed`. `listed: true` are the 903 regular trophies; the rest are grouped `special` (56), `seasonal` (102), `excavation` (106), `event-quest` (53) by the game's own flags. Group names are inferred from their contents. Written by `tools/export_trophies.py`; page built by `tools/build_trophies_page.py`. |
 | `formula_values.json` | Results of every zero-argument static formula and every rendered description, at fresh-game state. Keys are `class` values from the entity files. |
 
 ## Record fields

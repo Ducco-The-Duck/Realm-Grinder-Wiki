@@ -272,7 +272,7 @@
   "num_id": 15,
   "tag": "ClickingBase",
   "category": 1,
-  "icon": "MouseClickUpgrade6",
+  "icon": "\"MouseClickUpgrade\" + §\"!U§.toString()",
   "cost": "param5",
   "texts": [
    {
@@ -300,7 +300,6 @@
    "§[!W§": "param4",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -310,7 +309,7 @@
   "tag": "ClickingProduction25",
   "tag2": "ClickingProduction",
   "category": 1,
-  "icon": "MouseCoinUpgrade5",
+  "icon": "\"MouseCoinUpgrade\" + §\"!U§.toString()",
   "cost": "param3",
   "texts": [
    {
@@ -328,7 +327,6 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -338,7 +336,7 @@
   "tag": "ClickingTotalProduction2",
   "tag2": "ClickingTotalProduction",
   "category": 1,
-  "icon": "TreasureCoinUpgrade5",
+  "icon": "\"TreasureCoinUpgrade\" + §\"!U§.toString()",
   "cost": "param3",
   "texts": [
    {
@@ -354,7 +352,6 @@
    "§\"!U§": "int(§+!!§())",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -457,7 +454,7 @@
   "kind": "upgrade",
   "num_id": 23,
   "tag": "\"HallOfLegendsPrestige\" + param5.toString()",
-  "icon": "HallOfLegendsPrestigeUpgrade3",
+  "icon": "\"HallOfLegendsPrestigeUpgrade\" + param1.toString()",
   "tag2": "HallOfLegendsPrestige",
   "category": 3,
   "cost": "param6",
@@ -496,7 +493,6 @@
    "§^!]§": "param3",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -504,7 +500,7 @@
   "kind": "upgrade",
   "num_id": 24,
   "tag": "\"HallOfLegendsProduction\" + param4.toString()",
-  "icon": "HallOfLegendsUpgrade23",
+  "icon": "\"HallOfLegendsUpgrade\" + param1.toString()",
   "tag2": "HallOfLegendsProduction",
   "category": 3,
   "cost": "param6",
@@ -543,7 +539,6 @@
    "§#!m§": "§>=§",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -593,7 +588,7 @@
   "num_id": 28,
   "tag": "ManaProduction20",
   "tag2": "ManaProduction",
-  "icon": "ManaUpgrade16",
+  "icon": "\"ManaUpgrade\" + §\"!U§.toString()",
   "cost": "param5",
   "category": 2,
   "texts": [
@@ -613,7 +608,6 @@
    "§>#§": "param4",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -664,7 +658,7 @@
   "tag": "NeutralProduction100",
   "tag2": "NeutralProduction",
   "category": 3,
-  "icon": "NeutralProductionUpgrade4",
+  "icon": "\"NeutralProductionUpgrade\" + §\"!U§.toString()",
   "alignment": 0,
   "cost": "param3",
   "alignment_name": "None",
@@ -683,7 +677,6 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -5839,7 +5832,7 @@
   "tag": "EvilProduction100",
   "tag2": "EvilProduction",
   "category": 3,
-  "icon": "EvilProductionUpgrade4",
+  "icon": "\"EvilProductionUpgrade\" + §\"!U§.toString()",
   "alignment": 2,
   "cost": "param3",
   "alignment_name": "Evil",
@@ -5859,7 +5852,6 @@
    "§#!m§": "param3",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -7466,7 +7458,7 @@
   "tag": "GoodProduction100",
   "tag2": "GoodProduction",
   "category": 3,
-  "icon": "GoodProductionUpgrade4",
+  "icon": "\"GoodProductionUpgrade\" + §\"!U§.toString()",
   "alignment": 1,
   "cost": "param3",
   "alignment_name": "Good",
@@ -7486,7 +7478,6 @@
    "§#!m§": "param3",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11467,7 +11458,7 @@
   "num_id": 473,
   "tag": "RubyUpgrade",
   "tag2": "RubyUpgrade",
-  "icon": "RubyUpgrade50",
+  "icon": "\"RubyUpgrade\" + §\"!U§.toString()",
   "category": 1,
   "cost": "param4",
   "texts": [
@@ -11486,7 +11477,6 @@
    "§=A§": 100,
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11596,7 +11586,7 @@
   "tag": "GemUpgrade",
   "tag2": "GemUpgrade",
   "category": 1,
-  "icon": "GemUpgrade3",
+  "icon": "\"GemUpgrade\" + §\"!U§.toString()",
   "cost": "param4",
   "texts": [
    {
@@ -11617,7 +11607,6 @@
    "§=A§": 2,
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11627,7 +11616,7 @@
   "tag": "OfflineUpgrade",
   "tag2": "OfflineUpgrade",
   "category": 1,
-  "icon": "OfflineUpgrade3",
+  "icon": "\"OfflineUpgrade\" + §\"!U§.toString()",
   "cost": "param4",
   "texts": [
    {
@@ -11644,7 +11633,6 @@
    "§>#§": "param3",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11762,7 +11750,7 @@
   "num_id": 481,
   "tag": "AssistantUpgrade",
   "tag2": "AssistantUpgrade",
-  "icon": "AssistantUpgrade3",
+  "icon": "\"AssistantUpgrade\" + §\"!U§.toString()",
   "cost": "param3",
   "category": 1,
   "texts": [
@@ -11792,7 +11780,6 @@
    "§^!]§": "param2",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -11802,7 +11789,7 @@
   "tag": "TrophyUpgrade",
   "tag2": "TrophyUpgrade",
   "category": 3,
-  "icon": "TrophyUpgrade3",
+  "icon": "\"TrophyUpgrade\" + §\"!U§.toString()",
   "cost": "param4",
   "texts": [
    {
@@ -11823,7 +11810,6 @@
    "§>#§": "param3",
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -13927,7 +13913,7 @@
   "kind": "upgrade",
   "num_id": 563,
   "tag": "AFUpgrade",
-  "icon": "AprilFoolsUpgrade6",
+  "icon": "\"AprilFoolsUpgrade\" + §\"!U§.toString()",
   "cost": 1,
   "category": 1,
   "raw": {
@@ -13937,7 +13923,6 @@
    "§?T§": true,
    "§3e§": false
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -15043,7 +15028,7 @@
   "num_id": 581,
   "building_index": "param2",
   "name": "_loc6_.§1i§ + \" \" + (§`r§ + 1).toString()",
-  "icon": "Infinite SpiralTier5",
+  "icon": "_loc6_.§ r§ + \"Tier\" + (§`r§ + 1).toString()",
   "tag": "_loc6_.§ r§ + \"MultipleCasting\"",
   "category": 2,
   "formulas": {
@@ -15384,8 +15369,7 @@
    "§\"!U§": "int(§+!!§())",
    "§+!9§": true,
    "§0!d§": true
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§3?§.§9-§",
@@ -33993,7 +33977,7 @@
   "kind": "upgrade",
   "building_index": "param1",
   "name": "_(\"Mercenary Upgrade %0\",§`r§.toString())",
-  "icon": "MercenaryUpgrade16",
+  "icon": "\"MercenaryUpgrade\" + §`r§.toString()",
   "tag": "MercenaryUpgrade",
   "alignment": 0,
   "faction": 11,
@@ -34054,8 +34038,7 @@
    "§3e§": false,
    "§<`§": "§`r§ <= 12",
    "§!!n§": "§`r§ > 12"
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§3?§.§\"!-§",
@@ -34063,7 +34046,7 @@
   "building_index": "param1",
   "alignment": "param2.§,!Y§",
   "tag": "§%<§.§ r§ + \"Production\"",
-  "icon": "AncientPyramidUpgrade23",
+  "icon": "§%<§.§ r§ + \"Upgrade\" + §`r§.toString()",
   "tag2": "§%<§.§ r§ + \"Production\"",
   "category": 3,
   "cost": "Math.round(§%<§.§>=§ * Math.pow(§%<§.§,'§,§&Z§[§`r§ - 1])) * 10 * §`r§",
@@ -34091,7 +34074,6 @@
    "§=A§": 1,
    "§+!9§": true
   },
-  "icon_runtime": true,
   "templated": true
  },
  {
@@ -34464,7 +34446,7 @@
   "class": "§;!J§.§1!7§",
   "kind": "upgrade",
   "name": "§-D§.§?+§[§!G§]",
-  "icon": "ResearchForbidden",
+  "icon": "\"Research\" + §-D§.§^-§[§!G§]",
   "texts": [
    {
     "method": "§@\"§",
@@ -34533,8 +34515,7 @@
    "§!G§": "param1",
    "§>E§": "\"ResearchUpgrade\" + §-D§.§^-§[§!G§]",
    "§3e§": false
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§]7§.§ O§",
@@ -34635,7 +34616,7 @@
   "kind": "upgrade",
   "name": "Timewarp",
   "tag": "ShopTimewarp",
-  "icon": "TimewarpIcon3",
+  "icon": "param4",
   "texts": [
    {
     "method": "§@\"§",
@@ -34707,8 +34688,7 @@
    "§3e§": false,
    "§1>§": "param3",
    "§4w§": "_n(\"%0 Hour\",\"%0 Hours\",param2,param2.toString())"
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§]7§.§\"b§",
@@ -34841,7 +34821,7 @@
   "kind": "upgrade",
   "name": "param3.toString() + \" \" + param8",
   "tag": "SeasonalResource",
-  "icon": "IdilliumPack",
+  "icon": "param9",
   "texts": [
    {
     "method": "§@\"§",
@@ -35027,8 +35007,7 @@
    "§?Y§": "param5",
    "§@Z§": "param6",
    "§'!H§": "param7"
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§]7§.§+>§",
@@ -35259,7 +35238,7 @@
   "kind": "upgrade",
   "name": "Buy Rubies",
   "tag": "ShopRuby",
-  "icon": "GainRubyTrophy9",
+  "icon": "param5",
   "texts": [
    {
     "method": "§@\"§",
@@ -35285,8 +35264,7 @@
    "§3!R§": true,
    "§^c§": "param4",
    "§3e§": false
-  },
-  "icon_runtime": true
+  }
  },
  {
   "class": "§]7§.§9\"P§",

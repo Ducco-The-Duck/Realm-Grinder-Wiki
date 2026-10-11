@@ -3184,6 +3184,14 @@
 "_x_19": "Increase Royal Exchange bonus by 1000% and a multiplicative 10%."
 }
 },
+"§ !M§.§^!h§": {
+"formulas": {
+"_b": "NaN"
+},
+"rendered": {
+"_x_19": "Increase the production of all buildings based on the total amount of Lineage levels you have. (INF%)"
+}
+},
 "§5!8§.§;!k§": {
 "formulas": {
 "_x_29": 0,
@@ -3303,6 +3311,14 @@
 "_x_19": "Bwahahahaha! We are going to destroy this world! Everything will burn in the flames of hell! We want a Call to Arms longer than ever, everyone needs to suffer and despair!\n\nRequirements:\n1h Call to Arms Duration"
 }
 },
+"§7!<§.§]!m§": {
+"formulas": {
+"_s_2": "NaN"
+},
+"rendered": {
+"_x_19": "Upgrade Ancient Pyramids to Ziggurats, boosting their production based on lineage levels and unlocking more unique perks for the building. (INF%)"
+}
+},
 "§7!<§.§%!p§": {
 "rendered": {
 "_x_19": "Hello, friend. We are close to restore the world balance... build us more Stonehenges, and we'll upgrade other buildings to be great places of power.\n\nRequirements:\n10000 Stone Pillars"
@@ -3420,6 +3436,9 @@
 }
 },
 "§10§.§2!o§": {
+"formulas": {
+"_s_2": "NaN"
+},
 "rendered": {
 "_x_19": ""
 }
@@ -5275,6 +5294,7 @@
 },
 "§[k§.§>\"7§": {
 "formulas": {
+"_8_52": 0,
 "_8_8_2": 0
 },
 "rendered": {
@@ -8283,6 +8303,11 @@
 "_x_19": "Increase the production of all buildings based on time spent playing as other factions. (INF%)"
 }
 },
+"§;!J§.§<!T§": {
+"rendered": {
+"_x_19": "You get your faction's Bloodline effect for free. Bloodstream counts time spent with your current faction(s)."
+}
+},
 "§;!J§.§7@§": {
 "formulas": {
 "_x_28": "NaN"
@@ -9082,11 +9107,13 @@
 },
 "§;!J§.§%!j§": {
 "formulas": {
+"_J": "NaN",
 "_Y_2": 300
 },
 "rendered": {
 "_8_s": "Get attracted to Faction Coins.",
-"_8_4": "Progress: INF/1 No Faction Coins\nResearch 1: ???\nResearch 2: ???"
+"_8_4": "Progress: INF/1 No Faction Coins\nResearch 1: ???\nResearch 2: ???",
+"_x_19": "Increase Faction Coin find chance based on the total amount of Lineage levels you have. (+INF%)\n\nAlso increase Faction Coin find chance by a multiplicative 300%."
 }
 },
 "§;!J§.§4!h§": {
@@ -9230,8 +9257,12 @@
 }
 },
 "§;!J§.§6\"5§": {
+"formulas": {
+"_x_29": "NaN"
+},
 "rendered": {
-"_8_4": "Progress: 0/70 Active spells"
+"_8_4": "Progress: 0/70 Active spells",
+"_x_19": "Multiplicatively increase Maximum Mana based on the lowest Lineage level. (INF%)"
 }
 },
 "§;!J§.§^\"2§": {
@@ -9826,7 +9857,8 @@
 },
 "§;!J§.§8\"G§": {
 "rendered": {
-"_8_4": "Progress: INF/1000 Total Lineage levels"
+"_8_4": "Progress: INF/1000 Total Lineage levels",
+"_x_19": "Gain all Lineage base effects that match your alignments, up to a maximum of level 25."
 }
 },
 "§;!J§.§&\"G§": {
