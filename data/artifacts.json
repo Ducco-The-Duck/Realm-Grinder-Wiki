@@ -320,7 +320,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(§8G§.§#N§(§'K§.id).§2-§,1.5) / 100000",
-"latex": "p = \\frac{\\left(S\\right)^{1.5}}{100\\,000}",
+"latex": "p = \\frac{\\left(S\\right)^{1.5}}{10^{5}}",
 "vars": [
 {
 "symbol": "S",
@@ -365,7 +365,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§5!V§[4] / 3000000",
-"latex": "p = \\frac{C}{3\\,000\\,000}",
+"latex": "p = \\frac{C}{3 \\times 10^{6}}",
 "vars": [
 {
 "symbol": "C",
@@ -450,7 +450,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§#N§(§2<§.id).§2-§ / 300000",
-"latex": "p = \\frac{S}{300\\,000}",
+"latex": "p = \\frac{S}{3 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "S",
@@ -584,7 +584,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§5!V§[1] / 180000",
-"latex": "p = \\frac{E}{180\\,000}",
+"latex": "p = \\frac{E}{1.8 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "E",
@@ -630,7 +630,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§#N§(§!C§.id).§2-§ / 30000",
-"latex": "p = \\frac{S}{30\\,000}",
+"latex": "p = \\frac{S}{3 \\times 10^{4}}",
 "vars": [
 {
 "symbol": "S",
@@ -701,7 +701,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§5!V§[4] / 25000",
-"latex": "p = \\frac{C}{25\\,000}",
+"latex": "p = \\frac{C}{2.5 \\times 10^{4}}",
 "vars": [
 {
 "symbol": "C",
@@ -842,7 +842,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§#N§(§5!3§.id).§2-§ / 200000",
-"latex": "p = \\frac{S}{200\\,000}",
+"latex": "p = \\frac{S}{2 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "S",
@@ -1097,7 +1097,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§5!V§[1] / 1000000",
-"latex": "p = \\frac{E}{1\\,000\\,000}",
+"latex": "p = \\frac{E}{10^{6}}",
 "vars": [
 {
 "symbol": "E",
@@ -1376,7 +1376,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§!-§() / 10000000000000",
-"latex": "p = \\frac{A}{10\\,000\\,000\\,000\\,000}",
+"latex": "p = \\frac{A}{10^{13}}",
 "vars": [
 {
 "symbol": "A",
@@ -1449,11 +1449,11 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(Math.log(§#!!§.§57§() * 30),3) / 234567",
-"latex": "p = \\frac{\\ln^{3}\\left(M \\cdot 30\\right)}{234\\,567}",
+"latex": "p = \\frac{\\left(\\ln\\left(M\\right)\\right)^{3}}{234\\,567}",
 "vars": [
 {
 "symbol": "M",
-"text": "Your mana regeneration (per second)"
+"text": "Your mana regeneration per second (the m/s shown in game)"
 }
 ]
 },
@@ -1496,7 +1496,7 @@
 "chance": {
 "mode": "variable",
 "expr": "2 * Math.pow(0.5 * Math.log(1 + §&c§.§@![§(true,false,true)),2) / 120000",
-"latex": "p = \\frac{2 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + F\\right)\\right)^{2}}{120\\,000}",
+"latex": "p = \\frac{2 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + F\\right)\\right)^{2}}{1.2 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "F",
@@ -1523,11 +1523,11 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(Math.log(1 + §#!!§.§57§() * 30),3) / 1000000",
-"latex": "p = \\frac{\\ln^{3}\\left(1 + M \\cdot 30\\right)}{1\\,000\\,000}",
+"latex": "p = \\frac{\\left(\\ln\\left(1 + M\\right)\\right)^{3}}{10^{6}}",
 "vars": [
 {
 "symbol": "M",
-"text": "Your mana regeneration (per second)"
+"text": "Your mana regeneration per second (the m/s shown in game)"
 }
 ]
 },
@@ -1552,7 +1552,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§@!?§() / 50000000",
-"latex": "p = \\frac{X}{50\\,000\\,000}",
+"latex": "p = \\frac{X}{5 \\times 10^{7}}",
 "vars": [
 {
 "symbol": "X",
@@ -1581,7 +1581,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(Math.log(1 + §#!!§.§,d§()),3) / 500000",
-"latex": "p = \\frac{\\ln^{3}\\left(1 + O\\right)}{500\\,000}",
+"latex": "p = \\frac{\\left(\\ln\\left(1 + O\\right)\\right)^{3}}{5 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "O",
@@ -1610,7 +1610,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§!-§() / 1000000000000",
-"latex": "p = \\frac{A}{1\\,000\\,000\\,000\\,000}",
+"latex": "p = \\frac{A}{10^{12}}",
 "vars": [
 {
 "symbol": "A",
@@ -1639,7 +1639,7 @@
 "chance": {
 "mode": "variable",
 "expr": "4 * Math.pow(Math.log(1 + §&c§.§@![§(true,false,true)),3) / 50000000",
-"latex": "p = \\frac{4 \\cdot \\ln^{3}\\left(1 + F\\right)}{50\\,000\\,000}",
+"latex": "p = \\frac{4 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{3}}{5 \\times 10^{7}}",
 "vars": [
 {
 "symbol": "F",
@@ -1668,7 +1668,7 @@
 "chance": {
 "mode": "variable",
 "expr": "66 * §&c§.§]!s§(2,false,false,true) / 66000000",
-"latex": "p = \\frac{66 \\cdot T}{66\\,000\\,000}",
+"latex": "p = \\frac{66 \\cdot T}{6.6 \\times 10^{7}}",
 "vars": [
 {
 "symbol": "T",
@@ -1697,7 +1697,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(Math.log(1 + §8G§.§5!V§[4]),3) / 20000",
-"latex": "p = \\frac{\\ln^{3}\\left(1 + C\\right)}{20\\,000}",
+"latex": "p = \\frac{\\left(\\ln\\left(1 + C\\right)\\right)^{3}}{2 \\times 10^{4}}",
 "vars": [
 {
 "symbol": "C",
@@ -1726,7 +1726,7 @@
 "chance": {
 "mode": "variable",
 "expr": "2 * §&c§.§0#§(-1,true) / 10000000",
-"latex": "p = \\frac{2 \\cdot B}{10\\,000\\,000}",
+"latex": "p = \\frac{2 \\cdot B}{10^{7}}",
 "vars": [
 {
 "symbol": "B",
@@ -1755,7 +1755,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(Math.log(1 + §8G§.§#N§(§2<§.id).§2-§),3) / 125000",
-"latex": "p = \\frac{\\ln^{3}\\left(1 + S\\right)}{125\\,000}",
+"latex": "p = \\frac{\\left(\\ln\\left(1 + S\\right)\\right)^{3}}{1.25 \\times 10^{5}}",
 "vars": [
 {
 "symbol": "S",
@@ -1852,7 +1852,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(2 * §&c§.§1\",§(),2) / 1000000000",
-"latex": "p = \\frac{\\left(2 \\cdot P\\right)^{2}}{1\\,000\\,000\\,000}",
+"latex": "p = \\frac{\\left(2 \\cdot P\\right)^{2}}{10^{9}}",
 "vars": [
 {
 "symbol": "P",
@@ -1898,7 +1898,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(0.5 * Math.log(1 + §8G§.§5!V§[4]),3) / 10000",
-"latex": "p = \\frac{\\left(0.5 \\cdot \\ln\\left(1 + C\\right)\\right)^{3}}{10\\,000}",
+"latex": "p = \\frac{\\left(0.5 \\cdot \\ln\\left(1 + C\\right)\\right)^{3}}{10^{4}}",
 "vars": [
 {
 "symbol": "C",
@@ -1947,7 +1947,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§@!?§() / 100000000",
-"latex": "p = \\frac{X}{100\\,000\\,000}",
+"latex": "p = \\frac{X}{10^{8}}",
 "vars": [
 {
 "symbol": "X",
@@ -2290,7 +2290,7 @@
 "chance": {
 "mode": "variable",
 "expr": "§8G§.§5!V§[1] / 1000000",
-"latex": "p = \\frac{E}{1\\,000\\,000}",
+"latex": "p = \\frac{E}{10^{6}}",
 "vars": [
 {
 "symbol": "E",

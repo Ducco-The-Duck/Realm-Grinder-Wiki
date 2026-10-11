@@ -16,6 +16,13 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | `§#!!§.§!-§()` = "clicking reward" | **Number of assistants** (before multipliers) | User, from the 4.3.x patch notes; confirmed in code: Titan Sized Walls ("based on assistants owned") calls the wrapper `§&c§.§!-§()`, which calls it |
 | "Neutral Order path" | "Order alignment" (a second alignment axis: Order/Chaos/Balance) | Contradiction with "Evil alignment" on the same artifact |
 
+## Notation
+
+- `Math.pow(Math.log(x), n)` is `(ln x)^n` (the log is taken once and the result raised to n), **not** an
+  iterated log. Formulas are written `\left(\ln(...)\right)^{n}` and never `\ln^{n}`.
+- Large round constants are written as powers of ten (10^6, 5 × 10^7, ...).
+- Some formulas keep the game's literal factors (e.g. `66·T / 6.6×10^7`), even where they simplify.
+
 ## Stat arrays (`§8G§.§5!V§`, `§=y§`, `§@w§`)
 
 | Item | Meaning | Confidence | Evidence |
@@ -55,7 +62,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | `§#!!§.§,d§()` | Offline production bonus (multiplier or %?) | medium | units unclear |
 | `§#!!§.§@!?§()` | **Royal Exchange bonus** (% per exchange) | **high** | User-confirmed; research Offering (E300) text "based on Royal Exchange Bonus" calls it |
 | `§#!!§.§!-§()` | **Number of assistants** (counts purchased building production upgrades of tier ≤ 2; floor'd) | **high** | User + patch notes; Titan Sized Walls goes through its wrapper `§&c§.§!-§(multipliers, raw)` |
-| `§#!!§.§57§()` | Mana regeneration per second | medium | "m/s Mana Regeneration" strings |
+| `§#!!§.§57§()` | Mana regeneration **per tick**; the game always uses `§57§() * 30` for the per-second (m/s) value | **high** | Every call site multiplies by 30 (e.g. `* 30 >= 300`); user's patch notes give ln(1+x)^3/1e6 with x = mana regen, which equals First Iron Fragment's `ln(1 + §57§()*30)^3/1e6` |
 | `§&c§.§0#§(-1,true)` | Total buildings owned | medium | text: "Total Buildings" |
 | `§&c§.§@![§(true,false,true)` | Faction Coins found this Era | medium | text: "Faction Coins" |
 | `§&c§.§]!s§(2,false,false,true)` | Total casts of Evil spells this Reincarnation, before bonus multipliers | medium | parameter meanings read from code, not UI |

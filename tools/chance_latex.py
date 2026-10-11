@@ -22,7 +22,7 @@ VARS = [
     (r'§&c§\.§0#§\(-1,true\)', ('B', 'Total buildings you own')),
     (r'§&c§\.§@!\[§\(true,false,true\)', ('F', 'Faction Coins found in this Era')),
     (r'§#!!§\.§!-§\(\)', ('A', 'Your number of assistants (before multipliers)')),
-    (r'§#!!§\.§57§\(\)', ('M', 'Your mana regeneration (per second)')),
+    (r'§#!!§\.§57§\(\) \* 30', ('M', 'Your mana regeneration per second (the m/s shown in game)')),
 ]
 SPELL_TIME = re.compile(r'§8G§\.§#N§\((' + S + r')\.id\)\.§2-§')
 
@@ -58,8 +58,18 @@ def convert(expr, spell_name_of):
 
 
 def num(n):
+    """Large round numbers as powers of ten (1,000,000 -> 10^{6}; 125,000 -> 1.25 x 10^{5})."""
     if isinstance(n, float) and n.is_integer(): n = int(n)
-    if isinstance(n, int) and abs(n) >= 10000:
+    if isinstance(n, int) and n >= 10000:
+        k, m = 0, n
+        while m % 10 == 0:
+            m //= 10; k += 1
+        if k >= 3:
+            digits = len(str(m))
+            exp = k + digits - 1
+            mant = m if digits == 1 else float(f'{m / 10 ** (digits - 1):.10g}')
+            mant = str(int(mant)) if float(mant).is_integer() else str(mant)
+            return f'10^{{{exp}}}' if mant == '1' else f'{mant} \\times 10^{{{exp}}}'
         return f'{n:,}'.replace(',', r'\,')
     return str(n)
 
@@ -80,8 +90,6 @@ def to_tex(n, parent=None):
             return f'\\left({t}\\right)' if parent in ('*', 'pow', '-') else t
     if isinstance(n, ast.Call) and isinstance(n.func, ast.Name):
         f = n.func.id; a = n.args
-        if f == 'pow' and len(a) == 2 and isinstance(a[0], ast.Call) and getattr(a[0].func, 'id', '') == 'log':
-            return '\\ln^{' + to_tex(a[1]) + '}\\left(' + to_tex(a[0].args[0]) + '\\right)'
         if f == 'pow' and len(a) == 2:
             return '\\left(' + to_tex(a[0]) + '\\right)^{' + to_tex(a[1]) + '}'
         if f == 'log' and len(a) == 1:
