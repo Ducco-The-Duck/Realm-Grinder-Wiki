@@ -28,8 +28,10 @@ def icon_file(a):
 
 
 def item(a):
+    ch = a.get('chance', {})
     return {'n': a['name'], 'f': a['flavor'], 'h': a['hint'], 'q': a['requirements'],
-            'x': a['undecoded_conditions'], 'i': icon_file(a)}
+            'x': a['undecoded_conditions'], 'i': icon_file(a),
+            'c': ch.get('mode'), 'p': ch.get('percent')}
 
 
 sections = []
@@ -70,7 +72,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip b{display:block;font-size:1rem}
 #tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
 #tip ul{margin:2px 0 0;padding-left:18px}
-#tip .hint,#tip .more{color:var(--muted)}
+#tip .hint,#tip .more,#tip .chance{color:var(--muted)}
 #tip .flavor{font-style:italic;color:var(--muted)}
 </style>
 </head>
@@ -96,6 +98,14 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
       tip.appendChild(el('span','lbl','Unlock requirement'));
       if(it.q.length){ var ul=el('ul'); it.q.forEach(function(q){ ul.appendChild(el('li',null,q)); }); tip.appendChild(ul); }
       if(it.x) tip.appendChild(el('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
+    }
+    if(it.c){
+      tip.appendChild(el('span','lbl','How it is found'));
+      var pct = (it.p!=null) ? String(it.p) : '';
+      var msg = it.c==='guaranteed' ? 'Once the requirements are met, it is found on your next excavation.'
+              : it.c==='fixed' ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has a '+pct+'% chance to find it.'
+              : 'Meeting the requirements does not unlock it by itself. From then on, each excavation has a chance to find it, and that chance depends on your stats.';
+      tip.appendChild(el('div','chance',msg));
     }
     if(it.f){ tip.appendChild(el('span','lbl','Flavor text')); tip.appendChild(el('div','flavor',it.f)); }
     tip.style.display='block';

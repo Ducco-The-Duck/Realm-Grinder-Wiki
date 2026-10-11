@@ -135,6 +135,25 @@ def _one(s, c, art, reqs, undec, ref_name):
     undec.append(s)
 
 
+def find_chance(c):
+    """How the artifact is rolled once its requirements are met (game: per excavation, percent)."""
+    if c is None: return {'mode': 'unknown'}
+    # nearest override of the chance getter along the class chain
+    k = c
+    while k is not None:
+        m = next((m for m in k.methods if m.name == '§5",§' and m.kind == 'get'), None)
+        if m:
+            body = re.sub(r'\s+', ' ', m.body.strip())
+            mm = re.fullmatch(r'return (-?\d+(?:\.\d+)?);', body)
+            if mm:
+                v = float(mm.group(1))
+                return {'mode': 'guaranteed' if v >= 100 else 'fixed', 'percent': v}
+            return {'mode': 'variable'}
+        k = cl.get(k.parent)
+        if k is not None and k.name == '§-+§': break
+    return {'mode': 'guaranteed', 'percent': 100.0}  # base class default
+
+
 out = []
 for a in res['arts']:
     c = cl.get(a['q'])
@@ -143,7 +162,7 @@ for a in res['arts']:
     out.append({
         'order': a['order'], 'kind': 'lore' if a['lore'] else 'quest', 'name': a['name'], 'flavor': a['flavor'].strip(),
         'icon': a['icon'] if a['icon'] in sprites else None, 'icon_name': a['icon'],
-        'hint': hint, 'requirements': reqs, 'undecoded_conditions': len(undec),
+        'hint': hint, 'chance': find_chance(c), 'requirements': reqs, 'undecoded_conditions': len(undec),
         'undecoded': undec,
     })
 json.dump(out, open(os.path.join(ROOT, 'data', 'artifacts.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)

@@ -7,6 +7,10 @@
 "icon": "AncientStoneSlab1Artifact",
 "icon_name": "AncientStoneSlab1Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 5 excavations"
 ],
@@ -21,6 +25,10 @@
 "icon": "FossilizedPieceOfBark1Artifact",
 "icon_name": "FossilizedPieceOfBark1Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 10 excavations"
 ],
@@ -35,6 +43,10 @@
 "icon": "BoneFragment1Artifact",
 "icon_name": "BoneFragment1Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 15 excavations"
 ],
@@ -49,6 +61,10 @@
 "icon": "AncientStoneSlab2Artifact",
 "icon_name": "AncientStoneSlab2Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 20 excavations"
 ],
@@ -63,6 +79,10 @@
 "icon": "FossilizedPieceOfBark2Artifact",
 "icon_name": "FossilizedPieceOfBark2Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 25 excavations"
 ],
@@ -77,6 +97,10 @@
 "icon": "BoneFragment2Artifact",
 "icon_name": "BoneFragment2Artifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 30 excavations"
 ],
@@ -91,6 +115,10 @@
 "icon": "KeyToTheLostCityArtifact",
 "icon_name": "KeyToTheLostCityArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Make 1,500 excavations",
 "Reincarnation 24 or higher"
@@ -106,6 +134,10 @@
 "icon": "AncientDeviceArtifact",
 "icon_name": "AncientDeviceArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "fixed",
+"percent": 0.2
+},
 "requirements": [
 "Requires one of: upgrade \"Olympian Hall\", upgrade \"Stonehenge\", upgrade \"Sunken City\"",
 "Make 2,000 excavations"
@@ -121,6 +153,10 @@
 "icon": "EarthCoreArtifact",
 "icon_name": "EarthCoreArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Reincarnation 32 or higher",
 "Make 2,750 excavations"
@@ -136,6 +172,10 @@
 "icon": "HornOfTheKingsArtifact",
 "icon_name": "HornOfTheKingsArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "fixed",
+"percent": 0.5
+},
 "requirements": [
 "Make 3,250 excavations",
 "Dwarf bloodline",
@@ -152,6 +192,10 @@
 "icon": "FlameOfBondelnarArtifact",
 "icon_name": "FlameOfBondelnarArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "fixed",
+"percent": 0.5
+},
 "requirements": [
 "Make 3,000 excavations",
 "Drow bloodline",
@@ -168,6 +212,9 @@
 "icon": "RoughStoneArtifact",
 "icon_name": "RoughStoneArtifact",
 "hint": "A first-time only discovery.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -182,6 +229,9 @@
 "icon": "ScarabOfFortuneArtifact",
 "icon_name": "ScarabOfFortuneArtifact",
 "hint": "Rarely found in the pyramids of old.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Neutral alignment"
 ],
@@ -196,6 +246,9 @@
 "icon": "ChocolateCookieArtifact",
 "icon_name": "ChocolateCookieArtifact",
 "hint": "Excavated commonly in all areas.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -208,6 +261,9 @@
 "icon": "FossilizedRodentArtifact",
 "icon_name": "FossilizedRodentArtifact",
 "hint": "Hello, mouse.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -220,6 +276,9 @@
 "icon": "PowerOrbArtifact",
 "icon_name": "PowerOrbArtifact",
 "hint": "Attracted by massive concentration of mana.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -234,6 +293,9 @@
 "icon": "PinkCarrotArtifact",
 "icon_name": "PinkCarrotArtifact",
 "hint": "Found randomly in the Farms.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Fairy",
 "No bloodline selected"
@@ -249,6 +311,9 @@
 "icon": "BottledVoiceArtifact",
 "icon_name": "BottledVoiceArtifact",
 "hint": "Can be captured when Chanting.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Fairy",
 "No bloodline selected"
@@ -264,6 +329,9 @@
 "icon": "LuckyCloverArtifact",
 "icon_name": "LuckyCloverArtifact",
 "hint": "Requires extreme amounts of luck!",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Elf",
 "No bloodline selected"
@@ -279,6 +347,9 @@
 "icon": "MiniTreasureArtifact",
 "icon_name": "MiniTreasureArtifact",
 "hint": "Click your way to the treasure!",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Elf",
 "No bloodline selected"
@@ -294,6 +365,9 @@
 "icon": "PillarFragmentArtifact",
 "icon_name": "PillarFragmentArtifact",
 "hint": "May fall from the Heavens.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Angel",
 "No bloodline selected"
@@ -309,6 +383,9 @@
 "icon": "DivineSwordArtifact",
 "icon_name": "DivineSwordArtifact",
 "hint": "Only found by dedicated Angel allies.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Angel",
 "No bloodline selected"
@@ -326,6 +403,9 @@
 "icon": "AncientCoinPieceArtifact",
 "icon_name": "AncientCoinPieceArtifact",
 "hint": "Rarely found among other special coins.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Goblin",
 "No bloodline selected"
@@ -341,6 +421,9 @@
 "icon": "GoblinPurseArtifact",
 "icon_name": "GoblinPurseArtifact",
 "hint": "Fill your pockets with extorted money.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Goblin",
 "No bloodline selected"
@@ -356,6 +439,9 @@
 "icon": "RottenOrganArtifact",
 "icon_name": "RottenOrganArtifact",
 "hint": "Found among large masses of dead bodies.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Undead",
 "No bloodline selected"
@@ -371,6 +457,9 @@
 "icon": "JawBoneArtifact",
 "icon_name": "JawBoneArtifact",
 "hint": "Needs some time in the night.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Undead",
 "No bloodline selected"
@@ -388,6 +477,10 @@
 "icon": "DemonicFigurineArtifact",
 "icon_name": "DemonicFigurineArtifact",
 "hint": "Look for the trophies of the beast.",
+"chance": {
+"mode": "fixed",
+"percent": 1.0
+},
 "requirements": [
 "Playing as Demon",
 "No bloodline selected"
@@ -405,6 +498,9 @@
 "icon": "DemonHornArtifact",
 "icon_name": "DemonHornArtifact",
 "hint": "Only found by dedicated Demon allies.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Demon",
 "No bloodline selected"
@@ -422,6 +518,9 @@
 "icon": "HugeTitanStatueArtifact",
 "icon_name": "HugeTitanStatueArtifact",
 "hint": "Struck by the lightning.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Titan",
 "No bloodline selected"
@@ -437,6 +536,9 @@
 "icon": "TitanShieldArtifact",
 "icon_name": "TitanShieldArtifact",
 "hint": "Don't fret it.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Titan",
 "No bloodline selected"
@@ -454,6 +556,10 @@
 "icon": "GlyphTableArtifact",
 "icon_name": "GlyphTableArtifact",
 "hint": "Balance your buildings.",
+"chance": {
+"mode": "fixed",
+"percent": 2.0
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -468,6 +574,9 @@
 "icon": "StoneOfBalanceArtifact",
 "icon_name": "StoneOfBalanceArtifact",
 "hint": "A Grand Balance performance.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Druid",
 "No bloodline selected"
@@ -483,6 +592,9 @@
 "icon": "TranslucentGooArtifact",
 "icon_name": "TranslucentGooArtifact",
 "hint": "Byproduct of the Brain.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Faceless",
 "No bloodline selected"
@@ -498,6 +610,9 @@
 "icon": "OctopusShapedHelmetArtifact",
 "icon_name": "OctopusShapedHelmetArtifact",
 "hint": "Found in the Labyrinths.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Faceless",
 "No bloodline selected"
@@ -513,6 +628,9 @@
 "icon": "DwarvenBowArtifact",
 "icon_name": "DwarvenBowArtifact",
 "hint": "Click to throw.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dwarf bloodline"
 ],
@@ -527,6 +645,9 @@
 "icon": "StoneTankardArtifact",
 "icon_name": "StoneTankardArtifact",
 "hint": "Found in the Inns.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dwarf bloodline"
 ],
@@ -541,6 +662,10 @@
 "icon": "CeremonialDaggerArtifact",
 "icon_name": "CeremonialDaggerArtifact",
 "hint": "Avoid hurting your fingers.",
+"chance": {
+"mode": "fixed",
+"percent": 2.0
+},
 "requirements": [
 "Drow bloodline"
 ],
@@ -557,6 +682,9 @@
 "icon": "ArachnidFigurineArtifact",
 "icon_name": "ArachnidFigurineArtifact",
 "hint": "Embrace Evil. For a while.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Drow bloodline"
 ],
@@ -573,6 +701,9 @@
 "icon": "SteelPlateArtifact",
 "icon_name": "SteelPlateArtifact",
 "hint": "Legacy from 50 generations ago.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Mercenary",
 "Reincarnation 5 or higher"
@@ -588,6 +719,9 @@
 "icon": "BlackSwordArtifact",
 "icon_name": "BlackSwordArtifact",
 "hint": "Only found by really, really dedicated Mercenary allies.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Mercenary"
 ],
@@ -604,6 +738,9 @@
 "icon": "DragonFangArtifact",
 "icon_name": "DragonFangArtifact",
 "hint": "Found in the Wyrm Dens.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 50 or higher",
 "Dragon bloodline"
@@ -619,6 +756,9 @@
 "icon": "DragonSoulArtifact",
 "icon_name": "DragonSoulArtifact",
 "hint": "Take five deep breaths.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 50 or higher",
 "Dragon bloodline"
@@ -636,6 +776,10 @@
 "icon": "VanillaFlavorJuiceArtifact",
 "icon_name": "VanillaFlavorJuiceArtifact",
 "hint": "Quickly!",
+"chance": {
+"mode": "fixed",
+"percent": 20.0
+},
 "requirements": [
 "Reincarnation 16 or higher"
 ],
@@ -652,6 +796,10 @@
 "icon": "AncientCocoaBeanArtifact",
 "icon_name": "AncientCocoaBeanArtifact",
 "hint": "True Neutral Flavor.",
+"chance": {
+"mode": "fixed",
+"percent": 10.0
+},
 "requirements": [
 "Reincarnation 24 or higher",
 "Neutral alignment"
@@ -667,6 +815,10 @@
 "icon": "KnowYourEnemyPartIArtifact",
 "icon_name": "KnowYourEnemyPartIArtifact",
 "hint": "A true Mercenary should learn by all other cultures.",
+"chance": {
+"mode": "fixed",
+"percent": 10.0
+},
 "requirements": [
 "Reincarnation 12 or higher",
 "Playing as Mercenary"
@@ -684,6 +836,9 @@
 "icon": "VoodooDollArtifact",
 "icon_name": "VoodooDollArtifact",
 "hint": "Found in the Witch Conclaves.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Evil alignment",
 "Reincarnation 16 or higher"
@@ -699,6 +854,10 @@
 "icon": "WallFragmentArtifact",
 "icon_name": "WallFragmentArtifact",
 "hint": "Ascension...",
+"chance": {
+"mode": "fixed",
+"percent": 10.0
+},
 "requirements": [
 "Ascension 1 or higher"
 ],
@@ -713,6 +872,10 @@
 "icon": "SpikyRoughEggArtifact",
 "icon_name": "SpikyRoughEggArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "fixed",
+"percent": 2.0
+},
 "requirements": [
 "Make 1,500 excavations",
 "Reincarnation 42 or higher"
@@ -728,6 +891,10 @@
 "icon": "FortuneTellerMachineArtifact",
 "icon_name": "FortuneTellerMachineArtifact",
 "hint": "Don't choose your allies until you know more.",
+"chance": {
+"mode": "fixed",
+"percent": 0.1
+},
 "requirements": [
 "No bloodline selected"
 ],
@@ -744,6 +911,9 @@
 "icon": "DawnstoneArtifact",
 "icon_name": "DawnstoneArtifact",
 "hint": "Relic of the Dawn hours.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -758,6 +928,9 @@
 "icon": "DuskstoneArtifact",
 "icon_name": "DuskstoneArtifact",
 "hint": "Relic of the Dusk hours.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -772,6 +945,9 @@
 "icon": "AncientHeirloomArtifact",
 "icon_name": "AncientHeirloomArtifact",
 "hint": "Relic of the Lineage.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -786,6 +962,10 @@
 "icon": "ObsidianShardArtifact",
 "icon_name": "ObsidianShardArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "guaranteed",
+"percent": 100.0
+},
 "requirements": [
 "Reincarnation 75 or higher",
 "Make 1,500 excavations"
@@ -801,6 +981,10 @@
 "icon": "KnowYourEnemyPartIIArtifact",
 "icon_name": "KnowYourEnemyPartIIArtifact",
 "hint": "Even an expert Mercenary should learn by all other cultures.",
+"chance": {
+"mode": "fixed",
+"percent": 5.0
+},
 "requirements": [],
 "undecoded_conditions": 1,
 "undecoded": [
@@ -815,6 +999,9 @@
 "icon": "VeteranFigurineArtifact",
 "icon_name": "VeteranFigurineArtifact",
 "hint": "A reward for the veteran challenger.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 85 or higher"
 ],
@@ -831,6 +1018,10 @@
 "icon": "WallChunkArtifact",
 "icon_name": "WallChunkArtifact",
 "hint": "More Ascension...",
+"chance": {
+"mode": "fixed",
+"percent": 10.0
+},
 "requirements": [
 "Ascension 2 or higher"
 ],
@@ -845,6 +1036,9 @@
 "icon": "ExcavatedMirageArtifact",
 "icon_name": "ExcavatedMirageArtifact",
 "hint": "Raise your chances.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher"
 ],
@@ -859,6 +1053,9 @@
 "icon": "AncestralHourglassArtifact",
 "icon_name": "AncestralHourglassArtifact",
 "hint": "Really, raise your chances.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher"
 ],
@@ -873,6 +1070,9 @@
 "icon": "SilkClothArtifact",
 "icon_name": "SilkClothArtifact",
 "hint": "Found in the Swarming Towers.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Fairy",
 "Ascension 2 or higher",
@@ -891,6 +1091,9 @@
 "icon": "RawEmeraldArtifact",
 "icon_name": "RawEmeraldArtifact",
 "hint": "Not found on the first Excavation round.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Elf",
 "Ascension 2 or higher",
@@ -909,6 +1112,9 @@
 "icon": "FossilizedWingArtifact",
 "icon_name": "FossilizedWingArtifact",
 "hint": "Angels may fall after a long time.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Angel",
 "Ascension 2 or higher",
@@ -927,6 +1133,9 @@
 "icon": "SpikedWhipArtifact",
 "icon_name": "SpikedWhipArtifact",
 "hint": "Used by the overseers in the Slave Markets.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Goblin",
 "Ascension 2 or higher",
@@ -945,6 +1154,9 @@
 "icon": "DustyCoffinArtifact",
 "icon_name": "DustyCoffinArtifact",
 "hint": "The undead have patience.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Undead",
 "Ascension 2 or higher",
@@ -963,6 +1175,9 @@
 "icon": "CrystallizedLavaArtifact",
 "icon_name": "CrystallizedLavaArtifact",
 "hint": "Found in the Burning Abysses.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Demon",
 "Ascension 2 or higher",
@@ -981,6 +1196,9 @@
 "icon": "TitanHelmetArtifact",
 "icon_name": "TitanHelmetArtifact",
 "hint": "Found in the trade route used for Exchanges.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Titan",
 "Ascension 2 or higher",
@@ -999,6 +1217,9 @@
 "icon": "BranchOfTheLifeTreeArtifact",
 "icon_name": "BranchOfTheLifeTreeArtifact",
 "hint": "Found in the remains of druidic ancestors.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Druid",
 "Ascension 2 or higher",
@@ -1017,6 +1238,9 @@
 "icon": "NightmareFigmentArtifact",
 "icon_name": "NightmareFigmentArtifact",
 "hint": "A strong and quick brain is required.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Faceless",
 "Ascension 2 or higher",
@@ -1035,6 +1259,9 @@
 "icon": "BeardHairArtifact",
 "icon_name": "BeardHairArtifact",
 "hint": "It requires a lot of beard samples to get the perfect hair.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dwarf bloodline",
 "Ascension 2 or higher",
@@ -1053,6 +1280,9 @@
 "icon": "PoisonVialArtifact",
 "icon_name": "PoisonVialArtifact",
 "hint": "Combo your way through.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Drow bloodline",
 "Ascension 2 or higher",
@@ -1071,6 +1301,9 @@
 "icon": "DragonScaleArtifact",
 "icon_name": "DragonScaleArtifact",
 "hint": "Usually found when a lot of magic is lingering.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dragon bloodline",
 "Ascension 2 or higher",
@@ -1089,6 +1322,9 @@
 "icon": "LanternOfGuidanceArtifact",
 "icon_name": "LanternOfGuidanceArtifact",
 "hint": "Massive mana flows can offer guidance.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Order alignment",
 "Ascension 2 or higher",
@@ -1105,6 +1341,9 @@
 "icon": "OilLampArtifact",
 "icon_name": "OilLampArtifact",
 "hint": "Chaos magic burns brightly.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Chaos alignment",
 "Ascension 2 or higher",
@@ -1121,6 +1360,9 @@
 "icon": "SparkOfLifeArtifact",
 "icon_name": "SparkOfLifeArtifact",
 "hint": "The power of Creation may spark something new.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Balance alignment",
 "Ascension 2 or higher",
@@ -1137,6 +1379,9 @@
 "icon": "FirstIronFragmentArtifact",
 "icon_name": "FirstIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1155,6 +1400,9 @@
 "icon": "SecondIronFragmentArtifact",
 "icon_name": "SecondIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1173,6 +1421,9 @@
 "icon": "ThirdIronFragmentArtifact",
 "icon_name": "ThirdIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1191,6 +1442,9 @@
 "icon": "FirstCrystalFragmentArtifact",
 "icon_name": "FirstCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1209,6 +1463,9 @@
 "icon": "SecondCrystalFragmentArtifact",
 "icon_name": "SecondCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1227,6 +1484,9 @@
 "icon": "ThirdCrystalFragmentArtifact",
 "icon_name": "ThirdCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1245,6 +1505,9 @@
 "icon": "FirstStoneFragmentArtifact",
 "icon_name": "FirstStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1263,6 +1526,9 @@
 "icon": "SecondStoneFragmentArtifact",
 "icon_name": "SecondStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1281,6 +1547,9 @@
 "icon": "ThirdStoneFragmentArtifact",
 "icon_name": "ThirdStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
@@ -1299,6 +1568,9 @@
 "icon": "PlanetaryForceArtifact",
 "icon_name": "PlanetaryForceArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 100 or higher",
@@ -1316,6 +1588,9 @@
 "icon": "MercenaryInsigniaArtifact",
 "icon_name": "MercenaryInsigniaArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Mercenary",
 "Ascension 3 or higher",
@@ -1333,6 +1608,9 @@
 "icon": "ObsidianCrownArtifact",
 "icon_name": "ObsidianCrownArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Mercenary",
 "Reincarnation 170 or higher"
@@ -1348,6 +1626,9 @@
 "icon": "ForgottenRelicArtifact",
 "icon_name": "ForgottenRelicArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher"
 ],
@@ -1362,6 +1643,9 @@
 "icon": "FacilitySpellcraft2",
 "icon_name": "FacilitySpellcraft2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Chaos alignment"
@@ -1379,6 +1663,9 @@
 "icon": "FacilityCraftsmanship2",
 "icon_name": "FacilityCraftsmanship2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Neutral alignment"
@@ -1396,6 +1683,9 @@
 "icon": "FacilityDivine2",
 "icon_name": "FacilityDivine2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Good alignment"
@@ -1413,6 +1703,9 @@
 "icon": "FacilityEconomics2",
 "icon_name": "FacilityEconomics2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Balance alignment"
@@ -1430,6 +1723,9 @@
 "icon": "FacilityAlchemy2",
 "icon_name": "FacilityAlchemy2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Order alignment"
@@ -1447,6 +1743,9 @@
 "icon": "FacilityWarfare2",
 "icon_name": "FacilityWarfare2",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Evil alignment"
@@ -1464,6 +1763,10 @@
 "icon": "FacilityForbidden",
 "icon_name": "FacilityForbidden",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "fixed",
+"percent": 0.1
+},
 "requirements": [
 "Reincarnation 180 or higher",
 "Playing as Mercenary"
@@ -1481,6 +1784,9 @@
 "icon": "GlowingWingArtifact",
 "icon_name": "GlowingWingArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Fairy",
 "Ascension 4 or higher",
@@ -1498,6 +1804,9 @@
 "icon": "SylvanMirrorArtifact",
 "icon_name": "SylvanMirrorArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Elf",
 "Ascension 4 or higher",
@@ -1515,6 +1824,9 @@
 "icon": "SolidCloudArtifact",
 "icon_name": "SolidCloudArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Angel",
 "Ascension 4 or higher",
@@ -1532,6 +1844,9 @@
 "icon": "OrcFangNecklaceArtifact",
 "icon_name": "OrcFangNecklaceArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Goblin",
 "Ascension 4 or higher",
@@ -1549,6 +1864,9 @@
 "icon": "BloodChaliceArtifact",
 "icon_name": "BloodChaliceArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Undead",
 "Ascension 4 or higher",
@@ -1566,6 +1884,9 @@
 "icon": "DemonTailArtifact",
 "icon_name": "DemonTailArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Demon",
 "Ascension 4 or higher",
@@ -1583,6 +1904,9 @@
 "icon": "FrozenLightningArtifact",
 "icon_name": "FrozenLightningArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Titan",
 "Ascension 4 or higher",
@@ -1600,6 +1924,9 @@
 "icon": "PrimalLeafArtifact",
 "icon_name": "PrimalLeafArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Druid",
 "Ascension 4 or higher",
@@ -1617,6 +1944,9 @@
 "icon": "TheBlackestInkArtifact",
 "icon_name": "TheBlackestInkArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Playing as Faceless",
 "Ascension 4 or higher",
@@ -1634,6 +1964,9 @@
 "icon": "DwarvenAnvilArtifact",
 "icon_name": "DwarvenAnvilArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dwarf bloodline",
 "Ascension 4 or higher",
@@ -1651,6 +1984,9 @@
 "icon": "StilettoHeelArtifact",
 "icon_name": "StilettoHeelArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Drow bloodline",
 "Ascension 4 or higher",
@@ -1668,6 +2004,9 @@
 "icon": "EyeOfTheDragonArtifact",
 "icon_name": "EyeOfTheDragonArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Dragon bloodline",
 "Ascension 4 or higher",
@@ -1685,6 +2024,9 @@
 "icon": "MaskOfScorchRahArtifact",
 "icon_name": "MaskOfScorchRahArtifact",
 "hint": "You don't know what this is yet.",
+"chance": {
+"mode": "variable"
+},
 "requirements": [
 "Ascension 4 or higher",
 "Reincarnation 255 or higher",
