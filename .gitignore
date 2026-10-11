@@ -6,3 +6,17 @@ __pycache__/
 *.log
 tools/pylib/
 assets/sprites/
+
+# Derived from game code/text; regenerate locally with the tools (see data/GLOSSARY.md)
+data/engine.js
+data/engine_names.json
+data/engine_report.json
+data/strings.json
+data/formula_values.json
+data/runtime_icons.json
+data/sprites.json
+data/upgrades.json
+data/researchs.json
+data/spells.json
+data/achievements.json
+data/buildings.json
