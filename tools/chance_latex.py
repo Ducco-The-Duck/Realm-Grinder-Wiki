@@ -12,16 +12,16 @@ S = r'§[^§]*§'
 VARS = [
     (r'\(§8G§\.§5!V§\[104\] \+ §8G§\.§=y§\[104\] \+ §8G§\.§5!V§\[135\] \+ §8G§\.§=y§\[135\]\)',
      ('R', 'Excavation Resets made in this Reincarnation (regular and free)')),
-    (r'§&c§\.§1",§\(\)', ('P', 'Research points you have spent')),
+    (r'§&c§\.§1",§\(\)', ('P', 'Research points you have spent on researches')),
     (r'§#!!§\.§,d§\(\)', ('O', 'Your Offline production bonus')),
     (r'§&c§\.§\]!s§\(2,false,false,true\)',
      ('T', 'Total number of casts of all Evil spells in this Reincarnation (before bonus multipliers)')),
     (r'§8G§\.§5!V§\[4\]', ('C', 'Clicks made in this Era')),
     (r'§8G§\.§5!V§\[1\]', ('E', 'Time played in this Era (seconds)')),
-    (r'§#!!§\.§@!\?§\(\)', ('X', 'Your Royal Exchange bonus')),
+    (r'§#!!§\.§@!\?§\(\)', ('X', 'Your Royal Exchange bonus (%)')),
     (r'§&c§\.§0#§\(-1,true\)', ('B', 'Total buildings you own')),
     (r'§&c§\.§@!\[§\(true,false,true\)', ('F', 'Faction Coins found in this Era')),
-    (r'§#!!§\.§!-§\(\)', ('K', 'Your clicking reward (coins per click)')),
+    (r'§#!!§\.§!-§\(\)', ('A', 'Your number of assistants (before multipliers)')),
     (r'§#!!§\.§57§\(\)', ('M', 'Your mana regeneration (per second)')),
 ]
 SPELL_TIME = re.compile(r'§8G§\.§#N§\((' + S + r')\.id\)\.§2-§')
@@ -53,7 +53,7 @@ def convert(expr, spell_name_of):
         tex = to_tex(tree)
     except ValueError:
         return None
-    order = [k for k in ['R', 'P', 'O', 'T', 'C', 'E', 'X', 'B', 'F', 'K', 'M', 'S'] if k in used]
+    order = [k for k in ['R', 'P', 'O', 'T', 'C', 'E', 'X', 'B', 'F', 'A', 'M', 'S'] if k in used]
     return {'latex': 'p = ' + tex, 'vars': [{'symbol': k, 'text': used[k]} for k in order]}
 
 

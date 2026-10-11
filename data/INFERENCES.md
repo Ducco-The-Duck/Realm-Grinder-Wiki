@@ -13,6 +13,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 |---|---|---|
 | "Bloodline" for the prestige-faction field | "Prestige faction" / "No prestige faction" | User (plays the game) |
 | Spell counter = "time active" | Number of **casts** | Game UI: "Cast This Era: %0, Total: %1" |
+| `§#!!§.§!-§()` = "clicking reward" | **Number of assistants** (before multipliers) | User, from the 4.3.x patch notes; confirmed in code: Titan Sized Walls ("based on assistants owned") calls the wrapper `§&c§.§!-§()`, which calls it |
 | "Neutral Order path" | "Order alignment" (a second alignment axis: Order/Chaos/Balance) | Contradiction with "Evil alignment" on the same artifact |
 
 ## Stat arrays (`§8G§.§5!V§`, `§=y§`, `§@w§`)
@@ -50,15 +51,18 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 
 | Helper | Described as | Confidence | Check in-game? |
 |---|---|---|---|
-| `§&c§.§1",§()` | **Research points spent** (sum of purchased researches' cost) | low–medium | yes: confirm "spent" vs "earned/total" |
+| `§&c§.§1",§()` | **Research points spent** (sum of purchased researches' cost) | **high** | User + patch notes; research Tinkering (C150) "based on Research points" calls it |
 | `§#!!§.§,d§()` | Offline production bonus (multiplier or %?) | medium | units unclear |
-| `§#!!§.§@!?§()` | **Royal Exchange bonus** (per exchange?) | low–medium | yes; text nearby says "Individual Bonus: %0%" |
-| `§#!!§.§!-§()` | **Clicking reward** (coins per click) | medium | upgrades "increase base clicking reward" feed it |
+| `§#!!§.§@!?§()` | **Royal Exchange bonus** (% per exchange) | **high** | User-confirmed; research Offering (E300) text "based on Royal Exchange Bonus" calls it |
+| `§#!!§.§!-§()` | **Number of assistants** (counts purchased building production upgrades of tier ≤ 2; floor'd) | **high** | User + patch notes; Titan Sized Walls goes through its wrapper `§&c§.§!-§(multipliers, raw)` |
 | `§#!!§.§57§()` | Mana regeneration per second | medium | "m/s Mana Regeneration" strings |
 | `§&c§.§0#§(-1,true)` | Total buildings owned | medium | text: "Total Buildings" |
 | `§&c§.§@![§(true,false,true)` | Faction Coins found this Era | medium | text: "Faction Coins" |
 | `§&c§.§]!s§(2,false,false,true)` | Total casts of Evil spells this Reincarnation, before bonus multipliers | medium | parameter meanings read from code, not UI |
 | `spell.§2-§` | Casts of that spell this Era | **high** | UI "Cast This Era: %0" |
+
+**Name collisions:** the obfuscator reuses member names in different classes, so `§#!!§.§!-§` and
+`§&c§.§!-§` are different functions (the second wraps the first). Always key helpers by class + name.
 
 ## Mechanics
 

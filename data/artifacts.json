@@ -1376,11 +1376,11 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§!-§() / 10000000000000",
-"latex": "p = \\frac{K}{10\\,000\\,000\\,000\\,000}",
+"latex": "p = \\frac{A}{10\\,000\\,000\\,000\\,000}",
 "vars": [
 {
-"symbol": "K",
-"text": "Your clicking reward (coins per click)"
+"symbol": "A",
+"text": "Your number of assistants (before multipliers)"
 }
 ]
 },
@@ -1556,7 +1556,7 @@
 "vars": [
 {
 "symbol": "X",
-"text": "Your Royal Exchange bonus"
+"text": "Your Royal Exchange bonus (%)"
 }
 ]
 },
@@ -1610,11 +1610,11 @@
 "chance": {
 "mode": "variable",
 "expr": "§#!!§.§!-§() / 1000000000000",
-"latex": "p = \\frac{K}{1\\,000\\,000\\,000\\,000}",
+"latex": "p = \\frac{A}{1\\,000\\,000\\,000\\,000}",
 "vars": [
 {
-"symbol": "K",
-"text": "Your clicking reward (coins per click)"
+"symbol": "A",
+"text": "Your number of assistants (before multipliers)"
 }
 ]
 },
@@ -1856,7 +1856,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Research points you have spent"
+"text": "Research points you have spent on researches"
 }
 ]
 },
@@ -1951,7 +1951,7 @@
 "vars": [
 {
 "symbol": "X",
-"text": "Your Royal Exchange bonus"
+"text": "Your Royal Exchange bonus (%)"
 }
 ]
 },
