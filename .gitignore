@@ -20,3 +20,5 @@ data/researchs.json
 data/spells.json
 data/achievements.json
 data/buildings.json
+
+tools/_*.py
