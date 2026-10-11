@@ -1,0 +1,1698 @@
+[
+{
+"order": 1061,
+"kind": "quest",
+"name": "Ancient Stoneslab 1",
+"flavor": "We discovered an ancient stoneslab written in old scriptures. It appears to say something about Halls of Legends.",
+"icon": "AncientStoneSlab1Artifact",
+"icon_name": "AncientStoneSlab1Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 5 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1062,
+"kind": "quest",
+"name": "Fossilized Piece of Bark 1",
+"flavor": "We discovered a fossilized piece of bark with the image of a Faction Coin carved into it.",
+"icon": "FossilizedPieceOfBark1Artifact",
+"icon_name": "FossilizedPieceOfBark1Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 10 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1063,
+"kind": "quest",
+"name": "Bone Fragment 1",
+"flavor": "We discovered a sundial shaped artifact, probably made of animal bones.",
+"icon": "BoneFragment1Artifact",
+"icon_name": "BoneFragment1Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 15 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1064,
+"kind": "quest",
+"name": "Ancient Stoneslab 2",
+"flavor": "We discovered an ancient stoneslab written in old scriptures. We can recognize the number 300.",
+"icon": "AncientStoneSlab2Artifact",
+"icon_name": "AncientStoneSlab2Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 20 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1065,
+"kind": "quest",
+"name": "Fossilized Piece of Bark 2",
+"flavor": "We discovered a fossilized piece of bark with the symbol of One Million.",
+"icon": "FossilizedPieceOfBark2Artifact",
+"icon_name": "FossilizedPieceOfBark2Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 25 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1066,
+"kind": "quest",
+"name": "Bone Fragment 2",
+"flavor": "We discovered an artifact shaped like the number 36, probably made of animal bones.",
+"icon": "BoneFragment2Artifact",
+"icon_name": "BoneFragment2Artifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 30 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1067,
+"kind": "quest",
+"name": "Key to the Lost City",
+"flavor": "Despite being thousands of years old, it's still shiny.",
+"icon": "KeyToTheLostCityArtifact",
+"icon_name": "KeyToTheLostCityArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 1,500 excavations",
+"Reincarnation 24 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1068,
+"kind": "quest",
+"name": "Ancient Device",
+"flavor": "This strange device seems to react to the Ancient Races magical capabilities... We may channel its power to increase their research potential!",
+"icon": "AncientDeviceArtifact",
+"icon_name": "AncientDeviceArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Requires one of: upgrade \"Olympian Hall\", upgrade \"Stonehenge\", upgrade \"Sunken City\"",
+"Make 2,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1069,
+"kind": "quest",
+"name": "Earth Core",
+"flavor": "This piece of molten rock is continuously shifting its shape, responding to mysterious energy sources.",
+"icon": "EarthCoreArtifact",
+"icon_name": "EarthCoreArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 32 or higher",
+"Make 2,750 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1070,
+"kind": "quest",
+"name": "Horn of the Kings",
+"flavor": "It is said that when this horn is blown, the voices of past Dwarven Kings can be heard in the wind.",
+"icon": "HornOfTheKingsArtifact",
+"icon_name": "HornOfTheKingsArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 3,250 excavations",
+"Dwarf bloodline",
+"Requires upgrade \"Dwarven Forge\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1071,
+"kind": "quest",
+"name": "Flame of Bondelnar",
+"flavor": "The magical azure flame of Bondelnar constantly emanates a silent, yet subtle, evil aura.",
+"icon": "FlameOfBondelnarArtifact",
+"icon_name": "FlameOfBondelnarArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 3,000 excavations",
+"Drow bloodline",
+"Requires upgrade \"Spider Sanctuary\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1072,
+"kind": "lore",
+"name": "Rough Stone",
+"flavor": "A common, totally uninteresting stone.",
+"icon": "RoughStoneArtifact",
+"icon_name": "RoughStoneArtifact",
+"hint": "A first-time only discovery.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[35] == 0"
+]
+},
+{
+"order": 1073,
+"kind": "lore",
+"name": "Scarab of Fortune",
+"flavor": "You found the rarest of relics. This golden scarab will grant you 7 days of good luck, starting from now. Make good use of it!",
+"icon": "ScarabOfFortuneArtifact",
+"icon_name": "ScarabOfFortuneArtifact",
+"hint": "Rarely found in the pyramids of old.",
+"requirements": [
+"Neutral alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1074,
+"kind": "lore",
+"name": "Chocolate Cookie",
+"flavor": "Found in a wasteland made of cakes and sweets, snatched from the hands of an old woman...",
+"icon": "ChocolateCookieArtifact",
+"icon_name": "ChocolateCookieArtifact",
+"hint": "Excavated commonly in all areas.",
+"requirements": [],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1075,
+"kind": "lore",
+"name": "Fossilized Rodent",
+"flavor": "What's this, a prehistoric mouse...?",
+"icon": "FossilizedRodentArtifact",
+"icon_name": "FossilizedRodentArtifact",
+"hint": "Hello, mouse.",
+"requirements": [],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1076,
+"kind": "lore",
+"name": "Power Orb",
+"flavor": "Throbbing with arcane power.",
+"icon": "PowerOrbArtifact",
+"icon_name": "PowerOrbArtifact",
+"hint": "Attracted by massive concentration of mana.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"§#!!§.§2!&§() >= 3000"
+]
+},
+{
+"order": 1077,
+"kind": "lore",
+"name": "Pink Carrot",
+"flavor": "The main product of properly nurtured Farms.",
+"icon": "PinkCarrotArtifact",
+"icon_name": "PinkCarrotArtifact",
+"hint": "Found randomly in the Farms.",
+"requirements": [
+"Playing as Fairy",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1078,
+"kind": "lore",
+"name": "Bottled Voice",
+"flavor": "The essence of a melodic Fairy voice.",
+"icon": "BottledVoiceArtifact",
+"icon_name": "BottledVoiceArtifact",
+"hint": "Can be captured when Chanting.",
+"requirements": [
+"Playing as Fairy",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1079,
+"kind": "lore",
+"name": "Lucky Clover",
+"flavor": "A perfectly shaped four-leaf clover. Each leaf is almost unnaturally identical to the other three.",
+"icon": "LuckyCloverArtifact",
+"icon_name": "LuckyCloverArtifact",
+"hint": "Requires extreme amounts of luck!",
+"requirements": [
+"Playing as Elf",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1080,
+"kind": "lore",
+"name": "Mini-treasure",
+"flavor": "It's a small perfect replica of the old gold-filled treasure.",
+"icon": "MiniTreasureArtifact",
+"icon_name": "MiniTreasureArtifact",
+"hint": "Click your way to the treasure!",
+"requirements": [
+"Playing as Elf",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1081,
+"kind": "lore",
+"name": "Pillar Fragment",
+"flavor": "A tiny piece of the legendary pillars which sustain all the Heavens.",
+"icon": "PillarFragmentArtifact",
+"icon_name": "PillarFragmentArtifact",
+"hint": "May fall from the Heavens.",
+"requirements": [
+"Playing as Angel",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1082,
+"kind": "lore",
+"name": "Divine Sword",
+"flavor": "The shining golden sword of an Archangel. Its hilt feels pleasantly warm to the pure of heart, and burning hot for the villain.",
+"icon": "DivineSwordArtifact",
+"icon_name": "DivineSwordArtifact",
+"hint": "Only found by dedicated Angel allies.",
+"requirements": [
+"Playing as Angel",
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§\"!B§(52,true,false,false,true) >= 14400"
+]
+},
+{
+"order": 1083,
+"kind": "lore",
+"name": "Ancient Coin Piece",
+"flavor": "A common goblin lucky charm. The older it is, the luckier you are, or so they say.",
+"icon": "AncientCoinPieceArtifact",
+"icon_name": "AncientCoinPieceArtifact",
+"hint": "Rarely found among other special coins.",
+"requirements": [
+"Playing as Goblin",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1084,
+"kind": "lore",
+"name": "Goblin Purse",
+"flavor": "Heavy and roomy. Definitely too big for just pocket change.",
+"icon": "GoblinPurseArtifact",
+"icon_name": "GoblinPurseArtifact",
+"hint": "Fill your pockets with extorted money.",
+"requirements": [
+"Playing as Goblin",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1085,
+"kind": "lore",
+"name": "Rotten Organ",
+"flavor": "Ew... disgusting. It still pulses.",
+"icon": "RottenOrganArtifact",
+"icon_name": "RottenOrganArtifact",
+"hint": "Found among large masses of dead bodies.",
+"requirements": [
+"Playing as Undead",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1086,
+"kind": "lore",
+"name": "Jaw Bone",
+"flavor": "A jaw, missing more than half of its teeth.",
+"icon": "JawBoneArtifact",
+"icon_name": "JawBoneArtifact",
+"hint": "Needs some time in the night.",
+"requirements": [
+"Playing as Undead",
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§7i§(§ !5§.id,false,true,true) >= 3600"
+]
+},
+{
+"order": 1087,
+"kind": "lore",
+"name": "Demonic Figurine",
+"flavor": "An intricate figurine representing the evil face of a lesser demon.",
+"icon": "DemonicFigurineArtifact",
+"icon_name": "DemonicFigurineArtifact",
+"hint": "Look for the trophies of the beast.",
+"requirements": [
+"Playing as Demon",
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§8t§ >= 666"
+]
+},
+{
+"order": 1088,
+"kind": "lore",
+"name": "Demon Horn",
+"flavor": "Still blazing with the flames of Hell. Handle with care.",
+"icon": "DemonHornArtifact",
+"icon_name": "DemonHornArtifact",
+"hint": "Only found by dedicated Demon allies.",
+"requirements": [
+"Playing as Demon",
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§\"!B§(55,true,false,false,true) >= 14400"
+]
+},
+{
+"order": 1089,
+"kind": "lore",
+"name": "Huge Titan Statue",
+"flavor": "The granite representation of a giant wielding a lightning bolt in its fist. A foot appears to be missing.",
+"icon": "HugeTitanStatueArtifact",
+"icon_name": "HugeTitanStatueArtifact",
+"hint": "Struck by the lightning.",
+"requirements": [
+"Playing as Titan",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1090,
+"kind": "lore",
+"name": "Titan Shield",
+"flavor": "A gargantuan metal shield, twice as tall as a common human.",
+"icon": "TitanShieldArtifact",
+"icon_name": "TitanShieldArtifact",
+"hint": "Don't fret it.",
+"requirements": [
+"Playing as Titan",
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[1] >= 7200"
+]
+},
+{
+"order": 1091,
+"kind": "lore",
+"name": "Glyph Table",
+"flavor": "Contains all the secrets of the Druidic Alphabet.",
+"icon": "GlyphTableArtifact",
+"icon_name": "GlyphTableArtifact",
+"hint": "Balance your buildings.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"var _loc1_:Boolean = false; var _loc3_:* = 0; var _loc4_:int = 0; var _loc2_:§`!;§ = null; if(§-6§ && (§8G§.§-!^§ == 7 && §8G§.§#3§ == -1)) { _loc1_ = true; _loc3_ = 0; _loc4_ = 0; while(_loc4_ < §8G§"
+]
+},
+{
+"order": 1092,
+"kind": "lore",
+"name": "Stone of Balance",
+"flavor": "A carved stone hovering above its pedestal.",
+"icon": "StoneOfBalanceArtifact",
+"icon_name": "StoneOfBalanceArtifact",
+"hint": "A Grand Balance performance.",
+"requirements": [
+"Playing as Druid",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1093,
+"kind": "lore",
+"name": "Translucent Goo",
+"flavor": "A completely odorless sticky substance with a diaphanous, unsettling glow.",
+"icon": "TranslucentGooArtifact",
+"icon_name": "TranslucentGooArtifact",
+"hint": "Byproduct of the Brain.",
+"requirements": [
+"Playing as Faceless",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1094,
+"kind": "lore",
+"name": "Octopus-shaped Helmet",
+"flavor": "A large helmet with empty metal prongs to accomodate tentacular appendages.",
+"icon": "OctopusShapedHelmetArtifact",
+"icon_name": "OctopusShapedHelmetArtifact",
+"hint": "Found in the Labyrinths.",
+"requirements": [
+"Playing as Faceless",
+"No bloodline selected"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1095,
+"kind": "lore",
+"name": "Dwarven Bow",
+"flavor": "Actually a heavy throwing hammer.",
+"icon": "DwarvenBowArtifact",
+"icon_name": "DwarvenBowArtifact",
+"hint": "Click to throw.",
+"requirements": [
+"Dwarf bloodline"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1096,
+"kind": "lore",
+"name": "Stone Tankard",
+"flavor": "A very heavy mug for drinking the heaviest of beers.",
+"icon": "StoneTankardArtifact",
+"icon_name": "StoneTankardArtifact",
+"hint": "Found in the Inns.",
+"requirements": [
+"Dwarf bloodline"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1097,
+"kind": "lore",
+"name": "Ceremonial Dagger",
+"flavor": "Its blade is unnaturally keen and sharp.",
+"icon": "CeremonialDaggerArtifact",
+"icon_name": "CeremonialDaggerArtifact",
+"hint": "Avoid hurting your fingers.",
+"requirements": [
+"Drow bloodline"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[4] == 0"
+]
+},
+{
+"order": 1098,
+"kind": "lore",
+"name": "Arachnid Figurine",
+"flavor": "If you are afraid of spiders, Drow aren't your faction.",
+"icon": "ArachnidFigurineArtifact",
+"icon_name": "ArachnidFigurineArtifact",
+"hint": "Embrace Evil. For a while.",
+"requirements": [
+"Drow bloodline"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[3] + §8G§.§=y§[3] + §8G§.§@w§[3] >= 86400"
+]
+},
+{
+"order": 1099,
+"kind": "lore",
+"name": "Steel Plate",
+"flavor": "A full plate made of hardened steel.",
+"icon": "SteelPlateArtifact",
+"icon_name": "SteelPlateArtifact",
+"hint": "Legacy from 50 generations ago.",
+"requirements": [
+"Playing as Mercenary",
+"Reincarnation 5 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1100,
+"kind": "lore",
+"name": "Black Sword",
+"flavor": "A long sword with an extremely sharp blade made of dark metal.",
+"icon": "BlackSwordArtifact",
+"icon_name": "BlackSwordArtifact",
+"hint": "Only found by really, really dedicated Mercenary allies.",
+"requirements": [
+"Playing as Mercenary"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[49] + §8G§.§=y§[49] + §8G§.§@w§[49] >= 100"
+]
+},
+{
+"order": 1101,
+"kind": "lore",
+"name": "Dragon Fang",
+"flavor": "This huge fang can barely fit in the hands of a Titan.",
+"icon": "DragonFangArtifact",
+"icon_name": "DragonFangArtifact",
+"hint": "Found in the Wyrm Dens.",
+"requirements": [
+"Reincarnation 50 or higher",
+"Dragon bloodline"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1102,
+"kind": "lore",
+"name": "Dragon Soul",
+"flavor": "The extracted soul from an ancient dragon, wields the power to end the world in an instant. Also makes a good soup ingredient.",
+"icon": "DragonSoulArtifact",
+"icon_name": "DragonSoulArtifact",
+"hint": "Take five deep breaths.",
+"requirements": [
+"Reincarnation 50 or higher",
+"Dragon bloodline"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§#N§(§5!3§.id).§`r§ >= 4"
+]
+},
+{
+"order": 1103,
+"kind": "lore",
+"name": "Vanilla Flavor Juice",
+"flavor": "An essence from extremely savory vanilla beans.",
+"icon": "VanillaFlavorJuiceArtifact",
+"icon_name": "VanillaFlavorJuiceArtifact",
+"hint": "Quickly!",
+"requirements": [
+"Reincarnation 16 or higher"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§5!V§[1] <= 300"
+]
+},
+{
+"order": 1104,
+"kind": "lore",
+"name": "Ancient Cocoa Bean",
+"flavor": "Despite being centuries old, it still smells like top-quality cocoa.",
+"icon": "AncientCocoaBeanArtifact",
+"icon_name": "AncientCocoaBeanArtifact",
+"hint": "True Neutral Flavor.",
+"requirements": [
+"Reincarnation 24 or higher",
+"Neutral alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1105,
+"kind": "lore",
+"name": "Know Your Enemy, Part I",
+"flavor": "All the knowledge you need stored in a handy book.",
+"icon": "KnowYourEnemyPartIArtifact",
+"icon_name": "KnowYourEnemyPartIArtifact",
+"hint": "A true Mercenary should learn by all other cultures.",
+"requirements": [
+"Reincarnation 12 or higher",
+"Playing as Mercenary"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§#!!§.§^!&§() >= 11"
+]
+},
+{
+"order": 1106,
+"kind": "lore",
+"name": "Voodoo Doll",
+"flavor": "You are now CURSED! And you feel a sting in your lower rear.",
+"icon": "VoodooDollArtifact",
+"icon_name": "VoodooDollArtifact",
+"hint": "Found in the Witch Conclaves.",
+"requirements": [
+"Evil alignment",
+"Reincarnation 16 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1107,
+"kind": "lore",
+"name": "Wall Fragment",
+"flavor": "A fragment of an utterly and completely unbreakable wall. Enjoy your paradox.",
+"icon": "WallFragmentArtifact",
+"icon_name": "WallFragmentArtifact",
+"hint": "Ascension...",
+"requirements": [
+"Ascension 1 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1108,
+"kind": "quest",
+"name": "Spiky Rough Egg",
+"flavor": "What a weird egg... it looks ages old, yet something alive is inside. Perhaps if you wait long enough, something will hatch?",
+"icon": "SpikyRoughEggArtifact",
+"icon_name": "SpikyRoughEggArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Make 1,500 excavations",
+"Reincarnation 42 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1109,
+"kind": "lore",
+"name": "Fortune Teller Machine",
+"flavor": "A devilish star gazes upon your future. Is this a good or a bad sign...?",
+"icon": "FortuneTellerMachineArtifact",
+"icon_name": "FortuneTellerMachineArtifact",
+"hint": "Don't choose your allies until you know more.",
+"requirements": [
+"No bloodline selected"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§-!^§ == -1"
+]
+},
+{
+"order": 1110,
+"kind": "lore",
+"name": "Dawnstone",
+"flavor": "Only found during sunrise hours. Emits a faint glow.",
+"icon": "DawnstoneArtifact",
+"icon_name": "DawnstoneArtifact",
+"hint": "Relic of the Dawn hours.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"var _loc1_:Date = new Date(); return §-6§ && §8G§.§8!H§ >= 16 && (_loc1_.getHours() >= 5 && _loc1_.getHours() <= 11);"
+]
+},
+{
+"order": 1111,
+"kind": "lore",
+"name": "Duskstone",
+"flavor": "Only found during sunset hours. Absorbs light in a small radius.",
+"icon": "DuskstoneArtifact",
+"icon_name": "DuskstoneArtifact",
+"hint": "Relic of the Dusk hours.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"var _loc1_:Date = new Date(); return §-6§ && §8G§.§8!H§ >= 16 && (_loc1_.getHours() >= 18 && _loc1_.getHours() <= 20);"
+]
+},
+{
+"order": 1112,
+"kind": "lore",
+"name": "Ancient Heirloom",
+"flavor": "Passed down countless generations.",
+"icon": "AncientHeirloomArtifact",
+"icon_name": "AncientHeirloomArtifact",
+"hint": "Relic of the Lineage.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§`!=§() > 0"
+]
+},
+{
+"order": 1113,
+"kind": "quest",
+"name": "Obsidian Shard",
+"flavor": "Extremely hard and black as darkness itself, this material cannot apparently be carved or melted. It is a mystery how you can make this thing into a sword.",
+"icon": "ObsidianShardArtifact",
+"icon_name": "ObsidianShardArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 75 or higher",
+"Make 1,500 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1114,
+"kind": "lore",
+"name": "Know Your Enemy, Part II",
+"flavor": "Much more knowledge than you need, stored in a handy book.",
+"icon": "KnowYourEnemyPartIIArtifact",
+"icon_name": "KnowYourEnemyPartIIArtifact",
+"hint": "Even an expert Mercenary should learn by all other cultures.",
+"requirements": [],
+"undecoded_conditions": 1,
+"undecoded": [
+"var _loc3_:Array = null; var _loc4_:int = 0; var _loc1_:int = 0; if(§-6§ && §8G§.§8!H§ >= 75 && §8G§.§-!^§ == 11 && §8G§.§<P§(§[!i§.id)) { _loc3_ = []; _loc4_ = 0; _loc1_ = 0; while(_loc1_ <= 12) { _l"
+]
+},
+{
+"order": 1115,
+"kind": "lore",
+"name": "Veteran Figurine",
+"flavor": "The warrior of a thousand battles, ultimate champion of the Realms.\n\nPassive effect: allows Mercenaries to benefit from all faction challenges.",
+"icon": "VeteranFigurineArtifact",
+"icon_name": "VeteranFigurineArtifact",
+"hint": "A reward for the veteran challenger.",
+"requirements": [
+"Reincarnation 85 or higher"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§'\"§(§0!5§.id)"
+]
+},
+{
+"order": 1116,
+"kind": "lore",
+"name": "Wall Chunk",
+"flavor": "A bigger piece of the infamous Ascension Wall.",
+"icon": "WallChunkArtifact",
+"icon_name": "WallChunkArtifact",
+"hint": "More Ascension...",
+"requirements": [
+"Ascension 2 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1117,
+"kind": "lore",
+"name": "Excavated Mirage",
+"flavor": "You know all too well this does not exist, yet it fills you with hope and optimism.",
+"icon": "ExcavatedMirageArtifact",
+"icon_name": "ExcavatedMirageArtifact",
+"hint": "Raise your chances.",
+"requirements": [
+"Ascension 2 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1118,
+"kind": "lore",
+"name": "Ancestral Hourglass",
+"flavor": "The silver sands contained within seem to never stop flowing.",
+"icon": "AncestralHourglassArtifact",
+"icon_name": "AncestralHourglassArtifact",
+"hint": "Really, raise your chances.",
+"requirements": [
+"Ascension 2 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1119,
+"kind": "lore",
+"name": "Silk Cloth",
+"flavor": "The purest silk made for Fairies, by Fairies, of Fairies.",
+"icon": "SilkClothArtifact",
+"icon_name": "SilkClothArtifact",
+"hint": "Found in the Swarming Towers.",
+"requirements": [
+"Playing as Fairy",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Bottled Voice\"",
+"Requires trophy \"Pink Carrot\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1120,
+"kind": "lore",
+"name": "Raw Emerald",
+"flavor": "Just slightly less precious than a raw Ruby.",
+"icon": "RawEmeraldArtifact",
+"icon_name": "RawEmeraldArtifact",
+"hint": "Not found on the first Excavation round.",
+"requirements": [
+"Playing as Elf",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Lucky Clover\"",
+"Requires trophy \"Mini-treasure\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1121,
+"kind": "lore",
+"name": "Fossilized Wing",
+"flavor": "The remains of an Angel fallen to earth.",
+"icon": "FossilizedWingArtifact",
+"icon_name": "FossilizedWingArtifact",
+"hint": "Angels may fall after a long time.",
+"requirements": [
+"Playing as Angel",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Pillar Fragment\"",
+"Requires trophy \"Divine Sword\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1122,
+"kind": "lore",
+"name": "Spiked Whip",
+"flavor": "Use with caution. You do not want to exterminate all your slaves.",
+"icon": "SpikedWhipArtifact",
+"icon_name": "SpikedWhipArtifact",
+"hint": "Used by the overseers in the Slave Markets.",
+"requirements": [
+"Playing as Goblin",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Ancient Coin Piece\"",
+"Requires trophy \"Goblin Purse\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1123,
+"kind": "lore",
+"name": "Dusty Coffin",
+"flavor": "Sealed since forever, yet you can hear a strange noise from within.",
+"icon": "DustyCoffinArtifact",
+"icon_name": "DustyCoffinArtifact",
+"hint": "The undead have patience.",
+"requirements": [
+"Playing as Undead",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Rotten Organ\"",
+"Requires trophy \"Jaw Bone\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1124,
+"kind": "lore",
+"name": "Crystallized Lava",
+"flavor": "Incandescent but still. Can be used efficiently as a desk lamp.",
+"icon": "CrystallizedLavaArtifact",
+"icon_name": "CrystallizedLavaArtifact",
+"hint": "Found in the Burning Abysses.",
+"requirements": [
+"Playing as Demon",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Demonic Figurine\"",
+"Requires trophy \"Demon Horn\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1125,
+"kind": "lore",
+"name": "Titan Helmet",
+"flavor": "Made of enough metal to craft a human-sized full plate.",
+"icon": "TitanHelmetArtifact",
+"icon_name": "TitanHelmetArtifact",
+"hint": "Found in the trade route used for Exchanges.",
+"requirements": [
+"Playing as Titan",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Huge Titan Statue\"",
+"Requires trophy \"Titan Shield\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1126,
+"kind": "lore",
+"name": "Branch of the Life Tree",
+"flavor": "Despite being torn from its source tree, it keeps growing buds and leaves.",
+"icon": "BranchOfTheLifeTreeArtifact",
+"icon_name": "BranchOfTheLifeTreeArtifact",
+"hint": "Found in the remains of druidic ancestors.",
+"requirements": [
+"Playing as Druid",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Glyph Table\"",
+"Requires trophy \"Stone of Balance\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1127,
+"kind": "lore",
+"name": "Nightmare Figment",
+"flavor": "An unshaped, ephemeral substance which is politely trying to corrupt your mind.",
+"icon": "NightmareFigmentArtifact",
+"icon_name": "NightmareFigmentArtifact",
+"hint": "A strong and quick brain is required.",
+"requirements": [
+"Playing as Faceless",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Translucent Goo\"",
+"Requires trophy \"Octopus-shaped Helmet\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1128,
+"kind": "lore",
+"name": "Beard Hair",
+"flavor": "Hopefully coming from a real dwarven beard.",
+"icon": "BeardHairArtifact",
+"icon_name": "BeardHairArtifact",
+"hint": "It requires a lot of beard samples to get the perfect hair.",
+"requirements": [
+"Dwarf bloodline",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Dwarven Bow\"",
+"Requires trophy \"Stone Tankard\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1129,
+"kind": "lore",
+"name": "Poison Vial",
+"flavor": "One drop of this is enough to fell thousands of non-immune creatures.",
+"icon": "PoisonVialArtifact",
+"icon_name": "PoisonVialArtifact",
+"hint": "Combo your way through.",
+"requirements": [
+"Drow bloodline",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Ceremonial Dagger\"",
+"Requires trophy \"Arachnid Figurine\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1130,
+"kind": "lore",
+"name": "Dragon Scale",
+"flavor": "Very high on the realms' most accurate hardiness rankings.",
+"icon": "DragonScaleArtifact",
+"icon_name": "DragonScaleArtifact",
+"hint": "Usually found when a lot of magic is lingering.",
+"requirements": [
+"Dragon bloodline",
+"Ascension 2 or higher",
+"Make 2,000 excavations",
+"Requires trophy \"Dragon Fang\"",
+"Requires trophy \"Dragon Soul\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1131,
+"kind": "lore",
+"name": "Lantern of Guidance",
+"flavor": "Follow the guiding light, o wanderer, for it shall bring you fortune.",
+"icon": "LanternOfGuidanceArtifact",
+"icon_name": "LanternOfGuidanceArtifact",
+"hint": "Massive mana flows can offer guidance.",
+"requirements": [
+"Order alignment",
+"Ascension 2 or higher",
+"Reincarnation 120 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1132,
+"kind": "lore",
+"name": "Oil Lamp",
+"flavor": "Rub it, polish it. And remember to express your desires precisely, lest you want to face dire consequences.",
+"icon": "OilLampArtifact",
+"icon_name": "OilLampArtifact",
+"hint": "Chaos magic burns brightly.",
+"requirements": [
+"Chaos alignment",
+"Ascension 2 or higher",
+"Reincarnation 120 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1133,
+"kind": "lore",
+"name": "Spark of Life",
+"flavor": "The spark of Creation, dimly shining from the bottom of its encasing crystal.",
+"icon": "SparkOfLifeArtifact",
+"icon_name": "SparkOfLifeArtifact",
+"hint": "The power of Creation may spark something new.",
+"requirements": [
+"Balance alignment",
+"Ascension 2 or higher",
+"Reincarnation 120 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1134,
+"kind": "quest",
+"name": "First Iron Fragment",
+"flavor": "It looks like a piece of an iron object. It's broken off on two sides.",
+"icon": "FirstIronFragmentArtifact",
+"icon_name": "FirstIronFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Order alignment",
+"Make 5,000 excavations",
+"Good alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1135,
+"kind": "quest",
+"name": "Second Iron Fragment",
+"flavor": "It looks like a piece of an iron object. It's broken off on two sides.",
+"icon": "SecondIronFragmentArtifact",
+"icon_name": "SecondIronFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Order alignment",
+"Make 5,000 excavations",
+"Neutral alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1136,
+"kind": "quest",
+"name": "Third Iron Fragment",
+"flavor": "It looks like a piece of an iron object. It's broken off on two sides.",
+"icon": "ThirdIronFragmentArtifact",
+"icon_name": "ThirdIronFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Order alignment",
+"Make 5,000 excavations",
+"Evil alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1137,
+"kind": "quest",
+"name": "First Crystal Fragment",
+"flavor": "A strange, glass-like material that appears to have been shattered into three pieces.",
+"icon": "FirstCrystalFragmentArtifact",
+"icon_name": "FirstCrystalFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Chaos alignment",
+"Make 5,000 excavations",
+"Good alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1138,
+"kind": "quest",
+"name": "Second Crystal Fragment",
+"flavor": "A strange, glass-like material that appears to have been shattered into three pieces.",
+"icon": "SecondCrystalFragmentArtifact",
+"icon_name": "SecondCrystalFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Chaos alignment",
+"Make 5,000 excavations",
+"Neutral alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1139,
+"kind": "quest",
+"name": "Third Crystal Fragment",
+"flavor": "A strange, glass-like material that appears to have been shattered into three pieces.",
+"icon": "ThirdCrystalFragmentArtifact",
+"icon_name": "ThirdCrystalFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Chaos alignment",
+"Make 5,000 excavations",
+"Evil alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1140,
+"kind": "quest",
+"name": "First Stone Fragment",
+"flavor": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
+"icon": "FirstStoneFragmentArtifact",
+"icon_name": "FirstStoneFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Balance alignment",
+"Make 5,000 excavations",
+"Good alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1141,
+"kind": "quest",
+"name": "Second Stone Fragment",
+"flavor": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
+"icon": "SecondStoneFragmentArtifact",
+"icon_name": "SecondStoneFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Balance alignment",
+"Make 5,000 excavations",
+"Neutral alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1142,
+"kind": "quest",
+"name": "Third Stone Fragment",
+"flavor": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
+"icon": "ThirdStoneFragmentArtifact",
+"icon_name": "ThirdStoneFragmentArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 125 or higher",
+"Balance alignment",
+"Make 5,000 excavations",
+"Evil alignment"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1143,
+"kind": "lore",
+"name": "Planetary Force",
+"flavor": "Planets aligning seem to affect your realm in different ways...",
+"icon": "PlanetaryForceArtifact",
+"icon_name": "PlanetaryForceArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 2 or higher",
+"Reincarnation 100 or higher",
+"Requires trophy \"Dawnstone\"",
+"Requires trophy \"Duskstone\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1144,
+"kind": "lore",
+"name": "Mercenary Insignia",
+"flavor": "The infamous metal cross of the Mercenaries. You should be both proud and afraid to carry one.",
+"icon": "MercenaryInsigniaArtifact",
+"icon_name": "MercenaryInsigniaArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Mercenary",
+"Ascension 3 or higher",
+"Requires trophy \"Steel Plate\"",
+"Requires trophy \"Black Sword\""
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1145,
+"kind": "quest",
+"name": "Obsidian Crown",
+"flavor": "The legendary Black Crown of the Mercenary Lord. Some words are engraved into the inner circle at its base: \"Aran en Ilya, Silas en Quenta\".",
+"icon": "ObsidianCrownArtifact",
+"icon_name": "ObsidianCrownArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Mercenary",
+"Reincarnation 170 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1146,
+"kind": "quest",
+"name": "Forgotten Relic",
+"flavor": "Intricate leylines of mana cover the surface of this stone, moving and flailing endlessly to create ever-different patterns.",
+"icon": "ForgottenRelicArtifact",
+"icon_name": "ForgottenRelicArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1147,
+"kind": "lore",
+"name": "Mana Loom",
+"flavor": "Used to weave even the thinnest mana strings.\n\nProvides INF budget in the Spellcraft branch.",
+"icon": "FacilitySpellcraft2",
+"icon_name": "FacilitySpellcraft2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Chaos alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(0,true) >= 5000"
+]
+},
+{
+"order": 1148,
+"kind": "lore",
+"name": "Factory",
+"flavor": "Mass-production is the way to go.\n\nProvides INF budget in the Craftsmanship branch.",
+"icon": "FacilityCraftsmanship2",
+"icon_name": "FacilityCraftsmanship2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Neutral alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(1,true) >= 5000"
+]
+},
+{
+"order": 1149,
+"kind": "lore",
+"name": "Mythos",
+"flavor": "Accurate historical list of every existing or non-existing deity.\n\nProvides INF budget in the Divine branch.",
+"icon": "FacilityDivine2",
+"icon_name": "FacilityDivine2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Good alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(2,true) >= 5000"
+]
+},
+{
+"order": 1150,
+"kind": "lore",
+"name": "Vault",
+"flavor": "Never a place could be more secure.\n\nProvides INF budget in the Economics branch.",
+"icon": "FacilityEconomics2",
+"icon_name": "FacilityEconomics2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Balance alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(3,true) >= 5000"
+]
+},
+{
+"order": 1151,
+"kind": "lore",
+"name": "Athanor",
+"flavor": "The legendary oven that could smelt souls into matter.\n\nProvides INF budget in the Alchemy branch.",
+"icon": "FacilityAlchemy2",
+"icon_name": "FacilityAlchemy2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Order alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(4,true) >= 5000"
+]
+},
+{
+"order": 1152,
+"kind": "lore",
+"name": "Battlefield",
+"flavor": "An extremely accurate replica of a battle fought long ago.\n\nProvides INF budget in the Warfare branch.",
+"icon": "FacilityWarfare2",
+"icon_name": "FacilityWarfare2",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Evil alignment"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§&c§.§&!<§(5,true) >= 5000"
+]
+},
+{
+"order": 1153,
+"kind": "lore",
+"name": "Apeiron",
+"flavor": "The source of everything. Can fit in the average pocket.",
+"icon": "FacilityForbidden",
+"icon_name": "FacilityForbidden",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Reincarnation 180 or higher",
+"Playing as Mercenary"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§#!!§.§^!&§() >= 15"
+]
+},
+{
+"order": 1154,
+"kind": "lore",
+"name": "Glowing Wing",
+"flavor": "And this is why Fairies don't need torches.",
+"icon": "GlowingWingArtifact",
+"icon_name": "GlowingWingArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Fairy",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1155,
+"kind": "lore",
+"name": "Sylvan Mirror",
+"flavor": "An Elf with messy hair is not an Elf, by their own laws.",
+"icon": "SylvanMirrorArtifact",
+"icon_name": "SylvanMirrorArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Elf",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1156,
+"kind": "lore",
+"name": "Solid Cloud",
+"flavor": "Angels have the power to save your life! And make a backup of it on the internet.",
+"icon": "SolidCloudArtifact",
+"icon_name": "SolidCloudArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Angel",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1157,
+"kind": "lore",
+"name": "Orc Fang Necklace",
+"flavor": "To remind your slaves who's in charge.",
+"icon": "OrcFangNecklaceArtifact",
+"icon_name": "OrcFangNecklaceArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Goblin",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1158,
+"kind": "lore",
+"name": "Blood Chalice",
+"flavor": "The healthiest vampire breakfast.",
+"icon": "BloodChaliceArtifact",
+"icon_name": "BloodChaliceArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Undead",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1159,
+"kind": "lore",
+"name": "Demon Tail",
+"flavor": "Said to bring great luck to whom it possess...es.",
+"icon": "DemonTailArtifact",
+"icon_name": "DemonTailArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Demon",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1160,
+"kind": "lore",
+"name": "Frozen Lightning",
+"flavor": "A sculpture representing the embodiment of Titanic power.",
+"icon": "FrozenLightningArtifact",
+"icon_name": "FrozenLightningArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Titan",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1161,
+"kind": "lore",
+"name": "Primal Leaf",
+"flavor": "Druid Catalyst for channeling the power of nature.",
+"icon": "PrimalLeafArtifact",
+"icon_name": "PrimalLeafArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Druid",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1162,
+"kind": "lore",
+"name": "The Blackest Ink",
+"flavor": "High-quality, freshly produced Faceless ink.",
+"icon": "TheBlackestInkArtifact",
+"icon_name": "TheBlackestInkArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Playing as Faceless",
+"Ascension 4 or higher",
+"Reincarnation 225 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1163,
+"kind": "lore",
+"name": "Dwarven Anvil",
+"flavor": "Every dwarven child is required to bring this to school every day.",
+"icon": "DwarvenAnvilArtifact",
+"icon_name": "DwarvenAnvilArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Dwarf bloodline",
+"Ascension 4 or higher",
+"Reincarnation 235 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1164,
+"kind": "lore",
+"name": "Stiletto Heel",
+"flavor": "Drow make the most beautiful underground females.",
+"icon": "StilettoHeelArtifact",
+"icon_name": "StilettoHeelArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Drow bloodline",
+"Ascension 4 or higher",
+"Reincarnation 235 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1165,
+"kind": "lore",
+"name": "Eye of the Dragon",
+"flavor": "The ultimate thrill of the fight.",
+"icon": "EyeOfTheDragonArtifact",
+"icon_name": "EyeOfTheDragonArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Dragon bloodline",
+"Ascension 4 or higher",
+"Reincarnation 235 or higher",
+"Make 10,000 excavations"
+],
+"undecoded_conditions": 0,
+"undecoded": []
+},
+{
+"order": 1166,
+"kind": "quest",
+"name": "Mask of Scorch'Rah",
+"flavor": "An otherwordly, ever-burning mask that continuously shifts burn marks over its surface.",
+"icon": "MaskOfScorchRahArtifact",
+"icon_name": "MaskOfScorchRahArtifact",
+"hint": "You don't know what this is yet.",
+"requirements": [
+"Ascension 4 or higher",
+"Reincarnation 255 or higher",
+"Make 50,000 excavations"
+],
+"undecoded_conditions": 1,
+"undecoded": [
+"§8G§.§?!2§(\"LegacyUpgrade\") >= 4"
+]
+}
+]

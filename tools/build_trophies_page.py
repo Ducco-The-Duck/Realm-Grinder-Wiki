@@ -12,7 +12,7 @@ icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
 CATEGORIES = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}
 # 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown.
-EVENT_GROUPS = [('seasonal', 'Seasonal events'), ('event-quest', 'Event quest steps'),
+EVENT_GROUPS = [('seasonal', 'Seasonal events'),
                 ('excavation', 'Excavation finds')]
 
 
@@ -67,6 +67,9 @@ html = '''<!doctype html>
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:620px;margin:0 auto;padding:24px 16px 80px}
+nav{display:flex;gap:14px;margin:0 0 18px;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--fg);font-weight:600;border-bottom:2px solid var(--accent)}
 h1{margin:0 0 4px;font-size:1.7rem}
 .sub{color:var(--muted);margin:0 0 20px}
 section{margin:0 0 26px}
@@ -95,6 +98,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 </head>
 <body>
 <main>
+<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a></nav>
 <h1>Trophies</h1>
 <p class="sub">__TOTAL__ trophies, arranged as in the game. Hover an icon to see its name and requirement; click a stacked icon to see every tier.</p>
 <div id="root"></div>
