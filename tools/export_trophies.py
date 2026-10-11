@@ -21,7 +21,7 @@ src = f"""JSON.stringify({J('§8G§')}.{J('§0Q§')}.map(function (o, i) {{
   var d = null, e = null;
   try {{ d = o.{J('§@"§')}(); }} catch (x) {{ e = String(x).slice(0, 80); }}
   return {{ order: i, id: o.ids, num_id: o.{J('§6!Z§')}, name: o.{J('§1i§')}, requirement: d, error: e,
-           icon: o.{J('§^!#§')}, type: o.{J('§?!=§')}, alignment: o.{J('§,!Y§')}, threshold: o.{J('§>=§')} === undefined ? null : null,
+           icon: o.{J('§^!#§')}, type: o.{J('§?!=§')}, alignment: o.{J('§,!Y§')}, category: o.{J('§,!B§')}, tier: o.{J('§"!U§')},
            f_a: !!o.{J('§3!9§')}, f_b: !!o.{J('§?!,§')}, f_c: !!o.{J('§@!R§')}, f_d: !!o.{J('§@!Z§')} }};
 }}))"""
 rows = json.loads(ctx.eval(src))
@@ -33,6 +33,7 @@ for r in rows:
         'order': r['order'], 'id': r['id'], 'name': r['name'], 'requirement': (r['requirement'] or '').strip(),
         'icon': r['icon'] if r['icon'] in sprites else None, 'icon_name': r['icon'],
         'type': r['type'] or None, 'alignment': r['alignment'],
+        'category': r['category'], 'tier': r['tier'],
         'listed': flag is None, 'group': flag or 'trophy',
         **({'requirement_error': r['error']} if r['error'] else {}),
     })

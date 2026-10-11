@@ -1,5 +1,8 @@
 """Generate docs/trophies.html (self-contained, data embedded) from data/trophies.json.
 
+Layout mirrors the in-game trophy screen: sections by category, 7-column icon grid, tiers of the
+same trophy type collapsed into one cell (click for a popup of every tier), tooltips on hover.
+
     python -I tools/build_trophies_page.py
 """
 import json, os, re
@@ -7,21 +10,50 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 trophies = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
+CATEGORIES = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}
+# 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown.
+EVENT_GROUPS = [('seasonal', 'Seasonal events'), ('event-quest', 'Event quest steps'),
+                ('excavation', 'Excavation finds')]
+
 
 def pretty(t):
-    if not t: return 'Other'
-    t = re.sub(r'\d+$', '', t)
+    t = re.sub(r'\d+$', '', t or '')
     return re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', t)
 
 
-rows = []
-for t in trophies:
-    rows.append({
-        'n': t['name'], 'r': t['requirement'], 'i': icons.get(t['icon']) if t['icon'] else None,
-        'a': t['alignment'], 't': pretty(t['type']), 'g': t['group'], 'o': t['order'],
-    })
-data = json.dumps(rows, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-listed = sum(1 for r in rows if r['g'] == 'trophy')
+def item(t):
+    return {'n': t['name'], 'r': t['requirement'], 'i': icons.get(t['icon']) if t['icon'] else None}
+
+
+def cells(items):
+    """Group by trophy type (non-empty), keeping first-appearance order; tiers by registry order."""
+    out, by_type = [], {}
+    for t in sorted(items, key=lambda t: t['order']):
+        if t['type']:
+            if t['type'] not in by_type:
+                by_type[t['type']] = {'title': pretty(t['type']), 'items': []}
+                out.append(by_type[t['type']])
+            by_type[t['type']]['items'].append(item(t))
+        else:
+            out.append({'items': [item(t)]})
+    return out
+
+
+sections = []
+listed = [t for t in trophies if t['listed']]
+for cat, title in CATEGORIES.items():
+    its = [t for t in listed if t['category'] == cat]
+    sections.append({'title': f'{len(its)} {title} Trophies', 'cells': cells(its)})
+subs = []
+for key, title in EVENT_GROUPS:
+    its = [t for t in trophies if t['group'] == key]
+    if its:
+        subs.append({'title': f'{title} ({len(its)})', 'cells': cells(its)})
+n_event = sum(sum(len(c['items']) for c in sub['cells']) for sub in subs)
+sections.append({'title': f'{n_event} Event Exclusive Trophies', 'subs': subs})
+
+assert sum(sum(len(c['items']) for c in s['cells']) for s in sections[:5]) == len(listed)
+data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 html = '''<!doctype html>
 <html lang="en">
@@ -30,90 +62,133 @@ html = '''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Realm Grinder Trophies</title>
 <style>
-:root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--accent:#8a5a14;--chip:#f0eadc}
-@media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--accent:#e0a64a;--chip:#2b261f}}
+:root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
+@media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+main{max-width:620px;margin:0 auto;padding:24px 16px 80px}
 h1{margin:0 0 4px;font-size:1.7rem}
-.sub{color:var(--muted);margin:0 0 18px}
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
-input[type=search],select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
-input[type=search]{flex:1 1 240px;min-width:0}
-label.chk{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:.92rem}
-.count{color:var(--muted);font-size:.92rem;margin:6px 0 10px}
-.list{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
-.row{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:10px 14px;border-top:1px solid var(--line);align-items:center}
-.row:first-child{border-top:0}
-.ico{width:48px;height:48px;display:flex;align-items:center;justify-content:center}
-.ico img{max-width:48px;max-height:48px;image-rendering:pixelated}
-.name{font-weight:600}
-.req{color:var(--muted);white-space:pre-line}
-.tags{margin-top:4px;display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:.75rem;background:var(--chip);border-radius:999px;padding:1px 8px;color:var(--muted)}
-.tag.a1{color:#2f7a3e}.tag.a2{color:#a8322a}.tag.a3{color:#6a4e9a}
-.empty{padding:24px;text-align:center;color:var(--muted)}
-@media (max-width:520px){.row{grid-template-columns:44px 1fr;padding:10px}}
+.sub{color:var(--muted);margin:0 0 20px}
+section{margin:0 0 26px}
+h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.subh{font-size:.9rem;color:var(--muted);margin:14px 0 6px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cell{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
+  display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
+.cell.group{cursor:pointer}
+.cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
+.cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
+.cell .noimg{font-size:.7rem;color:var(--muted)}
+.badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700;pointer-events:none}
+#tip{position:fixed;z-index:50;max-width:min(320px,calc(100vw - 16px));padding:8px 10px;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none}
+#tip b{display:block}
+#tip span{color:var(--muted);white-space:pre-line;font-size:.92rem}
+#tip em{display:block;color:var(--accent);font-style:normal;font-size:.8rem;margin-top:4px}
+#pop{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#pop.open{display:flex}
+#pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
+#pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+#pop h3{margin:0;font-size:1.05rem}
+#pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 </style>
 </head>
 <body>
 <main>
 <h1>Trophies</h1>
-<p class="sub">__LISTED__ trophies and how to unlock each one. Extracted from the game files.</p>
-<div class="controls">
-  <input id="q" type="search" placeholder="Search name or requirement…" aria-label="Search trophies">
-  <select id="align" aria-label="Alignment">
-    <option value="">Any alignment</option><option value="1">Good</option><option value="2">Evil</option><option value="3">Neutral</option><option value="0">No alignment</option>
-  </select>
-  <select id="type" aria-label="Type"><option value="">All types</option></select>
-  <label class="chk"><input id="extra" type="checkbox"> Include event &amp; special entries</label>
-</div>
-<div class="count" id="count"></div>
-<div class="list" id="list"></div>
+<p class="sub">__TOTAL__ trophies, arranged as in the game. Hover an icon to see its name and requirement; click a stacked icon to see every tier.</p>
+<div id="root"></div>
 </main>
+<div id="tip" role="tooltip"></div>
+<div id="pop" role="dialog" aria-modal="true" aria-labelledby="poptitle"><div class="card">
+  <header><h3 id="poptitle"></h3><button class="x" type="button" id="popclose">Close</button></header>
+  <div class="grid" id="popgrid"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
-  var ALL = JSON.parse(document.getElementById('data').textContent);
-  var qEl=document.getElementById('q'), aEl=document.getElementById('align'), tEl=document.getElementById('type'),
-      xEl=document.getElementById('extra'), list=document.getElementById('list'), count=document.getElementById('count');
-  var GROUP={special:'Special',seasonal:'Seasonal event',excavation:'Excavation find','event-quest':'Event quest step'};
-  var ALIGN={1:'Good',2:'Evil',3:'Neutral'};
-  var types={};
-  ALL.forEach(function(r){ if(r.g==='trophy') types[r.t]=(types[r.t]||0)+1; });
-  Object.keys(types).sort().forEach(function(t){
-    var o=document.createElement('option'); o.value=t; o.textContent=t+' ('+types[t]+')'; tEl.appendChild(o);
-  });
-  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  function render(){
-    var q=qEl.value.trim().toLowerCase(), al=aEl.value, ty=tEl.value, ex=xEl.checked;
-    var rows=ALL.filter(function(r){
-      if(r.g!=='trophy' && !ex) return false;
-      if(al!=='' && String(r.a)!==al) return false;
-      if(ty && r.t!==ty) return false;
-      if(q && (r.n+' '+r.r).toLowerCase().indexOf(q)<0) return false;
-      return true;
-    });
-    count.textContent = rows.length+' shown';
-    if(!rows.length){ list.innerHTML='<div class="empty">No trophies match.</div>'; return; }
-    list.innerHTML = rows.map(function(r){
-      var img = r.i ? '<img loading="lazy" src="assets/icons/'+encodeURIComponent(r.i)+'" alt="">' : '';
-      var tags = [];
-      if(ALIGN[r.a]) tags.push('<span class="tag a'+r.a+'">'+ALIGN[r.a]+'</span>');
-      if(r.g!=='trophy') tags.push('<span class="tag">'+esc(GROUP[r.g]||r.g)+'</span>');
-      else tags.push('<span class="tag">'+esc(r.t)+'</span>');
-      return '<div class="row"><div class="ico">'+img+'</div><div><div class="name">'+esc(r.n)+'</div>'+
-             '<div class="req">'+esc(r.r||'(no requirement text)')+'</div><div class="tags">'+tags.join('')+'</div></div></div>';
-    }).join('');
+  var SECTIONS = JSON.parse(document.getElementById('data').textContent);
+  var root=document.getElementById('root'), tip=document.getElementById('tip'),
+      pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function icon(it){
+    if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; return img; }
+    return el('span','noimg','?');
   }
-  [qEl,aEl,tEl,xEl].forEach(function(el){ el.addEventListener('input',render); el.addEventListener('change',render); });
-  render();
+  function showTip(it, anchor, hint){
+    tip.textContent='';
+    tip.appendChild(el('b',null,it.n));
+    if(it.r) tip.appendChild(el('span',null,it.r));
+    if(hint) tip.appendChild(el('em',null,hint));
+    tip.style.display='block';
+    var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2), window.innerWidth-t.width-8);
+    var y=a.top-t.height-8; if(y<8) y=a.bottom+8;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  function hideTip(){ tip.style.display='none'; }
+  function bindTip(node, it, hint){
+    node.addEventListener('mouseenter',function(){ showTip(it,node,hint); });
+    node.addEventListener('mouseleave',hideTip);
+    node.addEventListener('focus',function(){ showTip(it,node,hint); });
+    node.addEventListener('blur',hideTip);
+  }
+  function cellButton(it, extraClass){
+    var b=el('button','cell'+(extraClass?' '+extraClass:'')); b.type='button';
+    b.setAttribute('aria-label', it.n+(it.r?': '+it.r:''));
+    b.appendChild(icon(it));
+    return b;
+  }
+  function openGroup(c){
+    poptitle.textContent=c.title+' ('+c.items.length+' tiers)';
+    popgrid.textContent='';
+    c.items.forEach(function(it){
+      var b=cellButton(it); bindTip(b,it); b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
+      popgrid.appendChild(b);
+    });
+    hideTip(); pop.classList.add('open'); document.getElementById('popclose').focus();
+  }
+  function closePop(){ pop.classList.remove('open'); hideTip(); }
+  document.getElementById('popclose').addEventListener('click',closePop);
+  pop.addEventListener('click',function(e){ if(e.target===pop) closePop(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePop(); });
+  document.addEventListener('scroll',hideTip,true);
+
+  function grid(cells){
+    var g=el('div','grid');
+    cells.forEach(function(c){
+      if(c.items.length===1){
+        var it=c.items[0], b=cellButton(it); bindTip(b,it);
+        b.addEventListener('click',function(){ showTip(it,b); });
+        g.appendChild(b);
+      } else {
+        var first=c.items[0], last=c.items[c.items.length-1];
+        var b=cellButton(first,'group');
+        b.setAttribute('aria-label', c.title+', '+c.items.length+' tiers');
+        b.appendChild(el('span','badge','\\u00d7'+c.items.length));
+        var summary={n:c.title,r:first.n+' \\u2192 '+last.n};
+        bindTip(b,summary,c.items.length+' tiers \\u2014 click to view');
+        b.addEventListener('click',function(){ openGroup(c); });
+        g.appendChild(b);
+      }
+    });
+    return g;
+  }
+  SECTIONS.forEach(function(s){
+    var sec=el('section'); sec.appendChild(el('h2',null,s.title));
+    if(s.subs){ s.subs.forEach(function(sub){ sec.appendChild(el('h3','subh',sub.title)); sec.appendChild(grid(sub.cells)); }); }
+    else sec.appendChild(grid(s.cells));
+    root.appendChild(sec);
+  });
 })();
 </script>
 </body>
 </html>
 '''
-html = html.replace('__DATA__', data).replace('__LISTED__', str(listed))
+html = html.replace('__DATA__', data).replace('__TOTAL__', str(len(listed)))
 os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
 open(os.path.join(ROOT, 'docs', 'trophies.html'), 'w', encoding='utf8').write(html)
-print('docs/trophies.html', len(html) // 1024, 'KB,', len(rows), 'rows')
+print('docs/trophies.html', len(html) // 1024, 'KB')
+for s in sections:
+    subs_ = s.get('subs') or [s]
+    print(' ', s['title'], '->', sum(len(x['cells']) for x in subs_), 'cells')
