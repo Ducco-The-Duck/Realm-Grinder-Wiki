@@ -81,6 +81,22 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | Trophy categories 0–4 = Allegiances, Misc, Magic, Buildings, Secret | high | counts match user's numbers exactly (45/170/62/566/60) |
 | Quest vs Lore artifact = lore flag false/true | high | counts 25/81 match |
 
+## Open: code vs. patch-notes doc (4.3.11) disagree on constant factors
+
+The game's own artifact tooltip prints "Chance: X%" using exactly the same getter the wiki transcribes
+(`§5",§`, shown as a percent), and the in-game changelog lists no change to these artifacts in
+4.3.12-4.3.14. So the code is what the game applies, but the user's patch-notes doc differs:
+
+| Artifact | Code (4.3.14) | Doc (user) | Ratio |
+|---|---|---|---|
+| Second Crystal Fragment | 4 · (ln(1+F))³ / 5×10⁷ | (ln(1+x))³ / 5×10⁷, x = Faction Coins found this Era | 4× |
+| Third Crystal Fragment | 66 · T / 66×10⁶ (= T / 10⁶) | x / 66×10⁶, x = Evil spells cast this Reincarnation | 66× |
+| Second Stone Fragment | 2 · B / 10⁷ | x / 10⁷, x = buildings built | 2× |
+
+The wiki shows the code's version. These artifacts need Ascension 2 and Reincarnation 125+, so the user
+cannot check the in-game "Chance:" readout yet. If someone can, compare the tooltip percent to both.
+First Iron Fragment agrees exactly with the doc.
+
 ## Not decoded yet
 
 - 21 artifacts have extra unlock conditions (time of day, per-spell time arrays, helper calls) listed as "additional conditions not listed here"; 9 show only the game's hint.
