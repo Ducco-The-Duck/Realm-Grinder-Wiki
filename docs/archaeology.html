@@ -48,13 +48,13 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b',null,it.n));
-    if(it.h){ tip.appendChild(el('span','lbl','Hint (before it is found)')); tip.appendChild(el('div','hint',it.h)); }
+    if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','hint',it.h)); }
     if(it.q.length || it.x){
       tip.appendChild(el('span','lbl','Unlock requirement'));
       if(it.q.length){ var ul=el('ul'); it.q.forEach(function(q){ ul.appendChild(el('li',null,q)); }); tip.appendChild(ul); }
       if(it.x) tip.appendChild(el('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
     }
-    if(it.f){ tip.appendChild(el('span','lbl','Flavor text (after it is found)')); tip.appendChild(el('div','flavor',it.f)); }
+    if(it.f){ tip.appendChild(el('span','lbl','Flavor text')); tip.appendChild(el('div','flavor',it.f)); }
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2), window.innerWidth-t.width-8);

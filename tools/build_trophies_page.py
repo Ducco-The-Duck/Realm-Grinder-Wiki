@@ -12,8 +12,7 @@ icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
 CATEGORIES = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}
 # 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown.
-EVENT_GROUPS = [('seasonal', 'Seasonal events'),
-                ('excavation', 'Excavation finds')]
+EVENT_GROUPS = [('seasonal', 'Seasonal events')]  # excavation finds live on the Archaeology page
 
 
 def pretty(t):
@@ -50,7 +49,10 @@ for key, title in EVENT_GROUPS:
     if its:
         subs.append({'title': f'{title} ({len(its)})', 'cells': cells(its)})
 n_event = sum(sum(len(c['items']) for c in sub['cells']) for sub in subs)
-sections.append({'title': f'{n_event} Event Exclusive Trophies', 'subs': subs})
+if len(subs) == 1:
+    sections.append({'title': f'{n_event} Event Exclusive Trophies', 'cells': subs[0]['cells']})
+else:
+    sections.append({'title': f'{n_event} Event Exclusive Trophies', 'subs': subs})
 
 assert sum(sum(len(c['items']) for c in s['cells']) for s in sections[:5]) == len(listed)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
