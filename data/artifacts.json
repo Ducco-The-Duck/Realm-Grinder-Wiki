@@ -213,7 +213,8 @@
 "icon_name": "RoughStoneArtifact",
 "hint": "A first-time only discovery.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[35] < 2 ? 2 : 0"
 },
 "requirements": [],
 "undecoded_conditions": 1,
@@ -230,7 +231,8 @@
 "icon_name": "ScarabOfFortuneArtifact",
 "hint": "Rarely found in the pyramids of old.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§7A§.id) / 1000"
 },
 "requirements": [
 "Neutral alignment"
@@ -247,7 +249,8 @@
 "icon_name": "ChocolateCookieArtifact",
 "hint": "Excavated commonly in all areas.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§1!5§ / 50"
 },
 "requirements": [],
 "undecoded_conditions": 0,
@@ -262,7 +265,8 @@
 "icon_name": "FossilizedRodentArtifact",
 "hint": "Hello, mouse.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "(§8G§.§5!V§[4] + §8G§.§=y§[4]) / 5000000"
 },
 "requirements": [],
 "undecoded_conditions": 0,
@@ -277,7 +281,8 @@
 "icon_name": "PowerOrbArtifact",
 "hint": "Attracted by massive concentration of mana.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§#!!§.§2!&§() / 15000"
 },
 "requirements": [],
 "undecoded_conditions": 1,
@@ -294,7 +299,8 @@
 "icon_name": "PinkCarrotArtifact",
 "hint": "Found randomly in the Farms.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§8!d§.id) / 5000"
 },
 "requirements": [
 "Playing as Fairy",
@@ -312,7 +318,15 @@
 "icon_name": "BottledVoiceArtifact",
 "hint": "Can be captured when Chanting.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(§8G§.§#N§(§'K§.id).§2-§,1.5) / 100000",
+"latex": "p = \\frac{\\left(S\\right)^{1.5}}{100\\,000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Fairy Chanting\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Fairy",
@@ -330,7 +344,8 @@
 "icon_name": "LuckyCloverArtifact",
 "hint": "Requires extreme amounts of luck!",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "(§8G§.§=y§[101] - 1) * 50"
 },
 "requirements": [
 "Playing as Elf",
@@ -348,7 +363,15 @@
 "icon_name": "MiniTreasureArtifact",
 "hint": "Click your way to the treasure!",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[4] / 3000000",
+"latex": "p = \\frac{C}{3\\,000\\,000}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+]
 },
 "requirements": [
 "Playing as Elf",
@@ -366,7 +389,8 @@
 "icon_name": "PillarFragmentArtifact",
 "hint": "May fall from the Heavens.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§0-§.id) / 3750"
 },
 "requirements": [
 "Playing as Angel",
@@ -384,7 +408,8 @@
 "icon_name": "DivineSwordArtifact",
 "hint": "Only found by dedicated Angel allies.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§\"!B§(52,true,false,false,true) / 86400"
 },
 "requirements": [
 "Playing as Angel",
@@ -404,7 +429,8 @@
 "icon_name": "AncientCoinPieceArtifact",
 "hint": "Rarely found among other special coins.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§@![§(false,false,true) / 50000000"
 },
 "requirements": [
 "Playing as Goblin",
@@ -422,7 +448,15 @@
 "icon_name": "GoblinPurseArtifact",
 "hint": "Fill your pockets with extorted money.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§#N§(§2<§.id).§2-§ / 300000",
+"latex": "p = \\frac{S}{300\\,000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Tax Collection\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Goblin",
@@ -440,7 +474,8 @@
 "icon_name": "RottenOrganArtifact",
 "hint": "Found among large masses of dead bodies.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§!-§(false,true) / 500"
 },
 "requirements": [
 "Playing as Undead",
@@ -458,7 +493,8 @@
 "icon_name": "JawBoneArtifact",
 "hint": "Needs some time in the night.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§7i§(§ !5§.id,false,true,true) / 36000"
 },
 "requirements": [
 "Playing as Undead",
@@ -499,7 +535,8 @@
 "icon_name": "DemonHornArtifact",
 "hint": "Only found by dedicated Demon allies.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§\"!B§(55,true,false,false,true) / 86400"
 },
 "requirements": [
 "Playing as Demon",
@@ -519,7 +556,15 @@
 "icon_name": "HugeTitanStatueArtifact",
 "hint": "Struck by the lightning.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§#N§(§^x§.id).§2-§ / 1000",
+"latex": "p = \\frac{S}{1000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Lightning Strike\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Titan",
@@ -537,7 +582,15 @@
 "icon_name": "TitanShieldArtifact",
 "hint": "Don't fret it.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[1] / 180000",
+"latex": "p = \\frac{E}{180\\,000}",
+"vars": [
+{
+"symbol": "E",
+"text": "Time played in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Titan",
@@ -575,7 +628,15 @@
 "icon_name": "StoneOfBalanceArtifact",
 "hint": "A Grand Balance performance.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§#N§(§!C§.id).§2-§ / 30000",
+"latex": "p = \\frac{S}{30\\,000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Grand Balance\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Druid",
@@ -593,7 +654,15 @@
 "icon_name": "TranslucentGooArtifact",
 "hint": "Byproduct of the Brain.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§#N§(§%!J§.id).§2-§ / 400",
+"latex": "p = \\frac{S}{400}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Brainwave\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Faceless",
@@ -611,7 +680,8 @@
 "icon_name": "OctopusShapedHelmetArtifact",
 "hint": "Found in the Labyrinths.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§2X§.id) / 2000"
 },
 "requirements": [
 "Playing as Faceless",
@@ -629,7 +699,15 @@
 "icon_name": "DwarvenBowArtifact",
 "hint": "Click to throw.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[4] / 25000",
+"latex": "p = \\frac{C}{25\\,000}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+]
 },
 "requirements": [
 "Dwarf as prestige faction"
@@ -646,7 +724,8 @@
 "icon_name": "StoneTankardArtifact",
 "hint": "Found in the Inns.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§2!+§.id) / 25000"
 },
 "requirements": [
 "Dwarf as prestige faction"
@@ -683,7 +762,8 @@
 "icon_name": "ArachnidFigurineArtifact",
 "hint": "Embrace Evil. For a while.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "(§8G§.§5!V§[3] + §8G§.§=y§[3] + §8G§.§@w§[3]) / 4320000"
 },
 "requirements": [
 "Drow as prestige faction"
@@ -702,7 +782,8 @@
 "icon_name": "SteelPlateArtifact",
 "hint": "Legacy from 50 generations ago.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§8!H§ / 50"
 },
 "requirements": [
 "Playing as Mercenary",
@@ -720,7 +801,8 @@
 "icon_name": "BlackSwordArtifact",
 "hint": "Only found by really, really dedicated Mercenary allies.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "(§8G§.§5!V§[61] + §8G§.§=y§[61] + §8G§.§@w§[61]) / 60000"
 },
 "requirements": [
 "Playing as Mercenary"
@@ -739,7 +821,8 @@
 "icon_name": "DragonFangArtifact",
 "hint": "Found in the Wyrm Dens.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§>!`§.id) / 400000"
 },
 "requirements": [
 "Reincarnation 50 or higher",
@@ -757,7 +840,15 @@
 "icon_name": "DragonSoulArtifact",
 "hint": "Take five deep breaths.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§#N§(§5!3§.id).§2-§ / 200000",
+"latex": "p = \\frac{S}{200\\,000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Dragon's Breath\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Reincarnation 50 or higher",
@@ -837,7 +928,8 @@
 "icon_name": "VoodooDollArtifact",
 "hint": "Found in the Witch Conclaves.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§[X§.id,true) / 10000"
 },
 "requirements": [
 "Evil alignment",
@@ -912,7 +1004,8 @@
 "icon_name": "DawnstoneArtifact",
 "hint": "Relic of the Dawn hours.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§1!5§ / 10000"
 },
 "requirements": [],
 "undecoded_conditions": 1,
@@ -929,7 +1022,8 @@
 "icon_name": "DuskstoneArtifact",
 "hint": "Relic of the Dusk hours.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§1!5§ / 10000"
 },
 "requirements": [],
 "undecoded_conditions": 1,
@@ -946,7 +1040,8 @@
 "icon_name": "AncientHeirloomArtifact",
 "hint": "Relic of the Lineage.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§`!=§() / 20"
 },
 "requirements": [],
 "undecoded_conditions": 1,
@@ -1000,7 +1095,15 @@
 "icon_name": "VeteranFigurineArtifact",
 "hint": "A reward for the veteran challenger.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[1] / 1000000",
+"latex": "p = \\frac{E}{1\\,000\\,000}",
+"vars": [
+{
+"symbol": "E",
+"text": "Time played in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Reincarnation 85 or higher"
@@ -1037,7 +1140,8 @@
 "icon_name": "ExcavatedMirageArtifact",
 "hint": "Raise your chances.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "0.5 * Math.log(1 + §#!!§.§0F§()) / 100"
 },
 "requirements": [
 "Ascension 2 or higher"
@@ -1054,7 +1158,8 @@
 "icon_name": "AncestralHourglassArtifact",
 "hint": "Really, raise your chances.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "2 * Math.pow(Math.log(1 + §#!!§.§0F§()),1.5) / 10000"
 },
 "requirements": [
 "Ascension 2 or higher"
@@ -1071,7 +1176,8 @@
 "icon_name": "SilkClothArtifact",
 "hint": "Found in the Swarming Towers.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§@E§.id,true) * 0.5 / 200000"
 },
 "requirements": [
 "Playing as Fairy",
@@ -1092,7 +1198,8 @@
 "icon_name": "RawEmeraldArtifact",
 "hint": "Not found on the first Excavation round.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(3 * (§8G§.§5!V§[135] + §8G§.§5!V§[104]),4.5) / 10000"
 },
 "requirements": [
 "Playing as Elf",
@@ -1113,7 +1220,8 @@
 "icon_name": "FossilizedWingArtifact",
 "hint": "Angels may fall after a long time.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§ !;§(52) / 2592000"
 },
 "requirements": [
 "Playing as Angel",
@@ -1134,7 +1242,8 @@
 "icon_name": "SpikedWhipArtifact",
 "hint": "Used by the overseers in the Slave Markets.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§6J§.id,true) * 0.5 / 250000"
 },
 "requirements": [
 "Playing as Goblin",
@@ -1155,7 +1264,8 @@
 "icon_name": "DustyCoffinArtifact",
 "hint": "The undead have patience.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§ !;§(54) / 2592000"
 },
 "requirements": [
 "Playing as Undead",
@@ -1176,7 +1286,8 @@
 "icon_name": "CrystallizedLavaArtifact",
 "hint": "Found in the Burning Abysses.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§%Z§(§>!O§.id,true) * 0.5 / 100000"
 },
 "requirements": [
 "Playing as Demon",
@@ -1197,7 +1308,8 @@
 "icon_name": "TitanHelmetArtifact",
 "hint": "Found in the trade route used for Exchanges.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(§8G§.§5!V§[24],2) / 500000000"
 },
 "requirements": [
 "Playing as Titan",
@@ -1218,7 +1330,8 @@
 "icon_name": "BranchOfTheLifeTreeArtifact",
 "hint": "Found in the remains of druidic ancestors.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(§8G§.§1!#§[7],3) / 1000000"
 },
 "requirements": [
 "Playing as Druid",
@@ -1239,7 +1352,8 @@
 "icon_name": "NightmareFigmentArtifact",
 "hint": "A strong and quick brain is required.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow((§8G§.§#N§(§%!J§.id) as §%!J§).§\"!P§(),1.5) / 1000000"
 },
 "requirements": [
 "Playing as Faceless",
@@ -1260,7 +1374,15 @@
 "icon_name": "BeardHairArtifact",
 "hint": "It requires a lot of beard samples to get the perfect hair.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§#!!§.§!-§() / 10000000000000",
+"latex": "p = \\frac{K}{10\\,000\\,000\\,000\\,000}",
+"vars": [
+{
+"symbol": "K",
+"text": "Your clicking reward (coins per click)"
+}
+]
 },
 "requirements": [
 "Dwarf as prestige faction",
@@ -1281,7 +1403,8 @@
 "icon_name": "PoisonVialArtifact",
 "hint": "Combo your way through.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§@W§.§'!b§() / 10000000"
 },
 "requirements": [
 "Drow as prestige faction",
@@ -1302,7 +1425,8 @@
 "icon_name": "DragonScaleArtifact",
 "hint": "Usually found when a lot of magic is lingering.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§?&§(true) / 2000"
 },
 "requirements": [
 "Dragon as prestige faction",
@@ -1323,7 +1447,15 @@
 "icon_name": "LanternOfGuidanceArtifact",
 "hint": "Massive mana flows can offer guidance.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(Math.log(§#!!§.§57§() * 30),3) / 234567",
+"latex": "p = \\frac{\\ln^{3}\\left(M \\cdot 30\\right)}{234\\,567}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration (per second)"
+}
+]
 },
 "requirements": [
 "Order alignment",
@@ -1342,7 +1474,8 @@
 "icon_name": "OilLampArtifact",
 "hint": "Chaos magic burns brightly.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.min(§&c§.§7i§(§'K§.id,true,false,true),§&c§.§7i§(§8>§.id,true,false,true),§&c§.§7i§(§%!J§.id,true,false,true)) / 6480000"
 },
 "requirements": [
 "Chaos alignment",
@@ -1361,7 +1494,15 @@
 "icon_name": "SparkOfLifeArtifact",
 "hint": "The power of Creation may spark something new.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "2 * Math.pow(0.5 * Math.log(1 + §&c§.§@![§(true,false,true)),2) / 120000",
+"latex": "p = \\frac{2 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + F\\right)\\right)^{2}}{120\\,000}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+]
 },
 "requirements": [
 "Balance alignment",
@@ -1380,7 +1521,15 @@
 "icon_name": "FirstIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(Math.log(1 + §#!!§.§57§() * 30),3) / 1000000",
+"latex": "p = \\frac{\\ln^{3}\\left(1 + M \\cdot 30\\right)}{1\\,000\\,000}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration (per second)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1401,7 +1550,15 @@
 "icon_name": "SecondIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§#!!§.§@!?§() / 50000000",
+"latex": "p = \\frac{X}{50\\,000\\,000}",
+"vars": [
+{
+"symbol": "X",
+"text": "Your Royal Exchange bonus"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1422,7 +1579,15 @@
 "icon_name": "ThirdIronFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(Math.log(1 + §#!!§.§,d§()),3) / 500000",
+"latex": "p = \\frac{\\ln^{3}\\left(1 + O\\right)}{500\\,000}",
+"vars": [
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1443,7 +1608,15 @@
 "icon_name": "FirstCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§#!!§.§!-§() / 1000000000000",
+"latex": "p = \\frac{K}{1\\,000\\,000\\,000\\,000}",
+"vars": [
+{
+"symbol": "K",
+"text": "Your clicking reward (coins per click)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1464,7 +1637,15 @@
 "icon_name": "SecondCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "4 * Math.pow(Math.log(1 + §&c§.§@![§(true,false,true)),3) / 50000000",
+"latex": "p = \\frac{4 \\cdot \\ln^{3}\\left(1 + F\\right)}{50\\,000\\,000}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1485,7 +1666,15 @@
 "icon_name": "ThirdCrystalFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "66 * §&c§.§]!s§(2,false,false,true) / 66000000",
+"latex": "p = \\frac{66 \\cdot T}{66\\,000\\,000}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total activity time of all Evil spells in this Reincarnation (seconds, before bonuses)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1506,7 +1695,15 @@
 "icon_name": "FirstStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(Math.log(1 + §8G§.§5!V§[4]),3) / 20000",
+"latex": "p = \\frac{\\ln^{3}\\left(1 + C\\right)}{20\\,000}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1527,7 +1724,15 @@
 "icon_name": "SecondStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "2 * §&c§.§0#§(-1,true) / 10000000",
+"latex": "p = \\frac{2 \\cdot B}{10\\,000\\,000}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you own"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1548,7 +1753,15 @@
 "icon_name": "ThirdStoneFragmentArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(Math.log(1 + §8G§.§#N§(§2<§.id).§2-§),3) / 125000",
+"latex": "p = \\frac{\\ln^{3}\\left(1 + S\\right)}{125\\,000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Time the spell \"Tax Collection\" has been active in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1569,7 +1782,8 @@
 "icon_name": "PlanetaryForceArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(§8G§.§[\"&§,2.5) / 2500"
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1589,7 +1803,8 @@
 "icon_name": "MercenaryInsigniaArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(§&c§.§,o§(§8G§.§\"!0§) * 0.5,2) / 10000"
 },
 "requirements": [
 "Playing as Mercenary",
@@ -1609,7 +1824,15 @@
 "icon_name": "ObsidianCrownArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "(§8G§.§5!V§[104] + §8G§.§=y§[104] + §8G§.§5!V§[135] + §8G§.§=y§[135]) / 1000",
+"latex": "p = \\frac{R}{1000}",
+"vars": [
+{
+"symbol": "R",
+"text": "Excavation Resets made in this Reincarnation (regular and free)"
+}
+]
 },
 "requirements": [
 "Playing as Mercenary",
@@ -1627,7 +1850,15 @@
 "icon_name": "ForgottenRelicArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(2 * §&c§.§1\",§(),2) / 1000000000",
+"latex": "p = \\frac{\\left(2 \\cdot P\\right)^{2}}{1\\,000\\,000\\,000}",
+"vars": [
+{
+"symbol": "P",
+"text": "Research points you have spent"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher"
@@ -1644,7 +1875,8 @@
 "icon_name": "FacilitySpellcraft2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§3\"&§(true,false,true)),3) / 50000"
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1664,7 +1896,15 @@
 "icon_name": "FacilityCraftsmanship2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(0.5 * Math.log(1 + §8G§.§5!V§[4]),3) / 10000",
+"latex": "p = \\frac{\\left(0.5 \\cdot \\ln\\left(1 + C\\right)\\right)^{3}}{10\\,000}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1684,7 +1924,8 @@
 "icon_name": "FacilityDivine2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§\"\" §(false,false,true) / 2160000"
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1704,7 +1945,15 @@
 "icon_name": "FacilityEconomics2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§#!!§.§@!?§() / 100000000",
+"latex": "p = \\frac{X}{100\\,000\\,000}",
+"vars": [
+{
+"symbol": "X",
+"text": "Your Royal Exchange bonus"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1724,7 +1973,8 @@
 "icon_name": "FacilityAlchemy2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§&!<§(4,true) / 1000000"
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1744,7 +1994,8 @@
 "icon_name": "FacilityWarfare2",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§!-§(false,true)),3) / 20000"
 },
 "requirements": [
 "Reincarnation 180 or higher",
@@ -1785,7 +2036,8 @@
 "icon_name": "GlowingWingArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.log(1 + §&c§.§3\"&§(true,false,true)) / 8000"
 },
 "requirements": [
 "Playing as Fairy",
@@ -1805,7 +2057,8 @@
 "icon_name": "SylvanMirrorArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.log(1 + §#!!§.§0F§()) / 8000"
 },
 "requirements": [
 "Playing as Elf",
@@ -1825,7 +2078,8 @@
 "icon_name": "SolidCloudArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§?&§(true) / 20000"
 },
 "requirements": [
 "Playing as Angel",
@@ -1845,7 +2099,8 @@
 "icon_name": "OrcFangNecklaceArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "Math.log(1 + §&c§.§9!P§(§2<§.id,false,true,true)) / 8000"
 },
 "requirements": [
 "Playing as Goblin",
@@ -1865,7 +2120,8 @@
 "icon_name": "BloodChaliceArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§1!;§(§`T§.id,true) / 10000"
 },
 "requirements": [
 "Playing as Undead",
@@ -1885,7 +2141,8 @@
 "icon_name": "DemonTailArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§]!s§(2,false,true,true) / 100000"
 },
 "requirements": [
 "Playing as Demon",
@@ -1905,7 +2162,8 @@
 "icon_name": "FrozenLightningArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§&c§.§7i§(§^x§.id,false,true,true) / 100000"
 },
 "requirements": [
 "Playing as Titan",
@@ -1925,7 +2183,8 @@
 "icon_name": "PrimalLeafArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[133],§8G§.§=y§[133])) / 8000"
 },
 "requirements": [
 "Playing as Druid",
@@ -1945,7 +2204,8 @@
 "icon_name": "TheBlackestInkArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§=y§[39] / 8000"
 },
 "requirements": [
 "Playing as Faceless",
@@ -1965,7 +2225,8 @@
 "icon_name": "DwarvenAnvilArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "0.5 * Math.log(1 + §&c§.§>!h§(false,false,true)) / 10000"
 },
 "requirements": [
 "Dwarf as prestige faction",
@@ -1985,7 +2246,8 @@
 "icon_name": "StilettoHeelArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[24] / 10000"
 },
 "requirements": [
 "Drow as prestige faction",
@@ -2005,7 +2267,8 @@
 "icon_name": "EyeOfTheDragonArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[96],§8G§.§=y§[96])) / 10000"
 },
 "requirements": [
 "Dragon as prestige faction",
@@ -2025,7 +2288,15 @@
 "icon_name": "MaskOfScorchRahArtifact",
 "hint": "You don't know what this is yet.",
 "chance": {
-"mode": "variable"
+"mode": "variable",
+"expr": "§8G§.§5!V§[1] / 1000000",
+"latex": "p = \\frac{E}{1\\,000\\,000}",
+"vars": [
+{
+"symbol": "E",
+"text": "Time played in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Ascension 4 or higher",

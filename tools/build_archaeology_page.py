@@ -31,7 +31,7 @@ def item(a):
     ch = a.get('chance', {})
     return {'n': a['name'], 'f': a['flavor'], 'h': a['hint'], 'q': a['requirements'],
             'x': a['undecoded_conditions'], 'i': icon_file(a),
-            'c': ch.get('mode'), 'p': ch.get('percent')}
+            'c': ch.get('mode'), 'p': ch.get('percent'), 'l': ch.get('latex'), 'v': ch.get('vars')}
 
 
 sections = []
@@ -49,6 +49,8 @@ html = '''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Realm Grinder Archaeology</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
 :root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
@@ -73,6 +75,10 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
 #tip ul{margin:2px 0 0;padding-left:18px}
 #tip .hint,#tip .more,#tip .chance{color:var(--muted)}
+#tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip ul.vars li{margin:2px 0}
+#tip .formula{overflow-x:auto;padding:4px 0}
+#tip .formula .katex-display{margin:.3em 0}
 #tip .flavor{font-style:italic;color:var(--muted)}
 </style>
 </head>
@@ -102,16 +108,31 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     if(it.c){
       tip.appendChild(el('span','lbl','How it is found'));
       var pct = (it.p!=null) ? String(it.p) : '';
-      var msg = it.c==='guaranteed' ? 'Once the requirements are met, it is found on your next excavation.'
-              : it.c==='fixed' ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has a '+pct+'% chance to find it.'
-              : 'Meeting the requirements does not unlock it by itself. From then on, each excavation has a chance to find it, and that chance depends on your stats.';
-      tip.appendChild(el('div','chance',msg));
+      var lead = 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ';
+      if(it.c==='guaranteed'){
+        tip.appendChild(el('div','chance','Once the requirements are met, it is found on your next excavation.'));
+      } else if(it.c==='fixed'){
+        tip.appendChild(el('div','chance',lead+'a '+pct+'% chance to find it.'));
+      } else if(it.l && it.v){
+        tip.appendChild(el('div','chance',lead+'a chance to find it, which depends on:'));
+        var ul2=el('ul','vars');
+        it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul2.appendChild(li); });
+        tip.appendChild(ul2);
+        var f=el('div','formula');
+        if(window.katex){ try{ katex.render(it.l,f,{throwOnError:false,displayMode:true}); }catch(e){ f.textContent=it.l; } }
+        else f.textContent=it.l;
+        tip.appendChild(f);
+        tip.appendChild(el('div','more','p is the percent chance per excavation.'));
+      } else {
+        tip.appendChild(el('div','chance',lead+'a chance to find it, which depends on your stats.'));
+      }
     }
     if(it.f){ tip.appendChild(el('span','lbl','Flavor text')); tip.appendChild(el('div','flavor',it.f)); }
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2), window.innerWidth-t.width-8);
     var y=a.top-t.height-8; if(y<8) y=a.bottom+8;
+    if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   function hideTip(){ tip.style.display='none'; }

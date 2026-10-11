@@ -13,6 +13,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve
+from chance_latex import convert
 
 names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
@@ -148,10 +149,26 @@ def find_chance(c):
             if mm:
                 v = float(mm.group(1))
                 return {'mode': 'guaranteed' if v >= 100 else 'fixed', 'percent': v}
-            return {'mode': 'variable'}
+            mx = re.fullmatch(r'return (.+);', body)
+            return {'mode': 'variable', 'expr': mx.group(1) if mx else None, 'cls': k.q}
         k = cl.get(k.parent)
         if k is not None and k.name == '§-+§': break
     return {'mode': 'guaranteed', 'percent': 100.0}  # base class default
+
+
+def chance_info(c):
+    ch = find_chance(c)
+    if ch.get('mode') == 'variable' and ch.get('expr'):
+        owner = cl[ch.pop('cls')]
+        def spell_name(tok):
+            q = resolve(owner, tok, cl)
+            n = named.get(q) if q else None
+            return n[1] if n and n[0] == 'spell' else None
+        r = convert(ch['expr'], spell_name)
+        if r: ch.update(r)
+        ch['expr'] = ch['expr']
+    ch.pop('cls', None)
+    return ch
 
 
 out = []
@@ -162,7 +179,7 @@ for a in res['arts']:
     out.append({
         'order': a['order'], 'kind': 'lore' if a['lore'] else 'quest', 'name': a['name'], 'flavor': a['flavor'].strip(),
         'icon': a['icon'] if a['icon'] in sprites else None, 'icon_name': a['icon'],
-        'hint': hint, 'chance': find_chance(c), 'requirements': reqs, 'undecoded_conditions': len(undec),
+        'hint': hint, 'chance': chance_info(c), 'requirements': reqs, 'undecoded_conditions': len(undec),
         'undecoded': undec,
     })
 json.dump(out, open(os.path.join(ROOT, 'data', 'artifacts.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
