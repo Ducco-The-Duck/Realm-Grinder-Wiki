@@ -98,10 +98,7 @@ def helper_call(cls, mem, args, name_of):
         return 'A', ('Your number of assistants (before multipliers)' if g(0) else 'Your number of assistants')
     if mem == '§3"&§':
         sc = 'in this Era' if g(0) else ('all-time' if g(1) else 'in this Reincarnation')
-        # unless the third flag is set the game also applies the "mana produced counts more" bonuses
-        # (Druid Perk 5 and the Temporal Flux spell)
-        return 'W', f'Mana produced {sc}' + (' (before bonus multipliers)' if g(2) else
-                                             ' (counting the bonuses that make mana produced count more)')
+        return 'W', f'Mana produced {sc}' + (' (before bonus multipliers)' if g(2) else '')
     if mem == '§@![§':
         return 'F', 'Faction Coins found ' + ('in this Era' if g(0) else ('all-time' if g(1) else 'in this Reincarnation'))
     if mem == '§>!h§':

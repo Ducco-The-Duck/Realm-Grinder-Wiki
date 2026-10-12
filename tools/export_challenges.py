@@ -263,8 +263,7 @@ MANUAL = {
         (r'\Sigma', 'Sum of the tier numbers of your owned Unique Buildings')),
     ('Druid Challenge', '§&s§'): _m(
         r'v = 3 \cdot \max\left(0, v_{1} - 10\right)^{1.5}',
-        ('v_{1}', 'Extra buildings Grand Balance affects (the first formula). Grand Balance has 1 + v₁ targets in '
-                  'total and the bonus starts at 12 targets, so the amount above 11 is v₁ − 10')),
+        ('v_{1}', 'Extra buildings Grand Balance affects (the first formula)')),
     ('Drow Challenge', '§^"I§'): _m(
         r'v = N - N_{\mathrm{CS}}',
         ('N', 'Spells you have cast in this Era, not counting Tax Collection'),
