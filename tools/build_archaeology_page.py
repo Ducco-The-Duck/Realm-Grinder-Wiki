@@ -83,7 +83,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html" aria-current="page">Archaeology</a><a href="research.html">Research</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html" aria-current="page">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a></nav>
 <h1>Archaeology</h1>
 <p class="sub">__TOTAL__ artifacts. Hover an icon to see its hint, unlock requirement, and the flavor text revealed once it is found.</p>
 <div id="root"></div>

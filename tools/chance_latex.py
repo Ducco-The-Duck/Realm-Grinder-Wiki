@@ -9,7 +9,7 @@ import ast, re
 from helper_calls import subst_helpers, subst_stats, to_py_ternary
 
 FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid',
-           8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon'}
+           8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
 BRANCH = ['Spellcraft', 'Craftsmanship', 'Divine', 'Economics', 'Alchemy', 'Warfare', 'Forbidden']
 SCOPE = {'era': 'in this Era', 'reinc': 'in this Reincarnation', 'all': 'all-time'}
 
@@ -36,6 +36,7 @@ STAT_ALL = G + r'§5!V§\[(\d+)\] \+ ' + G + r'§=y§\[\1\] \+ ' + G + r'§@w§\
 # regex (on the raw expression) -> (tex symbol, description or fn(match) -> description)
 # Order matters: longer / more specific patterns first.
 VARS = [
+    (G + r'§,P§(?![\w(])', 'a', 'Your Ascension number'),
     (r'\(' + G + r'§5!V§\[104\] \+ ' + G + r'§=y§\[104\] \+ ' + G + r'§5!V§\[135\] \+ ' + G + r'§=y§\[135\]\)',
      'R', 'Excavation Resets made in this Reincarnation (regular and free)'),
     (G + r'§5!V§\[135\] \+ ' + G + r'§=y§\[135\] \+ ' + G + r'§5!V§\[104\] \+ ' + G + r'§=y§\[104\]',
@@ -70,6 +71,7 @@ VARS = [
     (r'Math\.max\(' + G + r'§5!V§\[96\],' + G + r'§=y§\[96\]\)', r'A_{\max}',
      'Highest number of assistants you have had in this Reincarnation'),
     (r'§#!!§\.§57§\(\) \* 30', 'M', 'Your mana regeneration per second (the m/s shown in game)'),
+    (r'§&c§\.§57§\(true\) \* 30', 'M', 'Your offline mana regeneration per second'),
     (r'§#!!§\.§2!&§\(\)', r'M_{\max}', 'Your Maximum Mana'),
     (r'Math\.max\(' + G + r'§5!V§\[133\],' + G + r'§=y§\[133\]\)', r'M_{\max}',
      'Highest Maximum Mana you have had in this Reincarnation'),
@@ -91,6 +93,13 @@ VARS = [
 # patterns with one entity token (group 1); description gets the entity's display name
 SPELL_SCOPE = {('false', 'true'): 'era', ('false', 'false'): 'reinc', ('true', 'false'): 'all'}
 ENTITY_VARS = [
+    (r'(?!§&c§|§#!!§|§8G§)(' + S + r')\.§>!V§\.length', 'spell', 'n', lambda n, m: f'Number of buildings "{n}" is currently targeting'),
+    (r'(?!§&c§|§#!!§|§8G§)(' + S + r')\.§0#§\(\)', 'spell', 'K',
+     lambda n, m: f'Number of buildings "{n}" counts (all buildings you have built, 15 times as many once you have bought the upgrade "Formation")'),
+    (r'Math\.max\(0,' + G + r'§#N§\((' + S + r')\.id\)\.§' + "'" + r'!X§\) / 30', 'spell', 'e',
+     lambda n, m: f'Seconds since "{n}" was cast (while it is active)'),
+    (G + r'§#N§\((' + S + r')\.id\)\.§' + "'" + r'!X§ / 30', 'spell', 'e',
+     lambda n, m: f'Seconds since "{n}" was cast (while it is active)'),
     (G + r'§#N§\((' + S + r')\.id\)\.§2-§', 'spell', 'S', lambda n, m: f'Number of times you have cast "{n}" in this Era'),
     (r'§&c§\.§9!P§\((' + S + r')\.id,false,true,true\)', 'spell', 'S',
      lambda n, m: f'Number of times you have cast "{n}" in this Era (before bonus multipliers)'),
@@ -201,6 +210,10 @@ def to_tex(n, parent=None, sym=None):
             return r'\frac{' + T(n.left) + '}{' + T(n.right) + '}'
         if isinstance(op, ast.Mult):
             return f'{T(n.left, "*")} \\cdot {T(n.right, "*")}'
+        if isinstance(op, ast.Mod):
+            r = T(n.right, "*")
+            if isinstance(n.right, ast.BinOp): r = '\\left(' + r + '\\right)'
+            return f'{T(n.left, "*")} \\bmod {r}'
         if isinstance(op, (ast.Add, ast.Sub)):
             s = '+' if isinstance(op, ast.Add) else '-'
             t = f'{T(n.left)} {s} {T(n.right, s)}'

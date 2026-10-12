@@ -104,11 +104,12 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:2px 0;overflow-wrap:anywhere}
+#tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 </style>
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a></nav>
 <h1>Research</h1>
 <p class="sub">__TOTAL__ researches in __BRANCHES__ branches, in the in-game order (by research number). Hover a research for what it does, its formula and its requirements. The large icon is where you buy research points for the branch.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces most percentage effects. If a research's formula
@@ -175,6 +176,7 @@ popups are always the base values <i>v</i>.</div>
       tip.appendChild(el('span','lbl',it.f.length>1?'Formulas':'Formula'));
       var anyScaled=it.f.length>1 && it.f.some(function(f){ return f.s; });
       it.f.forEach(function(f,i){
+        if(i>0) tip.appendChild(el('div','fsep'));
         var vs = it.f.length>1 ? 'v_{'+(i+1)+'}' : 'v';
         var tex=f.l.replace(/^v = /, vs+' = ');
         if(f.lb){

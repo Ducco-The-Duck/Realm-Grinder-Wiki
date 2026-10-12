@@ -20,6 +20,16 @@ Only these need checking; remove an item when it is settled.
 4. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
    that were confirmed on other artifacts, but each formula is unverified individually.
 
+5. **Challenges** (page built from code). Texts, requirements, reincarnation numbers and rewards were checked by the user
+   up to Drow Challenge 5; Mystic Maze is a confirmed game bug (text says Reincarnation maximum, code uses the highest
+   single-type building count you own now). Still unchecked: (a) the formulas that needed a hand-written reading, namely
+   Thunderstorm / Titan Challenge (tier hit, Lightning Rod and the Titan perk "Titan Perk 4", not yet seen by the user), Versatile Combo / Drow Challenge
+   (casts this Era minus Combo Strike), Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps
+   (position of the lowest tier Maelstrom targets), Overflowing Magic (bonus times 12 minus tier), The Art of War and Altar of
+   Wishes (the number of spells tied to an alignment); (b) everything from the Mercenary section on (Mercenary, Archon, Djinn,
+   Makers), which is only in the code; (c) the three requirements that change with Ascension (Smuggled Jewels, Underground
+   Foundations, Omnipresence), where the code compares the unpenalised value and the game prints the penalised one.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)

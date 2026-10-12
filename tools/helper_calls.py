@@ -8,7 +8,7 @@ confidence are recorded in data/INFERENCES.md.
 import re
 
 FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid',
-           8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon'}
+           8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
 BRANCH = ['Spellcraft', 'Craftsmanship', 'Divine', 'Economics', 'Alchemy', 'Warfare', 'Forbidden']
 G = r'§8G§\.'
 
@@ -19,7 +19,8 @@ STAT_NAMES = {1: ('t', 'Time played'), 2: ('t', 'Time spent with Good alignment'
               4: ('C', 'Clicks made'), 15: ('N', 'Spells cast'), 16: ('W', 'Mana produced'),
               24: ('N', 'Royal Exchanges made'), 45: ('t', 'Time spent offline'),
               49: ('N', 'Times you affiliated with the Mercenaries'),
-              97: ('t', 'Time spent with at least one spell active'), 102: ('N', 'Rubies collected')}
+              97: ('t', 'Time spent with at least one spell active'), 102: ('N', 'Rubies collected'),
+              13: ('N', 'Upgrades purchased'), 134: ('N', 'Elven Luck triggered')}
 for _i in range(50, 64):
     STAT_NAMES[_i] = ('t', f'Time spent as {FACTION.get(_i - 50, "?")}')
 TIME_SYMS = {'t'}
@@ -90,6 +91,8 @@ def helper_call(cls, mem, args, name_of):
             sc = _scope(bool(g(1)), bool(g(2)))
             return ('t', f'Time spent with Neutral alignment {sc} (seconds)') if sc else None
         return _stat(ALIGN_STAT[first], g(1), g(2))
+    if mem == '§^">§': return 'U', 'Upgrades you have purchased in this Era'
+    if mem == '§4!`§' and first in (None, -1): return 'H', 'Highest number of buildings you own of a single type'
     if mem == '§!-§':
         if g(1): return 'A', 'Your Base Assistants (as shown in the game)'
         return 'A', ('Your number of assistants (before multipliers)' if g(0) else 'Your number of assistants')
@@ -114,13 +117,15 @@ def helper_call(cls, mem, args, name_of):
         return 'N', 'Spells cast ' + ('in this Era' if g(0) else ('all-time' if g(1) else 'in this Reincarnation'))
     if mem == '§0#§':
         if not args or args == [''] or first == -1: return 'B', 'Total buildings you have built'
-        if first in (0, 1, 2) and len(args) == 1:
-            return 'B', f'{ {0: "Neutral", 1: "Good", 2: "Evil"}[first] } buildings you have built'
+        if first in (0, 1, 2, 4) and len(args) == 1:
+            return 'B', f'{ {0: "Neutral", 1: "Good", 2: "Evil", 4: "Order"}[first] } buildings you have built'
         return None
     if mem == '§`!D§': return 'N', 'Royal Exchanges made in this Era'
     if mem == '§`!=§': return 'L', 'Your total Lineage level (all factions added together)'
     if mem == '§=`§': return 'B', 'Unique buildings you have built'
     if mem == '§1"O§': return 'B', 'Non-Unique buildings you have built'
+    if mem == '§]!s§' and not args or args == [''] and mem == '§]!s§':
+        return 'T', 'Total casts of all spells in this Reincarnation'
     if mem == '§]!s§' and isinstance(first, int) and first in ALIGN_WORD:
         who = 'all spells' if first == -1 else f'all {ALIGN_WORD[first]} spells'
         sc = _scope(bool(g(1)), bool(g(2)))
