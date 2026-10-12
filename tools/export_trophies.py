@@ -8,8 +8,10 @@ the remaining entries are grouped by which flag they carry.
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
+sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
+from numtext import pow10_text
 
 names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
@@ -30,7 +32,7 @@ out = []
 for r in rows:
     flag = next((GROUPS[k[2]] for k in ('f_a', 'f_b', 'f_c', 'f_d') if r[k]), None)
     out.append({
-        'order': r['order'], 'id': r['id'], 'name': r['name'], 'requirement': (r['requirement'] or '').strip(),
+        'order': r['order'], 'id': r['id'], 'name': r['name'], 'requirement': pow10_text((r['requirement'] or '').strip()),
         'icon': r['icon'] if r['icon'] in sprites else None, 'icon_name': r['icon'],
         'type': r['type'] or None, 'alignment': r['alignment'],
         'category': r['category'], 'tier': r['tier'],

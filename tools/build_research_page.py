@@ -35,7 +35,7 @@ for b in range(7):
     for r in its:
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
-            'd': r['description'], 'q': r['requirements'],
+            'd': r['description'], 'q': r['requirements'], 'h': r['hint'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'],
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
@@ -197,6 +197,7 @@ popups are always the base values <i>v</i>.</div>
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
       var pk=penalty(it); if(pk && it.f.length===1) tip.appendChild(el('div','more','Ascension penalty: '+new Array(pk+1).join('A')));
     }
+    if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','desc',it.h)); }
     if(t.q && t.q.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul2=el('ul'); t.q.forEach(function(q){ ul2.appendChild(el('li',null,q)); }); tip.appendChild(ul2);
