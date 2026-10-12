@@ -100,7 +100,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a></nav>
 <h1>Trophies</h1>
 <p class="sub">__TOTAL__ trophies, arranged as in the game. Hover an icon to see its name and requirement; click a stacked icon to see every tier.</p>
 <div id="root"></div>

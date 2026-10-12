@@ -6,6 +6,7 @@ The chance is a percentage rolled once per excavation.  The meaning of each inpu
 (with confidence) in data/INFERENCES.md.
 """
 import ast, re
+from helper_calls import subst_helpers, subst_stats, to_py_ternary
 
 FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid',
            8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon'}
@@ -36,6 +37,8 @@ STAT_ALL = G + r'§5!V§\[(\d+)\] \+ ' + G + r'§=y§\[\1\] \+ ' + G + r'§@w§\
 # Order matters: longer / more specific patterns first.
 VARS = [
     (r'\(' + G + r'§5!V§\[104\] \+ ' + G + r'§=y§\[104\] \+ ' + G + r'§5!V§\[135\] \+ ' + G + r'§=y§\[135\]\)',
+     'R', 'Excavation Resets made in this Reincarnation (regular and free)'),
+    (G + r'§5!V§\[135\] \+ ' + G + r'§=y§\[135\] \+ ' + G + r'§5!V§\[104\] \+ ' + G + r'§=y§\[104\]',
      'R', 'Excavation Resets made in this Reincarnation (regular and free)'),
     (r'\(' + G + r'§5!V§\[135\] \+ ' + G + r'§5!V§\[104\]\)', 'R', 'Excavation Resets made in this Era (regular and free)'),
     (r'\(' + STAT_ALL + r'\)', lambda m: stat_sym(int(m.group(1))), lambda m: stat_desc(int(m.group(1)), 'all')),
@@ -127,8 +130,30 @@ def convert(expr, name_of):
             if not d: return m.group(0)
             return slot(t, d)
         s = re.sub(pat, rep, s)
+    s = re.sub(r'§&c§\.§"!B§\(§&c§\.§;!4§\(§&c§\.§7"B§\(§&c§\.§8"3§\(§8G§\.§,!Y§\),§&c§\.§8"3§\(§8G§\.§9!m§\)\)\)\)',
+               lambda m: slot('t', 'Time spent as the faction opposite to your current one in this Reincarnation (seconds)'), s)
+    s = re.sub(r'§&c§\.§"!0§(?!\()', lambda m: slot('G', 'Your Gems'), s)
+    s = re.sub(r'§&c§\.§57§\(\) \* 30', lambda m: slot('M', 'Your mana regeneration per second (the m/s shown in game)'), s)
+    s = re.sub(r'§#!!§\.§8!H§(?!\()', lambda m: slot('R', 'Reincarnations you have made'), s)
+    s = re.sub(r'§&c§\.§@e§(?!\()', lambda m: slot('Y', 'Gold you own'), s)
+    s = re.sub(G + r'§4!Y§', lambda m: slot('N', 'Total number of trophies'), s)
+
+    def _most(m):
+        n = name_of(m.group(1))
+        return slot('N', f'Most "{n[1]}" buildings you have had in this Reincarnation') if n and n[0] == 'building' else m.group(0)
+    s = re.sub(G + r'§\^"C§\((' + S + r')\.id,0\)', _most, s)
+
+    def _tier(m):
+        n = name_of(m.group(1))
+        return slot('j', f'Tier "{n[1]}" is cast at (1 is the base tier)') if n and n[0] == 'spell' else m.group(0)
+    s = re.sub(G + r'§#N§\((' + S + r')\.id\)\.§`r§ \+ 1', _tier, s)
+    s = re.sub(G + r'§8t§', lambda m: slot('N', 'Number of trophies you have unlocked'), s)
+    s = subst_stats(s, slot)
+    s = subst_helpers(s, slot, name_of)
+    s = to_py_ternary(s)
     if '§' in s or failed: return None
-    s = s.replace('Math.pow', 'pow').replace('Math.log', 'log').replace('Math.max', 'max').replace('Math.min', 'min')
+    s = (s.replace('Math.pow', 'pow').replace('Math.log', 'log').replace('Math.max', 'max').replace('Math.min', 'min')
+         .replace('Math.floor', 'floor').replace('Math.abs', 'abs').replace('Math.sqrt', 'sqrt'))
     # symbols shared by several different inputs get subscripts 1, 2, ...
     count = {}
     for tex, _ in slots: count[tex] = count.get(tex, 0) + 1
@@ -180,8 +205,18 @@ def to_tex(n, parent=None, sym=None):
             s = '+' if isinstance(op, ast.Add) else '-'
             t = f'{T(n.left)} {s} {T(n.right, s)}'
             return f'\\left({t}\\right)' if parent in ('*', 'pow', '-') else t
+    if isinstance(n, ast.IfExp):
+        return (r'\begin{cases} ' + T(n.body) + r' & \text{if } ' + T(n.test) + r' \\ ' + T(n.orelse)
+                + r' & \text{otherwise} \end{cases}')
+    if isinstance(n, ast.Compare) and len(n.ops) == 1:
+        op = {ast.Gt: '>', ast.GtE: r'\ge', ast.Lt: '<', ast.LtE: r'\le'}.get(type(n.ops[0]))
+        if op: return f'{T(n.left)} {op} {T(n.comparators[0])}'
+    if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub): return '-' + T(n.operand, '*')
     if isinstance(n, ast.Call) and isinstance(n.func, ast.Name):
         f = n.func.id; a = n.args
+        if f in ('floor', 'int') and len(a) == 1: return r'\left\lfloor ' + T(a[0]) + r' \right\rfloor'
+        if f == 'abs' and len(a) == 1: return r'\left|' + T(a[0]) + r'\right|'
+        if f == 'sqrt' and len(a) == 1: return r'\sqrt{' + T(a[0]) + '}'
         if f == 'pow' and len(a) == 2:
             base = T(a[0])
             if not (isinstance(a[0], ast.Name) and '_' not in sym.get(a[0].id, a[0].id)):

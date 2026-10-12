@@ -22,3 +22,4 @@ data/achievements.json
 data/buildings.json
 
 tools/_*.py
+tools/_*.json

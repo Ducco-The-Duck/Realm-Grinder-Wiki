@@ -24,7 +24,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
 .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
-#tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+#tip{position:fixed;z-index:50;width:min(400px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #tip b{display:block;font-size:1rem}
 #tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
@@ -32,14 +32,13 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip .hint,#tip .more,#tip .chance{color:var(--muted)}
 #tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
 #tip ul.vars li{margin:2px 0}
-#tip .formula{overflow-x:auto;padding:4px 0}
-#tip .formula .katex-display{margin:.3em 0}
+#tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flavor{font-style:italic;color:var(--muted)}
 </style>
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html" aria-current="page">Archaeology</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html" aria-current="page">Archaeology</a><a href="research.html">Research</a></nav>
 <h1>Archaeology</h1>
 <p class="sub">106 artifacts. Hover an icon to see its hint, unlock requirement, and the flavor text revealed once it is found.</p>
 <div id="root"></div>
@@ -77,7 +76,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
         it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul2.appendChild(li); });
         tip.appendChild(ul2);
         var f=el('div','formula');
-        if(window.katex){ try{ katex.render(it.l,f,{throwOnError:false,displayMode:true}); }catch(e){ f.textContent=it.l; } }
+        if(window.katex){ try{ katex.render('\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }
         else f.textContent=it.l;
         tip.appendChild(f);
         tip.appendChild(el('div','more','p is the percent chance per excavation (the game shows it as "Chance: p%" once the artifact is eligible).'));

@@ -135,6 +135,37 @@ dwarven anvil, eye of the dragon, excavated mirage, factory, battlefield and man
 gives Spark of Life as (log10(1+x))^2 / 60,000; the current code is 2*(0.5*ln(1+F))^2 / 120,000 = (ln(1+F))^2 / 240,000
 (about 1.33x the old value). Docs older than 4.3.1 will disagree with the code for these eight artifacts; the code is current.
 
+## Researches (page: research.html)
+
+Source of truth is the game's own text where possible: the requirement text is the research's requirement
+method evaluated with the research marked as owned (so it prints the target instead of "Progress: x/y");
+descriptions are the game's description text with the "(+x%)" current-value readouts removed.
+
+| Claim | Confidence | Evidence |
+|---|---|---|
+| Research number (`§%w§`) = research points of that branch you must have bought; branch icon + `Research<number>` sprite is how the game draws the cell | high | `§ !3§` compares the branch's research points with `%w`; the research grid sets its texture to "Research" + `%w` |
+| Grid order = ascending research number (ties by the game's index `§"!U§`) | user-stated | the user's description of the in-game grid |
+| `§^!C§` = faction the research needs (current faction or prestige faction) | high | `§ !3§` |
+| Researches with number >= 5000 need Reincarnation 180 and the "Forgotten Relic" artifact | high | `§+!a§`; 3.7.0 changelog ("Forgotten Relic ... unlocks the 5000 research points cap") |
+| "Cannot be bought in Ascension 3 / 4 or higher" for numbers below 405 / 5000 | medium | `§9!%§` returns false for those; Mercenary-only exceptions in some overrides are not shown |
+| Stat 2 = Good time, 36 = Chaos time, 48 = Order time, 14 = Balance time, 45 = offline time, 97 = time with at least one spell active, 155 = Combo Strike counter max, 156 = Grand Balance targets max | medium | alignment-time helper maps alignment to these indices; research texts name the quantities |
+| `§&c§.§&!y§(least, ...)` etc. | medium | description text of Mercy / Compassion |
+| Research code = branch letter + research number (S, C, D, E, A, W; F for Forbidden is an assumption) | high / low for F | user's examples A200, C150, E300, S1 |
+| Displayed percentages are reduced by Ascension: shown = ((1 + v/100)^(0.1^(A - a + 1)) - 1) * 100 from Ascension a on (a = 1 unless the text says otherwise; some use 2, 4 or 5) | **high** | `§&c§.§6!T§` calls `§#!!§.§#%§`; matches the user's S1 reading (29% at Ascension 1 with 5757 mana: v = 1.2*5757^0.8 = 1223%, 13.2^0.1 = 1.295) |
+| Highest Ascension is 4 (the Ascend rule has one Reincarnation threshold for each of Ascension 0-3); the research page reads it from the code | high | `§8G§` Ascend function; user's guess agrees |
+| A research is unavailable from Ascension 3 (number < 405) / 4 (number < 5000) on | medium | `§9!%§` of the research base class; user could not confirm yet |
+| Description and requirement text change with the Ascension for 18 researches (e.g. Channeling S10: "by 160% per Heaven's Gate" at Ascension 0, "based on Heaven's Gates owned" from 1); the page evaluates the game's text at every Ascension | high | engine evaluation with the Ascension field set |
+| Research page shows the base formula plus an "A" mark per power of the Ascension penalty (k = Ascension - start + 1); descriptions use the Ascension-0 wording because the "by 160% per Gate" -> "based on Gates" rewordings are the penalty showing through; Estates (E3300) is the only research whose meaning changes (Ascension 3: all Unique Buildings that match your alignments) | high | engine evaluation of the description at every Ascension |
+| Only Dwarf (9), Drow (10) and Dragon (12) are prestige factions among those researches use (Archon 13 appears once in the code as a prestige value but no research needs it); every other faction research needs you to play as that faction. Condition: `faction == X or prestige faction == X`; the third affiliation does not count | high | code; user |
+| Research cell colour = fill of the game's `<Faction>Trim` texture (Fairy pink, Angel light blue, ...) | high | `§99§.§5t§` per-faction textures, used by the research cell class |
+| A research has two faction fields: the **home faction** (`§-!^§` of the research: the faction you must be playing to buy it; also the cell colour) and the **unlock faction** (`§^!C§`: the faction you must be playing/have as prestige to unlock it). They differ for 22 researches, e.g. Chain Lightning S300: unlock as Faceless (cast Brainwave 8 times), buy as Titan | **high** | user (S300), engine test, cell class uses `-!^` for the texture |
+| Unlocking is checked live (`§-6§` = ` !3` of the research); the first moment it is true the game sets the persistent unlocked flag `§?!6§` (saved as `§3!c§`, cleared only by a full wipe), after which the unlock faction no longer matters. The unlock check has no Mercenary clause, so a Mercenary cannot unlock a research whose unlock faction is another faction | high from the code, not tested in game | `§4!S§` unlock loop in `§8G§`; `§&!_§` unlocked getter |
+| Mercenaries are not subject to the home-faction lock; about 47 researches add their own condition (the faction's unique-building upgrade or spell); Bloodspring (A400) is blocked for them | high for the buy side | `§9!%§` overrides evaluated in the engine; the unlock side for Mercenaries is not decoded |
+| Mercenary override of availability (`§9!%§` in about 75 researches) lets a Mercenary buy a faction-specific research when a related spell/upgrade is available, without the Ascension cut-off | medium | code only; not shown beyond "Mercenaries may be an exception" |
+| Fusion (A105) = 0.7 * (ln(1 + F))^3, F = Faction Coins found this Era; Gargantuaness (C1500) = 0.75 * t^0.75, t = Neutral time this Reincarnation; Toxicity (A10875) = 1.3 * t^0.7, t = time as the faction opposite to your current one this Reincarnation; Backfire (W13500) = 0.75 * x^0.75 for six x values | **high** | code getters; user's old wiki / patch-notes formulas agree (A105 gave 41.9% at 1.66e7 coins at Ascension 1, user reads 41%) |
+| `§#!!§.§2!P§ / 2` and `§#!!§. !O§ / 2` in those formulas are non-zero only while the game simulates offline progress (set and cleared in the offline-time function); omitted | medium | code |
+| Manipulation (S3200) has no formula: "multiplicatively increase mana regen by 12% per active spell" | high | description text, user |
+
 ## Not decoded yet
 
 - All 106 artifacts' unlock conditions and all find-chance formulas are now decoded (Chocolate Cookie and
