@@ -1007,7 +1007,7 @@
 },
 {
 "symbol": "W",
-"text": "Mana produced in this Reincarnation"
+"text": "Mana produced in this Reincarnation (counting the bonuses that make mana produced count more)"
 }
 ],
 "label": "Extra buildings Grand Balance affects",
@@ -1018,7 +1018,7 @@
 "vars": [
 {
 "symbol": "v_{1}",
-"text": "Extra buildings Grand Balance affects (the first formula)"
+"text": "Extra buildings Grand Balance affects (the first formula). Grand Balance has 1 + v₁ targets in total and the bonus starts at 12 targets, so the amount above 11 is v₁ − 10"
 }
 ],
 "label": "Production of all targeted buildings, once there are more than 11 (%)",
@@ -2938,7 +2938,7 @@
 },
 {
 "symbol": "W",
-"text": "Mana produced in this Era"
+"text": "Mana produced in this Era (counting the bonuses that make mana produced count more)"
 },
 {
 "symbol": "T",
