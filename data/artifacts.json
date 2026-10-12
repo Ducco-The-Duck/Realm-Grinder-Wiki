@@ -12,7 +12,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 5 excavations"
+"5 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -30,7 +30,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 10 excavations"
+"10 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -48,7 +48,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 15 excavations"
+"15 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -66,7 +66,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 20 excavations"
+"20 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -84,7 +84,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 25 excavations"
+"25 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -102,7 +102,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 30 excavations"
+"30 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -120,7 +120,7 @@
 "percent": 100.0
 },
 "requirements": [
-"Make 1,500 excavations",
+"1,500 excavations since your last Excavation Reset",
 "Reincarnation 24 or higher"
 ],
 "undecoded_conditions": 0,
@@ -140,7 +140,7 @@
 },
 "requirements": [
 "Requires one of: upgrade \"Olympian Hall\", upgrade \"Stonehenge\", upgrade \"Sunken City\"",
-"Make 2,000 excavations"
+"2,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -159,7 +159,7 @@
 },
 "requirements": [
 "Reincarnation 32 or higher",
-"Make 2,750 excavations"
+"2,750 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -177,7 +177,7 @@
 "percent": 0.5
 },
 "requirements": [
-"Make 3,250 excavations",
+"3,250 excavations since your last Excavation Reset",
 "Dwarf as prestige faction",
 "Requires upgrade \"Dwarven Forge\""
 ],
@@ -197,7 +197,7 @@
 "percent": 0.5
 },
 "requirements": [
-"Make 3,000 excavations",
+"3,000 excavations since your last Excavation Reset",
 "Drow as prestige faction",
 "Requires upgrade \"Spider Sanctuary\""
 ],
@@ -213,14 +213,14 @@
 "icon_name": "RoughStoneArtifact",
 "hint": "A first-time only discovery.",
 "chance": {
-"mode": "variable",
-"expr": "§8G§.§5!V§[35] < 2 ? 2 : 0"
+"mode": "fixed",
+"percent": 2.0
 },
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[35] == 0"
-]
+"requirements": [
+"No excavations made yet in this Era (only the first excavation of an Era can find it)"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1073,
@@ -232,7 +232,14 @@
 "hint": "Rarely found in the pyramids of old.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§7A§.id) / 1000"
+"expr": "§8G§.§%Z§(§7A§.id) / 1000",
+"latex": "p = \\frac{N}{1000}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Ancient Pyramid\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Neutral alignment"
@@ -250,7 +257,14 @@
 "hint": "Excavated commonly in all areas.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§1!5§ / 50"
+"expr": "§8G§.§1!5§ / 50",
+"latex": "p = \\frac{N}{50}",
+"vars": [
+{
+"symbol": "N",
+"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+}
+]
 },
 "requirements": [],
 "undecoded_conditions": 0,
@@ -266,7 +280,14 @@
 "hint": "Hello, mouse.",
 "chance": {
 "mode": "variable",
-"expr": "(§8G§.§5!V§[4] + §8G§.§=y§[4]) / 5000000"
+"expr": "(§8G§.§5!V§[4] + §8G§.§=y§[4]) / 5000000",
+"latex": "p = \\frac{C}{5 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+]
 },
 "requirements": [],
 "undecoded_conditions": 0,
@@ -282,13 +303,20 @@
 "hint": "Attracted by massive concentration of mana.",
 "chance": {
 "mode": "variable",
-"expr": "§#!!§.§2!&§() / 15000"
-},
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"§#!!§.§2!&§() >= 3000"
+"expr": "§#!!§.§2!&§() / 15000",
+"latex": "p = \\frac{M_{\\max}}{1.5 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
 ]
+},
+"requirements": [
+"At least 3,000 Maximum Mana"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1077,
@@ -300,7 +328,14 @@
 "hint": "Found randomly in the Farms.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§8!d§.id) / 5000"
+"expr": "§8G§.§%Z§(§8!d§.id) / 5000",
+"latex": "p = \\frac{N}{5000}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Farm\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Playing as Fairy",
@@ -320,7 +355,7 @@
 "chance": {
 "mode": "variable",
 "expr": "Math.pow(§8G§.§#N§(§'K§.id).§2-§,1.5) / 100000",
-"latex": "p = \\frac{\\left(S\\right)^{1.5}}{10^{5}}",
+"latex": "p = \\frac{S^{1.5}}{10^{5}}",
 "vars": [
 {
 "symbol": "S",
@@ -345,7 +380,14 @@
 "hint": "Requires extreme amounts of luck!",
 "chance": {
 "mode": "variable",
-"expr": "(§8G§.§=y§[101] - 1) * 50"
+"expr": "(§8G§.§=y§[101] - 1) * 50",
+"latex": "p = \\left(L - 1\\right) \\cdot 50",
+"vars": [
+{
+"symbol": "L",
+"text": "Longest Elven Luck streak in this Reincarnation (clicks in a row that triggered Elven Luck)"
+}
+]
 },
 "requirements": [
 "Playing as Elf",
@@ -390,7 +432,14 @@
 "hint": "May fall from the Heavens.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§0-§.id) / 3750"
+"expr": "§8G§.§%Z§(§0-§.id) / 3750",
+"latex": "p = \\frac{N}{3750}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Heaven's Gate\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Playing as Angel",
@@ -409,16 +458,22 @@
 "hint": "Only found by dedicated Angel allies.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§\"!B§(52,true,false,false,true) / 86400"
+"expr": "§&c§.§\"!B§(52,true,false,false,true) / 86400",
+"latex": "p = \\frac{t}{86\\,400}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Angel over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Angel",
-"No prestige faction"
+"No prestige faction",
+"Spend 4 hours as Angel (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§\"!B§(52,true,false,false,true) >= 14400"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1083,
@@ -430,7 +485,14 @@
 "hint": "Rarely found among other special coins.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§@![§(false,false,true) / 50000000"
+"expr": "§&c§.§@![§(false,false,true) / 50000000",
+"latex": "p = \\frac{F}{5 \\times 10^{7}}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Reincarnation (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Playing as Goblin",
@@ -475,7 +537,14 @@
 "hint": "Found among large masses of dead bodies.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§!-§(false,true) / 500"
+"expr": "§&c§.§!-§(false,true) / 500",
+"latex": "p = \\frac{A}{500}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your Base Assistants (as shown in the game)"
+}
+]
 },
 "requirements": [
 "Playing as Undead",
@@ -494,16 +563,22 @@
 "hint": "Needs some time in the night.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§7i§(§ !5§.id,false,true,true) / 36000"
+"expr": "§&c§.§7i§(§ !5§.id,false,true,true) / 36000",
+"latex": "p = \\frac{t}{3.6 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Night Time\" in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Undead",
-"No prestige faction"
+"No prestige faction",
+"Have \"Night Time\" active for 1 hour in total in this Era"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§7i§(§ !5§.id,false,true,true) >= 3600"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1087,
@@ -519,12 +594,11 @@
 },
 "requirements": [
 "Playing as Demon",
-"No prestige faction"
+"No prestige faction",
+"Unlock 666 trophies"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§8t§ >= 666"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1088,
@@ -536,16 +610,22 @@
 "hint": "Only found by dedicated Demon allies.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§\"!B§(55,true,false,false,true) / 86400"
+"expr": "§&c§.§\"!B§(55,true,false,false,true) / 86400",
+"latex": "p = \\frac{t}{86\\,400}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Demon over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Demon",
-"No prestige faction"
+"No prestige faction",
+"Spend 4 hours as Demon (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§\"!B§(55,true,false,false,true) >= 14400"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1089,
@@ -594,12 +674,11 @@
 },
 "requirements": [
 "Playing as Titan",
-"No prestige faction"
+"No prestige faction",
+"Play for at least 2 hours in this Era"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[1] >= 7200"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1091,
@@ -613,11 +692,13 @@
 "mode": "fixed",
 "percent": 2.0
 },
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"var _loc1_:Boolean = false; var _loc3_:* = 0; var _loc4_:int = 0; var _loc2_:§`!;§ = null; if(§-6§ && (§8G§.§-!^§ == 7 && §8G§.§#3§ == -1)) { _loc1_ = true; _loc3_ = 0; _loc4_ = 0; while(_loc4_ < §8G§"
-]
+"requirements": [
+"Playing as Druid",
+"No prestige faction",
+"Own exactly the same number of each of these buildings: Farm, Inn, Blacksmith, Deep Mine, Stone Pillars, Alchemist Lab, Monastery, Labyrinth, Iron Stronghold, Ancient Pyramid, Hall of Legends"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1092,
@@ -681,7 +762,14 @@
 "hint": "Found in the Labyrinths.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§2X§.id) / 2000"
+"expr": "§8G§.§%Z§(§2X§.id) / 2000",
+"latex": "p = \\frac{N}{2000}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Labyrinth\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Playing as Faceless",
@@ -725,7 +813,14 @@
 "hint": "Found in the Inns.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§2!+§.id) / 25000"
+"expr": "§8G§.§%Z§(§2!+§.id) / 25000",
+"latex": "p = \\frac{N}{2.5 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Inn\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Dwarf as prestige faction"
@@ -746,12 +841,11 @@
 "percent": 2.0
 },
 "requirements": [
-"Drow as prestige faction"
+"Drow as prestige faction",
+"No clicks made in this Era"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[4] == 0"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1098,
@@ -763,15 +857,21 @@
 "hint": "Embrace Evil. For a while.",
 "chance": {
 "mode": "variable",
-"expr": "(§8G§.§5!V§[3] + §8G§.§=y§[3] + §8G§.§@w§[3]) / 4320000"
+"expr": "(§8G§.§5!V§[3] + §8G§.§=y§[3] + §8G§.§@w§[3]) / 4320000",
+"latex": "p = \\frac{t}{4.32 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Evil alignment over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
-"Drow as prestige faction"
+"Drow as prestige faction",
+"Spend 1 day with Evil alignment (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[3] + §8G§.§=y§[3] + §8G§.§@w§[3] >= 86400"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1099,
@@ -783,7 +883,14 @@
 "hint": "Legacy from 50 generations ago.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§8!H§ / 50"
+"expr": "§8G§.§8!H§ / 50",
+"latex": "p = \\frac{R}{50}",
+"vars": [
+{
+"symbol": "R",
+"text": "Your Reincarnation number"
+}
+]
 },
 "requirements": [
 "Playing as Mercenary",
@@ -802,15 +909,21 @@
 "hint": "Only found by really, really dedicated Mercenary allies.",
 "chance": {
 "mode": "variable",
-"expr": "(§8G§.§5!V§[61] + §8G§.§=y§[61] + §8G§.§@w§[61]) / 60000"
+"expr": "(§8G§.§5!V§[61] + §8G§.§=y§[61] + §8G§.§@w§[61]) / 60000",
+"latex": "p = \\frac{t}{6 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Mercenary over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
-"Playing as Mercenary"
+"Playing as Mercenary",
+"Affiliate with the Mercenaries 100 times (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[49] + §8G§.§=y§[49] + §8G§.§@w§[49] >= 100"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1101,
@@ -822,7 +935,14 @@
 "hint": "Found in the Wyrm Dens.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§>!`§.id) / 400000"
+"expr": "§8G§.§%Z§(§>!`§.id) / 400000",
+"latex": "p = \\frac{N}{4 \\times 10^{5}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Iron Stronghold\" buildings you own (including bonuses that multiply this count)"
+}
+]
 },
 "requirements": [
 "Reincarnation 50 or higher",
@@ -852,12 +972,11 @@
 },
 "requirements": [
 "Reincarnation 50 or higher",
-"Dragon as prestige faction"
+"Dragon as prestige faction",
+"\"Dragon's Breath\" at tier 5 or higher"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§#N§(§5!3§.id).§`r§ >= 4"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1103,
@@ -872,12 +991,11 @@
 "percent": 20.0
 },
 "requirements": [
-"Reincarnation 16 or higher"
+"Reincarnation 16 or higher",
+"Within the first 5 minutes of an Era"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§5!V§[1] <= 300"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1104,
@@ -912,12 +1030,11 @@
 },
 "requirements": [
 "Reincarnation 12 or higher",
-"Playing as Mercenary"
+"Playing as Mercenary",
+"Purchase one upgrade from 11 different factions (as a Mercenary)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§#!!§.§^!&§() >= 11"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1106,
@@ -929,7 +1046,14 @@
 "hint": "Found in the Witch Conclaves.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§[X§.id,true) / 10000"
+"expr": "§8G§.§%Z§(§[X§.id,true) / 10000",
+"latex": "p = \\frac{N}{10^{4}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Witch Conclave\" buildings you own"
+}
+]
 },
 "requirements": [
 "Evil alignment",
@@ -969,7 +1093,7 @@
 "percent": 2.0
 },
 "requirements": [
-"Make 1,500 excavations",
+"1,500 excavations since your last Excavation Reset",
 "Reincarnation 42 or higher"
 ],
 "undecoded_conditions": 0,
@@ -988,12 +1112,11 @@
 "percent": 0.1
 },
 "requirements": [
+"No faction chosen yet",
 "No prestige faction"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§-!^§ == -1"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1110,
@@ -1005,13 +1128,21 @@
 "hint": "Relic of the Dawn hours.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§1!5§ / 10000"
-},
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"var _loc1_:Date = new Date(); return §-6§ && §8G§.§8!H§ >= 16 && (_loc1_.getHours() >= 5 && _loc1_.getHours() <= 11);"
+"expr": "§8G§.§1!5§ / 10000",
+"latex": "p = \\frac{N}{10^{4}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+}
 ]
+},
+"requirements": [
+"Reincarnation 16 or higher",
+"Excavate between 05:00 and 11:59 (your computer's local time)"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1111,
@@ -1023,13 +1154,21 @@
 "hint": "Relic of the Dusk hours.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§1!5§ / 10000"
-},
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"var _loc1_:Date = new Date(); return §-6§ && §8G§.§8!H§ >= 16 && (_loc1_.getHours() >= 18 && _loc1_.getHours() <= 20);"
+"expr": "§8G§.§1!5§ / 10000",
+"latex": "p = \\frac{N}{10^{4}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+}
 ]
+},
+"requirements": [
+"Reincarnation 16 or higher",
+"Excavate between 18:00 and 20:59 (your computer's local time)"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1112,
@@ -1041,13 +1180,20 @@
 "hint": "Relic of the Lineage.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§`!=§() / 20"
-},
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§`!=§() > 0"
+"expr": "§&c§.§`!=§() / 20",
+"latex": "p = \\frac{L}{20}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your total Lineage level (all factions added together)"
+}
 ]
+},
+"requirements": [
+"At least one Lineage level"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1113,
@@ -1063,7 +1209,7 @@
 },
 "requirements": [
 "Reincarnation 75 or higher",
-"Make 1,500 excavations"
+"1,500 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1080,11 +1226,14 @@
 "mode": "fixed",
 "percent": 5.0
 },
-"requirements": [],
-"undecoded_conditions": 1,
-"undecoded": [
-"var _loc3_:Array = null; var _loc4_:int = 0; var _loc1_:int = 0; if(§-6§ && §8G§.§8!H§ >= 75 && §8G§.§-!^§ == 11 && §8G§.§<P§(§[!i§.id)) { _loc3_ = []; _loc4_ = 0; _loc1_ = 0; while(_loc1_ <= 12) { _l"
-]
+"requirements": [
+"Reincarnation 75 or higher",
+"Playing as Mercenary",
+"Mercenary researches unlocked",
+"Have purchased upgrades from 12 different factions other than Mercenary"
+],
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1115,
@@ -1106,12 +1255,11 @@
 ]
 },
 "requirements": [
-"Reincarnation 85 or higher"
+"Reincarnation 85 or higher",
+"Have completed the challenge that rewards the upgrade \"Dracomet Vault\""
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§'\"§(§0!5§.id)"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1116,
@@ -1141,7 +1289,14 @@
 "hint": "Raise your chances.",
 "chance": {
 "mode": "variable",
-"expr": "0.5 * Math.log(1 + §#!!§.§0F§()) / 100"
+"expr": "0.5 * Math.log(1 + §#!!§.§0F§()) / 100",
+"latex": "p = \\frac{0.5 \\cdot \\ln\\left(1 + Q\\right)}{100}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher"
@@ -1159,7 +1314,14 @@
 "hint": "Really, raise your chances.",
 "chance": {
 "mode": "variable",
-"expr": "2 * Math.pow(Math.log(1 + §#!!§.§0F§()),1.5) / 10000"
+"expr": "2 * Math.pow(Math.log(1 + §#!!§.§0F§()),1.5) / 10000",
+"latex": "p = \\frac{2 \\cdot \\left(\\ln\\left(1 + Q\\right)\\right)^{1.5}}{10^{4}}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher"
@@ -1177,12 +1339,19 @@
 "hint": "Found in the Swarming Towers.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§@E§.id,true) * 0.5 / 200000"
+"expr": "§8G§.§%Z§(§@E§.id,true) * 0.5 / 200000",
+"latex": "p = \\frac{N \\cdot 0.5}{2 \\times 10^{5}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Wizard Tower\" buildings you own"
+}
+]
 },
 "requirements": [
 "Playing as Fairy",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Bottled Voice\"",
 "Requires trophy \"Pink Carrot\""
 ],
@@ -1199,12 +1368,19 @@
 "hint": "Not found on the first Excavation round.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(3 * (§8G§.§5!V§[135] + §8G§.§5!V§[104]),4.5) / 10000"
+"expr": "Math.pow(3 * (§8G§.§5!V§[135] + §8G§.§5!V§[104]),4.5) / 10000",
+"latex": "p = \\frac{\\left(3 \\cdot R\\right)^{4.5}}{10^{4}}",
+"vars": [
+{
+"symbol": "R",
+"text": "Excavation Resets made in this Era (regular and free)"
+}
+]
 },
 "requirements": [
 "Playing as Elf",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Lucky Clover\"",
 "Requires trophy \"Mini-treasure\""
 ],
@@ -1221,12 +1397,19 @@
 "hint": "Angels may fall after a long time.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§ !;§(52) / 2592000"
+"expr": "§&c§.§ !;§(52) / 2592000",
+"latex": "p = \\frac{t}{2.592 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Angel over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Angel",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Pillar Fragment\"",
 "Requires trophy \"Divine Sword\""
 ],
@@ -1243,12 +1426,19 @@
 "hint": "Used by the overseers in the Slave Markets.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§6J§.id,true) * 0.5 / 250000"
+"expr": "§8G§.§%Z§(§6J§.id,true) * 0.5 / 250000",
+"latex": "p = \\frac{N \\cdot 0.5}{2.5 \\times 10^{5}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Slave Pen\" buildings you own"
+}
+]
 },
 "requirements": [
 "Playing as Goblin",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Ancient Coin Piece\"",
 "Requires trophy \"Goblin Purse\""
 ],
@@ -1265,12 +1455,19 @@
 "hint": "The undead have patience.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§ !;§(54) / 2592000"
+"expr": "§&c§.§ !;§(54) / 2592000",
+"latex": "p = \\frac{t}{2.592 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Undead over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Undead",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Rotten Organ\"",
 "Requires trophy \"Jaw Bone\""
 ],
@@ -1287,12 +1484,19 @@
 "hint": "Found in the Burning Abysses.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§%Z§(§>!O§.id,true) * 0.5 / 100000"
+"expr": "§8G§.§%Z§(§>!O§.id,true) * 0.5 / 100000",
+"latex": "p = \\frac{N \\cdot 0.5}{10^{5}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Hall of Legends\" buildings you own"
+}
+]
 },
 "requirements": [
 "Playing as Demon",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Demonic Figurine\"",
 "Requires trophy \"Demon Horn\""
 ],
@@ -1309,12 +1513,19 @@
 "hint": "Found in the trade route used for Exchanges.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(§8G§.§5!V§[24],2) / 500000000"
+"expr": "Math.pow(§8G§.§5!V§[24],2) / 500000000",
+"latex": "p = \\frac{N^{2}}{5 \\times 10^{8}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+]
 },
 "requirements": [
 "Playing as Titan",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Huge Titan Statue\"",
 "Requires trophy \"Titan Shield\""
 ],
@@ -1331,12 +1542,19 @@
 "hint": "Found in the remains of druidic ancestors.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(§8G§.§1!#§[7],3) / 1000000"
+"expr": "Math.pow(§8G§.§1!#§[7],3) / 1000000",
+"latex": "p = \\frac{L^{3}}{10^{6}}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Druid Lineage level"
+}
+]
 },
 "requirements": [
 "Playing as Druid",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Glyph Table\"",
 "Requires trophy \"Stone of Balance\""
 ],
@@ -1353,12 +1571,19 @@
 "hint": "A strong and quick brain is required.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow((§8G§.§#N§(§%!J§.id) as §%!J§).§\"!P§(),1.5) / 1000000"
+"expr": "Math.pow((§8G§.§#N§(§%!J§.id) as §%!J§).§\"!P§(),1.5) / 1000000",
+"latex": "p = \\frac{H^{1.5}}{10^{6}}",
+"vars": [
+{
+"symbol": "H",
+"text": "Brainwave's headstart time (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Faceless",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Translucent Goo\"",
 "Requires trophy \"Octopus-shaped Helmet\""
 ],
@@ -1387,7 +1612,7 @@
 "requirements": [
 "Dwarf as prestige faction",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Dwarven Bow\"",
 "Requires trophy \"Stone Tankard\""
 ],
@@ -1404,12 +1629,19 @@
 "hint": "Combo your way through.",
 "chance": {
 "mode": "variable",
-"expr": "§@W§.§'!b§() / 10000000"
+"expr": "§@W§.§'!b§() / 10000000",
+"latex": "p = \\frac{K}{10^{7}}",
+"vars": [
+{
+"symbol": "K",
+"text": "Combo Strike's current production bonus (%)"
+}
+]
 },
 "requirements": [
 "Drow as prestige faction",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Ceremonial Dagger\"",
 "Requires trophy \"Arachnid Figurine\""
 ],
@@ -1426,12 +1658,19 @@
 "hint": "Usually found when a lot of magic is lingering.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§?&§(true) / 2000"
+"expr": "§&c§.§?&§(true) / 2000",
+"latex": "p = \\frac{S}{2000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+]
 },
 "requirements": [
 "Dragon as prestige faction",
 "Ascension 2 or higher",
-"Make 2,000 excavations",
+"2,000 excavations since your last Excavation Reset",
 "Requires trophy \"Dragon Fang\"",
 "Requires trophy \"Dragon Soul\""
 ],
@@ -1475,7 +1714,22 @@
 "hint": "Chaos magic burns brightly.",
 "chance": {
 "mode": "variable",
-"expr": "Math.min(§&c§.§7i§(§'K§.id,true,false,true),§&c§.§7i§(§8>§.id,true,false,true),§&c§.§7i§(§%!J§.id,true,false,true)) / 6480000"
+"expr": "Math.min(§&c§.§7i§(§'K§.id,true,false,true),§&c§.§7i§(§8>§.id,true,false,true),§&c§.§7i§(§%!J§.id,true,false,true)) / 6480000",
+"latex": "p = \\frac{\\min\\left(t_{1}, t_{2}, t_{3}\\right)}{6.48 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "t_{1}",
+"text": "Activity time of \"Fairy Chanting\" over all your Reincarnations (seconds)"
+},
+{
+"symbol": "t_{2}",
+"text": "Activity time of \"Hellfire Blast\" over all your Reincarnations (seconds)"
+},
+{
+"symbol": "t_{3}",
+"text": "Activity time of \"Brainwave\" over all your Reincarnations (seconds)"
+}
+]
 },
 "requirements": [
 "Chaos alignment",
@@ -1535,7 +1789,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1564,7 +1818,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -1593,7 +1847,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -1622,7 +1876,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1651,7 +1905,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -1680,7 +1934,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -1709,7 +1963,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1738,7 +1992,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -1767,7 +2021,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"Make 5,000 excavations",
+"5,000 excavations since your last Excavation Reset",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -1783,7 +2037,14 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(§8G§.§[\"&§,2.5) / 2500"
+"expr": "Math.pow(§8G§.§[\"&§,2.5) / 2500",
+"latex": "p = \\frac{D^{2.5}}{2500}",
+"vars": [
+{
+"symbol": "D",
+"text": "Consecutive days you have played (daily streak; days counted in UTC server time)"
+}
+]
 },
 "requirements": [
 "Ascension 2 or higher",
@@ -1804,7 +2065,14 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(§&c§.§,o§(§8G§.§\"!0§) * 0.5,2) / 10000"
+"expr": "Math.pow(§&c§.§,o§(§8G§.§\"!0§) * 0.5,2) / 10000",
+"latex": "p = \\frac{\\left(G \\cdot 0.5\\right)^{2}}{10^{4}}",
+"vars": [
+{
+"symbol": "G",
+"text": "Order of magnitude of your Gems (e.g. 3.2e45 Gems counts as 45)"
+}
+]
 },
 "requirements": [
 "Playing as Mercenary",
@@ -1876,16 +2144,22 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§3\"&§(true,false,true)),3) / 50000"
+"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§3\"&§(true,false,true)),3) / 50000",
+"latex": "p = \\frac{\\left(0.5 \\cdot \\ln\\left(1 + W\\right)\\right)^{3}}{5 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Era (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Chaos alignment"
+"Chaos alignment",
+"Buy 5,000 Spellcraft Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(0,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1148,
@@ -1908,12 +2182,11 @@
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Neutral alignment"
+"Neutral alignment",
+"Buy 5,000 Craftsmanship Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(1,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1149,
@@ -1925,16 +2198,22 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§\"\" §(false,false,true) / 2160000"
+"expr": "§&c§.§\"\" §(false,false,true) / 2160000",
+"latex": "p = \\frac{U}{2.16 \\times 10^{6}}",
+"vars": [
+{
+"symbol": "U",
+"text": "Activity time of your most used spell in this Reincarnation (seconds; a few spells such as Tax Collection are not counted)"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Good alignment"
+"Good alignment",
+"Buy 5,000 Divine Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(2,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1150,
@@ -1957,12 +2236,11 @@
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Balance alignment"
+"Balance alignment",
+"Buy 5,000 Economics Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(3,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1151,
@@ -1974,16 +2252,22 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§&!<§(4,true) / 1000000"
+"expr": "§&c§.§&!<§(4,true) / 1000000",
+"latex": "p = \\frac{P}{10^{6}}",
+"vars": [
+{
+"symbol": "P",
+"text": "Alchemy Research points bought over all your Reincarnations (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Order alignment"
+"Order alignment",
+"Buy 5,000 Alchemy Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(4,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1152,
@@ -1995,16 +2279,22 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§!-§(false,true)),3) / 20000"
+"expr": "Math.pow(0.5 * Math.log(1 + §&c§.§!-§(false,true)),3) / 20000",
+"latex": "p = \\frac{\\left(0.5 \\cdot \\ln\\left(1 + A\\right)\\right)^{3}}{2 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your Base Assistants (as shown in the game)"
+}
+]
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Evil alignment"
+"Evil alignment",
+"Buy 5,000 Warfare Research points (over all your Reincarnations)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§&c§.§&!<§(5,true) >= 5000"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1153,
@@ -2020,12 +2310,11 @@
 },
 "requirements": [
 "Reincarnation 180 or higher",
-"Playing as Mercenary"
+"Playing as Mercenary",
+"Purchase one upgrade from 15 different factions (as a Mercenary)"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§#!!§.§^!&§() >= 15"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 },
 {
 "order": 1154,
@@ -2037,13 +2326,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.log(1 + §&c§.§3\"&§(true,false,true)) / 8000"
+"expr": "Math.log(1 + §&c§.§3\"&§(true,false,true)) / 8000",
+"latex": "p = \\frac{\\ln\\left(1 + W\\right)}{8000}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Era (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Playing as Fairy",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2058,13 +2354,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.log(1 + §#!!§.§0F§()) / 8000"
+"expr": "Math.log(1 + §#!!§.§0F§()) / 8000",
+"latex": "p = \\frac{\\ln\\left(1 + Q\\right)}{8000}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+]
 },
 "requirements": [
 "Playing as Elf",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2079,13 +2382,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§?&§(true) / 20000"
+"expr": "§&c§.§?&§(true) / 20000",
+"latex": "p = \\frac{S}{2 \\times 10^{4}}",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+]
 },
 "requirements": [
 "Playing as Angel",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2100,13 +2410,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "Math.log(1 + §&c§.§9!P§(§2<§.id,false,true,true)) / 8000"
+"expr": "Math.log(1 + §&c§.§9!P§(§2<§.id,false,true,true)) / 8000",
+"latex": "p = \\frac{\\ln\\left(1 + S\\right)}{8000}",
+"vars": [
+{
+"symbol": "S",
+"text": "Number of times you have cast \"Tax Collection\" in this Era (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Playing as Goblin",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2121,13 +2438,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§1!;§(§`T§.id,true) / 10000"
+"expr": "§&c§.§1!;§(§`T§.id,true) / 10000",
+"latex": "p = \\frac{D}{10^{4}}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Blood Frenzy\" (seconds, as set when it was cast)"
+}
+]
 },
 "requirements": [
 "Playing as Undead",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2142,13 +2466,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§]!s§(2,false,true,true) / 100000"
+"expr": "§&c§.§]!s§(2,false,true,true) / 100000",
+"latex": "p = \\frac{T}{10^{5}}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total number of casts of all Evil spells in this Era (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Playing as Demon",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2163,13 +2494,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§&c§.§7i§(§^x§.id,false,true,true) / 100000"
+"expr": "§&c§.§7i§(§^x§.id,false,true,true) / 100000",
+"latex": "p = \\frac{t}{10^{5}}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Lightning Strike\" in this Era (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Titan",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2184,13 +2522,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[133],§8G§.§=y§[133])) / 8000"
+"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[133],§8G§.§=y§[133])) / 8000",
+"latex": "p = \\frac{0.5 \\cdot \\ln\\left(1 + M_{\\max}\\right)}{8000}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Highest Maximum Mana you have had in this Reincarnation"
+}
+]
 },
 "requirements": [
 "Playing as Druid",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2205,13 +2550,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§=y§[39] / 8000"
+"expr": "§8G§.§=y§[39] / 8000",
+"latex": "p = \\frac{E_{\\max}}{8000}",
+"vars": [
+{
+"symbol": "E_{\\max}",
+"text": "Length of your longest Era in this Reincarnation, not counting the current one (seconds)"
+}
+]
 },
 "requirements": [
 "Playing as Faceless",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2226,13 +2578,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "0.5 * Math.log(1 + §&c§.§>!h§(false,false,true)) / 10000"
+"expr": "0.5 * Math.log(1 + §&c§.§>!h§(false,false,true)) / 10000",
+"latex": "p = \\frac{0.5 \\cdot \\ln\\left(1 + C\\right)}{10^{4}}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation (before bonus multipliers)"
+}
+]
 },
 "requirements": [
 "Dwarf as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2247,13 +2606,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "§8G§.§5!V§[24] / 10000"
+"expr": "§8G§.§5!V§[24] / 10000",
+"latex": "p = \\frac{N}{10^{4}}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+]
 },
 "requirements": [
 "Drow as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2268,13 +2634,20 @@
 "hint": "You don't know what this is yet.",
 "chance": {
 "mode": "variable",
-"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[96],§8G§.§=y§[96])) / 10000"
+"expr": "0.5 * Math.log(1 + Math.max(§8G§.§5!V§[96],§8G§.§=y§[96])) / 10000",
+"latex": "p = \\frac{0.5 \\cdot \\ln\\left(1 + A_{\\max}\\right)}{10^{4}}",
+"vars": [
+{
+"symbol": "A_{\\max}",
+"text": "Highest number of assistants you have had in this Reincarnation"
+}
+]
 },
 "requirements": [
 "Dragon as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"Make 10,000 excavations"
+"10,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2301,11 +2674,10 @@
 "requirements": [
 "Ascension 4 or higher",
 "Reincarnation 255 or higher",
-"Make 50,000 excavations"
+"50,000 excavations since your last Excavation Reset",
+"Own 4 Legacy upgrades"
 ],
-"undecoded_conditions": 1,
-"undecoded": [
-"§8G§.§?!2§(\"LegacyUpgrade\") >= 4"
-]
+"undecoded_conditions": 0,
+"undecoded": []
 }
 ]

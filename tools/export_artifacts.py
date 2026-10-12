@@ -13,7 +13,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve
-from chance_latex import convert
+from chance_latex import convert, STAT_ALL, BRANCH
 
 names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
@@ -44,7 +44,9 @@ src = f"""JSON.stringify((function () {{
     arts.push({{ order: i, q: qOf(o), name: o.{J('§1i§')}, flavor: o.{J('§@"§')}(), icon: o.{J('§^!#§')},
                 lore: !!o.{J('§4!3§')}, threshold: o.{J('§?"M§')}, hint: hint }});
   }}
-  return {{ named: named, arts: arts }};
+  var B = lists.building, blds = [];
+  for (var i = 0; i < B.length; i++) blds.push([B[i].{J('§1i§')}, B[i].{J('§,!Y§')}]);
+  return {{ named: named, arts: arts, blds: blds }};
 }})())"""
 res = json.loads(ctx.eval(src))
 named = res['named']
@@ -70,13 +72,44 @@ def clauses(expr):
 G = r'§8G§\.'
 
 
+def dur(sec):
+    """14400 -> '4 hours'."""
+    for size, unit in ((86400, 'day'), (3600, 'hour'), (60, 'minute'), (1, 'second')):
+        if sec >= size and sec % size == 0:
+            n = sec // size
+            return f'{n:,} {unit}' + ('s' if n != 1 else '')
+    return f'{sec:,} seconds'
+
+
+# Hidden trophies used as flags, shown in words
+FLAG_TROPHY = {'Research Mercenary Trophy': 'Mercenary researches unlocked'}
+
+# Method-body conditions (loops) recognised by their shape; the `if(...)` condition is decoded normally
+GLYPH = re.compile(r'while\(_loc\d_ < §8G§\.§%<§\.length\).*§,!Y§ != 0 && _loc\d_\.§,!Y§ != 3.*§!a§')
+UNION = re.compile(r'§<!7§ && _loc\d_\.§-!\^§ != 11 && _loc\d_\.§<`§ .*if\(_loc\d_ >= (\d+)\) \{ return true;')
+
+
 def decode(c, art):
     meth = next((m for m in c.methods if m.name == '§ !3§'), None)
     if meth is None: return [], [], False
     body = re.sub(r'\s+', ' ', meth.body.strip())
+    # local-time window (Dawnstone, Duskstone)
+    body = re.sub(r'^var _loc1_:Date = new Date\(\); ', '', body)
+    body = re.sub(r'\(_loc1_\.getHours\(\) >= (\d+) && _loc1_\.getHours\(\) <= (\d+)\)', r'__HOURS(\1,\2)', body)
+    extra = None
     m = re.fullmatch(r'return (.+);', body)
-    if not m: return [], [body[:200]], True
-    expr = m.group(1).strip()
+    if not m:
+        mi = re.search(r'if\((.+?)\) \{', body)
+        if mi and GLYPH.search(body):
+            names = [n for n, al in res['blds'] if al in (0, 3)]
+            extra = 'Own exactly the same number of each of these buildings: ' + ', '.join(names)
+        elif mi and UNION.search(body):
+            extra = f'Have purchased upgrades from {UNION.search(body).group(1)} different factions other than Mercenary'
+        else:
+            return [], [body[:200]], True
+        expr = mi.group(1).strip()
+    else:
+        expr = m.group(1).strip()
     reqs, undec = [], []
 
     def ref_name(tok):
@@ -98,6 +131,7 @@ def decode(c, art):
                 for x in sub: _one(x, c, art, reqs, undec, ref_name)
                 s = None; break
         if s is not None: _one(s, c, art, reqs, undec, ref_name)
+    if extra: reqs.append(extra)
     return reqs, undec, True
 
 
@@ -105,10 +139,62 @@ def _one(s, c, art, reqs, undec, ref_name):
     s = s.strip()
     if s == '§-6§': return
     thr = art['threshold']
+    EXC = '{:,} excavations since your last Excavation Reset'
     m = re.fullmatch(G + r'§1!5§ >= §\?"M§', s)
-    if m: reqs.append(f'Make {int(thr):,} excavations'); return
+    if m: reqs.append(EXC.format(int(thr))); return
     m = re.fullmatch(G + r'§1!5§ >= (\d+)', s)
-    if m: reqs.append(f'Make {int(m.group(1)):,} excavations'); return
+    if m: reqs.append(EXC.format(int(m.group(1)))); return
+    m = re.fullmatch(r'__HOURS\((\d+),(\d+)\)', s)
+    if m:
+        reqs.append(f'Excavate between {int(m.group(1)):02d}:00 and {int(m.group(2)):02d}:59 (your computer\'s local time)')
+        return
+    m = (re.fullmatch(r'\(?' + STAT_ALL + r'\)? >= (\d+)', s)
+         or re.fullmatch(r'§&c§\.§"!B§\((\d+),true,false,false,true\) >= (\d+)', s))
+    if m:
+        i, v = int(m.group(1)), int(m.group(2))
+        if i == 3: reqs.append(f'Spend {dur(v)} with Evil alignment (over all your Reincarnations)'); return
+        if 50 <= i <= 63: reqs.append(f'Spend {dur(v)} as {FACTION[i - 50]} (over all your Reincarnations)'); return
+        if i == 49: reqs.append(f'Affiliate with the Mercenaries {v:,} times (over all your Reincarnations)'); return
+    m = re.fullmatch(G + r'§5!V§\[35\] == 0', s)
+    if m: reqs.append('No excavations made yet in this Era (only the first excavation of an Era can find it)'); return
+    m = re.fullmatch(G + r'§5!V§\[4\] == 0', s)
+    if m: reqs.append('No clicks made in this Era'); return
+    m = re.fullmatch(G + r'§5!V§\[1\] >= (\d+)', s)
+    if m: reqs.append(f'Play for at least {dur(int(m.group(1)))} in this Era'); return
+    m = re.fullmatch(G + r'§5!V§\[1\] <= (\d+)', s)
+    if m: reqs.append(f'Within the first {dur(int(m.group(1)))} of an Era'); return
+    m = re.fullmatch(r'§#!!§\.§2!&§\(\) >= (\d+)', s)
+    if m: reqs.append(f'At least {int(m.group(1)):,} Maximum Mana'); return
+    m = re.fullmatch(G + r'§\?!2§\("LegacyUpgrade"\) >= (\d+)', s)
+    if m: reqs.append(f'Own {m.group(1)} Legacy upgrades'); return
+    m = re.fullmatch(G + r'§8t§ >= (\d+)', s)
+    if m: reqs.append(f'Unlock {int(m.group(1)):,} trophies'); return
+    m = re.fullmatch(r'§#!!§\.§\^!&§\(\) >= (\d+)', s)
+    if m: reqs.append(f'Purchase one upgrade from {m.group(1)} different factions (as a Mercenary)'); return
+    m = re.fullmatch(G + r'§-!\^§ == -1', s)
+    if m: reqs.append('No faction chosen yet'); return
+    m = re.fullmatch(r'§&c§\.§`!=§\(\) > 0', s)
+    if m: reqs.append('At least one Lineage level'); return
+    m = re.fullmatch(r'§&c§\.§&!<§\((\d),true\) >= (\d+)', s)
+    if m:
+        reqs.append(f'Buy {int(m.group(2)):,} {BRANCH[int(m.group(1))]} Research points (over all your Reincarnations)')
+        return
+    m = re.fullmatch(r'§&c§\.§7i§\((§[^§]*§)\.id,false,true,true\) >= (\d+)', s)
+    if m:
+        n = ref_name(m.group(1))
+        if n and n[0] == 'spell':
+            reqs.append(f'Have "{n[1]}" active for {dur(int(m.group(2)))} in total in this Era'); return
+    m = re.fullmatch(G + r'§#N§\((§[^§]*§)\.id\)\.§`r§ >= (\d+)', s)
+    if m:
+        n = ref_name(m.group(1))
+        # the stored tier counts from 0; the game displays it from 1 ("Unlock Tier %0" uses +1)
+        if n and n[0] == 'spell':
+            reqs.append(f'"{n[1]}" at tier {int(m.group(2)) + 1} or higher'); return
+    m = re.fullmatch(G + r'§\'"§\((§[^§]*§)\.id\)', s)
+    if m:
+        n = ref_name(m.group(1))
+        if n and n[0] == 'upgrade':
+            reqs.append(f'Have completed the challenge that rewards the upgrade "{n[1]}"'); return
     m = re.fullmatch(G + r'§,P§ >= (\d+)', s)
     if m: reqs.append(f'Ascension {m.group(1)} or higher'); return
     m = re.fullmatch(G + r'§8!H§ >= (\d+)', s)
@@ -127,6 +213,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     m = re.fullmatch(G + r'(?:§7d§|§<P§)\((§[^§]*§)\.id\)', s)
     if m:
         n = ref_name(m.group(1))
+        if n and n[1] in FLAG_TROPHY: reqs.append(FLAG_TROPHY[n[1]]); return
         if n: reqs.append(f'Requires {n[0]} "{n[1]}"'); return
     m = re.fullmatch(r'\(?((?:' + G + r'§7d§\(§[^§]*§\.id\)(?: \|\| )?)+)\)?', s)
     if m:
@@ -149,6 +236,9 @@ def find_chance(c):
             if mm:
                 v = float(mm.group(1))
                 return {'mode': 'guaranteed' if v >= 100 else 'fixed', 'percent': v}
+            # Rough Stone: "first excavation of an Era" -> fixed chance (its unlock condition needs 0 excavations)
+            mf = re.fullmatch(r'return §8G§\.§5!V§\[35\] < \d+ \? (\d+(?:\.\d+)?) : 0;', body)
+            if mf: return {'mode': 'fixed', 'percent': float(mf.group(1))}
             mx = re.fullmatch(r'return (.+);', body)
             return {'mode': 'variable', 'expr': mx.group(1) if mx else None, 'cls': k.q}
         k = cl.get(k.parent)
@@ -160,11 +250,10 @@ def chance_info(c):
     ch = find_chance(c)
     if ch.get('mode') == 'variable' and ch.get('expr'):
         owner = cl[ch.pop('cls')]
-        def spell_name(tok):
+        def name_of(tok):
             q = resolve(owner, tok, cl)
-            n = named.get(q) if q else None
-            return n[1] if n and n[0] == 'spell' else None
-        r = convert(ch['expr'], spell_name)
+            return named.get(q) if q else None
+        r = convert(ch['expr'], name_of)
         if r: ch.update(r)
         ch['expr'] = ch['expr']
     ch.pop('cls', None)

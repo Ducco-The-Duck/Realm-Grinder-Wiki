@@ -104,11 +104,14 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
       tip.appendChild(el('span','lbl','Unlock requirement'));
       if(it.q.length){ var ul=el('ul'); it.q.forEach(function(q){ ul.appendChild(el('li',null,q)); }); tip.appendChild(ul); }
       if(it.x) tip.appendChild(el('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
+    } else {
+      tip.appendChild(el('span','lbl','Unlock requirement'));
+      tip.appendChild(el('div','hint','None. It can be found on any excavation.'));
     }
     if(it.c){
       tip.appendChild(el('span','lbl','How it is found'));
       var pct = (it.p!=null) ? String(it.p) : '';
-      var lead = 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ';
+      var lead = (it.q.length || it.x) ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ' : 'Each excavation has ';
       if(it.c==='guaranteed'){
         tip.appendChild(el('div','chance','Once the requirements are met, it is found on your next excavation.'));
       } else if(it.c==='fixed'){
@@ -116,7 +119,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
       } else if(it.l && it.v){
         tip.appendChild(el('div','chance',lead+'a chance to find it, which depends on:'));
         var ul2=el('ul','vars');
-        it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul2.appendChild(li); });
+        it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul2.appendChild(li); });
         tip.appendChild(ul2);
         var f=el('div','formula');
         if(window.katex){ try{ katex.render(it.l,f,{throwOnError:false,displayMode:true}); }catch(e){ f.textContent=it.l; } }
