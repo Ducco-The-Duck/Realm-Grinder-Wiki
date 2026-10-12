@@ -38,7 +38,8 @@ for b in range(7):
             'd': r['description'], 'q': r['requirements'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'],
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
-            'mn': r['mercenary_note'],
+            'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
+            'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
             'a': {k: {'d': v['description'], 'q': v['requirements']} for k, v in r['by_ascension'].items()},
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
@@ -148,6 +149,12 @@ popups are always the base values <i>v</i>.</div>
     tip.textContent='';
     tip.appendChild(el('b',null,it.n));
     if(it.k) tip.appendChild(el('div','num',it.k));
+    if(it.al || it.an){
+      var al=el('div','faction'), sw2=el('span','sw'); sw2.style.background=it.ac||'transparent'; al.appendChild(sw2);
+      al.appendChild(document.createTextNode(it.al ? 'Can only be bought while your alignment is '+it.al+'.'
+                                                   : 'Cannot be bought while your alignment is '+it.an+'.'));
+      tip.appendChild(al);
+    }
     if(it.fn){
       var fl=el('div','faction'), sw=el('span','sw'); sw.style.background=it.fc||'transparent'; fl.appendChild(sw);
       fl.appendChild(document.createTextNode(it.fn+' research. Can only be bought '+
@@ -207,7 +214,7 @@ popups are always the base values <i>v</i>.</div>
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
   function cell(it, cls){
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
-    if(it.fc){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc); }
+    if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
     function show(){ showTip(it,b); }

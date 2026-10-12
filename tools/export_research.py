@@ -43,7 +43,7 @@ PROBE = f"""(function () {{ __MUT
   var lists = {{ upgrade: U, trophy: {g}.{J('§0Q§')}, spell: {g}.{J('§0!A§')}, building: {g}.{J('§%<§')} }};
   for (var k in lists) for (var i = 0; i < lists[k].length; i++) {{ var q = qOf(lists[k][i]); if (q !== null) named[q] = [k, lists[k][i].{J('§1i§')}]; }}
   for (var i = 0; i < U.length; i++) {{ var o = U[i]; if (!(o instanceof K)) continue;
-    var r = {{ q: qOf(o), n: o.{J('§1i§')}, w: o.{J('§%w§')}, b: o.{J('§!G§')}, f: o.{J('§^!C§')}, h: o.{J('§-!^§')}, u: o.{J('§"!U§')},
+    var r = {{ q: qOf(o), n: o.{J('§1i§')}, w: o.{J('§%w§')}, b: o.{J('§!G§')}, f: o.{J('§^!C§')}, h: o.{J('§-!^§')}, al: o.{J('§,!Y§')}, ax: o.{J('§9!m§')}, u: o.{J('§"!U§')},
               id: o.id, icon: o.{J('§^!#§')}, hint: '' }};
     try {{ r.desc = o.{J('§@"§')}(); }} catch (e) {{ r.desc = 'ERR ' + e; }}
     try {{ r.hint = o.{J('§8!s§')}(); }} catch (e) {{ }}
@@ -106,6 +106,26 @@ def clean_desc(texts):
     return re.sub(r'\n{3,}', '\n\n', t)
 
 
+# The game prints big numbers with its suffix table (" M"," B"," T"," Qa",...): index i means 10^(6+3i).
+_dsrc = open(os.path.join(ROOT, 'out', 'script', 'scripts', '§-D§.as'), encoding='utf8').read()
+_suffixes = [x.strip() for x in re.findall(r'"( [A-Za-z]+)"', re.search(r'§1X§:Array = \[(.*?)\];', _dsrc).group(1))]
+SUFFIX_EXP = {sfx: 6 + 3 * i for i, sfx in enumerate(_suffixes)}
+SUFFIX_RE = re.compile(r'(?<![\w.])(\d+(?:\.\d+)?) ?(' + '|'.join(sorted(map(re.escape, SUFFIX_EXP), key=len, reverse=True)) + r')(?![A-Za-z])')
+_SUP = str.maketrans('0123456789-', '⁰¹²³⁴⁵⁶⁷⁸⁹⁻')
+
+
+def pow10_text(text):
+    """'10 M' -> '10⁷', '1.5 B' -> '1.5 × 10⁹' (plain numbers and times are left alone)."""
+    def rep(m):
+        mant, e = float(m.group(1)), SUFFIX_EXP[m.group(2)]
+        while mant >= 10: mant /= 10; e += 1
+        while 0 < mant < 1: mant *= 10; e -= 1
+        mant = round(mant, 6)
+        pw = '10' + str(e).translate(_SUP)
+        return pw if mant == 1 else f'{mant:g} × {pw}'
+    return SUFFIX_RE.sub(rep, text)
+
+
 def clean_req(req, row):
     out, res = [], []
     for ln in req.replace('\r', '').split('\n'):
@@ -114,7 +134,7 @@ def clean_req(req, row):
         m = re.match(r'^Research \d: (.+)$', ln)
         if m: res.append(m.group(1)); continue
         ln = re.sub(r'^Progress: ?', '', ln)
-        if ln: out.append('Reach ' + ln)
+        if ln: out.append('Reach ' + pow10_text(ln))
     if res: out.append('Have bought the researches ' + ' and '.join(res))
     return out
 
@@ -251,6 +271,13 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
     unavail = 3 if r['w'] < 405 else (4 if r['w'] < 5000 else None)
     avail = next((m for m in c.methods if m.name == '§9!%§'), None) if c else None
     merc = bool(avail is not None and re.search(r'§-!\^§ == 11', avail.body))
+    # alignment lock: the research's own alignment must equal yours (`9!%` compares them); Common Business excludes Neutral
+    ALN = {1: 'Good', 2: 'Evil', 3: 'Neutral', 4: 'Order', 5: 'Chaos', 6: 'Balance'}
+    al_lock = al_not = None
+    if avail is not None and r['h'] == -1:
+        if re.search(r'§8G§\.§,!Y§ == §,!Y§', avail.body) and r['al'] in ALN: al_lock = ALN[r['al']]
+        elif re.search(r'§8G§\.§9!m§ == §9!m§', avail.body) and r['ax'] in ALN: al_lock = ALN[r['ax']]
+        elif re.search(r'§8G§\.§,!Y§ != 3', avail.body): al_not = 'Neutral'
     # what a Mercenary needs: the faction lock does not apply to them unless the research has its own rule
     merc_note = ''
     if r['h'] not in (-1, 11):
@@ -289,7 +316,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         'faction': r['h'], 'faction_name': FACTION.get(r['h']) if r['h'] != -1 else None,
         'faction_kind': None if r['h'] == -1 else ('prestige' if r['h'] in PRESTIGE else 'base'),
         'unlock_faction': r['f'], 'unlock_faction_name': FACTION.get(r['f']) if r['f'] != -1 else None,
-        'mercenary_note': merc_note,
+        'mercenary_note': merc_note, 'alignment_lock': al_lock, 'alignment_not': al_not,
         'unavailable_from': unavail, 'mercenary_exception': merc, 'by_ascension': by_asc,
     })
 # cell background per faction: the game draws each faction's "<Name>Trim" texture; use its fill colour
@@ -298,7 +325,11 @@ FACTION_COLORS = {}
 for fid, nm in TRIM.items():
     im = Image.open(os.path.join(ROOT, sprites[nm + 'Trim'][0]['file'])).convert('RGBA')
     FACTION_COLORS[str(fid)] = '#%02x%02x%02x' % im.getpixel((im.width // 2, im.height // 2))[:3]
-json.dump({'max_ascension': MAX_ASC, 'faction_colors': FACTION_COLORS}, open(os.path.join(ROOT, 'data', 'research_meta.json'), 'w'))
+ALIGN_COLORS = {}
+for nm in ('Good', 'Evil', 'Order', 'Chaos', 'Balance'):
+    im = Image.open(os.path.join(ROOT, sprites[nm + 'Trim'][0]['file'])).convert('RGBA')
+    ALIGN_COLORS[nm] = '#%02x%02x%02x' % im.getpixel((im.width // 2, im.height // 2))[:3]
+json.dump({'max_ascension': MAX_ASC, 'faction_colors': FACTION_COLORS, 'alignment_colors': ALIGN_COLORS}, open(os.path.join(ROOT, 'data', 'research_meta.json'), 'w'))
 out.sort(key=lambda x: (x['branch'], x['number'], x['index']))
 json.dump(out, open(os.path.join(ROOT, 'data', 'research.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 json.dump({f'{k[0]}::{k[1]}': v for k, v in unconv.items()},
