@@ -47,7 +47,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
 #tip .desc{white-space:pre-line}
 #tip ul{margin:2px 0 0;padding-left:18px}
-#tip .more{color:var(--muted)}
+#tip .more,#tip .hint{color:var(--muted)}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
 #tip ul.vars li{margin:2px 0}
@@ -145,7 +145,7 @@ popups are always the base values <i>v</i>.</div>
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
       var pk=penalty(it); if(pk && it.f.length===1) tip.appendChild(el('div','more','Ascension penalty: '+new Array(pk+1).join('A')));
     }
-    if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','desc',it.h)); }
+    if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','hint',it.h)); }
     if(t.q && t.q.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul2=el('ul'); t.q.forEach(function(q){ ul2.appendChild(el('li',null,q)); }); tip.appendChild(ul2);
