@@ -152,9 +152,9 @@ def _one(s, c, art, reqs, undec, ref_name):
          or re.fullmatch(r'§&c§\.§"!B§\((\d+),true,false,false,true\) >= (\d+)', s))
     if m:
         i, v = int(m.group(1)), int(m.group(2))
-        if i == 3: reqs.append(f'Spend {dur(v)} with Evil alignment (over all your Reincarnations)'); return
-        if 50 <= i <= 63: reqs.append(f'Spend {dur(v)} as {FACTION[i - 50]} (over all your Reincarnations)'); return
-        if i == 49: reqs.append(f'Affiliate with the Mercenaries {v:,} times (over all your Reincarnations)'); return
+        if i == 3: reqs.append(f'Spend {dur(v)} with Evil alignment (all-time)'); return
+        if 50 <= i <= 63: reqs.append(f'Spend {dur(v)} as {FACTION[i - 50]} (all-time)'); return
+        if i == 49: reqs.append(f'Affiliate with the Mercenaries {v:,} times (all-time)'); return
     m = re.fullmatch(G + r'§5!V§\[35\] == 0', s)
     if m: reqs.append('No excavations made yet in this Era (only the first excavation of an Era can find it)'); return
     m = re.fullmatch(G + r'§5!V§\[4\] == 0', s)
@@ -177,7 +177,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     if m: reqs.append('At least one Lineage level'); return
     m = re.fullmatch(r'§&c§\.§&!<§\((\d),true\) >= (\d+)', s)
     if m:
-        reqs.append(f'Buy {int(m.group(2)):,} {BRANCH[int(m.group(1))]} Research points (over all your Reincarnations)')
+        reqs.append(f'Buy {int(m.group(2)):,} {BRANCH[int(m.group(1))]} Research points (all-time)')
         return
     m = re.fullmatch(r'§&c§\.§7i§\((§[^§]*§)\.id,false,true,true\) >= (\d+)', s)
     if m:
@@ -189,12 +189,12 @@ def _one(s, c, art, reqs, undec, ref_name):
         n = ref_name(m.group(1))
         # the stored tier counts from 0; the game displays it from 1 ("Unlock Tier %0" uses +1)
         if n and n[0] == 'spell':
-            reqs.append(f'"{n[1]}" at tier {int(m.group(2)) + 1} or higher'); return
+            reqs.append(f'Have "{n[1]}" active at tier {int(m.group(2)) + 1} or higher'); return
     m = re.fullmatch(G + r'§\'"§\((§[^§]*§)\.id\)', s)
     if m:
         n = ref_name(m.group(1))
         if n and n[0] == 'upgrade':
-            reqs.append(f'Have completed the challenge that rewards the upgrade "{n[1]}"'); return
+            reqs.append(f'Have completed the challenge that unlocks "{n[1]}" (Dragon Challenge 6)' if n[1] == 'Dracomet Vault' else f'Have completed the challenge that unlocks "{n[1]}"'); return
     m = re.fullmatch(G + r'§,P§ >= (\d+)', s)
     if m: reqs.append(f'Ascension {m.group(1)} or higher'); return
     m = re.fullmatch(G + r'§8!H§ >= (\d+)', s)

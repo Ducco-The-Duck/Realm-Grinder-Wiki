@@ -30,7 +30,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 |---|---|---|---|
 | `§5!V§[i]` | stat `i` **this Era** | medium | Abdication code folds `5!V` into `=y` and zeroes it |
 | `§=y§[i]` | stat `i` for earlier Eras of this Reincarnation | medium | same; "Max depth in this Reincarnation" uses `max(5!V, =y)` |
-| `§@w§[i]` | stat `i` for previous Reincarnations (so 5!V + =y + @w = all-time) | medium | `=y` is added into `@w` at Reincarnation; only a full game wipe zeroes it |
+| `§@w§[i]` | stat `i` for previous Reincarnations (so 5!V + =y + @w = all-time, never reset, not even by Ascension) | **high** | code: only a full wipe zeroes it; user (patch notes and play): time-as-faction requirements span the whole playthrough |
 | index 4 | Clicks | high | stats panel / trophy text |
 | index 1 | Playtime (seconds, this Era) | medium | `=y[29] = 5!V[1]` at Abdication, "Playtime: %0" |
 | index 15 / 40 | Spells Cast / Spells Cast (Max) | high | stats panel |
@@ -62,11 +62,11 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | `§1!5§` | Excavations **since the last Excavation Reset** (compared with the artifact threshold) | high | zeroed by regular and free Excavation Resets; "Max Excavation Depth" trophy tracks it |
 | `§8t§` | Trophies unlocked (not feats, quests or artifacts) | high | +1 in the trophy-unlock code |
 | `§"!0§` | Gems | high | "No Recruiting" trophy ("Reach 1 Novg Gems") compares it with 1e90 |
-| `§["&§` | Consecutive days played (UTC server days) | medium | +1 when today = last day + 1, else reset to 1 |
+| `§["&§` | Consecutive days logged in (UTC server days) | high | +1 when today = last day + 1, else reset to 1; user: patch notes say "consecutive days logged in" |
 | `§1!#§[f]` | Lineage level of faction `f` | medium | Genealogist / Chemistry "total amount of Lineage levels" sum it |
 | spell `§?j§`/`§<q§`/`§<!G§` | Spell activity time (s): this Era / earlier Eras / previous Reincarnations | high | UI "Active Time This Era / This Reincarnation" |
-| spell `§`r§` | Spell tier, stored from 0 (the game shows +1) | medium | "Unlock Tier %0" prints the stored value + 1; Dragon Soul's "five deep breaths" = stored 4 |
-| upgrade `§?!6§` | Upgrade permanently unlocked (set when a challenge reward is bought) | low | Veteran Figurine checks it on "Dracomet Vault" (a Dragon challenge reward) |
+| spell `§`r§` | Tier the spell is currently **active** at, stored from 0 (shown as +1); raised on cast, reset to 0 when it ends | medium | setter/mutators in the spell class. The highest tier you can reach is the number of owned tier upgrades for that spell (up to 4, so displayed tier 5) plus +1 from a few upgrades (e.g. Absolute Hierarchy for Dragon's Breath); the spell panel's "Highest Tier Unlocked: x/5" counts only the standard series. Dragon Soul needs stored 4 = the standard top tier |
+| upgrade `§?!6§` | Upgrade obtained at some point (challenge rewards persist) | medium | Veteran Figurine checks it on "Dracomet Vault" (icon `DragonChallenge6`); user: challenges grant permanent bonuses and Dracomet Vault should be a challenge |
 | trophy "Research Mercenary Trophy" | Hidden flag: Mercenary researches unlocked | medium | gates Mercenary researches (Chemistry, Flanking, ...) |
 | `§7d§(id)` / `§<P§(id)` | upgrade/trophy `id` owned/purchased | medium | used as "has X" in conditions; difference between the two not established |
 
@@ -98,7 +98,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | `§&c§.§`!=§()` | Total Lineage level | medium | Genealogist text |
 | `§@W§.§'!b§()` | Combo Strike's current production bonus (%) | medium | Combo Strike tooltip "Current: %1%" |
 | `Brainwave.§"!P§()` | Brainwave headstart (s): 600 per tier + bonuses | medium | tooltip "Increase headstart time based on spell tier", "Headstart: %0" |
-| `§8G§.§%Z§(building)` | Buildings of that type owned; without `true`, times bonuses that multiply the count | medium/low | raw field is the owned count; the multiplier list was not traced to UI text |
+| `§8G§.§%Z§(building)` | Buildings of that type owned, counting bonuses that make them count as more (Dwarf Challenge 5, Underground Foundations, ...); with `true`, the raw owned count | **high** | user: such "counts as more" bonuses apply to count-based artifacts unless stated otherwise |
 
 **Name collisions:** the obfuscator reuses member names in different classes, so `§#!!§.§!-§` and
 `§&c§.§!-§` are different functions (the second wraps the first). Always key helpers by class + name.

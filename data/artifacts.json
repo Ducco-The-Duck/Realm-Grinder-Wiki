@@ -237,7 +237,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Ancient Pyramid\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Ancient Pyramid\" buildings you own"
 }
 ]
 },
@@ -333,7 +333,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Farm\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Farm\" buildings you own"
 }
 ]
 },
@@ -437,7 +437,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Heaven's Gate\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Heaven's Gate\" buildings you own"
 }
 ]
 },
@@ -463,14 +463,14 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent as Angel over all your Reincarnations (seconds)"
+"text": "Time spent as Angel all-time (seconds)"
 }
 ]
 },
 "requirements": [
 "Playing as Angel",
 "No prestige faction",
-"Spend 4 hours as Angel (over all your Reincarnations)"
+"Spend 4 hours as Angel (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -615,14 +615,14 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent as Demon over all your Reincarnations (seconds)"
+"text": "Time spent as Demon all-time (seconds)"
 }
 ]
 },
 "requirements": [
 "Playing as Demon",
 "No prestige faction",
-"Spend 4 hours as Demon (over all your Reincarnations)"
+"Spend 4 hours as Demon (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -767,7 +767,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Labyrinth\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Labyrinth\" buildings you own"
 }
 ]
 },
@@ -818,7 +818,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Inn\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Inn\" buildings you own"
 }
 ]
 },
@@ -862,13 +862,13 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent with Evil alignment over all your Reincarnations (seconds)"
+"text": "Time spent with Evil alignment all-time (seconds)"
 }
 ]
 },
 "requirements": [
 "Drow as prestige faction",
-"Spend 1 day with Evil alignment (over all your Reincarnations)"
+"Spend 1 day with Evil alignment (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -914,13 +914,13 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent as Mercenary over all your Reincarnations (seconds)"
+"text": "Time spent as Mercenary all-time (seconds)"
 }
 ]
 },
 "requirements": [
 "Playing as Mercenary",
-"Affiliate with the Mercenaries 100 times (over all your Reincarnations)"
+"Affiliate with the Mercenaries 100 times (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -940,7 +940,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Iron Stronghold\" buildings you own (including bonuses that multiply this count)"
+"text": "Number of \"Iron Stronghold\" buildings you own"
 }
 ]
 },
@@ -973,7 +973,7 @@
 "requirements": [
 "Reincarnation 50 or higher",
 "Dragon as prestige faction",
-"\"Dragon's Breath\" at tier 5 or higher"
+"Have \"Dragon's Breath\" active at tier 5 or higher"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1051,7 +1051,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Witch Conclave\" buildings you own"
+"text": "Number of \"Witch Conclave\" buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1256,7 +1256,7 @@
 },
 "requirements": [
 "Reincarnation 85 or higher",
-"Have completed the challenge that rewards the upgrade \"Dracomet Vault\""
+"Have completed the challenge that unlocks \"Dracomet Vault\" (Dragon Challenge 6)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1344,7 +1344,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Wizard Tower\" buildings you own"
+"text": "Number of \"Wizard Tower\" buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1402,7 +1402,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent as Angel over all your Reincarnations (seconds)"
+"text": "Time spent as Angel all-time (seconds)"
 }
 ]
 },
@@ -1431,7 +1431,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Slave Pen\" buildings you own"
+"text": "Number of \"Slave Pen\" buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1460,7 +1460,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent as Undead over all your Reincarnations (seconds)"
+"text": "Time spent as Undead all-time (seconds)"
 }
 ]
 },
@@ -1489,7 +1489,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of \"Hall of Legends\" buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1719,15 +1719,15 @@
 "vars": [
 {
 "symbol": "t_{1}",
-"text": "Activity time of \"Fairy Chanting\" over all your Reincarnations (seconds)"
+"text": "Activity time of \"Fairy Chanting\" all-time (seconds)"
 },
 {
 "symbol": "t_{2}",
-"text": "Activity time of \"Hellfire Blast\" over all your Reincarnations (seconds)"
+"text": "Activity time of \"Hellfire Blast\" all-time (seconds)"
 },
 {
 "symbol": "t_{3}",
-"text": "Activity time of \"Brainwave\" over all your Reincarnations (seconds)"
+"text": "Activity time of \"Brainwave\" all-time (seconds)"
 }
 ]
 },
@@ -2042,7 +2042,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Consecutive days you have played (daily streak; days counted in UTC server time)"
+"text": "Consecutive days you have logged in (days counted in UTC)"
 }
 ]
 },
@@ -2156,7 +2156,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Chaos alignment",
-"Buy 5,000 Spellcraft Research points (over all your Reincarnations)"
+"Buy 5,000 Spellcraft Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2183,7 +2183,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Neutral alignment",
-"Buy 5,000 Craftsmanship Research points (over all your Reincarnations)"
+"Buy 5,000 Craftsmanship Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2210,7 +2210,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Good alignment",
-"Buy 5,000 Divine Research points (over all your Reincarnations)"
+"Buy 5,000 Divine Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2237,7 +2237,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Balance alignment",
-"Buy 5,000 Economics Research points (over all your Reincarnations)"
+"Buy 5,000 Economics Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2257,14 +2257,14 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Alchemy Research points bought over all your Reincarnations (before bonus multipliers)"
+"text": "Alchemy Research points bought, all-time (before bonus multipliers)"
 }
 ]
 },
 "requirements": [
 "Reincarnation 180 or higher",
 "Order alignment",
-"Buy 5,000 Alchemy Research points (over all your Reincarnations)"
+"Buy 5,000 Alchemy Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2291,7 +2291,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Evil alignment",
-"Buy 5,000 Warfare Research points (over all your Reincarnations)"
+"Buy 5,000 Warfare Research points (all-time)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []

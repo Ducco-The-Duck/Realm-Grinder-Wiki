@@ -10,7 +10,7 @@ import ast, re
 FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid',
            8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon'}
 BRANCH = ['Spellcraft', 'Craftsmanship', 'Divine', 'Economics', 'Alchemy', 'Warfare', 'Forbidden']
-SCOPE = {'era': 'in this Era', 'reinc': 'in this Reincarnation', 'all': 'over all your Reincarnations'}
+SCOPE = {'era': 'in this Era', 'reinc': 'in this Reincarnation', 'all': 'all-time'}
 
 
 def stat_desc(i, scope):
@@ -45,7 +45,7 @@ VARS = [
     (r'§&c§\.§ !;§\((\d+)\)', lambda m: stat_sym(int(m.group(1))), lambda m: stat_desc(int(m.group(1)), 'all')),
     (r'§&c§\.§1",§\(\)', 'P', 'Research points you have spent on researches'),
     (r'§&c§\.§&!<§\((\d),true\)', 'P',
-     lambda m: f'{BRANCH[int(m.group(1))]} Research points bought over all your Reincarnations (before bonus multipliers)'),
+     lambda m: f'{BRANCH[int(m.group(1))]} Research points bought, all-time (before bonus multipliers)'),
     (r'§#!!§\.§,d§\(\)', 'O', 'Your Offline production bonus'),
     (r'§&c§\.§\]!s§\(2,false,false,true\)', 'T',
      'Total number of casts of all Evil spells in this Reincarnation (before bonus multipliers)'),
@@ -76,7 +76,7 @@ VARS = [
     (r'§&c§\.§`!=§\(\)', 'L', 'Your total Lineage level (all factions added together)'),
     (G + r'§8!H§', 'R', 'Your Reincarnation number'),
     (G + r'§1!5§', 'N', 'Excavations made since your last Excavation Reset (the game\'s "Excavations" counter)'),
-    (G + r'§\["&§', 'D', 'Consecutive days you have played (daily streak; days counted in UTC server time)'),
+    (G + r'§\["&§', 'D', 'Consecutive days you have logged in (days counted in UTC)'),
     (r'§&c§\.§,o§\(' + G + r'§"!0§\)', 'G', 'Order of magnitude of your Gems (e.g. 3.2e45 Gems counts as 45)'),
     (r'§@W§\.§\'!b§\(\)', 'K', 'Combo Strike\'s current production bonus (%)'),
     (r'\(' + G + r'§#N§\(§%!J§\.id\) as §%!J§\)\.§"!P§\(\)', 'H', 'Brainwave\'s headstart time (seconds)'),
@@ -96,9 +96,9 @@ ENTITY_VARS = [
      if (m.group(2), m.group(3)) in SPELL_SCOPE else None),
     (r'§&c§\.§1!;§\((' + S + r')\.id,true\)', 'spell', 'D',
      lambda n, m: f'Duration of "{n}" (seconds, as set when it was cast)'),
-    (G + r'§%Z§\((' + S + r')\.id,true\)', 'building', 'N', lambda n, m: f'Number of "{n}" buildings you own'),
+    (G + r'§%Z§\((' + S + r')\.id,true\)', 'building', 'N', lambda n, m: f'Number of "{n}" buildings you own (bonuses that make buildings count as more are not included)'),
     (G + r'§%Z§\((' + S + r')\.id\)', 'building', 'N',
-     lambda n, m: f'Number of "{n}" buildings you own (including bonuses that multiply this count)'),
+     lambda n, m: f'Number of "{n}" buildings you own'),
 ]
 
 
