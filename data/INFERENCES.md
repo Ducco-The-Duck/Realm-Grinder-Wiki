@@ -7,6 +7,31 @@ so it can be checked against the real game. Update it when something is confirme
 Confidence: **high** = confirmed by the game's own UI text or consistent in several places;
 **medium** = consistent but only one line of evidence; **low** = a guess worth checking in-game.
 
+## Status: what is still open (everything else below is resolved or accepted)
+
+Only these need checking; remove an item when it is settled.
+
+1. **Research availability by Ascension:** unavailable from Ascension 3 (number below 405) and 4 (below 5000). Code only.
+   Needs someone at Ascension 3-4.
+2. **Ascension-penalty start for 16 research formulas** that start at Ascension 2 (10) or 4 (6); the Ascension 1 group is
+   confirmed (S1). Needs Ascension 2-4.
+3. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
+   doc. The wiki shows the code. Needs the in-game "Chance: X%" tooltip (visible only before you own the artifact).
+4. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
+   that were confirmed on other artifacts, but each formula is unverified individually.
+
+Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
+
+### Resolved (confirmed by the user; do not re-open)
+
+- Faction cell colours; Neutral has no tint; alignment-locked researches and the 11 locked ones.
+- Home faction vs unlock faction (S300 Chain Lightning: unlock as Faceless, buy as Titan); the unlock flag persists.
+- Mercenaries cannot unlock a research whose unlock faction is another faction (no hidden unlock path assumed).
+- The prestige-unique-upgrade note on Metallurgy, Marketing, Poisons and the other prestige researches is correct as written.
+- Folgoration (A12250) formula matches the patch notes; Manipulation (S3200) needs no formula; Estates (E3300) text change at Ascension 3.
+- Veteran Figurine needs the Dragon challenge (Dracomet Vault); time-as-faction stats are all-time and never reset;
+  building counts include "counts as more" bonuses; Dragon Soul needs spell tier 5.
+
 ## Corrected so far
 
 | Was | Now | How it was caught |
@@ -113,7 +138,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 | Trophy categories 0–4 = Allegiances, Misc, Magic, Buildings, Secret | high | counts match user's numbers exactly (45/170/62/566/60) |
 | Quest vs Lore artifact = lore flag false/true | high | counts 25/81 match |
 
-## Open: code vs. patch-notes doc (4.3.11) disagree on constant factors
+## Open item 3 in detail: code vs. patch-notes doc (4.3.11) constant factors
 
 The game's own artifact tooltip prints "Chance: X%" using exactly the same getter the wiki transcribes
 (`§5",§`, shown as a percent), and the in-game changelog lists no change to these artifacts in
@@ -168,6 +193,4 @@ descriptions are the game's description text with the "(+x%)" current-value read
 
 ## Not decoded yet
 
-- All 106 artifacts' unlock conditions and all find-chance formulas are now decoded (Chocolate Cookie and
-  Fossilized Rodent have no unlock condition). The items marked medium/low above are the ones worth checking
-  in-game, e.g. by comparing the tooltip's "Chance: X%" with the formula.
+Nothing blocking. Ten research formulas were once undecoded and are now all done except Manipulation, which has none by design.
