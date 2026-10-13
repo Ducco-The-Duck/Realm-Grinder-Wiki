@@ -43,6 +43,8 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 
 ### Resolved (confirmed by the user; do not re-open)
 
+- Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; only the 5
+  earmarked items stay open (Lantern of Guidance, the three Fragment factors, Poison Vial's Drow Perk 4 term).
 - Wall Fragment, Wall Chunk, Mathematician (building tier multipliers, tier counted from 1): Wall Fragment checked in game against four
   buildings (1 + 5 * (2 * (11 - T))^2.5, not the old wiki 3 * (2 * (11 - T))^3 %); Wall Chunk and Mathematician agree with the old wiki.
 - Reverse Autocasting (from R40 = Ascension 1) and Tiered Autocasting (from R42) availability; the Mana Regeneration
