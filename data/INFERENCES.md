@@ -15,8 +15,10 @@ Only these need checking; remove an item when it is settled.
    confirmed (S1). The user considers the rest most likely correct but cannot confirm it yet. Needs Ascension 2-4.
 2. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
    doc. The wiki shows the code. Needs the in-game "Chance: X%" tooltip (visible only before you own the artifact).
-3. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
-   that were confirmed on other artifacts, but each formula is unverified individually.
+3. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235; 39 artifacts): the chance formulas use
+   helper meanings that were confirmed on other artifacts, but each formula is unverified individually. The user is checking
+   them against the patch-notes doc and the old wiki, one by one; those that agree move to Resolved, those that differ stay here.
+   Confirmed so far: see Resolved.
 
 4. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
    Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
@@ -24,14 +26,30 @@ Only these need checking; remove an item when it is settled.
    targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
    section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
 
-5. **Magic and Buildings upgrades** (built from code, not yet seen by the user): the Ascension ranges come from running the game's
-   own availability check with every other requirement met; the penalty start Ascension of each upgrade is the first
-   Ascension at which the game's own text for it changes. Mercenary-only entries (Round Table, Dark Covenant, Secret Exchange)
-   and Arcane Brilliance (tied to Spell Tiers, left for later) are the least checked.
+5. **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): built from code, unchecked
+   because the user has not reached them. Arcane Brilliance is left for the Spell Tiers part.
+
+6. **Secret upgrades Lantern of Guidance and Oil Lamp:** the code reads (4 * M^0.2)^p for Lantern (Mana Regeneration) and
+   (9 * Mmax^0.2)^p for Oil Lamp (Maximum Mana), with p = 1.5 for an Order / Chaos faction, which is 8 * M^0.3 and
+   27 * Mmax^0.3. The patch notes give 27 * x^0.3 for Lantern and 8 * x^0.3 for Oil Lamp, so the two constants are swapped
+   between the code and the notes (4.3.11 notes: Lantern 9 * x^0.2 -> 27 * x^0.3, Oil Lamp 4 * x^0.2 -> 8 * x^0.3). Spark of
+   Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
+   upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
+
+- Reverse Autocasting (from R40 = Ascension 1) and Tiered Autocasting (from R42) availability; the Mana Regeneration
+  upgrades' Ascension limits (Mana Wave onward need Ascension 1, Mana Spring and Mana Falls need Ascension 2, the earlier
+  ones none), as stated by the trophies themselves.
+
+- Building upgrades: the series are removed from Ascension 3 on, the building count thresholds, and the Ascension penalties.
+
+- Lore artifact chance formulas confirmed against the patch notes / old wiki apart from cleanup terms (0.5, +1), inputs
+  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom.
+  Lantern of Guidance: patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second (no +1); the
+  wiki shows the code.
 
 - Research availability by Ascension: Ascension 3 removes researches numbered 400 or lower and Ascension 4 those 5000 or lower
   (patch notes).
