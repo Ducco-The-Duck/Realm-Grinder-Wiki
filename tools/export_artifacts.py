@@ -135,14 +135,17 @@ def decode(c, art):
     return reqs, undec, True
 
 
+ASC_AT = {1: 40, 2: 100, 3: 160, 4: 220}
+
+
 def merge_ascension(reqs):
     """'Ascension N or higher' (+ a Reincarnation requirement) -> 'Reincarnation R or higher (Ascension N)';
-    Ascension N is reached at Reincarnation 40 * N."""
+    Ascending needs Reincarnation 40 / 100 / 160 / 220 (game code)."""
     asc = [r for r in reqs if re.fullmatch(r'Ascension \d+ or higher', r)]
     if not asc: return reqs
     n = int(re.search(r'\d+', asc[0]).group())
     rein = [r for r in reqs if re.fullmatch(r'Reincarnation \d+ or higher', r)]
-    r = max([40 * n] + [int(re.search(r'\d+', x).group()) for x in rein])
+    r = max([ASC_AT[n]] + [int(re.search(r'\d+', x).group()) for x in rein])
     out, done = [], False
     for x in reqs:
         if x in asc or x in rein:
