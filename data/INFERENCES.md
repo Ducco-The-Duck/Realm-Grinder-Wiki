@@ -39,6 +39,12 @@ Only these need checking; remove an item when it is settled.
    Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
    upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
+7. **Wall Fragment, Wall Chunk, Mathematician (secret upgrades):** the effect is in the production code, not the description:
+   Wall Fragment x(1 + 5 * (2 * (11 - r))^2.5), Wall Chunk x(1 + 300 * (11 - r)^3.5), Mathematician x(1 + 0.1 * (12 - r)),
+   r = building number counted from 0 (penalty groups starting at Ascension 2, 3 and 2). The old wiki gives Wall Fragment
+   as (3 * (2 * (11 - T))^3)%, T from 0: the same shape but other constants (3 and exponent 3 against 500 and 2.5).
+   The wiki shows the code. Needs the in-game tooltip or the patch notes for each.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
