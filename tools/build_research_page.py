@@ -191,7 +191,6 @@ popups are always the base values <i>v</i>.</div>
           if(anyScaled){
             if(!f.s) suf='';
             else if(ASC>=f.s){ suf=' · '; badge=el('span','mark',new Array(ASC-f.s+2).join('A')); }
-            else suf=' · Ascension penalty (from Ascension '+f.s+')';
           }
           lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); tip.appendChild(lab);
         }

@@ -166,7 +166,6 @@ the base values <i>v</i>.</div>
         if(anyScaled){
           if(!f.s) suf='';
           else if(ASC>=f.s){ suf=' · '; badge=el('span','mark',As(ASC-f.s+1)); }
-          else suf=' · Ascension penalty (from Ascension '+f.s+')';
         }
         lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); parent.appendChild(lab);
       }
