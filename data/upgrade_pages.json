@@ -1334,12 +1334,7 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on mysterious events.",
-"formulas": [
-{
-"latex": "v = 4 \\cdot 10 + 3 + 0 \\cdot 0.1 + 14 \\cdot 0.01 = 43.14",
-"vars": []
-}
-],
+"formulas": [],
 "s": null
 }
 ],

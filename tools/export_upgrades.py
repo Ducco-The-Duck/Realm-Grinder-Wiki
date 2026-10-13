@@ -332,8 +332,8 @@ def fix_text(name, paras):
         paras[0]['formulas'] += p['formulas']
         if paras[0].get('s') is None: paras[0]['s'] = p.get('s')
     if name == 'Suggestion Master':
-        paras[0]['formulas'] = [_m(r'v = 4 \cdot 10 + 3 + 0 \cdot 0.1 + 14 \cdot 0.01 = 43.14')]    # the code's constant, as written
-        paras[0]['text'] = 'Increase the production of all buildings based on mysterious events.'
+        paras[0]['formulas'] = []     # the code only has the constant 4*10 + 3 + 0*0.1 + 14*0.01
+        paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
     if name == 'Ancestral Hourglass':
         paras[0]['formulas'] = [_m(r'v = \frac{0.002 \cdot R}{A}',
             ('v', 'Amount taken off the Lineage cost exponent growth (per 25 levels of a Lineage)'),
