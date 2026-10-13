@@ -2,7 +2,8 @@
 
     python -I tools/build_challenges_page.py
 """
-import json, os, shutil
+import json, os, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 factions = json.load(open(os.path.join(ROOT, 'data', 'challenges.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
@@ -85,6 +86,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .flavor{font-style:italic;color:var(--muted)}
 #tip .al{margin-top:6px}
 #tip .al b{color:var(--fg)}
+/*SEARCH_CSS*/
 </style>
 </head>
 <body>
@@ -92,6 +94,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Challenges</h1>
 <p class="sub">__TOTAL__ challenges. The first square of each faction is the permanent spell upgrade you get for completing all of that faction's challenges. Hover an icon for the requirements, the challenge itself, the reward and its formula. Everything from the Mercenary section on is read from the game code and has not been checked in the game.</p>
+<!--SEARCH_BAR-->
 <div class="bugs">__BUGS__</div>
 <div id="root"></div>
 </main>
@@ -101,6 +104,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 (function(){
   var SECTIONS = JSON.parse(document.getElementById('data').textContent);
   var root=document.getElementById('root'), tip=document.getElementById('tip');
+/*SEARCH_JS*/
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
@@ -169,6 +173,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     s.items.forEach(function(it){
       var b=el('button','cell'+(it.su?' su':'')); b.type='button';
       b.setAttribute('aria-label', it.n);
+      b._s=normS([it.n,it.fl,it.c,it.r.join(' ')].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
       b.addEventListener('mouseenter',function(){ showTip(s,it,b); });
       b.addEventListener('mouseleave',hideTip);
@@ -179,11 +184,14 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     });
     sec.appendChild(g); root.appendChild(sec);
   });
+  searchInit(root);
 })();
 </script>
 </body>
 </html>
 '''
+import search_snippet
 html = html.replace('__BUGS__', bug_html).replace('__DATA__', data).replace('__TOTAL__', str(n_ch))
+html = search_snippet.apply(html, 'Search challenge names, flavor text, challenge and reward descriptions')
 open(os.path.join(ROOT, 'docs', 'challenges.html'), 'w', encoding='utf8').write(html)
 print('docs/challenges.html', len(html) // 1024, 'KB;', [s['name'] for s in sections])

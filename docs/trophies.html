@@ -37,6 +37,13 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 #pop h3{margin:0;font-size:1.05rem}
 #pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
+
+.search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.search .qn{color:var(--muted);font-size:.9rem}
+.sx{display:none!important}
+
 </style>
 </head>
 <body>
@@ -44,6 +51,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 <nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Trophies</h1>
 <p class="sub">903 trophies, arranged as in the game. Hover an icon to see its name and requirement; click a stacked icon to see every tier.</p>
+<div class="search"><input id="q" type="search" placeholder="Search trophy names and requirements" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -58,6 +66,35 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
   var root=document.getElementById('root'), tip=document.getElementById('tip'),
       pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+
+  var QT = [];
+  function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
+  function searchInit(root, after){
+    var box=document.getElementById('q'), note=document.getElementById('qn');
+    function run(){
+      QT = normS(box.value).split(/\s+/).filter(Boolean);
+      var shown=0;
+      root.querySelectorAll('.cell').forEach(function(c){
+        var ok = qmatch(c._s||'');
+        c.classList.toggle('sx', !ok); if(ok) shown++;
+      });
+      root.querySelectorAll('.grid').forEach(function(g){
+        var any = !QT.length || !!g.querySelector('.cell:not(.sx)');
+        g.classList.toggle('sx', !any);
+        var p=g.previousElementSibling; if(p && p.classList.contains('subh')) p.classList.toggle('sx', !any);
+      });
+      root.querySelectorAll('section').forEach(function(s){
+        s.classList.toggle('sx', QT.length>0 && !s.querySelector('.cell:not(.sx)'));
+      });
+      note.textContent = QT.length ? shown+(shown===1?' match':' matches') : '';
+      if(after) after();
+    }
+    box.addEventListener('input', run);
+    run();
+  }
+
+  function sOf(it){ return normS(it.n+' '+(it.r||'')); }
   function icon(it){
     if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; return img; }
     return el('span','noimg','?');
@@ -90,6 +127,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     poptitle.textContent=c.title+' ('+c.items.length+' tiers)';
     popgrid.textContent='';
     c.items.forEach(function(it){
+      if(!qmatch(sOf(it))) return;
       var b=cellButton(it); bindTip(b,it); b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
       popgrid.appendChild(b);
     });
@@ -106,12 +144,14 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     cells.forEach(function(c){
       if(c.items.length===1){
         var it=c.items[0], b=cellButton(it); bindTip(b,it);
+        b._s=sOf(it);
         b.addEventListener('click',function(){ showTip(it,b); });
         g.appendChild(b);
       } else {
         var first=c.items[0], last=c.items[c.items.length-1];
         var b=cellButton(first,'group');
         b.setAttribute('aria-label', c.title+', '+c.items.length+' tiers');
+        b._s=normS(c.title)+' '+c.items.map(sOf).join(' ');
         b.appendChild(el('span','badge','\u00d7'+c.items.length));
         var summary={n:c.title,r:first.n+' \u2192 '+last.n};
         bindTip(b,summary,c.items.length+' tiers \u2014 click to view');
@@ -127,6 +167,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     else sec.appendChild(grid(s.cells));
     root.appendChild(sec);
   });
+  searchInit(root);
 })();
 </script>
 </body>

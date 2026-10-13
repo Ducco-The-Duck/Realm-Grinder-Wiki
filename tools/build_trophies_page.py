@@ -5,8 +5,9 @@ same trophy type collapsed into one cell (click for a popup of every tier), tool
 
     python -I tools/build_trophies_page.py
 """
-import json, os, re
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+import json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT =os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 trophies = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
@@ -96,6 +97,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 #pop h3{margin:0;font-size:1.05rem}
 #pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
+/*SEARCH_CSS*/
 </style>
 </head>
 <body>
@@ -103,6 +105,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 <nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Trophies</h1>
 <p class="sub">__TOTAL__ trophies, arranged as in the game. Hover an icon to see its name and requirement; click a stacked icon to see every tier.</p>
+<!--SEARCH_BAR-->
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -117,6 +120,8 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
   var root=document.getElementById('root'), tip=document.getElementById('tip'),
       pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+/*SEARCH_JS*/
+  function sOf(it){ return normS(it.n+' '+(it.r||'')); }
   function icon(it){
     if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; return img; }
     return el('span','noimg','?');
@@ -149,6 +154,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     poptitle.textContent=c.title+' ('+c.items.length+' tiers)';
     popgrid.textContent='';
     c.items.forEach(function(it){
+      if(!qmatch(sOf(it))) return;
       var b=cellButton(it); bindTip(b,it); b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
       popgrid.appendChild(b);
     });
@@ -165,12 +171,14 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     cells.forEach(function(c){
       if(c.items.length===1){
         var it=c.items[0], b=cellButton(it); bindTip(b,it);
+        b._s=sOf(it);
         b.addEventListener('click',function(){ showTip(it,b); });
         g.appendChild(b);
       } else {
         var first=c.items[0], last=c.items[c.items.length-1];
         var b=cellButton(first,'group');
         b.setAttribute('aria-label', c.title+', '+c.items.length+' tiers');
+        b._s=normS(c.title)+' '+c.items.map(sOf).join(' ');
         b.appendChild(el('span','badge','\\u00d7'+c.items.length));
         var summary={n:c.title,r:first.n+' \\u2192 '+last.n};
         bindTip(b,summary,c.items.length+' tiers \\u2014 click to view');
@@ -186,12 +194,15 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     else sec.appendChild(grid(s.cells));
     root.appendChild(sec);
   });
+  searchInit(root);
 })();
 </script>
 </body>
 </html>
 '''
-html = html.replace('__DATA__', data).replace('__TOTAL__', str(len(listed)))
+import search_snippet
+html = search_snippet.apply(html.replace('__DATA__', data).replace('__TOTAL__', str(len(listed))),
+                            'Search trophy names and requirements')
 os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
 open(os.path.join(ROOT, 'docs', 'trophies.html'), 'w', encoding='utf8').write(html)
 print('docs/trophies.html', len(html) // 1024, 'KB')

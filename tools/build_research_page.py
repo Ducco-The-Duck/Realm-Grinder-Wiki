@@ -2,7 +2,8 @@
 
     python -I tools/build_research_page.py
 """
-import json, os, shutil
+import json, os, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 research = json.load(open(os.path.join(ROOT, 'data', 'research.json'), encoding='utf8'))
 meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json')))
@@ -106,6 +107,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:2px 0;overflow-wrap:anywhere}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/*SEARCH_CSS*/
 </style>
 </head>
 <body>
@@ -122,6 +124,7 @@ start later and have fewer As, or none, at a given Ascension. Researches without
 popups are always the base values <i>v</i>.</div>
 <div class="asc"><label for="asc">Ascension</label><select id="asc"></select>
 <span class="hint">The A marks and the greyed-out researches (not available in it) follow the chosen Ascension.</span></div>
+<!--SEARCH_BAR-->
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -132,6 +135,7 @@ popups are always the base values <i>v</i>.</div>
   var BRANCHES = DATA.branches, MAXA = DATA.max;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), sel=document.getElementById('asc');
   var ASC = 0, cells = [];
+/*SEARCH_JS*/
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
@@ -221,6 +225,7 @@ popups are always the base values <i>v</i>.</div>
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
   function cell(it, cls){
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.d!=null){ var ds=[it.n,it.h,it.d]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
@@ -239,6 +244,7 @@ popups are always the base values <i>v</i>.</div>
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
     sec.appendChild(g); root.appendChild(sec);
   });
+  searchInit(root);
   function apply(){
     cells.forEach(function(p){
       var na=unavailable(p[1]), k=na?0:penalty(p[1]), b=p[0].querySelector('.pen');
@@ -261,7 +267,9 @@ popups are always the base values <i>v</i>.</div>
 </body>
 </html>
 '''
+import search_snippet
 html = html.replace('__DATA__', data).replace('__TOTAL__', str(total)).replace('__BRANCHES__', str(len(BRANCHES)))
+html = search_snippet.apply(html, 'Search research names, hints and descriptions')
 open(os.path.join(ROOT, 'docs', 'research.html'), 'w', encoding='utf8').write(html)
 print('docs/research.html', len(html) // 1024, 'KB;', [(b['name'], len(b['items'])) for b in BRANCHES],
       'no icon:', sum(1 for b in BRANCHES for it in b['items'] if not it['i']), '| max Ascension', meta['max_ascension'])

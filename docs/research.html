@@ -54,6 +54,13 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:2px 0;overflow-wrap:anywhere}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+
+.search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.search .qn{color:var(--muted);font-size:.9rem}
+.sx{display:none!important}
+
 </style>
 </head>
 <body>
@@ -70,6 +77,7 @@ start later and have fewer As, or none, at a given Ascension. Researches without
 popups are always the base values <i>v</i>.</div>
 <div class="asc"><label for="asc">Ascension</label><select id="asc"></select>
 <span class="hint">The A marks and the greyed-out researches (not available in it) follow the chosen Ascension.</span></div>
+<div class="search"><input id="q" type="search" placeholder="Search research names, hints and descriptions" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -80,6 +88,34 @@ popups are always the base values <i>v</i>.</div>
   var BRANCHES = DATA.branches, MAXA = DATA.max;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), sel=document.getElementById('asc');
   var ASC = 0, cells = [];
+
+  var QT = [];
+  function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
+  function searchInit(root, after){
+    var box=document.getElementById('q'), note=document.getElementById('qn');
+    function run(){
+      QT = normS(box.value).split(/\s+/).filter(Boolean);
+      var shown=0;
+      root.querySelectorAll('.cell').forEach(function(c){
+        var ok = qmatch(c._s||'');
+        c.classList.toggle('sx', !ok); if(ok) shown++;
+      });
+      root.querySelectorAll('.grid').forEach(function(g){
+        var any = !QT.length || !!g.querySelector('.cell:not(.sx)');
+        g.classList.toggle('sx', !any);
+        var p=g.previousElementSibling; if(p && p.classList.contains('subh')) p.classList.toggle('sx', !any);
+      });
+      root.querySelectorAll('section').forEach(function(s){
+        s.classList.toggle('sx', QT.length>0 && !s.querySelector('.cell:not(.sx)'));
+      });
+      note.textContent = QT.length ? shown+(shown===1?' match':' matches') : '';
+      if(after) after();
+    }
+    box.addEventListener('input', run);
+    run();
+  }
+
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
@@ -169,6 +205,7 @@ popups are always the base values <i>v</i>.</div>
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
   function cell(it, cls){
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.d!=null){ var ds=[it.n,it.h,it.d]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
@@ -187,6 +224,7 @@ popups are always the base values <i>v</i>.</div>
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
     sec.appendChild(g); root.appendChild(sec);
   });
+  searchInit(root);
   function apply(){
     cells.forEach(function(p){
       var na=unavailable(p[1]), k=na?0:penalty(p[1]), b=p[0].querySelector('.pen');

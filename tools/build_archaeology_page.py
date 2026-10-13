@@ -2,7 +2,8 @@
 
     python -I tools/build_archaeology_page.py
 """
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 artifacts = json.load(open(os.path.join(ROOT, 'data', 'artifacts.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
@@ -79,6 +80,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flavor{font-style:italic;color:var(--muted)}
+/*SEARCH_CSS*/
 </style>
 </head>
 <body>
@@ -86,6 +88,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html" aria-current="page">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Archaeology</h1>
 <p class="sub">__TOTAL__ artifacts. Hover an icon to see its hint, unlock requirement, and the flavor text revealed once it is found.</p>
+<!--SEARCH_BAR-->
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -94,6 +97,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 (function(){
   var SECTIONS = JSON.parse(document.getElementById('data').textContent);
   var root=document.getElementById('root'), tip=document.getElementById('tip');
+/*SEARCH_JS*/
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function showTip(it, anchor){
     tip.textContent='';
@@ -146,6 +150,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     s.items.forEach(function(it){
       var b=el('button','cell'); b.type='button';
       b.setAttribute('aria-label', it.n);
+      b._s=normS([it.n,it.h,it.f].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('mouseleave',hideTip);
@@ -156,11 +161,14 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     });
     sec.appendChild(g); root.appendChild(sec);
   });
+  searchInit(root);
 })();
 </script>
 </body>
 </html>
 '''
-html = html.replace('__DATA__', data).replace('__TOTAL__', str(total))
+import search_snippet
+html = search_snippet.apply(html.replace('__DATA__', data).replace('__TOTAL__', str(total)),
+                            'Search artifact names, hints and flavor text')
 open(os.path.join(ROOT, 'docs', 'archaeology.html'), 'w', encoding='utf8').write(html)
 print('docs/archaeology.html', len(html) // 1024, 'KB;', [s['title'] for s in sections])

@@ -2,7 +2,8 @@
 
     python -I tools/build_upgrades_page.py
 """
-import json, os, re, shutil
+import json, os, re, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 pages = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
 meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json'), encoding='utf8'))
@@ -155,6 +156,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/*SEARCH_CSS*/
 </style>
 </head>
 <body>
@@ -169,6 +171,7 @@ marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exp
 The marks follow the Ascension chosen below. Most are reduced from Ascension 1, so <i>k</i> equals the Ascension number; some start later
 and have fewer As, or none, at a given Ascension. Upgrades without a mark are not reduced. The formulas in the hover popups are always
 the base values <i>v</i>.</div>
+<!--SEARCH_BAR-->
 <div class="bar">
   <div class="row"><label for="asc"><b>Ascension</b></label><select id="asc"></select>
   <span class="hint">The A marks and the greyed-out upgrades (not available in it) follow the chosen Ascension.</span></div>
@@ -187,6 +190,8 @@ the base values <i>v</i>.</div>
   var DATA = JSON.parse(document.getElementById('data').textContent);
   var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [], gcells = [];
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
+/*SEARCH_JS*/
+  function sOf(it){ return it._s || (it._s = normS([it.n].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
@@ -293,7 +298,7 @@ the base values <i>v</i>.</div>
   function openGroup(en){
     poptitle.textContent=en.g+' ('+en.items.length+' upgrades)';
     popgrid.textContent='';
-    en.items.forEach(function(it){ var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
+    en.items.forEach(function(it){ if(!qmatch(sOf(it))) return; var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
     hideTip(); pop.classList.add('open'); document.getElementById('popclose').focus();
   }
   function closePop(){ pop.classList.remove('open'); hideTip(); }
@@ -317,7 +322,7 @@ the base values <i>v</i>.</div>
     s.entries.forEach(function(en){
       if(en.items.length===1){
         var it=en.items[0], b=itemCell(it);
-        g.appendChild(b); cells.push([b,it]);
+        b._s=sOf(it); g.appendChild(b); cells.push([b,it]);
       } else {
         var gb=itemCell(en.items[0],true);
         gb.classList.add('group');
@@ -327,6 +332,7 @@ the base values <i>v</i>.</div>
         gb.addEventListener('mouseenter',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('focus',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('click',function(e){ e.stopPropagation(); openGroup(en); });
+        gb._s=normS(en.g)+' '+en.items.map(sOf).join(' ');
         g.appendChild(gb); gcells.push([gb,en]);
       }
     });
@@ -347,6 +353,7 @@ the base values <i>v</i>.</div>
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
+  searchInit(root);
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });
@@ -355,6 +362,8 @@ the base values <i>v</i>.</div>
 </body>
 </html>
 '''
+import search_snippet
 html = html.replace('__DATA__', data)
+html = search_snippet.apply(html, 'Search upgrade names and descriptions')
 open(os.path.join(ROOT, 'docs', 'upgrades.html'), 'w', encoding='utf8').write(html)
 print('docs/upgrades.html', len(html) // 1024, 'KB;', [(x['id'], x['count']) for x in sections])
