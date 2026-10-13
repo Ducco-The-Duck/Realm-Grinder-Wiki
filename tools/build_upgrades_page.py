@@ -1,10 +1,10 @@
-"""Generate docs/upgrades.html from data/upgrades_secret.json.
+"""Generate docs/upgrades.html from data/upgrade_pages.json.
 
     python -I tools/build_upgrades_page.py
 """
 import json, os, re, shutil
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-secret = json.load(open(os.path.join(ROOT, 'data', 'upgrades_secret.json'), encoding='utf8'))
+pages = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
 meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
@@ -44,18 +44,51 @@ def item(u):
     return {
         'n': u['name'], 'i': icon_file(u['icon']),
         'd': [{'t': p['text'], 's': p['s']} for p in u['description']], 'f': forms,
-        's': [f"{s['kind']}: {s['name']}" for s in u['sources']],
+        's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
         'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
     }
 
 
-secret_items = [item(u) for u in sorted(secret, key=lambda u: u['order'])]
+GROUP_TITLES = {
+    'HallOfLegendsProduction': 'Hall of Legends production upgrades',
+    'HallOfLegendsPrestige': 'Hall of Legends base production upgrades',
+    'NeutralProduction': 'Neutral buildings production upgrades',
+    'GoodProduction': 'Good buildings production upgrades',
+    'EvilProduction': 'Evil buildings production upgrades',
+    'TrophyUpgrade': 'Trophy upgrades',
+    'ManaProduction': 'Mana Regeneration upgrades',
+}
+NOT_CONSOLIDATED = {'Autocast'}      # the nine autocasting upgrades are listed one by one
+
+
+def entries(items):
+    """the game's grouping: upgrades of one group become one stacked icon (at the first member's position)"""
+    out, pos = [], {}
+    for u in sorted(items, key=lambda u: u['order']):
+        g = u['group']
+        if not g or g in NOT_CONSOLIDATED:
+            out.append({'g': None, 'items': [item(u)]}); continue
+        if g not in pos:
+            pos[g] = len(out)
+            title = GROUP_TITLES.get(g) or (f"{u['building']} production upgrades" if u.get('building') else g)
+            out.append({'g': title, 'items': []})
+        out[pos[g]]['items'].append(item(u))
+    for e in out:
+        if e['g'] and len(e['items']) == 1: e['g'] = None
+    return out
+
+
+def section(sid, name, items):
+    es = entries(items) if items is not None else None
+    return {'id': sid, 'name': name, 'entries': es, 'count': sum(len(e['items']) for e in es) if es else 0}
+
+
 sections = [
-    {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'items': None},
-    {'id': 'misc', 'name': 'Misc Upgrades', 'items': None},
-    {'id': 'magic', 'name': 'Magic Upgrades', 'items': None},
-    {'id': 'buildings', 'name': 'Buildings Upgrades', 'items': None},
-    {'id': 'secret', 'name': 'Secret Upgrades', 'items': secret_items},
+    section('allegiances', 'Allegiances Upgrades', None),
+    section('misc', 'Misc Upgrades', None),
+    section('magic', 'Magic Upgrades', pages['magic']),
+    section('buildings', 'Buildings Upgrades', pages['buildings']),
+    section('secret', 'Secret Upgrades', pages['secret']),
 ]
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps({'max': meta['max_ascension'], 'sections': sections}, ensure_ascii=False,
@@ -101,6 +134,14 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
 .cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;
   background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
+.cell.group{cursor:pointer}
+.badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700;pointer-events:none}
+#pop{position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#pop.open{display:flex}
+#pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
+#pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+#pop h3{margin:0;font-size:1.05rem}
+#pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 #tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #tip b.t{display:block;font-size:1rem}
@@ -120,7 +161,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Only the Secret upgrades are filled in so far.</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -136,16 +177,24 @@ the base values <i>v</i>.</div>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
+<div id="pop" role="dialog" aria-modal="true" aria-labelledby="poptitle"><div class="card">
+  <header><h3 id="poptitle"></h3><button class="x" type="button" id="popclose">Close</button></header>
+  <div class="grid" id="popgrid"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent);
-  var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [];
+  var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [], gcells = [];
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;
+  }
+  function pred(p){
+    return p.replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
+            .replace(/^being able /,'you are able ').replace(/^being /,'you are ');
   }
   function As(k){ return new Array(k+1).join('A'); }
   function penalty(it){
@@ -183,7 +232,7 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.o.length) tip.appendChild(el('div','faction','Can only be bought when '+it.o.join(' and ')+'.'));
+    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : 'Can only be bought when '+it.o.map(pred).join(' and ')+'.')));
     if(unavailable(it)){
       tip.appendChild(el('span','lbl','Not available'));
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
@@ -212,28 +261,74 @@ the base values <i>v</i>.</div>
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
 
+  function itemCell(it, plain){
+    var b=el('button','cell'); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
+    if(!plain){
+      b.addEventListener('mouseenter',function(){ showTip(it,b); });
+      b.addEventListener('focus',function(){ showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
+    }
+    b.addEventListener('mouseleave',hideTip);
+    b.addEventListener('blur',hideTip);
+    return b;
+  }
+  function decorate(b, it){
+    var na=unavailable(it), k=na?0:penalty(it), m=b.querySelector('.pen');
+    b.classList.toggle('na', na);
+    if(k){ if(!m){ m=el('span','pen'); b.appendChild(m); } m.textContent=As(k); }
+    else if(m){ m.remove(); }
+  }
+  function showGroupTip(sm, anchor){
+    tip.textContent='';
+    tip.appendChild(el('b','t',sm.n));
+    tip.appendChild(el('div','more',sm.summary));
+    tip.style.display='block';
+    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
+    var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
+  function openGroup(en){
+    poptitle.textContent=en.g+' ('+en.items.length+' upgrades)';
+    popgrid.textContent='';
+    en.items.forEach(function(it){ var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
+    hideTip(); pop.classList.add('open'); document.getElementById('popclose').focus();
+  }
+  function closePop(){ pop.classList.remove('open'); hideTip(); }
+  document.getElementById('popclose').addEventListener('click',closePop);
+  pop.addEventListener('click',function(e){ if(e.target===pop) closePop(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePop(); });
+
   var saved={};
   try{ saved=JSON.parse(localStorage.getItem('upgrade-sections')||'{}')||{}; }catch(e){}
   SECTIONS.forEach(function(s){
-    var on = s.items ? (saved[s.id]!==false) : false;
-    var lab=el('label', s.items ? '' : 'off');
-    var cb=el('input'); cb.type='checkbox'; cb.checked=on; cb.disabled=!s.items;
+    var on = s.entries ? (saved[s.id]!==false) : false;
+    var lab=el('label', s.entries ? '' : 'off');
+    var cb=el('input'); cb.type='checkbox'; cb.checked=on; cb.disabled=!s.entries;
     lab.appendChild(cb);
-    lab.appendChild(document.createTextNode(s.name.replace(' Upgrades','')+(s.items ? ' ('+s.items.length+')' : ' (not filled in yet)')));
+    lab.appendChild(document.createTextNode(s.name.replace(' Upgrades','')+(s.entries ? ' ('+s.count+')' : ' (not filled in yet)')));
     filter.appendChild(lab);
-    if(!s.items) return;
+    if(!s.entries) return;
     var sec=el('section'); sec.hidden=!on;
-    var h=el('h2',null,s.name); h.appendChild(el('small',null,s.items.length+' upgrades')); sec.appendChild(h);
+    var h=el('h2',null,s.name); h.appendChild(el('small',null,s.count+' upgrades')); sec.appendChild(h);
     var g=el('div','grid');
-    s.items.forEach(function(it){
-      var b=el('button','cell'); b.type='button'; b.setAttribute('aria-label', it.n);
-      if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
-      b.addEventListener('mouseenter',function(){ showTip(it,b); });
-      b.addEventListener('mouseleave',hideTip);
-      b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('blur',hideTip);
-      b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
-      g.appendChild(b); cells.push([b,it]);
+    s.entries.forEach(function(en){
+      if(en.items.length===1){
+        var it=en.items[0], b=itemCell(it);
+        g.appendChild(b); cells.push([b,it]);
+      } else {
+        var gb=itemCell(en.items[0],true);
+        gb.classList.add('group');
+        gb.setAttribute('aria-label', en.g+', '+en.items.length+' upgrades');
+        gb.appendChild(el('span','badge','\u00d7'+en.items.length));
+        var summary={n:en.g, summary:en.items.length+' upgrades \u2014 click to view'};
+        gb.addEventListener('mouseenter',function(){ showGroupTip(summary, gb); });
+        gb.addEventListener('focus',function(){ showGroupTip(summary, gb); });
+        gb.addEventListener('click',function(e){ e.stopPropagation(); openGroup(en); });
+        g.appendChild(gb); gcells.push([gb,en]);
+      }
     });
     sec.appendChild(g); root.appendChild(sec);
     cb.addEventListener('change',function(){
@@ -243,12 +338,8 @@ the base values <i>v</i>.</div>
     });
   });
   function apply(){
-    cells.forEach(function(p){
-      var na=unavailable(p[1]), k=na?0:penalty(p[1]), b=p[0].querySelector('.pen');
-      p[0].classList.toggle('na', na);
-      if(k){ if(!b){ b=el('span','pen'); p[0].appendChild(b); } b.textContent=As(k); }
-      else if(b){ b.remove(); }
-    });
+    cells.forEach(function(p){ decorate(p[0], p[1]); });
+    gcells.forEach(function(p){ p[0].classList.toggle('na', p[1].items.every(unavailable)); });
     hideTip();
   }
   for(var a=0;a<=MAXA;a++){ var o=el('option',null,String(a)); o.value=String(a); sel.appendChild(o); }
@@ -266,5 +357,4 @@ the base values <i>v</i>.</div>
 '''
 html = html.replace('__DATA__', data)
 open(os.path.join(ROOT, 'docs', 'upgrades.html'), 'w', encoding='utf8').write(html)
-print('docs/upgrades.html', len(html) // 1024, 'KB;', len(secret_items), 'secret upgrades;',
-      sum(1 for i in secret_items if i['i']), 'with icon')
+print('docs/upgrades.html', len(html) // 1024, 'KB;', [(x['id'], x['count']) for x in sections])

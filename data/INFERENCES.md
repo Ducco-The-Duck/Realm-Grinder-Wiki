@@ -11,24 +11,30 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 
 Only these need checking; remove an item when it is settled.
 
-1. **Research availability by Ascension:** unavailable from Ascension 3 (number below 405) and 4 (below 5000). Code only.
-   Needs someone at Ascension 3-4.
-2. **Ascension-penalty start for 16 research formulas** that start at Ascension 2 (10) or 4 (6); the Ascension 1 group is
-   confirmed (S1). Needs Ascension 2-4.
-3. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
+1. **Ascension-penalty start for 16 research formulas** that start at Ascension 2 (10) or 4 (6); the Ascension 1 group is
+   confirmed (S1). The user considers the rest most likely correct but cannot confirm it yet. Needs Ascension 2-4.
+2. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
    doc. The wiki shows the code. Needs the in-game "Chance: X%" tooltip (visible only before you own the artifact).
-4. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
+3. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
    that were confirmed on other artifacts, but each formula is unverified individually.
 
-5. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
+4. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
    Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
    Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom
    targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
    section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
 
+5. **Magic and Buildings upgrades** (built from code, not yet seen by the user): the Ascension ranges come from running the game's
+   own availability check with every other requirement met; the penalty start Ascension of each upgrade is the first
+   Ascension at which the game's own text for it changes. Mercenary-only entries (Round Table, Dark Covenant, Secret Exchange)
+   and Arcane Brilliance (tied to Spell Tiers, left for later) are the least checked.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
+
+- Research availability by Ascension: Ascension 3 removes researches numbered 400 or lower and Ascension 4 those 5000 or lower
+  (patch notes).
 
 - Challenges: Versatile Combo, Overflowing Magic, the Mystic Maze bug, and the requirement changes with Ascension
   (Smuggled Jewels, Underground Foundations, Omnipresence).

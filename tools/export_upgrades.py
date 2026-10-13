@@ -1,4 +1,4 @@
-"""Export the Secret upgrades (upgrade category 4) to data/upgrades_secret.json.
+"""Export the Secret, Magic and Buildings upgrades (upgrade categories 4, 2, 3) to data/upgrade_pages.json.
 
 Per upgrade: name, icon, the game's description with formulas where the text shows a computed value, and how it
 is unlocked: the trophy / artifact (or upgrade) its availability check reads, plus the other conditions the check
@@ -22,11 +22,11 @@ sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
 ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
-SECRET = 4          # the game's category index of "Secret Upgrades"
+CATS = {4: 'secret', 2: 'magic', 3: 'buildings'}      # the game's category indexes of the upgrade sections
 
 MUT = f"""
   var G = {g}, v = __V;
-  [G.{J('§5!V§')}, G.{J('§=y§')}, G.{J('§@w§')}, G.{J('§1!#§')}].forEach(function (a) {{ for (var i = 0; i < a.length; i++) a[i] = v; }});
+  [G.{J('§5!V§')}, G.{J('§=y§')}, G.{J('§@w§')}, G.{J('§1!#§')}].forEach(function (a) {{ for (var i = 0; i < 200; i++) a[i] = v; }});
   G.{J('§%<§')}.forEach(function (b) {{ b.{J('§!a§')} = v; }});
   G.{J('§0!A§')}.forEach(function (s) {{ s.{J('§2-§')} = v; s.{J('§?j§')} = v; s.{J('§<q§')} = v; s.{J('§<!G§')} = v; }});
 """
@@ -36,20 +36,44 @@ PROBE = f"""(function () {{ __MUT
   var lists = {{ upgrade: U, trophy: {g}.{J('§0Q§')}, spell: {g}.{J('§0!A§')}, building: {g}.{J('§%<§')} }};
   for (var k in lists) for (var i = 0; i < lists[k].length; i++) {{ var q = qOf(lists[k][i]); if (q !== null) named[q] = [k, lists[k][i].{J('§1i§')}, !!lists[k][i].{J('§@!R§')}]; }}
   for (var i = 0; i < U.length; i++) {{ var o = U[i];
-    if (o.{J('§,!B§')} !== {SECRET}) continue;
-    var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i }};
+    var cat = o.{J('§,!B§')}; if (cat !== 2 && cat !== 3 && cat !== 4) continue;
+    var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
+              tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')} }};
+    try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
     out.push(r); }}
   return JSON.stringify({{ rows: out, named: named }}); }})()"""
 
 
-def probe(v=None):
+def probe(v=None, asc=None):
     ctx = quickjs.Context(); ctx.eval(ENGINE); ctx.eval('__boot()')
-    pre = MUT.replace('__V', str(v)) if v is not None else ''
+    pre = (f"{g}.{J('§,P§')} = {asc};" if asc is not None else '') + (MUT.replace('__V', str(v)) if v is not None else '')
     return json.loads(ctx.eval(PROBE.replace('__MUT', pre)))
 
 
+# availability by Ascension with every other requirement met (counts, trophies, Reincarnation); one item at a time
+BB = f"""(function () {{
+  var G = {g}, U = G.{J('§-!4§')}, out = {{}}, big = 1e15;
+  [G.{J('§5!V§')}, G.{J('§=y§')}, G.{J('§@w§')}].forEach(function (a) {{ for (var i = 0; i < 200; i++) a[i] = big; }});
+  G.{J('§%<§')}.forEach(function (b) {{ b.{J('§!a§')} = 2000000000; }});
+  G.{J('§8t§')} = 100000;
+  G.{J('§0Q§')}.forEach(function (t) {{ t.{J('§4!K§')} = true; }});
+  G.{J('§8!H§')} = 9999;
+  var idx = __IDX__;
+  for (var n = 0; n < idx.length; n++) {{ var o = U[idx[n]], row = [];
+    for (var A = 0; A <= 4; A++) {{ G.{J('§,P§')} = A; G.{J('§-!^§')} = o.{J('§-!^§')} === -1 ? 0 : o.{J('§-!^§')}; G.{J('§,!Y§')} = o.{J('§,!Y§')}; G.{J('§9!m§')} = o.{J('§9!m§')};
+      var v; try {{ v = !!o.{J('§-6§')}; }} catch (e) {{ v = null; }} row.push(v); }}
+    out[idx[n]] = row; }}
+  return JSON.stringify(out); }})()"""
+
+
+def availability(indexes):
+    ctx = quickjs.Context(); ctx.eval(ENGINE); ctx.eval('__boot()')
+    return {int(k): v for k, v in json.loads(ctx.eval(BB.replace('__IDX__', json.dumps(indexes)))).items()}
+
+
 runs = [probe(), probe(1000), probe(98765)]
+asc_runs = [probe(None, a) for a in range(1, 5)]
 rows, named = runs[0]['rows'], runs[0]['named']
 cl = parse_all()
 D.init(cl, named, pow10_text)
@@ -97,15 +121,91 @@ def asc_text(lo, hi):
     return f'Ascension {lo} to {hi - 1}' if hi - 1 > lo else f'Ascension {lo}'
 
 
-def decode(body, c):
-    """-> (sources [{kind, name}], conditions [str], undecoded [str])"""
+_SUP = str.maketrans('0123456789-', '⁰¹²³⁴⁵⁶⁷⁸⁹⁻')
+BLD = {b['name']: b for b in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))}
+
+
+def num_text(n):
+    n = float(n)
+    if n < 1e6: return f'{int(n)}' if n == int(n) else f'{n:g}'
+    e = len(str(int(n))) - 1
+    mant = n / 10 ** e
+    return f'10{str(e).translate(_SUP)}' if mant == 1 else f'{mant:g} × 10{str(e).translate(_SUP)}'
+
+
+def plural(name):
+    return (BLD.get(name) or {}).get('name_plural') or name
+
+
+STATIC_ARRAY = re.compile(r'static var §&Z§:Array = \[([^\]]*)\]')
+
+
+def decode_alt(t, c, ctx, nm):
+    """one clause that can stand as a requirement line or condition phrase -> ('req'|'cond', text) or None"""
+    mm = re.fullmatch(r'§8G§\.§<P§\((§[^§]*§)\.id\)', t)
+    if mm:
+        n = nm(mm.group(1))
+        return ('req', describe_source({'kind': 'artifact' if n and n[2] else 'trophy', 'name': n[1]}) if n else None)
+    mm = re.fullmatch(r'§8G§\.§,#§\(§1i§\)', t)
+    if mm: return ('req', describe_source({'kind': 'trophy', 'name': ctx['name']}))
+    mm = re.fullmatch(r'§&c§\.§3"&§\(false,false,true\) >= (§\^!\]§|[\d.e+]+)', t)
+    if mm:
+        thr = ctx['thr'] if mm.group(1) == '§^!]§' else float(mm.group(1))
+        return ('text', f'Produce at least {num_text(thr)} mana in this Reincarnation (before bonus multipliers)')
+    return None
+
+
+def decode(body, c, ctx=None):
+    """-> (sources [{kind, name}], conditions [str], undecoded [str], (asc_lo, asc_hi), extra requirement lines [str])"""
+    ctx = ctx or {}
     nm = D.name_of_for(c)
-    src, cond, bad = [], [], []
+    src, cond, bad, extra = [], [], [], []
     m = re.fullmatch(r'return (.+);', body)
-    if not m: return src, cond, [body], (None, None)
+    if not m: return src, cond, [body], (None, None), extra
     asc_lo = asc_hi = fac_lo = fac_hi = None
+    csrc = '\n'.join(x.body for x in c.methods) if hasattr(c, 'methods') else ''
     for cl_ in split_and(m.group(1)):
         t = cl_
+        if t == 'super.§-6§' or re.search(r'§"!U§ <=? \d+', t) or t == '§8G§.§,P§ >= §[2§': continue     # base check / tier-dependent Ascension (see availability)
+        # building counts
+        mm = re.fullmatch(r'§8G§\.§9=§\((§[^§]*§)\.id\)\.§!a§ >= (.+)', t) or \
+             re.fullmatch(r'§8G§\.§%Z§\((§[^§]*§)\.id(?:,true)?\) >= (.+)', t)
+        if mm:
+            tokb, thr = mm.group(1), mm.group(2)
+            bn = ctx.get('bld') if tokb == '§%<§' else (nm(tokb) or [None, None])[1]
+            if thr == '§^!]§': val = ctx.get('thr')
+            else:
+                arr = STATIC_ARRAY.search(open(ctx['file'], encoding='utf8').read()) if ctx.get('file') else None
+                val = [float(x) for x in arr.group(1).split(',')][int(ctx['tier']) - 1] if arr else None
+            if bn and val is not None:
+                cond.append(f'having at least {num_text(val)} {plural(bn)}'); continue
+        mm = re.fullmatch(r'§&c§\.§0#§\((\d),true\) >= §\^!\]§', t)
+        if mm and mm.group(1) in '12':
+            cond.append(f"having at least {num_text(ctx['thr'])} {ALIGN[int(mm.group(1))]} buildings"); continue
+        if re.fullmatch(r'§&c§\.§0#§\(0,true\) \+ §&c§\.§0#§\(3,true\) >= §\^!\]§', t):
+            cond.append(f"having at least {num_text(ctx['thr'])} Neutral buildings"); continue
+        if re.fullmatch(r'§8G§\.§8t§ >= §\^!\]§', t):
+            cond.append(f"having unlocked at least {num_text(ctx['thr'])} trophies"); continue
+        mm = re.fullmatch(r'Math\.floor\(\(§8G§\.§5!V§\[1\] \+ §8G§\.§=y§\[1\] \+ §8G§\.§@w§\[1\]\) / 60 / 60\) >= (\d+)', t)
+        if mm: cond.append(f'having played for at least {mm.group(1)} hours (all-time)'); continue
+        mm = re.fullmatch(r'Math\.floor\(\(.*\[1\].*\[3\].*\) / 60 / 60\) >= (\d+)', t)
+        if mm: cond.append(f'having spent at least {mm.group(1)} hours (all-time) as neither Good nor Evil'); continue
+        mm = re.fullmatch(r'§8G§\.§8!H§ >= (\d+)', t)
+        if mm: cond.append(f'being at Reincarnation {mm.group(1)} or higher'); continue
+        # trophy-or-threshold alternatives
+        mm = re.fullmatch(r'\((.+) \|\| (.+)\)', t)
+        if mm:
+            parts = [decode_alt(x, c, ctx, nm) for x in (mm.group(1), mm.group(2))]
+            if all(parts) and parts[0][1] and parts[1][1]:
+                def txt(p):
+                    return f"{p[1]['kind']}: {p[1]['name']}" if p[0] == 'req' else p[1]
+                if ctx.get('group') == 'Autocast':      # buying the upgrade unlocks the trophy: only the amount counts
+                    parts = [p for p in parts if p[0] == 'text']
+                if ctx.get('group') == 'ManaProduction':    # the trophy is unlocked by reaching the amount: name just the trophy
+                    parts = [p for p in parts if p[0] == 'req']
+                extra.append(' or '.join(txt(p) for p in parts)); continue
+        if t == '§8G§.§,#§(§1i§)' or re.fullmatch(r'§8G§\.§<P§\((§[^§]*§)\.id\)', t):
+            pass
         mm = re.fullmatch(r'§8G§\.§<P§\((§[^§]*§)\.id\)', t)
         if mm:
             n = nm(mm.group(1)); src.append({'kind': 'artifact' if n and n[2] else 'trophy', 'name': n[1]} if n else {'kind': '?', 'name': mm.group(1)}); continue
@@ -163,7 +263,7 @@ def decode(body, c):
         r = faction_range(fac_lo, fac_hi)
         if r: cond.append(r)
         else: bad.append(f'faction {fac_lo}..{fac_hi}')
-    return src, cond, bad, (asc_lo, asc_hi)
+    return src, cond, bad, (asc_lo, asc_hi), extra
 
 
 CATEGORY = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}   # the Trophies page sections
@@ -244,7 +344,7 @@ def fix_text(name, paras):
             for k, (lt, var) in spec.items():
                 if p['text'].startswith(k): p['formulas'] = [_m(lt, var)]
     for p in paras:
-        p['text'] = READOUT.sub('', p['text']).strip()
+        p['text'] = re.sub(r'(?<=\d)\.00(?!\d)', '', READOUT.sub('', p['text'])).strip()
 
 
 def fix_raw(name, c, paras):
@@ -267,9 +367,13 @@ def fix_raw(name, c, paras):
         p['formulas'] = new
 
 
-out = []
+SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
+SPELL_TIER_CLASS = '§%p§'
+by_cat = {name: [] for name in CATS.values()}
 problems = []
-for idx, r in enumerate(rows):
+todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS]
+avail = availability([r['i'] for _, r in todo if r['cat'] != 4])
+for idx, r in todo:
     tok = r['q'].split('.')[-1]
     c = next(k for k in cl.values() if k.name == tok)
     templates = D.formulas_for(c, r['n'])
@@ -284,32 +388,58 @@ for idx, r in enumerate(rows):
             if not (ln == lines1[k] == lines2[k]):
                 p['text'] = pow10_text(re.sub(r'\s*\((?:[^()]*)\)\s*$', '', ln).strip())
         paras.append(p)
+    # Ascension penalty start: the first Ascension at which the game's own text for the value changes
+    if r['cat'] != 4 and paras and paras[0].get('s') is None:
+        base = texts[0]
+        for a, ar in enumerate(asc_runs, 1):
+            if ar['rows'][idx]['d'] != base:
+                paras[0]['s'] = a; break
     fix_raw(r['n'], c, paras)
     fix_text(r['n'], paras)
     av = next((m for m in c.methods if m.name == '§-6§'), None)
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
-    src, cond, bad, (alo, ahi) = decode(body, c)
+    ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float)) else None,
+           'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None)}
+    src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
+    if r['cat'] != 4:
+        row = avail.get(r['i'])
+        if row and any(row):
+            first = row.index(True)
+            alo = first if first > 0 else None
+            tail = [a for a in range(first, 5) if not row[a]]
+            ahi = tail[0] if tail else None
+        # (a row that is never true needs a prerequisite the probe does not model: keep the decoded bounds)
+    if r['n'] == 'Reverse Autocasting':       # stated in the text of its trophy ("Can only be unlocked starting from ...")
+        cond.append('starting from Ascension 1, at Reincarnation 40+')
+    if r['f'] != -1 and r['cat'] != 4:
+        cond.insert(0, f"playing as {FACTION.get(r['f'], r['f'])}")
     if bad: problems.append((r['n'], bad))
-    out.append({
+    item = {
         'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
-        'description': paras, 'sources': [describe_source(s) for s in src], 'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi,
-    })
+        'description': paras, 'sources': [describe_source(s) for s in src], 'requirements': extra,
+        'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
+        'tier': r.get('tier'), 'building': r.get('bld'),
+    }
+    by_cat[CATS[r['cat']]].append(item)
 
 # value symbols: v, or v1, v2 ... when a description has several computed values
 raw = []
-for u in out:
-    forms = [f for p in u['description'] for f in p['formulas']]
-    for f in forms:
-        if 'raw' in f: raw.append((u['name'], f['raw']))
-    conv = [f for f in forms if 'latex' in f]
-    if len(conv) > 1:
-        for k, f in enumerate(conv, 1):
-            f['latex'] = re.sub(r'^v(?:_\{\d+\})? = ', f'v_{{{k}}} = ', f['latex'])
-for n, e in raw: print('RAW', n, '|', e[:200])
+for items in by_cat.values():
+    for u in items:
+        forms = [f for p in u['description'] for f in p['formulas']]
+        for f in forms:
+            if 'raw' in f: raw.append((u['name'], f['raw']))
+        conv = [f for f in forms if 'latex' in f]
+        if len(conv) > 1:
+            for k, f in enumerate(conv, 1):
+                f['latex'] = re.sub(r'^v(?:_\{\d+\})? = ', f'v_{{{k}}} = ', f['latex'])
+for n, e in raw: print('RAW (dropped)', n, '|', e[:120])
+for items in by_cat.values():
+    for u in items:
+        for p in u['description']: p['formulas'] = [f for f in p['formulas'] if 'latex' in f]
 
-json.dump(out, open(os.path.join(ROOT, 'data', 'upgrades_secret.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(by_cat, open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print('ambiguous trophy names:', amb)
-print('data/upgrades_secret.json:', len(out), 'upgrades;',
-      'with formulas:', sum(1 for u in out if any(p['formulas'] for p in u['description'])),
+print('data/upgrade_pages.json:', {k: len(v) for k, v in by_cat.items()},
       '| undecoded conditions:', len(problems))
 for n, b in problems: print('  ', n, b)
