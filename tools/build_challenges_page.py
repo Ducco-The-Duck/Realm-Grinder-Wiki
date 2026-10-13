@@ -173,7 +173,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     s.items.forEach(function(it){
       var b=el('button','cell'+(it.su?' su':'')); b.type='button';
       b.setAttribute('aria-label', it.n);
-      b._s=normS([it.n,it.fl,it.c,it.r.join(' ')].join(' '));
+      b._s=normS([it.n,it.fl,it.c,it.r.join(' '),s.name,it.a].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
       b.addEventListener('mouseenter',function(){ showTip(s,it,b); });
       b.addEventListener('mouseleave',hideTip);

@@ -191,7 +191,7 @@ the base values <i>v</i>.</div>
   var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [], gcells = [];
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 /*SEARCH_JS*/
-  function sOf(it){ return it._s || (it._s = normS([it.n].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
+  function sOf(it){ return it._s || (it._s = normS([it.n,facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }

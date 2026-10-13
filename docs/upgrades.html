@@ -105,6 +105,9 @@ the base values <i>v</i>.</div>
   var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',
                 dn:'dwarven',dw:'drow',dg:'dragon',ar:'archon',dj:'djinn',mk:'makers',mc:'mercenary'};
   function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  // lines (from a list of strings) that name a faction, so an item can be found by the faction it belongs to
+  var FNAMES = Object.keys(FCODES).map(function(k){ return FCODES[k]; });
+  function facLines(list){ return (list||[]).filter(function(l){ var n=normS(l); return FNAMES.some(function(f){ return n.indexOf(f)>=0; }); }).join(' '); }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     var box=document.getElementById('q'), note=document.getElementById('qn');
@@ -130,7 +133,7 @@ the base values <i>v</i>.</div>
     run();
   }
 
-  function sOf(it){ return it._s || (it._s = normS([it.n].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
+  function sOf(it){ return it._s || (it._s = normS([it.n,facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }

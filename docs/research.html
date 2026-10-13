@@ -95,6 +95,9 @@ popups are always the base values <i>v</i>.</div>
   var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',
                 dn:'dwarven',dw:'drow',dg:'dragon',ar:'archon',dj:'djinn',mk:'makers',mc:'mercenary'};
   function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  // lines (from a list of strings) that name a faction, so an item can be found by the faction it belongs to
+  var FNAMES = Object.keys(FCODES).map(function(k){ return FCODES[k]; });
+  function facLines(list){ return (list||[]).filter(function(l){ var n=normS(l); return FNAMES.some(function(f){ return n.indexOf(f)>=0; }); }).join(' '); }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     var box=document.getElementById('q'), note=document.getElementById('qn');
@@ -209,7 +212,7 @@ popups are always the base values <i>v</i>.</div>
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
   function cell(it, cls){
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
-    if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
+    if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }

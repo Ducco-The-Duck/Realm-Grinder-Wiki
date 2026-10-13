@@ -74,6 +74,9 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
   var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',
                 dn:'dwarven',dw:'drow',dg:'dragon',ar:'archon',dj:'djinn',mk:'makers',mc:'mercenary'};
   function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  // lines (from a list of strings) that name a faction, so an item can be found by the faction it belongs to
+  var FNAMES = Object.keys(FCODES).map(function(k){ return FCODES[k]; });
+  function facLines(list){ return (list||[]).filter(function(l){ var n=normS(l); return FNAMES.some(function(f){ return n.indexOf(f)>=0; }); }).join(' '); }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     var box=document.getElementById('q'), note=document.getElementById('qn');

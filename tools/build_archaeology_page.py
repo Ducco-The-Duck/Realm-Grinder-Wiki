@@ -151,7 +151,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     s.items.forEach(function(it){
       var b=el('button','cell'); b.type='button';
       b.setAttribute('aria-label', it.n);
-      b._s=normS([it.n,it.h,it.f].join(' '));
+      b._s=normS([it.n,it.h,it.f,facLines(it.q)].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('mouseleave',hideTip);
