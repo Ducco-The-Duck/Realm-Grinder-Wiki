@@ -334,6 +334,13 @@ def fix_text(name, paras):
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
+    if name == 'Ancestral Hourglass':
+        paras[0]['formulas'] = [_m(r'v = \frac{0.002 \cdot R}{A}',
+            ('v', 'Amount taken off the Lineage cost exponent growth (per 25 levels of a Lineage)'),
+            ('R', 'Reincarnations made'), ('A', 'Your Ascension number (this upgrade needs Ascension 2 or more)'))]
+    if name == 'Ancient Heirloom':
+        paras[0]['formulas'] = [_m(r'c_{\text{new}} = c^{0.97}',
+            ('c', 'The Lineage upgrade cost without this upgrade'))]
     if name == 'Art of the Crow':
         spec = {
             'Good:': (r'v = 0.1 \cdot D^{0.9}', ('D', 'Your excavation depth (excavations made since your last Excavation Reset)')),

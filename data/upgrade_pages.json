@@ -2346,7 +2346,17 @@
 "description": [
 {
 "text": "Reduce the cost for upgrading Lineages for all except your highest one.",
-"formulas": [],
+"formulas": [
+{
+"latex": "c_{\\text{new}} = c^{0.97}",
+"vars": [
+{
+"symbol": "c",
+"text": "The Lineage upgrade cost without this upgrade"
+}
+]
+}
+],
 "s": null
 }
 ],
@@ -2619,7 +2629,25 @@
 "description": [
 {
 "text": "Lower Lineage cost multiplier based on Reincarnations made.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = \\frac{0.002 \\cdot R}{A}",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the Lineage cost exponent growth (per 25 levels of a Lineage)"
+},
+{
+"symbol": "R",
+"text": "Reincarnations made"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number (this upgrade needs Ascension 2 or more)"
+}
+]
+}
+],
 "s": null
 }
 ],

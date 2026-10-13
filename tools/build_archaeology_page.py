@@ -124,7 +124,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
         if(window.katex){ try{ katex.render('\\\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }
         else f.textContent=it.l;
         tip.appendChild(f);
-        tip.appendChild(el('div','more','p is the percent chance per excavation (the game shows it as "Chance: p%" once the artifact is eligible).'));
+        tip.appendChild(el('div','more','p is the percent chance per excavation.'));
       } else {
         tip.appendChild(el('div','chance',lead+'a chance to find it, which depends on your stats.'));
       }
