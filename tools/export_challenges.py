@@ -23,7 +23,7 @@ J = lambda t: names[t]
 g = J('§8G§')
 ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
 PRESTIGE = {9, 10, 12}
-THIRD = {13, 14, 15}      # affiliated through a Trade Treaty
+THIRD = {13, 14, 15}      # Astral factions (joined through a Trade Treaty)
 
 
 def boot():
@@ -383,8 +383,8 @@ for idx, r in enumerate(rows):
 
 # ---- final shape ---------------------------------------------------------------------------------
 KIND = {9: 'Prestige faction', 10: 'Prestige faction', 12: 'Prestige faction', 6: 'Neutral faction', 7: 'Neutral faction',
-        8: 'Neutral faction', 11: 'Mercenary', 13: 'Trade Treaty faction', 14: 'Trade Treaty faction',
-        15: 'Trade Treaty faction'}
+        8: 'Neutral faction', 11: 'Mercenary', 13: 'Astral faction', 14: 'Astral faction',
+        15: 'Astral faction'}
 PENALIZED = 'the game shows this percentage reduced by the Ascension penalty'
 
 

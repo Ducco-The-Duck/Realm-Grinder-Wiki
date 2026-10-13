@@ -2293,7 +2293,7 @@
 {
 "id": 13,
 "name": "Archon",
-"kind": "Trade Treaty faction",
+"kind": "Astral faction",
 "items": [
 {
 "name": "Omniscience",
@@ -2519,7 +2519,7 @@
 {
 "id": 14,
 "name": "Djinn",
-"kind": "Trade Treaty faction",
+"kind": "Astral faction",
 "items": [
 {
 "name": "Full Wish",
@@ -2751,7 +2751,7 @@
 {
 "id": 15,
 "name": "Makers",
-"kind": "Trade Treaty faction",
+"kind": "Astral faction",
 "items": [
 {
 "name": "Gaia's Cradle",
