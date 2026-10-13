@@ -20,24 +20,20 @@ Only these need checking; remove an item when it is settled.
 4. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235): the chance formulas use helper meanings
    that were confirmed on other artifacts, but each formula is unverified individually.
 
-5. **Challenges** (page built from code). Texts, requirements, reincarnation numbers and rewards were checked by the user
-   up to Drow Challenge 5; Mystic Maze is a confirmed game bug (text says Reincarnation maximum, code uses the highest
-   single-type building count you own now). Still unchecked: (a) the formulas that needed a hand-written reading, namely
-   Thunderstorm / Titan Challenge (tier hit, Lightning Rod and the Titan perk "Titan Perk 4", not yet seen by the user), Versatile Combo / Drow Challenge
-   (casts this Era minus Combo Strike), Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps
-   (position of the lowest tier Maelstrom targets), Overflowing Magic (bonus times 12 minus tier), The Art of War and Altar of
-   Wishes (the number of spells tied to an alignment); (b) everything from the Mercenary section on (Mercenary, Archon, Djinn,
-   Makers), which is only in the code; (c) the three requirements that change with Ascension (Smuggled Jewels, Underground
-   Foundations, Omnipresence), where the code compares the unpenalised value and the game prints the penalised one.
-
-6. **Secret upgrades** (page built from code; the unlock conditions are the game's own availability checks). Worth checking
-   in-game: Future Linkin (stat 29 read as the length of your last Era), MAD Masks (helper read as the deepest excavation
-   depth this Reincarnation), Bloodstream's adjusted time, Art of the Crow's "Set faction with the same alignment" condition,
-   and that "Ascension n or lower/higher" ranges match what you see.
+5. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
+   Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
+   Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom
+   targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
+   section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
+
+- Challenges: Versatile Combo, Overflowing Magic, the Mystic Maze bug, and the requirement changes with Ascension
+  (Smuggled Jewels, Underground Foundations, Omnipresence).
+- Secret upgrades: Future Linkin (last Era length), MAD Masks, Bloodstream and Art of the Crow formulas and variable meanings;
+  the Ascension availability ranges of the Secret upgrades.
 
 - Faction cell colours; Neutral has no tint; alignment-locked researches and the 11 locked ones.
 - Home faction vs unlock faction (S300 Chain Lightning: unlock as Faceless, buy as Titan); the unlock flag persists.

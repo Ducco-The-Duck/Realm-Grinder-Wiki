@@ -196,8 +196,12 @@ def _m(latex, *vs):
 # unconverted ones of each upgrade, None = an intermediate value that is not shown as a formula
 MANUAL_RAW = {
     'Bloodstream': [None, _m(
-        r'v = 0.1 \cdot t^{0.65}',
-        ('t', 'Adjusted time spent as the faction of the bloodline you are using (seconds), as shown in the upgrade'))],
+        r'v = 0.1 \cdot \left(t_{1} + t_{2} + t_{3}\right)^{0.65}',
+        ('t_{1}', 'Your all-time time with the bloodline faction (seconds)'),
+        ('t_{2}', 'Your all-time time with your current (prestige, if applicable) faction, if you have Bloodspring (A400) '
+                  '(seconds)'),
+        ('t_{3}', '1/12 of your all-time time with Mercenaries per bloodline faction upgrade bought, if you are playing '
+                  'Mercenaries (seconds)'))],
     'Holy Frenzy': [_m(
         r'v = 250 \cdot j^{2}',
         ('j', 'The higher of the tiers Blood Frenzy and Holy Light are cast at (1 is the base tier, also while neither is active)'))],
@@ -224,7 +228,9 @@ def fix_text(name, paras):
     """readouts that stayed in the text, and the few descriptions that need a hand"""
     drop = [p for p in paras if p['text'].startswith('Adjusted time spent for')]
     paras[:] = [p for p in paras if p not in drop]
-    for p in drop: paras[0]['formulas'] += p['formulas']
+    for p in drop:
+        paras[0]['formulas'] += p['formulas']
+        if paras[0].get('s') is None: paras[0]['s'] = p.get('s')
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
