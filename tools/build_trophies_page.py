@@ -43,17 +43,17 @@ sections = []
 listed = [t for t in trophies if t['listed']]
 for cat, title in CATEGORIES.items():
     its = [t for t in listed if t['category'] == cat]
-    sections.append({'title': f'{len(its)} {title} Trophies', 'cells': cells(its)})
+    sections.append({'title': f'{title} Trophies', 'n': len(its), 'cells': cells(its)})
 subs = []
 for key, title in EVENT_GROUPS:
     its = [t for t in trophies if t['group'] == key]
     if its:
-        subs.append({'title': f'{title} ({len(its)})', 'cells': cells(its)})
+        subs.append({'title': title, 'n': len(its), 'cells': cells(its)})
 n_event = sum(sum(len(c['items']) for c in sub['cells']) for sub in subs)
 if len(subs) == 1:
-    sections.append({'title': f'{n_event} Event Exclusive Trophies', 'cells': subs[0]['cells']})
+    sections.append({'title': 'Event Exclusive Trophies', 'n': n_event, 'cells': subs[0]['cells']})
 else:
-    sections.append({'title': f'{n_event} Event Exclusive Trophies', 'subs': subs})
+    sections.append({'title': 'Event Exclusive Trophies', 'n': n_event, 'subs': subs})
 
 assert sum(sum(len(c['items']) for c in s['cells']) for s in sections[:5]) == len(listed)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
@@ -77,6 +77,8 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .sub{color:var(--muted);margin:0 0 20px}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2 small{font-weight:400;color:var(--muted);margin-left:8px}
+.subh small{font-weight:400;margin-left:8px}
 .subh{font-size:.9rem;color:var(--muted);margin:14px 0 6px;font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
@@ -189,8 +191,8 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
     return g;
   }
   SECTIONS.forEach(function(s){
-    var sec=el('section'); sec.appendChild(el('h2',null,s.title));
-    if(s.subs){ s.subs.forEach(function(sub){ sec.appendChild(el('h3','subh',sub.title)); sec.appendChild(grid(sub.cells)); }); }
+    var sec=el('section'); var h=el('h2',null,s.title); h.appendChild(el('small',null,s.n+' trophies')); sec.appendChild(h);
+    if(s.subs){ s.subs.forEach(function(sub){ var sh=el('h3','subh',sub.title); sh.appendChild(el('small',null,sub.n+' trophies')); sec.appendChild(sh); sec.appendChild(grid(sub.cells)); }); }
     else sec.appendChild(grid(s.cells));
     root.appendChild(sec);
   });

@@ -38,7 +38,7 @@ def item(a):
 sections = []
 for kind, label in (('quest', 'Quest Artifacts'), ('lore', 'Lore Artifacts')):
     its = sorted((a for a in artifacts if a['kind'] == kind), key=lambda a: a['order'])
-    sections.append({'title': f'{len(its)} {label}', 'items': [item(a) for a in its]})
+    sections.append({'title': label, 'n': len(its), 'items': [item(a) for a in its]})
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
@@ -65,6 +65,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .sub{color:var(--muted);margin:0 0 20px}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
@@ -145,7 +146,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
   SECTIONS.forEach(function(s){
-    var sec=el('section'); sec.appendChild(el('h2',null,s.title));
+    var sec=el('section'); var h=el('h2',null,s.title); h.appendChild(el('small',null,s.n+' artifacts')); sec.appendChild(h);
     var g=el('div','grid');
     s.items.forEach(function(it){
       var b=el('button','cell'); b.type='button';
