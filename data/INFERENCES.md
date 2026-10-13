@@ -18,21 +18,18 @@ Only these need checking; remove an item when it is settled.
    **Poison Vial** (same check, once reached): the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter,
    K before the Ascension penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus,
    0.5 * floor(Time played this Era), unit and size unconfirmed. Check the tooltip with and without the perk.
-3. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235; 39 artifacts): the chance formulas use
-   helper meanings that were confirmed on other artifacts, but each formula is unverified individually. The user is checking
-   them against the patch-notes doc and the old wiki, one by one; those that agree move to Resolved, those that differ stay here.
-   Confirmed so far: see Resolved.
-
-4. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
+   **Lantern of Guidance (artifact):** patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second
+   (no +1). The wiki shows the code. Check the chance tooltip.
+3. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
    Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
    Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom
    targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
    section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
 
-5. **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): built from code, unchecked
+4. **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): built from code, unchecked
    because the user has not reached them. Arcane Brilliance is left for the Spell Tiers part.
 
-6. **Secret upgrades Lantern of Guidance and Oil Lamp:** the code reads (4 * M^0.2)^p for Lantern (Mana Regeneration) and
+5. **Secret upgrades Lantern of Guidance and Oil Lamp:** the code reads (4 * M^0.2)^p for Lantern (Mana Regeneration) and
    (9 * Mmax^0.2)^p for Oil Lamp (Maximum Mana), with p = 1.5 for an Order / Chaos faction, which is 8 * M^0.3 and
    27 * Mmax^0.3. The patch notes give 27 * x^0.3 for Lantern and 8 * x^0.3 for Oil Lamp, so the two constants are swapped
    between the code and the notes (4.3.11 notes: Lantern 9 * x^0.2 -> 27 * x^0.3, Oil Lamp 4 * x^0.2 -> 8 * x^0.3). Spark of
@@ -55,8 +52,6 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 
 - Lore artifact chance formulas confirmed against the patch notes / old wiki apart from cleanup terms (0.5, +1), inputs
   confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Raw Emerald, Branch of the Life Tree, Dragon Scale, Planetary Force, Mercenary Insignia, Solid Cloud, Blood Chalice, Frozen Lightning, The Blackest Ink, Beard Hair, Athanor, Demon Tail, Oil Lamp (artifact), Fossilized Wing, Dusty Coffin, Mythos, Wall Chunk, Apeiron, Stiletto Heel, Titan Helmet, Crystallized Lava, Silk Cloth, Spiked Whip (building count excludes "count as more" bonuses in the code), Poison Vial (base formula; the Drow Perk 4 term is open under 2).
-  Lantern of Guidance: patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second (no +1); the
-  wiki shows the code.
 
 - Research availability by Ascension: Ascension 3 removes researches numbered 400 or lower and Ascension 4 those 5000 or lower
   (patch notes).
