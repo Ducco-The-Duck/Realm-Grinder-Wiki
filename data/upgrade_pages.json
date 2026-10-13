@@ -728,11 +728,11 @@
 "text": "Increase the production of all buildings based on their tier.",
 "formulas": [
 {
-"latex": "v = 10 \\cdot \\left(13 - T\\right)",
+"latex": "v = 10 \\cdot \\left(12 - T\\right)",
 "vars": [
 {
 "symbol": "T",
-"text": "The building's tier (1 for the first building of the faction, 12 for the last)"
+"text": "The building's tier (1 for the first building in the list)"
 }
 ]
 }
@@ -2014,11 +2014,11 @@
 "text": "Increase the production of all buildings based on their tier.",
 "formulas": [
 {
-"latex": "v = 500 \\cdot \\left(2 \\cdot \\left(12 - T\\right)\\right)^{2.5}",
+"latex": "v = 500 \\cdot \\left(2 \\cdot \\left(11 - T\\right)\\right)^{2.5}",
 "vars": [
 {
 "symbol": "T",
-"text": "The building's tier (1 for the first building of the faction, 12 for the last)"
+"text": "The building's tier (1 for the first building in the list)"
 }
 ]
 }
@@ -2597,11 +2597,11 @@
 "text": "Increase the production of all buildings based on their tier.",
 "formulas": [
 {
-"latex": "v = 30000 \\cdot \\left(12 - T\\right)^{3.5}",
+"latex": "v = 30000 \\cdot \\left(11 - T\\right)^{3.5}",
 "vars": [
 {
 "symbol": "T",
-"text": "The building's tier (1 for the first building of the faction, 12 for the last)"
+"text": "The building's tier (1 for the first building in the list)"
 }
 ]
 }

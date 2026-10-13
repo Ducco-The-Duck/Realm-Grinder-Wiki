@@ -338,16 +338,16 @@ def fix_text(name, paras):
         paras[0]['formulas'] = [_m(r'v = \frac{0.002 \cdot R}{A}',
             ('v', 'Amount taken off the Lineage cost exponent growth (per 25 levels of a Lineage)'),
             ('R', 'Reincarnations made'), ('A', 'Your Ascension number (this upgrade needs Ascension 2 or more)'))]
-    # building-tier multipliers that sit in the production code, not in the description (T = building tier, 1 to 12)
-    TIER = ('T', "The building's tier (1 for the first building of the faction, 12 for the last)")
+    # building-tier multipliers that sit in the production code, not in the description (T = building tier, counted from 1; checked in game)
+    TIER = ('T', "The building's tier (1 for the first building in the list)")
     if name == 'Mathematician':
-        paras[0]['formulas'] = [_m(r'v = 10 \cdot \left(13 - T\right)', TIER)]
+        paras[0]['formulas'] = [_m(r'v = 10 \cdot \left(12 - T\right)', TIER)]
         paras[0]['s'] = 2
     if name == 'Wall Fragment':
-        paras[0]['formulas'] = [_m(r'v = 500 \cdot \left(2 \cdot \left(12 - T\right)\right)^{2.5}', TIER)]
+        paras[0]['formulas'] = [_m(r'v = 500 \cdot \left(2 \cdot \left(11 - T\right)\right)^{2.5}', TIER)]
         paras[0]['s'] = 2
     if name == 'Wall Chunk':
-        paras[0]['formulas'] = [_m(r'v = 30000 \cdot \left(12 - T\right)^{3.5}', TIER)]
+        paras[0]['formulas'] = [_m(r'v = 30000 \cdot \left(11 - T\right)^{3.5}', TIER)]
         paras[0]['s'] = 3
     if name == 'Ancient Heirloom':
         paras[0]['formulas'] = [_m(r'c_{\text{new}} = c^{0.97}',
