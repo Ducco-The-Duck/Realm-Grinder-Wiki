@@ -76,6 +76,7 @@ def helper_call(cls, mem, args, name_of):
     if cls == P:
         if mem == '§,!E§': return 'N', 'Number of trophies you have unlocked'
         if mem == '§@!?§': return 'X', 'Your Royal Exchange bonus (%)'
+        if mem == '§^!&§': return 'F', 'Number of different factions (other than yours) involved in your Mercenary upgrades'
         if mem == '§&"H§': return 'N', 'Number of faction upgrades you own that are different than your own'
         if mem == '§6!Y§': return 'Z', 'Your production bonus from Gems (%)'
         if mem == '§>Z§' and args:

@@ -100,6 +100,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 #tip .desc{white-space:pre-line}
 #tip ul{margin:2px 0 0;padding-left:18px}
 #tip .more,#tip .hint{color:var(--muted)}
+#tip .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
 #tip ul.vars li{margin:2px 0}
@@ -109,7 +110,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Research</h1>
 <p class="sub">__TOTAL__ researches in __BRANCHES__ branches, in the in-game order (by research number). Hover a research for what it does, its formula and its requirements. The large icon is where you buy research points for the branch.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces most percentage effects. If a research's formula
@@ -171,7 +172,12 @@ popups are always the base values <i>v</i>.</div>
       if(t.d){ tip.appendChild(el('span','lbl','What it does')); tip.appendChild(el('div','desc',t.d)); }
       place(anchor); return;
     }
-    if(t.d){ tip.appendChild(el('span','lbl','What it does')); tip.appendChild(el('div','desc',t.d)); }
+    if(t.d){
+      tip.appendChild(el('span','lbl','What it does'));
+      var dd=el('div','desc',t.d), pk0=penalty(it);
+      if(pk0 && it.f && it.f.length===1){ dd.appendChild(document.createTextNode(' ')); dd.appendChild(el('span','mark',new Array(pk0+1).join('A'))); }
+      tip.appendChild(dd);
+    }
     if(it.f && it.f.length){
       tip.appendChild(el('span','lbl',it.f.length>1?'Formulas':'Formula'));
       var anyScaled=it.f.length>1 && it.f.some(function(f){ return f.s; });
@@ -181,13 +187,13 @@ popups are always the base values <i>v</i>.</div>
         var tex=f.l.replace(/^v = /, vs+' = ');
         if(f.lb){
           var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
-          var suf='';
+          var suf='', badge=null;
           if(anyScaled){
-            if(!f.s) suf=' · not affected by the Ascension penalty';
-            else if(ASC>=f.s) suf=' · Ascension penalty: '+new Array(ASC-f.s+2).join('A');
+            if(!f.s) suf='';
+            else if(ASC>=f.s){ suf=' · '; badge=el('span','mark',new Array(ASC-f.s+2).join('A')); }
             else suf=' · Ascension penalty (from Ascension '+f.s+')';
           }
-          lab.appendChild(document.createTextNode(' — '+f.lb+suf)); tip.appendChild(lab);
+          lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); tip.appendChild(lab);
         }
         var d=el('div','formula'); var m=el('span'); math(tex,m); d.appendChild(m); tip.appendChild(d);
         var ul=el('ul','vars');
@@ -195,7 +201,6 @@ popups are always the base values <i>v</i>.</div>
         tip.appendChild(ul);
       });
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
-      var pk=penalty(it); if(pk && it.f.length===1) tip.appendChild(el('div','more','Ascension penalty: '+new Array(pk+1).join('A')));
     }
     if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','hint',it.h)); }
     if(t.q && t.q.length){

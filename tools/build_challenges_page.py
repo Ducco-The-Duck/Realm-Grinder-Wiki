@@ -89,7 +89,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Challenges</h1>
 <p class="sub">__TOTAL__ challenges. The first square of each faction is the permanent spell upgrade you get for completing all of that faction's challenges. Hover an icon for the requirements, the challenge itself, the reward and its formula. Everything from the Mercenary section on is read from the game code and has not been checked in the game.</p>
 <div class="bugs">__BUGS__</div>

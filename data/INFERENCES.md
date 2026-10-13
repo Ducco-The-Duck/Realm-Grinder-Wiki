@@ -30,6 +30,11 @@ Only these need checking; remove an item when it is settled.
    Makers), which is only in the code; (c) the three requirements that change with Ascension (Smuggled Jewels, Underground
    Foundations, Omnipresence), where the code compares the unpenalised value and the game prints the penalised one.
 
+6. **Secret upgrades** (page built from code; the unlock conditions are the game's own availability checks). Worth checking
+   in-game: Future Linkin (stat 29 read as the length of your last Era), MAD Masks (helper read as the deepest excavation
+   depth this Reincarnation), Bloodstream's adjusted time, Art of the Crow's "Set faction with the same alignment" condition,
+   and that "Ascension n or lower/higher" ranges match what you see.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
