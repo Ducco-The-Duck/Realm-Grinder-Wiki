@@ -135,6 +135,22 @@ def decode(c, art):
     return reqs, undec, True
 
 
+def merge_ascension(reqs):
+    """'Ascension N or higher' (+ a Reincarnation requirement) -> 'Reincarnation R or higher (Ascension N)';
+    Ascension N is reached at Reincarnation 40 * N."""
+    asc = [r for r in reqs if re.fullmatch(r'Ascension \d+ or higher', r)]
+    if not asc: return reqs
+    n = int(re.search(r'\d+', asc[0]).group())
+    rein = [r for r in reqs if re.fullmatch(r'Reincarnation \d+ or higher', r)]
+    r = max([40 * n] + [int(re.search(r'\d+', x).group()) for x in rein])
+    out, done = [], False
+    for x in reqs:
+        if x in asc or x in rein:
+            if not done: out.append(f'Reincarnation {r} or higher (Ascension {n})'); done = True
+        else: out.append(x)
+    return out
+
+
 def _one(s, c, art, reqs, undec, ref_name):
     s = s.strip()
     if s == '§-6§': return
@@ -264,6 +280,7 @@ out = []
 for a in res['arts']:
     c = cl.get(a['q'])
     reqs, undec, has_cond = decode(c, a) if c else ([], [], False)
+    reqs = merge_ascension(reqs)
     hint = (a['hint'] or '').strip()
     out.append({
         'order': a['order'], 'kind': 'lore' if a['lore'] else 'quest', 'name': a['name'], 'flavor': a['flavor'].strip(),

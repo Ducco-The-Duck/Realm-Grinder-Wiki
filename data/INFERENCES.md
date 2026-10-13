@@ -15,6 +15,9 @@ Only these need checking; remove an item when it is settled.
    confirmed (S1). The user considers the rest most likely correct but cannot confirm it yet. Needs Ascension 2-4.
 2. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
    doc. The wiki shows the code. Needs the in-game "Chance: X%" tooltip (visible only before you own the artifact).
+   **Poison Vial** (same check, once reached): the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter,
+   K before the Ascension penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus,
+   0.5 * floor(Time played this Era), unit and size unconfirmed. Check the tooltip with and without the perk.
 3. **Lore artifacts nobody can currently see** (Ascension 2+, Reincarnation 100-235; 39 artifacts): the chance formulas use
    helper meanings that were confirmed on other artifacts, but each formula is unverified individually. The user is checking
    them against the patch-notes doc and the old wiki, one by one; those that agree move to Resolved, those that differ stay here.
@@ -47,7 +50,7 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 - Building upgrades: the series are removed from Ascension 3 on, the building count thresholds, and the Ascension penalties.
 
 - Lore artifact chance formulas confirmed against the patch notes / old wiki apart from cleanup terms (0.5, +1), inputs
-  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom.
+  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Poison Vial (base formula; the Drow Perk 4 term is open under 2).
   Lantern of Guidance: patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second (no +1); the
   wiki shows the code.
 
