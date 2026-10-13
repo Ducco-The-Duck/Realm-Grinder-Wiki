@@ -18,12 +18,15 @@ BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLD
 
 JS = r'''
   var QT = [];
+  // community faction codes: a code typed as a whole word searches for the faction name
+  var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',
+                dn:'dwarven',dw:'drow',dg:'dragon',ar:'archon',dj:'djinn',mk:'makers',mc:'mercenary'};
   function normS(s){ return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     var box=document.getElementById('q'), note=document.getElementById('qn');
     function run(){
-      QT = normS(box.value).split(/\s+/).filter(Boolean);
+      QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
       var shown=0;
       root.querySelectorAll('.cell').forEach(function(c){
         var ok = qmatch(c._s||'');
