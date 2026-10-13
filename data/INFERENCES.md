@@ -175,7 +175,7 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 | Trophy categories 0–4 = Allegiances, Misc, Magic, Buildings, Secret | high | counts match user's numbers exactly (45/170/62/566/60) |
 | Quest vs Lore artifact = lore flag false/true | high | counts 25/81 match |
 
-## Open item 3 in detail: code vs. patch-notes doc (4.3.11) constant factors
+## Code vs. patch-notes doc (4.3.11) constant factors (background for the artifact checks)
 
 The game's own artifact tooltip prints "Chance: X%" using exactly the same getter the wiki transcribes
 (`§5",§`, shown as a percent), and the in-game changelog lists no change to these artifacts in
