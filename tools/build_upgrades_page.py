@@ -47,6 +47,9 @@ def item(u):
         'd': [{'t': p['text'], 's': p['s']} for p in u['description']], 'f': forms,
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
         'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
+        'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
+              for b in u['more']] if u.get('more') else None,
+        'mn': u.get('more_note'),
     }
 
 
@@ -148,7 +151,17 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
 #pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 #pop h3{margin:0;font-size:1.05rem}
-#pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
+#more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#more.open{display:flex}
+#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(640px,100%);max-height:90vh;overflow:auto;padding:14px 16px}
+#more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;position:sticky;top:-14px;background:var(--card);padding:6px 0}
+#more h3{margin:0;font-size:1.1rem}
+#more .bonus{border-top:1px solid var(--line);padding:8px 0}
+#more .bonus p{margin:0 0 2px}
+#more .formula{padding:2px 0;overflow-wrap:anywhere}
+#more ul.vars{list-style:none;padding-left:0;margin:2px 0;color:var(--muted);font-size:.9rem}
+#more .more{color:var(--muted);margin-top:10px}
+#pop button.x,#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 #tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #tip b.t{display:block;font-size:1rem}
@@ -190,6 +203,10 @@ the base values <i>v</i>.</div>
   <header><h3 id="poptitle"></h3><button class="x" type="button" id="popclose">Close</button></header>
   <div class="grid" id="popgrid"></div>
 </div></div>
+<div id="more" role="dialog" aria-modal="true" aria-labelledby="moretitle"><div class="card">
+  <header><h3 id="moretitle"></h3><button class="x" type="button" id="moreclose">Close</button></header>
+  <div id="morebody"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
@@ -210,6 +227,7 @@ the base values <i>v</i>.</div>
   function As(k){ return new Array(k+1).join('A'); }
   function penalty(it){
     var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
+    if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
     return k;
   }
   function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi); }
@@ -257,6 +275,7 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
+    if(it.m) tip.appendChild(el('div','more','Click for more info'));
     if(it.s.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul=el('ul'); it.s.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
@@ -278,7 +297,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
@@ -311,6 +330,36 @@ the base values <i>v</i>.</div>
   document.getElementById('popclose').addEventListener('click',closePop);
   pop.addEventListener('click',function(e){ if(e.target===pop) closePop(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePop(); });
+
+  var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
+  function openMore(it){
+    moretitle.textContent=it.n; morebody.textContent='';
+    var seen={}, scaled=false;
+    it.m.forEach(function(b){
+      var blk=el('div','bonus'), p=el('p',null,b.t);
+      if(b.s){ scaled=true; if(ASC>=b.s){ p.appendChild(document.createTextNode(' ')); p.appendChild(el('span','mark',As(ASC-b.s+1))); } }
+      blk.appendChild(p);
+      var vars=[];
+      b.f.forEach(function(f){
+        var d=el('div','formula'), m=el('span'); math(f.l, m); d.appendChild(m); blk.appendChild(d);
+        f.v.forEach(function(v){ var k=v.symbol+'|'+v.text; if(!seen[k]){ seen[k]=1; vars.push(v); } });
+      });
+      if(vars.length){
+        var ul=el('ul','vars');
+        vars.forEach(function(v){ var li=el('li'), bb=el('b'); bb.style.display='inline'; math(v.symbol, bb); li.appendChild(bb);
+          li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li); });
+        blk.appendChild(ul);
+      }
+      morebody.appendChild(blk);
+    });
+    if(scaled) morebody.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
+    if(it.mn) morebody.appendChild(el('div','more',it.mn));
+    hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
+  }
+  function closeMore(){ more.classList.remove('open'); }
+  document.getElementById('moreclose').addEventListener('click',closeMore);
+  more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMore(); });
 
   var saved={};
   try{ saved=JSON.parse(localStorage.getItem('upgrade-sections')||'{}')||{}; }catch(e){}

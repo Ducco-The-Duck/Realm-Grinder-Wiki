@@ -356,6 +356,12 @@ READOUT = re.compile(r'\s*\((?:v[₁₂₃₄₅₆₇₈₉]?%?|\+?-?(?:[\d.,]+
 
 def fix_text(name, paras):
     """readouts that stayed in the text, and the few descriptions that need a hand"""
+    if name in MM.MORE:
+        paras[:] = [{'text': t, 'formulas': [], 's': sp} for t, sp in MM.MORE[name]['tip']]
+        return
+    if name in MM.GEM_UPGRADE_NAMES:
+        paras.append({'text': MM.GEM_UPGRADE_NOTE, 'formulas': [], 's': None})
+        return
     if name in MM.MANUAL_PARAS:
         paras[:] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
                     for t, fs, sp in MM.MANUAL_PARAS[name]]
@@ -479,6 +485,11 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
+    if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
+        mo = MM.MORE[r['n']]
+        item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
+                        for t, fs, sp in mo['more']]
+        item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
 # value symbols: v, or v1, v2 ... when a description has several computed values

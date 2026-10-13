@@ -18779,12 +18779,85 @@
 "s": null
 },
 {
-"text": "R1-119: Increase the production of all buildings by 50% per Reincarnation.",
+"text": "Increase the production of all buildings.",
 "formulas": [],
 "s": 1
 },
 {
-"text": "R10-119: Also increase the production of all buildings over time based on Reincarnations made (on top of the 50% per Reincarnation above).",
+"text": "Increase the production of all buildings over time based on Reincarnations made.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Increase Offline production.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Increase Faction Coin find chance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase Mana Regeneration.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase production bonus from Gems per Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Gain assistants per Reincarnation and increase the production of assistants per Reincarnation made.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Increase Maximum Mana per Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of each building made per building of the same type.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Increase Royal Exchange Bonus per Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 1 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null,
+"more": [
+{
+"text": "Increase the production of all buildings, from Reincarnation 1 up to 119.",
+"formulas": [
+{
+"latex": "v = 50 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Increase the production of all buildings over time, from Reincarnation 10 up to 119. It applies together with the bonus above.",
 "formulas": [
 {
 "latex": "v = N^{1.75} \\cdot \\left(\\frac{t}{3600}\\right)^{0.65}",
@@ -18803,62 +18876,146 @@
 "s": 1
 },
 {
-"text": "Increase Offline production by 500% per Reincarnation.",
-"formulas": [],
+"text": "Increase Offline production.",
+"formulas": [
+{
+"latex": "v = 500 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": 1
 },
 {
-"text": "Increase Faction Coin find chance by +10% per Reincarnation.",
-"formulas": [],
+"text": "Increase Faction Coin find chance (+%).",
+"formulas": [
+{
+"latex": "v = 10 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 },
 {
-"text": "Increase Mana Regeneration by +2 per Reincarnation.",
-"formulas": [],
+"text": "Increase Mana Regeneration (+ per second).",
+"formulas": [
+{
+"latex": "v = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 },
 {
-"text": "R2+: Increase production bonus from Gems by 0.2% per Reincarnation.",
-"formulas": [],
+"text": "From Reincarnation 2: increase production bonus from Gems (+%).",
+"formulas": [
+{
+"latex": "v = 0.2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 },
 {
-"text": "R5+: Gain 1 assistant per Reincarnation.",
-"formulas": [],
+"text": "From Reincarnation 5: gain assistants.",
+"formulas": [
+{
+"latex": "v = N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 },
 {
-"text": "R5+: Increase the production of assistants by 2% per Reincarnation made.",
-"formulas": [],
+"text": "From Reincarnation 5: increase the production of assistants.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": 1
 },
 {
-"text": "R12+: Increase Maximum Mana by 35 per Reincarnation.",
-"formulas": [],
+"text": "From Reincarnation 12: increase Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 35 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 },
 {
-"text": "R20+: Increase the production of each building by 0.01% per Reincarnation made per building of the same type.",
-"formulas": [],
+"text": "From Reincarnation 20: increase the production of each building made, per building of the same type.",
+"formulas": [
+{
+"latex": "v = 0.01 \\cdot N \\cdot B",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+},
+{
+"symbol": "B",
+"text": "Number of buildings of that type you own"
+}
+]
+}
+],
 "s": 2
 },
 {
-"text": "R25+: Increase Royal Exchange Bonus by 0.5% per Reincarnation.",
-"formulas": [],
+"text": "From Reincarnation 25: increase Royal Exchange Bonus.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
 "s": null
 }
 ],
-"sources": [],
-"requirements": [],
-"conditions": [
-"being at Reincarnation 1 or higher"
-],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": "ReincarnationPowerUpgrade",
-"tier": -1,
-"building": null
+"more_note": null
 },
 {
 "name": "Reincarnation Power 2",
@@ -18872,82 +19029,42 @@
 "s": null
 },
 {
-"text": "R43+, from Ascension 1: Increase Maximum Mana based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{1} = 70 \\cdot N^{1.25}",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
+"text": "Increase Maximum Mana based on Reincarnations made.",
+"formulas": [],
 "s": null
 },
 {
-"text": "R46+: Increase the production of all buildings by 10% per Reincarnation after the 39th.",
+"text": "Increase the production of all buildings based on Reincarnations made.",
 "formulas": [],
 "s": 2
 },
 {
-"text": "R50+: Multiplicatively increase Faction Coin find chance based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{2} = 1.5 \\cdot N^{0.95}",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "R58+: Multiply Faction Coins found based on Reincarnations made if they match your Faction or Bloodline.",
-"formulas": [
-{
-"latex": "v_{3} = 1.2 \\cdot N^{1.05}",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "R70+: Autoclicks based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{4} = \\left\\lfloor \\sqrt{N} \\right\\rfloor",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "R75+: Mercenaries gain one additional research slot in branches based on their alignment. (Good: Spellcraft and Divine, Evil: Economics and Warfare, Neutral: Craftsmanship and Alchemy)",
+"text": "Multiplicatively increase Faction Coin find chance based on Reincarnations made.",
 "formulas": [],
 "s": null
 },
 {
-"text": "R80+: Gain 4 assistants per Reincarnation after the 39th.",
+"text": "Multiply Faction Coins found based on Reincarnations made if they match your Faction or Bloodline.",
 "formulas": [],
 "s": null
 },
 {
-"text": "R90+, before Ascension 2: Gain one additional Research Slot in each branch.",
+"text": "Autoclicks based on Reincarnations made.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Mercenaries gain one additional research slot in branches based on their alignment. (Good: Spellcraft and Divine, Evil: Economics and Warfare, Neutral: Craftsmanship and Alchemy)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Gain assistants per Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Gain one additional Research Slot in each branch.",
 "formulas": [],
 "s": null
 }
@@ -18962,7 +19079,110 @@
 "asc_max": null,
 "group": "ReincarnationPowerUpgrade",
 "tier": -1,
-"building": null
+"building": null,
+"more": [
+{
+"text": "From Reincarnation 43, and only from Ascension 1: increase Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 70 \\cdot N^{1.25}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 46: increase the production of all buildings.",
+"formulas": [
+{
+"latex": "v = 10 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": 2
+},
+{
+"text": "From Reincarnation 50: multiplicatively increase Faction Coin find chance (%).",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 58: multiply Faction Coins found if they match your Faction or Bloodline.",
+"formulas": [
+{
+"latex": "v = 1.2 \\cdot N^{1.05}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 70: autoclicks per second.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor \\sqrt{N} \\right\\rfloor",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 75: Mercenaries gain one additional research slot in branches based on their alignment.",
+"formulas": [],
+"s": null
+},
+{
+"text": "From Reincarnation 80: gain assistants.",
+"formulas": [
+{
+"latex": "v = 4 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 90, before Ascension 2: gain one additional Research Slot in each branch.",
+"formulas": [],
+"s": null
+}
+],
+"more_note": null
 },
 {
 "name": "Reincarnation Power 3",
@@ -18976,15 +19196,63 @@
 "s": null
 },
 {
-"text": "R101+: Increase Mana Regeneration by 2% per Reincarnation after the 99th.",
+"text": "Increase Mana Regeneration per Reincarnation.",
 "formulas": [],
 "s": null
 },
 {
-"text": "R107+: Increase the production of Unique Buildings based on the difference of time spent as their respective faction against your most used faction in this Reincarnation.",
+"text": "Increase the production of Unique Buildings based on the difference of time spent as their respective faction against your most used faction in this Reincarnation.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Multiply Faction Coins found based on Reincarnations made if they match your Faction, Bloodline or Artifact Set.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings based on Reincarnations made.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Unique buildings count more for Call to Arms purposes based on Reincarnations made.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 100 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null,
+"more": [
+{
+"text": "From Reincarnation 101: increase Mana Regeneration (multiplicatively, %).",
 "formulas": [
 {
-"latex": "v_{1} = 50 + 0.15 \\cdot \\max\\left(0,\\ t_{\\max} - t_{f}\\right)^{0.85}",
+"latex": "v = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "From Reincarnation 107: increase the production of Unique Buildings, depending on the time spent as the faction of each Unique Building against your most used faction in this Reincarnation (%).",
+"formulas": [
+{
+"latex": "v = 50 + 0.15 \\cdot \\max\\left(0,\\ t_{\\max} - t_{f}\\right)^{0.85}",
 "vars": [
 {
 "symbol": "t_{\\max}",
@@ -19000,10 +19268,10 @@
 "s": 3
 },
 {
-"text": "R115+: Multiply Faction Coins found based on Reincarnations made if they match your Faction, Bloodline or Artifact Set.",
+"text": "From Reincarnation 115: multiply Faction Coins found if they match your Faction, Bloodline or Artifact Set.",
 "formulas": [
 {
-"latex": "v_{2} = 1.2 \\cdot N^{1.05}",
+"latex": "v = 1.2 \\cdot N^{1.05}",
 "vars": [
 {
 "symbol": "N",
@@ -19015,27 +19283,37 @@
 "s": null
 },
 {
-"text": "R120+: Increase the production of all buildings by 25% per Reincarnation after the 99th.",
-"formulas": [],
+"text": "From Reincarnation 120: increase the production of all buildings.",
+"formulas": [
+{
+"latex": "v = 25 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
 "s": 3
 },
 {
-"text": "R150+: Unique buildings count more for Call to Arms purposes, multiplied by the number of Reincarnations after the 99th.",
-"formulas": [],
+"text": "From Reincarnation 150: Unique buildings count more for Call to Arms purposes (the multiplier shown).",
+"formulas": [
+{
+"latex": "v = N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
 "s": null
 }
 ],
-"sources": [],
-"requirements": [],
-"conditions": [
-"being at Reincarnation 100 or higher"
-],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": "ReincarnationPowerUpgrade",
-"tier": -1,
-"building": null
+"more_note": null
 },
 {
 "name": "Reincarnation Power 4",
@@ -19049,7 +19327,30 @@
 "s": null
 },
 {
-"text": "R170+: Increase Research budget in each branch based on Reincarnations made.",
+"text": "Increase Research budget in each branch based on Reincarnations made.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings based on Reincarnations made.",
+"formulas": [],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 170 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null,
+"more": [
+{
+"text": "From Reincarnation 170: increase Research budget in each branch.",
 "formulas": [
 {
 "latex": "v = 150 \\cdot A + 3.5 \\cdot N",
@@ -19068,22 +19369,22 @@
 "s": null
 },
 {
-"text": "R200+: Increase the production of all buildings by 150% per Reincarnation after the 159th.",
-"formulas": [],
+"text": "From Reincarnation 200: increase the production of all buildings.",
+"formulas": [
+{
+"latex": "v = 150 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 159th (Reincarnations made − 159)"
+}
+]
+}
+],
 "s": 4
 }
 ],
-"sources": [],
-"requirements": [],
-"conditions": [
-"being at Reincarnation 170 or higher"
-],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": "ReincarnationPowerUpgrade",
-"tier": -1,
-"building": null
+"more_note": null
 },
 {
 "name": "Reincarnation Power 5",
@@ -19097,7 +19398,25 @@
 "s": null
 },
 {
-"text": "R220+: Multiplicatively increase Mana Regeneration and Faction Coin find chance based on Reincarnations made.",
+"text": "Multiplicatively increase Mana Regeneration and Faction Coin find chance based on Reincarnations made.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 220 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null,
+"more": [
+{
+"text": "From Reincarnation 220: multiplicatively increase Mana Regeneration and Faction Coin find chance (the same % for both).",
 "formulas": [
 {
 "latex": "v = 500 \\cdot \\sqrt{N}",
@@ -19112,17 +19431,7 @@
 "s": null
 }
 ],
-"sources": [],
-"requirements": [],
-"conditions": [
-"being at Reincarnation 220 or higher"
-],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": "ReincarnationPowerUpgrade",
-"tier": -1,
-"building": null
+"more_note": null
 },
 {
 "name": "Gem Power",
@@ -19177,6 +19486,11 @@
 "text": "Increase Gem Power to 3%. Chance to find Faction Coins is improved.",
 "formulas": [],
 "s": null
+},
+{
+"text": "The Faction Coin find chance formula is shown in the Gem Power upgrade.",
+"formulas": [],
+"s": null
 }
 ],
 "sources": [
@@ -19206,6 +19520,11 @@
 "text": "Increase Gem Power to 4%. Chance to find Faction Coins is improved.",
 "formulas": [],
 "s": null
+},
+{
+"text": "The Faction Coin find chance formula is shown in the Gem Power upgrade.",
+"formulas": [],
+"s": null
 }
 ],
 "sources": [
@@ -19233,6 +19552,11 @@
 "description": [
 {
 "text": "Increase Gem Power to 5%. Chance to find Faction Coins is improved.",
+"formulas": [],
+"s": null
+},
+{
+"text": "The Faction Coin find chance formula is shown in the Gem Power upgrade.",
 "formulas": [],
 "s": null
 }
@@ -19293,41 +19617,6 @@
 "text": "Ruby Power bonus will increase based on the all-time amount of Rubies you collected.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Visit the Shop to purchase more!",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Production Bonus: 100% plus the increase of every Ruby Tier upgrade you have bought.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Assistants Bonus: +1 assistant and +1% assistants production for each level of \"Ruby Assistant\" bought in the Shop.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Mana Regen Bonus: +1 per second and +1% for each level of \"Ruby Mana Regeneration\" bought in the Shop.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Max Mana Bonus: +100 and +1% for each level of \"Ruby Max Mana\" bought in the Shop.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Gem Bonus: +1% to Gem Power and +1% to the production bonus from Gems for each level of \"Ruby Gem Bonus\" bought in the Shop.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Current Royal Exchange Bonus: +2% and +2% for each level of \"Ruby Royal Trading\" bought in the Shop.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -19340,7 +19629,175 @@
 "asc_max": null,
 "group": "RubyUpgrade",
 "tier": -1,
-"building": null
+"building": null,
+"more": [
+{
+"text": "Current Production Bonus (%).",
+"formulas": [
+{
+"latex": "v = 100 + S",
+"vars": [
+{
+"symbol": "S",
+"text": "Sum of the increases of the Ruby Tier upgrades you have bought"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Assistants Bonus (assistants gained).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Assistant\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Assistants Bonus (% of assistants production).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Assistant\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Mana Regen Bonus (per second).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Mana Regen Bonus (%).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Max Mana Bonus (flat).",
+"formulas": [
+{
+"latex": "v = 100 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Max Mana Bonus (%).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Gem Bonus (% added to Gem Power).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Gem Bonus (% of the production bonus from Gems).",
+"formulas": [
+{
+"latex": "v = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Royal Exchange Bonus (% added).",
+"formulas": [
+{
+"latex": "v = 2 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Royal Exchange Bonus (% of the bonus).",
+"formulas": [
+{
+"latex": "v = 2 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+}
+],
+"more_note": "Ruby cost: each Shop upgrade (Ruby Assistant, Ruby Mana Regeneration, Ruby Max Mana, Ruby Gem Bonus, Ruby Royal Trading) costs one more Ruby per level than the previous level of the same upgrade: level n costs n Rubies, so n levels cost n(n + 1) / 2 Rubies in total."
 },
 {
 "name": "Ruby Tier 1",
