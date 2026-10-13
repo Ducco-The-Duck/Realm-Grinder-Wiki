@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve
 import desc_tools as D
+import misc_manual as MM
 from numtext import pow10_text
 from chance_latex import convert
 
@@ -22,7 +23,7 @@ sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
 ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
-CATS = {4: 'secret', 2: 'magic', 3: 'buildings'}      # the game's category indexes of the upgrade sections
+CATS = {4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}      # the game's category indexes of the upgrade sections
 
 MUT = f"""
   var G = {g}, v = __V;
@@ -36,13 +37,18 @@ PROBE = f"""(function () {{ __MUT
   var lists = {{ upgrade: U, trophy: {g}.{J('§0Q§')}, spell: {g}.{J('§0!A§')}, building: {g}.{J('§%<§')} }};
   for (var k in lists) for (var i = 0; i < lists[k].length; i++) {{ var q = qOf(lists[k][i]); if (q !== null) named[q] = [k, lists[k][i].{J('§1i§')}, !!lists[k][i].{J('§@!R§')}]; }}
   for (var i = 0; i < U.length; i++) {{ var o = U[i];
-    var cat = o.{J('§,!B§')}; if (cat !== 2 && cat !== 3 && cat !== 4) continue;
+    var cat = o.{J('§,!B§')}; if (cat !== 1 && cat !== 2 && cat !== 3 && cat !== 4) continue;
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
               tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
+    try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
+    var keepR = {g}.{J('§8!H§')};
+    if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
+    {g}.{J('§8!H§')} = keepR;
     out.push(r); }}
-  return JSON.stringify({{ rows: out, named: named }}); }})()"""
+  var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
+  return JSON.stringify({{ rows: out, named: named, tmap: tmap }}); }})()"""
 
 
 def probe(v=None, asc=None):
@@ -74,7 +80,7 @@ def availability(indexes):
 
 runs = [probe(), probe(1000), probe(98765)]
 asc_runs = [probe(None, a) for a in range(1, 5)]
-rows, named = runs[0]['rows'], runs[0]['named']
+rows, named, TMAP = runs[0]['rows'], runs[0]['named'], runs[0]['tmap']
 cl = parse_all()
 D.init(cl, named, pow10_text)
 
@@ -258,6 +264,30 @@ def decode(body, c, ctx=None):
         mm = re.fullmatch(r'§-"3§\.§\+"8§\((\d+)\)', t)
         if mm:
             cond.append(f'having bought upgrades from at least {mm.group(1)} different factions other than Mercenary'); continue
+        # Misc upgrades
+        mm = re.fullmatch(r'§8G§\.§8!H§ > (\d+)', t)
+        if mm: cond.append(f'being at Reincarnation {int(mm.group(1)) + 1} or higher'); continue
+        if t == '§8G§.§"!0§ > 0':
+            cond.append('having at least 1 Gem'); continue
+        if t == '§8G§.§"!0§ >= §^!]§' and isinstance(ctx.get('thr'), (int, float)):
+            cond.append(f"having at least {num_text(ctx['thr'])} Gems"); continue
+        mm = re.fullmatch(r'§&c§\.§ !;§\(102\) >= (§\^!\]§|\d+)', t)
+        if mm:
+            val = ctx.get('thr') if mm.group(1) == '§^!]§' else int(mm.group(1))
+            if isinstance(val, (int, float)):
+                cond.append(f"having collected at least {num_text(val)} {'Ruby' if val == 1 else 'Rubies'} (all-time)"); continue
+        if re.fullmatch(r"(?:§8G§\.§'!M§\(\"\w+Challenge\"\) > 0(?: \|\| )?)+", t):
+            cond.append('having completed at least one challenge of the Fairy, Elven, Angel, Goblin, Undead or Demon factions'); continue
+        if t == '§8G§.§<P§(§`!5§)' and ctx.get('tid') is not None and TMAP.get(str(ctx['tid'])):
+            src.append({'kind': 'trophy', 'name': TMAP[str(ctx['tid'])]}); continue
+        mm = re.fullmatch(r'§8G§\.§5!V§\[(0|5)\] >= §\^!\]§', t)
+        if mm and isinstance(ctx.get('thr'), (int, float)):
+            what = 'Coins by clicking' if mm.group(1) == '5' else 'Coins'
+            cond.append(f"having gained at least {num_text(ctx['thr'])} {what} in this Era"); continue
+        if re.fullmatch(r'§8G§\.§5!V§\[45\] \+ §8G§\.§=y§\[45\] \+ §8G§\.§@w§\[45\] >= §\^!\]§', t) and isinstance(ctx.get('thr'), (int, float)):
+            cond.append(f"having spent at least {num_text(ctx['thr'] / 3600)} hours offline (all-time)"); continue
+        if t == '§8G§.§,#§(§^!]§)' and isinstance(ctx.get('thr'), str):
+            src.append({'kind': 'trophy', 'name': ctx['thr']}); continue
         bad.append(t)
     if fac_lo is not None and fac_hi is not None:
         r = faction_range(fac_lo, fac_hi)
@@ -326,6 +356,12 @@ READOUT = re.compile(r'\s*\((?:v[₁₂₃₄₅₆₇₈₉]?%?|\+?-?(?:[\d.,]+
 
 def fix_text(name, paras):
     """readouts that stayed in the text, and the few descriptions that need a hand"""
+    if name in MM.MANUAL_PARAS:
+        paras[:] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
+                    for t, fs, sp in MM.MANUAL_PARAS[name]]
+        return
+    if name in MM.ASSISTANT_NAMES:
+        paras[0]['formulas'] = [dict(MM.ASSISTANT_FORMULA, vars=list(MM.ASSISTANT_FORMULA['vars']))]
     drop = [p for p in paras if p['text'].startswith('Adjusted time spent for')]
     paras[:] = [p for p in paras if p not in drop]
     for p in drop:
@@ -385,11 +421,16 @@ def fix_raw(name, c, paras):
         p['formulas'] = new
 
 
+# the Misc upgrades covered so far (the rest of the category is seasonal events, research facilities, unlocks ...)
+MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'ClickingBase', 'ClickingProduction',
+               'ClickingTotalProduction', 'OfflineUpgrade', 'AssistantUpgrade'}
+MISC_NAMES = {'Gem Power', 'Challenge Power'}
 SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
 SPELL_TIER_CLASS = '§%p§'
 by_cat = {name: [] for name in CATS.values()}
 problems = []
-todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS]
+todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS
+        and (r['cat'] != 1 or r.get('grp') in MISC_GROUPS or r['n'] in MISC_NAMES)]
 avail = availability([r['i'] for _, r in todo if r['cat'] != 4])
 for idx, r in todo:
     tok = r['q'].split('.')[-1]
@@ -416,7 +457,7 @@ for idx, r in todo:
     fix_text(r['n'], paras)
     av = next((m for m in c.methods if m.name == '§-6§'), None)
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
-    ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float)) else None,
+    ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float, str)) else None, 'tid': r.get('tid'),
            'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None)}
     src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
     if r['cat'] != 4:

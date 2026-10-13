@@ -58,8 +58,14 @@ GROUP_TITLES = {
     'EvilProduction': 'Evil buildings production upgrades',
     'TrophyUpgrade': 'Trophy upgrades',
     'ManaProduction': 'Mana Regeneration upgrades',
+    'RubyUpgrade': 'Ruby Power tiers',
+    'ClickingBase': 'Base clicking reward upgrades',
+    'ClickingProduction': 'Clicking reward and production upgrades',
+    'ClickingTotalProduction': 'Production added to base clicking reward upgrades',
+    'OfflineUpgrade': 'Offline production upgrades',
+    'AssistantUpgrade': 'Production per assistant upgrades',
 }
-NOT_CONSOLIDATED = {'Autocast'}      # the nine autocasting upgrades are listed one by one
+NOT_CONSOLIDATED = {'Autocast', 'ReincarnationPowerUpgrade', 'GemUpgrade'}      # listed one by one
 
 
 def entries(items):
@@ -67,7 +73,7 @@ def entries(items):
     out, pos = [], {}
     for u in sorted(items, key=lambda u: u['order']):
         g = u['group']
-        if not g or g in NOT_CONSOLIDATED:
+        if not g or g in NOT_CONSOLIDATED or u['name'] == 'Ruby Power':
             out.append({'g': None, 'items': [item(u)]}); continue
         if g not in pos:
             pos[g] = len(out)
@@ -86,7 +92,7 @@ def section(sid, name, items):
 
 sections = [
     section('allegiances', 'Allegiances Upgrades', None),
-    section('misc', 'Misc Upgrades', None),
+    section('misc', 'Misc Upgrades', pages['misc']),
     section('magic', 'Magic Upgrades', pages['magic']),
     section('buildings', 'Buildings Upgrades', pages['buildings']),
     section('secret', 'Secret Upgrades', pages['secret']),
@@ -163,7 +169,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far.</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2

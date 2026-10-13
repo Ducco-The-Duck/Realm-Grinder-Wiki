@@ -18765,5 +18765,2648 @@
 "tier": 3,
 "building": null
 }
+],
+"misc": [
+{
+"name": "Reincarnation Power 1",
+"icon": "ReincarnationPowerUpgrade",
+"order": 14,
+"id": 14,
+"description": [
+{
+"text": "Unlock the power of Reincarnations, providing unique bonuses.",
+"formulas": [],
+"s": null
+},
+{
+"text": "R1-119: Increase the production of all buildings per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 50 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "R10-119: Increase the production of all buildings over time based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{2} = N^{1.75} \\cdot \\left(\\frac{t}{3600}\\right)^{0.65}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+},
+{
+"symbol": "t",
+"text": "Time played in this Reincarnation (seconds)"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Increase Offline production per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{3} = 500 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Increase Faction Coin find chance per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{4} = 10 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Increase Mana Regeneration per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{5} = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R2+: Increase production bonus from Gems per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{6} = 0.2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R5+: Gain 1 assistant per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{7} = N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R5+: Increase the production of assistants per Reincarnation made.",
+"formulas": [
+{
+"latex": "v_{8} = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "R12+: Increase Maximum Mana per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{9} = 35 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R20+: Increase the production of each building made per building of the same type.",
+"formulas": [
+{
+"latex": "v_{10} = 0.01 \\cdot N \\cdot B",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+},
+{
+"symbol": "B",
+"text": "Number of buildings of that type you own"
+}
+]
+}
+],
+"s": 2
+},
+{
+"text": "R25+: Increase Royal Exchange Bonus per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{11} = 0.5 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 1 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Reincarnation Power 2",
+"icon": "ReincarnationPowerUpgrade",
+"order": 15,
+"id": 15,
+"description": [
+{
+"text": "Unlock the power of Reincarnations, providing unique bonuses.",
+"formulas": [],
+"s": null
+},
+{
+"text": "R43+, from Ascension 1: Increase Maximum Mana based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{1} = 70 \\cdot N^{1.25}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R46+: Increase the production of all buildings based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{2} = 10 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": 2
+},
+{
+"text": "R50+: Multiplicatively increase Faction Coin find chance based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{3} = 1.5 \\cdot N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R58+: Multiply Faction Coins found based on Reincarnations made if they match your Faction or Bloodline.",
+"formulas": [
+{
+"latex": "v_{4} = 1.2 \\cdot N^{1.05}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R70+: Autoclicks based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{5} = \\left\\lfloor \\sqrt{N} \\right\\rfloor",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R75+: Mercenaries gain one additional research slot in branches based on their alignment. (Good: Spellcraft and Divine, Evil: Economics and Warfare, Neutral: Craftsmanship and Alchemy)",
+"formulas": [],
+"s": null
+},
+{
+"text": "R80+: Gain 4 assistants per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{6} = 4 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R90+, before Ascension 2: Gain one additional Research Slot in each branch.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 43 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Reincarnation Power 3",
+"icon": "ReincarnationPowerUpgrade",
+"order": 16,
+"id": 16,
+"description": [
+{
+"text": "Unlock the power of Reincarnations, providing unique bonuses.",
+"formulas": [],
+"s": null
+},
+{
+"text": "R101+: Increase Mana Regeneration per Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R107+: Increase the production of Unique Buildings based on the difference of time spent as their respective faction against your most used faction in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{2} = 50 + 0.15 \\cdot \\max\\left(0,\\ t_{\\max} - t_{f}\\right)^{0.85}",
+"vars": [
+{
+"symbol": "t_{\\max}",
+"text": "Time spent as your most used faction in this Reincarnation (seconds)"
+},
+{
+"symbol": "t_{f}",
+"text": "Time spent in this Reincarnation as the faction of that Unique Building (seconds)"
+}
+]
+}
+],
+"s": 3
+},
+{
+"text": "R115+: Multiply Faction Coins found based on Reincarnations made if they match your Faction, Bloodline or Artifact Set.",
+"formulas": [
+{
+"latex": "v_{3} = 1.2 \\cdot N^{1.05}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R120+: Increase the production of all buildings based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{4} = 25 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
+"s": 3
+},
+{
+"text": "R150+: Unique buildings count more for Call to Arms purposes based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{5} = N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 100 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Reincarnation Power 4",
+"icon": "ReincarnationPowerUpgrade",
+"order": 17,
+"id": 17,
+"description": [
+{
+"text": "Unlock the power of Reincarnations, providing unique bonuses.",
+"formulas": [],
+"s": null
+},
+{
+"text": "R170+: Increase Research budget in each branch based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{1} = 150 \\cdot A + 3.5 \\cdot N",
+"vars": [
+{
+"symbol": "A",
+"text": "Your Ascension number"
+},
+{
+"symbol": "N",
+"text": "Reincarnations made after the 159th (Reincarnations made − 159)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "R200+: Increase the production of all buildings based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v_{2} = 150 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 159th (Reincarnations made − 159)"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 170 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Reincarnation Power 5",
+"icon": "ReincarnationPowerUpgrade",
+"order": 18,
+"id": 18,
+"description": [
+{
+"text": "Unlock the power of Reincarnations, providing unique bonuses.",
+"formulas": [],
+"s": null
+},
+{
+"text": "R220+: Multiplicatively increase Mana Regeneration and Faction Coin find chance based on Reincarnations made.",
+"formulas": [
+{
+"latex": "v = 500 \\cdot \\sqrt{N}",
+"vars": [
+{
+"symbol": "N",
+"text": "Reincarnations made after the 219th (Reincarnations made − 219)"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 220 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ReincarnationPowerUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Gem Power",
+"icon": "GemPowerUpgrade",
+"order": 19,
+"id": 19,
+"description": [
+{
+"text": "Unlocks the power of gems, each of which will increase your overall production by 2%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "All your Gems increase Faction Coin find chance.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor \\left(1.25 + \\frac{n}{4}\\right) \\cdot 0.5 \\cdot \\left(\\ln\\left(1 + G\\right)\\right)^{0.9} \\right\\rfloor",
+"vars": [
+{
+"symbol": "n",
+"text": "Gem upgrades bought (Gem Potency, Gem Supremacy, Gem Sovereignty)"
+},
+{
+"symbol": "G",
+"text": "Your Gems"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having at least 1 Gem"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Gem Potency",
+"icon": "GemUpgrade1",
+"order": 20,
+"id": 20,
+"description": [
+{
+"text": "Increase Gem Power to 3%. Chance to find Faction Coins is improved.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Gem Power"
+}
+],
+"requirements": [],
+"conditions": [
+"having at least 10⁶ Gems"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "GemUpgrade",
+"tier": 1,
+"building": null
+},
+{
+"name": "Gem Supremacy",
+"icon": "GemUpgrade2",
+"order": 21,
+"id": 21,
+"description": [
+{
+"text": "Increase Gem Power to 4%. Chance to find Faction Coins is improved.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Gem Power"
+}
+],
+"requirements": [],
+"conditions": [
+"having at least 10 × 10³⁸ Gems"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "GemUpgrade",
+"tier": 2,
+"building": null
+},
+{
+"name": "Gem Sovereignty",
+"icon": "GemUpgrade3",
+"order": 22,
+"id": 22,
+"description": [
+{
+"text": "Increase Gem Power to 5%. Chance to find Faction Coins is improved.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Gem Power"
+}
+],
+"requirements": [],
+"conditions": [
+"having at least 10⁶³ Gems"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "GemUpgrade",
+"tier": 3,
+"building": null
+},
+{
+"name": "Challenge Power",
+"icon": "ChallengePowerUpgrade",
+"order": 23,
+"id": 23,
+"description": [
+{
+"text": "Unlock the power of Challenges. Challenges do not suffer from Ascension penalties.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having completed at least one challenge of the Fairy, Elven, Angel, Goblin, Undead or Demon factions"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Ruby Power",
+"icon": "RubyPowerUpgrade",
+"order": 24,
+"id": 24,
+"description": [
+{
+"text": "Unlocks the power of Rubies, increasing the production of all buildings by 100% and allowing you to purchase many upgrades which increase all aspect of your production.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Ruby Power bonus will increase based on the all-time amount of Rubies you collected.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Visit the Shop to purchase more!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Current Production Bonus.",
+"formulas": [
+{
+"latex": "v_{1} = 100 + S",
+"vars": [
+{
+"symbol": "S",
+"text": "Sum of the increases of the Ruby Tier upgrades you have bought"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Assistants Bonus (assistants gained, and % of assistants production).",
+"formulas": [
+{
+"latex": "v_{2} = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Assistant\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Mana Regen Bonus (per second, and %).",
+"formulas": [
+{
+"latex": "v_{3} = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Max Mana Bonus (flat).",
+"formulas": [
+{
+"latex": "v_{4} = 100 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Max Mana Bonus (%).",
+"formulas": [
+{
+"latex": "v_{5} = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Gem Bonus (% added to Gem Power, and % of the production bonus from Gems).",
+"formulas": [
+{
+"latex": "v_{6} = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Current Royal Exchange Bonus (% added, and % of the bonus).",
+"formulas": [
+{
+"latex": "v_{7} = 2 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1 Ruby (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": -1,
+"building": null
+},
+{
+"name": "Ruby Tier 1",
+"icon": "RubyUpgrade1",
+"order": 25,
+"id": 25,
+"description": [
+{
+"text": "Increase Ruby Power to 200%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 50 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 1,
+"building": null
+},
+{
+"name": "Ruby Tier 2",
+"icon": "RubyUpgrade2",
+"order": 26,
+"id": 26,
+"description": [
+{
+"text": "Increase Ruby Power to 300%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 100 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 2,
+"building": null
+},
+{
+"name": "Ruby Tier 3",
+"icon": "RubyUpgrade3",
+"order": 27,
+"id": 27,
+"description": [
+{
+"text": "Increase Ruby Power to 400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 3,
+"building": null
+},
+{
+"name": "Ruby Tier 4",
+"icon": "RubyUpgrade4",
+"order": 28,
+"id": 28,
+"description": [
+{
+"text": "Increase Ruby Power to 600%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 250 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 4,
+"building": null
+},
+{
+"name": "Ruby Tier 5",
+"icon": "RubyUpgrade5",
+"order": 29,
+"id": 29,
+"description": [
+{
+"text": "Increase Ruby Power to 800%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 350 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 5,
+"building": null
+},
+{
+"name": "Ruby Tier 6",
+"icon": "RubyUpgrade6",
+"order": 30,
+"id": 30,
+"description": [
+{
+"text": "Increase Ruby Power to 1000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 450 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 6,
+"building": null
+},
+{
+"name": "Ruby Tier 7",
+"icon": "RubyUpgrade7",
+"order": 31,
+"id": 31,
+"description": [
+{
+"text": "Increase Ruby Power to 1200%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 550 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 7,
+"building": null
+},
+{
+"name": "Ruby Tier 8",
+"icon": "RubyUpgrade8",
+"order": 32,
+"id": 32,
+"description": [
+{
+"text": "Increase Ruby Power to 1400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 8,
+"building": null
+},
+{
+"name": "Ruby Tier 9",
+"icon": "RubyUpgrade9",
+"order": 33,
+"id": 33,
+"description": [
+{
+"text": "Increase Ruby Power to 1700%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 800 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 9,
+"building": null
+},
+{
+"name": "Ruby Tier 10",
+"icon": "RubyUpgrade10",
+"order": 34,
+"id": 34,
+"description": [
+{
+"text": "Increase Ruby Power to 2000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 950 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 10,
+"building": null
+},
+{
+"name": "Ruby Tier 11",
+"icon": "RubyUpgrade11",
+"order": 35,
+"id": 35,
+"description": [
+{
+"text": "Increase Ruby Power to 2300%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1100 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 11,
+"building": null
+},
+{
+"name": "Ruby Tier 12",
+"icon": "RubyUpgrade12",
+"order": 36,
+"id": 36,
+"description": [
+{
+"text": "Increase Ruby Power to 2600%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1250 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 12,
+"building": null
+},
+{
+"name": "Ruby Tier 13",
+"icon": "RubyUpgrade13",
+"order": 37,
+"id": 37,
+"description": [
+{
+"text": "Increase Ruby Power to 2900%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1400 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 13,
+"building": null
+},
+{
+"name": "Ruby Tier 14",
+"icon": "RubyUpgrade14",
+"order": 38,
+"id": 38,
+"description": [
+{
+"text": "Increase Ruby Power to 3300%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1600 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 14,
+"building": null
+},
+{
+"name": "Ruby Tier 15",
+"icon": "RubyUpgrade15",
+"order": 39,
+"id": 39,
+"description": [
+{
+"text": "Increase Ruby Power to 3700%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 1800 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 15,
+"building": null
+},
+{
+"name": "Ruby Tier 16",
+"icon": "RubyUpgrade16",
+"order": 40,
+"id": 40,
+"description": [
+{
+"text": "Increase Ruby Power to 4100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 2000 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 16,
+"building": null
+},
+{
+"name": "Ruby Tier 17",
+"icon": "RubyUpgrade17",
+"order": 41,
+"id": 41,
+"description": [
+{
+"text": "Increase Ruby Power to 4500%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 2200 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 17,
+"building": null
+},
+{
+"name": "Ruby Tier 18",
+"icon": "RubyUpgrade18",
+"order": 42,
+"id": 42,
+"description": [
+{
+"text": "Increase Ruby Power to 4900%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 2400 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 18,
+"building": null
+},
+{
+"name": "Ruby Tier 19",
+"icon": "RubyUpgrade19",
+"order": 43,
+"id": 43,
+"description": [
+{
+"text": "Increase Ruby Power to 5400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 2650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 19,
+"building": null
+},
+{
+"name": "Ruby Tier 20",
+"icon": "RubyUpgrade20",
+"order": 44,
+"id": 44,
+"description": [
+{
+"text": "Increase Ruby Power to 5900%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 2900 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 20,
+"building": null
+},
+{
+"name": "Ruby Tier 21",
+"icon": "RubyUpgrade21",
+"order": 45,
+"id": 45,
+"description": [
+{
+"text": "Increase Ruby Power to 6400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 3150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 21,
+"building": null
+},
+{
+"name": "Ruby Tier 22",
+"icon": "RubyUpgrade22",
+"order": 46,
+"id": 46,
+"description": [
+{
+"text": "Increase Ruby Power to 6900%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 3400 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 22,
+"building": null
+},
+{
+"name": "Ruby Tier 23",
+"icon": "RubyUpgrade23",
+"order": 47,
+"id": 47,
+"description": [
+{
+"text": "Increase Ruby Power to 7400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 3650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 23,
+"building": null
+},
+{
+"name": "Ruby Tier 24",
+"icon": "RubyUpgrade24",
+"order": 48,
+"id": 48,
+"description": [
+{
+"text": "Increase Ruby Power to 8000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 3900 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 24,
+"building": null
+},
+{
+"name": "Ruby Tier 25",
+"icon": "RubyUpgrade25",
+"order": 49,
+"id": 49,
+"description": [
+{
+"text": "Increase Ruby Power to 8600%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 4200 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 25,
+"building": null
+},
+{
+"name": "Ruby Tier 26",
+"icon": "RubyUpgrade26",
+"order": 50,
+"id": 50,
+"description": [
+{
+"text": "Increase Ruby Power to 9200%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 4500 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 26,
+"building": null
+},
+{
+"name": "Ruby Tier 27",
+"icon": "RubyUpgrade27",
+"order": 51,
+"id": 51,
+"description": [
+{
+"text": "Increase Ruby Power to 9800%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 4800 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 27,
+"building": null
+},
+{
+"name": "Ruby Tier 28",
+"icon": "RubyUpgrade28",
+"order": 52,
+"id": 52,
+"description": [
+{
+"text": "Increase Ruby Power to 10400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 5150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 28,
+"building": null
+},
+{
+"name": "Ruby Tier 29",
+"icon": "RubyUpgrade29",
+"order": 53,
+"id": 53,
+"description": [
+{
+"text": "Increase Ruby Power to 11000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 5500 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 29,
+"building": null
+},
+{
+"name": "Ruby Tier 30",
+"icon": "RubyUpgrade30",
+"order": 54,
+"id": 54,
+"description": [
+{
+"text": "Increase Ruby Power to 11700%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 5850 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 30,
+"building": null
+},
+{
+"name": "Ruby Tier 31",
+"icon": "RubyUpgrade31",
+"order": 55,
+"id": 55,
+"description": [
+{
+"text": "Increase Ruby Power to 12400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 6200 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 31,
+"building": null
+},
+{
+"name": "Ruby Tier 32",
+"icon": "RubyUpgrade32",
+"order": 56,
+"id": 56,
+"description": [
+{
+"text": "Increase Ruby Power to 13100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 6550 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 32,
+"building": null
+},
+{
+"name": "Ruby Tier 33",
+"icon": "RubyUpgrade33",
+"order": 57,
+"id": 57,
+"description": [
+{
+"text": "Increase Ruby Power to 13800%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 6900 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 33,
+"building": null
+},
+{
+"name": "Ruby Tier 34",
+"icon": "RubyUpgrade34",
+"order": 58,
+"id": 58,
+"description": [
+{
+"text": "Increase Ruby Power to 14500%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 7300 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 34,
+"building": null
+},
+{
+"name": "Ruby Tier 35",
+"icon": "RubyUpgrade35",
+"order": 59,
+"id": 59,
+"description": [
+{
+"text": "Increase Ruby Power to 15300%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 7700 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 35,
+"building": null
+},
+{
+"name": "Ruby Tier 36",
+"icon": "RubyUpgrade36",
+"order": 60,
+"id": 60,
+"description": [
+{
+"text": "Increase Ruby Power to 16100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 8100 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 36,
+"building": null
+},
+{
+"name": "Ruby Tier 37",
+"icon": "RubyUpgrade37",
+"order": 61,
+"id": 61,
+"description": [
+{
+"text": "Increase Ruby Power to 16900%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 8500 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 37,
+"building": null
+},
+{
+"name": "Ruby Tier 38",
+"icon": "RubyUpgrade38",
+"order": 62,
+"id": 62,
+"description": [
+{
+"text": "Increase Ruby Power to 17700%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 8900 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 38,
+"building": null
+},
+{
+"name": "Ruby Tier 39",
+"icon": "RubyUpgrade39",
+"order": 63,
+"id": 63,
+"description": [
+{
+"text": "Increase Ruby Power to 18500%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 9350 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 39,
+"building": null
+},
+{
+"name": "Ruby Tier 40",
+"icon": "RubyUpgrade40",
+"order": 64,
+"id": 64,
+"description": [
+{
+"text": "Increase Ruby Power to 19400%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 9800 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 40,
+"building": null
+},
+{
+"name": "Ruby Tier 41",
+"icon": "RubyUpgrade41",
+"order": 65,
+"id": 65,
+"description": [
+{
+"text": "Increase Ruby Power to 20300%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 10250 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 41,
+"building": null
+},
+{
+"name": "Ruby Tier 42",
+"icon": "RubyUpgrade42",
+"order": 66,
+"id": 66,
+"description": [
+{
+"text": "Increase Ruby Power to 21200%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 10700 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 42,
+"building": null
+},
+{
+"name": "Ruby Tier 43",
+"icon": "RubyUpgrade43",
+"order": 67,
+"id": 67,
+"description": [
+{
+"text": "Increase Ruby Power to 22100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 11150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 43,
+"building": null
+},
+{
+"name": "Ruby Tier 44",
+"icon": "RubyUpgrade44",
+"order": 68,
+"id": 68,
+"description": [
+{
+"text": "Increase Ruby Power to 23000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 11650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 44,
+"building": null
+},
+{
+"name": "Ruby Tier 45",
+"icon": "RubyUpgrade45",
+"order": 69,
+"id": 69,
+"description": [
+{
+"text": "Increase Ruby Power to 24000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 12150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 45,
+"building": null
+},
+{
+"name": "Ruby Tier 46",
+"icon": "RubyUpgrade46",
+"order": 70,
+"id": 70,
+"description": [
+{
+"text": "Increase Ruby Power to 25000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 12650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 46,
+"building": null
+},
+{
+"name": "Ruby Tier 47",
+"icon": "RubyUpgrade47",
+"order": 71,
+"id": 71,
+"description": [
+{
+"text": "Increase Ruby Power to 26000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 13150 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 47,
+"building": null
+},
+{
+"name": "Ruby Tier 48",
+"icon": "RubyUpgrade48",
+"order": 72,
+"id": 72,
+"description": [
+{
+"text": "Increase Ruby Power to 27000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 13650 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 48,
+"building": null
+},
+{
+"name": "Ruby Tier 49",
+"icon": "RubyUpgrade49",
+"order": 73,
+"id": 73,
+"description": [
+{
+"text": "Increase Ruby Power to 28000%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 14200 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 49,
+"building": null
+},
+{
+"name": "Ruby Tier 50",
+"icon": "RubyUpgrade50",
+"order": 74,
+"id": 74,
+"description": [
+{
+"text": "Increase Ruby Power to 29100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having collected at least 14750 Rubies (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "RubyUpgrade",
+"tier": 50,
+"building": null
+},
+{
+"name": "Sturdy Treasure",
+"icon": "MouseClickUpgrade1",
+"order": 758,
+"id": 758,
+"description": [
+{
+"text": "Increase base clicking reward by +4.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "A Clicking Start"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 1,
+"building": null
+},
+{
+"name": "Durable Treasure",
+"icon": "MouseClickUpgrade2",
+"order": 759,
+"id": 759,
+"description": [
+{
+"text": "Increase base clicking reward by +45.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Clicking More"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 2,
+"building": null
+},
+{
+"name": "Reinforced Treasure",
+"icon": "MouseClickUpgrade3",
+"order": 760,
+"id": 760,
+"description": [
+{
+"text": "Increase base clicking reward by +4950.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Clicking Forward"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 3,
+"building": null
+},
+{
+"name": "Resilient Treasure",
+"icon": "MouseClickUpgrade4",
+"order": 761,
+"id": 761,
+"description": [
+{
+"text": "Increase base clicking reward by +500000.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Clicking Frenzy"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 4,
+"building": null
+},
+{
+"name": "Unbreakable Treasure",
+"icon": "MouseClickUpgrade5",
+"order": 762,
+"id": 762,
+"description": [
+{
+"text": "Increase base clicking reward by +5 × 10⁷.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "The Clicky Way"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 5,
+"building": null
+},
+{
+"name": "Eternal Treasure",
+"icon": "MouseClickUpgrade6",
+"order": 763,
+"id": 763,
+"description": [
+{
+"text": "Increase base clicking reward by +5 × 10¹⁰.",
+"formulas": [],
+"s": null
+},
+{
+"text": "While offline, generate 1 clicks per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Clicker Eternal"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingBase",
+"tier": 6,
+"building": null
+},
+{
+"name": "Filled Treasure",
+"icon": "MouseCoinUpgrade1",
+"order": 764,
+"id": 764,
+"description": [
+{
+"text": "Increase clicking reward by 25% and the production of all buildings by 25%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 5000 Coins by clicking in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingProduction",
+"tier": 1,
+"building": null
+},
+{
+"name": "Rich Treasure",
+"icon": "MouseCoinUpgrade2",
+"order": 765,
+"id": 765,
+"description": [
+{
+"text": "Increase clicking reward by 25% and the production of all buildings by 25%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 5 × 10⁶ Coins by clicking in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingProduction",
+"tier": 2,
+"building": null
+},
+{
+"name": "Wealthy Treasure",
+"icon": "MouseCoinUpgrade3",
+"order": 766,
+"id": 766,
+"description": [
+{
+"text": "Increase clicking reward by 25% and the production of all buildings by 25%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 5 × 10⁹ Coins by clicking in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingProduction",
+"tier": 3,
+"building": null
+},
+{
+"name": "Opulent Treasure",
+"icon": "MouseCoinUpgrade4",
+"order": 767,
+"id": 767,
+"description": [
+{
+"text": "Increase clicking reward by 25% and the production of all buildings by 25%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 5 × 10¹² Coins by clicking in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingProduction",
+"tier": 4,
+"building": null
+},
+{
+"name": "Overflowing Treasure",
+"icon": "MouseCoinUpgrade5",
+"order": 768,
+"id": 768,
+"description": [
+{
+"text": "Increase clicking reward by 25% and the production of all buildings by 25%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 5 × 10¹⁵ Coins by clicking in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "ClickingProduction",
+"tier": 5,
+"building": null
+},
+{
+"name": "Precious Treasure",
+"icon": "TreasureCoinUpgrade1",
+"order": 769,
+"id": 769,
+"description": [
+{
+"text": "1% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 100000 Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ClickingTotalProduction",
+"tier": 1,
+"building": null
+},
+{
+"name": "Ornate Treasure",
+"icon": "TreasureCoinUpgrade2",
+"order": 770,
+"id": 770,
+"description": [
+{
+"text": "1% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 10⁸ Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ClickingTotalProduction",
+"tier": 2,
+"building": null
+},
+{
+"name": "Adorned Treasure",
+"icon": "TreasureCoinUpgrade3",
+"order": 771,
+"id": 771,
+"description": [
+{
+"text": "1% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 10¹¹ Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ClickingTotalProduction",
+"tier": 3,
+"building": null
+},
+{
+"name": "Embellished Treasure",
+"icon": "TreasureCoinUpgrade4",
+"order": 772,
+"id": 772,
+"description": [
+{
+"text": "1% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 10¹⁴ Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ClickingTotalProduction",
+"tier": 4,
+"building": null
+},
+{
+"name": "Resplendent Treasure",
+"icon": "TreasureCoinUpgrade5",
+"order": 773,
+"id": 773,
+"description": [
+{
+"text": "1% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having gained at least 10¹⁷ Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ClickingTotalProduction",
+"tier": 5,
+"building": null
+},
+{
+"name": "Absent Ruler",
+"icon": "OfflineUpgrade1",
+"order": 774,
+"id": 774,
+"description": [
+{
+"text": "Increase Offline production by 200%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having spent at least 12 hours offline (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "OfflineUpgrade",
+"tier": 1,
+"building": null
+},
+{
+"name": "Missing Ruler",
+"icon": "OfflineUpgrade2",
+"order": 775,
+"id": 775,
+"description": [
+{
+"text": "Increase Offline production by 500%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having spent at least 24 hours offline (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "OfflineUpgrade",
+"tier": 2,
+"building": null
+},
+{
+"name": "Nonexistent Ruler",
+"icon": "OfflineUpgrade3",
+"order": 776,
+"id": 776,
+"description": [
+{
+"text": "Increase Offline production by 1500%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having spent at least 36 hours offline (all-time)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "OfflineUpgrade",
+"tier": 3,
+"building": null
+},
+{
+"name": "Assistant Trade Union",
+"icon": "AssistantUpgrade1",
+"order": 1476,
+"id": 1476,
+"description": [
+{
+"text": "Increase the production of all buildings by 5% per assistant owned. Additive with other upgrades of this series.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot n \\cdot A",
+"vars": [
+{
+"symbol": "n",
+"text": "Assistant upgrades of this series you have bought"
+},
+{
+"symbol": "A",
+"text": "Your number of assistants (as shown in the game)"
+}
+]
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Assistant Group"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "AssistantUpgrade",
+"tier": 1,
+"building": null
+},
+{
+"name": "Assistant Syndicate",
+"icon": "AssistantUpgrade2",
+"order": 1477,
+"id": 1477,
+"description": [
+{
+"text": "Increase the production of all buildings by 5% per assistant owned. Additive with other upgrades of this series.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot n \\cdot A",
+"vars": [
+{
+"symbol": "n",
+"text": "Assistant upgrades of this series you have bought"
+},
+{
+"symbol": "A",
+"text": "Your number of assistants (as shown in the game)"
+}
+]
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Assistant Squad"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "AssistantUpgrade",
+"tier": 2,
+"building": null
+},
+{
+"name": "Assistant Cartel",
+"icon": "AssistantUpgrade3",
+"order": 1478,
+"id": 1478,
+"description": [
+{
+"text": "Increase the production of all buildings by 5% per assistant owned. Additive with other upgrades of this series.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot n \\cdot A",
+"vars": [
+{
+"symbol": "n",
+"text": "Assistant upgrades of this series you have bought"
+},
+{
+"symbol": "A",
+"text": "Your number of assistants (as shown in the game)"
+}
+]
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Assistant Legion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": "AssistantUpgrade",
+"tier": 3,
+"building": null
+}
 ]
 }

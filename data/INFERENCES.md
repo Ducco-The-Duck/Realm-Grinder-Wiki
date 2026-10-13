@@ -36,6 +36,12 @@ Only these need checking; remove an item when it is settled.
    Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
    upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
+6. **Misc upgrades** (page built from code, unchecked): Reincarnation Power 1-5 (every effect, its formula, the Reincarnation
+   ranges and the Ascension-penalty start: production +50 * N % applies until R119, the over-time bonus from R10 to R119,
+   the Power 2 Maximum Mana effect also needs Ascension 1; N = Reincarnations made minus 0 / 39 / 99 / 159 / 219), Gem
+   Power's Faction Coin find chance, Ruby Power's lines (levels of the five Shop upgrades), the clicking, offline and
+   assistant series (unlock thresholds and values). The Ruby Tier upgrades are one stack of 50.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
