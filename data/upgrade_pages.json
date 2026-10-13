@@ -18779,25 +18779,15 @@
 "s": null
 },
 {
-"text": "R1-119: Increase the production of all buildings per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{1} = 50 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "R1-119: Increase the production of all buildings by 50% per Reincarnation.",
+"formulas": [],
 "s": 1
 },
 {
-"text": "R10-119: Increase the production of all buildings over time based on Reincarnations made.",
+"text": "R10-119: Also increase the production of all buildings over time based on Reincarnations made (on top of the 50% per Reincarnation above).",
 "formulas": [
 {
-"latex": "v_{2} = N^{1.75} \\cdot \\left(\\frac{t}{3600}\\right)^{0.65}",
+"latex": "v = N^{1.75} \\cdot \\left(\\frac{t}{3600}\\right)^{0.65}",
 "vars": [
 {
 "symbol": "N",
@@ -18813,142 +18803,48 @@
 "s": 1
 },
 {
-"text": "Increase Offline production per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{3} = 500 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "Increase Offline production by 500% per Reincarnation.",
+"formulas": [],
 "s": 1
 },
 {
-"text": "Increase Faction Coin find chance per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{4} = 10 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "Increase Faction Coin find chance by +10% per Reincarnation.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Increase Mana Regeneration per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{5} = 2 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "Increase Mana Regeneration by +2 per Reincarnation.",
+"formulas": [],
 "s": null
 },
 {
-"text": "R2+: Increase production bonus from Gems per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{6} = 0.2 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "R2+: Increase production bonus from Gems by 0.2% per Reincarnation.",
+"formulas": [],
 "s": null
 },
 {
 "text": "R5+: Gain 1 assistant per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{7} = N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"formulas": [],
 "s": null
 },
 {
-"text": "R5+: Increase the production of assistants per Reincarnation made.",
-"formulas": [
-{
-"latex": "v_{8} = 2 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "R5+: Increase the production of assistants by 2% per Reincarnation made.",
+"formulas": [],
 "s": 1
 },
 {
-"text": "R12+: Increase Maximum Mana per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{9} = 35 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "R12+: Increase Maximum Mana by 35 per Reincarnation.",
+"formulas": [],
 "s": null
 },
 {
-"text": "R20+: Increase the production of each building made per building of the same type.",
-"formulas": [
-{
-"latex": "v_{10} = 0.01 \\cdot N \\cdot B",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-},
-{
-"symbol": "B",
-"text": "Number of buildings of that type you own"
-}
-]
-}
-],
+"text": "R20+: Increase the production of each building by 0.01% per Reincarnation made per building of the same type.",
+"formulas": [],
 "s": 2
 },
 {
-"text": "R25+: Increase Royal Exchange Bonus per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{11} = 0.5 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made"
-}
-]
-}
-],
+"text": "R25+: Increase Royal Exchange Bonus by 0.5% per Reincarnation.",
+"formulas": [],
 "s": null
 }
 ],
@@ -18991,25 +18887,15 @@
 "s": null
 },
 {
-"text": "R46+: Increase the production of all buildings based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{2} = 10 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
+"text": "R46+: Increase the production of all buildings by 10% per Reincarnation after the 39th.",
+"formulas": [],
 "s": 2
 },
 {
 "text": "R50+: Multiplicatively increase Faction Coin find chance based on Reincarnations made.",
 "formulas": [
 {
-"latex": "v_{3} = 1.5 \\cdot N^{0.95}",
+"latex": "v_{2} = 1.5 \\cdot N^{0.95}",
 "vars": [
 {
 "symbol": "N",
@@ -19024,7 +18910,7 @@
 "text": "R58+: Multiply Faction Coins found based on Reincarnations made if they match your Faction or Bloodline.",
 "formulas": [
 {
-"latex": "v_{4} = 1.2 \\cdot N^{1.05}",
+"latex": "v_{3} = 1.2 \\cdot N^{1.05}",
 "vars": [
 {
 "symbol": "N",
@@ -19039,7 +18925,7 @@
 "text": "R70+: Autoclicks based on Reincarnations made.",
 "formulas": [
 {
-"latex": "v_{5} = \\left\\lfloor \\sqrt{N} \\right\\rfloor",
+"latex": "v_{4} = \\left\\lfloor \\sqrt{N} \\right\\rfloor",
 "vars": [
 {
 "symbol": "N",
@@ -19056,18 +18942,8 @@
 "s": null
 },
 {
-"text": "R80+: Gain 4 assistants per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{6} = 4 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 39th (Reincarnations made − 39)"
-}
-]
-}
-],
+"text": "R80+: Gain 4 assistants per Reincarnation after the 39th.",
+"formulas": [],
 "s": null
 },
 {
@@ -19100,25 +18976,15 @@
 "s": null
 },
 {
-"text": "R101+: Increase Mana Regeneration per Reincarnation.",
-"formulas": [
-{
-"latex": "v_{1} = 2 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
-}
-]
-}
-],
+"text": "R101+: Increase Mana Regeneration by 2% per Reincarnation after the 99th.",
+"formulas": [],
 "s": null
 },
 {
 "text": "R107+: Increase the production of Unique Buildings based on the difference of time spent as their respective faction against your most used faction in this Reincarnation.",
 "formulas": [
 {
-"latex": "v_{2} = 50 + 0.15 \\cdot \\max\\left(0,\\ t_{\\max} - t_{f}\\right)^{0.85}",
+"latex": "v_{1} = 50 + 0.15 \\cdot \\max\\left(0,\\ t_{\\max} - t_{f}\\right)^{0.85}",
 "vars": [
 {
 "symbol": "t_{\\max}",
@@ -19137,7 +19003,7 @@
 "text": "R115+: Multiply Faction Coins found based on Reincarnations made if they match your Faction, Bloodline or Artifact Set.",
 "formulas": [
 {
-"latex": "v_{3} = 1.2 \\cdot N^{1.05}",
+"latex": "v_{2} = 1.2 \\cdot N^{1.05}",
 "vars": [
 {
 "symbol": "N",
@@ -19149,33 +19015,13 @@
 "s": null
 },
 {
-"text": "R120+: Increase the production of all buildings based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{4} = 25 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
-}
-]
-}
-],
+"text": "R120+: Increase the production of all buildings by 25% per Reincarnation after the 99th.",
+"formulas": [],
 "s": 3
 },
 {
-"text": "R150+: Unique buildings count more for Call to Arms purposes based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{5} = N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 99th (Reincarnations made − 99)"
-}
-]
-}
-],
+"text": "R150+: Unique buildings count more for Call to Arms purposes, multiplied by the number of Reincarnations after the 99th.",
+"formulas": [],
 "s": null
 }
 ],
@@ -19206,7 +19052,7 @@
 "text": "R170+: Increase Research budget in each branch based on Reincarnations made.",
 "formulas": [
 {
-"latex": "v_{1} = 150 \\cdot A + 3.5 \\cdot N",
+"latex": "v = 150 \\cdot A + 3.5 \\cdot N",
 "vars": [
 {
 "symbol": "A",
@@ -19222,18 +19068,8 @@
 "s": null
 },
 {
-"text": "R200+: Increase the production of all buildings based on Reincarnations made.",
-"formulas": [
-{
-"latex": "v_{2} = 150 \\cdot N",
-"vars": [
-{
-"symbol": "N",
-"text": "Reincarnations made after the 159th (Reincarnations made − 159)"
-}
-]
-}
-],
+"text": "R200+: Increase the production of all buildings by 150% per Reincarnation after the 159th.",
+"formulas": [],
 "s": 4
 }
 ],
@@ -19464,108 +19300,33 @@
 "s": null
 },
 {
-"text": "Current Production Bonus.",
-"formulas": [
-{
-"latex": "v_{1} = 100 + S",
-"vars": [
-{
-"symbol": "S",
-"text": "Sum of the increases of the Ruby Tier upgrades you have bought"
-}
-]
-}
-],
+"text": "Current Production Bonus: 100% plus the increase of every Ruby Tier upgrade you have bought.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Current Assistants Bonus (assistants gained, and % of assistants production).",
-"formulas": [
-{
-"latex": "v_{2} = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Assistant\" bought in the Shop"
-}
-]
-}
-],
+"text": "Current Assistants Bonus: +1 assistant and +1% assistants production for each level of \"Ruby Assistant\" bought in the Shop.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Current Mana Regen Bonus (per second, and %).",
-"formulas": [
-{
-"latex": "v_{3} = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
-}
-]
-}
-],
+"text": "Current Mana Regen Bonus: +1 per second and +1% for each level of \"Ruby Mana Regeneration\" bought in the Shop.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Current Max Mana Bonus (flat).",
-"formulas": [
-{
-"latex": "v_{4} = 100 \\cdot n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
-}
-]
-}
-],
+"text": "Current Max Mana Bonus: +100 and +1% for each level of \"Ruby Max Mana\" bought in the Shop.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Current Max Mana Bonus (%).",
-"formulas": [
-{
-"latex": "v_{5} = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
-}
-]
-}
-],
+"text": "Current Gem Bonus: +1% to Gem Power and +1% to the production bonus from Gems for each level of \"Ruby Gem Bonus\" bought in the Shop.",
+"formulas": [],
 "s": null
 },
 {
-"text": "Current Gem Bonus (% added to Gem Power, and % of the production bonus from Gems).",
-"formulas": [
-{
-"latex": "v_{6} = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Royal Exchange Bonus (% added, and % of the bonus).",
-"formulas": [
-{
-"latex": "v_{7} = 2 \\cdot n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
-}
-]
-}
-],
+"text": "Current Royal Exchange Bonus: +2% and +2% for each level of \"Ruby Royal Trading\" bought in the Shop.",
+"formulas": [],
 "s": null
 }
 ],
