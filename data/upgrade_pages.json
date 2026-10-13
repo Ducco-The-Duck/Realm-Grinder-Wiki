@@ -19632,7 +19632,7 @@
 "building": null,
 "more": [
 {
-"text": "Current Production Bonus (%).",
+"text": "Production Bonus: +v% production of all buildings.",
 "formulas": [
 {
 "latex": "v = 100 + S",
@@ -19647,7 +19647,7 @@
 "s": null
 },
 {
-"text": "Current Assistants Bonus (assistants gained).",
+"text": "Assistant Bonus: +v assistants and +v% assistants production.",
 "formulas": [
 {
 "latex": "v = n",
@@ -19662,14 +19662,23 @@
 "s": null
 },
 {
-"text": "Current Assistants Bonus (% of assistants production).",
+"text": "Max Mana Bonus: +v₁ Maximum Mana and +v₂% Maximum Mana.",
 "formulas": [
 {
-"latex": "v = n",
+"latex": "v_{1} = 100 \\cdot n",
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Assistant\" bought in the Shop"
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+}
+]
+},
+{
+"latex": "v_{2} = n",
+"vars": [
+{
+"symbol": "n",
+"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
 }
 ]
 }
@@ -19677,7 +19686,7 @@
 "s": null
 },
 {
-"text": "Current Mana Regen Bonus (per second).",
+"text": "Mana Regen Bonus: +v mana per second and +v% Mana Regeneration.",
 "formulas": [
 {
 "latex": "v = n",
@@ -19692,52 +19701,7 @@
 "s": null
 },
 {
-"text": "Current Mana Regen Bonus (%).",
-"formulas": [
-{
-"latex": "v = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Max Mana Bonus (flat).",
-"formulas": [
-{
-"latex": "v = 100 \\cdot n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Max Mana Bonus (%).",
-"formulas": [
-{
-"latex": "v = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Gem Bonus (% added to Gem Power).",
+"text": "Gem Bonus: +v% Gem Power and +v% production bonus from Gems.",
 "formulas": [
 {
 "latex": "v = n",
@@ -19752,37 +19716,7 @@
 "s": null
 },
 {
-"text": "Current Gem Bonus (% of the production bonus from Gems).",
-"formulas": [
-{
-"latex": "v = n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Royal Exchange Bonus (% added).",
-"formulas": [
-{
-"latex": "v = 2 \\cdot n",
-"vars": [
-{
-"symbol": "n",
-"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
-}
-]
-}
-],
-"s": null
-},
-{
-"text": "Current Royal Exchange Bonus (% of the bonus).",
+"text": "Royal Exchange Bonus: +v% Royal Exchange Bonus and a further +v% on top of it.",
 "formulas": [
 {
 "latex": "v = 2 \\cdot n",
@@ -19797,7 +19731,7 @@
 "s": null
 }
 ],
-"more_note": "Ruby cost: each Shop upgrade (Ruby Assistant, Ruby Mana Regeneration, Ruby Max Mana, Ruby Gem Bonus, Ruby Royal Trading) costs one more Ruby per level than the previous level of the same upgrade: level n costs n Rubies, so n levels cost n(n + 1) / 2 Rubies in total."
+"more_note": "Each level bought increases the Ruby cost of the next purchase of that bonus by 1."
 },
 {
 "name": "Ruby Tier 1",

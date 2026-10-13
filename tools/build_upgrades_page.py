@@ -153,7 +153,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #pop h3{margin:0;font-size:1.05rem}
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
-#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(640px,100%);max-height:90vh;overflow:auto;padding:14px 16px}
+#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(480px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
 #more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;position:sticky;top:-14px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
 #more .bonus{border-top:1px solid var(--line);padding:8px 0}
