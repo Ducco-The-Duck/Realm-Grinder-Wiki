@@ -50,7 +50,7 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 - Building upgrades: the series are removed from Ascension 3 on, the building count thresholds, and the Ascension penalties.
 
 - Lore artifact chance formulas confirmed against the patch notes / old wiki apart from cleanup terms (0.5, +1), inputs
-  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Wall Chunk, Apeiron, Stiletto Heel, Titan Helmet, Crystallized Lava, Silk Cloth, Spiked Whip (building count excludes "count as more" bonuses in the code), Poison Vial (base formula; the Drow Perk 4 term is open under 2).
+  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Oil Lamp (artifact), Fossilized Wing, Dusty Coffin, Mythos, Wall Chunk, Apeiron, Stiletto Heel, Titan Helmet, Crystallized Lava, Silk Cloth, Spiked Whip (building count excludes "count as more" bonuses in the code), Poison Vial (base formula; the Drow Perk 4 term is open under 2).
   Lantern of Guidance: patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second (no +1); the
   wiki shows the code.
 
