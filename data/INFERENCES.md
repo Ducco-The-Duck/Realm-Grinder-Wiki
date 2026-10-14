@@ -41,14 +41,9 @@ Only these need checking; remove an item when it is settled.
    automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
    R90 every branch), Ancient Device Power, Legacy of the Dwarven Kings, Dark Light of Bondelnar, and -1 for Mercenaries at
    Ascension 1; at Ascension 2 only, the Archon Bloodline. From Ascension 2 on every other source is ignored.
-7. **Allegiances upgrades** (treaty tiers and the twelve faction upgrades per faction; built from code, unchecked):
-   - **Coin prices at Ascension 1-3:** the code's price getter returns 0 for most faction upgrades there (a price is set only
-     for Ascension 0 and from Ascension 4; the Dragon upgrades only for Ascension 1 and 4). The tooltip shows "0 coins" with a
-     note. Check what a faction upgrade really costs at Ascension 1.
-   - **Faction Coin prices of the tiers** (Trade Treaty 20 / Friendship 100 / Alliance 500 / Union 10^18, 10^12 / 10^21 / 10^27 /
-     10^33 from Ascension 4; Titan, Druid and Faceless pay two vanilla coin types, the prestige factions their own coins, the
-     astral ones the coins of both parents) come straight from the price methods. The Fairy and Goblin Trade Treaty are free
-     until the first Gem or Reincarnation.
+7. **Allegiances upgrades** (treaty tiers and the twelve faction upgrades per faction; built from code, unchecked; prices are
+   not shown on the page). A Reincarnation requirement also rules out the Ascensions that cannot reach it (A1 spans R40-99,
+   A2 R100-159, A3 R160-219), so Dwarven / Drow Union (R115) start at Ascension 2:
    - **Alternatives:** a faction upgrade's tier requirement can be replaced by the faction's Legacy upgrade (Bronze / Silver /
      Gold / Diamond), and a Union's building upgrade by the Mercenary Building Contract in some cases (helper `§`!i§`, not
      spelled out on the page).

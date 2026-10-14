@@ -66,13 +66,7 @@ def fmt_num(n):
     return f'10{sup}' if mant == 1 else f'{mant:g} × 10{sup}'
 
 
-def cost_of(u):
-    c = u.get('cost')
-    if c is None: return None
-    out = {'coins': [fmt_num(v) for v in c['coins']] if c.get('coins') else None, 'fs': c.get('free_start') or None}
-    if c.get('fc'):
-        out['fc'] = [[n, fmt_num(v), fmt_num(c['fc_a4'].get(n, v))] for n, v in c['fc'].items()]
-    return out
+UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their icons exist per path (Order / Chaos / Balance)
 
 
 def item(u):
@@ -89,7 +83,9 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
-        **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'c': cost_of(u)} if 'faction' in u else {}),
+        **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction'])} if 'faction' in u else {}),
+        **({'ia': {str(ax): icon_file(f"{UNION_ICON[u['faction']]}{nm}") for ax, nm in ((4, 'Order'), (5, 'Chaos'), (6, 'Balance'))}}
+           if u.get('tier_no') == 4 and u.get('faction') in UNION_ICON else {}),
     }
 
 
@@ -180,7 +176,6 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar .hint{color:var(--muted);font-size:.85rem}
 .bar .row[hidden]{display:none}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
-#tip .cost{margin-top:2px}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
 section{margin:0 0 26px}
@@ -332,13 +327,6 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
-    if(it.c){
-      var cl=costLines(it);
-      if(cl.length){
-        tip.appendChild(el('span','lbl','Cost'));
-        cl.forEach(function(t){ tip.appendChild(el('div','cost',t)); });
-      }
-    }
     if(it.m) tip.appendChild(el('div','more','Click for more info'));
     if(it.s.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
@@ -352,18 +340,6 @@ the base values <i>v</i>.</div>
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   function hideTip(){ tip.style.display='none'; }
-  function costLines(it){
-    var c=it.c, out=[];
-    if(c.fc){
-      var parts=c.fc.map(function(x){ return (ASC>=4 ? x[2] : x[1])+' '+x[0]+' Faction Coins'; });
-      out.push(parts.join(' and '));
-      if(c.fs) out.push('Free until you have a Gem or a Reincarnation.');
-    } else if(c.coins){
-      var v=c.coins[Math.min(ASC,4)];
-      out.push(v==='0' ? '0 coins (the game\'s price at this Ascension)' : v+' coins');
-    }
-    return out;
-  }
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
 
@@ -520,6 +496,8 @@ the base values <i>v</i>.</div>
     if(!allegBox) return;
     allegBox.textContent='';
     allegCells=[]; allegGroups=[];
+    var bf=facOf(PICK.b), ax=String(bf && bf.ax ? bf.ax : 4);
+    Object.keys(allegItems).forEach(function(k){ allegItems[k].forEach(function(it){ if(it.ia) it.i=it.ia[ax]; }); });
     var picked = PICK.b<0 ? null : [PICK.b].concat(PICK.p>=0?[PICK.p]:[], PICK.a>=0?[PICK.a]:[]);
     var g=el('div','grid');
     if(!picked){

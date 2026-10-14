@@ -633,6 +633,13 @@ for idx, r in todo:
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
+# a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
+for u in by_cat['allegiances']:
+    ns = [int(m.group(1)) for c_ in u['conditions'] for m in [re.search(r'Reincarnation (\d+)', c_)] if m and c_.startswith('being at')]
+    if ns:
+        need = 1 if max(ns) < 100 else 2 if max(ns) < 160 else 3 if max(ns) < 220 else 4
+        if max(ns) >= 40 and (u['asc_min'] or 0) < need: u['asc_min'] = need
+
 # the fourth-tier faction upgrades (10 to 12) need the Union, so they cannot be bought earlier than it
 _union = {u['faction']: u for u in by_cat['allegiances'] if u['tier_no'] == 4}
 for u in by_cat['allegiances']:
