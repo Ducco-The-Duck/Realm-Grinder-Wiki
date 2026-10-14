@@ -36,12 +36,11 @@ Only these need checking; remove an item when it is settled.
    Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
    upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
-6. **Research slot upgrades** (Magician, Artisan, Demigod, Businessman, Apothecary, Warlord) on the Upgrades page: built from
-   code. They are granted automatically (the game's auto-acquire flag) the first time their trophy is unlocked and the
-   faction conditions hold, kept through Reincarnations and Abdications (so the conditions only matter at that moment:
-   the user has them while playing a prestige faction), and are never shown in the game's list. The conditions (playing
-   as a base faction, or as a Titan / Druid / Faceless once "Secrets of the Ancients" is bought, no prestige faction)
-   are unchecked.
+6. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
+   function, unchecked. Base 4 slots, 1 from Ascension 2; before Ascension 2 the extras are the six slot upgrades (granted
+   automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
+   R90 every branch), Ancient Device Power, Legacy of the Dwarven Kings, Dark Light of Bondelnar, and -1 for Mercenaries at
+   Ascension 1; at Ascension 2 only, the Archon Bloodline. From Ascension 2 on every other source is ignored.
 
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).

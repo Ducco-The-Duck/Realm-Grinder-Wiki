@@ -41,7 +41,6 @@ PROBE = f"""(function () {{ __MUT
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
               tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
-    try {{ r.auto = !!o.{J('§%!>§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
@@ -441,9 +440,7 @@ def fix_raw(name, c, paras):
 # the Misc upgrades covered so far (the rest of the category is seasonal events, research facilities, unlocks ...)
 MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'ClickingBase', 'ClickingProduction',
                'ClickingTotalProduction', 'OfflineUpgrade', 'AssistantUpgrade'}
-MISC_NAMES = {'Gem Power', 'Challenge Power',
-              # research slot upgrades: granted automatically, never shown in the game's list
-              'Magician', 'Artisan', 'Demigod', 'Businessman', 'Apothecary', 'Warlord'}
+MISC_NAMES = {'Gem Power', 'Challenge Power'}
 SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
 SPELL_TIER_CLASS = '§%p§'
 by_cat = {name: [] for name in CATS.values()}
@@ -498,8 +495,6 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
-    if r.get('auto') and r['cat'] == 1:
-        item['auto'] = True
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}

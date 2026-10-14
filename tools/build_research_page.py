@@ -26,6 +26,32 @@ def icon_file(name):
     return dst
 
 
+# where extra research slots come from (read from the game's slot function); branch index -> data
+SLOT_UPGRADE = {0: 'Magician', 1: 'Artisan', 2: 'Demigod', 3: 'Businessman', 4: 'Apothecary', 5: 'Warlord'}
+MERC_ALIGN = {0: 'Good', 2: 'Good', 3: 'Evil', 5: 'Evil', 1: 'Neutral', 4: 'Neutral'}
+NEUTRAL_AFFINITY = {0: 'Faceless', 1: 'Titan', 2: 'Faceless', 3: 'Druid', 4: 'Druid', 5: 'Titan'}
+BASE_FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon'}
+
+
+def slot_sources(b):
+    before = [
+        ['-1', 'Playing as a Mercenary at Ascension 1'],
+        ['+1', f'{SLOT_UPGRADE[b]} upgrade (unlocked automatically by the Secret trophy of the same name)'],
+        ['+1', 'Reincarnation Power 2, from R90 (every branch)'],
+        ['+1', f'Reincarnation Power 2, from R75, while playing as a Mercenary with {MERC_ALIGN[b]} alignment'],
+        ['+1', f'Ancient Device Power, while playing as {NEUTRAL_AFFINITY[b]}'],
+        ['+1', f'Legacy of the Dwarven Kings or Dark Light of Bondelnar (one of them is enough), while your base faction '
+               f'is the {BASE_FACTION[b]}'],
+    ]
+    if b == 1:
+        before.insert(5, ['+2', 'Legacy of the Dwarven Kings (Dwarf as prestige faction)'])
+    if b == 5:
+        before.insert(5, ['+2', 'Dark Light of Bondelnar (Drow as prestige faction)'])
+    after = [['+1 or more', 'Archon Bloodline, at Ascension 2 only: 1 + floor((sqrt(1 + 8 * h / 36) - 1) / 2), '
+                            'where h is the hours played in this Era']]
+    return {'before': before, 'after': after}
+
+
 BRANCHES = []
 for b in range(7):
     its = sorted((r for r in research if r['branch'] == b), key=lambda r: (r['number'], r['index']))
@@ -44,7 +70,7 @@ for b in range(7):
             'a': {k: {'d': v['description'], 'q': v['requirements']} for k, v in r['by_ascension'].items()},
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
-    BRANCHES.append({'name': name, 'icon': bicon, 'items': items})
+    BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None})
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
 payload = {'max': meta['max_ascension'], 'branches': BRANCHES}
@@ -154,6 +180,16 @@ popups are always the base values <i>v</i>.</div>
   }
   function showTip(it, anchor){
     tip.textContent='';
+    if(it.sl){
+      tip.appendChild(el('b',null,it.n+' research slots'));
+      tip.appendChild(el('div',null,'Base: 4 slots before Ascension 2, 1 slot from Ascension 2 on.'));
+      tip.appendChild(el('span','lbl','Extra slots, before Ascension 2'));
+      var ul=el('ul'); it.sl.before.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ul.appendChild(li); }); tip.appendChild(ul);
+      tip.appendChild(el('span','lbl','From Ascension 2'));
+      var ul2=el('ul'); it.sl.after.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ul2.appendChild(li); }); tip.appendChild(ul2);
+      tip.appendChild(el('div','more','From Ascension 2 the other sources no longer apply.'));
+      place(anchor); return;
+    }
     tip.appendChild(el('b',null,it.n));
     if(it.k) tip.appendChild(el('div','num',it.k));
     if(it.al || it.an){
@@ -241,7 +277,7 @@ popups are always the base values <i>v</i>.</div>
   BRANCHES.forEach(function(br){
     var sec=el('section'); var h=el('h2',null,br.name); h.appendChild(el('small',null,br.items.length+' researches')); sec.appendChild(h);
     var g=el('div','grid');
-    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true},'buy'));
+    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl},'buy'));
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
     sec.appendChild(g); root.appendChild(sec);
   });
