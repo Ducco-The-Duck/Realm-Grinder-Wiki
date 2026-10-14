@@ -63,3 +63,9 @@ EXTRA_PARAS = {
                           F(r'v = \left(\ln\left(1 + t\right)\right)^{3}', ('t', 'Time played in this Era (seconds)'),
                             label='Research budget (Ascension 3 and up)'))],
 }
+
+# the astral unique buildings upgrade the building of a tier of the player's alignment; the game's text names whichever it is
+BUILDING_TEXT = {
+    'Nexus': ('Farms', 'the tier 6 building of your alignment (Wizard Towers, Witch Conclaves or Alchemist Labs)'),
+    'Pavilion': ('Farms', 'the tier 4 building of your alignment (Warrior Barracks, Slave Pens or Deep Mines)'),
+}

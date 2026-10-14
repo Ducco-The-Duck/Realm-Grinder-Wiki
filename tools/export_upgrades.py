@@ -47,8 +47,11 @@ PROBE = f"""(function () {{ __MUT
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
+    var keepAl = {g}.{J('§,!Y§')}, ial = o.{J('§,!Y§')};
+    if (ial === 1 || ial === 2 || ial === 3) {g}.{J('§,!Y§')} = ial;      // tier lookups ("the tier 7 building") depend on the alignment
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
     try {{ if (o.{J('§8!1§')}) r.d2 = o.{J('§8!1§')}(); }} catch (e) {{}}      // lineage perks: the text shown once owned
+    {g}.{J('§,!Y§')} = keepAl;
     {g}.{J('§8!H§')} = keepR;
     out.push(r); }}
   var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
@@ -720,12 +723,8 @@ for idx, r in todo:
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
         for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
             item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])], 's': None})
-        if r['n'] in AM.TIER_NAMED:
-            al_ = AM.FACTION_ALIGN.get(r['f'], 1)
-            names_ = [plural(AM.TIER_BUILDING[al_][t - 1]) for t in AM.TIER_NAMED[r['n']]]
-            for p_ in item['description']:
-                for nn_ in names_:
-                    p_['text'] = p_['text'].replace('Farms', nn_, 1)
+        if r['n'] in AMF.BUILDING_TEXT:
+            for p_ in item['description']: p_['text'] = p_['text'].replace(AMF.BUILDING_TEXT[r['n']][0], AMF.BUILDING_TEXT[r['n']][1], 1)
         item['faction'] = QUEST_FACTION.get(r['n'], r['f'])
         item['akind'] = alleg_kind(r)
         if item['akind'] == 'lineage':

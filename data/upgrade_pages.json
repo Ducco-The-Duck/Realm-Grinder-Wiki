@@ -5085,7 +5085,7 @@
 "id": 302,
 "description": [
 {
-"text": "Increase the production of Farms based on assistants owned.",
+"text": "Increase the production of Evil Fortresses based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 7 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3.5}",
@@ -5487,7 +5487,7 @@
 "id": 310,
 "description": [
 {
-"text": "Increase the production of Farms based on Hellfire Blast activity time in this Reincarnation.",
+"text": "Increase the production of Hell Portals based on Hellfire Blast activity time in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 35 + 0.7 \\cdot t^{0.7}",
@@ -7837,7 +7837,7 @@
 "id": 356,
 "description": [
 {
-"text": "Increase the production of Farms based on assistants owned.",
+"text": "Increase the production of Labyrinths based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 50 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3}",
@@ -12240,7 +12240,7 @@
 "id": 441,
 "description": [
 {
-"text": "Upgrade Farms to Nexuses, boosting their production based on time spent as Order and unlocking more unique perks for the building.",
+"text": "Upgrade the tier 6 building of your alignment (Wizard Towers, Witch Conclaves or Alchemist Labs) to Nexuses, boosting their production based on time spent as Order and unlocking more unique perks for the building.",
 "formulas": [
 {
 "latex": "v = 80 \\cdot t^{0.8}",
@@ -13183,7 +13183,7 @@
 "id": 459,
 "description": [
 {
-"text": "Upgrade Farms to Pavilions, boosting their production based on spells cast in this Reincarnation and unlocking more unique perks for the building.",
+"text": "Upgrade the tier 4 building of your alignment (Warrior Barracks, Slave Pens or Deep Mines) to Pavilions, boosting their production based on spells cast in this Reincarnation and unlocking more unique perks for the building.",
 "formulas": [
 {
 "latex": "v = 12 \\cdot T^{0.6}",
@@ -20004,7 +20004,7 @@
 "id": 669,
 "description": [
 {
-"text": "Reduce Farms, Farms and Halls of Legends building cost multiplier and increase their production based on Royal Exchanges made.",
+"text": "Reduce Farms, Iron Strongholds and Halls of Legends building cost multiplier and increase their production based on Royal Exchanges made.",
 "formulas": [
 {
 "latex": "v = 7 \\cdot N^{0.7}",
