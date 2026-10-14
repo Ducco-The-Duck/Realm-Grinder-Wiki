@@ -145,6 +145,7 @@ def alleg_section():
             pair_asc[b_] = max(pair_asc.get(b_, 0), u['asc_min'] or 0)
     def key(u):
         sub = u['tier_no'] or u['perk'] or 0
+        if u['akind'] == 'proof': sub = list(PROOF_OF).index(u['name'])      # Good, Evil, Neutrality, then Order, Chaos, Balance
         if u['akind'] == 'heritage': sub = (1 if u['name'].startswith('Advanced') else 0, FORDER.index(u['faction']))
         if u['akind'] == 'unique':
             base = u['name'][:-6] if u['name'].endswith(' Quest') else u['name']
