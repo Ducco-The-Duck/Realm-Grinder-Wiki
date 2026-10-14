@@ -731,6 +731,10 @@ for idx, r in todo:
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
+# the astral factions (Archon, Djinn, Makers) exist from Ascension 2, and so does everything that belongs to them
+for u in by_cat['allegiances']:
+    if u['faction'] in (13, 14, 15) and (u['asc_min'] or 0) < 2: u['asc_min'] = 2
+
 # a unique building upgrade is bought after its quest is done, so it starts at the quest's Ascension and Reincarnation
 _q = {u['name']: u for u in by_cat['allegiances'] if u['akind'] == 'unique' and u['name'].endswith(' Quest')}
 for u in by_cat['allegiances']:
