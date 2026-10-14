@@ -46,7 +46,8 @@ def slot_sources(b):
         rows.append(['+2', 'Legacy of the Dwarven Kings', 0, 2])
     if b == 5:
         rows.append(['+2', 'Dark Light of Bondelnar', 0, 2])
-    rows.append(['+1', f'Legacy of the Dwarven Kings or Dark Light of Bondelnar ({BASE_FACTION[b]})', 0, 2])
+    # Dwarf is the prestige faction of the Good base factions, Drow of the Evil ones, so only one of the two applies
+    rows.append(['+1', f"{'Legacy of the Dwarven Kings' if b < 3 else 'Dark Light of Bondelnar'} ({BASE_FACTION[b]})", 0, 2])
     rows.append(['+1 or more', 'Archon Bloodline: 1 + floor((sqrt(1 + 8 * h / 36) - 1) / 2), h = hours played in this Era', 2, 3])
     return rows
 
