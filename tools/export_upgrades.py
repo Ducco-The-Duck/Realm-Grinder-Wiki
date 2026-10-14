@@ -731,6 +731,16 @@ for idx, r in todo:
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
+# a unique building upgrade is bought after its quest is done, so it starts at the quest's Ascension and Reincarnation
+_q = {u['name']: u for u in by_cat['allegiances'] if u['akind'] == 'unique' and u['name'].endswith(' Quest')}
+for u in by_cat['allegiances']:
+    q_ = _q.get(u['name'] + ' Quest') or (_q.get('Mercenary Encampment Quest') if u['faction'] == 11 and u['akind'] == 'unique' else None)
+    if u['akind'] != 'unique' or u['name'].endswith(' Quest') or not q_: continue
+    if (u['asc_min'] or 0) < (q_['asc_min'] or 0): u['asc_min'] = q_['asc_min']
+    if not u['sources']: u['requirements'].insert(0, f"Complete the quest {q_['name']}")
+    for c_ in q_['conditions']:
+        if c_.startswith('being at Reincarnation') and c_ not in u['conditions']: u['conditions'].append(c_)
+
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
 for u in by_cat['allegiances']:
     ns = [int(m.group(1)) for c_ in u['conditions'] for m in [re.search(r'Reincarnation (\d+)', c_)] if m and c_.startswith('being at')]

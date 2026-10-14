@@ -1198,12 +1198,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Swarming Tower Quest"
+],
 "conditions": [
 "playing as Fairy"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -2138,12 +2140,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Arboreal City Quest"
+],
 "conditions": [
 "playing as Elf"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -3042,12 +3046,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Holy Site Quest"
+],
 "conditions": [
 "playing as Angel"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -3966,12 +3972,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Slave Market Quest"
+],
 "conditions": [
 "playing as Goblin"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -4877,12 +4885,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Flesh Workshop Quest"
+],
 "conditions": [
 "playing as Undead"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -5792,12 +5802,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Burning Abyss Quest"
+],
 "conditions": [
 "playing as Demon"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -6687,12 +6699,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Mountain Palace Quest"
+],
 "conditions": [
 "playing as Titan"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -7624,12 +7638,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Ziggurat Quest"
+],
 "conditions": [
 "playing as Druid"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -8544,12 +8560,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Forbidden Library Quest"
+],
 "conditions": [
 "playing as Faceless"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -9460,12 +9478,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest High Bastion Quest"
+],
 "conditions": [
-"having Dwarf as your prestige faction"
+"having Dwarf as your prestige faction",
+"being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -10364,12 +10385,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Brothel Quest"
+],
 "conditions": [
-"having Drow as your prestige faction"
+"having Drow as your prestige faction",
+"being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -11349,12 +11373,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Dragon Pasture Quest"
+],
 "conditions": [
-"having Dragon as your prestige faction"
+"having Dragon as your prestige faction",
+"being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -12266,12 +12293,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Nexus Quest"
+],
 "conditions": [
-"having Archon as your astral faction"
+"having Archon as your astral faction",
+"being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -13206,12 +13236,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Pavilion Quest"
+],
 "conditions": [
-"having Djinn as your astral faction"
+"having Djinn as your astral faction",
+"being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
@@ -14140,12 +14173,15 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Complete the quest Hall of Origination Quest"
+],
 "conditions": [
-"having Makers as your astral faction"
+"having Makers as your astral faction",
+"being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": null,
 "tier": -1,
