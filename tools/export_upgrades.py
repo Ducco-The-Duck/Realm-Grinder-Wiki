@@ -23,7 +23,7 @@ sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
 ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
-CATS = {4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}      # the game's category indexes of the upgrade sections
+CATS = {0: 'allegiances', 4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}      # the game's category indexes of the upgrade sections
 
 MUT = f"""
   var G = {g}, v = __V;
@@ -37,9 +37,9 @@ PROBE = f"""(function () {{ __MUT
   var lists = {{ upgrade: U, trophy: {g}.{J('§0Q§')}, spell: {g}.{J('§0!A§')}, building: {g}.{J('§%<§')} }};
   for (var k in lists) for (var i = 0; i < lists[k].length; i++) {{ var q = qOf(lists[k][i]); if (q !== null) named[q] = [k, lists[k][i].{J('§1i§')}, !!lists[k][i].{J('§@!R§')}]; }}
   for (var i = 0; i < U.length; i++) {{ var o = U[i];
-    var cat = o.{J('§,!B§')}; if (cat !== 1 && cat !== 2 && cat !== 3 && cat !== 4) continue;
+    var cat = o.{J('§,!B§')}; if (cat !== 0 && cat !== 1 && cat !== 2 && cat !== 3 && cat !== 4) continue;
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
-              tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')} }};
+              tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')}, idx: o.{J('§!"E§')}, coins: o.{J('§>=§')}, ax: o.{J('§9!m§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
@@ -71,6 +71,27 @@ BB = f"""(function () {{
       var v; try {{ v = !!o.{J('§-6§')}; }} catch (e) {{ v = null; }} row.push(v); }}
     out[idx[n]] = row; }}
   return JSON.stringify(out); }})()"""
+
+
+COST = f"""(function () {{
+  var G = {g}, U = G.{J('§-!4§')}, out = {{}};
+  var idx = __IDX__;
+  for (var n = 0; n < idx.length; n++) {{ var o = U[idx[n]], row = {{}};
+    [[0, 0, 0], [0, 0, 1], [4, 0, 1]].forEach(function (st) {{
+      G.{J('§,P§')} = st[0]; G.{J('§"!0§')} = st[1]; G.{J('§8!H§')} = st[2];
+      var c = {{}};
+      for (var k = 0; k < 16; k++) {{ var v = 0; try {{ v = o.{J('§75§')}(k); }} catch (e) {{}} if (v) c[k] = v; }}
+      row['' + st[0] + st[1] + st[2]] = c; }});
+    var coins = [];
+    for (var A = 0; A <= 4; A++) {{ G.{J('§,P§')} = A; var v = 0; try {{ v = o.{J('§9!U§')}; }} catch (e) {{}} coins.push(v); }}
+    row.coins = coins;
+    out[idx[n]] = row; }}
+  return JSON.stringify(out); }})()"""
+
+
+def tier_costs(indexes):
+    ctx = quickjs.Context(); ctx.eval(ENGINE); ctx.eval('__boot()')
+    return {int(k): v for k, v in json.loads(ctx.eval(COST.replace('__IDX__', json.dumps(indexes)))).items()}
 
 
 def availability(indexes):
@@ -161,11 +182,44 @@ def decode_alt(t, c, ctx, nm):
     return None
 
 
+def alleg_perk(body, ctx, nm):
+    """availability of a faction upgrade: the tier upgrade of its faction, or the Legacy upgrade that stands in for it"""
+    m = re.fullmatch(r'return §8G§\.§\?!2§\("(\w+)"\) >= (\d)(?: && §&c§\.§`!i§\((§[^§]*§)\.id\))?'
+                     r'(?: \|\| §8G§\.§7d§\((§[^§]*§)\.id\))?;', body)
+    if not m: return None
+    tag, n, need, alt = m.group(1), int(m.group(2)), m.group(3), m.group(4)
+    line = f"Upgrade: {TIER_ITEM.get((tag, n), f'tier {n} of ' + tag)}"
+    if need:
+        nn = nm(need)
+        if nn: line += f" and Upgrade: {nn[1]}"
+    if alt:
+        an = nm(alt)
+        if an: line += f", or Upgrade: {an[1]} instead" if not need else f", or Upgrade: {an[1]} instead of both"
+    return line
+
+
 def decode(body, c, ctx=None):
     """-> (sources [{kind, name}], conditions [str], undecoded [str], (asc_lo, asc_hi), extra requirement lines [str])"""
     ctx = ctx or {}
     nm = D.name_of_for(c)
     src, cond, bad, extra = [], [], [], []
+    rthr = []
+    if ctx.get('cat') == 0:
+        pl = alleg_perk(body, ctx, nm)
+        if pl: return src, cond, bad, (None, None), [pl]
+        body = body.replace("\\'", "'")
+        mc = re.fullmatch(r'if\(§8G§\.§,P§ == 2 \|\| §8G§\.§,P§ == 4\) \{ return false; \} if\(§8G§\.§,P§ == 3\) \{ return '
+                          r'§8G§\.§7d§\((§[^§]*§)\.id\) && §8G§\.§,!Y§ != 0 && §8G§\.§9!m§ != 0 && §8G§\.§-!\^§ == -1; \} '
+                          r'return §8G§\.§<P§\((§[^§]*§)\.id\) && §8G§\.§,!Y§ != 0 && §8G§\.§-!\^§ == -1 && §8G§\.§#3§ == -1;', body)
+        if mc:
+            a3, a0 = nm(mc.group(1)), nm(mc.group(2))
+            return src, ['not having a faction or a prestige faction yet', 'having an alignment',
+                         'Not available at Ascension 2 or 4'], bad, (None, None), \
+                [f"Ascension 3: Upgrade: {a3[1]}" if a3 else 'Ascension 3: ?',
+                 f"Other Ascensions: {describe_source({'kind': 'artifact' if a0 and a0[2] else 'trophy', 'name': a0[1]})['kind']}: {a0[1]}" if a0 else '?']
+        if body.startswith('var ') and '; return ' in body:       # treaties of prestige / astral factions: drop the local declarations
+            body = 'return ' + body.split('; return ', 1)[1]
+            body = body.replace('§8G§.§7d§(_loc1_[§8G§.§-!^§])', 'ALLIANCE_BASE').replace('§8G§.§7d§(_loc1_[§8G§.§#3§])', 'ALLIANCE_PRESTIGE')
     mv = re.fullmatch(r'var _loc1_:Boolean = (.+); return _loc1_ && (.+);', body)
     if mv: body = f'return {mv.group(1)} && {mv.group(2)};'
     m = re.fullmatch(r'return (.+);', body)
@@ -234,6 +288,39 @@ def decode(body, c, ctx=None):
         if mm:
             r = faction_range(int(mm.group(1)), int(mm.group(2)))
             if r: cond.append(r); continue
+        if ctx.get('cat') == 0:
+            mm = re.fullmatch(r'\(' + ASC + r' < (\d) \|\| ' + G + r'§8!H§ >= (\d+)(?: && ' + G + r'§<P§\((§[^§]*§)\.id\))?\)', t)
+            if mm:
+                rthr.append((int(mm.group(1)), int(mm.group(2)), mm.group(3))); continue
+            mm = re.fullmatch(ASC + r' >= (\d)', t)
+            if mm: asc_lo = int(mm.group(1)); continue
+            mm = re.fullmatch(G + r'§8!H§ >= (\d+)', t)
+            if mm: rthr.append((None, int(mm.group(1)), None)); continue
+            mm = re.fullmatch(r'\(' + ASC + r' < 2 \|\| ' + G + r'§9!m§ == (\d)\)', t)
+            if mm: cond.append(f'following the {AXIS[int(mm.group(1))]} path (needed from Ascension 2)'); continue
+            if re.fullmatch(G + '§9!m§ == §9!m§', t):
+                cond.append(f"following the {AXIS.get(ctx.get('ax'), '?')} path"); continue
+            if re.fullmatch(FAC + ' == -1', t): cond.append('not having a faction yet'); continue
+            if re.fullmatch(FAC + ' != 11', t): cond.append('not playing as Mercenary'); continue
+            if re.fullmatch(PRE + ' != -1', t): cond.append('having a prestige faction'); continue
+            if re.fullmatch(AST + ' == -1', t): cond.append('not having an astral faction yet'); continue
+            mm = re.fullmatch(r"§&c§\.§`!i§\((§[^§]*§)\.id\)", t)
+            if mm:
+                n_ = nm(mm.group(1))
+                if n_: extra.append(f'Upgrade: {n_[1]}'); continue
+            if re.fullmatch(G + r'§5!V§\[41\] > 0', t) or re.fullmatch(G + r'§5!V§\[42\] > 0', t):
+                if not any('Dwarven Coin' in x for x in cond):
+                    cond.append('having found at least one Dwarven Coin and one Drow Coin in this Era')
+                continue
+            mm = re.fullmatch(AST + r' == (\d+)', t)
+            if mm: cond.append(f'having {FACTION[int(mm.group(1))]} as your astral faction'); continue
+            if t == 'ALLIANCE_BASE': extra.append('Upgrade: the Alliance of your base faction'); continue
+            if t == 'ALLIANCE_PRESTIGE': extra.append('Upgrade: the Alliance of your prestige faction'); continue
+            mm = re.fullmatch(r'\(!_loc3_ && _loc2_ == 0 \|\| ' + G + r'§7d§\((§[^§]*§)\.id\)\)', t)
+            if mm:
+                n_ = nm(mm.group(1))
+                cond.append('not having a Research Facility or any research bought' + (f', unless you have the upgrade {n_[1]}' if n_ else '')); continue
+            if t == "§&c§.§'!_§()": continue            # Reincarnation 3 or higher (or one upgrade): the Research Facilities access
         mm = re.fullmatch(FAC + r' == (\d+)', t)
         if mm: cond.append(f'playing as {FACTION[int(mm.group(1))]}'); continue
         mm = re.fullmatch(r'\(' + FAC + r' == 6 \|\| ' + FAC + r' == 7 \|\| ' + FAC + r' == 8\)', t)
@@ -299,6 +386,12 @@ def decode(body, c, ctx=None):
         if t == '§#3§ == -1' or t == '§8G§.§#3§ == -1':
             cond.append('having no prestige faction'); continue
         bad.append(t)
+    if rthr:
+        parts = []
+        for a, rr, tro_ in rthr:
+            nmt = nm(tro_) if tro_ else None
+            parts.append((f'Ascension {a}: ' if a is not None else '') + f'Reincarnation {rr}+' + (f' and the trophy {nmt[1]}' if nmt else ''))
+        cond.append('having reached ' + ('; '.join(parts)))
     if fac_lo is not None and fac_hi is not None:
         r = faction_range(fac_lo, fac_hi)
         if r: cond.append(r)
@@ -443,11 +536,38 @@ MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'Clicki
 MISC_NAMES = {'Gem Power', 'Challenge Power'}
 SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
 SPELL_TIER_CLASS = '§%p§'
+# Allegiances: the tier upgrades (Trade Treaty ... Union) and the twelve faction upgrades of every faction; bloodlines, lineages,
+# heritages, sets, legacies, remnants, quests and the unique building upgrades belong to later pages
+ALLEG_TAGS = {f'{n}Faction' for n in ('Angel', 'Demon', 'Drow', 'Druid', 'Dwarven', 'Elven', 'Faceless', 'Fairy', 'Goblin',
+                                     'Mercenary', 'Titan', 'Undead', 'Dragon', 'Archon', 'Djinn', 'Makers')}
+TIER_NO = [('Trade Treaty', 1), ('First Contract', 1), ('Friendship Pact', 2), ('Second Contract', 2), ('Alliance', 3),
+           ('Third Contract', 3), ('Union', 4), ('Fourth Contract', 4)]
+AXIS = {4: 'Order', 5: 'Chaos', 6: 'Balance'}
+MERC_PERKS = {'Trade Lords', 'Holy Crusaders', 'Heresiarchs'}      # the Mercenary faction upgrades (one per alignment)
+ALEG_NAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless',
+             9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
+
+
+def tier_of(name):
+    for k, n in TIER_NO:
+        if k in name: return n
+    return None
+
+
+def wanted(r):
+    if r['cat'] == 0:
+        return bool(r.get('idx')) or (r.get('grp') in ALLEG_TAGS and tier_of(r['n']) is not None) or r['n'] in MERC_PERKS
+    if r['cat'] == 1: return r.get('grp') in MISC_GROUPS or r['n'] in MISC_NAMES
+    return True
 by_cat = {name: [] for name in CATS.values()}
 problems = []
 todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS
-        and (r['cat'] != 1 or r.get('grp') in MISC_GROUPS or r['n'] in MISC_NAMES)]
-avail = availability([r['i'] for _, r in todo if r['cat'] != 4])
+        and wanted(r)]
+avail = availability([r['i'] for _, r in todo if r['cat'] not in (0, 4)])
+TIER_ITEM = {}      # (faction tag, tier) -> name
+for _, r in todo:
+    if r['cat'] == 0 and r.get('grp') in ALLEG_TAGS and not r.get('idx'): TIER_ITEM[(r['grp'], tier_of(r['n']))] = r['n']
+tcost = tier_costs([r['i'] for _, r in todo if r['cat'] == 0])
 for idx, r in todo:
     tok = r['q'].split('.')[-1]
     c = next(k for k in cl.values() if k.name == tok)
@@ -474,9 +594,10 @@ for idx, r in todo:
     av = next((m for m in c.methods if m.name == '§-6§'), None)
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
     ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float, str)) else None, 'tid': r.get('tid'),
-           'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None)}
+           'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None),
+           'cat': r['cat'], 'ax': r.get('ax')}
     src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
-    if r['cat'] != 4:
+    if r['cat'] not in (0, 4):
         row = avail.get(r['i'])
         if row and any(row):
             first = row.index(True)
@@ -486,7 +607,7 @@ for idx, r in todo:
         # (a row that is never true needs a prerequisite the probe does not model: keep the decoded bounds)
     if r['n'] == 'Reverse Autocasting':       # stated in the text of its trophy ("Can only be unlocked starting from ...")
         cond.append('starting from Ascension 1, at Reincarnation 40+')
-    if r['f'] != -1 and r['cat'] != 4:
+    if r['f'] != -1 and r['cat'] not in (0, 4):
         cond.insert(0, f"playing as {FACTION.get(r['f'], r['f'])}")
     if bad: problems.append((r['n'], bad))
     item = {
@@ -495,12 +616,29 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
+    if r['cat'] == 0:
+        item['faction'] = r['f']
+        item['perk'] = r.get('idx') or None
+        item['tier_no'] = None if r.get('idx') else tier_of(r['n'])
+        tc = tcost.get(r['i'], {})
+        lo, hi, free = tc.get('001', {}), tc.get('401', {}), tc.get('000', {})
+        item['cost'] = {'coins': tc.get('coins'),
+                        'fc': {ALEG_NAME[int(k)]: v for k, v in lo.items()},
+                        'fc_a4': {ALEG_NAME[int(k)]: v for k, v in hi.items()},
+                        'free_start': bool(lo) and not free}
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
                         for t, fs, sp in mo['more']]
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
+
+# the fourth-tier faction upgrades (10 to 12) need the Union, so they cannot be bought earlier than it
+_union = {u['faction']: u for u in by_cat['allegiances'] if u['tier_no'] == 4}
+for u in by_cat['allegiances']:
+    un = _union.get(u['faction'])
+    if u['perk'] and u['perk'] >= 10 and un and un['asc_min'] and (u['asc_min'] or 0) < un['asc_min']:
+        u['asc_min'] = un['asc_min']
 
 # value symbols: v, or v1, v2 ... when a description has several computed values
 raw = []

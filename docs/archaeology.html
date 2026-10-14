@@ -90,6 +90,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     }
     box.addEventListener('input', run);
     run();
+    return run;
   }
 
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }

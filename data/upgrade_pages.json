@@ -1,4 +1,11628 @@
 {
+"allegiances": [
+{
+"name": "Fairies Trade Treaty",
+"icon": "FairyTradeTreaty",
+"order": 208,
+"id": 208,
+"description": [
+{
+"text": "Fairies focus on the small and common things and make them magically powerful. Affiliating yourself with the Fairy faction will hugely improve the output of lower tier buildings.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Good alignment",
+"not having a faction yet",
+"following the Chaos path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FairyFaction",
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 20
+},
+"fc_a4": {
+"Fairy": 1000000000000
+},
+"free_start": true
+}
+},
+{
+"name": "Fairies Friendship Pact",
+"icon": "FairyFriendship",
+"order": 209,
+"id": 209,
+"description": [
+{
+"text": "Unlock Fairy upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Fairy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FairyFaction",
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 100
+},
+"fc_a4": {
+"Fairy": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Fairies Alliance",
+"icon": "FairyAlliance",
+"order": 210,
+"id": 210,
+"description": [
+{
+"text": "Unlock Fairy upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Fairy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FairyFaction",
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 500
+},
+"fc_a4": {
+"Fairy": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Fairies Union",
+"icon": "FairyUnion",
+"order": 211,
+"id": 211,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Swarming Tower"
+],
+"conditions": [
+"playing as Fairy"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "FairyFaction",
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1000000000000000000
+},
+"fc_a4": {
+"Fairy": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Pixie Dust Fertilizer",
+"icon": "FairyUpgrade1",
+"order": 212,
+"id": 212,
+"description": [
+{
+"text": "Increase the base production of Farms, Inns and Blacksmiths by +600 and reduce their building cost multiplier.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Workers",
+"icon": "FairyUpgrade2",
+"order": 213,
+"id": 213,
+"description": [
+{
+"text": "Increase the production of Farms, Inns and v based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spellsmith",
+"icon": "FairyUpgrade3",
+"order": 214,
+"id": 214,
+"description": [
+{
+"text": "Increase Mana Regeneration based on Farms, Inns and v owned.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.3}",
+"vars": [
+{
+"symbol": "N_{1}",
+"text": "Number of \"Farm\" buildings you own"
+},
+{
+"symbol": "N_{2}",
+"text": "Number of \"Inn\" buildings you own"
+},
+{
+"symbol": "N_{3}",
+"text": "Number of \"Blacksmith\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Starmetal Alloys",
+"icon": "FairyUpgrade4",
+"order": 215,
+"id": 215,
+"description": [
+{
+"text": "Autoclick based on active spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Golden Pots",
+"icon": "FairyUpgrade5",
+"order": 216,
+"id": 216,
+"description": [
+{
+"text": "100% of the production of Farms, Inns and Blacksmiths is added to base clicking reward.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Faction Coin find chance by +20%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Swarm of Fairies",
+"icon": "FairyUpgrade6",
+"order": 217,
+"id": 217,
+"description": [
+{
+"text": "Gain assistants based on Farms, Inns and v owned.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.7}",
+"vars": [
+{
+"symbol": "N_{1}",
+"text": "Number of \"Farm\" buildings you own"
+},
+{
+"symbol": "N_{2}",
+"text": "Number of \"Inn\" buildings you own"
+},
+{
+"symbol": "N_{3}",
+"text": "Number of \"Blacksmith\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Cuisine",
+"icon": "FairyUpgrade7",
+"order": 218,
+"id": 218,
+"description": [
+{
+"text": "Increase production bonus from Gems based on Fairy Chanting activity time in this Era.",
+"formulas": [
+{
+"latex": "v = 0.35 \\cdot t^{0.65}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Fairy Chanting\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Rainbow Link",
+"icon": "FairyUpgrade8",
+"order": 219,
+"id": 219,
+"description": [
+{
+"text": "Increase the production of all buildings based on Farms, Inns and v owned.",
+"formulas": [
+{
+"latex": "v = 1.25 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.75}",
+"vars": [
+{
+"symbol": "N_{1}",
+"text": "Number of \"Farm\" buildings you own"
+},
+{
+"symbol": "N_{2}",
+"text": "Number of \"Inn\" buildings you own"
+},
+{
+"symbol": "N_{3}",
+"text": "Number of \"Blacksmith\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Kind Hearts",
+"icon": "FairyUpgrade9",
+"order": 220,
+"id": 220,
+"description": [
+{
+"text": "Increase Maximum Mana based on Good buildings built.",
+"formulas": [
+{
+"latex": "v = 1.3 \\cdot B^{0.7}",
+"vars": [
+{
+"symbol": "B",
+"text": "Good buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bubble Swarm",
+"icon": "FairyUpgrade10",
+"order": 221,
+"id": 221,
+"description": [
+{
+"text": "Increase Maximum Mana based on the highest amount of Swarming Towers you built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot N^{1.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Wizard Tower\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Pheromones",
+"icon": "FairyUpgrade11",
+"order": 222,
+"id": 222,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on time spent as Chaos in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Chaos alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dream Catchers",
+"icon": "FairyUpgrade12",
+"order": 223,
+"id": 223,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Chaos spells cast in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.01 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{6}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all Chaos spells in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Trade Treaty",
+"icon": "ElvenTradeTreaty",
+"order": 226,
+"id": 226,
+"description": [
+{
+"text": "Elves are masters of efficiency and expertise, taking the best results from every single action. Affiliating yourself with the Elves faction will dramatically boost your clicking rewards while forsaking passive production.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Good alignment",
+"not having a faction yet",
+"following the Balance path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ElvenFaction",
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 20
+},
+"fc_a4": {
+"Elf": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Friendship Pact",
+"icon": "ElvenFriendship",
+"order": 227,
+"id": 227,
+"description": [
+{
+"text": "Unlock Elven upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Elf"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ElvenFaction",
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 100
+},
+"fc_a4": {
+"Elf": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Alliance",
+"icon": "ElvenAlliance",
+"order": 228,
+"id": 228,
+"description": [
+{
+"text": "Unlock Elven upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Elf"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ElvenFaction",
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 500
+},
+"fc_a4": {
+"Elf": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Union",
+"icon": "ElvenUnion",
+"order": 229,
+"id": 229,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Arboreal City"
+],
+"conditions": [
+"playing as Elf"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "ElvenFaction",
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1000000000000000000
+},
+"fc_a4": {
+"Elf": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Mint",
+"icon": "ElvenUpgrade1",
+"order": 230,
+"id": 230,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also autoclick 3 times per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sylvan Treasure Frills",
+"icon": "ElvenUpgrade2",
+"order": 231,
+"id": 231,
+"description": [
+{
+"text": "50% of your total building production is added to base clicking reward.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Ancient Clicking Arts",
+"icon": "ElvenUpgrade3",
+"order": 232,
+"id": 232,
+"description": [
+{
+"text": "Increase Mana Regeneration based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.75 \\cdot \\left(\\ln\\left(1 + C\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Emissary",
+"icon": "ElvenUpgrade4",
+"order": 233,
+"id": 233,
+"description": [
+{
+"text": "Increase clicking reward based on Good buildings built, and increase offline gains of Faction Coins by 200%.",
+"formulas": [
+{
+"latex": "v = 1.4 \\cdot B^{0.6}",
+"vars": [
+{
+"symbol": "B",
+"text": "Good buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Efficiency",
+"icon": "ElvenUpgrade5",
+"order": 234,
+"id": 234,
+"description": [
+{
+"text": "Increase Royal Exchange bonus based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 1.75 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.75}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Secret Clicking Techniques",
+"icon": "ElvenUpgrade6",
+"order": 235,
+"id": 235,
+"description": [
+{
+"text": "Increase the production of all buildings based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot C^{0.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Diplomacy",
+"icon": "ElvenUpgrade7",
+"order": 236,
+"id": 236,
+"description": [
+{
+"text": "Clicks count more based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.15}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Luck",
+"icon": "ElvenUpgrade8",
+"order": 237,
+"id": 237,
+"description": [
+{
+"text": "Each time you click you have 1% chance to gain additional coins equal to 10000% of your production. Manual clicks give more coins. Also generate Faction Coins based on reincarnations made.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Treasure Casing",
+"icon": "ElvenUpgrade9",
+"order": 238,
+"id": 238,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on Trophies unlocked.",
+"formulas": [
+{
+"latex": "v = 10 + 2.5 \\cdot N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wooden Dice",
+"icon": "ElvenUpgrade10",
+"order": 239,
+"id": 239,
+"description": [
+{
+"text": "Increase Elven Luck chance to trigger and its effects based on the highest amount of Arboreal Cities built in this Reincarnation. (Chance: +0%, Production: 0%, Faction Coins Found: +0%)",
+"formulas": [],
+"s": null
+},
+{
+"text": "When Elven Luck triggers, 100000 automatic Tax Collections are cast.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Camouflage",
+"icon": "ElvenUpgrade11",
+"order": 240,
+"id": 240,
+"description": [
+{
+"text": "Assistants and clicks count 1000% more, and increase assistants production based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Discipline",
+"icon": "ElvenUpgrade12",
+"order": 241,
+"id": 241,
+"description": [
+{
+"text": "Increase assistants additively and multiplicatively based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 150 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": "Additive",
+"shown": true
+},
+{
+"latex": "v_{2} = 1.5 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": "Multiplicative",
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angels Trade Treaty",
+"icon": "AngelTradeTreaty",
+"order": 244,
+"id": 244,
+"description": [
+{
+"text": "Angels' ability with magic is unparalleled as they have the innate power to infuse mana into everything they touch. Affiliating yourself with the Angels faction will grant you nearly unlimited spell power and the ability to take advantage of it directly.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Good alignment",
+"not having a faction yet",
+"following the Order path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AngelFaction",
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 20
+},
+"fc_a4": {
+"Angel": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Angels Friendship Pact",
+"icon": "AngelFriendship",
+"order": 245,
+"id": 245,
+"description": [
+{
+"text": "Unlock Angel upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Angel"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AngelFaction",
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 100
+},
+"fc_a4": {
+"Angel": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Angels Alliance",
+"icon": "AngelAlliance",
+"order": 246,
+"id": 246,
+"description": [
+{
+"text": "Unlock Angel upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Angel"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AngelFaction",
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 500
+},
+"fc_a4": {
+"Angel": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Angels Union",
+"icon": "AngelUnion",
+"order": 247,
+"id": 247,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Holy Site"
+],
+"conditions": [
+"playing as Angel"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "AngelFaction",
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1000000000000000000
+},
+"fc_a4": {
+"Angel": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Holy Bells",
+"icon": "AngelUpgrade1",
+"order": 248,
+"id": 248,
+"description": [
+{
+"text": "Increase Mana Regeneration based on buildings built.",
+"formulas": [
+{
+"latex": "v = B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angelic Determination",
+"icon": "AngelUpgrade2",
+"order": 249,
+"id": 249,
+"description": [
+{
+"text": "Increase the production of all buildings based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + N\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Feathers",
+"icon": "AngelUpgrade3",
+"order": 250,
+"id": 250,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on active spells.",
+"formulas": [
+{
+"latex": "v = 4 + 4 \\cdot S",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Guardian Angels",
+"icon": "AngelUpgrade4",
+"order": 251,
+"id": 251,
+"description": [
+{
+"text": "Increase the base production of Farms by +98000 and increase their production based on their quantity.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angelic Wisdom",
+"icon": "AngelUpgrade5",
+"order": 252,
+"id": 252,
+"description": [
+{
+"text": "Increase spell durations and multiplicatively increase Mana Regeneration by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline spell casts based on your offline Mana Regeneration.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archangel Feathers",
+"icon": "AngelUpgrade6",
+"order": 253,
+"id": 253,
+"description": [
+{
+"text": "Increase the production of all buildings based on Mana Regeneration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot \\left(\\ln\\left(1 + M\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Magical Gates",
+"icon": "AngelUpgrade7",
+"order": 254,
+"id": 254,
+"description": [
+{
+"text": "Increase Maximum Mana based on time spent as Good in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 15 + t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Good alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angelic Dominance",
+"icon": "AngelUpgrade8",
+"order": 255,
+"id": 255,
+"description": [
+{
+"text": "Increase production bonus from Gems based on God's Hand activity time in this Era..",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also decrease all spells cost by 50%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wings of Liberty",
+"icon": "AngelUpgrade9",
+"order": 256,
+"id": 256,
+"description": [
+{
+"text": "Increase the production of all buildings based on the duration of your longest spell.",
+"formulas": [
+{
+"latex": "v = 6 \\cdot D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of your longest spell (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Heaven's Brilliance",
+"icon": "AngelUpgrade10",
+"order": 257,
+"id": 257,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on the highest amount of Holy Sites built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Cathedral\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angelic Fortitude",
+"icon": "AngelUpgrade11",
+"order": 258,
+"id": 258,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the sum of all your spells' activity time.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Seraphim Wings",
+"icon": "AngelUpgrade12",
+"order": 259,
+"id": 259,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana, Mana Regeneration, Faction Coin find chance and assistants by 200%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblins Trade Treaty",
+"icon": "GoblinTradeTreaty",
+"order": 262,
+"id": 262,
+"description": [
+{
+"text": "The sly Goblins excel at making the best possible deals and bargains. Affiliating yourself with the Goblin faction will offer you economic opportunities and allows you to benefit from larger quantities of everything.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Evil alignment",
+"not having a faction yet",
+"following the Balance path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "GoblinFaction",
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 20
+},
+"fc_a4": {
+"Goblin": 1000000000000
+},
+"free_start": true
+}
+},
+{
+"name": "Goblins Friendship Pact",
+"icon": "GoblinFriendship",
+"order": 263,
+"id": 263,
+"description": [
+{
+"text": "Unlock goblin upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Goblin"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "GoblinFaction",
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 100
+},
+"fc_a4": {
+"Goblin": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Goblins Alliance",
+"icon": "GoblinAlliance",
+"order": 264,
+"id": 264,
+"description": [
+{
+"text": "Unlock goblin upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Goblin"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "GoblinFaction",
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 500
+},
+"fc_a4": {
+"Goblin": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Goblins Union",
+"icon": "GoblinUnion",
+"order": 265,
+"id": 265,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Slave Market"
+],
+"conditions": [
+"playing as Goblin"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "GoblinFaction",
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 1000000000000000000
+},
+"fc_a4": {
+"Goblin": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Strong Currency",
+"icon": "GoblinUpgrade1",
+"order": 266,
+"id": 266,
+"description": [
+{
+"text": "Gain assistants based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 1.25 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Slave Trading",
+"icon": "GoblinUpgrade2",
+"order": 267,
+"id": 267,
+"description": [
+{
+"text": "Increase the production of all buildings based on Evil buildings built.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot B^{0.7}",
+"vars": [
+{
+"symbol": "B",
+"text": "Evil buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Cheap Materials",
+"icon": "GoblinUpgrade3",
+"order": 268,
+"id": 268,
+"description": [
+{
+"text": "Tax Collection is worth more seconds based on buildings built.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fool's Gold",
+"icon": "GoblinUpgrade4",
+"order": 269,
+"id": 269,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on the highest amount of Witch Conclaves built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Economists",
+"icon": "GoblinUpgrade5",
+"order": 270,
+"id": 270,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on your current amount of Coins.",
+"formulas": [
+{
+"latex": "v = 15 + 0.5 \\cdot \\left(\\ln\\left(1 + Y\\right)\\right)^{1.25}",
+"vars": [
+{
+"symbol": "Y",
+"text": "Gold you own"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Hobgoblin Gladiators",
+"icon": "GoblinUpgrade6",
+"order": 271,
+"id": 271,
+"description": [
+{
+"text": "Increase the production of all buildings based on Tax Collection worth.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Central Bank",
+"icon": "GoblinUpgrade7",
+"order": 272,
+"id": 272,
+"description": [
+{
+"text": "Each time you cast a spell, you also cast free Tax Collections based on your Maximum mana.",
+"formulas": [
+{
+"latex": "v = 1 + \\left\\lfloor 1.5 \\cdot \\left(\\ln\\left(1 + \\frac{M_{\\max}}{1000}\\right)\\right)^{1.5} \\right\\rfloor",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Black Market",
+"icon": "GoblinUpgrade8",
+"order": 273,
+"id": 273,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on Gems owned.",
+"formulas": [
+{
+"latex": "v_{1} = 100 + 2 \\cdot \\ln\\left(1 + G\\right)",
+"vars": [
+{
+"symbol": "G",
+"text": "Your Gems"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also increase Offline production based on Tax Collection casts in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = \\left(\\ln\\left(1 + S\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "S",
+"text": "Number of times you have cast \"Tax Collection\" in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Green Fingers Discount",
+"icon": "GoblinUpgrade9",
+"order": 274,
+"id": 274,
+"description": [
+{
+"text": "Gain coins randomly every 120 seconds based on your total production. Value increases over time spent in this Reincarnation. Also works while offline.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fool's Gems",
+"icon": "GoblinUpgrade10",
+"order": 275,
+"id": 275,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on the highest amount of Slave Markets built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Slave Pen\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Money is Magic",
+"icon": "GoblinUpgrade11",
+"order": 276,
+"id": 276,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Tax Collections cast in this Era.",
+"formulas": [
+{
+"latex": "v = 1.8 \\cdot \\left(\\ln\\left(1 + S\\right)\\right)^{1.8}",
+"vars": [
+{
+"symbol": "S",
+"text": "Number of times you have cast \"Tax Collection\" in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Lousy Architecture",
+"icon": "GoblinUpgrade12",
+"order": 277,
+"id": 277,
+"description": [
+{
+"text": "Reduce Non-Unique Buildings cost multiplier, and increase their production based on their quantity.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Trade Treaty",
+"icon": "UndeadTradeTreaty",
+"order": 280,
+"id": 280,
+"description": [
+{
+"text": "Undead are resilient and tireless, but most importantly, they can't die. Affiliating yourself with the Undead faction will grant you a steady flow of production which increases drastically as time passes.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Evil alignment",
+"not having a faction yet",
+"following the Order path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "UndeadFaction",
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 20
+},
+"fc_a4": {
+"Undead": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Undead Friendship Pact",
+"icon": "UndeadFriendship",
+"order": 281,
+"id": 281,
+"description": [
+{
+"text": "Unlock Undead upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Undead"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "UndeadFaction",
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 100
+},
+"fc_a4": {
+"Undead": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Undead Alliance",
+"icon": "UndeadAlliance",
+"order": 282,
+"id": 282,
+"description": [
+{
+"text": "Unlock Undead upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Undead"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "UndeadFaction",
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 500
+},
+"fc_a4": {
+"Undead": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Undead Union",
+"icon": "UndeadUnion",
+"order": 283,
+"id": 283,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Flesh Workshop"
+],
+"conditions": [
+"playing as Undead"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "UndeadFaction",
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 1000000000000000000
+},
+"fc_a4": {
+"Undead": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "The Walking Dead",
+"icon": "UndeadUpgrade1",
+"order": 284,
+"id": 284,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 5 + 2.5 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{1.75}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Deadened Muscles",
+"icon": "UndeadUpgrade2",
+"order": 285,
+"id": 285,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of Necropolises built in this Reincarnation.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Death Temples",
+"icon": "UndeadUpgrade3",
+"order": 286,
+"id": 286,
+"description": [
+{
+"text": "Increase Mana Regeneration based on the highest amount of Necropolises built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Resilience",
+"icon": "UndeadUpgrade4",
+"order": 287,
+"id": 287,
+"description": [
+{
+"text": "Increase Night Time duration based on Undead coins found in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Corpse Supply",
+"icon": "UndeadUpgrade5",
+"order": 288,
+"id": 288,
+"description": [
+{
+"text": "Gain assistants based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 5 + 0.5 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Plagued Buildings",
+"icon": "UndeadUpgrade6",
+"order": 289,
+"id": 289,
+"description": [
+{
+"text": "Increase the production of all buildings based on the activity time of your most used spell in this Era.",
+"formulas": [
+{
+"latex": "v = 25 + 2.5 \\cdot U^{0.75}",
+"vars": [
+{
+"symbol": "U",
+"text": "Activity time of your most used spell in this Era (seconds; a few spells such as Tax Collection are not counted)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also adds offline time in this Era to Night Time activity time.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dead Fields",
+"icon": "UndeadUpgrade7",
+"order": 290,
+"id": 290,
+"description": [
+{
+"text": "All buildings and all spell activity times count 75% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Tireless Workers",
+"icon": "UndeadUpgrade8",
+"order": 291,
+"id": 291,
+"description": [
+{
+"text": "Increase the production of assistants based on your Mana Regeneration.",
+"formulas": [
+{
+"latex": "v = 85 \\cdot \\left(1.5 \\cdot \\ln\\left(1 + M\\right)\\right)^{1.15}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Unholy Rituals",
+"icon": "UndeadUpgrade9",
+"order": 292,
+"id": 292,
+"description": [
+{
+"text": "Increase production and offline production based on time spent as offline in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 50 + 7.5 \\cdot t^{0.75}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Era (seconds)"
+}
+],
+"label": "Overall",
+"shown": true
+},
+{
+"latex": "v_{2} = 50 + 9.5 \\cdot t^{0.95}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Era (seconds)"
+}
+],
+"label": "Offline",
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Flesh Servants",
+"icon": "UndeadUpgrade10",
+"order": 293,
+"id": 293,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on the highest amount of Flesh Workshops built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Orcish Arena\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Eternal Servitude",
+"icon": "UndeadUpgrade11",
+"order": 294,
+"id": 294,
+"description": [
+{
+"text": "Increase the production of Unique buildings based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Zombie Apocalypse",
+"icon": "UndeadUpgrade12",
+"order": 295,
+"id": 295,
+"description": [
+{
+"text": "Increase Offline production based on the duration of your longest spell.",
+"formulas": [
+{
+"latex": "v = 7 \\cdot D^{0.7}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of your longest spell (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demons Trade Treaty",
+"icon": "DemonTradeTreaty",
+"order": 298,
+"id": 298,
+"description": [
+{
+"text": "The mighty and fearless Demons cannot bother with petty trifles, they only care for greatness and power. Affiliating yourself with the Demons faction will hugely improve the output of higher tier buildings.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Evil alignment",
+"not having a faction yet",
+"following the Chaos path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DemonFaction",
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 20
+},
+"fc_a4": {
+"Demon": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Demons Friendship Pact",
+"icon": "DemonFriendship",
+"order": 299,
+"id": 299,
+"description": [
+{
+"text": "Unlock Demon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Demon"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DemonFaction",
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 100
+},
+"fc_a4": {
+"Demon": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Demons Alliance",
+"icon": "DemonAlliance",
+"order": 300,
+"id": 300,
+"description": [
+{
+"text": "Unlock Demon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Demon"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DemonFaction",
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 500
+},
+"fc_a4": {
+"Demon": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Demons Union",
+"icon": "DemonUnion",
+"order": 301,
+"id": 301,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Burning Abyss"
+],
+"conditions": [
+"playing as Demon"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "DemonFaction",
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 1000000000000000000
+},
+"fc_a4": {
+"Demon": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Torture Chambers",
+"icon": "DemonUpgrade1",
+"order": 302,
+"id": 302,
+"description": [
+{
+"text": "Increase the production of Farms based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 7 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3.5}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Infernal Magic",
+"icon": "DemonUpgrade2",
+"order": 303,
+"id": 303,
+"description": [
+{
+"text": "Increase Mana Regeneration based on Farms owned.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Burning Legion",
+"icon": "DemonUpgrade3",
+"order": 304,
+"id": 304,
+"description": [
+{
+"text": "Gain additional assistants based on the highest amount of Farms built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Lava Pits",
+"icon": "DemonUpgrade4",
+"order": 305,
+"id": 305,
+"description": [
+{
+"text": "Increase the base production of Farms by +900000 and Farms by +8.8 × 10⁶.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Overseers",
+"icon": "DemonUpgrade5",
+"order": 306,
+"id": 306,
+"description": [
+{
+"text": "Increase the production of the three highest building tiers based on Trophies unlocked.",
+"formulas": [
+{
+"latex": "v = 16 + 4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demonic Presence",
+"icon": "DemonUpgrade6",
+"order": 307,
+"id": 307,
+"description": [
+{
+"text": "Increase Maximum Mana based on Evil spells cast in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 40 + 4 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{4}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all Evil spells in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Devil Tyrant",
+"icon": "DemonUpgrade7",
+"order": 308,
+"id": 308,
+"description": [
+{
+"text": "Increase the production of the three highest building tiers based on time spent as Evil in this Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes the three highest building tiers count more by 100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5000000000000000,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Evil Conquerors",
+"icon": "DemonUpgrade8",
+"order": 309,
+"id": 309,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of Hell Portals built in this Reincarnation.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+50000000000000000,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Very Bad Guys",
+"icon": "DemonUpgrade9",
+"order": 310,
+"id": 310,
+"description": [
+{
+"text": "Increase the production of Farms based on Hellfire Blast activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 35 + 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Hellfire Blast\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Abyssal Furnace",
+"icon": "DemonUpgrade10",
+"order": 311,
+"id": 311,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of Burning Abysses built in this Reincarnation. Higher tiers get better bonuses.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demonic Fury",
+"icon": "DemonUpgrade11",
+"order": 312,
+"id": 312,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the least time spent between Evil and Chaos.",
+"formulas": [
+{
+"latex": "v = 25 + 0.25 \\cdot \\left(\\min\\left(t_{1}, t_{2}\\right)\\right)^{0.75}",
+"vars": [
+{
+"symbol": "t_{1}",
+"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
+},
+{
+"symbol": "t_{2}",
+"text": "Time spent with Chaos alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Devastation",
+"icon": "DemonUpgrade12",
+"order": 313,
+"id": 313,
+"description": [
+{
+"text": "Increase the production of the highest three building tiers based on your Mana Regeneration.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + M\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titans Trade Treaty",
+"icon": "TitanTradeTreaty",
+"order": 316,
+"id": 316,
+"description": [
+{
+"text": "Titans were an ancient race of giant creatures with godlike powers and millennial knowledge. Affiliating yourself with the Titans faction means big numbers: they will boost every aspect of your economy to unimaginable values.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archeology Titan Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Neutral alignment",
+"not having a faction yet",
+"following the Order path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "TitanFaction",
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 250,
+"Goblin": 250
+},
+"fc_a4": {
+"Angel": 1000000000000,
+"Goblin": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Titans Friendship Pact",
+"icon": "TitanFriendship",
+"order": 317,
+"id": 317,
+"description": [
+{
+"text": "Unlock Titan upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Titan"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "TitanFaction",
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1000,
+"Goblin": 1000
+},
+"fc_a4": {
+"Angel": 1e+21,
+"Goblin": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Titans Alliance",
+"icon": "TitanAlliance",
+"order": 318,
+"id": 318,
+"description": [
+{
+"text": "Unlock Titan upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Titan"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "TitanFaction",
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 4000,
+"Goblin": 4000
+},
+"fc_a4": {
+"Angel": 1e+27,
+"Goblin": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Titans Union",
+"icon": "TitanUnion",
+"order": 319,
+"id": 319,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Mountain Palace"
+],
+"conditions": [
+"playing as Titan"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "TitanFaction",
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1000000000000000000,
+"Goblin": 1000000000000000000
+},
+"fc_a4": {
+"Angel": 1e+33,
+"Goblin": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Colossal Forge",
+"icon": "TitanUpgrade1",
+"order": 320,
+"id": 320,
+"description": [
+{
+"text": "Increase the production of all buildings based on buildings built.",
+"formulas": [
+{
+"latex": "v = 6.25 \\cdot B^{0.625}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Charged Clicks",
+"icon": "TitanUpgrade2",
+"order": 321,
+"id": 321,
+"description": [
+{
+"text": "Increase Mana Regeneration additively and multiplicatively based on clicks made in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 1 + 0.5 \\cdot \\left(\\left(\\ln\\left(1 + C\\right)\\right)^{1.35} + C^{0.15}\\right)",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+],
+"shown": true
+},
+{
+"latex": "v_{2} = 0.5 \\cdot \\left(\\ln\\left(1 + C\\right)\\right)^{2.5} + C^{0.25}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+21,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Obelisk",
+"icon": "TitanUpgrade3",
+"order": 322,
+"id": 322,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on time spent as Neutral in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 6 + 6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Neutral alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+22,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Drill",
+"icon": "TitanUpgrade4",
+"order": 323,
+"id": 323,
+"description": [
+{
+"text": "Increase the base production of Farms by +19635 and Farms by +98000. Also increase their production by 2500%.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+24,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Charged Structures",
+"icon": "TitanUpgrade5",
+"order": 324,
+"id": 324,
+"description": [
+{
+"text": "Increase the production of all buildings based on Lightning Strike activity time in this Era.",
+"formulas": [
+{
+"latex": "v = 70 + 70 \\cdot t^{0.3}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+25,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Sized Walls",
+"icon": "TitanUpgrade6",
+"order": 325,
+"id": 325,
+"description": [
+{
+"text": "Increase Halls of Legends production based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 20 + 2.15 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2.15}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+26,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Cyclopean Strength",
+"icon": "TitanUpgrade7",
+"order": 326,
+"id": 326,
+"description": [
+{
+"text": "Assistants count 200% more. Increase their production based on time spent as Titans in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 30 + 1.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Titan in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+28,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Heavy Coins",
+"icon": "TitanUpgrade8",
+"order": 327,
+"id": 327,
+"description": [
+{
+"text": "Increase Royal Exchanges production bonus by 100% each and reduces their cost multiplier by 0.01.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+29,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Oversized Legends",
+"icon": "TitanUpgrade9",
+"order": 328,
+"id": 328,
+"description": [
+{
+"text": "Reduce Halls of Legends building cost multiplier, and increase assistants production based on Halls of Legends owned.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot N^{0.9}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Hall of Legends\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+30,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Giant Market",
+"icon": "TitanUpgrade10",
+"order": 329,
+"id": 329,
+"description": [
+{
+"text": "Multiplicatively increase Royal Exchanges count based on the highest amount of Mountain Palaces built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Deep Mine\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titanic Authority",
+"icon": "TitanUpgrade11",
+"order": 330,
+"id": 330,
+"description": [
+{
+"text": "Increase the production of Unique Buildings based on Royal Exchanges purchased.",
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Colossus Kingdom",
+"icon": "TitanUpgrade12",
+"order": 331,
+"id": 331,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on time spent as Order in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Order alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druids Trade Treaty",
+"icon": "DruidTradeTreaty",
+"order": 334,
+"id": 334,
+"description": [
+{
+"text": "The wise druids of old were a disciplined group of people from all races who strived to maintain world balance with mystical discipline and powerful magic. Affiliating yourself with the Druids faction will boost your magic capabilities and reward balancing of all things.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archeology Druid Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Neutral alignment",
+"not having a faction yet",
+"following the Balance path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DruidFaction",
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 250,
+"Demon": 250
+},
+"fc_a4": {
+"Elf": 1000000000000,
+"Demon": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Druids Friendship Pact",
+"icon": "DruidFriendship",
+"order": 335,
+"id": 335,
+"description": [
+{
+"text": "Unlock Druid upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Druid"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DruidFaction",
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1000,
+"Demon": 1000
+},
+"fc_a4": {
+"Elf": 1e+21,
+"Demon": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Druids Alliance",
+"icon": "DruidAlliance",
+"order": 336,
+"id": 336,
+"description": [
+{
+"text": "Unlock Druid upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Druid"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DruidFaction",
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 4000,
+"Demon": 4000
+},
+"fc_a4": {
+"Elf": 1e+27,
+"Demon": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Druids Union",
+"icon": "DruidUnion",
+"order": 337,
+"id": 337,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Ziggurat"
+],
+"conditions": [
+"playing as Druid"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "DruidFaction",
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1000000000000000000,
+"Demon": 1000000000000000000
+},
+"fc_a4": {
+"Elf": 1e+33,
+"Demon": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Druidic Vocabulary",
+"icon": "DruidUpgrade1",
+"order": 338,
+"id": 338,
+"description": [
+{
+"text": "Increase the production of all buildings based on their tier, giving the best bonus to the lowest.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Animal Companions",
+"icon": "DruidUpgrade2",
+"order": 339,
+"id": 339,
+"description": [
+{
+"text": "You instantly attract 3 assistants and more will come based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 3 + 1.75 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+21,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Natural Recycling",
+"icon": "DruidUpgrade3",
+"order": 340,
+"id": 340,
+"description": [
+{
+"text": "Increase Faction Coin find chance additively and multiplicatively based on buildings built.",
+"formulas": [
+{
+"latex": "v_{1} = 6 \\cdot B^{0.6}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+},
+{
+"latex": "v_{2} = 0.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+22,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Earthly Bond",
+"icon": "DruidUpgrade4",
+"order": 341,
+"id": 341,
+"description": [
+{
+"text": "Increase Maximum Mana based on the highest amount of Stone Pillars built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+24,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bardic Knowledge",
+"icon": "DruidUpgrade5",
+"order": 342,
+"id": 342,
+"description": [
+{
+"text": "Increase the production of all buildings based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 15 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+25,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Shapeshifting",
+"icon": "DruidUpgrade6",
+"order": 343,
+"id": 343,
+"description": [
+{
+"text": "Increase Mana Regeneration based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot A^{0.4}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+26,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mabinogion",
+"icon": "DruidUpgrade7",
+"order": 344,
+"id": 344,
+"description": [
+{
+"text": "Increase the production of all buildings based on their tier, giving the best bonus to the lowest.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+28,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Earthly Soul",
+"icon": "DruidUpgrade8",
+"order": 345,
+"id": 345,
+"description": [
+{
+"text": "Increase Mana Regeneration based on the highest amount of Stone Pillars built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+29,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Building Jungle",
+"icon": "DruidUpgrade9",
+"order": 346,
+"id": 346,
+"description": [
+{
+"text": "Increase the production of each building based on buildings of the same type.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+30,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Building Vines",
+"icon": "DruidUpgrade10",
+"order": 347,
+"id": 347,
+"description": [
+{
+"text": "Increase spell duration based on the highest amount of Ziggurats built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Ancient Pyramid\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Lunar Cycle",
+"icon": "DruidUpgrade11",
+"order": 348,
+"id": 348,
+"description": [
+{
+"text": "Increase Maximum Mana additively based on time spent online in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 50 \\cdot \\left(\\max\\left(0, t_{1} - t_{2}\\right)\\right)^{0.85}",
+"vars": [
+{
+"symbol": "t_{1}",
+"text": "Time played in this Era (seconds)"
+},
+{
+"symbol": "t_{2}",
+"text": "Time spent offline in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Increase Maximum Mana multiplicatively based on time spent offline in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = 0.5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Grove Farming",
+"icon": "DruidUpgrade12",
+"order": 349,
+"id": 349,
+"description": [
+{
+"text": "Increase the production of all buildings based on their tier. Middle tiers get better bonuses.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Trade Treaty",
+"icon": "FacelessTradeTreaty",
+"order": 352,
+"id": 352,
+"description": [
+{
+"text": "Little is known about the Faceless, but it is said they did not possess individual minds, instead they were all connected to a central consciousness which governed all their choices and behaviors. Affiliating yourself to the Faceless Faction will boost your production based on your past choices while giving progressively better bonuses.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archeology Faceless Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Neutral alignment",
+"not having a faction yet",
+"following the Chaos path (needed from Ascension 2)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FacelessFaction",
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 250,
+"Undead": 250
+},
+"fc_a4": {
+"Fairy": 1000000000000,
+"Undead": 1000000000000
+},
+"free_start": false
+}
+},
+{
+"name": "Faceless Friendship Pact",
+"icon": "FacelessFriendship",
+"order": 353,
+"id": 353,
+"description": [
+{
+"text": "Unlock Faceless upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Faceless"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FacelessFaction",
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1000,
+"Undead": 1000
+},
+"fc_a4": {
+"Fairy": 1e+21,
+"Undead": 1e+21
+},
+"free_start": false
+}
+},
+{
+"name": "Faceless Alliance",
+"icon": "FacelessAlliance",
+"order": 354,
+"id": 354,
+"description": [
+{
+"text": "Unlock Faceless upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Faceless"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "FacelessFaction",
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 4000,
+"Undead": 4000
+},
+"fc_a4": {
+"Fairy": 1e+27,
+"Undead": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Faceless Union",
+"icon": "FacelessUnion",
+"order": 355,
+"id": 355,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Forbidden Library"
+],
+"conditions": [
+"playing as Faceless"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "FacelessFaction",
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1000000000000000000,
+"Undead": 1000000000000000000
+},
+"fc_a4": {
+"Fairy": 1e+33,
+"Undead": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Territorial Expanse",
+"icon": "FacelessUpgrade1",
+"order": 356,
+"id": 356,
+"description": [
+{
+"text": "Increase the production of Farms based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 50 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+500000000000000000000,
+0,
+0,
+0,
+1e+48
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Evolutive Mutation",
+"icon": "FacelessUpgrade2",
+"order": 357,
+"id": 357,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on the highest amount of Labyrinths built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+21,
+0,
+0,
+0,
+1e+51
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Deep Memory",
+"icon": "FacelessUpgrade3",
+"order": 358,
+"id": 358,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on the time spent on your longest Era in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+22,
+0,
+0,
+0,
+1e+54
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Gold Synthesis",
+"icon": "FacelessUpgrade4",
+"order": 359,
+"id": 359,
+"description": [
+{
+"text": "Increase the production of Neutral buildings based on your current amount of Coins.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot \\left(\\ln\\left(1 + Y\\right)\\right)^{1.7}",
+"vars": [
+{
+"symbol": "Y",
+"text": "Gold you own"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+24,
+0,
+0,
+0,
+1.0000000000000001e+60
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mitosis",
+"icon": "FacelessUpgrade5",
+"order": 360,
+"id": 360,
+"description": [
+{
+"text": "Gain assistants based on buildings built.",
+"formulas": [
+{
+"latex": "v = B^{0.6}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+25,
+0,
+0,
+0,
+1e+63
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Overgrowth",
+"icon": "FacelessUpgrade6",
+"order": 361,
+"id": 361,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of buildings built in this Reincarnation.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+26,
+0,
+0,
+0,
+1.0000000000000001e+66
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Magical Treasure",
+"icon": "FacelessUpgrade7",
+"order": 362,
+"id": 362,
+"description": [
+{
+"text": "Increase Mana Regeneration based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot A^{0.4}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+28,
+0,
+0,
+0,
+1.0000000000000001e+75
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Abominations",
+"icon": "FacelessUpgrade8",
+"order": 363,
+"id": 363,
+"description": [
+{
+"text": "Increase the production of assistants based on active spells.",
+"formulas": [
+{
+"latex": "v = 20 \\cdot S^{0.8}",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+29,
+0,
+0,
+0,
+1e+78
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Hive Mind",
+"icon": "FacelessUpgrade9",
+"order": 364,
+"id": 364,
+"description": [
+{
+"text": "Increase the production of all buildings based on time spent as the Faceless. Persists through Reincarnations.",
+"formulas": [
+{
+"latex": "v = t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Faceless all-time (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+30,
+0,
+0,
+0,
+1e+81
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Primal Knowledge",
+"icon": "FacelessUpgrade10",
+"order": 365,
+"id": 365,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the highest amount of Monasteries built in this Reincarnation. Grows over time and resets every 15 minutes.",
+"formulas": [
+{
+"latex": "v = \\frac{t \\bmod 900}{60} \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Monastery\" buildings you have had in this Reincarnation"
+},
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+60,
+0,
+1.0000000000000002e+93
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Forbidden Language",
+"icon": "FacelessUpgrade11",
+"order": 366,
+"id": 366,
+"description": [
+{
+"text": "Increase the production of all buildings based on Brainwave duration.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot D^{0.7}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Brainwave\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+},
+{
+"text": "Also multiplicatively increase Brainwave headstart by 100%",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+75,
+0,
+1e+96
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dimension Door",
+"icon": "FacelessUpgrade12",
+"order": 367,
+"id": 367,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of Maximum Mana you had in this Reincarnation.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+90,
+0,
+1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Trade Treaty",
+"icon": "DwarvenTradeTreaty",
+"order": 370,
+"id": 370,
+"description": [
+{
+"text": "The Dwarves make the best masons, artisans and blacksmiths in all the realms. Their creations will outlast anything made by other races... except for beer, that is.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archeology Dwarf Trophy"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction"
+],
+"conditions": [
+"having Good alignment",
+"having no prestige faction",
+"not playing as Mercenary",
+"not having a Research Facility or any research bought, unless you have the upgrade Secrets of the Underworld",
+"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DwarvenFaction",
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 2500
+},
+"fc_a4": {
+"Dwarf": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Friendship Pact",
+"icon": "DwarvenFriendship",
+"order": 371,
+"id": 371,
+"description": [
+{
+"text": "Unlock Dwarven upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DwarvenFaction",
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 10000
+},
+"fc_a4": {
+"Dwarf": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Alliance",
+"icon": "DwarvenAlliance",
+"order": 372,
+"id": 372,
+"description": [
+{
+"text": "Unlock Dwarven upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DwarvenFaction",
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 25000
+},
+"fc_a4": {
+"Dwarf": 1e+39
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Union",
+"icon": null,
+"order": 373,
+"id": 373,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: High Bastion"
+],
+"conditions": [
+"having Dwarf as your prestige faction",
+"being at Reincarnation 115 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DwarvenFaction",
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 1e+24
+},
+"fc_a4": {
+"Dwarf": 1e+45
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Ale",
+"icon": "DwarvenUpgrade1",
+"order": 374,
+"id": 374,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on v owned.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Blacksmith\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+45,
+0,
+0,
+0,
+1e+120
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Expert Masonry",
+"icon": "DwarvenUpgrade2",
+"order": 375,
+"id": 375,
+"description": [
+{
+"text": "Reduce all building cost multipliers.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+46,
+0,
+0,
+0,
+1e+123
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mining Prodigies",
+"icon": "DwarvenUpgrade3",
+"order": 376,
+"id": 376,
+"description": [
+{
+"text": "Increase the production of all buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v = 25 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+47,
+0,
+0,
+0,
+1e+126
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Underground Citadels",
+"icon": "DwarvenUpgrade4",
+"order": 377,
+"id": 377,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Gems owned.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + G\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "G",
+"text": "Your Gems"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+49,
+0,
+0,
+0,
+1e+132
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Indestructible Treasure",
+"icon": "DwarvenUpgrade5",
+"order": 378,
+"id": 378,
+"description": [
+{
+"text": "Increase clicking reward based on buildings built.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot B^{0.65}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+50,
+0,
+0,
+0,
+1e+135
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bearded Assistants",
+"icon": "DwarvenUpgrade6",
+"order": 379,
+"id": 379,
+"description": [
+{
+"text": "Increase the production of assistants based on how long their beard is (it grows over time!).",
+"formulas": [
+{
+"latex": "v = t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+51,
+0,
+0,
+0,
+1e+138
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Battlehammers",
+"icon": "DwarvenUpgrade7",
+"order": 380,
+"id": 380,
+"description": [
+{
+"text": "Increase the production of all buildings based on Dwarven Coins found in this Era.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+53,
+0,
+0,
+0,
+1e+147
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Magic Resistance",
+"icon": "DwarvenUpgrade8",
+"order": 381,
+"id": 381,
+"description": [
+{
+"text": "Reduce Excavation cost multiplier.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+54,
+0,
+0,
+0,
+1e+150
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Overwatch",
+"icon": "DwarvenUpgrade9",
+"order": 382,
+"id": 382,
+"description": [
+{
+"text": "Increase Maximum Mana based on the duration of your longest spell.",
+"formulas": [
+{
+"latex": "v = 50 + 35 \\cdot D^{0.7}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of your longest spell (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+55,
+0,
+0,
+0,
+1e+153
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Solidity",
+"icon": "DwarvenUpgrade10",
+"order": 383,
+"id": 383,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on the highest amount of High Bastions you build in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 1.2 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Royal Castle\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+100,
+0,
+1e+165
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Stonetalking",
+"icon": "DwarvenUpgrade11",
+"order": 384,
+"id": 384,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest between Maximum mana and Mana Regeneration.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot \\left(\\ln\\left(1 + \\max\\left(M, M_{\\max}\\right)\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+},
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+110,
+0,
+1e+168
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Refined Minerals",
+"icon": "DwarvenUpgrade12",
+"order": 385,
+"id": 385,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration and Maximum Mana based on the highest time spent as Order, Balance or Chaos.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(\\max\\left(t_{1}, t_{2}, t_{3}\\right)\\right)^{0.5}",
+"vars": [
+{
+"symbol": "t_{1}",
+"text": "Time spent with Balance alignment in this Reincarnation (seconds)"
+},
+{
+"symbol": "t_{2}",
+"text": "Time spent with Order alignment in this Reincarnation (seconds)"
+},
+{
+"symbol": "t_{3}",
+"text": "Time spent with Chaos alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+120,
+0,
+1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Trade Treaty",
+"icon": "DrowTradeTreaty",
+"order": 388,
+"id": 388,
+"description": [
+{
+"text": "The Drow believe that any crime can go unpunished if nobody notices you did it. They value and praise perfect executions, and will reward those who plan accordingly.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archeology Drow Trophy"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction"
+],
+"conditions": [
+"having Evil alignment",
+"having no prestige faction",
+"not playing as Mercenary",
+"not having a Research Facility or any research bought, unless you have the upgrade Secrets of the Underworld",
+"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DrowFaction",
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 2500
+},
+"fc_a4": {
+"Drow": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Drow Friendship Pact",
+"icon": "DrowFriendship",
+"order": 389,
+"id": 389,
+"description": [
+{
+"text": "Unlock Drow upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DrowFaction",
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 10000
+},
+"fc_a4": {
+"Drow": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Drow Alliance",
+"icon": "DrowAlliance",
+"order": 390,
+"id": 390,
+"description": [
+{
+"text": "Unlock Drow upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DrowFaction",
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 25000
+},
+"fc_a4": {
+"Drow": 1e+39
+},
+"free_start": false
+}
+},
+{
+"name": "Drow Union",
+"icon": null,
+"order": 391,
+"id": 391,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Brothel"
+],
+"conditions": [
+"having Drow as your prestige faction",
+"being at Reincarnation 115 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DrowFaction",
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 1e+24
+},
+"fc_a4": {
+"Drow": 1e+45
+},
+"free_start": false
+}
+},
+{
+"name": "Underworld Tyranny",
+"icon": "DrowUpgrade1",
+"order": 392,
+"id": 392,
+"description": [
+{
+"text": "Increase the production of all buildings based on time spent as Evil in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 1.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+45,
+0,
+0,
+0,
+1e+120
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Honor Among Killers",
+"icon": "DrowUpgrade2",
+"order": 393,
+"id": 393,
+"description": [
+{
+"text": "Increase Faction Coin find chance based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 100 + 10 \\cdot A^{0.5}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+46,
+0,
+0,
+0,
+1e+123
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Shadow Advance",
+"icon": "DrowUpgrade3",
+"order": 394,
+"id": 394,
+"description": [
+{
+"text": "Increase the production of all buildings based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 7.5 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+47,
+0,
+0,
+0,
+1e+126
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mana Addicts",
+"icon": "DrowUpgrade4",
+"order": 395,
+"id": 395,
+"description": [
+{
+"text": "Increase Mana Regeneration based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 3 + 0.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+49,
+0,
+0,
+0,
+1e+132
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Blood Sacrifices",
+"icon": "DrowUpgrade5",
+"order": 396,
+"id": 396,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of Dark Temples built in this Reincarnation.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+50,
+0,
+0,
+0,
+1e+135
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Blackmail",
+"icon": "DrowUpgrade6",
+"order": 397,
+"id": 397,
+"description": [
+{
+"text": "Reduce the cost multiplier of Royal Exchanges.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+51,
+0,
+0,
+0,
+1e+138
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spider Gods",
+"icon": "DrowUpgrade7",
+"order": 398,
+"id": 398,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on buildings built.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+53,
+0,
+0,
+0,
+1e+147
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Professional Assassins",
+"icon": "DrowUpgrade8",
+"order": 399,
+"id": 399,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on Royal Exchanges purchased.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+54,
+0,
+0,
+0,
+1e+150
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Blade Dance",
+"icon": "DrowUpgrade9",
+"order": 400,
+"id": 400,
+"description": [
+{
+"text": "Increase the production of all buildings based on Combo Strike counter.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+5e+55,
+0,
+0,
+0,
+1e+153
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spider Clerics",
+"icon": "DrowUpgrade10",
+"order": 401,
+"id": 401,
+"description": [
+{
+"text": "Increase Royal Exchange bonus based on the highest amount of Brothels you build in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Inn\" buildings you have had in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+100,
+0,
+1e+165
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Ancillae Obscurae",
+"icon": "DrowUpgrade11",
+"order": 402,
+"id": 402,
+"description": [
+{
+"text": "Increase the production of Non-Unique Buildings based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 50 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+110,
+0,
+1e+168
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Crystal Servants",
+"icon": "DrowUpgrade12",
+"order": 403,
+"id": 403,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on Gems owned.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + G\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "G",
+"text": "Your Gems"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+120,
+0,
+1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragons Trade Treaty",
+"icon": "DragonTradeTreaty",
+"order": 406,
+"id": 406,
+"description": [
+{
+"text": "The Dragon is the mightiest, most imposing creature of all the realms. None may stand a chance alone against a Dragon, not even the fiercest of heroes. They usually care little for the lower creatures, but you have piqued their interest.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Dragon Tamer"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction"
+],
+"conditions": [
+"having Neutral alignment",
+"having no prestige faction",
+"not playing as Mercenary",
+"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DragonFaction",
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 5000000000,
+"Drow": 5000000000
+},
+"fc_a4": {
+"Dwarf": 1e+27,
+"Drow": 1e+27
+},
+"free_start": false
+}
+},
+{
+"name": "Dragons Friendship Pact",
+"icon": "DragonFriendship",
+"order": 407,
+"id": 407,
+"description": [
+{
+"text": "Unlock Dragon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction",
+"having found at least one Dwarven Coin and one Drow Coin in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DragonFaction",
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 5000000000000,
+"Drow": 5000000000000
+},
+"fc_a4": {
+"Dwarf": 1e+33,
+"Drow": 1e+33
+},
+"free_start": false
+}
+},
+{
+"name": "Dragons Alliance",
+"icon": "DragonAlliance",
+"order": 408,
+"id": 408,
+"description": [
+{
+"text": "Unlock Dragon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction",
+"having found at least one Dwarven Coin and one Drow Coin in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DragonFaction",
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 5000000000000000,
+"Drow": 5000000000000000
+},
+"fc_a4": {
+"Dwarf": 1e+39,
+"Drow": 1e+39
+},
+"free_start": false
+}
+},
+{
+"name": "Dragon Union",
+"icon": null,
+"order": 409,
+"id": 409,
+"description": [],
+"sources": [],
+"requirements": [
+"Upgrade: Dragon Pasture"
+],
+"conditions": [
+"having Dragon as your prestige faction",
+"being at Reincarnation 115 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DragonFaction",
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 1e+26,
+"Drow": 1e+26
+},
+"fc_a4": {
+"Dwarf": 1e+45,
+"Drow": 1e+45
+},
+"free_start": false
+}
+},
+{
+"name": "Dragonscales",
+"icon": "DragonUpgrade1",
+"order": 410,
+"id": 410,
+"description": [
+{
+"text": "Increase the production of all buildings based on time spent as Neutral in this Reincarnation. Effect is increased on Stone Pillars, Labyrinths and Halls of Legends.",
+"formulas": [],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+75,
+0,
+0,
+1e+120
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Iron Flight",
+"icon": "DragonUpgrade2",
+"order": 411,
+"id": 411,
+"description": [
+{
+"text": "Increase the production of Iron Strongholds based on Offline production and the number of spells affecting it.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Also reduces spell tier cost scaling for Dragon's Breath higher tiers.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+81,
+0,
+0,
+1e+123
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Imposing Presence",
+"icon": "DragonUpgrade3",
+"order": 412,
+"id": 412,
+"description": [
+{
+"text": "Increase Mana Regeneration based on neutral buildings built.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increases assistants multiplicatively while White Breath is active based on time spent as Dragons.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+87,
+0,
+0,
+1e+126
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragonborn",
+"icon": "DragonUpgrade4",
+"order": 413,
+"id": 413,
+"description": [
+{
+"text": "Increase assistants additively and multiplicatively, and their production, based on all time spent as Dragons.",
+"formulas": [],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+99,
+0,
+0,
+1e+132
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bountiful Hoard",
+"icon": "DragonUpgrade5",
+"order": 414,
+"id": 414,
+"description": [
+{
+"text": "Increase the production of all buildings based on Artifacts found.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot N^{1.25}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of artifacts you have found"
+}
+],
+"shown": true
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+105,
+0,
+0,
+1e+135
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sharp Claws",
+"icon": "DragonUpgrade6",
+"order": 415,
+"id": 415,
+"description": [
+{
+"text": "Multiplicatively increase Royal Exchange Bonus and Faction Coin find Chance based on clicks made in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = C^{0.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+],
+"label": "RE",
+"shown": true
+},
+{
+"latex": "v_{2} = 0.8 \\cdot C^{0.4}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+],
+"label": "FC Chance",
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+111,
+0,
+0,
+1e+138
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Ancient Hunger",
+"icon": "DragonUpgrade7",
+"order": 416,
+"id": 416,
+"description": [
+{
+"text": "Increase Maximum Mana additively and multiplicatively based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 15 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": "Additive",
+"shown": true
+},
+{
+"latex": "v_{2} = 0.5 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": "Multiplicative",
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+123,
+0,
+0,
+1e+147
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Eternal Wisdom",
+"icon": "DragonUpgrade8",
+"order": 417,
+"id": 417,
+"description": [
+{
+"text": "Increase the production of all buildings based on Royal Exchange bonus.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot X^{0.75}",
+"vars": [
+{
+"symbol": "X",
+"text": "Your Royal Exchange bonus (%)"
+}
+],
+"shown": true
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+129,
+0,
+0,
+1e+150
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Chromatic Scales",
+"icon": "DragonUpgrade9",
+"order": 418,
+"id": 418,
+"description": [
+{
+"text": "Increase the production of all buildings based on active Dragon's Breath effects.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Also increase Offline production by 100%.",
+"formulas": [],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+5e+135,
+0,
+0,
+1e+153
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fang Food",
+"icon": "DragonUpgrade10",
+"order": 419,
+"id": 419,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration and assistants based on the highest amount of Dragon Pastures built in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+100,
+0,
+1e+165
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wyrm's Rest",
+"icon": "DragonUpgrade11",
+"order": 420,
+"id": 420,
+"description": [
+{
+"text": "Increase the Ascension multiplier for Royal Market bonus by 0.7.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+110,
+0,
+1e+168
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Draconic Supremacy",
+"icon": "DragonUpgrade12",
+"order": 421,
+"id": 421,
+"description": [
+{
+"text": "Increase the production of all buildings based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 10 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+120,
+0,
+1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Trade Treaty",
+"icon": "ArchonTradeTreaty",
+"order": 425,
+"id": 425,
+"description": [
+{
+"text": "The Archons value loyalty, routine and any systematic and efficient plan of action. Affiliating with them will increase your ability to boost your production immensely over long periods of time.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archon Quest Trophy"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction",
+"Upgrade: the Alliance of your prestige faction"
+],
+"conditions": [
+"following the Order path",
+"having a prestige faction",
+"not having an astral faction yet",
+"not playing as Mercenary",
+"being at Reincarnation 125 or higher",
+"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "ArchonFaction",
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+27,
+"Undead": 1e+27
+},
+"fc_a4": {
+"Angel": 1e+51,
+"Undead": 1e+51
+},
+"free_start": false
+}
+},
+{
+"name": "Archon Friendship Pact",
+"icon": "ArchonFriendship",
+"order": 426,
+"id": 426,
+"description": [
+{
+"text": "Unlock Archon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Archon as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ArchonFaction",
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+30,
+"Undead": 1e+30
+},
+"fc_a4": {
+"Angel": 1e+57,
+"Undead": 1e+57
+},
+"free_start": false
+}
+},
+{
+"name": "Archon Alliance",
+"icon": "ArchonAlliance",
+"order": 427,
+"id": 427,
+"description": [
+{
+"text": "Unlock Archon upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Archon as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ArchonFaction",
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+33,
+"Undead": 1e+33
+},
+"fc_a4": {
+"Angel": 1e+63,
+"Undead": 1e+63
+},
+"free_start": false
+}
+},
+{
+"name": "Archon Union",
+"icon": "ArchonUnion",
+"order": 428,
+"id": 428,
+"description": [
+{
+"text": "Temporal Flux also increases Maximum Mana.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Nexus"
+],
+"conditions": [
+"having Archon as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "ArchonFaction",
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+39,
+"Undead": 1e+39
+},
+"fc_a4": {
+"Angel": 1e+69,
+"Undead": 1e+69
+},
+"free_start": false
+}
+},
+{
+"name": "Star Trading",
+"icon": "ArchonUpgrade1",
+"order": 429,
+"id": 429,
+"description": [
+{
+"text": "Increase the production of all buildings based on the maximum amount of Royal Exchanges you made in this Reincarnation.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+153,
+0,
+1e+189
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Energy Recharge",
+"icon": "ArchonUpgrade2",
+"order": 430,
+"id": 430,
+"description": [
+{
+"text": "Multiplicatively increases Maximum Mana based on time spent as Order in this Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Precognition base, scaling, and changes its starting duration to 1 minutes.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+155,
+0,
+1e+192
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Cosmic Resonance",
+"icon": "ArchonUpgrade3",
+"order": 431,
+"id": 431,
+"description": [
+{
+"text": "Increase Royal Exchange bonus based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot C^{0.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+157,
+0,
+1e+195
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Constellation",
+"icon": "ArchonUpgrade4",
+"order": 432,
+"id": 432,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+163,
+0,
+1e+201
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Pride",
+"icon": "ArchonUpgrade5",
+"order": 433,
+"id": 433,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on your current Lineage level.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Mana produced while offline based on your current Lineage level.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+165,
+0,
+1e+204
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Absent-mindedness",
+"icon": "ArchonUpgrade6",
+"order": 434,
+"id": 434,
+"description": [
+{
+"text": "Increase Offline production based on Excavation Depth and Excavation Resets made in this Reincarnation.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+167,
+0,
+1e+207
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Superior Consciousness",
+"icon": "ArchonUpgrade7",
+"order": 435,
+"id": 435,
+"description": [
+{
+"text": "Increase the production of Unique Buildings based on their quantity.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+173,
+0,
+1e+216
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Strange Attraction",
+"icon": "ArchonUpgrade8",
+"order": 436,
+"id": 436,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the activity time of your least used spell.",
+"formulas": [
+{
+"latex": "v = 100 + 0.8 \\cdot U^{0.8}",
+"vars": [
+{
+"symbol": "U",
+"text": "Activity time of your least used spell in this Reincarnation (seconds; a few spells such as Tax Collection are not counted)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+175,
+0,
+1.0000000000000001e+219
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Arcane Core",
+"icon": "ArchonUpgrade9",
+"order": 437,
+"id": 437,
+"description": [
+{
+"text": "Increase the production of all buildings based on mana produced in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + W\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+1e+222
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Purity of Form",
+"icon": "ArchonUpgrade10",
+"order": 438,
+"id": 438,
+"description": [
+{
+"text": "Lineage levels count 200% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+183,
+0,
+1e+234
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Absolute Hierarchy",
+"icon": "ArchonUpgrade11",
+"order": 439,
+"id": 439,
+"description": [
+{
+"text": "All faction spells gain 1 tier.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+185,
+0,
+1e+237
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Essence Extractor",
+"icon": "ArchonUpgrade12",
+"order": 440,
+"id": 440,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
+"formulas": [
+{
+"latex": "v = 0.15 \\cdot D^{0.7}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of your longest spell (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Archon Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+187,
+0,
+1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Trade Treaty",
+"icon": "DjinnTradeTreaty",
+"order": 443,
+"id": 443,
+"description": [
+{
+"text": "A magical race of ephemeral and elusive beings, unbound by natural rules but instead commanding them. Affiliating with them will grant you the ability to manipulate random outcomes to your advantage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Djinn Quest Trophy"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction",
+"Upgrade: the Alliance of your prestige faction"
+],
+"conditions": [
+"following the Chaos path",
+"having a prestige faction",
+"not having an astral faction yet",
+"not playing as Mercenary",
+"being at Reincarnation 125 or higher",
+"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "DjinnFaction",
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+27,
+"Demon": 1e+27
+},
+"fc_a4": {
+"Fairy": 1e+51,
+"Demon": 1e+51
+},
+"free_start": false
+}
+},
+{
+"name": "Djinn Friendship Pact",
+"icon": "DjinnFriendship",
+"order": 444,
+"id": 444,
+"description": [
+{
+"text": "Unlock Djinn upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Djinn as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DjinnFaction",
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+30,
+"Demon": 1e+30
+},
+"fc_a4": {
+"Fairy": 1e+57,
+"Demon": 1e+57
+},
+"free_start": false
+}
+},
+{
+"name": "Djinn Alliance",
+"icon": "DjinnAlliance",
+"order": 445,
+"id": 445,
+"description": [
+{
+"text": "Unlock Djinn upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Djinn as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DjinnFaction",
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+33,
+"Demon": 1e+33
+},
+"fc_a4": {
+"Fairy": 1e+63,
+"Demon": 1e+63
+},
+"free_start": false
+}
+},
+{
+"name": "Djinn Union",
+"icon": "DjinnUnion",
+"order": 446,
+"id": 446,
+"description": [
+{
+"text": "Maelstrom bonuses scale faster.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Pavilion"
+],
+"conditions": [
+"having Djinn as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "DjinnFaction",
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+39,
+"Demon": 1e+39
+},
+"fc_a4": {
+"Fairy": 1e+69,
+"Demon": 1e+69
+},
+"free_start": false
+}
+},
+{
+"name": "The Desire Within",
+"icon": "DjinnUpgrade1",
+"order": 447,
+"id": 447,
+"description": [
+{
+"text": "Increase the production of all buildings based on spells of your current alignments cast in this Era.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+153,
+0,
+1e+189
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Forbidden Will",
+"icon": "DjinnUpgrade2",
+"order": 448,
+"id": 448,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the highest amount of Faction Coins found in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+155,
+0,
+1e+192
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Magical Circuit",
+"icon": "DjinnUpgrade3",
+"order": 449,
+"id": 449,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on Researches selected.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+157,
+0,
+1e+195
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Aura of Magic",
+"icon": "DjinnUpgrade4",
+"order": 450,
+"id": 450,
+"description": [
+{
+"text": "Increase the production of Non-Unique Buildings based on Mana produced in this Era.",
+"formulas": [
+{
+"latex": "v = 0.325 \\cdot W^{0.325}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+163,
+0,
+1e+201
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spiritual Bindings",
+"icon": "DjinnUpgrade5",
+"order": 451,
+"id": 451,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on time spent offline in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 0.4 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also make spells cast and spell activity times count more based on time spent offline in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{2} = 0.2 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+165,
+0,
+1e+204
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wild Surge",
+"icon": "DjinnUpgrade6",
+"order": 452,
+"id": 452,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of your longest spell (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+167,
+0,
+1e+207
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Flashy Storm",
+"icon": "DjinnUpgrade7",
+"order": 453,
+"id": 453,
+"description": [
+{
+"text": "Increase the production of all buildings based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+173,
+0,
+1e+216
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wishing Well",
+"icon": "DjinnUpgrade8",
+"order": 454,
+"id": 454,
+"description": [
+{
+"text": "Increase the production of even-tier buildings based on assistants owned, odd-tier buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v_{1} = \\left(\\ln\\left(1 + A\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+},
+{
+"latex": "v_{2} = D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+175,
+0,
+1.0000000000000001e+219
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mana Creatures",
+"icon": "DjinnUpgrade9",
+"order": 455,
+"id": 455,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on the highest mana produced in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+1e+222
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wishes Come True",
+"icon": "DjinnUpgrade10",
+"order": 456,
+"id": 456,
+"description": [
+{
+"text": "Increase the production of all buildings based on Limited Wish activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Limited Wish\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+183,
+0,
+1e+234
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Blue Powder",
+"icon": "DjinnUpgrade11",
+"order": 457,
+"id": 457,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Royal Exchanges made.",
+"formulas": [
+{
+"latex": "v = 0.4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+185,
+0,
+1e+237
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Academic Prodigy",
+"icon": "DjinnUpgrade12",
+"order": 458,
+"id": 458,
+"description": [
+{
+"text": "Tax Collections are worth more seconds based on Trophies unlocked.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor 5 \\cdot N^{0.5} \\right\\rfloor",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Djinn Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+187,
+0,
+1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Trade Treaty",
+"icon": "MakersTradeTreaty",
+"order": 461,
+"id": 461,
+"description": [
+{
+"text": "The legendary old race which is said to have created the world, their watchful eye aims to keep all forces in check. Affiliating with them will increase your ability to dominate all your resources.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Makers Quest Trophy"
+}
+],
+"requirements": [
+"Upgrade: the Alliance of your base faction",
+"Upgrade: the Alliance of your prestige faction"
+],
+"conditions": [
+"following the Balance path",
+"having a prestige faction",
+"not having an astral faction yet",
+"not playing as Mercenary",
+"being at Reincarnation 125 or higher",
+"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "MakersFaction",
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+27,
+"Goblin": 1e+27
+},
+"fc_a4": {
+"Elf": 1e+51,
+"Goblin": 1e+51
+},
+"free_start": false
+}
+},
+{
+"name": "Makers Friendship Pact",
+"icon": "MakersFriendship",
+"order": 462,
+"id": 462,
+"description": [
+{
+"text": "Unlock Makers upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Makers as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MakersFaction",
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+30,
+"Goblin": 1e+30
+},
+"fc_a4": {
+"Elf": 1e+57,
+"Goblin": 1e+57
+},
+"free_start": false
+}
+},
+{
+"name": "Makers Alliance",
+"icon": "MakersAlliance",
+"order": 463,
+"id": 463,
+"description": [
+{
+"text": "Unlock Makers upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Makers as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MakersFaction",
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+33,
+"Goblin": 1e+33
+},
+"fc_a4": {
+"Elf": 1e+63,
+"Goblin": 1e+63
+},
+"free_start": false
+}
+},
+{
+"name": "Makers Union",
+"icon": "MakersUnion",
+"order": 464,
+"id": 464,
+"description": [
+{
+"text": "All Creation production effect is based on the highest Mana Regeneration in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Hall of Origination"
+],
+"conditions": [
+"having Makers as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MakersFaction",
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+39,
+"Goblin": 1e+39
+},
+"fc_a4": {
+"Elf": 1e+69,
+"Goblin": 1e+69
+},
+"free_start": false
+}
+},
+{
+"name": "Hand of the Makers",
+"icon": "MakersUpgrade1",
+"order": 465,
+"id": 465,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot C^{0.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 1,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+153,
+0,
+1e+189
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Everlasting Materials",
+"icon": "MakersUpgrade2",
+"order": 466,
+"id": 466,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of buildings built in this Reincarnation.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 2,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+155,
+0,
+1e+192
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Infinite Improvements",
+"icon": "MakersUpgrade3",
+"order": 467,
+"id": 467,
+"description": [
+{
+"text": "Increase the production of all buildings based on time spent as Balance.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Balance alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Trade Treaty"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 3,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+157,
+0,
+1e+195
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Magical Shards",
+"icon": "MakersUpgrade4",
+"order": 468,
+"id": 468,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on artifacts found.",
+"formulas": [
+{
+"latex": "v = N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of artifacts you have found"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 4,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+163,
+0,
+1e+201
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Treasure Mosaic",
+"icon": "MakersUpgrade5",
+"order": 469,
+"id": 469,
+"description": [
+{
+"text": "Additively increase Maximum Mana based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 27.5 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{2.75}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 5,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+165,
+0,
+1e+204
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Art of Commerce",
+"icon": "MakersUpgrade6",
+"order": 470,
+"id": 470,
+"description": [
+{
+"text": "Multiplicatively increase Royal Exchange bonus based on their quantity.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Friendship Pact"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 6,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+167,
+0,
+1e+207
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Stonecarving",
+"icon": "MakersUpgrade7",
+"order": 471,
+"id": 471,
+"description": [
+{
+"text": "Increase the production of all buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v = 25 + 2.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 7,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+173,
+0,
+1e+216
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Past Trade",
+"icon": "MakersUpgrade8",
+"order": 472,
+"id": 472,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on the time spent on your longest Era in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.65 \\cdot \\left(\\max\\left(t, E_{\\max}\\right)\\right)^{0.65}",
+"vars": [
+{
+"symbol": "E_{\\max}",
+"text": "Length of your longest Era in this Reincarnation, not counting the current one (seconds)"
+},
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 8,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+175,
+0,
+1.0000000000000001e+219
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Structural Stability",
+"icon": "MakersUpgrade9",
+"order": 473,
+"id": 473,
+"description": [
+{
+"text": "Increase the production of building tiers directly above or below Unique Buildings based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot N^{0.4}",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Alliance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 9,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+1e+222
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Valuable Antiquity",
+"icon": "MakersUpgrade10",
+"order": 474,
+"id": 474,
+"description": [
+{
+"text": "Multiplicatively increase triggered Tax Collections based on artifacts found.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of artifacts you have found"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 10,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+183,
+0,
+1e+234
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bedrock Foundations",
+"icon": "MakersUpgrade11",
+"order": 475,
+"id": 475,
+"description": [
+{
+"text": "Increase the base production of each building based on their tier.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 11,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+185,
+0,
+1e+237
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Reality Marble",
+"icon": "MakersUpgrade12",
+"order": 476,
+"id": 476,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 1.25 \\cdot \\left(\\ln\\left(1 + C\\right)\\right)^{1.25}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also makes Artifacts count more based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{2} = 0.5 \\cdot C^{0.25}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Upgrade: Makers Union"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"perk": 12,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+187,
+0,
+1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary First Contract",
+"icon": "MercenaryFirstContract",
+"order": 483,
+"id": 483,
+"description": [
+{
+"text": "When a mercenary crosses your path, there's only one thing that can save your life: offer him more money than he can get by killing you. If you gain the favor of the mercenaries, you will be able to combine the power of all races at once.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Ascension 3: Upgrade: Mercenary Duel",
+"Other Ascensions: Allegiances trophy: Mercenary Oath"
+],
+"conditions": [
+"not having a faction or a prestige faction yet",
+"having an alignment",
+"Not available at Ascension 2 or 4"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MercenaryFaction",
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": 1,
+"cost": {
+"coins": [
+5e+55,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Second Contract",
+"icon": "MercenarySecondContract",
+"order": 489,
+"id": 489,
+"description": [
+{
+"text": "Unlock Tier 2 upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Mercenary"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MercenaryFaction",
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": 2,
+"cost": {
+"coins": [
+2.5e+64,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Trade Lords",
+"icon": "MercenaryNeutralUpgrade",
+"order": 490,
+"id": 490,
+"description": [
+{
+"text": "Increase Mana Regeneration and Faction Coin find chance based on time spent offline in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot t^{0.75}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"label": "Mana",
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Mercenary Second Contract"
+}
+],
+"requirements": [],
+"conditions": [
+"having Neutral alignment"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+2.5e+67,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Holy Crusaders",
+"icon": "MercenaryGoodUpgrade",
+"order": 491,
+"id": 491,
+"description": [
+{
+"text": "Increase assistants additively and multiplicatively based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 2 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+}
+],
+"shown": true
+},
+{
+"latex": "v_{2} = 2 \\cdot \\left(\\ln\\left(1 + N\\right)\\right)^{1.2}",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Mercenary Second Contract"
+}
+],
+"requirements": [],
+"conditions": [
+"having Good alignment"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+2.5e+67,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Heresiarchs",
+"icon": "MercenaryEvilUpgrade",
+"order": 492,
+"id": 492,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on the combined activity time of your Evil spells in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Mercenary Second Contract"
+}
+],
+"requirements": [],
+"conditions": [
+"having Evil alignment"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+2.5e+67,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Third Contract",
+"icon": "MercenaryThirdContract",
+"order": 497,
+"id": 497,
+"description": [
+{
+"text": "Unlock Tier 3 upgrades.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Mercenary"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MercenaryFaction",
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": 3,
+"cost": {
+"coins": [
+5e+72,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Fourth Contract",
+"icon": "MercenaryFourthContract",
+"order": 503,
+"id": 503,
+"description": [
+{
+"text": "Unlock Tier 4 upgrades.",
+"formulas": [],
+"s": 3
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Mercenary Duel"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Mercenary"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "MercenaryFaction",
+"tier": -1,
+"building": null,
+"faction": 11,
+"perk": null,
+"tier_no": 4,
+"cost": {
+"coins": [
+0,
+0,
+0,
+1e+100,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+}
+],
 "secret": [
 {
 "name": "Ancient Device Power",

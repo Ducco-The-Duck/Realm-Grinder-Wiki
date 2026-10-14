@@ -36,6 +36,45 @@ def effect_label(text):
     return prefix + t[:1].upper() + t[1:]
 
 
+_SUP = str.maketrans('0123456789', '⁰¹²³⁴⁵⁶⁷⁸⁹')
+FNAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless',
+         9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
+# the name the search matches (the community codes map to these)
+FSEARCH = {**FNAME, 1: 'Elven', 9: 'Dwarven'}
+# base factions: alignment 1 Good, 2 Evil, 3 Neutral; axis 4 Order, 5 Chaos, 6 Balance
+FACTIONS = [
+    {'i': 0, 'n': 'Fairy', 'role': 'base', 'al': 1, 'ax': 5}, {'i': 1, 'n': 'Elf', 'role': 'base', 'al': 1, 'ax': 6},
+    {'i': 2, 'n': 'Angel', 'role': 'base', 'al': 1, 'ax': 4}, {'i': 3, 'n': 'Goblin', 'role': 'base', 'al': 2, 'ax': 6},
+    {'i': 4, 'n': 'Undead', 'role': 'base', 'al': 2, 'ax': 4}, {'i': 5, 'n': 'Demon', 'role': 'base', 'al': 2, 'ax': 5},
+    {'i': 6, 'n': 'Titan', 'role': 'base', 'al': 3, 'ax': 4}, {'i': 7, 'n': 'Druid', 'role': 'base', 'al': 3, 'ax': 6},
+    {'i': 8, 'n': 'Faceless', 'role': 'base', 'al': 3, 'ax': 5}, {'i': 11, 'n': 'Mercenary', 'role': 'merc'},
+    {'i': 9, 'n': 'Dwarf', 'role': 'prestige', 'al': 1}, {'i': 10, 'n': 'Drow', 'role': 'prestige', 'al': 2},
+    {'i': 12, 'n': 'Dragon', 'role': 'prestige', 'al': 3},
+    {'i': 13, 'n': 'Archon', 'role': 'astral', 'ax': 4}, {'i': 14, 'n': 'Djinn', 'role': 'astral', 'ax': 5},
+    {'i': 15, 'n': 'Makers', 'role': 'astral', 'ax': 6},
+]
+FORDER = [f['i'] for f in FACTIONS]
+
+
+def fmt_num(n):
+    n = float(n)
+    if n < 1e6: return f'{int(round(n)):,}' if n == int(n) else f'{n:g}'
+    m_, e_ = f'{n:.9e}'.split('e')
+    mant, e = float(m_), int(e_)
+    if abs(mant - round(mant)) < 1e-6: mant = round(mant)
+    sup = str(e).translate(_SUP)
+    return f'10{sup}' if mant == 1 else f'{mant:g} × 10{sup}'
+
+
+def cost_of(u):
+    c = u.get('cost')
+    if c is None: return None
+    out = {'coins': [fmt_num(v) for v in c['coins']] if c.get('coins') else None, 'fs': c.get('free_start') or None}
+    if c.get('fc'):
+        out['fc'] = [[n, fmt_num(v), fmt_num(c['fc_a4'].get(n, v))] for n, v in c['fc'].items()]
+    return out
+
+
 def item(u):
     forms = []
     for p in u['description']:
@@ -50,6 +89,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'c': cost_of(u)} if 'faction' in u else {}),
     }
 
 
@@ -93,15 +133,22 @@ def section(sid, name, items):
     return {'id': sid, 'name': name, 'entries': es, 'count': sum(len(e['items']) for e in es) if es else 0}
 
 
+def alleg_section():
+    its = sorted(pages['allegiances'], key=lambda u: (FORDER.index(u['faction']), 0 if u['perk'] is None else 1,
+                                                       u['tier_no'] or u['perk'] or 0))
+    es = [{'g': None, 'items': [item(u)]} for u in its]
+    return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
+
+
 sections = [
-    section('allegiances', 'Allegiances Upgrades', None),
+    alleg_section(),
     section('misc', 'Misc Upgrades', pages['misc']),
     section('magic', 'Magic Upgrades', pages['magic']),
     section('buildings', 'Buildings Upgrades', pages['buildings']),
     section('secret', 'Secret Upgrades', pages['secret']),
 ]
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
-data = json.dumps({'max': meta['max_ascension'], 'sections': sections}, ensure_ascii=False,
+data = json.dumps({'max': meta['max_ascension'], 'sections': sections, 'factions': FACTIONS}, ensure_ascii=False,
                   separators=(',', ':')).replace('</', '<\\/')
 
 html = r'''<!doctype html>
@@ -131,6 +178,9 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar label.off{color:var(--muted);cursor:default}
 .bar select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
 .bar .hint{color:var(--muted);font-size:.85rem}
+.bar .row[hidden]{display:none}
+.subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
+#tip .cost{margin-top:2px}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
 section{margin:0 0 26px}
@@ -182,7 +232,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far.</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -195,6 +245,11 @@ the base values <i>v</i>.</div>
   <div class="row"><label for="asc"><b>Ascension</b></label><select id="asc"></select>
   <span class="hint">The A marks and the greyed-out upgrades (not available in it) follow the chosen Ascension.</span></div>
   <div class="row" id="filter"><b>Show</b></div>
+  <div class="row" id="alleg-row" hidden><b>Factions</b>
+    <label>Base <select id="pk-b"></select></label>
+    <label>Prestige <select id="pk-p"></select></label>
+    <label>Astral <select id="pk-a"></select></label>
+    <span class="hint" id="pk-h"></span></div>
 </div>
 <div id="root"></div>
 </main>
@@ -211,17 +266,19 @@ the base values <i>v</i>.</div>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent);
-  var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [], gcells = [];
+  var SECTIONS = DATA.sections, MAXA = DATA.max, ASC = 0, cells = [], gcells = [], FACS = DATA.factions;
+  var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 /*SEARCH_JS*/
-  function sOf(it){ return it._s || (it._s = normS([it.n,facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
+  function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;
   }
   function pred(p){
-    return p.replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
+    return p.replace(/^not having /,'you do not have ').replace(/^not playing /,'you are not playing ').replace(/^following /,'you are following ')
+            .replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
             .replace(/^being able /,'you are able ').replace(/^being /,'you are ');
   }
   function As(k){ return new Array(k+1).join('A'); }
@@ -275,6 +332,13 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
+    if(it.c){
+      var cl=costLines(it);
+      if(cl.length){
+        tip.appendChild(el('span','lbl','Cost'));
+        cl.forEach(function(t){ tip.appendChild(el('div','cost',t)); });
+      }
+    }
     if(it.m) tip.appendChild(el('div','more','Click for more info'));
     if(it.s.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
@@ -288,6 +352,18 @@ the base values <i>v</i>.</div>
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   function hideTip(){ tip.style.display='none'; }
+  function costLines(it){
+    var c=it.c, out=[];
+    if(c.fc){
+      var parts=c.fc.map(function(x){ return (ASC>=4 ? x[2] : x[1])+' '+x[0]+' Faction Coins'; });
+      out.push(parts.join(' and '));
+      if(c.fs) out.push('Free until you have a Gem or a Reincarnation.');
+    } else if(c.coins){
+      var v=c.coins[Math.min(ASC,4)];
+      out.push(v==='0' ? '0 coins (the game\'s price at this Ascension)' : v+' coins');
+    }
+    return out;
+  }
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
 
@@ -373,6 +449,17 @@ the base values <i>v</i>.</div>
     if(!s.entries) return;
     var sec=el('section'); sec.hidden=!on;
     var h=el('h2',null,s.name); h.appendChild(el('small',null,s.count+' upgrades')); sec.appendChild(h);
+    if(s.alleg){
+      s.entries.forEach(function(en){ var it=en.items[0]; (allegItems[it.fa]=allegItems[it.fa]||[]).push(it); });
+      allegBox=el('div'); sec.appendChild(allegBox); root.appendChild(sec);
+      document.getElementById('alleg-row').hidden=!on;
+      cb.addEventListener('change',function(){
+        sec.hidden=!cb.checked; hideTip(); document.getElementById('alleg-row').hidden=!cb.checked;
+        saved[s.id]=cb.checked;
+        try{ localStorage.setItem('upgrade-sections', JSON.stringify(saved)); }catch(e){}
+      });
+      return;
+    }
     var g=el('div','grid');
     s.entries.forEach(function(en){
       if(en.items.length===1){
@@ -398,8 +485,90 @@ the base values <i>v</i>.</div>
       try{ localStorage.setItem('upgrade-sections', JSON.stringify(saved)); }catch(e){}
     });
   });
+  // ---- Allegiances: the base / prestige / astral faction picker
+  var ROLE_TXT={base:'base faction', merc:'base faction', prestige:'prestige faction', astral:'astral faction'};
+  function facOf(i){ for(var k=0;k<FACS.length;k++) if(FACS[k].i===i) return FACS[k]; return null; }
+  function fillSel(sel, opts, val, disabled){
+    sel.textContent='';
+    opts.forEach(function(o){ var op=el('option',null,o[1]); op.value=String(o[0]); sel.appendChild(op); });
+    sel.value=String(val); sel.disabled=!!disabled;
+  }
+  function syncPick(){
+    var base=facOf(PICK.b), hint='';
+    var bo=[[-1,'All factions']]; FACS.forEach(function(f){ if(f.role==='base'||f.role==='merc') bo.push([f.i,f.n]); });
+    fillSel(document.getElementById('pk-b'), bo, PICK.b, false);
+    // prestige: the one whose alignment matches the base faction (Mercenaries have none)
+    var po=[[-1,'None']];
+    if(base && base.role==='base') FACS.forEach(function(f){ if(f.role==='prestige' && f.al===base.al) po.push([f.i,f.n]); });
+    else PICK.p=-1;
+    if(PICK.p>=0 && !po.some(function(o){ return o[0]===PICK.p; })) PICK.p=-1;
+    fillSel(document.getElementById('pk-p'), po, PICK.p, po.length<2);
+    // astral: from Ascension 2, needs a prestige faction, and has to follow the same path (Order / Chaos / Balance)
+    var ao=[[-1,'None']];
+    if(base && base.role==='base' && PICK.p>=0 && ASC>=2) FACS.forEach(function(f){ if(f.role==='astral' && f.ax===base.ax) ao.push([f.i,f.n]); });
+    else PICK.a=-1;
+    if(PICK.a>=0 && !ao.some(function(o){ return o[0]===PICK.a; })) PICK.a=-1;
+    fillSel(document.getElementById('pk-a'), ao, PICK.a, ao.length<2);
+    if(!base) hint='Pick a base faction to see its upgrades together with those of a prestige and an astral faction.';
+    else if(base.role==='merc') hint='Mercenaries cannot take a prestige or an astral faction.';
+    else if(PICK.p<0) hint='Prestige factions need the Alliance upgrade of the base faction; the prestige faction has to match its alignment.';
+    else if(ASC<2) hint='Astral factions are available from Ascension 2.';
+    else if(PICK.a<0) hint='Astral factions need a prestige faction and follow the same path as the base faction (Order, Chaos or Balance).';
+    document.getElementById('pk-h').textContent=hint;
+  }
+  function renderAlleg(){
+    if(!allegBox) return;
+    allegBox.textContent='';
+    allegCells=[]; allegGroups=[];
+    var picked = PICK.b<0 ? null : [PICK.b].concat(PICK.p>=0?[PICK.p]:[], PICK.a>=0?[PICK.a]:[]);
+    var g=el('div','grid');
+    if(!picked){
+      FACS.forEach(function(f){
+        var its=allegItems[f.i]||[]; if(!its.length) return;
+        var en={g:f.n+' upgrades', items:its}, gb=itemCell(its[0],true);
+        gb.classList.add('group');
+        gb.setAttribute('aria-label', en.g+', '+its.length+' upgrades');
+        gb.appendChild(el('span','badge','\u00d7'+its.length));
+        var summary={n:en.g, summary:its.length+' upgrades \u2014 click to view'};
+        gb.addEventListener('mouseenter',function(){ showGroupTip(summary, gb); });
+        gb.addEventListener('focus',function(){ showGroupTip(summary, gb); });
+        gb.addEventListener('click',function(e){ e.stopPropagation(); openGroup(en); });
+        gb._s=normS(en.g)+' '+its.map(sOf).join(' ');
+        g.appendChild(gb); allegGroups.push([gb,en]);
+      });
+      allegBox.appendChild(g);
+    } else {
+      picked.forEach(function(fi){
+        var f=facOf(fi), its=allegItems[fi]||[];
+        allegBox.appendChild(el('div','subh',f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        var gg=el('div','grid');
+        its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
+        allegBox.appendChild(gg);
+      });
+    }
+    decorateAlleg();
+    if(runSearch) runSearch();
+  }
+  var allegCells=[], allegGroups=[];
+  function decorateAlleg(){
+    allegCells.forEach(function(p){ decorate(p[0], p[1]); });
+    allegGroups.forEach(function(p){ p[0].classList.toggle('na', p[1].items.every(unavailable)); });
+  }
+  function bindPick(id, key){
+    document.getElementById(id).addEventListener('change',function(){
+      PICK[key]=parseInt(this.value,10);
+      if(key==='b'){ PICK.p=-1; PICK.a=-1; }
+      if(key==='p'){ PICK.a=-1; }
+      savePick(); syncPick(); renderAlleg();
+    });
+  }
+  function savePick(){ try{ localStorage.setItem('alleg-pick', JSON.stringify(PICK)); }catch(e){} }
+  try{ var sp=JSON.parse(localStorage.getItem('alleg-pick')||'null'); if(sp && typeof sp.b==='number') PICK={b:sp.b|0, p:sp.p|0, a:sp.a|0}; }catch(e){}
+  bindPick('pk-b','b'); bindPick('pk-p','p'); bindPick('pk-a','a');
+
   function apply(){
     cells.forEach(function(p){ decorate(p[0], p[1]); });
+    syncPick(); renderAlleg();
     gcells.forEach(function(p){ p[0].classList.toggle('na', p[1].items.every(unavailable)); });
     hideTip();
   }
@@ -408,7 +577,7 @@ the base values <i>v</i>.</div>
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
-  searchInit(root);
+  runSearch=searchInit(root);
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });

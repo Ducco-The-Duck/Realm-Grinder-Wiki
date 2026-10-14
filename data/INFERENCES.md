@@ -41,6 +41,21 @@ Only these need checking; remove an item when it is settled.
    automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
    R90 every branch), Ancient Device Power, Legacy of the Dwarven Kings, Dark Light of Bondelnar, and -1 for Mercenaries at
    Ascension 1; at Ascension 2 only, the Archon Bloodline. From Ascension 2 on every other source is ignored.
+7. **Allegiances upgrades** (treaty tiers and the twelve faction upgrades per faction; built from code, unchecked):
+   - **Coin prices at Ascension 1-3:** the code's price getter returns 0 for most faction upgrades there (a price is set only
+     for Ascension 0 and from Ascension 4; the Dragon upgrades only for Ascension 1 and 4). The tooltip shows "0 coins" with a
+     note. Check what a faction upgrade really costs at Ascension 1.
+   - **Faction Coin prices of the tiers** (Trade Treaty 20 / Friendship 100 / Alliance 500 / Union 10^18, 10^12 / 10^21 / 10^27 /
+     10^33 from Ascension 4; Titan, Druid and Faceless pay two vanilla coin types, the prestige factions their own coins, the
+     astral ones the coins of both parents) come straight from the price methods. The Fairy and Goblin Trade Treaty are free
+     until the first Gem or Reincarnation.
+   - **Alternatives:** a faction upgrade's tier requirement can be replaced by the faction's Legacy upgrade (Bronze / Silver /
+     Gold / Diamond), and a Union's building upgrade by the Mercenary Building Contract in some cases (helper `§`!i§`, not
+     spelled out on the page).
+   - **Dragon Friendship Pact / Alliance** require Dwarven Coins and Drow Coins found in this Era (stats 41 and 42, read as
+     the Dwarven and Drow coin counters because stats 6 to 11 and 41, 42 are summed as faction coins found).
+   - Not covered yet: Bloodlines, Lineage, Heritages, Perks 1-6 of the Lineage system, Sets, Legacies, Remnants, quests, unique
+     building upgrades and the Mercenary Upgrade series; the faction spell upgrades go with the Spell Tiers part.
 
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).

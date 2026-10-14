@@ -121,6 +121,7 @@ popups are always the base values <i>v</i>.</div>
     }
     box.addEventListener('input', run);
     run();
+    return run;
   }
 
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }

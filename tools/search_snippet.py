@@ -48,6 +48,7 @@ JS = r'''
     }
     box.addEventListener('input', run);
     run();
+    return run;
   }
 '''
 
