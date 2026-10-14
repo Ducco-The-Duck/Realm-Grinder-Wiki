@@ -262,8 +262,8 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : (it.au ? 'Granted automatically when ' : 'Can only be bought when ')+it.o.map(pred).join(' and ')+'.')));
-    if(it.au) tip.appendChild(el('div','more','Never shown in the game\'s upgrade list: you simply have the effect.'));
+    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : (it.au ? 'Granted automatically the first time ' : 'Can only be bought when ')+it.o.map(pred).join(' and ')+'.')));
+    if(it.au) tip.appendChild(el('div','more','Kept permanently once granted, and never shown in the game\'s upgrade list: you simply have the effect.'));
     if(unavailable(it)){
       tip.appendChild(el('span','lbl','Not available'));
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
