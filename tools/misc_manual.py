@@ -189,3 +189,40 @@ ASSISTANT_NAMES = {'Assistant Trade Union', 'Assistant Syndicate', 'Assistant Ca
 ASSISTANT_FORMULA = F(r'v = 5 \cdot n \cdot A', ('n', 'Assistant upgrades of this series you have bought'),
                       ('A', 'Your number of assistants (as shown in the game)'))
 
+
+
+# seasonal upgrades whose value depends on collected event resources (read from their getters; the resource names come
+# from the event pages of the game's own text)
+def _poly(a, b, c, x='x'):
+    return rf'\min\left(100000,\ {a} {x} - {b} {x}^{{2}} + {c} {x}^{{3}}\right)'
+
+
+def _g(y):
+    return rf'\min\left(12500,\ 1.6 {y} - 0.002 {y}^{{2}} + 0.000024 {y}^{{3}}\right)'
+
+
+EVENT_FORMULAS = {
+    'Antipodes': [F('v = ' + _poly('', '0.02', '0.0002'),
+                    ('x', '(Frost Orbs + Flame Orbs collected, all-time) / 27'))],
+    'Nephilim Glory': [F('v = ' + _poly('', '0.005', '0.00045'),
+                         ('x', '(Holy Symbols + Lava Stones collected, all-time) / 20'))],
+    'Avalanche': [F(r'v = \left(' + _poly('0.8', '0.006', '0.00004') + r'\right)^{p}',
+                    ('x', 'Snowballs collected (all-time) / 35'),
+                    ('p', '1; with Heavy Avalanche bought 2.5 · A, with Grand Avalanche as well 5 · A, where A is your '
+                          'Ascension number'))],
+    'Blue Omelette': [F('v = ' + _poly('3', '0.03', '0.0002'), ('x', 'Rare Eggs collected (all-time)'))],
+    'The Greatest Army': [F('v = ' + _poly('', '0.005', '0.00045'), ('x', 'Goblin Crowns collected (all-time) / 20'))],
+    'Crucible Of Darkness': [F(
+        r'v = \left(1 + 0.0035 \cdot \frac{a + b + c}{3}\right) \cdot \left(\left(1 + g(a/25)\right)'
+        r'\left(1 + g(b/25)\right)\left(1 + g(c/25)\right)\right)^{0.4}',
+        ('a', 'Blood collected (all-time)'), ('b', 'Ectoplasm collected (all-time)'), ('c', 'Bones collected (all-time)'),
+        ('g(y)', 'min(12500, 1.6·y − 0.002·y² + 0.000024·y³)'))],
+    'Broken Mirror': [F(
+        r'v = \left(1 + 0.0035 \cdot \frac{a + b + c}{3}\right) \cdot \left(\left(1 + g(a/25)\right)'
+        r'\left(1 + g(b/25)\right)\left(1 + g(c/25)\right)\right)^{0.4}',
+        ('a', 'Crystal Prisms collected (all-time)'), ('b', 'Entropic Drops collected (all-time)'),
+        ('c', 'Equilibrium Fragments collected (all-time)'),
+        ('g(y)', 'min(12500, 1.6·y − 0.002·y² + 0.000024·y³)'))],
+    '1st Anniversary': [F(r'v = 0.003 \cdot \left(R + 1\right) \cdot \left(t \cdot \frac{R + 1}{2.5}\right)^{0.7}',
+                          ('R', 'Reincarnations made'), ('t', 'Time played (all-time, seconds)'))],
+}

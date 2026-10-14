@@ -36,6 +36,16 @@ Only these need checking; remove an item when it is settled.
    Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
    upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
+6. **Other Misc upgrades and the Event upgrades** (built from code, unchecked): Ruby Upgrades, Mercenary Tribute and Oath,
+   Secrets of the Ancients / Underworld / Warriors, the dragon egg line, the six slot upgrades, the Archeology line (all
+   permanent); and 75 seasonal upgrades. Assumptions: which event each seasonal upgrade belongs to (explicit
+   `PlayFab.season == N` in the code, otherwise by position in the upgrade list: 2 Christmas, 3 Valentine, 4 Easter,
+   5 1st Anniversary, 6 Summer, 7 Halloween, 8 Nephilim, 9 Goblin Army, 10 Thanksgiving, 11 Idillium; the names of 5, 8
+   and 9 are guesses from the item names); the Easter egg condition "having obtained this Egg" (flag `§?!6§`); the
+   formulas of the resource-based ones (Antipodes, Nephilim Glory, Avalanche, Blue Omelette, The Greatest Army, Crucible
+   Of Darkness, Broken Mirror, 1st Anniversary, Ruby Shine). Left out on purpose: the research facilities (Spellweavery ...
+   Apeiron) and the five real-money Shop gifts (Gift of the Heroes / Kings / Gods / Myths / Faithful).
+
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 

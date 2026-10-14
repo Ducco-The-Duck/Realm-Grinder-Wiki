@@ -23,7 +23,12 @@ sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
 ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
-CATS = {4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}      # the game's category indexes of the upgrade sections
+CATS = {4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}
+# seasonal upgrades: engine upgrade index ranges -> season id (an explicit `PlayFab.season == N` in the game code wins)
+EVENT_RANGES = [(92, 98, 3), (107, 113, 6), (122, 129, 8), (130, 137, 2), (138, 155, 4), (156, 160, 7),
+                (177, 183, 9), (185, 186, 10), (202, 207, 11)]
+EVENT_NAMES = {1: 'Thanksgiving', 2: 'Christmas', 3: 'Valentine', 4: 'Easter', 5: '1st Anniversary', 6: 'Summer',
+               7: 'Halloween', 8: 'Nephilim', 9: 'Goblin Army', 10: 'Thanksgiving', 11: 'Idillium', 'AF': 'April Fools'}      # the game's category indexes of the upgrade sections
 
 MUT = f"""
   var G = {g}, v = __V;
@@ -32,6 +37,8 @@ MUT = f"""
   G.{J('§0!A§')}.forEach(function (s) {{ s.{J('§2-§')} = v; s.{J('§?j§')} = v; s.{J('§<q§')} = v; s.{J('§<!G§')} = v; }});
 """
 PROBE = f"""(function () {{ __MUT
+  var __season = 0, __pf = PlayFab;
+  PlayFab = new Proxy(__pf, {{ get: function (t, k) {{ return k === 'season' ? __season : t[k]; }} }});
   var U = {g}.{J('§-!4§')}, out = [], named = {{}};
   var qOf = function (o) {{ for (var c = 0; c < __classes.length; c++) if (__classes[c].K === o.constructor) return __classes[c].q; return null; }};
   var lists = {{ upgrade: U, trophy: {g}.{J('§0Q§')}, spell: {g}.{J('§0!A§')}, building: {g}.{J('§%<§')} }};
@@ -43,18 +50,24 @@ PROBE = f"""(function () {{ __MUT
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
+    var sea = __SEASON__(i); __season = sea;
+    try {{ r.cost = o.{J('§>=§')}; }} catch (e) {{}}
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
-    {g}.{J('§8!H§')} = keepR;
+    {g}.{J('§8!H§')} = keepR; __season = 0;
     out.push(r); }}
   var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
   return JSON.stringify({{ rows: out, named: named, tmap: tmap }}); }})()"""
 
 
+def _season_js():
+    return '(function(i){ ' + ' '.join(f'if (i >= {a} && i <= {b}) return {n};' for a, b, n in EVENT_RANGES) + ' return 0; })'
+
+
 def probe(v=None, asc=None):
     ctx = quickjs.Context(); ctx.eval(ENGINE); ctx.eval('__boot()')
     pre = (f"{g}.{J('§,P§')} = {asc};" if asc is not None else '') + (MUT.replace('__V', str(v)) if v is not None else '')
-    return json.loads(ctx.eval(PROBE.replace('__MUT', pre)))
+    return json.loads(ctx.eval(PROBE.replace('__MUT', pre).replace('__SEASON__', _season_js())))
 
 
 # availability by Ascension with every other requirement met (counts, trophies, Reincarnation); one item at a time
@@ -161,11 +174,19 @@ def decode_alt(t, c, ctx, nm):
     return None
 
 
+def event_of(i):
+    for a, b_, n in EVENT_RANGES:
+        if a <= i <= b_: return n
+    return None
+
+
 def decode(body, c, ctx=None):
     """-> (sources [{kind, name}], conditions [str], undecoded [str], (asc_lo, asc_hi), extra requirement lines [str])"""
     ctx = ctx or {}
     nm = D.name_of_for(c)
     src, cond, bad, extra = [], [], [], []
+    mv = re.fullmatch(r'var _loc1_:Boolean = (.+); return _loc1_ && (.+);', body)
+    if mv: body = f'return {mv.group(1)} && {mv.group(2)};'
     m = re.fullmatch(r'return (.+);', body)
     if not m: return src, cond, [body], (None, None), extra
     asc_lo = asc_hi = fac_lo = fac_hi = None
@@ -264,6 +285,74 @@ def decode(body, c, ctx=None):
         mm = re.fullmatch(r'§-"3§\.§\+"8§\((\d+)\)', t)
         if mm:
             cond.append(f'having bought upgrades from at least {mm.group(1)} different factions other than Mercenary'); continue
+        # Misc upgrades: seasonal events
+        mm = re.fullmatch(r'PlayFab\.season == (\d+)', t)
+        if mm:
+            ev = int(mm.group(1)); ctx['event'] = ev
+            cond.append(f"the {EVENT_NAMES[ev]} event is running"); continue
+        if t == '(PlayFab.season == 1 || PlayFab.season == 10)':
+            ctx['event'] = 1; cond.append('the Thanksgiving event is running'); continue
+        if t == 'PlayFab.season != 0':
+            ev = ctx.get('event')
+            cond.append(f"the {EVENT_NAMES[ev]} event is running" if ev else 'an event is running'); continue
+        if t == '§&c§.§53§()':
+            ctx['event'] = 'AF'; cond.append('it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)'); continue
+        if t == '(§"!U§ == 1 || §8G§.§6!-§[7] >= 10)' and ctx.get('tier') != 1:
+            cond.append('having bought the previous upgrade of this series'); continue
+        if t == '(§"!U§ == 1 || §8G§.§6!-§[7] >= 10)':
+            continue
+        if t == '§8G§.§5!V§[0] >= §>=§' and isinstance(ctx.get('cost'), (int, float)):
+            cond.append(f"having gained at least {num_text(ctx['cost'])} Coins in this Era"); continue
+        if t == '§&c§.§^!L§() < 8':
+            cond.append('having found fewer than 8 Eggs'); continue
+        if t == '§?!6§':
+            cond.append('having obtained this Egg'); continue
+        # not-yet-bought / not-yet-unlocked, name lookups, alternatives
+        mm = re.fullmatch(r'!§8G§\.§7d§\((§[^§]*§)\.id\)', t)
+        if mm and nm(mm.group(1)):
+            cond.append(f'not having bought "{nm(mm.group(1))[1]}"'); continue
+        mm = re.fullmatch(r'!§8G§\.§<P§\((§[^§]*§)\.id\)', t)
+        if mm and nm(mm.group(1)):
+            cond.append(f'not having unlocked the trophy "{nm(mm.group(1))[1]}"'); continue
+        mm = re.fullmatch(r'§8G§\.§\?!L§\(_\("([^"]+)"\)\)', t)
+        if mm:
+            cond.append(f'having bought the upgrade "{mm.group(1)}"'); continue
+        mm = re.fullmatch(r'\((§8G§\.§7d§\(§[^§]*§\.id\)(?: \|\| §8G§\.§7d§\(§[^§]*§\.id\))+)\)', t)
+        if mm:
+            ns = [nm(x) for x in re.findall(r'§7d§\((§[^§]*§)\.id\)', mm.group(1))]
+            if all(ns):
+                cond.append('having bought one of: ' + ', '.join(f'"{n[1]}"' for n in ns)); continue
+        mm = re.fullmatch(r'\((§8G§\.§<P§\(§[^§]*§\.id\)(?: \|\| §8G§\.§<P§\(§[^§]*§\.id\))+)\)', t)
+        if mm:
+            ns = [nm(x) for x in re.findall(r'§<P§\((§[^§]*§)\.id\)', mm.group(1))]
+            if all(ns):
+                cond.append('having unlocked one of the trophies: ' + ', '.join(f'"{n[1]}"' for n in ns)); continue
+        mm = re.fullmatch(r'§8G§\.§"!0§ >= (\d+)', t)
+        if mm:
+            cond.append(f'having at least {num_text(mm.group(1))} Gems'); continue
+        mm = re.fullmatch(r'§8G§\.§5!V§\[1\] \+ §8G§\.§=y§\[1\] \+ §8G§\.§@w§\[1\] >= (\d+)', t)
+        if mm:
+            cond.append(f'having played for at least {int(mm.group(1)) / 3600:g} hours (all-time)'); continue
+        mm = re.fullmatch(r'§8G§\.§1!5§ >= (\d+)', t)
+        if mm:
+            cond.append(f'having made at least {mm.group(1)} excavations since your last Excavation Reset'); continue
+        mm = re.fullmatch(r'§8G§\.§8!H§ < (\d+)', t)
+        if mm:
+            cond.append(f'being below Reincarnation {mm.group(1)}'); continue
+        mm = re.fullmatch(r'§&c§\.§@!\[§\(true,false,true\) >= (\d+)', t)
+        if mm:
+            cond.append(f'having found at least {num_text(mm.group(1))} Faction Coins in this Era'); continue
+        mm = re.fullmatch(r'§8G§\.§%Z§\((§[^§]*§)\.id,true\) >= (\d+)', t)
+        if mm and nm(mm.group(1)):
+            cond.append(f'having at least {mm.group(2)} {plural(nm(mm.group(1))[1])}'); continue
+        mm = re.fullmatch(r'\(§8G§\.§-!\^§ == 0 \|\| §8G§\.§-!\^§ == 1 \|\| §8G§\.§-!\^§ == 2 \|\| §8G§\.§-!\^§ == 3 \|\| '
+                          r'§8G§\.§-!\^§ == 4 \|\| §8G§\.§-!\^§ == 5 \|\| \(§8G§\.§-!\^§ == 6 \|\| §8G§\.§-!\^§ == 7 \|\| '
+                          r'§8G§\.§-!\^§ == 8\) && §8G§\.§7d§\((§[^§]*§)\.id\)\)', t)
+        if mm and nm(mm.group(1)):
+            cond.append('playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once '
+                        f'"{nm(mm.group(1))[1]}" is bought'); continue
+        if t == '§8G§.§#3§ == -1':
+            cond.append('having no prestige faction'); continue
         # Misc upgrades
         mm = re.fullmatch(r'§8G§\.§8!H§ > (\d+)', t)
         if mm: cond.append(f'being at Reincarnation {int(mm.group(1)) + 1} or higher'); continue
@@ -307,6 +396,8 @@ def describe_source(s):
         a = ARTIFACT.get(s['name'])
         return {'kind': 'Lore artifact' if (a or {}).get('kind') == 'lore' else 'Quest artifact', 'name': s['name']}
     ts = TROPHY.get(s['name'], [])
+    if ts and all(t['category'] == -1 for t in ts):
+        return {'kind': 'Event trophy' if any(t['group'] == 'seasonal' for t in ts) else 'Trophy', 'name': s['name']}
     cats = {t['category'] for t in ts}
     if len(cats) != 1: amb.append((s['name'], cats))
     return {'kind': f"{CATEGORY.get(min(cats), '?')} trophy" if cats else 'Trophy', 'name': s['name']}
@@ -356,6 +447,8 @@ READOUT = re.compile(r'\s*\((?:v[₁₂₃₄₅₆₇₈₉]?%?|\+?-?(?:[\d.,]+
 
 def fix_text(name, paras):
     """readouts that stayed in the text, and the few descriptions that need a hand"""
+    if name in MM.EVENT_FORMULAS:
+        paras[0]['formulas'] = [dict(f, vars=list(f['vars'])) for f in MM.EVENT_FORMULAS[name]]
     if name in MM.MORE:
         paras[:] = [{'text': t, 'formulas': [], 's': sp} for t, sp in MM.MORE[name]['tip']]
         return
@@ -415,7 +508,7 @@ def fix_raw(name, c, paras):
             if 'raw' not in f: new.append(f); continue
             e = f['raw']
             m = re.match(r"^.* \? (.+) : 0$", e)
-            if m and ("§'!O§" in e or '§8G§.§-!^§ == 11' in e):       # only counts at some time of day / as Mercenary
+            if m and ("§'!O§" in e or '§8G§.§-!^§ == 11' in e or 'PlayFab.season' in e):       # only counts at some time of day / as Mercenary
                 cv = convert(D.inline_helpers(c, m.group(1)), D.name_of_for(c))
                 if cv:
                     new.append({'latex': cv['latex'].replace('p = ', 'v = ', 1), 'vars': cv['vars']}); continue
@@ -431,12 +524,18 @@ def fix_raw(name, c, paras):
 MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'ClickingBase', 'ClickingProduction',
                'ClickingTotalProduction', 'OfflineUpgrade', 'AssistantUpgrade'}
 MISC_NAMES = {'Gem Power', 'Challenge Power'}
+# research facilities (Spellweavery ... Apeiron): a mechanic that is left for later
+FACILITIES = {'Spellweavery', 'Carpentry', 'Pantheon', 'Exchequer', 'Laboratory', 'Strategy Room', 'Mana Loom', 'Factory',
+              'Mythos', 'Vault', 'Athanor', 'Battlefield', 'Apeiron',
+              # real-money Shop gifts
+              'Gift of the Heroes', 'Gift of the Kings', 'Gift of the Gods', 'Gift of the Myths', 'Gift of the Faithful'}
+
 SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
 SPELL_TIER_CLASS = '§%p§'
 by_cat = {name: [] for name in CATS.values()}
 problems = []
 todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS
-        and (r['cat'] != 1 or r.get('grp') in MISC_GROUPS or r['n'] in MISC_NAMES)]
+        and (r['cat'] != 1 or r['n'] not in FACILITIES)]
 avail = availability([r['i'] for _, r in todo if r['cat'] != 4])
 for idx, r in todo:
     tok = r['q'].split('.')[-1]
@@ -464,7 +563,8 @@ for idx, r in todo:
     av = next((m for m in c.methods if m.name == '§-6§'), None)
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
     ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float, str)) else None, 'tid': r.get('tid'),
-           'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None)}
+           'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None),
+           'cost': r.get('cost'), 'event': event_of(r['i'])}
     src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
     if r['cat'] != 4:
         row = avail.get(r['i'])
@@ -485,6 +585,8 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
+    if r['cat'] == 1 and ctx.get('event'):
+        item['event'] = EVENT_NAMES[ctx['event']]
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
@@ -492,6 +594,11 @@ for idx, r in todo:
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
+# a formula that is only a constant (v = 25) adds nothing to the description
+for items in by_cat.values():
+    for u in items:
+        for p in u['description']:
+            p['formulas'] = [f for f in p['formulas'] if not re.fullmatch(r'v = -?[\d.]+', f.get('latex', ''))]
 # value symbols: v, or v1, v2 ... when a description has several computed values
 raw = []
 for items in by_cat.values():
@@ -503,7 +610,7 @@ for items in by_cat.values():
         if len(conv) > 1:
             for k, f in enumerate(conv, 1):
                 f['latex'] = re.sub(r'^v(?:_\{\d+\})? = ', f'v_{{{k}}} = ', f['latex'])
-for n, e in raw: print('RAW (dropped)', n, '|', e[:120])
+for n, e in raw: print('RAW (dropped)', n, '|', e[:700])
 for items in by_cat.values():
     for u in items:
         for p in u['description']: p['formulas'] = [f for f in p['formulas'] if 'latex' in f]

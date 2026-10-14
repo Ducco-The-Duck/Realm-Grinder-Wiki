@@ -20934,6 +20934,2930 @@
 "building": null
 },
 {
+"name": "Ruby Upgrades",
+"icon": "Ruby",
+"order": 80,
+"id": 80,
+"description": [
+{
+"text": "Spend your Rubies on exclusive upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Spending your Rubies does not decrease production bonus from the Ruby Tier upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Visit the Shop to purchase more!",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the upgrade \"Ruby Power\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Heart Upgrades",
+"icon": "ValentineContainer",
+"order": 92,
+"id": 92,
+"description": [
+{
+"text": "Spend your Hearts on exclusive upgrades. Every 100 Heart upgrades bought you get a free Ruby!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Visit the Shop to purchase more!",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Chocolate Box",
+"icon": "ChocolateBoxFeat",
+"order": 93,
+"id": 93,
+"description": [
+{
+"text": "Increase your event bonus by a multiplicative 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Chocolate Box"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Unrequitedness",
+"icon": "UnrequitednessFeat",
+"order": 94,
+"id": 94,
+"description": [
+{
+"text": "Increase Neutral production by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Unrequitedness"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Loyalty",
+"icon": "LoyaltyFeat",
+"order": 95,
+"id": 95,
+"description": [
+{
+"text": "Increase the production of your most used faction by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Loyalty"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Sweet Bedtime",
+"icon": "SweetBedtimeFeat",
+"order": 96,
+"id": 96,
+"description": [
+{
+"text": "Increase the base production of Inns by +14.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Sweet Bedtime"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Until Death Do Us Part",
+"icon": "UntilDeathDoUsPartFeat",
+"order": 97,
+"id": 97,
+"description": [
+{
+"text": "Increase Offline production by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Until Death Do Us Part"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Heart Blessing",
+"icon": "HeartBlessingFeat",
+"order": 98,
+"id": 98,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance by 15%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Heart Blessing"
+}
+],
+"requirements": [],
+"conditions": [
+"the Valentine event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Valentine"
+},
+{
+"name": "Frostmelter",
+"icon": "FrostmelterFeat",
+"order": 107,
+"id": 107,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on clicks made all time.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + C\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made all-time"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Frostmelter"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "Searing Summer",
+"icon": "SearingSummerFeat",
+"order": 108,
+"id": 108,
+"description": [
+{
+"text": "Increase the production of all buildings by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Searing Summer"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "Antipodes",
+"icon": "AntipodesUpgrade",
+"order": 109,
+"id": 109,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Frost and Flame Orbs collected.",
+"formulas": [
+{
+"latex": "v = \\min\\left(100000,\\  x - 0.02 x^{2} + 0.0002 x^{3}\\right)",
+"vars": [
+{
+"symbol": "x",
+"text": "(Frost Orbs + Flame Orbs collected, all-time) / 27"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "Heat Core",
+"icon": "HeatCoreFeat",
+"order": 110,
+"id": 110,
+"description": [
+{
+"text": "Increase all spells duration by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Heat Core"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "Still Lightning",
+"icon": "StillLightningFeat",
+"order": 111,
+"id": 111,
+"description": [
+{
+"text": "Autoclicks 2 times per second.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Still Lightning"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "White Hot Magic",
+"icon": "WhiteHotMagicFeat",
+"order": 112,
+"id": 112,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "White Hot Magic"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "General Winter",
+"icon": "GeneralWinterFeat",
+"order": 113,
+"id": 113,
+"description": [
+{
+"text": "Multiplicatively increase assistants by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "General Winter"
+}
+],
+"requirements": [],
+"conditions": [
+"the Summer event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Summer"
+},
+{
+"name": "Nephilim Glory",
+"icon": "NephilimGloryUpgrade",
+"order": 122,
+"id": 122,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Holy Symbols and Lava Stones collected.",
+"formulas": [
+{
+"latex": "v = \\min\\left(100000,\\  x - 0.005 x^{2} + 0.00045 x^{3}\\right)",
+"vars": [
+{
+"symbol": "x",
+"text": "(Holy Symbols + Lava Stones collected, all-time) / 20"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "1st Anniversary",
+"icon": null,
+"order": 123,
+"id": 123,
+"description": [
+{
+"text": "Increase the production of all buildings based on all the time you spent playing Realm Grinder.",
+"formulas": [
+{
+"latex": "v = 0.003 \\cdot \\left(R + 1\\right) \\cdot \\left(t \\cdot \\frac{R + 1}{2.5}\\right)^{0.7}",
+"vars": [
+{
+"symbol": "R",
+"text": "Reincarnations made"
+},
+{
+"symbol": "t",
+"text": "Time played (all-time, seconds)"
+}
+]
+}
+],
+"s": 1
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the 1st Anniversary event is running",
+"having gained at least 1 Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "1st Anniversary"
+},
+{
+"name": "World Restoration",
+"icon": "WorldRestorationFeat",
+"order": 124,
+"id": 124,
+"description": [
+{
+"text": "Increase the production of aligned buildings based on time spent as your least used alignment in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 25 + 0.5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with your least used alignment in this Reincarnation (seconds)"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "World Restoration"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "Frenzied Army",
+"icon": "FrenziedArmyFeat",
+"order": 125,
+"id": 125,
+"description": [
+{
+"text": "Multiplicatively increase assistants by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Frenzied Army"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "Fields of Conflict",
+"icon": "FieldsOfConflictFeat",
+"order": 126,
+"id": 126,
+"description": [
+{
+"text": "Autoclicks 2 times per second.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Fields of Conflict"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "Unwanted Truce",
+"icon": "UnwantedTruceFeat",
+"order": 127,
+"id": 127,
+"description": [
+{
+"text": "Increase the production of Farms, Inns and Blacksmiths by 25%",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Unwanted Truce"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "10 Years War",
+"icon": "10YearsWarFeat",
+"order": 128,
+"id": 128,
+"description": [
+{
+"text": "Increase the production of Farms by 25%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "10 Years War"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "Hired Champions",
+"icon": "HiredChampionsFeat",
+"order": 129,
+"id": 129,
+"description": [
+{
+"text": "Multiplicatively increase assistants for Good and Evil factions by 25%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Hired Champions"
+}
+],
+"requirements": [],
+"conditions": [
+"the Nephilim event is running",
+"having a Good or Evil alignment"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Nephilim"
+},
+{
+"name": "Avalanche",
+"icon": "AvalancheUpgrade",
+"order": 130,
+"id": 130,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Snowballs you collected.",
+"formulas": [
+{
+"latex": "v = \\left(\\min\\left(100000,\\ 0.8 x - 0.006 x^{2} + 0.00004 x^{3}\\right)\\right)^{p}",
+"vars": [
+{
+"symbol": "x",
+"text": "Snowballs collected (all-time) / 35"
+},
+{
+"symbol": "p",
+"text": "1; with Heavy Avalanche bought 2.5 · A, with Grand Avalanche as well 5 · A, where A is your Ascension number"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Heavy Avalanche",
+"icon": "HeavyAvalancheUpgrade",
+"order": 131,
+"id": 131,
+"description": [
+{
+"text": "Improve the effect of Avalanche for higher Ascensions.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Grand Avalanche",
+"icon": "GrandAvalancheUpgrade",
+"order": 132,
+"id": 132,
+"description": [
+{
+"text": "Improve the effect of Avalanche for higher Ascensions.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Heavy Avalanche"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Perfect Snowflake",
+"icon": "PerfectSnowflakeFeat",
+"order": 133,
+"id": 133,
+"description": [
+{
+"text": "Reduce Royal Exchange cost multiplier by -0.01.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Perfect Snowflake"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Golden Snowballs",
+"icon": "GoldenSnowballsFeat",
+"order": 134,
+"id": 134,
+"description": [
+{
+"text": "Increase clicking reward by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Golden Snowballs"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Jingle Choir",
+"icon": "JingleChoirFeat",
+"order": 135,
+"id": 135,
+"description": [
+{
+"text": "Multiplicatively increase assistants by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Jingle Choir"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Underground Snow",
+"icon": "UndergroundSnowFeat",
+"order": 136,
+"id": 136,
+"description": [
+{
+"text": "Increase the production of Good and Evil buildings by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Underground Snow"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Yule Offering",
+"icon": "YuleOfferingFeat",
+"order": 137,
+"id": 137,
+"description": [
+{
+"text": "Increase the production of Neutral buildings by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Yule Offering"
+}
+],
+"requirements": [],
+"conditions": [
+"the Christmas event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Christmas"
+},
+{
+"name": "Blue Omelette",
+"icon": "BlueOmeletteUpgrade",
+"order": 138,
+"id": 138,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Rare Eggs you collected.",
+"formulas": [
+{
+"latex": "v = \\min\\left(100000,\\ 3 x - 0.03 x^{2} + 0.0002 x^{3}\\right)",
+"vars": [
+{
+"symbol": "x",
+"text": "Rare Eggs collected (all-time)"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Buy Rare Egg",
+"icon": "BuyRareEggUpgrade",
+"order": 139,
+"id": 139,
+"description": [
+{
+"text": "Exchange 125 Common Eggs for a Rare Egg.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Buy Unique Egg",
+"icon": "BuyUniqueEggUpgrade",
+"order": 140,
+"id": 140,
+"description": [
+{
+"text": "Exchange 3000 Common Eggs for a Unique Egg.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having found fewer than 8 Eggs"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Buy Unique Egg",
+"icon": "BuyRareUniqueEggUpgrade",
+"order": 141,
+"id": 141,
+"description": [
+{
+"text": "Exchange 100 Rare Eggs for a Unique Egg.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having found fewer than 8 Eggs"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Wooden Egg",
+"icon": "WoodenEggUpgrade",
+"order": 142,
+"id": 142,
+"description": [
+{
+"text": "Increase chance to find Faction Coins by 25%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Golden Egg",
+"icon": "GoldenEggUpgrade",
+"order": 143,
+"id": 143,
+"description": [
+{
+"text": "Increase the production of all buildings by 100%.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Dark Egg",
+"icon": "DarkEggUpgrade",
+"order": 144,
+"id": 144,
+"description": [
+{
+"text": "Increase Offline production by 500%.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Radiant Egg",
+"icon": "RadiantEggUpgrade",
+"order": 145,
+"id": 145,
+"description": [
+{
+"text": "Increase clicking reward by 100%.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Arcane Egg",
+"icon": "ArcaneEggUpgrade",
+"order": 146,
+"id": 146,
+"description": [
+{
+"text": "Increase Mana Regeneration by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Crystal Egg",
+"icon": "CrystalEggUpgrade",
+"order": 147,
+"id": 147,
+"description": [
+{
+"text": "Increase production bonus from Gems by 8%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Ancient Egg",
+"icon": "AncientEggUpgrade",
+"order": 148,
+"id": 148,
+"description": [
+{
+"text": "Reduce excavations cost.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Giant Egg",
+"icon": "GiantEggUpgrade",
+"order": 149,
+"id": 149,
+"description": [
+{
+"text": "Increase Maximum Mana by 500.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Easter event is running",
+"having obtained this Egg"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Chocolate Egg",
+"icon": "ChocolateEggFeat",
+"order": 150,
+"id": 150,
+"description": [
+{
+"text": "Increase clicking reward by 100% and clicks once per second.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also generates the same amount clicks while offline.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Chocolate Egg"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Rotten Egg",
+"icon": "RottenEggFeat",
+"order": 151,
+"id": 151,
+"description": [
+{
+"text": "Increase Offline production by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Rotten Egg"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Eggsercise",
+"icon": "EggserciseFeat",
+"order": 152,
+"id": 152,
+"description": [
+{
+"text": "Increase Maximum Mana by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Eggsercise"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "The Perfect Egg",
+"icon": "ThePerfectEggFeat",
+"order": 153,
+"id": 153,
+"description": [
+{
+"text": "Increase Tax Collection worth by 10.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "The Perfect Egg"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Platinum Egg",
+"icon": "PlatinumEggFeat",
+"order": 154,
+"id": 154,
+"description": [
+{
+"text": "Multiplicatively increase assistants by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Platinum Egg"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Heavenly Omelette",
+"icon": "HeavenlyOmeletteFeat",
+"order": 155,
+"id": 155,
+"description": [
+{
+"text": "Increase the production of Unique Buildings by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Heavenly Omelette"
+}
+],
+"requirements": [],
+"conditions": [
+"the Easter event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Easter"
+},
+{
+"name": "Spectral Surge",
+"icon": "SpectralSurgeIcon",
+"order": 156,
+"id": 156,
+"description": [
+{
+"text": "Turn Spiritual Surge into Spectral Surge, which increases the previous bonus based on your Event Bonus.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Spectral Surge"
+}
+],
+"requirements": [],
+"conditions": [
+"the Halloween event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Monstrous",
+"icon": "MonstrousFeat",
+"order": 157,
+"id": 157,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration by 20%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Monstrous"
+}
+],
+"requirements": [],
+"conditions": [
+"the Halloween event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Golden Bones",
+"icon": "GoldenBonesFeat",
+"order": 158,
+"id": 158,
+"description": [
+{
+"text": "Increase production bonus from Gems by +10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Golden Bones"
+}
+],
+"requirements": [],
+"conditions": [
+"the Halloween event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Ghostbuster",
+"icon": "GhostbusterFeat",
+"order": 159,
+"id": 159,
+"description": [
+{
+"text": "increase Offline production by 50%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Ghostbuster"
+}
+],
+"requirements": [],
+"conditions": [
+"the Halloween event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Mummy?",
+"icon": "MummyFeat",
+"order": 160,
+"id": 160,
+"description": [
+{
+"text": "Increase Farms production by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Mummy?"
+}
+],
+"requirements": [],
+"conditions": [
+"the Halloween event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Enhanced Production",
+"icon": "AprilFoolsUpgrade1",
+"order": 161,
+"id": 161,
+"description": [
+{
+"text": "Increase the production of all buildings by 10⁶%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 1,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "Enhanced Production Activator",
+"icon": "AprilFoolsUpgrade2",
+"order": 162,
+"id": 162,
+"description": [
+{
+"text": "Activates the upgrade you just bought.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the previous upgrade of this series",
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 2,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "Enhanced Production Fix",
+"icon": "AprilFoolsUpgrade3",
+"order": 163,
+"id": 163,
+"description": [
+{
+"text": "Fixes a bug in the Activator that prevented the upgrade from working correctly.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the previous upgrade of this series",
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 3,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "Enhanced Production Complaint",
+"icon": "AprilFoolsUpgrade4",
+"order": 164,
+"id": 164,
+"description": [
+{
+"text": "Complain about the upgrade not working yet, even after the fix.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the previous upgrade of this series",
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 4,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "Enhanced Production Report",
+"icon": "AprilFoolsUpgrade5",
+"order": 165,
+"id": 165,
+"description": [
+{
+"text": "Report the bug to the Powers That Be and hope it gets fixed before the event is over.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the previous upgrade of this series",
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 5,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "Enhanced Production Fooled",
+"icon": "AprilFoolsUpgrade6",
+"order": 166,
+"id": 166,
+"description": [
+{
+"text": "The Enhanced Production timer is over! We hope you enjoyed your huge",
+"formulas": [],
+"s": null
+},
+{
+"text": "production bonus and hopefully didn't get too greedy. Happy April Fools' Day!",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having bought the previous upgrade of this series",
+"it is the April Fools window (1 April 07:00 UTC to 2 April 07:00 UTC)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": "AFUpgrade",
+"tier": 6,
+"building": null,
+"event": "April Fools"
+},
+{
+"name": "The Greatest Army",
+"icon": "TheGreatestArmyUpgrade",
+"order": 177,
+"id": 177,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Goblin Crowns collected.",
+"formulas": [
+{
+"latex": "v = \\min\\left(100000,\\  x - 0.005 x^{2} + 0.00045 x^{3}\\right)",
+"vars": [
+{
+"symbol": "x",
+"text": "Goblin Crowns collected (all-time) / 20"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "The Undecided Armada",
+"icon": "TheUndecidedArmadaFeat",
+"order": 178,
+"id": 178,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on buildings built.",
+"formulas": [
+{
+"latex": "v = 0.65 \\cdot B^{0.35}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+]
+}
+],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "The Undecided Armada"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Bloody Crown",
+"icon": "BloodyCrownFeat",
+"order": 179,
+"id": 179,
+"description": [
+{
+"text": "Increase production bonus from Gems by a multiplicative 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Bloody Crown"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Debt for Life",
+"icon": "DebtForLifeFeat",
+"order": 180,
+"id": 180,
+"description": [
+{
+"text": "Increase Tax Collection worth by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Debt for Life"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Treachery",
+"icon": "TreacheryFeat",
+"order": 181,
+"id": 181,
+"description": [
+{
+"text": "Trophies count more by 25%",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Treachery"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Bribed Army",
+"icon": "BribedArmyFeat",
+"order": 182,
+"id": 182,
+"description": [
+{
+"text": "All buildings count 25% more for Call to Arms purposes.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Bribed Army"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Underhanded Tactics",
+"icon": "UnderhandedTacticsFeat",
+"order": 183,
+"id": 183,
+"description": [
+{
+"text": "Increase Offline production bonus by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Underhanded Tactics"
+}
+],
+"requirements": [],
+"conditions": [
+"the Goblin Army event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Goblin Army"
+},
+{
+"name": "Crucible Of Darkness",
+"icon": "CrucibleOfDarknessUpgrade",
+"order": 184,
+"id": 184,
+"description": [
+{
+"text": "Increase the production of all buildings based on Halloween Resources collected. Increases as you gain new monsters.",
+"formulas": [
+{
+"latex": "v = \\left(1 + 0.0035 \\cdot \\frac{a + b + c}{3}\\right) \\cdot \\left(\\left(1 + g(a/25)\\right)\\left(1 + g(b/25)\\right)\\left(1 + g(c/25)\\right)\\right)^{0.4}",
+"vars": [
+{
+"symbol": "a",
+"text": "Blood collected (all-time)"
+},
+{
+"symbol": "b",
+"text": "Ectoplasm collected (all-time)"
+},
+{
+"symbol": "c",
+"text": "Bones collected (all-time)"
+},
+{
+"symbol": "g(y)",
+"text": "min(12500, 1.6·y − 0.002·y² + 0.000024·y³)"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Halloween event is running",
+"having unlocked one of the trophies: \"Ghost\", \"Skeleton\", \"Vampire\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Halloween"
+},
+{
+"name": "Thanksgiving",
+"icon": "ThanksgivingTrophy",
+"order": 185,
+"id": 185,
+"description": [
+{
+"text": "Increase the production of all buildings by 25% for the duration of the Thanksgiving season.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Thanksgiving"
+}
+],
+"requirements": [],
+"conditions": [
+"the Thanksgiving event is running",
+"having gained at least 1 Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Thanksgiving"
+},
+{
+"name": "Ruby Shine",
+"icon": "RubyShineTrophy",
+"order": 186,
+"id": 186,
+"description": [
+{
+"text": "Increase the production of all buildings based on Rubies owned for the duration of the Ruby Shine event.",
+"formulas": [
+{
+"latex": "v = N^{1.15}",
+"vars": [
+{
+"symbol": "N",
+"text": "Rubies you have collected (all-time)"
+}
+]
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Ruby Shine"
+}
+],
+"requirements": [],
+"conditions": [
+"the Thanksgiving event is running",
+"having gained at least 1 Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Thanksgiving"
+},
+{
+"name": "Broken Mirror",
+"icon": "BrokenMirrorUpgrade",
+"order": 202,
+"id": 202,
+"description": [
+{
+"text": "Increase the production of all buildings based on the total amount of Idillium Resources collected.",
+"formulas": [
+{
+"latex": "v = \\left(1 + 0.0035 \\cdot \\frac{a + b + c}{3}\\right) \\cdot \\left(\\left(1 + g(a/25)\\right)\\left(1 + g(b/25)\\right)\\left(1 + g(c/25)\\right)\\right)^{0.4}",
+"vars": [
+{
+"symbol": "a",
+"text": "Crystal Prisms collected (all-time)"
+},
+{
+"symbol": "b",
+"text": "Entropic Drops collected (all-time)"
+},
+{
+"symbol": "c",
+"text": "Equilibrium Fragments collected (all-time)"
+},
+{
+"symbol": "g(y)",
+"text": "min(12500, 1.6·y − 0.002·y² + 0.000024·y³)"
+}
+]
+}
+],
+"s": 1
+},
+{
+"text": "Persists through Abdications and Reincarnations. Will disappear at the end of the current Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Idillium Explorer",
+"icon": "IdilliumExplorerFeat",
+"order": 203,
+"id": 203,
+"description": [
+{
+"text": "Reduce the cost of all spells by 10%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Idillium Explorer"
+}
+],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Full-spectrum Color",
+"icon": "FullSpectrumColorFeat",
+"order": 204,
+"id": 204,
+"description": [
+{
+"text": "Increase Faction Coin find chance by +25%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Full-spectrum Color"
+}
+],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Under the Rainbow",
+"icon": "UnderTheRainbowFeat",
+"order": 205,
+"id": 205,
+"description": [
+{
+"text": "Increase Halls of Legends production by 25%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Under the Rainbow"
+}
+],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Stream of Dreams",
+"icon": "StreamOfDreamsFeat",
+"order": 206,
+"id": 206,
+"description": [
+{
+"text": "Multiplicatively increase offline bonus by 100%.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Stream of Dreams"
+}
+],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Nexus Descent",
+"icon": "NexusDescentFeat",
+"order": 207,
+"id": 207,
+"description": [
+{
+"text": "Unique Buildings count 20% more.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Once unlocked, it is available during any Seasonal Event.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Event trophy",
+"name": "Nexus Descent"
+}
+],
+"requirements": [],
+"conditions": [
+"the Idillium event is running"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"event": "Idillium"
+},
+{
+"name": "Mercenary Tribute",
+"icon": "MercenaryTribute",
+"order": 481,
+"id": 481,
+"description": [
+{
+"text": "Pay the mercenaries a tribute to unlock their powers. Be quick though, the price increases over time!",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 3 or higher",
+"not having unlocked the trophy \"Mercenary Oath Trophy\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Oath of the Mercenaries",
+"icon": "MercenaryOath",
+"order": 482,
+"id": 482,
+"description": [
+{
+"text": "By reciting the Oath of the Mercenaries you will be able to join mercenaries for the rest of your existence. Not even Reincarnations will strip you of this right. You will be able to take any alignment and become a Good, Neutral or Evil mercenary, therefore determining your building set, and from there on you will be able to take any spell or ability from any other faction.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Mercenary Oath Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Mercenary",
+"not having unlocked the trophy \"Mercenary Oath\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Secrets of the Ancients",
+"icon": "SecretsOfTheAncients",
+"order": 528,
+"id": 528,
+"description": [
+{
+"text": "Unlocks Researches for Titans, Druids and Faceless and increase their production by 100000%, plus an additional bonus for individual research branches.",
+"formulas": [],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Key to the Lost City"
+}
+],
+"requirements": [],
+"conditions": [
+"having bought one of: \"Olympian Hall\", \"Stonehenge\", \"Sunken City\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Secrets of the Underworld",
+"icon": "SecretsOfTheUnderworld",
+"order": 529,
+"id": 529,
+"description": [
+{
+"text": "Unlocks Researches for Dwarves and Drow and provides a bonus for individual research branches.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Earth Core"
+}
+],
+"requirements": [],
+"conditions": [
+"having bought one of: \"Dwarven Forge\", \"Spider Sanctuary\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Secrets of the Warriors",
+"icon": "SecretsOfTheWarriorsUpgrade",
+"order": 530,
+"id": 530,
+"description": [
+{
+"text": "Unlocks Researches for Mercenaries and increase their production by 10000%.",
+"formulas": [],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Obsidian Shard"
+}
+],
+"requirements": [],
+"conditions": [
+"having bought one of: \"Mercenary Camp\", \"Tyrant Garrison\", \"Freemason's Hall\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Hatch!",
+"icon": "DragonQuest01",
+"order": 531,
+"id": 531,
+"description": [
+{
+"text": "After waiting for a while... hatch the spiky egg and reveal what's inside!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Remaining time: 0s",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Spiky Rough Egg"
+}
+],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 42 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Drakeling",
+"icon": "DragonQuest02",
+"order": 532,
+"id": 532,
+"description": [
+{
+"text": "The baby dragon needs to learn how to breathe flames first... perhaps a fair amount of Hellfire Blasts will help. Once it is ready, grow your baby dragon into a drakeling.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Available in Reincarnation 44",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Hatch!"
+}
+],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 42 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Dragon",
+"icon": "DragonQuest03",
+"order": 533,
+"id": 533,
+"description": [
+{
+"text": "The drakeling can now breathe fire, but it is not self-sufficient yet. A decent army of Fairy assistants will surely help. Once it is ready, grow your drakeling into a mature dragon.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Available in Reincarnation 46",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Drakeling"
+}
+],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 42 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Elder Dragon",
+"icon": "DragonQuest04",
+"order": 534,
+"id": 534,
+"description": [
+{
+"text": "The dragon is now mature and has learned the customs of your realm. The only thing that remains is to feed him with a large amount of magical power... increase your Maximum Mana. Once it is ready, grow your dragon into an elder dragon.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Available in Reincarnation 48",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Upgrade",
+"name": "Dragon"
+}
+],
+"requirements": [],
+"conditions": [
+"being at Reincarnation 42 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
 "name": "Sturdy Treasure",
 "icon": "MouseClickUpgrade1",
 "order": 758,
@@ -21558,6 +24482,376 @@
 "asc_max": 4,
 "group": "AssistantUpgrade",
 "tier": 3,
+"building": null
+},
+{
+"name": "Magician",
+"icon": "MagicianTrophy",
+"order": 1527,
+"id": 1527,
+"description": [
+{
+"text": "Increase Spellcraft upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Magician"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Artisan",
+"icon": "ArtisanTrophy",
+"order": 1528,
+"id": 1528,
+"description": [
+{
+"text": "Increase Craftsmanship upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Artisan"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Demigod",
+"icon": "DemigodTrophy",
+"order": 1529,
+"id": 1529,
+"description": [
+{
+"text": "Increase Divine upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Demigod"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Businessman",
+"icon": "BusinessmanTrophy",
+"order": 1530,
+"id": 1530,
+"description": [
+{
+"text": "Increase Economics upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Businessman"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Apothecary",
+"icon": "ApothecaryTrophy",
+"order": 1531,
+"id": 1531,
+"description": [
+{
+"text": "Increase Alchemy upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Apothecary"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Warlord",
+"icon": "WarlordTrophy",
+"order": 1532,
+"id": 1532,
+"description": [
+{
+"text": "Increase Warfare upgrade slots by 1.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Secret trophy",
+"name": "Warlord"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once \"Secrets of the Ancients\" is bought",
+"having no prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Archeology",
+"icon": "ArcheologyUpgrade",
+"order": 1558,
+"id": 1558,
+"description": [
+{
+"text": "Rumors of recently found ancient relics have spread across the Realm. Perhaps you might want to fund an expedition party.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having at least 10⁹ Gems",
+"not having unlocked the trophy \"Archeology Expedition\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Fragment of a Titan Statue",
+"icon": "ArcheologyTitanUpgrade",
+"order": 1559,
+"id": 1559,
+"description": [
+{
+"text": "This is the fragment of a huge statue resembling the king of an ancient civilization, the Titans.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Ancient Stoneslab 2"
+}
+],
+"requirements": [],
+"conditions": [
+"having at least 300 Halls of Legends",
+"not having unlocked the trophy \"Archeology Titan Trophy\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Druidic Runestone",
+"icon": "ArcheologyDruidUpgrade",
+"order": 1560,
+"id": 1560,
+"description": [
+{
+"text": "This is a mystical runestone carved by druids and infused with powerful magic.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Fossilized Piece of Bark 2"
+}
+],
+"requirements": [],
+"conditions": [
+"not having unlocked the trophy \"Archeology Druid Trophy\"",
+"having found at least 10⁶ Faction Coins in this Era"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Octopus Shaped Spine",
+"icon": "ArcheologyFacelessUpgrade",
+"order": 1561,
+"id": 1561,
+"description": [
+{
+"text": "This is... what is this? Octopuses shouldn't have bones.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "Bone Fragment 2"
+}
+],
+"requirements": [],
+"conditions": [
+"having played for at least 36 hours (all-time)",
+"not having unlocked the trophy \"Archeology Faceless Trophy\""
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Survey Equipment",
+"icon": "SurveyEquipment",
+"order": 1562,
+"id": 1562,
+"description": [
+{
+"text": "This advanced survey equipment allows to find unique Artifacts through excavations!",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having made at least 100 excavations since your last Excavation Reset"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Passage to the Underworld",
+"icon": "ArcheologyUnderworldUpgrade",
+"order": 1563,
+"id": 1563,
+"description": [
+{
+"text": "Command your expedition to search the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having unlocked the trophy \"Archeology Underworld Trophy\"",
+"having made at least 200 excavations since your last Excavation Reset"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
+"name": "Underworld Diplomacy",
+"icon": "UnderworldDiplomacy",
+"order": 1566,
+"id": 1566,
+"description": [
+{
+"text": "Unlock all underworld Faction Coins, Royal Exchanges and Heritages.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Allegiances trophy: Archeology Dwarf Trophy or Allegiances trophy: Archeology Drow Trophy"
+],
+"conditions": [
+"being below Reincarnation 3"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
 "building": null
 }
 ]
