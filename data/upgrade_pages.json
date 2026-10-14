@@ -539,7 +539,7 @@
 "id": 213,
 "description": [
 {
-"text": "Increase the production of Farms, Inns and v based on assistants owned.",
+"text": "Increase the production of Farms, Inns and Blacksmiths based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 5 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2.5}",
@@ -590,7 +590,7 @@
 "id": 214,
 "description": [
 {
-"text": "Increase Mana Regeneration based on Farms, Inns and v owned.",
+"text": "Increase Mana Regeneration based on Farms, Inns and Blacksmiths owned.",
 "formulas": [
 {
 "latex": "v = 3 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.3}",
@@ -745,7 +745,7 @@
 "id": 217,
 "description": [
 {
-"text": "Gain assistants based on Farms, Inns and v owned.",
+"text": "Gain assistants based on Farms, Inns and Blacksmiths owned.",
 "formulas": [
 {
 "latex": "v = 0.3 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.7}",
@@ -855,7 +855,7 @@
 "id": 219,
 "description": [
 {
-"text": "Increase the production of all buildings based on Farms, Inns and v owned.",
+"text": "Increase the production of all buildings based on Farms, Inns and Blacksmiths owned.",
 "formulas": [
 {
 "latex": "v = 1.25 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)^{0.75}",
@@ -8753,7 +8753,7 @@
 "id": 374,
 "description": [
 {
-"text": "Increase Faction Coin find chance based on v owned.",
+"text": "Increase Faction Coin find chance based on Blacksmiths owned.",
 "formulas": [
 {
 "latex": "v = 2 \\cdot N^{0.5}",
@@ -16113,7 +16113,7 @@
 "id": 563,
 "description": [
 {
-"text": "Increase the production of all buildings v owned.",
+"text": "Increase the production of all buildings by 0.075% per Farm, Inn and Blacksmith owned.",
 "formulas": [
 {
 "latex": "v = 0.075 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)",
@@ -16977,7 +16977,7 @@
 "id": 579,
 "description": [
 {
-"text": "Increase the production of Farms, Inns and v based on assistants owned.",
+"text": "Increase the production of Farms, Inns and Blacksmiths based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 18 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3}",
@@ -17793,6 +17793,5288 @@
 "building": null,
 "faction": -1,
 "akind": "bloodline_c",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Lineage",
+"icon": "FairyLineage",
+"order": 626,
+"id": 626,
+"description": [
+{
+"text": "Farms, Inns and Blacksmiths count 18% more for every level.",
+"formulas": [
+{
+"latex": "v = 18 \\cdot L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "69",
+"level": 9,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "82",
+"level": 22,
+"challenge": "Reach 10⁶ assistants within the first 10 minutes of a new Era."
+},
+{
+"n": 3,
+"reinc": "110",
+"level": 28,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "142",
+"level": 44,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "176",
+"level": 59,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "208",
+"level": 72,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 1",
+"icon": "FairyPerk1",
+"order": 627,
+"id": 627,
+"description": [
+{
+"text": "Fairy Bloodline and Fairy Chanting also affect Halls of Legends.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 2",
+"icon": "FairyPerk2",
+"order": 628,
+"id": 628,
+"description": [
+{
+"text": "Gain the Fairy Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 3",
+"icon": "FairyPerk3",
+"order": 629,
+"id": 629,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot B^{0.6}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 4",
+"icon": "FairyPerk4",
+"order": 630,
+"id": 630,
+"description": [
+{
+"text": "While Fairy Chanting is active, further multiplicatively increase your assistants based on its duration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Fairy Chanting\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 5",
+"icon": "FairyPerk5",
+"order": 631,
+"id": 631,
+"description": [
+{
+"text": "Assistants count 300% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Perk 6",
+"icon": "FairyPerk6",
+"order": 632,
+"id": 632,
+"description": [
+{
+"text": "Increase all Faction spells durations based on Mana Regeneration.",
+"formulas": [
+{
+"latex": "v = 1.25 \\cdot \\left(\\ln\\left(1 + M\\right)\\right)^{1.25}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Lineage",
+"icon": "ElvenLineage",
+"order": 633,
+"id": 633,
+"description": [
+{
+"text": "Autoclick based on Lineage level.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor L^{1.25} \\right\\rfloor",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "62",
+"level": 2,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "76",
+"level": 16,
+"challenge": "Reach 7777 automatic clicks within the first 5 minutes of a new Era."
+},
+{
+"n": 3,
+"reinc": "124",
+"level": 35,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "134",
+"level": 40,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "160",
+"level": 51,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "200",
+"level": 68,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 1",
+"icon": "ElvenPerk1",
+"order": 634,
+"id": 634,
+"description": [
+{
+"text": "Increase the production of all buildings based on Elven Luck triggered in this Era.",
+"formulas": [
+{
+"latex": "v = 30 + 3 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Elven Luck triggered in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Gain Elven Luck:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Each time you click you have 1% chance to gain additional coins equal to 10000% of your production. Manual clicks give more coins. Also generate Faction Coins based on reincarnations made.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 2",
+"icon": "ElvenPerk2",
+"order": 635,
+"id": 635,
+"description": [
+{
+"text": "Gain the Elven Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 3",
+"icon": "ElvenPerk3",
+"order": 636,
+"id": 636,
+"description": [
+{
+"text": "Increase clicking reward based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = B^{0.9}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 4",
+"icon": "ElvenPerk4",
+"order": 637,
+"id": 637,
+"description": [
+{
+"text": "While Moon Blessing is active, multiplicatively increase Faction Coin find chance based on its duration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot D^{0.75}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Moon Blessing\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 5",
+"icon": "ElvenPerk5",
+"order": 638,
+"id": 638,
+"description": [
+{
+"text": "Faction Coins count 1000% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Perk 6",
+"icon": "ElvenPerk6",
+"order": 639,
+"id": 639,
+"description": [
+{
+"text": "Increase Unique Buildings production based on the highest amount of clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 1.6 \\cdot C^{0.4}",
+"vars": [
+{
+"symbol": "C",
+"text": "Most clicks you have made at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Lineage",
+"icon": "AngelLineage",
+"order": 640,
+"id": 640,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Lineage level.",
+"formulas": [
+{
+"latex": "v = 15 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "68",
+"level": 8,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "84",
+"level": 24,
+"challenge": "Play 20 minutes straight with at least one spell active at all time. You need to start within one minute of a new Era."
+},
+{
+"n": 3,
+"reinc": "112",
+"level": 29,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "150",
+"level": 48,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "170",
+"level": 56,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "212",
+"level": 74,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 1",
+"icon": "AngelPerk1",
+"order": 641,
+"id": 641,
+"description": [
+{
+"text": "Reduce faction spells costs by 200. Reduce higher tier cost scaling for all spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 2",
+"icon": "AngelPerk2",
+"order": 642,
+"id": 642,
+"description": [
+{
+"text": "Gain the Angel Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 3",
+"icon": "AngelPerk3",
+"order": 643,
+"id": 643,
+"description": [
+{
+"text": "Angel Bloodline effect now counts all spells cast in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 4",
+"icon": "AngelPerk4",
+"order": 644,
+"id": 644,
+"description": [
+{
+"text": "While God's Hand is active, Maximum Mana is multiplicatively increased based on its duration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"God's Hand\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 5",
+"icon": "AngelPerk5",
+"order": 645,
+"id": 645,
+"description": [
+{
+"text": "Spells cast count 1000% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Perk 6",
+"icon": "AngelPerk6",
+"order": 646,
+"id": 646,
+"description": [
+{
+"text": "Multiplicatively increase autoclick power based on active spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Lineage",
+"icon": "GoblinLineage",
+"order": 647,
+"id": 647,
+"description": [
+{
+"text": "Multiplicatively increase Tax Collection worth based on Lineage level.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "70",
+"level": 10,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "73",
+"level": 13,
+"challenge": "Cast 10⁶ Tax Collections in a single Era."
+},
+{
+"n": 3,
+"reinc": "106",
+"level": 26,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "148",
+"level": 47,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "172",
+"level": 57,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "198",
+"level": 67,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 1",
+"icon": "GoblinPerk1",
+"order": 648,
+"id": 648,
+"description": [
+{
+"text": "Non-Unique buildings gain all the production bonuses that affect Unique Buildings.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 2",
+"icon": "GoblinPerk2",
+"order": 649,
+"id": 649,
+"description": [
+{
+"text": "Gain the Goblin Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 3",
+"icon": "GoblinPerk3",
+"order": 650,
+"id": 650,
+"description": [
+{
+"text": "Increase base production of Unique Buildings based on their amount.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 4",
+"icon": "GoblinPerk4",
+"order": 651,
+"id": 651,
+"description": [
+{
+"text": "While Goblin's Greed is active, multiplicatively increase your Tax Collection worth in seconds based on its duration.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot D^{0.4}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Goblin's Greed\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 5",
+"icon": "GoblinPerk5",
+"order": 652,
+"id": 652,
+"description": [
+{
+"text": "All spells activity time counts 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Perk 6",
+"icon": "GoblinPerk6",
+"order": 653,
+"id": 653,
+"description": [
+{
+"text": "Increase Research budget based on Tax Collection's worth.",
+"formulas": [
+{
+"latex": "v = \\min\\left(3000,\\, 4 \\cdot W^{0.5}\\right)",
+"vars": [
+{
+"symbol": "W",
+"text": "The worth of a Tax Collection, as the spell computes it"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Lineage",
+"icon": "UndeadLineage",
+"order": 654,
+"id": 654,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on lineage level.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "66",
+"level": 6,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "83",
+"level": 23,
+"challenge": "Have Night Time with a duration higher than 1 minute."
+},
+{
+"n": 3,
+"reinc": "108",
+"level": 27,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "146",
+"level": 46,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "182",
+"level": 62,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "202",
+"level": 69,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 1",
+"icon": "UndeadPerk1",
+"order": 655,
+"id": 655,
+"description": [
+{
+"text": "Spiritual Surge mana cost is reduced by 90% and it gains 1 tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production and Offline gains of Mana produced and spells cast based on Spiritual Surge duration.",
+"formulas": [
+{
+"latex": "v_{1} = D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Spiritual Surge\" (seconds)"
+}
+],
+"label": "Offline production (%)"
+},
+{
+"latex": "v_{2} = 0.6 \\cdot D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Spiritual Surge\" (seconds)"
+}
+],
+"label": "Offline gains of mana produced and spells cast (%)"
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 2",
+"icon": "UndeadPerk2",
+"order": 656,
+"id": 656,
+"description": [
+{
+"text": "Gain the Undead Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 3",
+"icon": "UndeadPerk3",
+"order": 657,
+"id": 657,
+"description": [
+{
+"text": "Increase Maximum mana based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot B^{0.7}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 4",
+"icon": "UndeadPerk4",
+"order": 658,
+"id": 658,
+"description": [
+{
+"text": "Increase Offline production based on Night Time activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 15 + 1.5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Night Time\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 5",
+"icon": "UndeadPerk5",
+"order": 659,
+"id": 659,
+"description": [
+{
+"text": "Reincarnation Power counts Reincarnations as 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Perk 6",
+"icon": "UndeadPerk6",
+"order": 660,
+"id": 660,
+"description": [
+{
+"text": "Increase Offline production based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Lineage",
+"icon": "DemonLineage",
+"order": 661,
+"id": 661,
+"description": [
+{
+"text": "Increase Non-Unique Buildings production based on Lineage level.",
+"formulas": [
+{
+"latex": "v = 100 \\cdot L^{2}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "63",
+"level": 3,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "78",
+"level": 18,
+"challenge": "Have a total of at least 6 hours of Hellfire Blast activity time in this Reincarnation."
+},
+{
+"n": 3,
+"reinc": "126",
+"level": 36,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "130",
+"level": 38,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "168",
+"level": 55,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "196",
+"level": 66,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 1",
+"icon": "DemonPerk1",
+"order": 662,
+"id": 662,
+"description": [
+{
+"text": "Base Faction spells gain 1 tier. Decrease all evil spells cost by 20%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 2",
+"icon": "DemonPerk2",
+"order": 663,
+"id": 663,
+"description": [
+{
+"text": "Gain the Demon Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 3",
+"icon": "DemonPerk3",
+"order": 664,
+"id": 664,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = B^{0.666}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 4",
+"icon": "DemonPerk4",
+"order": 665,
+"id": 665,
+"description": [
+{
+"text": "Hellfire Blast adds all Non-Unique Buildings to its targets.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 5",
+"icon": "DemonPerk5",
+"order": 666,
+"id": 666,
+"description": [
+{
+"text": "Trophies count 1000% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Perk 6",
+"icon": "DemonPerk6",
+"order": 667,
+"id": 667,
+"description": [
+{
+"text": "Multiplicatively increase Maximum mana based on Trophies unlocked.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Lineage",
+"icon": "TitanLineage",
+"order": 668,
+"id": 668,
+"description": [
+{
+"text": "Multiplicatively increase Royal Exchange bonus based on lineage level.",
+"formulas": [
+{
+"latex": "v = 10 + 1.5 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "61",
+"level": 1,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "74",
+"level": 14,
+"challenge": "Produce at least 500000 mana per second as a pure Titan."
+},
+{
+"n": 3,
+"reinc": "122",
+"level": 34,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "136",
+"level": 41,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "162",
+"level": 52,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "190",
+"level": 63,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 1",
+"icon": "TitanPerk1",
+"order": 669,
+"id": 669,
+"description": [
+{
+"text": "Reduce Farms, Farms and Halls of Legends building cost multiplier and increase their production based on Royal Exchanges made.",
+"formulas": [
+{
+"latex": "v = 7 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 2",
+"icon": "TitanPerk2",
+"order": 670,
+"id": 670,
+"description": [
+{
+"text": "Gain the Titan Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 3",
+"icon": "TitanPerk3",
+"order": 671,
+"id": 671,
+"description": [
+{
+"text": "Increase assistants production based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot B^{0.6}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 4",
+"icon": "TitanPerk4",
+"order": 672,
+"id": 672,
+"description": [
+{
+"text": "Lightning Strike always hits all Unique Buildings in addition to its random target. Unique Buildings are no longer valid random targets.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 5",
+"icon": "TitanPerk5",
+"order": 673,
+"id": 673,
+"description": [
+{
+"text": "Royal Exchanges count 500% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Perk 6",
+"icon": "TitanPerk6",
+"order": 674,
+"id": 674,
+"description": [
+{
+"text": "Increase Offline clicks gained based on Artifacts found.",
+"formulas": [
+{
+"latex": "v = 0.1 \\cdot N^{1.1}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of artifacts you have found"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Lineage",
+"icon": "DruidLineage",
+"order": 675,
+"id": 675,
+"description": [
+{
+"text": "Each lineage level counts as 2 additional Reincarnations.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "65",
+"level": 5,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "80",
+"level": 20,
+"challenge": "Have Mana regeneration at least double your maximum Mana."
+},
+{
+"n": 3,
+"reinc": "128",
+"level": 37,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "138",
+"level": 42,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "164",
+"level": 53,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "194",
+"level": 65,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 1",
+"icon": "DruidPerk1",
+"order": 676,
+"id": 676,
+"description": [
+{
+"text": "Increase the production of Non-Unique Buildings based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot t^{1.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 2",
+"icon": "DruidPerk2",
+"order": 677,
+"id": 677,
+"description": [
+{
+"text": "Gain the Druid Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 3",
+"icon": "DruidPerk3",
+"order": 678,
+"id": 678,
+"description": [
+{
+"text": "Activity Time for all spells counts 0.5% more for every 2500 Unique Buildings.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 4",
+"icon": "DruidPerk4",
+"order": 679,
+"id": 679,
+"description": [
+{
+"text": "Grand Balance lasts longer based on assistants owned.",
+"formulas": [
+{
+"latex": "v_{1} = 2 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also, while Grand Balance is active, increase the production of its targets based on Grand Balance duration.",
+"formulas": [
+{
+"latex": "v_{2} = \\left(D^{0.5}\\right)^{1 + 0.01 \\cdot j}",
+"vars": [
+{
+"symbol": "j",
+"text": "Tier \"Grand Balance\" is cast at (1 is the base tier)"
+},
+{
+"symbol": "D",
+"text": "Duration of \"Grand Balance\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 5",
+"icon": "DruidPerk5",
+"order": 680,
+"id": 680,
+"description": [
+{
+"text": "Mana produced counts 1000% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Perk 6",
+"icon": "DruidPerk6",
+"order": 681,
+"id": 681,
+"description": [
+{
+"text": "Increase Tax Collection worth based on Mana produced in this Era.",
+"formulas": [
+{
+"latex": "v = \\left(\\ln\\left(1 + W\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Lineage",
+"icon": "FacelessLineage",
+"order": 682,
+"id": 682,
+"description": [
+{
+"text": "Increase the duration of all spells based on lineage level.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "64",
+"level": 4,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "77",
+"level": 17,
+"challenge": "Cast 50 Brainwaves in a single Era."
+},
+{
+"n": 3,
+"reinc": "114",
+"level": 30,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "152",
+"level": 49,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "180",
+"level": 61,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "192",
+"level": 64,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 1",
+"icon": "FacelessPerk1",
+"order": 683,
+"id": 683,
+"description": [
+{
+"text": "Faceless Bloodline counts all mana produced in this Reincarnation and increases Mana Regeneration based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot A^{0.6}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 2",
+"icon": "FacelessPerk2",
+"order": 684,
+"id": 684,
+"description": [
+{
+"text": "Gain the Faceless Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 3",
+"icon": "FacelessPerk3",
+"order": 685,
+"id": 685,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 3.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 4",
+"icon": "FacelessPerk4",
+"order": 686,
+"id": 686,
+"description": [
+{
+"text": "While Brainwave is active, multiplicatively increase production bonus from Gems based on its duration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Brainwave\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 5",
+"icon": "FacelessPerk5",
+"order": 687,
+"id": 687,
+"description": [
+{
+"text": "Time spent counts 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Perk 6",
+"icon": "FacelessPerk6",
+"order": 688,
+"id": 688,
+"description": [
+{
+"text": "Increase Unique Buildings production based on time spent during your last Era.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Length of your last Era (seconds)"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Lineage",
+"icon": "DwarvenLineage",
+"order": 689,
+"id": 689,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on lineage level.",
+"formulas": [
+{
+"latex": "v = 10 + 0.75 \\cdot L^{1.5}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "72",
+"level": 12,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "75",
+"level": 15,
+"challenge": "Have at least 8000 Excavation depth."
+},
+{
+"n": 3,
+"reinc": "120",
+"level": 33,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "140",
+"level": 43,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "174",
+"level": 58,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "204",
+"level": 70,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 1",
+"icon": "DwarvenPerk1",
+"order": 690,
+"id": 690,
+"description": [
+{
+"text": "Increase the production of all buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v = 6.5 \\cdot D^{0.65}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 2",
+"icon": "DwarvenPerk2",
+"order": 691,
+"id": 691,
+"description": [
+{
+"text": "Gain the Dwarven Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 3",
+"icon": "DwarvenPerk3",
+"order": 692,
+"id": 692,
+"description": [
+{
+"text": "Excavations count more based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot B^{0.7}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 4",
+"icon": "DwarvenPerk4",
+"order": 693,
+"id": 693,
+"description": [
+{
+"text": "While Diamond Pickaxe is active, multiplicatively increase Mana Regeneration based on its duration.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot D^{0.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Diamond Pickaxe\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 5",
+"icon": "DwarvenPerk5",
+"order": 694,
+"id": 694,
+"description": [
+{
+"text": "Buildings count 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Perk 6",
+"icon": "DwarvenPerk6",
+"order": 695,
+"id": 695,
+"description": [
+{
+"text": "Increase Research budget based on Excavation Depth.",
+"formulas": [
+{
+"latex": "v = \\min\\left(3000, 0.6 \\cdot D^{0.6}\\right)",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Lineage",
+"icon": "DrowLineage",
+"order": 696,
+"id": 696,
+"description": [
+{
+"text": "Increase Offline production based on Lineage level.",
+"formulas": [
+{
+"latex": "v = 150 \\cdot L^{2.25}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "67",
+"level": 7,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "79",
+"level": 19,
+"challenge": "Have 3 days of offline time across all Reincarnations."
+},
+{
+"n": 3,
+"reinc": "118",
+"level": 32,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "132",
+"level": 39,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "166",
+"level": 54,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "210",
+"level": 73,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 1",
+"icon": "DrowPerk1",
+"order": 697,
+"id": 697,
+"description": [
+{
+"text": "Time spent counts 100% more. Multiplicatively increase Maximum mana based on your all-time maximum Combo Strike counter.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + K\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "K",
+"text": "Highest Combo Strike counter you have ever had"
+}
+],
+"label": "Maximum Mana (%)"
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 2",
+"icon": "DrowPerk2",
+"order": 698,
+"id": 698,
+"description": [
+{
+"text": "Gain the Drow Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 3",
+"icon": "DrowPerk3",
+"order": 699,
+"id": 699,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot B^{0.8}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 4",
+"icon": "DrowPerk4",
+"order": 700,
+"id": 700,
+"description": [
+{
+"text": "Increase Combo Strike's combo bonus based on time spent in this Era. While Combo Strike is active, increase the production of all buildings based on the current Combo Strike bonus.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + \\left(C^{0.9}\\right)^{j + 1}\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "C",
+"text": "Combo Strike counter"
+},
+{
+"symbol": "j",
+"text": "Tier Combo Strike is cast at, minus 1 (0 for the base tier)"
+}
+],
+"label": "Combo Strike bonus"
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 5",
+"icon": "DrowPerk5",
+"order": 701,
+"id": 701,
+"description": [
+{
+"text": "Maximum mana counts 300% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Perk 6",
+"icon": "DrowPerk6",
+"order": 702,
+"id": 702,
+"description": [
+{
+"text": "Multiplicatively increase production bonus from Gems based on Royal Exchanges made.",
+"formulas": [
+{
+"latex": "v = 0.4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Lineage",
+"icon": "DragonLineage",
+"order": 703,
+"id": 703,
+"description": [
+{
+"text": "Increase Unique buildings production based on lineage level",
+"formulas": [
+{
+"latex": "v = 10 \\cdot L^{1.25}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "71",
+"level": 11,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "81",
+"level": 21,
+"challenge": "Have 5 tier 2 spells active at the same time within 10 minutes of a new Era."
+},
+{
+"n": 3,
+"reinc": "116",
+"level": 31,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "144",
+"level": 45,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "178",
+"level": 60,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "206",
+"level": 71,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 1",
+"icon": "DragonPerk1",
+"order": 704,
+"id": 704,
+"description": [
+{
+"text": "Increase the production of Unique Buildings based on buildings of the same type.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 2",
+"icon": "DragonPerk2",
+"order": 705,
+"id": 705,
+"description": [
+{
+"text": "Gain the Dragon Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 3",
+"icon": "DragonPerk3",
+"order": 706,
+"id": 706,
+"description": [
+{
+"text": "Reincarnations count more based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot B^{0.25}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 4",
+"icon": "DragonPerk4",
+"order": 707,
+"id": 707,
+"description": [
+{
+"text": "Converts Red and Black Breaths to this Reincarnation values.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 5",
+"icon": "DragonPerk5",
+"order": 708,
+"id": 708,
+"description": [
+{
+"text": "Lineage levels count 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Perk 6",
+"icon": "DragonPerk6",
+"order": 709,
+"id": 709,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on Dragon's Breath duration.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Dragon's Breath\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Lineage",
+"icon": "ArchonLineage",
+"order": 710,
+"id": 710,
+"description": [
+{
+"text": "Multiplicatively increases Maximum Mana by 15% for every level.",
+"formulas": [
+{
+"latex": "v = 15 \\cdot L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Archon Lineage level (upgrades that make Lineage levels count more are included)"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "130",
+"level": 10,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "130",
+"level": 25,
+"challenge": "Have at least 3 × 10¹⁰ Mana Regeneration within the first 45 seconds of a new Era."
+},
+{
+"n": 3,
+"reinc": "130",
+"level": 35,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "151",
+"level": 48,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "179",
+"level": 60,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "205",
+"level": 70,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 1",
+"icon": "ArchonPerk1",
+"order": 711,
+"id": 711,
+"description": [
+{
+"text": "While using Archon Bloodline, increase Astral Unique Buildings production based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot \\left(M_{\\max}\\right)^{0.7}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 2",
+"icon": "ArchonPerk2",
+"order": 712,
+"id": 712,
+"description": [
+{
+"text": "Gain the Archon Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 3",
+"icon": "ArchonPerk3",
+"order": 713,
+"id": 713,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 4",
+"icon": "ArchonPerk4",
+"order": 714,
+"id": 714,
+"description": [
+{
+"text": "Precognition also affects Trophies, Gems owned, and Faction Coins found.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 5",
+"icon": "ArchonPerk5",
+"order": 715,
+"id": 715,
+"description": [
+{
+"text": "Research Points count 100% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Perk 6",
+"icon": "ArchonPerk6",
+"order": 716,
+"id": 716,
+"description": [
+{
+"text": "Increase triggered Tax Collections based on Research Points.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor 0.1 \\cdot \\left(\\ln\\left(1 + P\\right)\\right)^{1.5} \\right\\rfloor",
+"vars": [
+{
+"symbol": "P",
+"text": "Your total Research points (all branches)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Lineage",
+"icon": "DjinnLineage",
+"order": 717,
+"id": 717,
+"description": [
+{
+"text": "Increase production bonus from Gems by a multiplicative 8% for every level.",
+"formulas": [
+{
+"latex": "v = 8 \\cdot L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "130",
+"level": 10,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "130",
+"level": 25,
+"challenge": "Have at least 10⁹ assistants within the first 45 seconds of a new Era."
+},
+{
+"n": 3,
+"reinc": "130",
+"level": 35,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "153",
+"level": 49,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "169",
+"level": 55,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "199",
+"level": 67,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 1",
+"icon": "DjinnPerk1",
+"order": 718,
+"id": 718,
+"description": [
+{
+"text": "While using Djinn Bloodline, multiplicatively increase Maximum Mana based on Catalyst's activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Catalyst\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 2",
+"icon": "DjinnPerk2",
+"order": 719,
+"id": 719,
+"description": [
+{
+"text": "Gain the Djinn Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 3",
+"icon": "DjinnPerk3",
+"order": 720,
+"id": 720,
+"description": [
+{
+"text": "Additively and multiplicatively increase triggered Tax Collections by 1% for every 5000 Unique buildings built. (Add: +0, Mult: 0%)",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 4",
+"icon": "DjinnPerk4",
+"order": 721,
+"id": 721,
+"description": [
+{
+"text": "Limited Wish casts also increase the automatic click counter.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 5",
+"icon": "DjinnPerk5",
+"order": 722,
+"id": 722,
+"description": [
+{
+"text": "Mana Regeneration counts 200% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Perk 6",
+"icon": "DjinnPerk6",
+"order": 723,
+"id": 723,
+"description": [
+{
+"text": "Catalyst doubles the spell tier bonus of its active spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Lineage",
+"icon": "MakersLineage",
+"order": 724,
+"id": 724,
+"description": [
+{
+"text": "Makes Excavations, Artifacts and Trophies count more by 3% for every level.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your Makers Lineage level (upgrades that make Lineage levels count more are included)"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage",
+"perks": [
+{
+"n": 1,
+"reinc": "130",
+"level": 10,
+"challenge": null
+},
+{
+"n": 2,
+"reinc": "130",
+"level": 25,
+"challenge": "Have at least 300000 buildings within the first 45 seconds of a new Era."
+},
+{
+"n": 3,
+"reinc": "130",
+"level": 35,
+"challenge": null
+},
+{
+"n": 4,
+"reinc": "155",
+"level": 50,
+"challenge": null
+},
+{
+"n": 5,
+"reinc": "181",
+"level": 58,
+"challenge": null
+},
+{
+"n": 6,
+"reinc": "211",
+"level": 73,
+"challenge": null
+}
+],
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 1",
+"icon": "MakersPerk1",
+"order": 725,
+"id": 725,
+"description": [
+{
+"text": "Reduce the requirement for Free Excavation Reset by 3 orders of magnitude.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase assistants based on time spent offline in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 2",
+"icon": "MakersPerk2",
+"order": 726,
+"id": 726,
+"description": [
+{
+"text": "Gain the Makers Faction Spell, adjusted for your alignment if necessary.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 3",
+"icon": "MakersPerk3",
+"order": 727,
+"id": 727,
+"description": [
+{
+"text": "Increase Offline production by 10% for every 100 Unique Building owned.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 4",
+"icon": "MakersPerk4",
+"order": 728,
+"id": 728,
+"description": [
+{
+"text": "While Infinite Spiral is active, the production of all buildings increases by 2% each second, up to its maximum duration.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot s",
+"vars": [
+{
+"symbol": "s",
+"text": "Seconds since Infinite Spiral was cast, up to its duration"
+}
+],
+"label": null
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 5",
+"icon": "MakersPerk5",
+"order": 729,
+"id": 729,
+"description": [
+{
+"text": "Excavations count 200% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Perk 6",
+"icon": "MakersPerk6",
+"order": 730,
+"id": 730,
+"description": [
+{
+"text": "Increase the Ascension multiplier for Royal Market bonus by 0.7.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "lineage_perk",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Lineage",
+"icon": "LineageContainer",
+"order": 731,
+"id": 731,
+"description": [
+{
+"text": "Choose your Lineage. You can only have one Lineage, and it will persist until you abdicate. Requires 400 Royal Exchanges and the Bloodline of a specific faction. Your Lineage cannot match any of your chosen Factions.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having a lineage yet",
+"being at Reincarnation 60 or higher (230 at Ascension 4)"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "lineage_c",
 "perk": null,
 "tier_no": null,
 "cost": {

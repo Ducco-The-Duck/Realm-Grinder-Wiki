@@ -71,7 +71,7 @@ UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their
 
 PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'Proof of Neutrality': {'al': 3},
             'Proof of Order': {'ax': 4}, 'Proof of Chaos': {'ax': 5}, 'Proof of Balance': {'ax': 6}}
-KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
+KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
 def item(u):
@@ -154,12 +154,23 @@ def alleg_section():
         return (-1 if general else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
     blood = [item(u) for u in allu if u['akind'] == 'bloodline']
+    perks = {}
+    for u in allu:
+        if u['akind'] == 'lineage_perk':
+            perks[(u['faction'], int(u['name'].rsplit(' ', 1)[1]))] = item(u)
+    lineages = []
+    for u in allu:
+        if u['akind'] != 'lineage': continue
+        it = item(u)
+        it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
+        lineages.append(it)
     es = []
     for u in allu:
-        if u['akind'] in ('bloodline', 'quest') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
+        if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
         it = item(u)
         if u['akind'] == 'heritage': it['fa'] = -1
         if u['akind'] == 'bloodline_c': it['bl'] = blood
+        if u['akind'] == 'lineage_c': it['lg'] = lineages
         es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
@@ -355,7 +366,7 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
-    if(it.m || it.bl) tip.appendChild(el('div','more','Click for more info'));
+    if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
     var rq=it.s.slice();
     if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
     if(rq.length){
@@ -379,7 +390,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl}); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl}); else if(it.lg) openGroup({g:'Lineages', items:it.lg}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
@@ -436,6 +447,21 @@ the base values <i>v</i>.</div>
     });
     if(scaled) morebody.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
     if(it.mn) morebody.appendChild(el('div','more',it.mn));
+    hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
+  }
+  function openPerks(it){
+    moretitle.textContent=it.n+' perks'; morebody.textContent='';
+    it.lp.forEach(function(p){
+      var blk=el('div','bonus'), head=el('p'), pi=p.it;
+      var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
+      if(pi){
+        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); });
+        if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
+      }
+      var rq='Requires Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
+      blk.appendChild(el('div','more',rq));
+      morebody.appendChild(blk);
+    });
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function closeMore(){ more.classList.remove('open'); }
@@ -531,7 +557,8 @@ the base values <i>v</i>.</div>
     var picked = PICK.b<0 ? null : [PICK.b].concat(PICK.p>=0?[PICK.p]:[], PICK.a>=0?[PICK.a]:[]);
     var g=el('div','grid');
     if(!picked){
-      [{i:-1,n:'General'}].concat(FACS).forEach(function(f){
+      (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
+      FACS.forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
         var en={g:f.n+' upgrades', items:its}, gb=itemCell(its[0],true);
         gb.classList.add('group');

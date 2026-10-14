@@ -48,6 +48,7 @@ PROBE = f"""(function () {{ __MUT
     var keepR = {g}.{J('§8!H§')};
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
+    try {{ if (o.{J('§8!1§')}) r.d2 = o.{J('§8!1§')}(); }} catch (e) {{}}      // lineage perks: the text shown once owned
     {g}.{J('§8!H§')} = keepR;
     out.push(r); }}
   var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
@@ -209,7 +210,10 @@ def decode(body, c, ctx=None):
     src, cond, bad, extra = [], [], [], []
     rthr = []
     if ctx.get('cat') == 0:
-        if body in ('', 'return false;'): return src, cond, bad, (None, None), extra
+        if ctx.get('kind') == 'lineage_c':
+            return src, ['not having a lineage yet', 'being at Reincarnation 60 or higher (230 at Ascension 4)'], bad, (None, None), extra
+        if body in ('', 'return false;') or ctx.get('kind') in ('lineage', 'lineage_perk', 'lineage_c'):
+            return src, cond, bad, (None, None), extra
         pl = alleg_perk(body, ctx, nm)
         if pl: return src, cond, bad, (None, None), [pl]
         body = body.replace("\\'", "'")
@@ -524,6 +528,8 @@ def fix_text(name, paras):
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []     # the code only has the constant 4*10 + 3 + 0*0.1 + 14*0.01
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
+    if name == 'Fairy Heritage':
+        paras[0]['text'] = 'Increase the production of all buildings by 0.075% per Farm, Inn and Blacksmith owned.'
     if name == 'Arcane Brilliance':
         paras[0]['formulas'] = [_m(r'v = 2 \cdot S \cdot \max\left(0,\, C + 1 - A\right)',
             ('S', 'Total tier of your active spells (each active spell counts its tier)'),
@@ -630,6 +636,9 @@ def alleg_kind(r):
         if n in ASTRAL_QUESTS: return 'quest'
         if n in UNIQUE_NAMES or (n.endswith(' Quest') and (n[:-6] in UNIQUE_NAMES or n == 'Mercenary Encampment Quest')): return 'unique'
     if n == 'Bloodline': return 'bloodline_c'
+    if n == 'Lineage': return 'lineage_c'
+    if r['f'] != -1 and n.endswith(' Lineage'): return 'lineage'
+    if r['f'] != -1 and re.fullmatch(r'.+ Perk \d+', n): return 'lineage_perk'
     return None
 
 
@@ -651,12 +660,15 @@ for idx, r in todo:
     tok = r['q'].split('.')[-1]
     c = next(k for k in cl.values() if k.name == tok)
     templates = D.formulas_for(c, r['n'])
-    texts = [rr['rows'][idx]['d'] for rr in runs]
+    texts = [rr['rows'][idx].get('d2', rr['rows'][idx]['d']) for rr in runs]
     lines0, lines1, lines2 = clean_lines(*texts)
     paras = []
     for k, ln in enumerate(lines0):
         if not ln.strip(): continue
         p = D.para(c, templates, ln, r['n'])
+        rw_, pw_ = ln.split(), p['text'].split()       # a building name must not be replaced by the value symbol
+        if len(rw_) >= len(pw_) and 'v' in pw_:
+            p['text'] = ' '.join(a_ if (b_ == 'v' and re.fullmatch(r"[A-Za-z']+", a_)) else b_ for a_, b_ in zip(rw_[:len(pw_)], pw_))
         if p['text'] == D.pow10_text(ln.strip()) and not p['formulas']:
             # no template matched: drop a trailing live readout "(x%)" if the numbers change between states
             if not (ln == lines1[k] == lines2[k]):
@@ -666,7 +678,7 @@ for idx, r in todo:
     if r['cat'] != 4 and paras and paras[0].get('s') is None:
         base = texts[0]
         for a, ar in enumerate(asc_runs, 1):
-            if ar['rows'][idx]['d'] != base:
+            if ar['rows'][idx].get('d2', ar['rows'][idx]['d']) != base:
                 paras[0]['s'] = a; break
     fix_raw(r['n'], c, paras)
     fix_text(r['n'], paras)
@@ -674,7 +686,7 @@ for idx, r in todo:
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
     ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float, str)) else None, 'tid': r.get('tid'),
            'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None),
-           'cat': r['cat'], 'ax': r.get('ax'), 'f': r['f']}
+           'cat': r['cat'], 'ax': r.get('ax'), 'f': r['f'], 'kind': alleg_kind(r) if r['cat'] == 0 else None}
     src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
     if r['cat'] not in (0, 4):
         row = avail.get(r['i'])
@@ -716,6 +728,14 @@ for idx, r in todo:
                     p_['text'] = p_['text'].replace('Farms', nn_, 1)
         item['faction'] = QUEST_FACTION.get(r['n'], r['f'])
         item['akind'] = alleg_kind(r)
+        if item['akind'] == 'lineage':
+            keep, perks = [], []
+            for p_ in item['description']:
+                m_ = re.fullmatch(r'Perk (\d+) unlock: Reincarnation ([\d,.KMBT]+), Lineage Level (\d+)(?:, (.*))?', p_['text'].strip(), re.S)
+                if m_: perks.append({'n': int(m_.group(1)), 'reinc': m_.group(2), 'level': int(m_.group(3)),
+                                     'challenge': (m_.group(4) or '').strip() or None})
+                else: keep.append(p_)
+            item['description'], item['perks'] = keep, perks
         item['perk'] = r.get('idx') or None
         item['tier_no'] = None if r.get('idx') else tier_of(r['n'])
         tc = tcost.get(r['i'], {})

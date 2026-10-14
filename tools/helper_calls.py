@@ -85,6 +85,8 @@ def helper_call(cls, mem, args, name_of):
         return None
     if cls != C: return None
     first = L[0] if L else None
+    if mem == '§\'"-§':
+        return 'L', 'Your Lineage level of that faction (upgrades that make Lineage levels count more are included)'
     if mem == '§"!B§' and isinstance(first, int):
         return None if first in (59, 60, 79, 139, 140, 141) else _stat(first, g(1), g(2))
     if mem == '§-"!§' and isinstance(first, int) and first in ALIGN_WORD and first != -1:
