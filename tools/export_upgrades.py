@@ -16,6 +16,7 @@ from as3parse import parse_all, resolve
 import desc_tools as D
 import misc_manual as MM
 import alleg_manual as AM
+import alleg_manual_family  # noqa: F401  (adds the family formulas to AM.FORMULAS)
 from numtext import pow10_text
 from chance_latex import convert
 
@@ -41,7 +42,7 @@ PROBE = f"""(function () {{ __MUT
     var cat = o.{J('§,!B§')}; if (cat !== 0 && cat !== 1 && cat !== 2 && cat !== 3 && cat !== 4) continue;
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
               tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')}, idx: o.{J('§!"E§')}, coins: o.{J('§>=§')}, ax: o.{J('§9!m§')},
-              sg: o.{J('§`g§')}, sr: o.{J('§`r§')}, sw: o.{J('§2!w§')}, sv: o.{J('§;!v§')} }};
+              sg: o.{J('§`g§')}, sr: o.{J('§`r§')}, sw: o.{J('§2!w§')}, sv: o.{J('§;!v§')}, tg: o.{J('§?!=§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
@@ -208,6 +209,7 @@ def decode(body, c, ctx=None):
     src, cond, bad, extra = [], [], [], []
     rthr = []
     if ctx.get('cat') == 0:
+        if body in ('', 'return false;'): return src, cond, bad, (None, None), extra
         pl = alleg_perk(body, ctx, nm)
         if pl: return src, cond, bad, (None, None), [pl]
         body = body.replace("\\'", "'")
@@ -223,6 +225,10 @@ def decode(body, c, ctx=None):
         if body.startswith('var ') and '; return ' in body:       # treaties of prestige / astral factions: drop the local declarations
             body = 'return ' + body.split('; return ', 1)[1]
             body = body.replace('§8G§.§7d§(_loc1_[§8G§.§-!^§])', 'ALLIANCE_BASE').replace('§8G§.§7d§(_loc1_[§8G§.§#3§])', 'ALLIANCE_PRESTIGE')
+    mq = re.fullmatch(r'if\((.+)\) \{ return true; \} return false;', body)
+    if mq and ctx.get('cat') == 0: body = f'return {mq.group(1)};'
+    if ctx.get('cat') == 0 and body.startswith('if(§#!!§.§`Q§ != -1) { return false; } return '):
+        body = 'return §#!!§.§`Q§ != -1 && ' + body.split('{ return false; } return ', 1)[1]
     mv = re.fullmatch(r'var _loc1_:Boolean = (.+); return _loc1_ && (.+);', body)
     if mv: body = f'return {mv.group(1)} && {mv.group(2)};'
     m = re.fullmatch(r'return (.+);', body)
@@ -324,6 +330,39 @@ def decode(body, c, ctx=None):
                 n_ = nm(mm.group(1))
                 cond.append('not having a Research Facility or any research bought' + (f', unless you have the upgrade {n_[1]}' if n_ else '')); continue
             if t == "§&c§.§'!_§()": continue            # Reincarnation 3 or higher (or one upgrade): the Research Facilities access
+            if t == 'super.§-6§' or re.fullmatch(r'!' + G + r'§<P§\((§[^§]*§)\.id\)', t): continue   # base check / quest not done yet
+            if t == '§9!%§': continue
+            mm = re.fullmatch(FAC + r' == §-!\^§', t)
+            if mm: cond.append(role_text(ctx['f'])); continue
+            if re.fullmatch(PRE + r' == §-!\^§', t): cond.append(role_text(ctx['f'])); continue
+            if re.fullmatch(AST + r' == §-!\^§', t): cond.append(role_text(ctx['f'])); continue
+            if re.fullmatch(AL + r' == §,!Y§', t): continue
+            mm = re.fullmatch(AL + r' == 0', t)
+            if mm: cond.append('not having an alignment yet'); continue
+            mm = re.fullmatch(G + r'§9!m§ == 0', t)
+            if mm: cond.append('not having an Order, Chaos or Balance path yet'); continue
+            if t == AL + ' != 0': continue
+            if t == '§#!!§.§`Q§ != -1': cond.append('not having a bloodline yet'); continue
+            mm = re.fullmatch(r'\(§\?!6§ \|\| ' + G + r'§#N§\((§[^§]*§)\.id\)\.§\?j§ >= (\d+)\)', t)
+            if mm:
+                n_ = nm(mm.group(1))
+                cond.append(f"having used {n_[1] if n_ else 'the faction spell'} for at least {int(mm.group(2)) // 3600} hour of activity time"); continue
+            mm = re.fullmatch(G + r'§#N§\((§[^§]*§)\.id\)\.§-6§', t)
+            if mm:
+                n_ = nm(mm.group(1))
+                cond.append(f"having the spell {n_[1] if n_ else '?'}"); continue
+            mm = re.fullmatch(r'\((§&c§\.§9"0§\(\)) \|\| ' + G + r'§#N§\((§[^§]*§)\.id\)\.§-6§\)', t)
+            if mm:
+                n_ = nm(mm.group(2))
+                cond.append(f"having the spell {n_[1] if n_ else '?'} (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"); continue
+            mm = re.fullmatch(r'\(' + G + r'§<P§\((§[^§]*§)\.id\) \|\| ' + G + r'§<P§\((§[^§]*§)\.id\) \|\| ' + G + r'§<P§\((§[^§]*§)\.id\)\)', t)
+            if mm:
+                ns_ = [nm(mm.group(i)) for i in (1, 2, 3)]
+                if all(ns_): extra.append(' or '.join(describe_source({'kind': 'trophy', 'name': n[1]})['kind'] + ': ' + n[1] for n in ns_)); continue
+            mm = re.fullmatch(r'\(' + PRE + r' == -1 \|\| ' + G + r'§<P§\((§[^§]*§)\.id\)\)', t)
+            if mm:
+                n_ = nm(mm.group(1))
+                cond.append('not having a prestige faction' + (f', unless you have {describe_source({"kind": "trophy", "name": n_[1]})["kind"]}: {n_[1]}' if n_ else '')); continue
         mm = re.fullmatch(FAC + r' == (\d+)', t)
         if mm: cond.append(f'playing as {FACTION[int(mm.group(1))]}'); continue
         mm = re.fullmatch(r'\(' + FAC + r' == 6 \|\| ' + FAC + r' == 7 \|\| ' + FAC + r' == 8\)', t)
@@ -558,15 +597,42 @@ ALEG_NAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Dem
              9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
 
 
+def role_text(f):
+    if f in (9, 10, 12): return f'having {ALEG_NAME[f]} as your prestige faction'
+    if f in (13, 14, 15): return f'having {ALEG_NAME[f]} as your astral faction'
+    return f'playing as {ALEG_NAME.get(f, f)}'
+
+
 def tier_of(name):
     for k, n in TIER_NO:
         if k in name: return n
     return None
 
 
+UNIQUE_NAMES = {n for b_ in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))
+                for n in (b_.get('unique_names_list') or {}).values()}
+
+
+def alleg_kind(r):
+    """which family of Allegiances upgrades a category 0 row belongs to (None: not covered yet)"""
+    n = r['n']
+    if r.get('idx'): return 'perk'
+    if r.get('grp') in ALLEG_TAGS and tier_of(n) is not None: return 'tier'
+    if n in MERC_PERKS: return 'perk'
+    if n.startswith('Proof of ') and r['f'] == -1: return 'proof'
+    if r['f'] != -1:
+        if n.endswith('Heritage'): return 'heritage'
+        if n.endswith(' Exchange') and n != 'Royal Exchange': return 'exchange'
+        if n.endswith(' Bloodline'): return 'bloodline'
+        if r.get('tg') == 'SpellFactionUpgrade': return 'spell'
+        if n in UNIQUE_NAMES or (n.endswith(' Quest') and n[:-6] in UNIQUE_NAMES): return 'unique'
+    if n == 'Bloodline': return 'bloodline_c'
+    return None
+
+
 def wanted(r):
     if r['cat'] == 0:
-        return bool(r.get('idx')) or (r.get('grp') in ALLEG_TAGS and tier_of(r['n']) is not None) or r['n'] in MERC_PERKS
+        return alleg_kind(r) is not None
     if r['cat'] == 1: return r.get('grp') in MISC_GROUPS or r['n'] in MISC_NAMES
     return True
 by_cat = {name: [] for name in CATS.values()}
@@ -605,7 +671,7 @@ for idx, r in todo:
     body = re.sub(r'\s+', ' ', av.body.strip()) if av else ''
     ctx = {'name': r['n'], 'thr': r.get('thr') if isinstance(r.get('thr'), (int, float, str)) else None, 'tid': r.get('tid'),
            'tier': r.get('tier'), 'bld': r.get('bld'), 'group': r.get('grp'), 'file': getattr(c, 'path', None),
-           'cat': r['cat'], 'ax': r.get('ax')}
+           'cat': r['cat'], 'ax': r.get('ax'), 'f': r['f']}
     src, cond, bad, (alo, ahi), extra = decode(body, c, ctx)
     if r['cat'] not in (0, 4):
         row = avail.get(r['i'])
@@ -627,6 +693,8 @@ for idx, r in todo:
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
     if r['cat'] == 0:
+        if alleg_kind(r) == 'exchange':          # a live readout ("Current overall bonus: ...")
+            item['description'] = [p_ for p_ in item['description'] if not p_['text'].startswith('Current overall bonus')]
         # manual formulas replace what the converter could not read (the paragraph's own formulas are dropped first)
         _done = set()
         for pi, f_ in AM.FORMULAS.get(r['n'], []):
@@ -642,6 +710,7 @@ for idx, r in todo:
                 for nn_ in names_:
                     p_['text'] = p_['text'].replace('Farms', nn_, 1)
         item['faction'] = r['f']
+        item['akind'] = alleg_kind(r)
         item['perk'] = r.get('idx') or None
         item['tier_no'] = None if r.get('idx') else tier_of(r['n'])
         tc = tcost.get(r['i'], {})

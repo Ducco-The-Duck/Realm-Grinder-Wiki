@@ -28,11 +28,11 @@ def name_of_for(c):
 def source_templates(c):
     """-> {method name: body} for the description method and the string-returning helpers it calls"""
     meths = {m.name: m for m in c.methods}
-    desc = meths.get('§@"§')
+    desc = meths.get('§@"§') or meths.get('§>!d§')       # bloodlines describe themselves through the second one
     bodies = [desc.body] if desc else []
     for n in re.findall(r'(§[^§]*§)\(\)', desc.body if desc else ''):
         m = meths.get(n)
-        if m is not None and n != '§@"§' and '_("' in m.body: bodies.append(m.body)
+        if m is not None and n not in ('§@"§', '§>!d§') and '_("' in m.body: bodies.append(m.body)
     return meths, '\n'.join(bodies)
 
 

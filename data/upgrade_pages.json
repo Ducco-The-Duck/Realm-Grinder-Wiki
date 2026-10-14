@@ -1,6 +1,724 @@
 {
 "allegiances": [
 {
+"name": "Fairy Exchange",
+"icon": null,
+"order": 6,
+"id": 6,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 20
+},
+"fc_a4": {
+"Fairy": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Exchange",
+"icon": null,
+"order": 7,
+"id": 7,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 20
+},
+"fc_a4": {
+"Elf": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Angelic Exchange",
+"icon": null,
+"order": 8,
+"id": 8,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 20
+},
+"fc_a4": {
+"Angel": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Goblin Exchange",
+"icon": null,
+"order": 9,
+"id": 9,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 20
+},
+"fc_a4": {
+"Goblin": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Undead Exchange",
+"icon": null,
+"order": 10,
+"id": 10,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 20
+},
+"fc_a4": {
+"Undead": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Demonic Exchange",
+"icon": null,
+"order": 11,
+"id": 11,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 20
+},
+"fc_a4": {
+"Demon": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Exchange",
+"icon": null,
+"order": 12,
+"id": 12,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 20
+},
+"fc_a4": {
+"Dwarf": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Drow Exchange",
+"icon": null,
+"order": 13,
+"id": 13,
+"description": [
+{
+"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Total Exchanges purchased: INF",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "exchange",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 20
+},
+"fc_a4": {
+"Drow": 20
+},
+"free_start": false
+}
+},
+{
+"name": "Proof of Good Deed",
+"icon": "GoodProofUpgrade",
+"order": 81,
+"id": 81,
+"description": [
+{
+"text": "Give yourself to the Good side, unlocking good-related features. The Good alignment is oriented to a more active gameplay, focusing on spells and productive clicks.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having an alignment yet"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+25000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Proof of Evil Deed",
+"icon": "EvilProofUpgrade",
+"order": 82,
+"id": 82,
+"description": [
+{
+"text": "Turn yourself into an Evil villain, unlocking evil-related features. The Evil alignment is oriented to a more idle gameplay, focusing on steady and passive building production.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having an alignment yet"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+25000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Proof of Neutrality",
+"icon": "NeutralProofUpgrade",
+"order": 83,
+"id": 83,
+"description": [
+{
+"text": "Embrace the peaceful Neutrality, unlocking neutral related features. The Neutral alignment is eclectic and versatile, not focusing on a single aspect of the game but picking something from all of them.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Allegiances trophy: Archeology Titan Trophy or Allegiances trophy: Archeology Druid Trophy or Allegiances trophy: Archeology Faceless Trophy"
+],
+"conditions": [
+"not having an alignment yet"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+10000000000000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Proof of Order",
+"icon": "OrderProofUpgrade",
+"order": 84,
+"id": 84,
+"description": [
+{
+"text": "Determine your rulership in an efficient and stable fashion, making the best out of well-planned strategies to let your realm grow ever further.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Choosing this alignment will let you affiliate with the following factions:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Angel (Good)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Titan (Neutral)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Undead (Evil)",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having an Order, Chaos or Balance path yet"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1000000000000000,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Proof of Chaos",
+"icon": "ChaosProofUpgrade",
+"order": 85,
+"id": 85,
+"description": [
+{
+"text": "Resign your will to the eternal entropy that forms and maintains the world itself, prospering in the glory of extreme bursts of random fortune.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Choosing this alignment will let you affiliate with the following factions:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Fairy (Good)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Faceless (Neutral)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Demon (Evil)",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having an Order, Chaos or Balance path yet"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1000000000000000,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Proof of Balance",
+"icon": "BalanceProofUpgrade",
+"order": 86,
+"id": 86,
+"description": [
+{
+"text": "Avoid fixating yourself to the rules while not falling to madness as well. Take advantage of everything you can gather and maximize your gains with any possible mean.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Choosing this alignment will let you affiliate with the following factions:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Elves (Good)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Druids (Neutral)",
+"formulas": [],
+"s": null
+},
+{
+"text": "Goblins (Evil)",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having an Order, Chaos or Balance path yet"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "proof",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1000000000000000,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
 "name": "Fairies Trade Treaty",
 "icon": "FairyTradeTreaty",
 "order": 208,
@@ -31,6 +749,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -74,6 +793,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -117,6 +837,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -156,6 +877,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -210,6 +932,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -260,6 +983,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -318,6 +1042,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -368,6 +1093,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -412,6 +1138,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -470,6 +1197,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -520,6 +1248,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -578,6 +1307,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -628,6 +1358,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -678,6 +1409,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -728,6 +1460,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -778,6 +1511,7 @@
 "tier": -1,
 "building": null,
 "faction": 0,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -787,6 +1521,120 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Enchanted Field",
+"icon": "BuildingEnchanted Field",
+"order": 224,
+"id": 224,
+"description": [
+{
+"text": "Upgrade Farms to Enchanted Fields, boosting their production based on assistants owned and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 50 \\cdot \\left(500 \\cdot A\\right)^{0.5}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Fairy Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Fairy",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Swarming Tower",
+"icon": "BuildingSwarming Tower",
+"order": 225,
+"id": 225,
+"description": [
+{
+"text": "Upgrade Wizard Towers to Swarming Towers, boosting their production based on active spells and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot S^{2.5}",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Fairy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -824,6 +1672,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -867,6 +1716,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -910,6 +1760,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -949,6 +1800,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -997,6 +1849,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -1047,6 +1900,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -1097,6 +1951,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -1147,6 +2002,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -1197,6 +2053,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -1247,6 +2104,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -1297,6 +2155,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -1351,6 +2210,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -1401,6 +2261,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -1476,6 +2337,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -1526,6 +2388,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -1588,6 +2451,7 @@
 "tier": -1,
 "building": null,
 "faction": 1,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -1597,6 +2461,57 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Arboreal City",
+"icon": "BuildingArboreal City",
+"order": 243,
+"id": 243,
+"description": [
+{
+"text": "Upgrade Citadels to Arboreal Cities, boosting their production based on Faction Coin find chance and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 20 \\cdot \\left(\\ln\\left(1 + Q\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Elf"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -1634,6 +2549,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -1677,6 +2593,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -1720,6 +2637,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -1759,6 +2677,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -1813,6 +2732,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -1863,6 +2783,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -1913,6 +2834,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -1963,6 +2885,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -2018,6 +2941,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -2068,6 +2992,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -2118,6 +3043,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -2173,6 +3099,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -2223,6 +3150,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -2273,6 +3201,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -2323,6 +3252,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -2362,6 +3292,7 @@
 "tier": -1,
 "building": null,
 "faction": 2,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -2371,6 +3302,120 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Heaven's Domain",
+"icon": "BuildingHeaven's Domain",
+"order": 260,
+"id": 260,
+"description": [
+{
+"text": "Upgrade Heaven's Gates to Heaven's Domains, boosting their production based on Mana Regeneration and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 7 \\cdot M^{0.7}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Angel Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Angel",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Holy Site",
+"icon": "BuildingHoly Site",
+"order": 261,
+"id": 261,
+"description": [
+{
+"text": "Upgrade Cathedrals to Holy Sites, boosting their production based on time spent as Good and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 1.8 \\cdot t^{0.9}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Good alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Angel"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -2408,6 +3453,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -2451,6 +3497,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -2494,6 +3541,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -2533,6 +3581,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -2587,6 +3636,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -2637,6 +3687,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -2687,6 +3738,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -2737,6 +3789,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -2787,6 +3840,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -2837,6 +3891,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -2887,6 +3942,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -2953,6 +4009,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -2992,6 +4049,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -3042,6 +4100,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -3092,6 +4151,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -3152,6 +4212,7 @@
 "tier": -1,
 "building": null,
 "faction": 3,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -3161,6 +4222,124 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Bank",
+"icon": "BuildingGoblin Bank",
+"order": 278,
+"id": 278,
+"description": [
+{
+"text": "Upgrade Witch Conclaves to Goblin Banks, boosting their base production based on Gold owned and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + Y\\right)\\right)^{\\frac{3}{1 + 0.1 \\cdot \\left(a + 1\\right)}}",
+"vars": [
+{
+"symbol": "a",
+"text": "Your Ascension number"
+},
+{
+"symbol": "Y",
+"text": "Gold you own"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Goblin Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Goblin",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Slave Market",
+"icon": "BuildingSlave Market",
+"order": 279,
+"id": 279,
+"description": [
+{
+"text": "Upgrade Slave Pens to Slave Markets, boosting their production based on assistants owned and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot A^{0.75}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Goblin"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -3198,6 +4377,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -3241,6 +4421,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -3284,6 +4465,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -3323,6 +4505,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -3377,6 +4560,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -3427,6 +4611,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -3477,6 +4662,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -3527,6 +4713,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -3577,6 +4764,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -3632,6 +4820,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -3671,6 +4860,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -3721,6 +4911,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -3783,6 +4974,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -3833,6 +5025,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -3883,6 +5076,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -3933,6 +5127,7 @@
 "tier": -1,
 "building": null,
 "faction": 4,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -3942,6 +5137,120 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undercity",
+"icon": "BuildingUndercity",
+"order": 296,
+"id": 296,
+"description": [
+{
+"text": "Upgrade Necropolises to Undercities, boosting their production based on time spent in this Era and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 80 + 80 \\cdot t^{0.8}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Undead Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Undead",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Flesh Workshop",
+"icon": "BuildingFlesh Workshop",
+"order": 297,
+"id": 297,
+"description": [
+{
+"text": "Upgrade Orcish Arenas to Flesh Workshops, boosting their production based on your Mana Regeneration and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 35 \\cdot M^{0.65}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Undead"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -3979,6 +5288,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -4022,6 +5332,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -4065,6 +5376,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -4104,6 +5416,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -4158,6 +5471,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -4208,6 +5522,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -4258,6 +5573,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -4297,6 +5613,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -4347,6 +5664,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -4397,6 +5715,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -4452,6 +5771,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -4502,6 +5822,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -4552,6 +5873,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -4606,6 +5928,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -4660,6 +5983,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -4710,6 +6034,7 @@
 "tier": -1,
 "building": null,
 "faction": 5,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -4719,6 +6044,128 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Infernal Realm",
+"icon": "BuildingInfernal Realm",
+"order": 314,
+"id": 314,
+"description": [
+{
+"text": "Upgrade Hell Portals to Infernal Realms, boosting their production by 40% per trophy you unlocked and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 40 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Demon Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Demon",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Burning Abyss",
+"icon": "BuildingBurning Abyss",
+"order": 315,
+"id": 315,
+"description": [
+{
+"text": "Upgrade Halls of Legends to Burning Abysses, boosting their production chaotically based on time spent as Evil and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = \\sum_{i} d_{i}^{\\,p}",
+"vars": [
+{
+"symbol": "d",
+"text": "The decimal digits of x (each digit is raised to the power p and they are added up)"
+},
+{
+"symbol": "p",
+"text": "2 + (floor(0.5 * ln(1 + x)) + 1) / 10"
+},
+{
+"symbol": "x",
+"text": "1.25 times your time with Evil alignment in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Demon"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -4756,6 +6203,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -4801,6 +6249,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -4846,6 +6295,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -4887,6 +6337,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -4943,6 +6394,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -5003,6 +6455,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -5053,6 +6506,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -5092,6 +6546,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -5142,6 +6597,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -5192,6 +6648,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -5242,6 +6699,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -5281,6 +6739,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -5331,6 +6790,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -5381,6 +6841,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -5431,6 +6892,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -5481,6 +6943,7 @@
 "tier": -1,
 "building": null,
 "faction": 6,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -5490,6 +6953,114 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Olympian Hall",
+"icon": "BuildingOlympian Hall",
+"order": 332,
+"id": 332,
+"description": [
+{
+"text": "Upgrade Halls of Legend to Olympian Halls, boosting their production based on Royal Exchanges purchased and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 6 \\cdot N^{1.2}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Titan Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Titan",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mountain Palace",
+"icon": "BuildingMountain Palace",
+"order": 333,
+"id": 333,
+"description": [
+{
+"text": "Upgrade Deep Mines to Mountain Palaces, boosting their production based on buildings built and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 0.75 \\cdot B^{0.75}",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Titan"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -5527,6 +7098,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -5572,6 +7144,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -5617,6 +7190,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -5658,6 +7232,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -5714,6 +7289,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -5764,6 +7340,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -5824,6 +7401,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -5874,6 +7452,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -5924,6 +7503,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -5974,6 +7554,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -6024,6 +7605,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -6074,6 +7656,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -6124,6 +7707,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -6174,6 +7758,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -6244,6 +7829,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -6294,6 +7880,7 @@
 "tier": -1,
 "building": null,
 "faction": 7,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -6303,6 +7890,114 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Stonehenge",
+"icon": "BuildingStonehenge",
+"order": 350,
+"id": 350,
+"description": [
+{
+"text": "Upgrade Stone Pillars to Stonehenge, boosting their production based on Maximum Mana and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 30 \\cdot \\left(M_{\\max}\\right)^{0.6}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Druid Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Druid",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Ziggurat",
+"icon": "BuildingZiggurat",
+"order": 351,
+"id": 351,
+"description": [
+{
+"text": "Upgrade Ancient Pyramids to Ziggurats, boosting their production based on lineage levels and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = L^{1.2}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your total Lineage level (all factions added together)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Druid"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -6340,6 +8035,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -6385,6 +8081,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -6430,6 +8127,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -6471,6 +8169,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -6527,6 +8226,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -6577,6 +8277,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -6627,6 +8328,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -6677,6 +8379,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -6727,6 +8430,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -6777,6 +8481,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -6827,6 +8532,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -6877,6 +8583,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -6927,6 +8634,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -6981,6 +8689,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -7036,6 +8745,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -7086,6 +8796,7 @@
 "tier": -1,
 "building": null,
 "faction": 8,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -7095,6 +8806,118 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sunken City",
+"icon": "BuildingSunken City",
+"order": 368,
+"id": 368,
+"description": [
+{
+"text": "Upgrade Labyrinths to Sunken Cities, boosting their production based on time spent on your longest Era in this Reincarnation and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 75 + 7.5 \\cdot \\left(\\max\\left(t, E_{\\max}\\right)\\right)^{0.75}",
+"vars": [
+{
+"symbol": "E_{\\max}",
+"text": "Length of your longest Era in this Reincarnation, not counting the current one (seconds)"
+},
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Faceless Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Faceless",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Forbidden Library",
+"icon": "BuildingForbidden Library",
+"order": 369,
+"id": 369,
+"description": [
+{
+"text": "Upgrade Monasteries to Forbidden Libraries, boosting their production chaotically based on spells cast and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 30 \\cdot \\left(\\frac{\\ln\\left(1 + T\\right)}{\\ln\\left(T \\bmod 10 + 2\\right)}\\right)^{3}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all spells in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Faceless"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+42,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -7136,6 +8959,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -7179,6 +9003,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -7222,6 +9047,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -7262,6 +9088,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -7316,6 +9143,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -7366,6 +9194,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -7416,6 +9245,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -7466,6 +9296,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -7516,6 +9347,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -7566,6 +9398,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -7616,6 +9449,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -7666,6 +9500,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -7716,6 +9551,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -7766,6 +9602,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -7820,6 +9657,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -7878,6 +9716,7 @@
 "tier": -1,
 "building": null,
 "faction": 9,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -7887,6 +9726,114 @@
 1e+120,
 0,
 1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Forge",
+"icon": "BuildingDwarven Forge",
+"order": 386,
+"id": 386,
+"description": [
+{
+"text": "Upgrade Blacksmiths to Dwarven Forges, boosting their production based on Mana Regeneration and unlocking more perks for the building.",
+"formulas": [
+{
+"latex": "v = 300 \\cdot M^{0.6}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your mana regeneration per second (the m/s shown in game)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Dwarven Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction",
+"being at Reincarnation 32 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+187,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "High Bastion",
+"icon": "BuildingHigh Bastion",
+"order": 387,
+"id": 387,
+"description": [
+{
+"text": "Upgrade Royal Castles to High Bastions, boosting their production based on clicks made in this reincarnation and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot C^{0.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+80,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -7928,6 +9875,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -7971,6 +9919,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -8014,6 +9963,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -8054,6 +10004,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -8108,6 +10059,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -8158,6 +10110,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -8208,6 +10161,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -8258,6 +10212,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -8308,6 +10263,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -8358,6 +10314,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -8408,6 +10365,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -8458,6 +10416,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -8508,6 +10467,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -8558,6 +10518,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -8608,6 +10569,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -8658,6 +10620,7 @@
 "tier": -1,
 "building": null,
 "faction": 10,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -8667,6 +10630,114 @@
 1e+120,
 0,
 1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spider Sanctuary",
+"icon": "BuildingSpider Sanctuary",
+"order": 404,
+"id": 404,
+"description": [
+{
+"text": "Upgrade Dark Temples to Spider Sanctuaries, boosting their production based on time spent offline in this Reincarnation and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 45 \\cdot t^{0.9}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Drow Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction",
+"being at Reincarnation 32 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+187,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Brothel",
+"icon": "BuildingBrothel",
+"order": 405,
+"id": 405,
+"description": [
+{
+"text": "Upgrade Inns to Brothels, boosting their production based on Royal Exchanges made and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 10 \\cdot N^{1.05}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+80,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -8707,6 +10778,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -8753,6 +10825,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -8799,6 +10872,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -8841,6 +10915,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -8907,6 +10982,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -8966,6 +11042,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -9031,6 +11108,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -9101,6 +11179,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -9151,6 +11230,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -9213,6 +11293,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -9275,6 +11356,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -9325,6 +11407,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -9380,6 +11463,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -9430,6 +11514,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -9469,6 +11554,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -9519,6 +11605,7 @@
 "tier": -1,
 "building": null,
 "faction": 12,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -9528,6 +11615,114 @@
 1e+120,
 0,
 1e+171
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wyrm's Den",
+"icon": "BuildingWyrm's Den",
+"order": 422,
+"id": 422,
+"description": [
+{
+"text": "Upgrade Iron Strongholds to Wyrm's Dens, boosting their production based on Faction Coins found in this Era and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": null
+}
+],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Dragon Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction",
+"being at Reincarnation 46 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+61,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Pasture",
+"icon": "BuildingDragon Pasture",
+"order": 423,
+"id": 423,
+"description": [
+{
+"text": "Upgrade Farms to Dragon Pastures, boosting their production based on Maximum Mana and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 0.65 \\cdot \\left(M_{\\max}\\right)^{0.65}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+80,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -9571,6 +11766,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -9616,6 +11812,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -9661,6 +11858,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -9709,6 +11907,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -9765,6 +11964,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -9820,6 +12020,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -9870,6 +12071,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -9920,6 +12122,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -9986,6 +12189,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -10040,6 +12244,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -10090,6 +12295,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -10140,6 +12346,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -10190,6 +12397,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -10229,6 +12437,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -10268,6 +12477,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -10318,6 +12528,7 @@
 "tier": -1,
 "building": null,
 "faction": 13,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -10327,6 +12538,57 @@
 1e+187,
 0,
 1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Nexus",
+"icon": "BuildingNexus",
+"order": 441,
+"id": 441,
+"description": [
+{
+"text": "Upgrade Farms to Nexuses, boosting their production based on time spent as Order and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 80 \\cdot t^{0.8}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Order alignment in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Archon as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+180,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -10370,6 +12632,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -10415,6 +12678,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -10460,6 +12724,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -10508,6 +12773,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -10564,6 +12830,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -10614,6 +12881,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -10664,6 +12932,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -10714,6 +12983,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -10780,6 +13050,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -10830,6 +13101,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -10880,6 +13152,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -10940,6 +13213,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -10990,6 +13264,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -11040,6 +13315,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -11090,6 +13366,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -11140,6 +13417,7 @@
 "tier": -1,
 "building": null,
 "faction": 14,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -11149,6 +13427,57 @@
 1e+187,
 0,
 1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Pavilion",
+"icon": "BuildingPavilion",
+"order": 459,
+"id": 459,
+"description": [
+{
+"text": "Upgrade Farms to Pavilions, boosting their production based on spells cast in this Reincarnation and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 12 \\cdot T^{0.6}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all spells in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Djinn as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+180,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -11192,6 +13521,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -11237,6 +13567,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -11282,6 +13613,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -11330,6 +13662,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -11386,6 +13719,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 1,
 "tier_no": null,
 "cost": {
@@ -11436,6 +13770,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 2,
 "tier_no": null,
 "cost": {
@@ -11486,6 +13821,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 3,
 "tier_no": null,
 "cost": {
@@ -11536,6 +13872,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 4,
 "tier_no": null,
 "cost": {
@@ -11586,6 +13923,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 5,
 "tier_no": null,
 "cost": {
@@ -11636,6 +13974,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 6,
 "tier_no": null,
 "cost": {
@@ -11686,6 +14025,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 7,
 "tier_no": null,
 "cost": {
@@ -11740,6 +14080,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 8,
 "tier_no": null,
 "cost": {
@@ -11790,6 +14131,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 9,
 "tier_no": null,
 "cost": {
@@ -11840,6 +14182,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 10,
 "tier_no": null,
 "cost": {
@@ -11890,6 +14233,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 11,
 "tier_no": null,
 "cost": {
@@ -11956,6 +14300,7 @@
 "tier": -1,
 "building": null,
 "faction": 15,
+"akind": "perk",
 "perk": 12,
 "tier_no": null,
 "cost": {
@@ -11965,6 +14310,228 @@
 1e+187,
 0,
 1e+240
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Hall of Origination",
+"icon": "BuildingHall of Origination",
+"order": 477,
+"id": 477,
+"description": [
+{
+"text": "Upgrade Halls of Legends to Halls of Origination, boosting their production based on assistants owned and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 0.75 \\cdot A^{0.75}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Makers as your astral faction"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+180,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Camp",
+"icon": "BuildingMercenary Camp",
+"order": 478,
+"id": 478,
+"description": [
+{
+"text": "Upgrade Knights Jousts to Mercenary Camps, boosting their production based on Non-Unique buildings built and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 1.25 \\cdot \\left(1 + B\\right)^{1.25}",
+"vars": [
+{
+"symbol": "B",
+"text": "Non-Unique buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Mercenary Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Mercenary",
+"being at Reincarnation 75 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+125,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Tyrant Garrison",
+"icon": "BuildingTyrant Garrison",
+"order": 479,
+"id": 479,
+"description": [
+{
+"text": "Upgrade Evil Fortresses to Tyrant Garrisons, boosting their production based on your Offline production bonus and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 85 + 8.5 \\cdot O^{0.85}",
+"vars": [
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+}
+],
+"shown": true
+}
+],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Mercenary Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Mercenary",
+"being at Reincarnation 75 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+125,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Freemason's Hall",
+"icon": "BuildingFreemason's Hall",
+"order": 480,
+"id": 480,
+"description": [
+{
+"text": "Upgrade Inns to Freemason's Halls, boosting their production based on Faction Coins you found in this Era and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 60 + 60 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{6}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Mercenary Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Mercenary",
+"being at Reincarnation 75 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+125,
+0,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -12000,6 +14567,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "tier",
 "perk": null,
 "tier_no": 1,
 "cost": {
@@ -12039,6 +14607,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "tier",
 "perk": null,
 "tier_no": 2,
 "cost": {
@@ -12095,6 +14664,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "perk",
 "perk": null,
 "tier_no": null,
 "cost": {
@@ -12160,6 +14730,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "perk",
 "perk": null,
 "tier_no": null,
 "cost": {
@@ -12215,6 +14786,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "perk",
 "perk": null,
 "tier_no": null,
 "cost": {
@@ -12254,6 +14826,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "tier",
 "perk": null,
 "tier_no": 3,
 "cost": {
@@ -12298,6 +14871,7 @@
 "tier": -1,
 "building": null,
 "faction": 11,
+"akind": "tier",
 "perk": null,
 "tier_no": 4,
 "cost": {
@@ -12306,6 +14880,4667 @@
 0,
 0,
 1e+100,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Enchanted Field Quest",
+"icon": "UniqueFairyQuest",
+"order": 535,
+"id": 535,
+"description": [
+{
+"text": "Hey! Listen! A true Fairy has never enough Farms! We will offer you the chance to improve them!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "2250 Farms",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Fairy",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Heaven's Domain Quest",
+"icon": "UniqueAngelQuest",
+"order": 537,
+"id": 537,
+"description": [
+{
+"text": "Bless you, dear friend. The lands of the sky are expanding, as more good souls are joining our ranks. Would you be so kind to provide them a place to stay in the Heavens?",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1500 Heaven's Gates",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Angel",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Bank Quest",
+"icon": "UniqueGoblinQuest",
+"order": 538,
+"id": 538,
+"description": [
+{
+"text": "Hey there! We need a safe place to keep our honestly earned savings. We'll turn those Witch Conclaves into something more... useful, if you build enough of them.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1750 Witch Conclaves",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Goblin",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undercity Quest",
+"icon": "UniqueUndeadQuest",
+"order": 539,
+"id": 539,
+"description": [
+{
+"text": "Hello there. The dead stand ready. Give them a place to rise and live again... Build enough Necropolises, we'll take care of the rest.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1750 Necropolises",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Undead",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Infernal Realm Quest",
+"icon": "UniqueDemonQuest",
+"order": 540,
+"id": 540,
+"description": [
+{
+"text": "Useless underling, be warned! The Demons are going to invade your world with all their might. If you know which side you want to be on when that happens, build those Hell Portals!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1500 Hell Portals",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Demon",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Olympian Hall Quest",
+"icon": "UniqueTitanQuest",
+"order": 541,
+"id": 541,
+"description": [
+{
+"text": "Khaire, ruler. More of our people will join your cause if you build enough Halls of Legends. Our architects will take care of expanding them to accomodate the almighty Titans.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "2000 Halls of Legends",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Titan",
+"having no prestige faction",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Stonehenge Quest",
+"icon": "UniqueDruidQuest",
+"order": 542,
+"id": 542,
+"description": [
+{
+"text": "Hello, friend. The balance of nature requires more magic to sustain it. Build enough Stone Pillars, we'll gather our elders to improve them.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "2000 Stone Pillars",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Druid",
+"having no prestige faction",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sunken City Quest",
+"icon": "UniqueFacelessQuest",
+"order": 543,
+"id": 543,
+"description": [
+{
+"text": "C-uh'e sll'ha hrii nog nwyar. Kn'a wgah'n ph'sgn'wahl. (Those unpronounceable words with no apparent meaning have spoken directly to your mind: you have to build enough Labyrinths).",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "2000 Labyrinths",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Faceless",
+"having no prestige faction",
+"being at Reincarnation 24 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Forge Quest",
+"icon": "UniqueDwarvenQuest",
+"order": 544,
+"id": 544,
+"description": [
+{
+"text": "Aye again lad! Don't ye want a better place to forge yer weapons? With enough Blacksmiths, me people can help ye!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "3500 Blacksmiths",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction",
+"being at Reincarnation 32 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+184,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Spider Sanctuary Quest",
+"icon": "UniqueDrowQuest",
+"order": 545,
+"id": 545,
+"description": [
+{
+"text": "Kivvil. Our Valsharess requires more places to worship the almighty Spider Queen. Build enough Dark Temples, and our priestesses will consecrate them.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "3000 Dark Temples",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction",
+"being at Reincarnation 32 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+184,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Wyrm's Den Quest",
+"icon": "UniqueDragonQuest",
+"order": 546,
+"id": 546,
+"description": [
+{
+"text": "Ava'yorn thurirl. Our kind needs large spaces and a place to take flight. Build enough Iron Strongholds to make room for us.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "4500 Iron Strongholds",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction",
+"being at Reincarnation 46 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+74,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Swarming Tower Quest",
+"icon": "UniqueFairyQuest",
+"order": 548,
+"id": 548,
+"description": [
+{
+"text": "Hey! [echoes a thousand times] Listen! [echoes again]. Then the overlapping voice of a thousand fairies fills your head with the desire of having more of their kind as assistants.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "10⁶ Assistants",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Fairy"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Arboreal City Quest",
+"icon": "UniqueElvenQuest",
+"order": 549,
+"id": 549,
+"description": [
+{
+"text": "Hello again, mellonamin. It is time for the Elves to have their place to live. Collect enough Elven Faction coins, and we'll start to build a true green city!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "10²⁰ Elven Coins",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Elf"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Holy Site Quest",
+"icon": "UniqueAngelQuest",
+"order": 550,
+"id": 550,
+"description": [
+{
+"text": "Welcome again, dearest ally. We need your help once more: improve your mana potency in this new era, and we'll reward you by blessing the ground you walk on.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "10⁶ Mana Regen",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Angel"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Slave Market Quest",
+"icon": "UniqueGoblinQuest",
+"order": 551,
+"id": 551,
+"description": [
+{
+"text": "Time is money, friend! The markets are expanding, we need new places to sell our slaves to! Build more Neutral buildings for us, will you?",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "35000 Neutral Buildings",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Goblin"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Flesh Workshop Quest",
+"icon": "UniqueUndeadQuest",
+"order": 552,
+"id": 552,
+"description": [
+{
+"text": "Heelloo... The dead need to rest... accumulate a high enough Offline production to allow them their peace, and they'll be forever your servants.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "2000% Offline Bonus",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Undead"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Burning Abyss Quest",
+"icon": "UniqueDemonQuest",
+"order": 553,
+"id": 553,
+"description": [
+{
+"text": "Bwahahahaha! We are going to destroy this world! Everything will burn in the flames of hell! We want a Call to Arms longer than ever, everyone needs to suffer and despair!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1h Call to Arms Duration",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Demon"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mountain Palace Quest",
+"icon": "UniqueTitanQuest",
+"order": 554,
+"id": 554,
+"description": [
+{
+"text": "Khaire, ruler. Our kind want to reshape the mountain into something more fitting, but we need funds. Make enough Royal Exchanges, and we'll let you see our masterpiece.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "4000 Royal Exchanges",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Titan"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Ziggurat Quest",
+"icon": "UniqueDruidQuest",
+"order": 555,
+"id": 555,
+"description": [
+{
+"text": "Hello, friend. We are close to restore the world balance... build us more Stonehenges, and we'll upgrade other buildings to be great places of power.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "10000 Stone Pillars",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Druid"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Forbidden Library Quest",
+"icon": "UniqueFacelessQuest",
+"order": 556,
+"id": 556,
+"description": [
+{
+"text": "Het'ankd gewob iiray. Gan'il Knes'fj pha'rgn wahl. (Those unpronounceable words with no apparent meaning have spoken directly to your mind: you have to excavate enough).",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "5000 Excavation depth",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Faceless"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+36,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "High Bastion Quest",
+"icon": "UniqueDwarvenQuest",
+"order": 557,
+"id": 557,
+"description": [
+{
+"text": "Aye lad! Yer castle looks solid, but we think we can do better, yes? Excavate to yer best and then again from the start, we'll have a deal.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "3 Excavation Resets in this Reincarnation",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dwarf as your prestige faction",
+"being at Reincarnation 112 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+65,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Brothel Quest",
+"icon": "UniqueDrowQuest",
+"order": 558,
+"id": 558,
+"description": [
+{
+"text": "Yawn... kivvil, your realm is starting to bore us. We need better places to have fun and rest. Show us your spellcasting ability and we'll teach you a few things about underworld fun.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "10⁹ Spell Casts",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Drow as your prestige faction",
+"being at Reincarnation 112 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+65,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Pasture Quest",
+"icon": "UniqueDragonQuest",
+"order": 559,
+"id": 559,
+"description": [
+{
+"text": "Insignificant creature, you have much to do to gain our full respect. Our hatchlings need more food... yes, this would be a task worthy of your stature. Show your ability to maintain powerful magic at the same time, and we will let you serve us.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "25 Active Spells",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Dragon as your prestige faction",
+"being at Reincarnation 112 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+65,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Nexus Quest",
+"icon": "UniqueArchonQuest",
+"order": 560,
+"id": 560,
+"description": [
+{
+"text": "Hassar, Ruler. Our kind wants to establish better communications with you. Please build more Farms to convert.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "25000 Farms",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Archon as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Pavilion Quest",
+"icon": "UniqueDjinnQuest",
+"order": 561,
+"id": 561,
+"description": [
+{
+"text": "Greetings. You will have the honor of hosting our people. Cover your realm in Chaos magic for us!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1d Chaos Spells Activity Time",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Djinn as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Hall of Origination Quest",
+"icon": "UniqueMakersQuest",
+"order": 562,
+"id": 562,
+"description": [
+{
+"text": "Hello, child! Your realm progress looks kinda... obsolete. Would you mind if we help improve your realm with our advanced perks? Please gather more Faction Coins to generate more energy!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "5 × 10⁴² Faction Coins",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having Makers as your astral faction",
+"being at Reincarnation 130 or higher"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+177,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Fairy Heritage",
+"icon": "FairyHeritage",
+"order": 563,
+"id": 563,
+"description": [
+{
+"text": "Increase the production of all buildings v owned.",
+"formulas": [
+{
+"latex": "v = 0.075 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)",
+"vars": [
+{
+"symbol": "N_{1}",
+"text": "Number of \"Farm\" buildings you own"
+},
+{
+"symbol": "N_{2}",
+"text": "Number of \"Inn\" buildings you own"
+},
+{
+"symbol": "N_{3}",
+"text": "Number of \"Blacksmith\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Fairy Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 5000
+},
+"fc_a4": {
+"Fairy": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Elven Heritage",
+"icon": "ElvenHeritage",
+"order": 564,
+"id": 564,
+"description": [
+{
+"text": "Increase Faction Coin find chance by +5% and increase your clicking reward based on Faction Coin find chance.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + Q\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+],
+"label": "Clicking reward (%)"
+}
+],
+"s": 1
+},
+{
+"text": "Also autoclick once per second.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Elven Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 5000
+},
+"fc_a4": {
+"Elf": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Angelic Heritage",
+"icon": "AngelHeritage",
+"order": 565,
+"id": 565,
+"description": [
+{
+"text": "Multiplicatively increase Mana Regeneration by 10%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Angel Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 5000
+},
+"fc_a4": {
+"Angel": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Goblin Heritage",
+"icon": "GoblinHeritage",
+"order": 566,
+"id": 566,
+"description": [
+{
+"text": "Increase the production of all buildings based on Gems owned.",
+"formulas": [
+{
+"latex": "v = 3.75 \\cdot \\ln\\left(1 + G\\right)",
+"vars": [
+{
+"symbol": "G",
+"text": "Your Gems"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Goblin Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 5000
+},
+"fc_a4": {
+"Goblin": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Undead Heritage",
+"icon": "UndeadHeritage",
+"order": 567,
+"id": 567,
+"description": [
+{
+"text": "Increase offline production based on the time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Undead Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 5000
+},
+"fc_a4": {
+"Undead": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Demonic Heritage",
+"icon": "DemonHeritage",
+"order": 568,
+"id": 568,
+"description": [
+{
+"text": "Increase the production of all buildings by 0.3% per Hall of Legends owned.",
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Hall of Legends\" buildings you own"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Demon Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 5000
+},
+"fc_a4": {
+"Demon": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Titan Heritage",
+"icon": "TitanHeritage",
+"order": 569,
+"id": 569,
+"description": [
+{
+"text": "Increase Royal Exchanges bonus by 15% each.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Titan Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 15000,
+"Goblin": 15000
+},
+"fc_a4": {
+"Angel": 1e+30,
+"Goblin": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Druid Heritage",
+"icon": "DruidHeritage",
+"order": 570,
+"id": 570,
+"description": [
+{
+"text": "Increase maximum Mana by 1 every 15 buildings built.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor \\frac{B}{15} \\right\\rfloor",
+"vars": [
+{
+"symbol": "B",
+"text": "Total buildings you have built"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Druid Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 15000,
+"Demon": 15000
+},
+"fc_a4": {
+"Elf": 1e+30,
+"Demon": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Faceless Heritage",
+"icon": "FacelessHeritage",
+"order": 571,
+"id": 571,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of buildings built in a single Era.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot B^{0.75}",
+"vars": [
+{
+"symbol": "B",
+"text": "Most buildings built in a single Era of this Reincarnation"
+}
+],
+"label": null
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Faceless Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 15000,
+"Undead": 15000
+},
+"fc_a4": {
+"Fairy": 1e+30,
+"Undead": 1e+30
+},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Heritage",
+"icon": "DwarvenHeritage",
+"order": 572,
+"id": 572,
+"description": [
+{
+"text": "Increase the production of all buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot D^{0.9}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Dwarven Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 75000
+},
+"fc_a4": {
+"Dwarf": 1e+36
+},
+"free_start": false
+}
+},
+{
+"name": "Drow Heritage",
+"icon": "DrowHeritage",
+"order": 573,
+"id": 573,
+"description": [
+{
+"text": "Increase the production of assistants based on Royal Exchanges purchased.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Drow Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 75000
+},
+"fc_a4": {
+"Drow": 1e+36
+},
+"free_start": false
+}
+},
+{
+"name": "Dragon Heritage",
+"icon": "DragonHeritage",
+"order": 574,
+"id": 574,
+"description": [
+{
+"text": "Increase assistants production based on time spent as Dragons in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.7 \\cdot t^{0.85}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Dragon in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
+"s": 2
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Dragon Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 500000000000000000,
+"Drow": 500000000000000000
+},
+"fc_a4": {
+"Dwarf": 1e+36,
+"Drow": 1e+36
+},
+"free_start": false
+}
+},
+{
+"name": "Archon Heritage",
+"icon": "ArchonHeritage",
+"order": 575,
+"id": 575,
+"description": [
+{
+"text": "Buildings, Assistants, Royal Exchanges, Spells cast and Clicks count more, by 10%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Archon Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+36,
+"Undead": 1e+36
+},
+"fc_a4": {
+"Angel": 1e+48,
+"Undead": 1e+48
+},
+"free_start": false
+}
+},
+{
+"name": "Djinn Heritage",
+"icon": "DjinnHeritage",
+"order": 576,
+"id": 576,
+"description": [
+{
+"text": "Increase the production of Unique Buildings based on Limited Wish activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 30 + 0.3 \\cdot t^{0.65}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Limited Wish\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Djinn Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+36,
+"Demon": 1e+36
+},
+"fc_a4": {
+"Fairy": 1e+48,
+"Demon": 1e+48
+},
+"free_start": false
+}
+},
+{
+"name": "Makers Heritage",
+"icon": "MakersHeritage",
+"order": 577,
+"id": 577,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on Tax Collections cast in this Era.",
+"formulas": [
+{
+"latex": "v = \\left(\\ln\\left(1 + S\\right)\\right)^{1.75}",
+"vars": [
+{
+"symbol": "S",
+"text": "Number of times you have cast \"Tax Collection\" in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Makers Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+36,
+"Goblin": 1e+36
+},
+"fc_a4": {
+"Elf": 1e+48,
+"Goblin": 1e+48
+},
+"free_start": false
+}
+},
+{
+"name": "Fairy Bloodline",
+"icon": "FairyBloodline",
+"order": 579,
+"id": 579,
+"description": [
+{
+"text": "Increase the production of Farms, Inns and v based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 18 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Bloodline",
+"icon": "ElvenBloodline",
+"order": 580,
+"id": 580,
+"description": [
+{
+"text": "Increase the chance to find Faction Coins based on Faction Coins found in this Era and autoclick 3 times per second.",
+"formulas": [
+{
+"latex": "v_{1} = 10 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.75}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on clicks made in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = 10 \\cdot \\ln\\left(1 + C\\right)",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Bloodline",
+"icon": "AngelBloodline",
+"order": 581,
+"id": 581,
+"description": [
+{
+"text": "Increase the duration of all spells based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all spells in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also provides the ability to cast Holy Light regardless of alignment. If your alignment is Good, Holy Light bonus increases over its duration.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Bloodline",
+"icon": "GoblinBloodline",
+"order": 582,
+"id": 582,
+"description": [
+{
+"text": "Reduce all building cost multipliers.",
+"formulas": [
+{
+"latex": "v = 0.01",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the cost multiplier of all buildings"
+}
+],
+"label": "Cost multiplier"
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Bloodline",
+"icon": "UndeadBloodline",
+"order": 583,
+"id": 583,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on times you reincarnated.",
+"formulas": [
+{
+"latex": "v = 16 \\cdot R^{0.8}",
+"vars": [
+{
+"symbol": "R",
+"text": "Reincarnations you have made"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Bloodline",
+"icon": "DemonBloodline",
+"order": 584,
+"id": 584,
+"description": [
+{
+"text": "Spells cast count more based on the maximum amount of Hell Portals you had in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 2.5 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Also provides the ability to cast Blood Frenzy regardless of alignment. If your alignment is Evil, Blood Frenzy bonus increases based on time spent as Evil across all Reincarnations.",
+"formulas": [
+{
+"latex": "v_{2} = t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Evil alignment all-time (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Bloodline",
+"icon": "TitanBloodline",
+"order": 585,
+"id": 585,
+"description": [
+{
+"text": "Increase the production of all buildings based on Royal Exchanges purchased.",
+"formulas": [
+{
+"latex": "v = 12 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Bloodline",
+"icon": "DruidBloodline",
+"order": 586,
+"id": 586,
+"description": [
+{
+"text": "Increase Mana Regeneration based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot \\left(M_{\\max}\\right)^{0.5} + 0.0025 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{5}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Bloodline",
+"icon": "FacelessBloodline",
+"order": 587,
+"id": 587,
+"description": [
+{
+"text": "Increase Maximum Mana based on mana produced in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 0.5 \\cdot \\left(\\ln\\left(1 + W\\right)\\right)^{4}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also provides the ability to cast Gem Grinder regardless of alignment. If your alignment is Neutral, Gem Grinder bonus increases chaotically based on assistants.",
+"formulas": [
+{
+"latex": "v_{2} = 20 \\cdot \\left(\\frac{\\ln\\left(1 + A\\right)}{\\ln\\left(A \\bmod 10 + 2\\right)}\\right)^{2}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Bloodline",
+"icon": "DwarvenBloodline",
+"order": 588,
+"id": 588,
+"description": [
+{
+"text": "Increase the base production of each building based on Excavation depth. Bonus increases with building tier.",
+"formulas": [
+{
+"latex": "v = \\left(\\ln\\left(1 + D\\right)\\right)^{1.75} \\cdot 10^{\\left(1.25 \\cdot T\\right)^{0.75}}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+},
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+}
+],
+"label": "Base production added to each building (per second)"
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Bloodline",
+"icon": "DrowBloodline",
+"order": 589,
+"id": 589,
+"description": [
+{
+"text": "Increase the production of all buildings based on mana produced in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2.75 \\cdot \\left(\\ln\\left(1 + W\\right)\\right)^{2.75}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Bloodline",
+"icon": "DragonBloodline",
+"order": 590,
+"id": 590,
+"description": [
+{
+"text": "Increase the production of Unique Buildings based on Faction Coin find chance.",
+"formulas": [
+{
+"latex": "v = 3 \\cdot Q^{0.3}",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Archon Bloodline",
+"icon": "ArchonBloodline",
+"order": 591,
+"id": 591,
+"description": [
+{
+"text": "Gain additional research slots for all branches based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 1 + \\max\\left(0, \\left\\lfloor \\frac{\\left(1 + \\frac{\\frac{\\frac{8 \\cdot t}{60}}{60}}{36}\\right)^{0.5} - 1}{2} \\right\\rfloor\\right)",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Bloodline",
+"icon": "DjinnBloodline",
+"order": 592,
+"id": 592,
+"description": [
+{
+"text": "Gain a new spell that costs 500000 mana and lasts 1 minute as a fixed duration. Each time you cast this spell, it activates two random Vanilla or base alignment spells at one tier below the Ascension maximum.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Bloodline",
+"icon": "MakersBloodline",
+"order": 593,
+"id": 593,
+"description": [
+{
+"text": "Increase your Set power based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.35}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "bloodline",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Bloodline",
+"icon": "BloodlineContainer",
+"order": 594,
+"id": 594,
+"description": [
+{
+"text": "Choose your Bloodline. You can only have one Bloodline, and it will persist until you abdicate. Bloodlines do not suffer from Ascension penalties.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"not having a bloodline yet",
+"being at Reincarnation 7 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "bloodline_c",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Advanced Fairy Heritage",
+"icon": "AdvancedFairyHeritage",
+"order": 732,
+"id": 732,
+"description": [
+{
+"text": "Gain assistants based on Farms, Inns and Blacksmiths owned.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor 2 \\cdot N^{0.8} \\right\\rfloor \\cdot m",
+"vars": [
+{
+"symbol": "N",
+"text": "Farms, Inns and Blacksmiths you own, added together"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Fairy Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Fairy Chanting for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+24
+},
+"fc_a4": {
+"Fairy": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Elven Heritage",
+"icon": "AdvancedElvenHeritage",
+"order": 733,
+"id": 733,
+"description": [
+{
+"text": "Multiplicatively increase autoclick power based on Faction Coins found in this Era.",
+"formulas": [
+{
+"latex": "v = 0.2 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{0.8} \\cdot m",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Elven Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Moon Blessing for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+24
+},
+"fc_a4": {
+"Elf": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Angelic Heritage",
+"icon": "AdvancedAngelHeritage",
+"order": 734,
+"id": 734,
+"description": [
+{
+"text": "Increase Mana Regeneration based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v = 5 \\cdot N^{0.25} \\cdot m",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Angel Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used God's Hand for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+24
+},
+"fc_a4": {
+"Angel": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Goblin Heritage",
+"icon": "AdvancedGoblinHeritage",
+"order": 735,
+"id": 735,
+"description": [
+{
+"text": "Increase Tax Collection worth based on Gems owned.",
+"formulas": [
+{
+"latex": "v = 0.15 \\cdot \\left(\\ln\\left(1 + G\\right)\\right)^{0.95} \\cdot m",
+"vars": [
+{
+"symbol": "G",
+"text": "Your Gems"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Goblin Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Goblin's Greed for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 1e+24
+},
+"fc_a4": {
+"Goblin": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Undead Heritage",
+"icon": "AdvancedUndeadHeritage",
+"order": 736,
+"id": 736,
+"description": [
+{
+"text": "Assistants count more based on time spent offline in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot t^{0.5} \\cdot m",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Undead Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Night Time for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Undead": 1e+24
+},
+"fc_a4": {
+"Undead": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Demonic Heritage",
+"icon": "AdvancedDemonHeritage",
+"order": 737,
+"id": 737,
+"description": [
+{
+"text": "Increase the production of all buildings based on Trophies unlocked.",
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot N^{0.75} \\cdot m",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of trophies you have unlocked"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": 3
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Demon Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Hellfire Blast for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Demon": 1e+24
+},
+"fc_a4": {
+"Demon": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Titan Heritage",
+"icon": "AdvancedTitanHeritage",
+"order": 738,
+"id": 738,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on Royal Exchanges purchased.",
+"formulas": [
+{
+"latex": "v = 0.85 \\cdot \\left(\\ln\\left(1 + N\\right)\\right)^{1.15} \\cdot m",
+"vars": [
+{
+"symbol": "N",
+"text": "Royal Exchanges made in this Era"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Titan Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Lightning Strike for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Angel": 1e+24,
+"Goblin": 1e+24
+},
+"fc_a4": {
+"Angel": 1e+24,
+"Goblin": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Druid Heritage",
+"icon": "AdvancedDruidHeritage",
+"order": 739,
+"id": 739,
+"description": [
+{
+"text": "Multiplicatively increase Faction Coin find chance based on the sum of all your spells durations.",
+"formulas": [
+{
+"latex": "v = 9 \\cdot D^{0.3} \\cdot m",
+"vars": [
+{
+"symbol": "D",
+"text": "The durations of all your spells added together (seconds)"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Druid Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Grand Balance for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Elf": 1e+24,
+"Demon": 1e+24
+},
+"fc_a4": {
+"Elf": 1e+24,
+"Demon": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Faceless Heritage",
+"icon": "AdvancedFacelessHeritage",
+"order": 740,
+"id": 740,
+"description": [
+{
+"text": "Gain assistants based on Unique buildings built.",
+"formulas": [
+{
+"latex": "v = 2.25 \\cdot U^{0.8} \\cdot m",
+"vars": [
+{
+"symbol": "U",
+"text": "Unique buildings you have built"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Faceless Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Brainwave for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 1e+24,
+"Undead": 1e+24
+},
+"fc_a4": {
+"Fairy": 1e+24,
+"Undead": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Dwarven Heritage",
+"icon": "AdvancedDwarvenHeritage",
+"order": 741,
+"id": 741,
+"description": [
+{
+"text": "Increase the production of all buildings based on Excavation depth.",
+"formulas": [
+{
+"latex": "v = 0.025 \\cdot D^{0.65} \\cdot m",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": 3
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Dwarven Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Diamond Pickaxe for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 1e+24
+},
+"fc_a4": {
+"Dwarf": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Drow Heritage",
+"icon": "AdvancedDrowHeritage",
+"order": 742,
+"id": 742,
+"description": [
+{
+"text": "Increase the production of all buildings based on Offline production and time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 0.2 \\cdot \\ln\\left(1 + O\\right) \\cdot t^{0.4} \\cdot m",
+"vars": [
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+},
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": 3
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Drow Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Combo Strike for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Drow": 1e+24
+},
+"fc_a4": {
+"Drow": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Advanced Dragon Heritage",
+"icon": "AdvancedDragonHeritage",
+"order": 743,
+"id": 743,
+"description": [
+{
+"text": "Increase triggered Tax Collections based on Artifacts found.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor \\left(1 + 0.05 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{1.15}\\right) \\cdot m \\right\\rfloor",
+"vars": [
+{
+"symbol": "A",
+"text": "Artifacts you have found"
+},
+{
+"symbol": "m",
+"text": "Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise (other upgrades change the numbers)"
+}
+],
+"label": null
+}
+],
+"s": null
+},
+{
+"text": "Requires 1 hour of faction spell activity time to unlock.",
+"formulas": [],
+"s": null
+},
+{
+"text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Dragon Master"
+}
+],
+"requirements": [],
+"conditions": [
+"having used Dragon's Breath for at least 1 hour of activity time"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Dwarf": 1e+24,
+"Drow": 1e+24
+},
+"fc_a4": {
+"Dwarf": 1e+24,
+"Drow": 1e+24
+},
+"free_start": false
+}
+},
+{
+"name": "Fairy Choir",
+"icon": "FairyChoirTrophy",
+"order": 1506,
+"id": 1506,
+"description": [
+{
+"text": "Fairy Chanting triples your assistants for its duration.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Fairy Choir"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Fairy Chanting (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 0,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sun Blessing",
+"icon": "SunBlessingTrophy",
+"order": 1507,
+"id": 1507,
+"description": [
+{
+"text": "Autoclick 15 times per second while Moon Blessing is active.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Sun Blessing"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Moon Blessing (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "God's Rest",
+"icon": "GodsRestTrophy",
+"order": 1508,
+"id": 1508,
+"description": [
+{
+"text": "Gives random Faction Coins based on your Faction Coin find chance for each other spell you cast while God's Hand is active.",
+"formulas": [
+{
+"latex": "v = \\left\\lfloor Q^{1.1} \\right\\rfloor",
+"vars": [
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "God's Rest"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell God's Hand (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 2,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Greed Drive",
+"icon": "GreedDriveTrophy",
+"order": 1509,
+"id": 1509,
+"description": [
+{
+"text": "While Goblin's Greed is active, Tax Collection costs 10% less mana.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Greed Drive"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Goblin's Greed (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 3,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "True Night",
+"icon": "TrueNightTrophy",
+"order": 1510,
+"id": 1510,
+"description": [
+{
+"text": "Increase Night Time bonus to assistants production based on its activity time in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 0.4 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"Night Time\" in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also make Offline time count more by 50%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "True Night"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Night Time (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 4,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Hell Rush",
+"icon": "HellRushTrophy",
+"order": 1511,
+"id": 1511,
+"description": [
+{
+"text": "Hellfire Blast also boosts Halls of Legends.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Hell Rush"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Hellfire Blast (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 5,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1000000,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Lightning Storm",
+"icon": "LightningStormTrophy",
+"order": 1512,
+"id": 1512,
+"description": [
+{
+"text": "Increase Lightning Strike multiplier by 50%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Lightning Storm"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Lightning Strike"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 6,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+35,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Halls of Balance",
+"icon": "HallsOfBalanceTrophy",
+"order": 1513,
+"id": 1513,
+"description": [
+{
+"text": "Increase Grand Balance duration by 4 seconds and lowers its cost by 200 mana.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Halls of Balance"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Grand Balance"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 7,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+35,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Overmind",
+"icon": "FacelessOvermindTrophy",
+"order": 1514,
+"id": 1514,
+"description": [
+{
+"text": "Increase Brainwave multiplier by 50%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Faceless Overmind"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Brainwave"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 8,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+35,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Minedwarf",
+"icon": "MinedwarfTrophy",
+"order": 1515,
+"id": 1515,
+"description": [
+{
+"text": "Increase Diamond Pickaxe bonus to Faction Coin find chance by 100%.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Minedwarf"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Diamond Pickaxe"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+53,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Perfect Combo",
+"icon": "PerfectComboTrophy",
+"order": 1516,
+"id": 1516,
+"description": [
+{
+"text": "Increase Combo Strike counter based on your longest Era in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(\\max\\left(t, E_{\\max}\\right)\\right)^{0.5}",
+"vars": [
+{
+"symbol": "E_{\\max}",
+"text": "Length of your longest Era in this Reincarnation, not counting the current one (seconds)"
+},
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Perfect Combo"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Combo Strike"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+53,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon's Roar",
+"icon": "DragonsRoarTrophy",
+"order": 1517,
+"id": 1517,
+"description": [
+{
+"text": "Dragon's Breath multiplicatively increases Faction Coin find chance based on its duration.",
+"formulas": [
+{
+"latex": "v = 6 \\cdot D^{0.6}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Dragon's Breath\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Dragon's Roar"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Dragon's Breath"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 12,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+45,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Chrono Loading",
+"icon": "ChronoLoadingTrophy",
+"order": 1518,
+"id": 1518,
+"description": [
+{
+"text": "A fraction of Precognition duration is added to time spent in this Era.",
+"formulas": [
+{
+"latex": "v = 150 \\cdot \\left(\\ln\\left(1 + \\frac{D}{60}\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "D",
+"text": "Duration of \"Precognition\" (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Chrono Loading"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Precognition"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+118,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Persistent Entropy",
+"icon": "PersistentEntropyTrophy",
+"order": 1519,
+"id": 1519,
+"description": [
+{
+"text": "Give Limited Wish a headstart of 500 casts.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Persistent Entropy"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Limited Wish"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+118,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Reality Crater",
+"icon": "RealityCraterTrophy",
+"order": 1520,
+"id": 1520,
+"description": [
+{
+"text": "Infinite Spiral also reduces Excavation cost multiplier based on assistants owned.",
+"formulas": [
+{
+"latex": "v = 0.0005 \\cdot \\ln\\left(1 + A\\right)",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+}
+],
+"label": "Taken off the Excavation cost multiplier"
+}
+],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Magic trophy",
+"name": "Reality Crater"
+}
+],
+"requirements": [],
+"conditions": [
+"having the spell Infinite Spiral"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "spell",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+118,
+0,
 0
 ],
 "fc": {},

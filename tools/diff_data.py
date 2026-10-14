@@ -57,7 +57,8 @@ def changed_fields(a, b):
 def override_names():
     """Item names the exporters special-case (dict keys / sets / `name == '...'` tests)."""
     found = {}
-    for fn in ('export_upgrades.py', 'export_challenges.py', 'export_research.py', 'export_artifacts.py', 'export_trophies.py'):
+    for fn in ('export_upgrades.py', 'export_challenges.py', 'export_research.py', 'export_artifacts.py', 'export_trophies.py',
+               'misc_manual.py', 'alleg_manual.py', 'alleg_manual_family.py'):
         p = os.path.join(HERE, fn)
         if not os.path.exists(p):
             continue
@@ -69,6 +70,11 @@ def override_names():
                 for e in elts:
                     if isinstance(e, ast.Constant) and isinstance(e.value, str):
                         found.setdefault(e.value, set()).add(f'{fn}:{node.targets[0].id}')
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr == 'update' \
+                    and node.args and isinstance(node.args[0], ast.Dict):          # FORMULAS.update({...})
+                for e in node.args[0].keys:
+                    if isinstance(e, ast.Constant) and isinstance(e.value, str):
+                        found.setdefault(e.value, set()).add(f'{fn}:update')
             if isinstance(node, ast.Compare) and isinstance(node.left, ast.Name) and node.left.id == 'name' \
                     and len(node.comparators) == 1 and isinstance(node.comparators[0], ast.Constant) \
                     and isinstance(node.comparators[0].value, str):

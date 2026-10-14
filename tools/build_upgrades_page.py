@@ -69,6 +69,11 @@ def fmt_num(n):
 UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their icons exist per path (Order / Chaos / Balance)
 
 
+PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'Proof of Neutrality': {'al': 3},
+            'Proof of Order': {'ax': 4}, 'Proof of Chaos': {'ax': 5}, 'Proof of Balance': {'ax': 6}}
+KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'exchange': 5, 'spell': 6, 'unique': 7}
+
+
 def item(u):
     forms = []
     for p in u['description']:
@@ -84,7 +89,8 @@ def item(u):
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
-        **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction'])} if 'faction' in u else {}),
+        **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
+        **({'pr': PROOF_OF[u['name']]} if u.get('akind') == 'proof' else {}),
         **({'ia': {str(ax): icon_file(f"{UNION_ICON[u['faction']]}{nm}") for ax, nm in ((4, 'Order'), (5, 'Chaos'), (6, 'Balance'))}}
            if u.get('tier_no') == 4 and u.get('faction') in UNION_ICON else {}),
     }
@@ -132,9 +138,19 @@ def section(sid, name, items):
 
 
 def alleg_section():
-    its = sorted(pages['allegiances'], key=lambda u: (FORDER.index(u['faction']), 0 if u['perk'] is None else 1,
-                                                       u['tier_no'] or u['perk'] or 0))
-    es = [{'g': None, 'items': [item(u)]} for u in its]
+    def key(u):
+        sub = u['tier_no'] or u['perk'] or 0
+        if u['akind'] == 'heritage': sub = 1 if u['name'].startswith('Advanced') else 0
+        if u['akind'] == 'unique': sub = (u['name'][:-6] if u['name'].endswith(' Quest') else u['name'], 1 if not u['name'].endswith(' Quest') else 0)
+        return (-1 if u['faction'] == -1 else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
+    allu = sorted(pages['allegiances'], key=key)
+    blood = [item(u) for u in allu if u['akind'] == 'bloodline']
+    es = []
+    for u in allu:
+        if u['akind'] == 'bloodline': continue
+        it = item(u)
+        if u['akind'] == 'bloodline_c': it['bl'] = blood
+        es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
 
@@ -329,7 +345,7 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
-    if(it.m) tip.appendChild(el('div','more','Click for more info'));
+    if(it.m || it.bl) tip.appendChild(el('div','more','Click for more info'));
     var rq=it.s.slice();
     if(it.ra && ASC>=1){ var ra=it.ra[String(Math.min(ASC,4))]; if(ra) rq.unshift(ra); }
     if(rq.length){
@@ -353,7 +369,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl}); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
@@ -505,7 +521,7 @@ the base values <i>v</i>.</div>
     var picked = PICK.b<0 ? null : [PICK.b].concat(PICK.p>=0?[PICK.p]:[], PICK.a>=0?[PICK.a]:[]);
     var g=el('div','grid');
     if(!picked){
-      FACS.forEach(function(f){
+      [{i:-1,n:'General'}].concat(FACS).forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
         var en={g:f.n+' upgrades', items:its}, gb=itemCell(its[0],true);
         gb.classList.add('group');
@@ -520,9 +536,11 @@ the base values <i>v</i>.</div>
       });
       allegBox.appendChild(g);
     } else {
-      picked.forEach(function(fi){
-        var f=facOf(fi), its=allegItems[fi]||[];
-        allegBox.appendChild(el('div','subh',f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+      [-1].concat(picked).forEach(function(fi){
+        var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
+        if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
+        if(!its.length) return;
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General (the alignment and path of your base faction)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);

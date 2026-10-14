@@ -120,7 +120,6 @@ FORMULAS = {
     'Blackmail': [(0, F(r'v = 0.02', ('v', 'Amount taken off the cost multiplier of Royal Exchanges'), label='Cost multiplier'))],
 }
 
-
 # the buildings of a given tier for each alignment (Good, Evil, Neutral), as the game's tier lookup returns them
 TIER_BUILDING = {
     1: ['Farm', 'Inn', 'Blacksmith', 'Warrior Barracks', 'Knights Joust', 'Wizard Tower', 'Cathedral', 'Citadel',

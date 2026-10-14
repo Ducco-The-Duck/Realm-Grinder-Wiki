@@ -49,8 +49,15 @@ Only these need checking; remove an item when it is settled.
      spelled out on the page).
    - **Dragon Friendship Pact / Alliance** require Dwarven Coins and Drow Coins found in this Era (stats 41 and 42, read as
      the Dwarven and Drow coin counters because stats 6 to 11 and 41, 42 are summed as faction coins found).
-   - Not covered yet: Bloodlines, Lineage, Heritages, Perks 1-6 of the Lineage system, Sets, Legacies, Remnants, quests, unique
-     building upgrades and the Mercenary Upgrade series; the faction spell upgrades go with the Spell Tiers part.
+   - **Formulas written by hand** (`tools/alleg_manual.py`, `tools/alleg_manual_family.py`, read from the static value functions
+     and the production code, not shown in any tooltip): the Druid, Dragon, Archon, Djinn and other faction upgrades without a
+     number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. Doubtful readings: the "worth" of a
+     Tax Collection (Hobgoblin Gladiators), the spell count in Iron Flight, the digit sum behind Magical Circuit, the
+     lineage multiplier `m` of the Advanced Heritages (1 + 0.2 x level; other upgrades change it), and the digit-sum rule of
+     Burning Abyss. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
+     terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
+   - Mercenary Upgrades 1-16, Lineage, Perks 1-6 of the Lineage system, Sets, Legacies, Remnants and the Mercenary contracts'
+     extras are still not covered.
 
 8. **Spell tiers** (Magic upgrades; 23 spells x tiers 2 to 5, plus Arcane Brilliance; built from code, unchecked). The unlock
    text is the game's own, evaluated at Ascension 1 to 4 (the thresholds depend on the Ascension). Tier N needs Ascension N-1
