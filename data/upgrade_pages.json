@@ -15841,6 +15841,30 @@
 "building": null
 },
 {
+"name": "Arcane Brilliance",
+"icon": "ArcaneBrillianceTrophy1",
+"order": 1475,
+"id": 1475,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on active spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"having unlocked the Arcane Brilliance trophies up to your Ascension number (1 at Ascension 1, 1 and 2 at Ascension 2, and so on; each needs the upgrades of that tier of all spells)"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+},
+{
 "name": "Coin Pillage",
 "icon": "CoinPillageTrophy",
 "order": 1505,
@@ -15866,6 +15890,5490 @@
 "group": null,
 "tier": -1,
 "building": null
+},
+{
+"name": "Call to Arms 2",
+"icon": "Call to ArmsTier2",
+"order": 1383,
+"id": 1383,
+"description": [
+{
+"text": "Enable 1 additional cast for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Call to Arms",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Call to Arms",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Call to Arms activity time in this Reincarnation and have at least 60000 buildings.",
+"2": "To unlock, you need to have at least 1h of Call to Arms activity time in this Reincarnation and have at least 30000 buildings.",
+"3": "To unlock, you need to have at least 1h of Call to Arms activity time in this Reincarnation and have at least 20000 buildings.",
+"4": "To unlock, you need to have at least 1h of Call to Arms activity time in this Reincarnation and have at least 2500 buildings."
+}
+},
+{
+"name": "Call to Arms 3",
+"icon": "Call to ArmsTier3",
+"order": 1384,
+"id": 1384,
+"description": [
+{
+"text": "Enable 2 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Call to Arms",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Call to Arms",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Call to Arms activity time in this Reincarnation and have at least 120000 buildings.",
+"2": "To unlock, you need to have at least 2h of Call to Arms activity time in this Reincarnation and have at least 60000 buildings.",
+"3": "To unlock, you need to have at least 2h of Call to Arms activity time in this Reincarnation and have at least 40000 buildings.",
+"4": "To unlock, you need to have at least 2h of Call to Arms activity time in this Reincarnation and have at least 5000 buildings."
+}
+},
+{
+"name": "Call to Arms 4",
+"icon": "Call to ArmsTier4",
+"order": 1385,
+"id": 1385,
+"description": [
+{
+"text": "Enable 3 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Call to Arms",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Call to Arms",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Call to Arms activity time in this Reincarnation and have at least 180000 buildings.",
+"2": "To unlock, you need to have at least 3h of Call to Arms activity time in this Reincarnation and have at least 90000 buildings.",
+"3": "To unlock, you need to have at least 3h of Call to Arms activity time in this Reincarnation and have at least 60000 buildings.",
+"4": "To unlock, you need to have at least 3h of Call to Arms activity time in this Reincarnation and have at least 7500 buildings."
+}
+},
+{
+"name": "Call to Arms 5",
+"icon": "Call to ArmsTier5",
+"order": 1386,
+"id": 1386,
+"description": [
+{
+"text": "Enable 4 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Call to Arms",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Call to Arms",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Call to Arms activity time in this Reincarnation and have at least 240000 buildings.",
+"2": "To unlock, you need to have at least 4h of Call to Arms activity time in this Reincarnation and have at least 120000 buildings.",
+"3": "To unlock, you need to have at least 4h of Call to Arms activity time in this Reincarnation and have at least 80000 buildings.",
+"4": "To unlock, you need to have at least 4h of Call to Arms activity time in this Reincarnation and have at least 10000 buildings."
+}
+},
+{
+"name": "Holy Light 2",
+"icon": "Holy LightTier2",
+"order": 1387,
+"id": 1387,
+"description": [
+{
+"text": "Enable 1 additional cast for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Holy Light",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Holy Light",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Holy Light activity time in this Reincarnation and have at least 200000 clicks in this Reincarnation.",
+"2": "To unlock, you need to have at least 1h of Holy Light activity time in this Reincarnation and have at least 200000 clicks in this Reincarnation.",
+"3": "To unlock, you need to have at least 1h of Holy Light activity time in this Reincarnation and have at least 200000 clicks in this Reincarnation.",
+"4": "To unlock, you need to have at least 1h of Holy Light activity time in this Reincarnation and have at least 200000 clicks in this Reincarnation."
+}
+},
+{
+"name": "Holy Light 3",
+"icon": "Holy LightTier3",
+"order": 1388,
+"id": 1388,
+"description": [
+{
+"text": "Enable 2 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Holy Light",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Holy Light",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Holy Light activity time in this Reincarnation and have at least 400000 clicks in this Reincarnation.",
+"2": "To unlock, you need to have at least 2h of Holy Light activity time in this Reincarnation and have at least 400000 clicks in this Reincarnation.",
+"3": "To unlock, you need to have at least 2h of Holy Light activity time in this Reincarnation and have at least 400000 clicks in this Reincarnation.",
+"4": "To unlock, you need to have at least 2h of Holy Light activity time in this Reincarnation and have at least 400000 clicks in this Reincarnation."
+}
+},
+{
+"name": "Holy Light 4",
+"icon": "Holy LightTier4",
+"order": 1389,
+"id": 1389,
+"description": [
+{
+"text": "Enable 3 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Holy Light",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Holy Light",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Holy Light activity time in this Reincarnation and have at least 600000 clicks in this Reincarnation.",
+"2": "To unlock, you need to have at least 3h of Holy Light activity time in this Reincarnation and have at least 600000 clicks in this Reincarnation.",
+"3": "To unlock, you need to have at least 3h of Holy Light activity time in this Reincarnation and have at least 600000 clicks in this Reincarnation.",
+"4": "To unlock, you need to have at least 3h of Holy Light activity time in this Reincarnation and have at least 600000 clicks in this Reincarnation."
+}
+},
+{
+"name": "Holy Light 5",
+"icon": "Holy LightTier5",
+"order": 1390,
+"id": 1390,
+"description": [
+{
+"text": "Enable 4 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Holy Light",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Holy Light",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Holy Light activity time in this Reincarnation and have at least 800000 clicks in this Reincarnation.",
+"2": "To unlock, you need to have at least 4h of Holy Light activity time in this Reincarnation and have at least 800000 clicks in this Reincarnation.",
+"3": "To unlock, you need to have at least 4h of Holy Light activity time in this Reincarnation and have at least 800000 clicks in this Reincarnation.",
+"4": "To unlock, you need to have at least 4h of Holy Light activity time in this Reincarnation and have at least 800000 clicks in this Reincarnation."
+}
+},
+{
+"name": "Blood Frenzy 2",
+"icon": "Blood FrenzyTier2",
+"order": 1391,
+"id": 1391,
+"description": [
+{
+"text": "Enable 1 additional cast for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Blood Frenzy",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Blood Frenzy",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Blood Frenzy activity time in this Reincarnation and have at least 2h cumulative evil spells activity in this Reincarnation.",
+"2": "To unlock, you need to have at least 1h of Blood Frenzy activity time in this Reincarnation and have at least 2h cumulative evil spells activity in this Reincarnation.",
+"3": "To unlock, you need to have at least 1h of Blood Frenzy activity time in this Reincarnation and have at least 2h cumulative evil spells activity in this Reincarnation.",
+"4": "To unlock, you need to have at least 1h of Blood Frenzy activity time in this Reincarnation and have at least 2h cumulative evil spells activity in this Reincarnation."
+}
+},
+{
+"name": "Blood Frenzy 3",
+"icon": "Blood FrenzyTier3",
+"order": 1392,
+"id": 1392,
+"description": [
+{
+"text": "Enable 2 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Blood Frenzy",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Blood Frenzy",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Blood Frenzy activity time in this Reincarnation and have at least 4h cumulative evil spells activity in this Reincarnation.",
+"2": "To unlock, you need to have at least 2h of Blood Frenzy activity time in this Reincarnation and have at least 4h cumulative evil spells activity in this Reincarnation.",
+"3": "To unlock, you need to have at least 2h of Blood Frenzy activity time in this Reincarnation and have at least 4h cumulative evil spells activity in this Reincarnation.",
+"4": "To unlock, you need to have at least 2h of Blood Frenzy activity time in this Reincarnation and have at least 4h cumulative evil spells activity in this Reincarnation."
+}
+},
+{
+"name": "Blood Frenzy 4",
+"icon": "Blood FrenzyTier4",
+"order": 1393,
+"id": 1393,
+"description": [
+{
+"text": "Enable 3 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Blood Frenzy",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Blood Frenzy",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Blood Frenzy activity time in this Reincarnation and have at least 6h cumulative evil spells activity in this Reincarnation.",
+"2": "To unlock, you need to have at least 3h of Blood Frenzy activity time in this Reincarnation and have at least 6h cumulative evil spells activity in this Reincarnation.",
+"3": "To unlock, you need to have at least 3h of Blood Frenzy activity time in this Reincarnation and have at least 6h cumulative evil spells activity in this Reincarnation.",
+"4": "To unlock, you need to have at least 3h of Blood Frenzy activity time in this Reincarnation and have at least 6h cumulative evil spells activity in this Reincarnation."
+}
+},
+{
+"name": "Blood Frenzy 5",
+"icon": "Blood FrenzyTier5",
+"order": 1394,
+"id": 1394,
+"description": [
+{
+"text": "Enable 4 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Blood Frenzy",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Blood Frenzy",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Blood Frenzy activity time in this Reincarnation and have at least 8h cumulative evil spells activity in this Reincarnation.",
+"2": "To unlock, you need to have at least 4h of Blood Frenzy activity time in this Reincarnation and have at least 8h cumulative evil spells activity in this Reincarnation.",
+"3": "To unlock, you need to have at least 4h of Blood Frenzy activity time in this Reincarnation and have at least 8h cumulative evil spells activity in this Reincarnation.",
+"4": "To unlock, you need to have at least 4h of Blood Frenzy activity time in this Reincarnation and have at least 8h cumulative evil spells activity in this Reincarnation."
+}
+},
+{
+"name": "Gem Grinder 2",
+"icon": "Gem GrinderTier2",
+"order": 1395,
+"id": 1395,
+"description": [
+{
+"text": "Enable 1 additional cast for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Gem Grinder",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Gem Grinder",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
+"2": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
+"3": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
+"4": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems."
+}
+},
+{
+"name": "Gem Grinder 3",
+"icon": "Gem GrinderTier3",
+"order": 1396,
+"id": 1396,
+"description": [
+{
+"text": "Enable 2 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Gem Grinder",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Gem Grinder",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
+"2": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
+"3": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
+"4": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems."
+}
+},
+{
+"name": "Gem Grinder 4",
+"icon": "Gem GrinderTier4",
+"order": 1397,
+"id": 1397,
+"description": [
+{
+"text": "Enable 3 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Gem Grinder",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Gem Grinder",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
+"2": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
+"3": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
+"4": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems."
+}
+},
+{
+"name": "Gem Grinder 5",
+"icon": "Gem GrinderTier5",
+"order": 1398,
+"id": 1398,
+"description": [
+{
+"text": "Enable 4 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Gem Grinder",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Gem Grinder",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
+"2": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
+"3": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
+"4": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems."
+}
+},
+{
+"name": "Spiritual Surge 2",
+"icon": "Spiritual SurgeTier2",
+"order": 1399,
+"id": 1399,
+"description": [
+{
+"text": "Enable 1 additional cast for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Spiritual Surge",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Spiritual Surge",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Spiritual Surge activity time in this Reincarnation and have at least 60 Reincarnations.",
+"2": "To unlock, you need to have at least 1h of Spiritual Surge activity time in this Reincarnation and have at least 60 Reincarnations.",
+"3": "To unlock, you need to have at least 1h of Spiritual Surge activity time in this Reincarnation and have at least 60 Reincarnations.",
+"4": "To unlock, you need to have at least 1h of Spiritual Surge activity time in this Reincarnation and have at least 60 Reincarnations."
+}
+},
+{
+"name": "Spiritual Surge 3",
+"icon": "Spiritual SurgeTier3",
+"order": 1400,
+"id": 1400,
+"description": [
+{
+"text": "Enable 2 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Spiritual Surge",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Spiritual Surge",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Spiritual Surge activity time in this Reincarnation and have at least 120 Reincarnations.",
+"2": "To unlock, you need to have at least 2h of Spiritual Surge activity time in this Reincarnation and have at least 120 Reincarnations.",
+"3": "To unlock, you need to have at least 2h of Spiritual Surge activity time in this Reincarnation and have at least 120 Reincarnations.",
+"4": "To unlock, you need to have at least 2h of Spiritual Surge activity time in this Reincarnation and have at least 120 Reincarnations."
+}
+},
+{
+"name": "Spiritual Surge 4",
+"icon": "Spiritual SurgeTier4",
+"order": 1401,
+"id": 1401,
+"description": [
+{
+"text": "Enable 3 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Spiritual Surge",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Spiritual Surge",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Spiritual Surge activity time in this Reincarnation and have at least 180 Reincarnations.",
+"2": "To unlock, you need to have at least 3h of Spiritual Surge activity time in this Reincarnation and have at least 180 Reincarnations.",
+"3": "To unlock, you need to have at least 3h of Spiritual Surge activity time in this Reincarnation and have at least 180 Reincarnations.",
+"4": "To unlock, you need to have at least 3h of Spiritual Surge activity time in this Reincarnation and have at least 180 Reincarnations."
+}
+},
+{
+"name": "Spiritual Surge 5",
+"icon": "Spiritual SurgeTier5",
+"order": 1402,
+"id": 1402,
+"description": [
+{
+"text": "Enable 4 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Spiritual Surge",
+"Reincarnation 42+ and Upgrade: Hatch!"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Spiritual Surge",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Spiritual Surge activity time in this Reincarnation and have at least 240 Reincarnations.",
+"2": "To unlock, you need to have at least 4h of Spiritual Surge activity time in this Reincarnation and have at least 240 Reincarnations.",
+"3": "To unlock, you need to have at least 4h of Spiritual Surge activity time in this Reincarnation and have at least 240 Reincarnations.",
+"4": "To unlock, you need to have at least 4h of Spiritual Surge activity time in this Reincarnation and have at least 240 Reincarnations."
+}
+},
+{
+"name": "Fairy Chanting 2",
+"icon": "Fairy ChantingTier2",
+"order": 1403,
+"id": 1403,
+"description": [
+{
+"text": "Enable 1 additional cast for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Fairy Chanting",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Fairy Chanting",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Fairy Chanting activity time in this Reincarnation and have at least 40000 assistants.",
+"2": "To unlock, you need to have at least 1h of Fairy Chanting activity time in this Reincarnation and have at least 40000 assistants.",
+"3": "To unlock, you need to have at least 1h of Fairy Chanting activity time in this Reincarnation and have at least 40000 assistants.",
+"4": "To unlock, you need to have at least 1h of Fairy Chanting activity time in this Reincarnation and have at least 40000 assistants."
+}
+},
+{
+"name": "Fairy Chanting 3",
+"icon": "Fairy ChantingTier3",
+"order": 1404,
+"id": 1404,
+"description": [
+{
+"text": "Enable 2 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Fairy Chanting",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Fairy Chanting",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Fairy Chanting activity time in this Reincarnation and have at least 80000 assistants.",
+"2": "To unlock, you need to have at least 2h of Fairy Chanting activity time in this Reincarnation and have at least 80000 assistants.",
+"3": "To unlock, you need to have at least 2h of Fairy Chanting activity time in this Reincarnation and have at least 80000 assistants.",
+"4": "To unlock, you need to have at least 2h of Fairy Chanting activity time in this Reincarnation and have at least 80000 assistants."
+}
+},
+{
+"name": "Fairy Chanting 4",
+"icon": "Fairy ChantingTier4",
+"order": 1405,
+"id": 1405,
+"description": [
+{
+"text": "Enable 3 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Fairy Chanting",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Fairy Chanting",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Fairy Chanting activity time in this Reincarnation and have at least 120000 assistants.",
+"2": "To unlock, you need to have at least 3h of Fairy Chanting activity time in this Reincarnation and have at least 120000 assistants.",
+"3": "To unlock, you need to have at least 3h of Fairy Chanting activity time in this Reincarnation and have at least 120000 assistants.",
+"4": "To unlock, you need to have at least 3h of Fairy Chanting activity time in this Reincarnation and have at least 120000 assistants."
+}
+},
+{
+"name": "Fairy Chanting 5",
+"icon": "Fairy ChantingTier5",
+"order": 1406,
+"id": 1406,
+"description": [
+{
+"text": "Enable 4 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Fairy Chanting",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Fairy Chanting",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Fairy Chanting activity time in this Reincarnation and have at least 160000 assistants.",
+"2": "To unlock, you need to have at least 4h of Fairy Chanting activity time in this Reincarnation and have at least 160000 assistants.",
+"3": "To unlock, you need to have at least 4h of Fairy Chanting activity time in this Reincarnation and have at least 160000 assistants.",
+"4": "To unlock, you need to have at least 4h of Fairy Chanting activity time in this Reincarnation and have at least 160000 assistants."
+}
+},
+{
+"name": "Moon Blessing 2",
+"icon": "Moon BlessingTier2",
+"order": 1407,
+"id": 1407,
+"description": [
+{
+"text": "Enable 1 additional cast for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Moon Blessing",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Moon Blessing",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
+"2": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
+"3": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
+"4": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins."
+}
+},
+{
+"name": "Moon Blessing 3",
+"icon": "Moon BlessingTier3",
+"order": 1408,
+"id": 1408,
+"description": [
+{
+"text": "Enable 2 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Moon Blessing",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Moon Blessing",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
+"2": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
+"3": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
+"4": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins."
+}
+},
+{
+"name": "Moon Blessing 4",
+"icon": "Moon BlessingTier4",
+"order": 1409,
+"id": 1409,
+"description": [
+{
+"text": "Enable 3 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Moon Blessing",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Moon Blessing",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
+"2": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
+"3": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
+"4": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins."
+}
+},
+{
+"name": "Moon Blessing 5",
+"icon": "Moon BlessingTier5",
+"order": 1410,
+"id": 1410,
+"description": [
+{
+"text": "Enable 4 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Moon Blessing",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Moon Blessing",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
+"2": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
+"3": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
+"4": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins."
+}
+},
+{
+"name": "God's Hand 2",
+"icon": "God's HandTier2",
+"order": 1411,
+"id": 1411,
+"description": [
+{
+"text": "Enable 1 additional cast for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: God's Hand",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "God's Hand",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of God's Hand activity time in this Reincarnation and have at least 500000 Mana Regeneration.",
+"2": "To unlock, you need to have at least 1h of God's Hand activity time in this Reincarnation and have at least 500000 Mana Regeneration.",
+"3": "To unlock, you need to have at least 1h of God's Hand activity time in this Reincarnation and have at least 500000 Mana Regeneration.",
+"4": "To unlock, you need to have at least 1h of God's Hand activity time in this Reincarnation and have at least 500000 Mana Regeneration."
+}
+},
+{
+"name": "God's Hand 3",
+"icon": "God's HandTier3",
+"order": 1412,
+"id": 1412,
+"description": [
+{
+"text": "Enable 2 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: God's Hand",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "God's Hand",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
+"2": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
+"3": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
+"4": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration."
+}
+},
+{
+"name": "God's Hand 4",
+"icon": "God's HandTier4",
+"order": 1413,
+"id": 1413,
+"description": [
+{
+"text": "Enable 3 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: God's Hand",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "God's Hand",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
+"2": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
+"3": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
+"4": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration."
+}
+},
+{
+"name": "God's Hand 5",
+"icon": "God's HandTier5",
+"order": 1414,
+"id": 1414,
+"description": [
+{
+"text": "Enable 4 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: God's Hand",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "God's Hand",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
+"2": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
+"3": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
+"4": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration."
+}
+},
+{
+"name": "Goblin's Greed 2",
+"icon": "Goblin's GreedTier2",
+"order": 1415,
+"id": 1415,
+"description": [
+{
+"text": "Enable 1 additional cast for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Goblin's Greed",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Goblin's Greed",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
+"2": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
+"3": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
+"4": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts."
+}
+},
+{
+"name": "Goblin's Greed 3",
+"icon": "Goblin's GreedTier3",
+"order": 1416,
+"id": 1416,
+"description": [
+{
+"text": "Enable 2 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Goblin's Greed",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Goblin's Greed",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
+"2": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
+"3": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
+"4": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts."
+}
+},
+{
+"name": "Goblin's Greed 4",
+"icon": "Goblin's GreedTier4",
+"order": 1417,
+"id": 1417,
+"description": [
+{
+"text": "Enable 3 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Goblin's Greed",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Goblin's Greed",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
+"2": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
+"3": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
+"4": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts."
+}
+},
+{
+"name": "Goblin's Greed 5",
+"icon": "Goblin's GreedTier5",
+"order": 1418,
+"id": 1418,
+"description": [
+{
+"text": "Enable 4 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Goblin's Greed",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Goblin's Greed",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
+"2": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
+"3": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
+"4": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts."
+}
+},
+{
+"name": "Night Time 2",
+"icon": "Night TimeTier2",
+"order": 1419,
+"id": 1419,
+"description": [
+{
+"text": "Enable 1 additional cast for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Night Time",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Night Time",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Night Time activity time in this Reincarnation and have at least 80000% offline bonus.",
+"2": "To unlock, you need to have at least 1h of Night Time activity time in this Reincarnation and have at least 80000% offline bonus.",
+"3": "To unlock, you need to have at least 1h of Night Time activity time in this Reincarnation and have at least 80000% offline bonus.",
+"4": "To unlock, you need to have at least 1h of Night Time activity time in this Reincarnation and have at least 80000% offline bonus."
+}
+},
+{
+"name": "Night Time 3",
+"icon": "Night TimeTier3",
+"order": 1420,
+"id": 1420,
+"description": [
+{
+"text": "Enable 2 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Night Time",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Night Time",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Night Time activity time in this Reincarnation and have at least 160000% offline bonus.",
+"2": "To unlock, you need to have at least 2h of Night Time activity time in this Reincarnation and have at least 160000% offline bonus.",
+"3": "To unlock, you need to have at least 2h of Night Time activity time in this Reincarnation and have at least 160000% offline bonus.",
+"4": "To unlock, you need to have at least 2h of Night Time activity time in this Reincarnation and have at least 160000% offline bonus."
+}
+},
+{
+"name": "Night Time 4",
+"icon": "Night TimeTier4",
+"order": 1421,
+"id": 1421,
+"description": [
+{
+"text": "Enable 3 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Night Time",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Night Time",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Night Time activity time in this Reincarnation and have at least 240000% offline bonus.",
+"2": "To unlock, you need to have at least 3h of Night Time activity time in this Reincarnation and have at least 240000% offline bonus.",
+"3": "To unlock, you need to have at least 3h of Night Time activity time in this Reincarnation and have at least 240000% offline bonus.",
+"4": "To unlock, you need to have at least 3h of Night Time activity time in this Reincarnation and have at least 240000% offline bonus."
+}
+},
+{
+"name": "Night Time 5",
+"icon": "Night TimeTier5",
+"order": 1422,
+"id": 1422,
+"description": [
+{
+"text": "Enable 4 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Night Time",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Night Time",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Night Time activity time in this Reincarnation and have at least 320000% offline bonus.",
+"2": "To unlock, you need to have at least 4h of Night Time activity time in this Reincarnation and have at least 320000% offline bonus.",
+"3": "To unlock, you need to have at least 4h of Night Time activity time in this Reincarnation and have at least 320000% offline bonus.",
+"4": "To unlock, you need to have at least 4h of Night Time activity time in this Reincarnation and have at least 320000% offline bonus."
+}
+},
+{
+"name": "Hellfire Blast 2",
+"icon": "Hellfire BlastTier2",
+"order": 1423,
+"id": 1423,
+"description": [
+{
+"text": "Enable 1 additional cast for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Hellfire Blast",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Hellfire Blast",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Hellfire Blast activity time in this Reincarnation and have at least 12 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"2": "To unlock, you need to have at least 1h of Hellfire Blast activity time in this Reincarnation and have at least 12 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"3": "To unlock, you need to have at least 1h of Hellfire Blast activity time in this Reincarnation and have at least 12 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"4": "To unlock, you need to have at least 1h of Hellfire Blast activity time in this Reincarnation and have at least 12 Hellfire Blast casts in the first 5 minutes of a new Era."
+}
+},
+{
+"name": "Hellfire Blast 3",
+"icon": "Hellfire BlastTier3",
+"order": 1424,
+"id": 1424,
+"description": [
+{
+"text": "Enable 2 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Hellfire Blast",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Hellfire Blast",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Hellfire Blast activity time in this Reincarnation and have at least 24 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"2": "To unlock, you need to have at least 2h of Hellfire Blast activity time in this Reincarnation and have at least 24 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"3": "To unlock, you need to have at least 2h of Hellfire Blast activity time in this Reincarnation and have at least 24 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"4": "To unlock, you need to have at least 2h of Hellfire Blast activity time in this Reincarnation and have at least 24 Hellfire Blast casts in the first 5 minutes of a new Era."
+}
+},
+{
+"name": "Hellfire Blast 4",
+"icon": "Hellfire BlastTier4",
+"order": 1425,
+"id": 1425,
+"description": [
+{
+"text": "Enable 3 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Hellfire Blast",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Hellfire Blast",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Hellfire Blast activity time in this Reincarnation and have at least 36 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"2": "To unlock, you need to have at least 3h of Hellfire Blast activity time in this Reincarnation and have at least 36 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"3": "To unlock, you need to have at least 3h of Hellfire Blast activity time in this Reincarnation and have at least 36 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"4": "To unlock, you need to have at least 3h of Hellfire Blast activity time in this Reincarnation and have at least 36 Hellfire Blast casts in the first 5 minutes of a new Era."
+}
+},
+{
+"name": "Hellfire Blast 5",
+"icon": "Hellfire BlastTier5",
+"order": 1426,
+"id": 1426,
+"description": [
+{
+"text": "Enable 4 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Hellfire Blast",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Hellfire Blast",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Hellfire Blast activity time in this Reincarnation and have at least 48 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"2": "To unlock, you need to have at least 4h of Hellfire Blast activity time in this Reincarnation and have at least 48 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"3": "To unlock, you need to have at least 4h of Hellfire Blast activity time in this Reincarnation and have at least 48 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"4": "To unlock, you need to have at least 4h of Hellfire Blast activity time in this Reincarnation and have at least 48 Hellfire Blast casts in the first 5 minutes of a new Era."
+}
+},
+{
+"name": "Lightning Strike 2",
+"icon": "Lightning StrikeTier2",
+"order": 1427,
+"id": 1427,
+"description": [
+{
+"text": "Enable 1 additional cast for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Lightning Strike",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Lightning Strike",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Lightning Strike activity time in this Reincarnation and have at least 15000% Royal Exchange bonus.",
+"2": "To unlock, you need to have at least 1h of Lightning Strike activity time in this Reincarnation and have at least 15000% Royal Exchange bonus.",
+"3": "To unlock, you need to have at least 1h of Lightning Strike activity time in this Reincarnation and have at least 15000% Royal Exchange bonus.",
+"4": "To unlock, you need to have at least 1h of Lightning Strike activity time in this Reincarnation and have at least 15000% Royal Exchange bonus."
+}
+},
+{
+"name": "Lightning Strike 3",
+"icon": "Lightning StrikeTier3",
+"order": 1428,
+"id": 1428,
+"description": [
+{
+"text": "Enable 2 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Lightning Strike",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Lightning Strike",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Lightning Strike activity time in this Reincarnation and have at least 30000% Royal Exchange bonus.",
+"2": "To unlock, you need to have at least 2h of Lightning Strike activity time in this Reincarnation and have at least 30000% Royal Exchange bonus.",
+"3": "To unlock, you need to have at least 2h of Lightning Strike activity time in this Reincarnation and have at least 30000% Royal Exchange bonus.",
+"4": "To unlock, you need to have at least 2h of Lightning Strike activity time in this Reincarnation and have at least 30000% Royal Exchange bonus."
+}
+},
+{
+"name": "Lightning Strike 4",
+"icon": "Lightning StrikeTier4",
+"order": 1429,
+"id": 1429,
+"description": [
+{
+"text": "Enable 3 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Lightning Strike",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Lightning Strike",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Lightning Strike activity time in this Reincarnation and have at least 45000% Royal Exchange bonus.",
+"2": "To unlock, you need to have at least 3h of Lightning Strike activity time in this Reincarnation and have at least 45000% Royal Exchange bonus.",
+"3": "To unlock, you need to have at least 3h of Lightning Strike activity time in this Reincarnation and have at least 45000% Royal Exchange bonus.",
+"4": "To unlock, you need to have at least 3h of Lightning Strike activity time in this Reincarnation and have at least 45000% Royal Exchange bonus."
+}
+},
+{
+"name": "Lightning Strike 5",
+"icon": "Lightning StrikeTier5",
+"order": 1430,
+"id": 1430,
+"description": [
+{
+"text": "Enable 4 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Lightning Strike",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Lightning Strike",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Lightning Strike activity time in this Reincarnation and have at least 60000% Royal Exchange bonus.",
+"2": "To unlock, you need to have at least 4h of Lightning Strike activity time in this Reincarnation and have at least 60000% Royal Exchange bonus.",
+"3": "To unlock, you need to have at least 4h of Lightning Strike activity time in this Reincarnation and have at least 60000% Royal Exchange bonus.",
+"4": "To unlock, you need to have at least 4h of Lightning Strike activity time in this Reincarnation and have at least 60000% Royal Exchange bonus."
+}
+},
+{
+"name": "Grand Balance 2",
+"icon": "Grand BalanceTier2",
+"order": 1431,
+"id": 1431,
+"description": [
+{
+"text": "Enable 1 additional cast for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Grand Balance",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Grand Balance",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Grand Balance activity time in this Reincarnation and have at least 200000 Maximum Mana.",
+"2": "To unlock, you need to have at least 1h of Grand Balance activity time in this Reincarnation and have at least 200000 Maximum Mana.",
+"3": "To unlock, you need to have at least 1h of Grand Balance activity time in this Reincarnation and have at least 200000 Maximum Mana.",
+"4": "To unlock, you need to have at least 1h of Grand Balance activity time in this Reincarnation and have at least 200000 Maximum Mana."
+}
+},
+{
+"name": "Grand Balance 3",
+"icon": "Grand BalanceTier3",
+"order": 1432,
+"id": 1432,
+"description": [
+{
+"text": "Enable 2 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Grand Balance",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Grand Balance",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Grand Balance activity time in this Reincarnation and have at least 400000 Maximum Mana.",
+"2": "To unlock, you need to have at least 2h of Grand Balance activity time in this Reincarnation and have at least 400000 Maximum Mana.",
+"3": "To unlock, you need to have at least 2h of Grand Balance activity time in this Reincarnation and have at least 400000 Maximum Mana.",
+"4": "To unlock, you need to have at least 2h of Grand Balance activity time in this Reincarnation and have at least 400000 Maximum Mana."
+}
+},
+{
+"name": "Grand Balance 4",
+"icon": "Grand BalanceTier4",
+"order": 1433,
+"id": 1433,
+"description": [
+{
+"text": "Enable 3 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Grand Balance",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Grand Balance",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Grand Balance activity time in this Reincarnation and have at least 600000 Maximum Mana.",
+"2": "To unlock, you need to have at least 3h of Grand Balance activity time in this Reincarnation and have at least 600000 Maximum Mana.",
+"3": "To unlock, you need to have at least 3h of Grand Balance activity time in this Reincarnation and have at least 600000 Maximum Mana.",
+"4": "To unlock, you need to have at least 3h of Grand Balance activity time in this Reincarnation and have at least 600000 Maximum Mana."
+}
+},
+{
+"name": "Grand Balance 5",
+"icon": "Grand BalanceTier5",
+"order": 1434,
+"id": 1434,
+"description": [
+{
+"text": "Enable 4 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Grand Balance",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Grand Balance",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Grand Balance activity time in this Reincarnation and have at least 800000 Maximum Mana.",
+"2": "To unlock, you need to have at least 4h of Grand Balance activity time in this Reincarnation and have at least 800000 Maximum Mana.",
+"3": "To unlock, you need to have at least 4h of Grand Balance activity time in this Reincarnation and have at least 800000 Maximum Mana.",
+"4": "To unlock, you need to have at least 4h of Grand Balance activity time in this Reincarnation and have at least 800000 Maximum Mana."
+}
+},
+{
+"name": "Brainwave 2",
+"icon": "BrainwaveTier2",
+"order": 1435,
+"id": 1435,
+"description": [
+{
+"text": "Enable 1 additional cast for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Brainwave",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Brainwave",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Brainwave activity time in this Reincarnation and have at least 1h Brainwave duration.",
+"2": "To unlock, you need to have at least 1h of Brainwave activity time in this Reincarnation and have at least 1h Brainwave duration.",
+"3": "To unlock, you need to have at least 1h of Brainwave activity time in this Reincarnation and have at least 1h Brainwave duration.",
+"4": "To unlock, you need to have at least 1h of Brainwave activity time in this Reincarnation and have at least 1h Brainwave duration."
+}
+},
+{
+"name": "Brainwave 3",
+"icon": "BrainwaveTier3",
+"order": 1436,
+"id": 1436,
+"description": [
+{
+"text": "Enable 2 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Brainwave",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Brainwave",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Brainwave activity time in this Reincarnation and have at least 2h Brainwave duration.",
+"2": "To unlock, you need to have at least 2h of Brainwave activity time in this Reincarnation and have at least 2h Brainwave duration.",
+"3": "To unlock, you need to have at least 2h of Brainwave activity time in this Reincarnation and have at least 2h Brainwave duration.",
+"4": "To unlock, you need to have at least 2h of Brainwave activity time in this Reincarnation and have at least 2h Brainwave duration."
+}
+},
+{
+"name": "Brainwave 4",
+"icon": "BrainwaveTier4",
+"order": 1437,
+"id": 1437,
+"description": [
+{
+"text": "Enable 3 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Brainwave",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Brainwave",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Brainwave activity time in this Reincarnation and have at least 3h Brainwave duration.",
+"2": "To unlock, you need to have at least 3h of Brainwave activity time in this Reincarnation and have at least 3h Brainwave duration.",
+"3": "To unlock, you need to have at least 3h of Brainwave activity time in this Reincarnation and have at least 3h Brainwave duration.",
+"4": "To unlock, you need to have at least 3h of Brainwave activity time in this Reincarnation and have at least 3h Brainwave duration."
+}
+},
+{
+"name": "Brainwave 5",
+"icon": "BrainwaveTier5",
+"order": 1438,
+"id": 1438,
+"description": [
+{
+"text": "Enable 4 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Brainwave",
+"Reincarnation 48+ and Upgrade: Elder Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Brainwave",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Brainwave activity time in this Reincarnation and have at least 4h Brainwave duration.",
+"2": "To unlock, you need to have at least 4h of Brainwave activity time in this Reincarnation and have at least 4h Brainwave duration.",
+"3": "To unlock, you need to have at least 4h of Brainwave activity time in this Reincarnation and have at least 4h Brainwave duration.",
+"4": "To unlock, you need to have at least 4h of Brainwave activity time in this Reincarnation and have at least 4h Brainwave duration."
+}
+},
+{
+"name": "Diamond Pickaxe 2",
+"icon": "Diamond PickaxeTier2",
+"order": 1439,
+"id": 1439,
+"description": [
+{
+"text": "Enable 1 additional cast for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Diamond Pickaxe",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Diamond Pickaxe",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Diamond Pickaxe activity time in this Reincarnation and have at least 4000 excavation depth.",
+"2": "To unlock, you need to have at least 1h of Diamond Pickaxe activity time in this Reincarnation and have at least 4000 excavation depth.",
+"3": "To unlock, you need to have at least 1h of Diamond Pickaxe activity time in this Reincarnation and have at least 4000 excavation depth.",
+"4": "To unlock, you need to have at least 1h of Diamond Pickaxe activity time in this Reincarnation and have at least 4000 excavation depth."
+}
+},
+{
+"name": "Diamond Pickaxe 3",
+"icon": "Diamond PickaxeTier3",
+"order": 1440,
+"id": 1440,
+"description": [
+{
+"text": "Enable 2 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Diamond Pickaxe",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Diamond Pickaxe",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Diamond Pickaxe activity time in this Reincarnation and have at least 8000 excavation depth.",
+"2": "To unlock, you need to have at least 2h of Diamond Pickaxe activity time in this Reincarnation and have at least 8000 excavation depth.",
+"3": "To unlock, you need to have at least 2h of Diamond Pickaxe activity time in this Reincarnation and have at least 8000 excavation depth.",
+"4": "To unlock, you need to have at least 2h of Diamond Pickaxe activity time in this Reincarnation and have at least 8000 excavation depth."
+}
+},
+{
+"name": "Diamond Pickaxe 4",
+"icon": "Diamond PickaxeTier4",
+"order": 1441,
+"id": 1441,
+"description": [
+{
+"text": "Enable 3 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Diamond Pickaxe",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Diamond Pickaxe",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Diamond Pickaxe activity time in this Reincarnation and have at least 12000 excavation depth.",
+"2": "To unlock, you need to have at least 3h of Diamond Pickaxe activity time in this Reincarnation and have at least 12000 excavation depth.",
+"3": "To unlock, you need to have at least 3h of Diamond Pickaxe activity time in this Reincarnation and have at least 12000 excavation depth.",
+"4": "To unlock, you need to have at least 3h of Diamond Pickaxe activity time in this Reincarnation and have at least 12000 excavation depth."
+}
+},
+{
+"name": "Diamond Pickaxe 5",
+"icon": "Diamond PickaxeTier5",
+"order": 1442,
+"id": 1442,
+"description": [
+{
+"text": "Enable 4 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Diamond Pickaxe",
+"Reincarnation 46+ and Upgrade: Dragon"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Diamond Pickaxe",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Diamond Pickaxe activity time in this Reincarnation and have at least 16000 excavation depth.",
+"2": "To unlock, you need to have at least 4h of Diamond Pickaxe activity time in this Reincarnation and have at least 16000 excavation depth.",
+"3": "To unlock, you need to have at least 4h of Diamond Pickaxe activity time in this Reincarnation and have at least 16000 excavation depth.",
+"4": "To unlock, you need to have at least 4h of Diamond Pickaxe activity time in this Reincarnation and have at least 16000 excavation depth."
+}
+},
+{
+"name": "Combo Strike 2",
+"icon": "Combo StrikeTier2",
+"order": 1443,
+"id": 1443,
+"description": [
+{
+"text": "Enable 1 additional cast for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Combo Strike",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Combo Strike",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Combo Strike activity time in this Reincarnation and have at least 100 Combo Strike counter.",
+"2": "To unlock, you need to have at least 1h of Combo Strike activity time in this Reincarnation and have at least 100 Combo Strike counter.",
+"3": "To unlock, you need to have at least 1h of Combo Strike activity time in this Reincarnation and have at least 100 Combo Strike counter.",
+"4": "To unlock, you need to have at least 1h of Combo Strike activity time in this Reincarnation and have at least 100 Combo Strike counter."
+}
+},
+{
+"name": "Combo Strike 3",
+"icon": "Combo StrikeTier3",
+"order": 1444,
+"id": 1444,
+"description": [
+{
+"text": "Enable 2 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Combo Strike",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Combo Strike",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Combo Strike activity time in this Reincarnation and have at least 200 Combo Strike counter.",
+"2": "To unlock, you need to have at least 2h of Combo Strike activity time in this Reincarnation and have at least 200 Combo Strike counter.",
+"3": "To unlock, you need to have at least 2h of Combo Strike activity time in this Reincarnation and have at least 200 Combo Strike counter.",
+"4": "To unlock, you need to have at least 2h of Combo Strike activity time in this Reincarnation and have at least 200 Combo Strike counter."
+}
+},
+{
+"name": "Combo Strike 4",
+"icon": "Combo StrikeTier4",
+"order": 1445,
+"id": 1445,
+"description": [
+{
+"text": "Enable 3 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Combo Strike",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Combo Strike",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Combo Strike activity time in this Reincarnation and have at least 300 Combo Strike counter.",
+"2": "To unlock, you need to have at least 3h of Combo Strike activity time in this Reincarnation and have at least 300 Combo Strike counter.",
+"3": "To unlock, you need to have at least 3h of Combo Strike activity time in this Reincarnation and have at least 300 Combo Strike counter.",
+"4": "To unlock, you need to have at least 3h of Combo Strike activity time in this Reincarnation and have at least 300 Combo Strike counter."
+}
+},
+{
+"name": "Combo Strike 5",
+"icon": "Combo StrikeTier5",
+"order": 1446,
+"id": 1446,
+"description": [
+{
+"text": "Enable 4 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Combo Strike",
+"Reincarnation 44+ and Upgrade: Drakeling"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Combo Strike",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Combo Strike activity time in this Reincarnation and have at least 400 Combo Strike counter.",
+"2": "To unlock, you need to have at least 4h of Combo Strike activity time in this Reincarnation and have at least 400 Combo Strike counter.",
+"3": "To unlock, you need to have at least 4h of Combo Strike activity time in this Reincarnation and have at least 400 Combo Strike counter.",
+"4": "To unlock, you need to have at least 4h of Combo Strike activity time in this Reincarnation and have at least 400 Combo Strike counter."
+}
+},
+{
+"name": "Dragon's Breath 2",
+"icon": "Dragon's BreathTier2",
+"order": 1447,
+"id": 1447,
+"description": [
+{
+"text": "Enable 1 additional cast for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Dragon's Breath"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Dragon's Breath",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 54 Reincarnations.",
+"2": "To unlock, you need to have at least 54 Reincarnations.",
+"3": "To unlock, you need to have at least 54 Reincarnations.",
+"4": "To unlock, you need to have at least 54 Reincarnations."
+}
+},
+{
+"name": "Dragon's Breath 3",
+"icon": "Dragon's BreathTier3",
+"order": 1448,
+"id": 1448,
+"description": [
+{
+"text": "Enable 2 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Dragon's Breath"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Dragon's Breath",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 60 Reincarnations.",
+"2": "To unlock, you need to have at least 60 Reincarnations.",
+"3": "To unlock, you need to have at least 60 Reincarnations.",
+"4": "To unlock, you need to have at least 60 Reincarnations."
+}
+},
+{
+"name": "Dragon's Breath 4",
+"icon": "Dragon's BreathTier4",
+"order": 1449,
+"id": 1449,
+"description": [
+{
+"text": "Enable 3 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Dragon's Breath"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Dragon's Breath",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 66 Reincarnations.",
+"2": "To unlock, you need to have at least 66 Reincarnations.",
+"3": "To unlock, you need to have at least 66 Reincarnations.",
+"4": "To unlock, you need to have at least 66 Reincarnations."
+}
+},
+{
+"name": "Dragon's Breath 5",
+"icon": "Dragon's BreathTier5",
+"order": 1450,
+"id": 1450,
+"description": [
+{
+"text": "Enable 4 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Dragon's Breath"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Dragon's Breath",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 72 Reincarnations.",
+"2": "To unlock, you need to have at least 72 Reincarnations.",
+"3": "To unlock, you need to have at least 72 Reincarnations.",
+"4": "To unlock, you need to have at least 72 Reincarnations."
+}
+},
+{
+"name": "Maelstrom 2",
+"icon": "MaelstromTier2",
+"order": 1451,
+"id": 1451,
+"description": [
+{
+"text": "Enable 1 additional cast for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Maelstrom"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Maelstrom",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Maelstrom activity time in this Reincarnation and have at least 4 active spells.",
+"2": "To unlock, you need to have at least 1h of Maelstrom activity time in this Reincarnation and have at least 4 active spells.",
+"3": "To unlock, you need to have at least 1h of Maelstrom activity time in this Reincarnation and have at least 4 active spells.",
+"4": "To unlock, you need to have at least 1h of Maelstrom activity time in this Reincarnation and have at least 4 active spells."
+}
+},
+{
+"name": "Maelstrom 3",
+"icon": "MaelstromTier3",
+"order": 1452,
+"id": 1452,
+"description": [
+{
+"text": "Enable 2 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Maelstrom"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Maelstrom",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Maelstrom activity time in this Reincarnation and have at least 8 active spells.",
+"2": "To unlock, you need to have at least 2h of Maelstrom activity time in this Reincarnation and have at least 8 active spells.",
+"3": "To unlock, you need to have at least 2h of Maelstrom activity time in this Reincarnation and have at least 8 active spells.",
+"4": "To unlock, you need to have at least 2h of Maelstrom activity time in this Reincarnation and have at least 8 active spells."
+}
+},
+{
+"name": "Maelstrom 4",
+"icon": "MaelstromTier4",
+"order": 1453,
+"id": 1453,
+"description": [
+{
+"text": "Enable 3 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Maelstrom"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Maelstrom",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Maelstrom activity time in this Reincarnation and have at least 12 active spells.",
+"2": "To unlock, you need to have at least 3h of Maelstrom activity time in this Reincarnation and have at least 12 active spells.",
+"3": "To unlock, you need to have at least 3h of Maelstrom activity time in this Reincarnation and have at least 12 active spells.",
+"4": "To unlock, you need to have at least 3h of Maelstrom activity time in this Reincarnation and have at least 12 active spells."
+}
+},
+{
+"name": "Maelstrom 5",
+"icon": "MaelstromTier5",
+"order": 1454,
+"id": 1454,
+"description": [
+{
+"text": "Enable 4 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Maelstrom"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Maelstrom",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Maelstrom activity time in this Reincarnation and have at least 16 active spells.",
+"2": "To unlock, you need to have at least 4h of Maelstrom activity time in this Reincarnation and have at least 16 active spells.",
+"3": "To unlock, you need to have at least 4h of Maelstrom activity time in this Reincarnation and have at least 16 active spells.",
+"4": "To unlock, you need to have at least 4h of Maelstrom activity time in this Reincarnation and have at least 16 active spells."
+}
+},
+{
+"name": "Temporal Flux 2",
+"icon": "Temporal FluxTier2",
+"order": 1455,
+"id": 1455,
+"description": [
+{
+"text": "Enable 1 additional cast for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Temporal Flux"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Temporal Flux",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Temporal Flux activity time in this Reincarnation and have at least 5m spent in this Era.",
+"2": "To unlock, you need to have at least 1h of Temporal Flux activity time in this Reincarnation and have at least 5m spent in this Era.",
+"3": "To unlock, you need to have at least 1h of Temporal Flux activity time in this Reincarnation and have at least 5m spent in this Era.",
+"4": "To unlock, you need to have at least 1h of Temporal Flux activity time in this Reincarnation and have at least 5m spent in this Era."
+}
+},
+{
+"name": "Temporal Flux 3",
+"icon": "Temporal FluxTier3",
+"order": 1456,
+"id": 1456,
+"description": [
+{
+"text": "Enable 2 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Temporal Flux"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Temporal Flux",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Temporal Flux activity time in this Reincarnation and have at least 10m spent in this Era.",
+"2": "To unlock, you need to have at least 2h of Temporal Flux activity time in this Reincarnation and have at least 10m spent in this Era.",
+"3": "To unlock, you need to have at least 2h of Temporal Flux activity time in this Reincarnation and have at least 10m spent in this Era.",
+"4": "To unlock, you need to have at least 2h of Temporal Flux activity time in this Reincarnation and have at least 10m spent in this Era."
+}
+},
+{
+"name": "Temporal Flux 4",
+"icon": "Temporal FluxTier4",
+"order": 1457,
+"id": 1457,
+"description": [
+{
+"text": "Enable 3 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Temporal Flux"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Temporal Flux",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Temporal Flux activity time in this Reincarnation and have at least 15m spent in this Era.",
+"2": "To unlock, you need to have at least 3h of Temporal Flux activity time in this Reincarnation and have at least 15m spent in this Era.",
+"3": "To unlock, you need to have at least 3h of Temporal Flux activity time in this Reincarnation and have at least 15m spent in this Era.",
+"4": "To unlock, you need to have at least 3h of Temporal Flux activity time in this Reincarnation and have at least 15m spent in this Era."
+}
+},
+{
+"name": "Temporal Flux 5",
+"icon": "Temporal FluxTier5",
+"order": 1458,
+"id": 1458,
+"description": [
+{
+"text": "Enable 4 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Temporal Flux"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Temporal Flux",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Temporal Flux activity time in this Reincarnation and have at least 20m spent in this Era.",
+"2": "To unlock, you need to have at least 4h of Temporal Flux activity time in this Reincarnation and have at least 20m spent in this Era.",
+"3": "To unlock, you need to have at least 4h of Temporal Flux activity time in this Reincarnation and have at least 20m spent in this Era.",
+"4": "To unlock, you need to have at least 4h of Temporal Flux activity time in this Reincarnation and have at least 20m spent in this Era."
+}
+},
+{
+"name": "All Creation 2",
+"icon": "All CreationTier2",
+"order": 1459,
+"id": 1459,
+"description": [
+{
+"text": "Enable 1 additional cast for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: All Creation"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "All Creation",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of All Creation activity time in this Reincarnation and have at least 100 Royal Exchanges made.",
+"2": "To unlock, you need to have at least 1h of All Creation activity time in this Reincarnation and have at least 100 Royal Exchanges made.",
+"3": "To unlock, you need to have at least 1h of All Creation activity time in this Reincarnation and have at least 100 Royal Exchanges made.",
+"4": "To unlock, you need to have at least 1h of All Creation activity time in this Reincarnation and have at least 100 Royal Exchanges made."
+}
+},
+{
+"name": "All Creation 3",
+"icon": "All CreationTier3",
+"order": 1460,
+"id": 1460,
+"description": [
+{
+"text": "Enable 2 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: All Creation"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "All Creation",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of All Creation activity time in this Reincarnation and have at least 200 Royal Exchanges made.",
+"2": "To unlock, you need to have at least 2h of All Creation activity time in this Reincarnation and have at least 200 Royal Exchanges made.",
+"3": "To unlock, you need to have at least 2h of All Creation activity time in this Reincarnation and have at least 200 Royal Exchanges made.",
+"4": "To unlock, you need to have at least 2h of All Creation activity time in this Reincarnation and have at least 200 Royal Exchanges made."
+}
+},
+{
+"name": "All Creation 4",
+"icon": "All CreationTier4",
+"order": 1461,
+"id": 1461,
+"description": [
+{
+"text": "Enable 3 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: All Creation"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "All Creation",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of All Creation activity time in this Reincarnation and have at least 300 Royal Exchanges made.",
+"2": "To unlock, you need to have at least 3h of All Creation activity time in this Reincarnation and have at least 300 Royal Exchanges made.",
+"3": "To unlock, you need to have at least 3h of All Creation activity time in this Reincarnation and have at least 300 Royal Exchanges made.",
+"4": "To unlock, you need to have at least 3h of All Creation activity time in this Reincarnation and have at least 300 Royal Exchanges made."
+}
+},
+{
+"name": "All Creation 5",
+"icon": "All CreationTier5",
+"order": 1462,
+"id": 1462,
+"description": [
+{
+"text": "Enable 4 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: All Creation"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "All Creation",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of All Creation activity time in this Reincarnation and have at least 400 Royal Exchanges made.",
+"2": "To unlock, you need to have at least 4h of All Creation activity time in this Reincarnation and have at least 400 Royal Exchanges made.",
+"3": "To unlock, you need to have at least 4h of All Creation activity time in this Reincarnation and have at least 400 Royal Exchanges made.",
+"4": "To unlock, you need to have at least 4h of All Creation activity time in this Reincarnation and have at least 400 Royal Exchanges made."
+}
+},
+{
+"name": "Precognition 2",
+"icon": "PrecognitionTier2",
+"order": 1463,
+"id": 1463,
+"description": [
+{
+"text": "Enable 1 additional cast for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Precognition",
+"Lore artifact: Lantern of Guidance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Precognition",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Precognition activity time in this Reincarnation and have at least 6m Precognition duration.",
+"2": "To unlock, you need to have at least 1h of Precognition activity time in this Reincarnation and have at least 6m Precognition duration.",
+"3": "To unlock, you need to have at least 1h of Precognition activity time in this Reincarnation and have at least 6m Precognition duration.",
+"4": "To unlock, you need to have at least 1h of Precognition activity time in this Reincarnation and have at least 6m Precognition duration."
+}
+},
+{
+"name": "Precognition 3",
+"icon": "PrecognitionTier3",
+"order": 1464,
+"id": 1464,
+"description": [
+{
+"text": "Enable 2 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Precognition",
+"Lore artifact: Lantern of Guidance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Precognition",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Precognition activity time in this Reincarnation and have at least 12m Precognition duration.",
+"2": "To unlock, you need to have at least 2h of Precognition activity time in this Reincarnation and have at least 12m Precognition duration.",
+"3": "To unlock, you need to have at least 2h of Precognition activity time in this Reincarnation and have at least 12m Precognition duration.",
+"4": "To unlock, you need to have at least 2h of Precognition activity time in this Reincarnation and have at least 12m Precognition duration."
+}
+},
+{
+"name": "Precognition 4",
+"icon": "PrecognitionTier4",
+"order": 1465,
+"id": 1465,
+"description": [
+{
+"text": "Enable 3 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Precognition",
+"Lore artifact: Lantern of Guidance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Precognition",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Precognition activity time in this Reincarnation and have at least 18m Precognition duration.",
+"2": "To unlock, you need to have at least 3h of Precognition activity time in this Reincarnation and have at least 18m Precognition duration.",
+"3": "To unlock, you need to have at least 3h of Precognition activity time in this Reincarnation and have at least 18m Precognition duration.",
+"4": "To unlock, you need to have at least 3h of Precognition activity time in this Reincarnation and have at least 18m Precognition duration."
+}
+},
+{
+"name": "Precognition 5",
+"icon": "PrecognitionTier5",
+"order": 1466,
+"id": 1466,
+"description": [
+{
+"text": "Enable 4 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Precognition",
+"Lore artifact: Lantern of Guidance"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Precognition",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Precognition activity time in this Reincarnation and have at least 24m Precognition duration.",
+"2": "To unlock, you need to have at least 4h of Precognition activity time in this Reincarnation and have at least 24m Precognition duration.",
+"3": "To unlock, you need to have at least 4h of Precognition activity time in this Reincarnation and have at least 24m Precognition duration.",
+"4": "To unlock, you need to have at least 4h of Precognition activity time in this Reincarnation and have at least 24m Precognition duration."
+}
+},
+{
+"name": "Limited Wish 2",
+"icon": "Limited WishTier2",
+"order": 1467,
+"id": 1467,
+"description": [
+{
+"text": "Enable 1 additional cast for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Limited Wish",
+"Lore artifact: Oil Lamp"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Limited Wish",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Limited Wish activity time in this Reincarnation and have at least 100000 Maximum Mana.",
+"2": "To unlock, you need to have at least 1h of Limited Wish activity time in this Reincarnation and have at least 100000 Maximum Mana.",
+"3": "To unlock, you need to have at least 1h of Limited Wish activity time in this Reincarnation and have at least 100000 Maximum Mana.",
+"4": "To unlock, you need to have at least 1h of Limited Wish activity time in this Reincarnation and have at least 100000 Maximum Mana."
+}
+},
+{
+"name": "Limited Wish 3",
+"icon": "Limited WishTier3",
+"order": 1468,
+"id": 1468,
+"description": [
+{
+"text": "Enable 2 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Limited Wish",
+"Lore artifact: Oil Lamp"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Limited Wish",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
+"2": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
+"3": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
+"4": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana."
+}
+},
+{
+"name": "Limited Wish 4",
+"icon": "Limited WishTier4",
+"order": 1469,
+"id": 1469,
+"description": [
+{
+"text": "Enable 3 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Limited Wish",
+"Lore artifact: Oil Lamp"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Limited Wish",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
+"2": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
+"3": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
+"4": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana."
+}
+},
+{
+"name": "Limited Wish 5",
+"icon": "Limited WishTier5",
+"order": 1470,
+"id": 1470,
+"description": [
+{
+"text": "Enable 4 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Limited Wish",
+"Lore artifact: Oil Lamp"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Limited Wish",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
+"2": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
+"3": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
+"4": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana."
+}
+},
+{
+"name": "Infinite Spiral 2",
+"icon": "Infinite SpiralTier2",
+"order": 1471,
+"id": 1471,
+"description": [
+{
+"text": "Enable 1 additional cast for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 2
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Infinite Spiral",
+"Lore artifact: Spark of Life"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Infinite Spiral",
+"spell_tier": 2,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
+"2": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
+"3": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
+"4": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins."
+}
+},
+{
+"name": "Infinite Spiral 3",
+"icon": "Infinite SpiralTier3",
+"order": 1472,
+"id": 1472,
+"description": [
+{
+"text": "Enable 2 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 3
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Infinite Spiral",
+"Lore artifact: Spark of Life"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Infinite Spiral",
+"spell_tier": 3,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
+"2": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
+"3": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
+"4": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins."
+}
+},
+{
+"name": "Infinite Spiral 4",
+"icon": "Infinite SpiralTier4",
+"order": 1473,
+"id": 1473,
+"description": [
+{
+"text": "Enable 3 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 4
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Infinite Spiral",
+"Lore artifact: Spark of Life"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 3,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Infinite Spiral",
+"spell_tier": 4,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
+"2": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
+"3": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
+"4": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins."
+}
+},
+{
+"name": "Infinite Spiral 5",
+"icon": "Infinite SpiralTier5",
+"order": 1474,
+"id": 1474,
+"description": [
+{
+"text": "Enable 4 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics.",
+"formulas": [
+{
+"latex": "v = \\left(M_{\\max}^{\\frac{2}{\\max\\left(3,\\,A\\right)}} + \\left(30 \\cdot R\\right)^{\\frac{2}{\\max\\left(3,\\,A\\right)}}\\right)^{0.4}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "R",
+"text": "Your mana regeneration per second"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Spell: Infinite Spiral",
+"Lore artifact: Spark of Life"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 4,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": null,
+"building": null,
+"spell": "Infinite Spiral",
+"spell_tier": 5,
+"unlock_by_asc": {
+"1": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
+"2": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
+"3": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
+"4": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins."
+}
 }
 ],
 "buildings": [

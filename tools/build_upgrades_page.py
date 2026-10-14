@@ -83,6 +83,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction'])} if 'faction' in u else {}),
         **({'ia': {str(ax): icon_file(f"{UNION_ICON[u['faction']]}{nm}") for ax, nm in ((4, 'Order'), (5, 'Chaos'), (6, 'Balance'))}}
            if u.get('tier_no') == 4 and u.get('faction') in UNION_ICON else {}),
@@ -116,7 +117,8 @@ def entries(items):
             out.append({'g': None, 'items': [item(u)]}); continue
         if g not in pos:
             pos[g] = len(out)
-            title = GROUP_TITLES.get(g) or (f"{u['building']} production upgrades" if u.get('building') else g)
+            title = GROUP_TITLES.get(g) or (f"{u['building']} production upgrades" if u.get('building') else
+                                            f"{u['spell']} spell tiers" if u.get('spell') else g)
             out.append({'g': title, 'items': []})
         out[pos[g]]['items'].append(item(u))
     for e in out:
@@ -227,7 +229,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic (with the spell tiers), Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -265,7 +267,7 @@ the base values <i>v</i>.</div>
   var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 /*SEARCH_JS*/
-  function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
+  function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
@@ -328,9 +330,11 @@ the base values <i>v</i>.</div>
       formulas(tip, it.f);
     }
     if(it.m) tip.appendChild(el('div','more','Click for more info'));
-    if(it.s.length){
+    var rq=it.s.slice();
+    if(it.ra && ASC>=1){ var ra=it.ra[String(Math.min(ASC,4))]; if(ra) rq.unshift(ra); }
+    if(rq.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
-      var ul=el('ul'); it.s.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
+      var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
     }
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();

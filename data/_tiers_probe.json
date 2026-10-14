@@ -1,0 +1,3580 @@
+{
+"allegiances": [],
+"secret": [],
+"magic": [
+{
+"name": "Call to Arms 2",
+"icon": "Call to ArmsTier2",
+"order": 1383,
+"id": 1383,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Call to Arms activity time in this Reincarnation and have at least INF buildings.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Enable 1 additional cast for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Call to Arms 3",
+"icon": "Call to ArmsTier3",
+"order": 1384,
+"id": 1384,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Call to Arms activity time in this Reincarnation and have at least INF buildings.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Enable 2 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Call to Arms 4",
+"icon": "Call to ArmsTier4",
+"order": 1385,
+"id": 1385,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Call to Arms activity time in this Reincarnation and have at least INF buildings.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Enable 3 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Call to Arms 5",
+"icon": "Call to ArmsTier5",
+"order": 1386,
+"id": 1386,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Call to Arms activity time in this Reincarnation and have at least INF buildings.",
+"formulas": [],
+"s": 1
+},
+{
+"text": "Enable 4 additional casts for Call to Arms.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes buildings count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Call to ArmsMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Holy Light 2",
+"icon": "Holy LightTier2",
+"order": 1387,
+"id": 1387,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Holy Light activity time in this Reincarnation and have at least 200000 clicks in this Reincarnation.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Holy Light 3",
+"icon": "Holy LightTier3",
+"order": 1388,
+"id": 1388,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Holy Light activity time in this Reincarnation and have at least 400000 clicks in this Reincarnation.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Holy Light 4",
+"icon": "Holy LightTier4",
+"order": 1389,
+"id": 1389,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Holy Light activity time in this Reincarnation and have at least 600000 clicks in this Reincarnation.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Holy Light 5",
+"icon": "Holy LightTier5",
+"order": 1390,
+"id": 1390,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Holy Light activity time in this Reincarnation and have at least 800000 clicks in this Reincarnation.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Holy Light.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Holy LightMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Blood Frenzy 2",
+"icon": "Blood FrenzyTier2",
+"order": 1391,
+"id": 1391,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Blood Frenzy activity time in this Reincarnation and have at least 2h cumulative evil spells activity in this Reincarnation.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Blood Frenzy 3",
+"icon": "Blood FrenzyTier3",
+"order": 1392,
+"id": 1392,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Blood Frenzy activity time in this Reincarnation and have at least 4h cumulative evil spells activity in this Reincarnation.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Blood Frenzy 4",
+"icon": "Blood FrenzyTier4",
+"order": 1393,
+"id": 1393,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Blood Frenzy activity time in this Reincarnation and have at least 6h cumulative evil spells activity in this Reincarnation.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Blood Frenzy 5",
+"icon": "Blood FrenzyTier5",
+"order": 1394,
+"id": 1394,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Blood Frenzy activity time in this Reincarnation and have at least 8h cumulative evil spells activity in this Reincarnation.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Blood Frenzy.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Blood FrenzyMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Gem Grinder 2",
+"icon": "Gem GrinderTier2",
+"order": 1395,
+"id": 1395,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Gem Grinder 3",
+"icon": "Gem GrinderTier3",
+"order": 1396,
+"id": 1396,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Gem Grinder 4",
+"icon": "Gem GrinderTier4",
+"order": 1397,
+"id": 1397,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Gem Grinder 5",
+"icon": "Gem GrinderTier5",
+"order": 1398,
+"id": 1398,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Gem Grinder.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Gem GrinderMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Spiritual Surge 2",
+"icon": "Spiritual SurgeTier2",
+"order": 1399,
+"id": 1399,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Spiritual Surge activity time in this Reincarnation and have at least 60 Reincarnations.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Spiritual Surge 3",
+"icon": "Spiritual SurgeTier3",
+"order": 1400,
+"id": 1400,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Spiritual Surge activity time in this Reincarnation and have at least 120 Reincarnations.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Spiritual Surge 4",
+"icon": "Spiritual SurgeTier4",
+"order": 1401,
+"id": 1401,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Spiritual Surge activity time in this Reincarnation and have at least 180 Reincarnations.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Spiritual Surge 5",
+"icon": "Spiritual SurgeTier5",
+"order": 1402,
+"id": 1402,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Spiritual Surge activity time in this Reincarnation and have at least 240 Reincarnations.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Spiritual Surge.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Reincarnations count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Spiritual SurgeMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Fairy Chanting 2",
+"icon": "Fairy ChantingTier2",
+"order": 1403,
+"id": 1403,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Fairy Chanting activity time in this Reincarnation and have at least 40000 assistants.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Fairy Chanting 3",
+"icon": "Fairy ChantingTier3",
+"order": 1404,
+"id": 1404,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Fairy Chanting activity time in this Reincarnation and have at least 80000 assistants.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Fairy Chanting 4",
+"icon": "Fairy ChantingTier4",
+"order": 1405,
+"id": 1405,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Fairy Chanting activity time in this Reincarnation and have at least 120000 assistants.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Fairy Chanting 5",
+"icon": "Fairy ChantingTier5",
+"order": 1406,
+"id": 1406,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Fairy Chanting activity time in this Reincarnation and have at least 160000 assistants.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Fairy Chanting.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Fairy ChantingMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Moon Blessing 2",
+"icon": "Moon BlessingTier2",
+"order": 1407,
+"id": 1407,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Moon Blessing 3",
+"icon": "Moon BlessingTier3",
+"order": 1408,
+"id": 1408,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Moon Blessing 4",
+"icon": "Moon BlessingTier4",
+"order": 1409,
+"id": 1409,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Moon Blessing 5",
+"icon": "Moon BlessingTier5",
+"order": 1410,
+"id": 1410,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Moon Blessing.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also, while Sun Blessing is active, autoclick 2 additional times per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Moon BlessingMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "God's Hand 2",
+"icon": "God's HandTier2",
+"order": 1411,
+"id": 1411,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of God's Hand activity time in this Reincarnation and have at least 500000 Mana Regeneration.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "God's Hand 3",
+"icon": "God's HandTier3",
+"order": 1412,
+"id": 1412,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "God's Hand 4",
+"icon": "God's HandTier4",
+"order": 1413,
+"id": 1413,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "God's Hand 5",
+"icon": "God's HandTier5",
+"order": 1414,
+"id": 1414,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for God's Hand.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase duration bonus coefficient based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "God's HandMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Goblin's Greed 2",
+"icon": "Goblin's GreedTier2",
+"order": 1415,
+"id": 1415,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Goblin's Greed 3",
+"icon": "Goblin's GreedTier3",
+"order": 1416,
+"id": 1416,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Goblin's Greed 4",
+"icon": "Goblin's GreedTier4",
+"order": 1417,
+"id": 1417,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Goblin's Greed 5",
+"icon": "Goblin's GreedTier5",
+"order": 1418,
+"id": 1418,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Goblin's Greed.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also additively and multiplicatively increase triggered Tax Collections based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Goblin's GreedMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Night Time 2",
+"icon": "Night TimeTier2",
+"order": 1419,
+"id": 1419,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Night Time activity time in this Reincarnation and have at least 80000% offline bonus.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Night Time 3",
+"icon": "Night TimeTier3",
+"order": 1420,
+"id": 1420,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Night Time activity time in this Reincarnation and have at least 160000% offline bonus.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Night Time 4",
+"icon": "Night TimeTier4",
+"order": 1421,
+"id": 1421,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Night Time activity time in this Reincarnation and have at least 240000% offline bonus.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Night Time 5",
+"icon": "Night TimeTier5",
+"order": 1422,
+"id": 1422,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Night Time activity time in this Reincarnation and have at least 320000% offline bonus.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Night Time.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase assistants based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Night TimeMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Hellfire Blast 2",
+"icon": "Hellfire BlastTier2",
+"order": 1423,
+"id": 1423,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Hellfire Blast activity time in this Reincarnation and have at least 12 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Hellfire Blast 3",
+"icon": "Hellfire BlastTier3",
+"order": 1424,
+"id": 1424,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Hellfire Blast activity time in this Reincarnation and have at least 24 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Hellfire Blast 4",
+"icon": "Hellfire BlastTier4",
+"order": 1425,
+"id": 1425,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Hellfire Blast activity time in this Reincarnation and have at least 36 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Hellfire Blast 5",
+"icon": "Hellfire BlastTier5",
+"order": 1426,
+"id": 1426,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Hellfire Blast activity time in this Reincarnation and have at least 48 Hellfire Blast casts in the first 5 minutes of a new Era.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Hellfire Blast.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also make Evil spells cast count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Hellfire BlastMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Lightning Strike 2",
+"icon": "Lightning StrikeTier2",
+"order": 1427,
+"id": 1427,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Lightning Strike activity time in this Reincarnation and have at least 15000% Royal Exchange bonus.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Lightning Strike 3",
+"icon": "Lightning StrikeTier3",
+"order": 1428,
+"id": 1428,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Lightning Strike activity time in this Reincarnation and have at least 30000% Royal Exchange bonus.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Lightning Strike 4",
+"icon": "Lightning StrikeTier4",
+"order": 1429,
+"id": 1429,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Lightning Strike activity time in this Reincarnation and have at least 45000% Royal Exchange bonus.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Lightning Strike 5",
+"icon": "Lightning StrikeTier5",
+"order": 1430,
+"id": 1430,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Lightning Strike activity time in this Reincarnation and have at least 60000% Royal Exchange bonus.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Lightning Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Iron Strongholds count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Lightning StrikeMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Grand Balance 2",
+"icon": "Grand BalanceTier2",
+"order": 1431,
+"id": 1431,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Grand Balance activity time in this Reincarnation and have at least 200000 Maximum Mana.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Grand Balance 3",
+"icon": "Grand BalanceTier3",
+"order": 1432,
+"id": 1432,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Grand Balance activity time in this Reincarnation and have at least 400000 Maximum Mana.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Grand Balance 4",
+"icon": "Grand BalanceTier4",
+"order": 1433,
+"id": 1433,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Grand Balance activity time in this Reincarnation and have at least 600000 Maximum Mana.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Grand Balance 5",
+"icon": "Grand BalanceTier5",
+"order": 1434,
+"id": 1434,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Grand Balance activity time in this Reincarnation and have at least 800000 Maximum Mana.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Grand Balance.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Maximum Mana based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Grand BalanceMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Brainwave 2",
+"icon": "BrainwaveTier2",
+"order": 1435,
+"id": 1435,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Brainwave activity time in this Reincarnation and have at least 1h Brainwave duration.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Brainwave 3",
+"icon": "BrainwaveTier3",
+"order": 1436,
+"id": 1436,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Brainwave activity time in this Reincarnation and have at least 2h Brainwave duration.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Brainwave 4",
+"icon": "BrainwaveTier4",
+"order": 1437,
+"id": 1437,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Brainwave activity time in this Reincarnation and have at least 3h Brainwave duration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Brainwave 5",
+"icon": "BrainwaveTier5",
+"order": 1438,
+"id": 1438,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Brainwave activity time in this Reincarnation and have at least 4h Brainwave duration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Brainwave.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase headstart time based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "BrainwaveMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Diamond Pickaxe 2",
+"icon": "Diamond PickaxeTier2",
+"order": 1439,
+"id": 1439,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Diamond Pickaxe activity time in this Reincarnation and have at least 4000 excavation depth.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Diamond Pickaxe 3",
+"icon": "Diamond PickaxeTier3",
+"order": 1440,
+"id": 1440,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Diamond Pickaxe activity time in this Reincarnation and have at least 8000 excavation depth.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Diamond Pickaxe 4",
+"icon": "Diamond PickaxeTier4",
+"order": 1441,
+"id": 1441,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Diamond Pickaxe activity time in this Reincarnation and have at least 12000 excavation depth.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Diamond Pickaxe 5",
+"icon": "Diamond PickaxeTier5",
+"order": 1442,
+"id": 1442,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Diamond Pickaxe activity time in this Reincarnation and have at least 16000 excavation depth.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Diamond Pickaxe.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Diamond PickaxeMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Combo Strike 2",
+"icon": "Combo StrikeTier2",
+"order": 1443,
+"id": 1443,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Combo Strike activity time in this Reincarnation and have at least 100 Combo Strike counter.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Combo Strike 3",
+"icon": "Combo StrikeTier3",
+"order": 1444,
+"id": 1444,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Combo Strike activity time in this Reincarnation and have at least 200 Combo Strike counter.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Combo Strike 4",
+"icon": "Combo StrikeTier4",
+"order": 1445,
+"id": 1445,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Combo Strike activity time in this Reincarnation and have at least 300 Combo Strike counter.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Combo Strike 5",
+"icon": "Combo StrikeTier5",
+"order": 1446,
+"id": 1446,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Combo Strike activity time in this Reincarnation and have at least 400 Combo Strike counter.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Combo Strike.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes its cast stat increase more when you cast higher tiers.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Combo StrikeMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Dragon's Breath 2",
+"icon": "Dragon's BreathTier2",
+"order": 1447,
+"id": 1447,
+"description": [
+{
+"text": "To unlock, you need to have at least 54 Reincarnations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Enable 1 additional cast for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Dragon's Breath 3",
+"icon": "Dragon's BreathTier3",
+"order": 1448,
+"id": 1448,
+"description": [
+{
+"text": "To unlock, you need to have at least 60 Reincarnations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Enable 2 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Dragon's Breath 4",
+"icon": "Dragon's BreathTier4",
+"order": 1449,
+"id": 1449,
+"description": [
+{
+"text": "To unlock, you need to have at least 66 Reincarnations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Enable 3 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Dragon's Breath 5",
+"icon": "Dragon's BreathTier5",
+"order": 1450,
+"id": 1450,
+"description": [
+{
+"text": "To unlock, you need to have at least 72 Reincarnations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Enable 4 additional casts for Dragon's Breath.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Dragon's BreathMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Maelstrom 2",
+"icon": "MaelstromTier2",
+"order": 1451,
+"id": 1451,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Maelstrom activity time in this Reincarnation and have at least 4 active spells.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Maelstrom 3",
+"icon": "MaelstromTier3",
+"order": 1452,
+"id": 1452,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Maelstrom activity time in this Reincarnation and have at least 8 active spells.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Maelstrom 4",
+"icon": "MaelstromTier4",
+"order": 1453,
+"id": 1453,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Maelstrom activity time in this Reincarnation and have at least 12 active spells.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Maelstrom 5",
+"icon": "MaelstromTier5",
+"order": 1454,
+"id": 1454,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Maelstrom activity time in this Reincarnation and have at least 16 active spells.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Maelstrom.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Affects one more random building per tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "MaelstromMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Temporal Flux 2",
+"icon": "Temporal FluxTier2",
+"order": 1455,
+"id": 1455,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Temporal Flux activity time in this Reincarnation and have at least 5m spent in this Era.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Temporal Flux 3",
+"icon": "Temporal FluxTier3",
+"order": 1456,
+"id": 1456,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Temporal Flux activity time in this Reincarnation and have at least 10m spent in this Era.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Temporal Flux 4",
+"icon": "Temporal FluxTier4",
+"order": 1457,
+"id": 1457,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Temporal Flux activity time in this Reincarnation and have at least 15m spent in this Era.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Temporal Flux 5",
+"icon": "Temporal FluxTier5",
+"order": 1458,
+"id": 1458,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Temporal Flux activity time in this Reincarnation and have at least 20m spent in this Era.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Temporal Flux.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes mana produced counts more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Temporal FluxMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "All Creation 2",
+"icon": "All CreationTier2",
+"order": 1459,
+"id": 1459,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of All Creation activity time in this Reincarnation and have at least 100 Royal Exchanges made.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "All Creation 3",
+"icon": "All CreationTier3",
+"order": 1460,
+"id": 1460,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of All Creation activity time in this Reincarnation and have at least 200 Royal Exchanges made.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "All Creation 4",
+"icon": "All CreationTier4",
+"order": 1461,
+"id": 1461,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of All Creation activity time in this Reincarnation and have at least 300 Royal Exchanges made.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "All Creation 5",
+"icon": "All CreationTier5",
+"order": 1462,
+"id": 1462,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of All Creation activity time in this Reincarnation and have at least 400 Royal Exchanges made.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for All Creation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "All CreationMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Precognition 2",
+"icon": "PrecognitionTier2",
+"order": 1463,
+"id": 1463,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Precognition activity time in this Reincarnation and have at least 6m Precognition duration.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Precognition 3",
+"icon": "PrecognitionTier3",
+"order": 1464,
+"id": 1464,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Precognition activity time in this Reincarnation and have at least 12m Precognition duration.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Precognition 4",
+"icon": "PrecognitionTier4",
+"order": 1465,
+"id": 1465,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Precognition activity time in this Reincarnation and have at least 18m Precognition duration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Precognition 5",
+"icon": "PrecognitionTier5",
+"order": 1466,
+"id": 1466,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Precognition activity time in this Reincarnation and have at least 24m Precognition duration.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Precognition.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Research points count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "PrecognitionMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Limited Wish 2",
+"icon": "Limited WishTier2",
+"order": 1467,
+"id": 1467,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Limited Wish activity time in this Reincarnation and have at least 100000 Maximum Mana.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Limited Wish 3",
+"icon": "Limited WishTier3",
+"order": 1468,
+"id": 1468,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Limited Wish 4",
+"icon": "Limited WishTier4",
+"order": 1469,
+"id": 1469,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Limited Wish 5",
+"icon": "Limited WishTier5",
+"order": 1470,
+"id": 1470,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Limited Wish.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also makes Limited Wish casts count more based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Limited WishMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Infinite Spiral 2",
+"icon": "Infinite SpiralTier2",
+"order": 1471,
+"id": 1471,
+"description": [
+{
+"text": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
+"formulas": [],
+"s": 2
+},
+{
+"text": "Enable 1 additional cast for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": 1,
+"building": null
+},
+{
+"name": "Infinite Spiral 3",
+"icon": "Infinite SpiralTier3",
+"order": 1472,
+"id": 1472,
+"description": [
+{
+"text": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
+"formulas": [],
+"s": 3
+},
+{
+"text": "Enable 2 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": 2,
+"building": null
+},
+{
+"name": "Infinite Spiral 4",
+"icon": "Infinite SpiralTier4",
+"order": 1473,
+"id": 1473,
+"description": [
+{
+"text": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 3 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": 3,
+"building": null
+},
+{
+"name": "Infinite Spiral 5",
+"icon": "Infinite SpiralTier5",
+"order": 1474,
+"id": 1474,
+"description": [
+{
+"text": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
+"formulas": [],
+"s": 4
+},
+{
+"text": "Enable 4 additional casts for Infinite Spiral.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also multiplicatively increase offline bonus based on spell tier.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Also increase Offline production based on mana statistics..",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"var _loc1_:§84§ = §8G§.§#N§(§`g§); var _loc2_:Boolean = _loc1_.§-6§; if(§?!6§ && _loc2_) { return true; } if(§`g§ == §5!3§.id) { if(§8G§.§8!H§ < §5!3§.§!\"J§(§`r§)) { return false; } } else if(§8G§.§,P§ < §`r§) { return false; } if((§8G§.§8!H§ < 42 || !§8G§.§7d§(§\"[§.id)) && (§`g§ == §;!+§.id || §`g§ == §%,§.id)) { return false; } if((§8G§.§8!H§ < 44 || !§8G§.§7d§(§@! §.id)) && (§`g§ == §`T§.id || §`g§ == §2!E§.id || §`g§ == § !5§.id || §`g§ == §8>§.id || §`g§ == §@W§.id)) { return false; } if((§8G§.§8!H§ < 46 || !§8G§.§7d§(§<G§.id)) && (§`g§ == §7I§.id || §`g§ == §'K§.id || §`g§ == §'!'§.id || §`g§ == §6!V§.id || §`g§ == §7!K§.id)) { return false; } if((§8G§.§8!H§ < 48 || !§8G§.§7d§(§^'§.id)) && (§`g§ == §6n§.id || §`g§ == §^x§.id || §`g§ == §!C§.id || §`g§ == §%!J§.id)) { return false; } if(!§;!v§) { return _loc2_; } return _loc2_ && §8G§.§,#§(§2!w§);"
+],
+"asc_min": null,
+"asc_max": null,
+"group": "Infinite SpiralMultipleCasting",
+"tier": 4,
+"building": null
+},
+{
+"name": "Arcane Brilliance",
+"icon": "ArcaneBrillianceTrophy1",
+"order": 1475,
+"id": 1475,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on active spells.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [],
+"undecoded": [
+"§8G§.§0!,§(\"UnlockSpellTier\") + 1 > §8G§.§,P§"
+],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null
+}
+],
+"buildings": [],
+"misc": []
+}

@@ -39,7 +39,8 @@ PROBE = f"""(function () {{ __MUT
   for (var i = 0; i < U.length; i++) {{ var o = U[i];
     var cat = o.{J('§,!B§')}; if (cat !== 0 && cat !== 1 && cat !== 2 && cat !== 3 && cat !== 4) continue;
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
-              tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')}, idx: o.{J('§!"E§')}, coins: o.{J('§>=§')}, ax: o.{J('§9!m§')} }};
+              tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')}, idx: o.{J('§!"E§')}, coins: o.{J('§>=§')}, ax: o.{J('§9!m§')},
+              sg: o.{J('§`g§')}, sr: o.{J('§`r§')}, sw: o.{J('§2!w§')}, sv: o.{J('§;!v§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
@@ -48,7 +49,8 @@ PROBE = f"""(function () {{ __MUT
     {g}.{J('§8!H§')} = keepR;
     out.push(r); }}
   var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
-  return JSON.stringify({{ rows: out, named: named, tmap: tmap }}); }})()"""
+  var smap = {{}}; {g}.{J('§0!A§')}.forEach(function (sp) {{ smap[sp.id] = sp.{J('§1i§')}; }});
+  return JSON.stringify({{ rows: out, named: named, tmap: tmap, smap: smap }}); }})()"""
 
 
 def probe(v=None, asc=None):
@@ -344,6 +346,9 @@ def decode(body, c, ctx=None):
             if mm.group(1) == '>=': fac_lo = int(mm.group(2))
             else: fac_hi = int(mm.group(2))
             continue
+        if t == '§8G§.§0!,§("UnlockSpellTier") + 1 > §8G§.§,P§':
+            cond.append('having unlocked the Arcane Brilliance trophies up to your Ascension number '
+                        '(1 at Ascension 1, 1 and 2 at Ascension 2, and so on; each needs the upgrades of that tier of all spells)'); continue
         if t == '§#!!§.§`Q§ != -1':
             cond.append('using a bloodline'); continue
         if t == '§&c§.§9X§()':
@@ -534,7 +539,7 @@ def fix_raw(name, c, paras):
 MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'ClickingBase', 'ClickingProduction',
                'ClickingTotalProduction', 'OfflineUpgrade', 'AssistantUpgrade'}
 MISC_NAMES = {'Gem Power', 'Challenge Power'}
-SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
+SKIP_NAMES = set()
 SPELL_TIER_CLASS = '§%p§'
 # Allegiances: the tier upgrades (Trade Treaty ... Union) and the twelve faction upgrades of every faction; bloodlines, lineages,
 # heritages, sets, legacies, remnants, quests and the unique building upgrades belong to later pages
@@ -646,6 +651,50 @@ for u in by_cat['allegiances']:
     un = _union.get(u['faction'])
     if u['perk'] and u['perk'] >= 10 and un and un['asc_min'] and (u['asc_min'] or 0) < un['asc_min']:
         u['asc_min'] = un['asc_min']
+
+# ---- spell tiers ("<Spell> 2" ... "<Spell> 5"): the game builds the whole text itself; the numbers depend on the Ascension
+SMAP = runs[0]['smap']
+TIER_SRC = open(os.path.join(ROOT, 'out', 'script', 'scripts', '§3%3F§', '§%p§.as'), encoding='utf8').read()
+_cls_t = next(k for k in cl.values() if k.name == SPELL_TIER_CLASS)
+_nm_t = D.name_of_for(_cls_t)
+TIER_PREREQ = {}        # spell id token -> (Reincarnation, upgrade name)
+for mm_ in re.finditer(r'\(§8G§\.§8!H§ < (\d+) \|\| !§8G§\.§7d§\((§[^§]*§)\.id\)\) && \((.*?)\)\)', TIER_SRC.replace("\\'", "'")):
+    up = _nm_t(mm_.group(2))
+    for tk in re.findall(r'§`g§ == (§[^§]*§)\.id', mm_.group(3)):
+        sp = _nm_t(tk)
+        if sp and up: TIER_PREREQ[sp[1]] = (int(mm_.group(1)), up[1])
+OFFLINE_F = _m(r'v = \left(M_{\max}^{\frac{2}{\max\left(3,\,A\right)}} + \left(30 \cdot R\right)^{\frac{2}{\max\left(3,\,A\right)}}\right)^{0.4}',
+               (r'M_{\max}', 'Your Maximum Mana'), ('R', 'Your mana regeneration per second'), ('A', 'Your Ascension number'))
+for idx, r in enumerate(rows):
+    if r['q'].split('.')[-1] != SPELL_TIER_CLASS: continue
+    spell = SMAP.get(str(r['sg']))
+    texts_a = {a: [l.strip() for l in ar['rows'][idx]['d'].split('\n') if l.strip()] for a, ar in enumerate(asc_runs, 1)}
+    ra = {}
+    for a, ls in texts_a.items():
+        t0 = next((l for l in ls if l.startswith('To unlock')), None)
+        if t0: ra[a] = pow10_text(t0)
+    paras = []
+    for l in texts_a[4]:
+        if l.startswith('To unlock'): continue
+        if l.startswith('Also increase Offline production'):
+            paras.append({'text': 'Also increase Offline production based on mana statistics.',
+                          'formulas': [dict(OFFLINE_F, vars=list(OFFLINE_F['vars']))], 's': r['sr'] + 1})
+        else:
+            paras.append({'text': pow10_text(l), 'formulas': [], 's': None})
+    reqs = []
+    if spell: reqs.append(f'Spell: {spell}')
+    pre = TIER_PREREQ.get(spell)
+    if pre: reqs.append(f'Reincarnation {pre[0]}+ and Upgrade: {pre[1]}')
+    if r.get('sv') and r.get('sw'):
+        d_ = describe_source({'kind': 'artifact' if r['sw'] in ARTIFACT else 'trophy', 'name': r['sw']})
+        reqs.append(f"{d_['kind']}: {d_['name']}")
+    reaches = r['sr']
+    by_cat['magic'].append({
+        'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
+        'description': paras, 'sources': [], 'requirements': reqs, 'conditions': [], 'undecoded': [],
+        'asc_min': reaches or None, 'asc_max': None, 'group': r.get('grp'), 'tier': None, 'building': None,
+        'spell': spell, 'spell_tier': r['sr'] + 1, 'unlock_by_asc': ra,
+    })
 
 # value symbols: v, or v1, v2 ... when a description has several computed values
 raw = []
