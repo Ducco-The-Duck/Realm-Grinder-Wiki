@@ -73,7 +73,7 @@ def item(u):
     forms = []
     for p in u['description']:
         for f in p['formulas']:
-            forms.append({'l': f['latex'], 'v': f['vars'], 'lb': effect_label(p['text']), 's': p['s']})
+            forms.append({'l': f['latex'], 'v': f['vars'], 'lb': f.get('label') or effect_label(p['text']), 's': p['s']})
     if len(forms) == 1: forms[0]['lb'] = None
     return {
         'n': u['name'], 'i': icon_file(u['icon']),

@@ -15,6 +15,7 @@ import quickjs
 from as3parse import parse_all, resolve
 import desc_tools as D
 import misc_manual as MM
+import alleg_manual as AM
 from numtext import pow10_text
 from chance_latex import convert
 
@@ -626,6 +627,20 @@ for idx, r in todo:
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
     if r['cat'] == 0:
+        # manual formulas replace what the converter could not read (the paragraph's own formulas are dropped first)
+        _done = set()
+        for pi, f_ in AM.FORMULAS.get(r['n'], []):
+            ps = item['description']
+            if pi < len(ps):
+                if pi not in _done:
+                    ps[pi]['formulas'] = []; _done.add(pi)
+                ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
+        if r['n'] in AM.TIER_NAMED:
+            al_ = AM.FACTION_ALIGN.get(r['f'], 1)
+            names_ = [plural(AM.TIER_BUILDING[al_][t - 1]) for t in AM.TIER_NAMED[r['n']]]
+            for p_ in item['description']:
+                for nn_ in names_:
+                    p_['text'] = p_['text'].replace('Farms', nn_, 1)
         item['faction'] = r['f']
         item['perk'] = r.get('idx') or None
         item['tier_no'] = None if r.get('idx') else tier_of(r['n'])

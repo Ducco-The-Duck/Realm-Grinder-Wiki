@@ -183,7 +183,18 @@
 "description": [
 {
 "text": "Increase the base production of Farms, Inns and Blacksmiths by +600 and reduce their building cost multiplier.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.02",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the cost multiplier of those buildings"
+}
+],
+"label": "Cost multiplier"
+}
+],
 "s": null
 }
 ],
@@ -330,7 +341,18 @@
 "description": [
 {
 "text": "Autoclick based on active spells.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = \\left\\lfloor S \\right\\rfloor",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -998,7 +1020,18 @@
 "description": [
 {
 "text": "50% of your total building production is added to base clicking reward.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot P",
+"vars": [
+{
+"symbol": "P",
+"text": "Your total building production per second"
+}
+],
+"label": "Added to the base clicking reward"
+}
+],
 "s": null
 }
 ],
@@ -1287,7 +1320,22 @@
 "description": [
 {
 "text": "Each time you click you have 1% chance to gain additional coins equal to 10000% of your production. Manual clicks give more coins. Also generate Faction Coins based on reincarnations made.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = \\left(R + 1\\right) \\cdot Q",
+"vars": [
+{
+"symbol": "R",
+"text": "Reincarnations you have made"
+},
+{
+"symbol": "Q",
+"text": "Your Faction Coin find chance (%)"
+}
+],
+"label": "Faction Coins generated per trigger"
+}
+],
 "s": 1
 }
 ],
@@ -1376,7 +1424,38 @@
 "description": [
 {
 "text": "Increase Elven Luck chance to trigger and its effects based on the highest amount of Arboreal Cities built in this Reincarnation. (Chance: +0%, Production: 0%, Faction Coins Found: +0%)",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = N^{0.4}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+}
+],
+"label": "Chance to trigger (+%)"
+},
+{
+"latex": "v_{2} = 80 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+}
+],
+"label": "Production (%)"
+},
+{
+"latex": "v_{3} = 7.5 \\cdot N^{0.75}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+}
+],
+"label": "Faction Coins found (+%)"
+}
+],
 "s": null
 },
 {
@@ -1856,8 +1935,19 @@
 "id": 251,
 "description": [
 {
-"text": "Increase the base production of Farms by +98000 and increase their production based on their quantity.",
-"formulas": [],
+"text": "Increase the base production of Cathedrals by +98000 and increase their production based on their quantity.",
+"formulas": [
+{
+"latex": "v = 40 + 40 \\cdot N^{0.4}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Cathedral\" buildings you own"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -1896,7 +1986,18 @@
 "description": [
 {
 "text": "Increase spell durations and multiplicatively increase Mana Regeneration by 50%.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 5 \\cdot \\ln\\left(1 + M\\right)",
+"vars": [
+{
+"symbol": "M",
+"text": "Your offline mana regeneration per second"
+}
+],
+"label": "Offline spell casts (%)"
+}
+],
 "s": null
 },
 {
@@ -2040,7 +2141,18 @@
 "description": [
 {
 "text": "Increase production bonus from Gems based on God's Hand activity time in this Era..",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Activity time of \"God's Hand\" in this Era (seconds)"
+}
+],
+"label": "Production bonus from Gems (+%)"
+}
+],
 "s": null
 },
 {
@@ -2184,7 +2296,18 @@
 "description": [
 {
 "text": "Multiplicatively increase Faction Coin find chance based on the sum of all your spells' activity time.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = U^{0.7}",
+"vars": [
+{
+"symbol": "U",
+"text": "Combined activity time of all your available spells in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -2587,7 +2710,18 @@
 "description": [
 {
 "text": "Increase Faction Coin find chance based on the highest amount of Witch Conclaves built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Witch Conclave\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -2676,7 +2810,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on Tax Collection worth.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 4 \\cdot \\left(\\ln\\left(1 + W\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "W",
+"text": "The worth of a Tax Collection, as the spell computes it"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -2970,7 +3115,28 @@
 "description": [
 {
 "text": "Reduce Non-Unique Buildings cost multiplier, and increase their production based on their quantity.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 2 \\cdot N^{0.75}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of buildings of that type you own"
+}
+],
+"label": "Production of each Non-Unique building (%)"
+},
+{
+"latex": "v_{2} = 0.01",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the cost multiplier of Non-Unique buildings"
+}
+],
+"label": "Cost multiplier"
+}
+],
 "s": null
 }
 ],
@@ -3234,7 +3400,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of Necropolises built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 40 + 4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Necropolis\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -3273,7 +3450,18 @@
 "description": [
 {
 "text": "Increase Mana Regeneration based on the highest amount of Necropolises built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 3 + 1.5 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Necropolis\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -3312,7 +3500,18 @@
 "description": [
 {
 "text": "Increase Night Time duration based on Undead coins found in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 5 + 1.5 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "F",
+"text": "Undead Coins found in this Era (with the bonuses that increase them)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -3981,8 +4180,19 @@
 "id": 303,
 "description": [
 {
-"text": "Increase Mana Regeneration based on Farms owned.",
-"formulas": [],
+"text": "Increase Mana Regeneration based on Hell Portals owned.",
+"formulas": [
+{
+"latex": "v = 3 + 1.5 \\cdot N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of \"Hell Portal\" buildings you own"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -4020,8 +4230,19 @@
 "id": 304,
 "description": [
 {
-"text": "Gain additional assistants based on the highest amount of Farms built in this Reincarnation.",
-"formulas": [],
+"text": "Gain additional assistants based on the highest amount of Hell Portals built in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 6 + 1.6 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -4059,7 +4280,7 @@
 "id": 305,
 "description": [
 {
-"text": "Increase the base production of Farms by +900000 and Farms by +8.8 × 10⁶.",
+"text": "Increase the base production of Evil Fortresses by +900000 and Hell Portals by +8.8 × 10⁶.",
 "formulas": [],
 "s": null
 }
@@ -4199,7 +4420,18 @@
 "description": [
 {
 "text": "Increase the production of the three highest building tiers based on time spent as Evil in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
@@ -4243,7 +4475,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of Hell Portals built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 4 \\cdot N^{0.8}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -4332,7 +4575,22 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of Burning Abysses built in this Reincarnation. Higher tiers get better bonuses.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot T^{2} \\cdot N^{0.7}",
+"vars": [
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+},
+{
+"symbol": "N",
+"text": "Most \"Burning Abyss\" buildings you have built in this Reincarnation"
+}
+],
+"label": "Production of each building (%)"
+}
+],
 "s": null
 }
 ],
@@ -4817,7 +5075,7 @@
 "id": 323,
 "description": [
 {
-"text": "Increase the base production of Farms by +19635 and Farms by +98000. Also increase their production by 2500%.",
+"text": "Increase the base production of Deep Mines by +19635 and Monasteries by +98000. Also increase their production by 2500%.",
 "formulas": [],
 "s": 1
 }
@@ -5429,7 +5687,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on their tier, giving the best bonus to the lowest.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1000 \\cdot \\left(12 - T\\right)",
+"vars": [
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+}
+],
+"label": "Production of each building (%)"
+}
+],
 "s": null
 }
 ],
@@ -5578,7 +5847,18 @@
 "description": [
 {
 "text": "Increase Maximum Mana based on the highest amount of Stone Pillars built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2 \\cdot N",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Stone Pillars\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -5717,7 +5997,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on their tier, giving the best bonus to the lowest.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 16 \\cdot 2^{12 - T}",
+"vars": [
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+}
+],
+"label": "Production of each building (%)"
+}
+],
 "s": null
 }
 ],
@@ -5756,7 +6047,18 @@
 "description": [
 {
 "text": "Increase Mana Regeneration based on the highest amount of Stone Pillars built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.35 \\cdot N^{0.35}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Stone Pillars\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -5795,7 +6097,18 @@
 "description": [
 {
 "text": "Increase the production of each building based on buildings of the same type.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 3 \\cdot N^{0.9}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of buildings of that type you own"
+}
+],
+"label": "Production of each building (%)"
+}
+],
 "s": null
 }
 ],
@@ -5954,7 +6267,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on their tier. Middle tiers get better bonuses.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.8 \\cdot \\left(6 - \\left|6 - T\\right|\\right)^{4}",
+"vars": [
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+}
+],
+"label": "Production of each building (%)"
+}
+],
 "s": null
 }
 ],
@@ -6226,7 +6550,18 @@
 "description": [
 {
 "text": "Increase Faction Coin find chance based on the highest amount of Labyrinths built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 12 + 3 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Labyrinth\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -6265,7 +6600,18 @@
 "description": [
 {
 "text": "Multiplicatively increase assistants based on the time spent on your longest Era in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Length of your longest Era in this Reincarnation, including the current one (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -6404,7 +6750,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of buildings built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2 \\cdot B^{0.75}",
+"vars": [
+{
+"symbol": "B",
+"text": "Most buildings you have owned at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -6702,7 +7059,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of Maximum Mana you had in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2.25 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{2.25}",
+"vars": [
+{
+"symbol": "M_{\\max}",
+"text": "Highest Maximum Mana you have had in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 3
 }
 ],
@@ -6971,7 +7339,18 @@
 "description": [
 {
 "text": "Reduce all building cost multipliers.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.01",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the cost multiplier of all buildings"
+}
+],
+"label": "Cost multiplier"
+}
+],
 "s": null
 }
 ],
@@ -7210,7 +7589,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on Dwarven Coins found in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + D\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "D",
+"text": "Dwarven Coins found in this Era (with the bonuses that increase them)"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -7249,7 +7639,18 @@
 "description": [
 {
 "text": "Reduce Excavation cost multiplier.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.02",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the Excavation cost multiplier"
+}
+],
+"label": "Cost multiplier"
+}
+],
 "s": null
 }
 ],
@@ -7880,7 +8281,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of Dark Temples built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Dark Temple\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -7919,7 +8331,18 @@
 "description": [
 {
 "text": "Reduce the cost multiplier of Royal Exchanges.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.02",
+"vars": [
+{
+"symbol": "v",
+"text": "Amount taken off the cost multiplier of Royal Exchanges"
+}
+],
+"label": "Cost multiplier"
+}
+],
 "s": null
 }
 ],
@@ -8058,7 +8481,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on Combo Strike counter.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 60 + 60 \\cdot K^{0.6}",
+"vars": [
+{
+"symbol": "K",
+"text": "Combo Strike counter"
+}
+],
+"label": null
+}
+],
 "s": 1
 }
 ],
@@ -8436,7 +8870,28 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on time spent as Neutral in this Reincarnation. Effect is increased on Stone Pillars, Labyrinths and Halls of Legends.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 0.3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Neutral alignment in this Reincarnation (seconds)"
+}
+],
+"label": "All buildings (%)"
+},
+{
+"latex": "v_{2} = 7.5 \\cdot t^{0.75}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Neutral alignment in this Reincarnation (seconds)"
+}
+],
+"label": "The three buildings it names (%)"
+}
+],
 "s": 2
 }
 ],
@@ -8475,7 +8930,22 @@
 "description": [
 {
 "text": "Increase the production of Iron Strongholds based on Offline production and the number of spells affecting it.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = n \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "n",
+"text": "The number of spells affecting Iron Strongholds (their share of the bonus)"
+},
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+}
+],
+"label": null
+}
+],
 "s": 2
 },
 {
@@ -8519,7 +8989,28 @@
 "description": [
 {
 "text": "Increase Mana Regeneration based on neutral buildings built.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 0.7 \\cdot B^{0.7}",
+"vars": [
+{
+"symbol": "B",
+"text": "Neutral buildings you have built"
+}
+],
+"label": "Mana Regeneration (+)"
+},
+{
+"latex": "v_{2} = 75 + 1.25 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{1.25}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Dragon in this Reincarnation (seconds)"
+}
+],
+"label": "Assistants while White Breath is active (%)"
+}
+],
 "s": null
 },
 {
@@ -8563,7 +9054,38 @@
 "description": [
 {
 "text": "Increase assistants additively and multiplicatively, and their production, based on all time spent as Dragons.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "All-time time spent as Dragon (seconds)"
+}
+],
+"label": "Additive assistants"
+},
+{
+"latex": "v_{2} = 0.6 \\cdot t^{0.4}",
+"vars": [
+{
+"symbol": "t",
+"text": "All-time time spent as Dragon (seconds)"
+}
+],
+"label": "Multiplicative assistants (%)"
+},
+{
+"latex": "v_{3} = 0.8 \\cdot t^{0.4}",
+"vars": [
+{
+"symbol": "t",
+"text": "All-time time spent as Dragon (seconds)"
+}
+],
+"label": "Assistant production (%)"
+}
+],
 "s": 2
 }
 ],
@@ -8826,7 +9348,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on active Dragon's Breath effects.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 250 \\cdot j^{2}",
+"vars": [
+{
+"symbol": "j",
+"text": "Tier \"Dragon's Breath\" is cast at (1 is the base tier); 0 bonus while the spell is unavailable"
+}
+],
+"label": null
+}
+],
 "s": 2
 },
 {
@@ -8870,7 +9403,18 @@
 "description": [
 {
 "text": "Multiplicatively increase Mana Regeneration and assistants based on the highest amount of Dragon Pastures built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.6 \\cdot N^{0.6}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most \"Dragon Pasture\" buildings you have built in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -9194,7 +9738,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the maximum amount of Royal Exchanges you made in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.9 \\cdot X",
+"vars": [
+{
+"symbol": "X",
+"text": "Most Royal Exchanges you have made at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 3
 }
 ],
@@ -9233,7 +9788,18 @@
 "description": [
 {
 "text": "Multiplicatively increases Maximum Mana based on time spent as Order in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent with Order alignment in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
@@ -9377,12 +9943,34 @@
 "description": [
 {
 "text": "Multiplicatively increase assistants based on your current Lineage level.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = L",
+"vars": [
+{
+"symbol": "L",
+"text": "Your current Lineage level"
+}
+],
+"label": "Assistants (%)"
+}
+],
 "s": null
 },
 {
 "text": "Also increase Mana produced while offline based on your current Lineage level.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = 1.15 \\cdot L^{1.15}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your current Lineage level"
+}
+],
+"label": "Mana produced while offline (%)"
+}
+],
 "s": null
 }
 ],
@@ -9421,7 +10009,22 @@
 "description": [
 {
 "text": "Increase Offline production based on Excavation Depth and Excavation Resets made in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 30 + 0.75 \\cdot D^{0.75} + 4 \\cdot \\left(1 + E\\right)^{4}",
+"vars": [
+{
+"symbol": "D",
+"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+},
+{
+"symbol": "E",
+"text": "Excavation Resets made in this Reincarnation (regular and free)"
+}
+],
+"label": null
+}
+],
 "s": 3
 }
 ],
@@ -9460,7 +10063,18 @@
 "description": [
 {
 "text": "Increase the production of Unique Buildings based on their quantity.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = N",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of buildings of that type you own"
+}
+],
+"label": "Production of each Unique building (%)"
+}
+],
 "s": null
 }
 ],
@@ -9923,7 +10537,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on spells of your current alignments cast in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 25 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "T",
+"text": "Casts in this Era of the spells that match your alignment and your Order / Chaos / Balance"
+}
+],
+"label": null
+}
+],
 "s": 3
 }
 ],
@@ -9962,7 +10587,18 @@
 "description": [
 {
 "text": "Multiplicatively increase Faction Coin find chance based on the highest amount of Faction Coins found in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.2 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + F\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "F",
+"text": "Most Faction Coins you have found at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -10001,7 +10637,18 @@
 "description": [
 {
 "text": "Multiplicatively increase Maximum Mana based on Researches selected.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = D^{1.15}",
+"vars": [
+{
+"symbol": "D",
+"text": "Sum, over the researches you have bought, of the digit sum of a number the game keeps for each research"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -10316,7 +10963,18 @@
 "description": [
 {
 "text": "Multiplicatively increase assistants based on the highest mana produced in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.8 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + W\\right)\\right)^{1.8}",
+"vars": [
+{
+"symbol": "W",
+"text": "Most mana you have produced at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -10751,7 +11409,18 @@
 "description": [
 {
 "text": "Increase the production of all buildings based on the highest amount of buildings built in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.25 \\cdot B^{0.85}",
+"vars": [
+{
+"symbol": "B",
+"text": "Most buildings you have owned at once in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": 3
 }
 ],
@@ -11194,7 +11863,18 @@
 "description": [
 {
 "text": "Increase the base production of each building based on their tier.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 10^{0.75 \\cdot T}",
+"vars": [
+{
+"symbol": "T",
+"text": "The building's tier (1 for the first building in the list)"
+}
+],
+"label": "Base production added to each building (per second)"
+}
+],
 "s": null
 }
 ],
@@ -11503,7 +12183,18 @@
 "description": [
 {
 "text": "Multiplicatively increase Mana Regeneration based on the combined activity time of your Evil spells in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 30 + 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Combined activity time of your available Evil spells in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
