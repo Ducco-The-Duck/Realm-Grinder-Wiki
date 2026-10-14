@@ -145,17 +145,19 @@ def alleg_section():
             pair_asc[b_] = max(pair_asc.get(b_, 0), u['asc_min'] or 0)
     def key(u):
         sub = u['tier_no'] or u['perk'] or 0
-        if u['akind'] == 'heritage': sub = 1 if u['name'].startswith('Advanced') else 0
+        if u['akind'] == 'heritage': sub = (1 if u['name'].startswith('Advanced') else 0, FORDER.index(u['faction']))
         if u['akind'] == 'unique':
             base = u['name'][:-6] if u['name'].endswith(' Quest') else u['name']
             sub = (pair_asc.get(base, 0), base, 0 if u['name'].endswith(' Quest') else 1)      # the Research one first, then the Ascension 2 one
-        return (-1 if u['faction'] == -1 else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
+        general = u['faction'] == -1 or u['akind'] == 'heritage'      # the heritages are not tied to the faction you play
+        return (-1 if general else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
     blood = [item(u) for u in allu if u['akind'] == 'bloodline']
     es = []
     for u in allu:
-        if u['akind'] == 'bloodline': continue
+        if u['akind'] in ('bloodline', 'quest') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
         it = item(u)
+        if u['akind'] == 'heritage': it['fa'] = -1
         if u['akind'] == 'bloodline_c': it['bl'] = blood
         es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
@@ -547,7 +549,7 @@ the base values <i>v</i>.</div>
         var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
         if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
         if(!its.length) return;
-        allegBox.appendChild(el('div','subh',fi<0 ? 'General (the alignment and path of your base faction)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General (the proofs for the alignment and path of your base faction, the bloodlines and the heritages)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);
