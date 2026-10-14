@@ -38,8 +38,8 @@ def slot_sources(b):
     rows = [
         ['-1', 'Mercenary', 1, 2],
         ['+1', f'Secret Trophy: {SLOT_UPGRADE[b]}', 0, 2],
-        ['+1', 'Reincarnation Power, R90+', 0, 2],
-        ['+1', f'Reincarnation Power, R75+ ({MERC_ALIGN[b]} Mercenary)', 0, 2],
+        ['+1', 'Reincarnation Power, R90+', 1, 2],
+        ['+1', f'Reincarnation Power, R75+ ({MERC_ALIGN[b]} Mercenary)', 1, 2],
         ['+1', f'Ancient Device Power ({NEUTRAL_AFFINITY[b]})', 0, 2],
     ]
     if b == 1:
@@ -48,7 +48,7 @@ def slot_sources(b):
         rows.append(['+2', 'Dark Light of Bondelnar', 0, 2])
     # Dwarf is the prestige faction of the Good base factions, Drow of the Evil ones, so only one of the two applies
     rows.append(['+1', f"{'Legacy of the Dwarven Kings' if b < 3 else 'Dark Light of Bondelnar'} ({BASE_FACTION[b]})", 0, 2])
-    rows.append(['+1 or more', 'Archon Bloodline: 1 + floor((sqrt(1 + 8 * h / 36) - 1) / 2), h = hours played in this Era', 2, 3])
+    rows.append(['+1 or more', 'Archon Bloodline', 2, 3])
     return rows
 
 
@@ -181,6 +181,7 @@ popups are always the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     if(it.sl){
+      if(ASC>=3){ hideTip(); return; }
       tip.appendChild(el('b',null,it.n+' research slots'));
       tip.appendChild(el('div',null,'Base: '+(ASC>=2?1:4)+(ASC>=2?' slot':' slots')));
       var rows=it.sl.filter(function(r){ return ASC>=r[2] && ASC<r[3]; });
@@ -189,6 +190,7 @@ popups are always the base values <i>v</i>.</div>
         rows.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ulS.appendChild(li); });
         tip.appendChild(ulS);
       }
+      tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));
       place(anchor); return;
     }
     tip.appendChild(el('b',null,it.n));
