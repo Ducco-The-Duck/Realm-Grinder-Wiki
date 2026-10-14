@@ -67,7 +67,6 @@ GROUP_TITLES = {
     'ClickingTotalProduction': 'Production added to base clicking reward upgrades',
     'OfflineUpgrade': 'Offline production upgrades',
     'AssistantUpgrade': 'Production per assistant upgrades',
-    'AFUpgrade': 'Enhanced Production (April Fools)',
 }
 NOT_CONSOLIDATED = {'Autocast', 'ReincarnationPowerUpgrade', 'GemUpgrade'}      # listed one by one
 
@@ -96,8 +95,7 @@ def section(sid, name, items):
 
 sections = [
     section('allegiances', 'Allegiances Upgrades', None),
-    section('misc', 'Misc Upgrades', [u for u in pages['misc'] if not u.get('event')]),
-    section('events', 'Event Upgrades', [u for u in pages['misc'] if u.get('event')]),
+    section('misc', 'Misc Upgrades', pages['misc']),
     section('magic', 'Magic Upgrades', pages['magic']),
     section('buildings', 'Buildings Upgrades', pages['buildings']),
     section('secret', 'Secret Upgrades', pages['secret']),
@@ -184,7 +182,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers, the clicking, offline and assistant series and the other permanent upgrades; the seasonal ones are under Event. The research facilities are not covered yet.</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic, Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
