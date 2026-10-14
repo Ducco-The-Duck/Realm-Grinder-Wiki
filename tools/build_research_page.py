@@ -34,22 +34,21 @@ BASE_FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: '
 
 
 def slot_sources(b):
-    before = [
-        ['-1', 'Playing as a Mercenary at Ascension 1'],
-        ['+1', f'{SLOT_UPGRADE[b]} upgrade (unlocked automatically by the Secret trophy of the same name)'],
-        ['+1', 'Reincarnation Power 2, from R90 (every branch)'],
-        ['+1', f'Reincarnation Power 2, from R75, while playing as a Mercenary with {MERC_ALIGN[b]} alignment'],
-        ['+1', f'Ancient Device Power, while playing as {NEUTRAL_AFFINITY[b]}'],
-        ['+1', f'Legacy of the Dwarven Kings or Dark Light of Bondelnar (one of them is enough), while your base faction '
-               f'is the {BASE_FACTION[b]}'],
+    """[delta, text, from Ascension, until Ascension (exclusive)]; the page keeps the rows of the chosen Ascension"""
+    rows = [
+        ['-1', 'Mercenary', 1, 2],
+        ['+1', f'Secret Trophy: {SLOT_UPGRADE[b]}', 0, 2],
+        ['+1', 'Reincarnation Power, R90+', 0, 2],
+        ['+1', f'Reincarnation Power, R75+ ({MERC_ALIGN[b]} Mercenary)', 0, 2],
+        ['+1', f'Ancient Device Power ({NEUTRAL_AFFINITY[b]})', 0, 2],
     ]
     if b == 1:
-        before.insert(5, ['+2', 'Legacy of the Dwarven Kings (Dwarf as prestige faction)'])
+        rows.append(['+2', 'Legacy of the Dwarven Kings', 0, 2])
     if b == 5:
-        before.insert(5, ['+2', 'Dark Light of Bondelnar (Drow as prestige faction)'])
-    after = [['+1 or more', 'Archon Bloodline, at Ascension 2 only: 1 + floor((sqrt(1 + 8 * h / 36) - 1) / 2), '
-                            'where h is the hours played in this Era']]
-    return {'before': before, 'after': after}
+        rows.append(['+2', 'Dark Light of Bondelnar', 0, 2])
+    rows.append(['+1', f'Legacy of the Dwarven Kings or Dark Light of Bondelnar ({BASE_FACTION[b]})', 0, 2])
+    rows.append(['+1 or more', 'Archon Bloodline: 1 + floor((sqrt(1 + 8 * h / 36) - 1) / 2), h = hours played in this Era', 2, 3])
+    return rows
 
 
 BRANCHES = []
@@ -182,12 +181,13 @@ popups are always the base values <i>v</i>.</div>
     tip.textContent='';
     if(it.sl){
       tip.appendChild(el('b',null,it.n+' research slots'));
-      tip.appendChild(el('div',null,'Base: 4 slots before Ascension 2, 1 slot from Ascension 2 on.'));
-      tip.appendChild(el('span','lbl','Extra slots, before Ascension 2'));
-      var ul=el('ul'); it.sl.before.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ul.appendChild(li); }); tip.appendChild(ul);
-      tip.appendChild(el('span','lbl','From Ascension 2'));
-      var ul2=el('ul'); it.sl.after.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ul2.appendChild(li); }); tip.appendChild(ul2);
-      tip.appendChild(el('div','more','From Ascension 2 the other sources no longer apply.'));
+      tip.appendChild(el('div',null,'Base: '+(ASC>=2?1:4)+(ASC>=2?' slot':' slots')));
+      var rows=it.sl.filter(function(r){ return ASC>=r[2] && ASC<r[3]; });
+      if(rows.length){
+        var ulS=el('ul');
+        rows.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ulS.appendChild(li); });
+        tip.appendChild(ulS);
+      }
       place(anchor); return;
     }
     tip.appendChild(el('b',null,it.n));
