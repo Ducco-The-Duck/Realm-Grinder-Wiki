@@ -1139,17 +1139,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Fairy Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Enchanted Field Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Fairy",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+"not having a prestige faction, unless you have completed Dwarven Forge Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -2081,17 +2078,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Elven Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Training Grounds Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Elf",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+"not having a prestige faction, unless you have completed Dwarven Forge Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -2987,17 +2981,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Angel Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Heaven's Domain Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Angel",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+"not having a prestige faction, unless you have completed Dwarven Forge Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -3913,17 +3904,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Goblin Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Goblin Bank Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Goblin",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4826,17 +4814,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Undead Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Undercity Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Undead",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -5735,17 +5720,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Demon Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Infernal Realm Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Demon",
 "being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have Miscellaneous trophy: Research Drow Trophy"
+"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -6641,13 +6623,10 @@
 "s": 1
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Titan Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Olympian Hall Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Titan",
 "being at Reincarnation 24 or higher"
@@ -7580,13 +7559,10 @@
 "s": 1
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Druid Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Stonehenge Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Druid",
 "being at Reincarnation 24 or higher"
@@ -8502,13 +8478,10 @@
 "s": 1
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Faceless Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Sunken City Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Faceless",
 "being at Reincarnation 24 or higher"
@@ -9420,13 +9393,10 @@
 "s": 1
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Dwarven Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Dwarven Forge Quest"
 ],
-"requirements": [],
 "conditions": [
 "having Dwarf as your prestige faction",
 "being at Reincarnation 32 or higher"
@@ -10327,13 +10297,10 @@
 "s": 1
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Drow Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Spider Sanctuary Quest"
 ],
-"requirements": [],
 "conditions": [
 "having Drow as your prestige faction",
 "being at Reincarnation 32 or higher"
@@ -11315,13 +11282,10 @@
 "s": 2
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Dragon Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Wyrm's Den Quest"
 ],
-"requirements": [],
 "conditions": [
 "having Dragon as your prestige faction",
 "being at Reincarnation 46 or higher"
@@ -14226,13 +14190,10 @@
 "s": 2
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Mercenary Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Mercenary Encampment Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Mercenary",
 "being at Reincarnation 75 or higher"
@@ -14283,13 +14244,10 @@
 "s": 2
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Mercenary Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Mercenary Encampment Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Mercenary",
 "being at Reincarnation 75 or higher"
@@ -14340,13 +14298,10 @@
 "s": 2
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Research Mercenary Trophy"
-}
+"sources": [],
+"requirements": [
+"Complete the quest Mercenary Encampment Quest"
 ],
-"requirements": [],
 "conditions": [
 "playing as Mercenary",
 "being at Reincarnation 75 or higher"

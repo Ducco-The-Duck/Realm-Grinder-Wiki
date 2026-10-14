@@ -741,6 +741,27 @@ for u in by_cat['allegiances']:
     for c_ in q_['conditions']:
         if c_.startswith('being at Reincarnation') and c_ not in u['conditions']: u['conditions'].append(c_)
 
+# the hidden "Research <Faction> Trophy" is what finishing a faction's first unique building quest grants: name the quest
+_RF = {'Fairy': 0, 'Elven': 1, 'Angel': 2, 'Goblin': 3, 'Undead': 4, 'Demon': 5, 'Titan': 6, 'Druid': 7, 'Faceless': 8,
+       'Dwarven': 9, 'Drow': 10, 'Mercenary': 11, 'Dragon': 12}
+_RQ = {}      # faction index -> its first unique building quest: the one whose upgrade lists that Research trophy
+for u in by_cat['allegiances']:
+    if u['akind'] == 'unique' and not u['name'].endswith(' Quest'):
+        for s_ in u['sources']:
+            m_ = re.fullmatch(r'Research (\w+) Trophy', s_['name'])
+            if m_ and m_.group(1) in _RF:
+                _RQ[_RF[m_.group(1)]] = 'Mercenary Encampment Quest' if u['faction'] == 11 else u['name'] + ' Quest'
+for u in by_cat['allegiances']:
+    keep = []
+    for s_ in u['sources']:
+        m_ = re.fullmatch(r'Research (\w+) Trophy', s_['name'])
+        if m_ and m_.group(1) in _RF and _RQ.get(_RF[m_.group(1)]):
+            u['requirements'].insert(0, f"Complete the quest {_RQ[_RF[m_.group(1)]]}")
+        else: keep.append(s_)
+    u['sources'] = keep
+    u['conditions'] = [re.sub(r'Miscellaneous trophy: Research (\w+) Trophy',
+                              lambda m: 'completed ' + (_RQ.get(_RF.get(m.group(1))) or m.group(0)), c_) for c_ in u['conditions']]
+
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
 for u in by_cat['allegiances']:
     ns = [int(m.group(1)) for c_ in u['conditions'] for m in [re.search(r'Reincarnation (\d+)', c_)] if m and c_.startswith('being at')]
