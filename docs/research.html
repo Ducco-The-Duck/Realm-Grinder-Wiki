@@ -150,7 +150,7 @@ popups are always the base values <i>v</i>.</div>
         rows.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ulS.appendChild(li); });
         tip.appendChild(ulS);
       }
-      tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));
+      if(ASC===2) tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));
       place(anchor); return;
     }
     tip.appendChild(el('b',null,it.n));
