@@ -50,6 +50,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        'au': bool(u.get('auto')),
     }
 
 
@@ -261,7 +262,8 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : 'Can only be bought when '+it.o.map(pred).join(' and ')+'.')));
+    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : (it.au ? 'Granted automatically when ' : 'Can only be bought when ')+it.o.map(pred).join(' and ')+'.')));
+    if(it.au) tip.appendChild(el('div','more','Never shown in the game\'s upgrade list: you simply have the effect.'));
     if(unavailable(it)){
       tip.appendChild(el('span','lbl','Not available'));
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));

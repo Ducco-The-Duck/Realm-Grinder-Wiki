@@ -41,6 +41,7 @@ PROBE = f"""(function () {{ __MUT
     var r = {{ q: qOf(o), n: o.{J('§1i§')}, icon: o.{J('§^!#§')}, id: o.id, i: i, cat: cat, f: o.{J('§-!^§')}, grp: o.{J('§@1§')},
               tier: o.{J('§"!U§')}, thr: o.{J('§^!]§')} }};
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
+    try {{ r.auto = !!o.{J('§%!>§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
@@ -166,6 +167,8 @@ def decode(body, c, ctx=None):
     ctx = ctx or {}
     nm = D.name_of_for(c)
     src, cond, bad, extra = [], [], [], []
+    mv = re.fullmatch(r'var _loc1_:Boolean = (.+); return _loc1_ && (.+);', body)
+    if mv: body = f'return {mv.group(1)} && {mv.group(2)};'
     m = re.fullmatch(r'return (.+);', body)
     if not m: return src, cond, [body], (None, None), extra
     asc_lo = asc_hi = fac_lo = fac_hi = None
@@ -288,6 +291,14 @@ def decode(body, c, ctx=None):
             cond.append(f"having spent at least {num_text(ctx['thr'] / 3600)} hours offline (all-time)"); continue
         if t == '§8G§.§,#§(§^!]§)' and isinstance(ctx.get('thr'), str):
             src.append({'kind': 'trophy', 'name': ctx['thr']}); continue
+        mm = re.fullmatch(r'\(§8G§\.§-!\^§ == 0 \|\| §8G§\.§-!\^§ == 1 \|\| §8G§\.§-!\^§ == 2 \|\| §8G§\.§-!\^§ == 3 \|\| '
+                          r'§8G§\.§-!\^§ == 4 \|\| §8G§\.§-!\^§ == 5 \|\| \(§8G§\.§-!\^§ == 6 \|\| §8G§\.§-!\^§ == 7 \|\| '
+                          r'§8G§\.§-!\^§ == 8\) && §8G§\.§7d§\((§[^§]*§)\.id\)\)', t)
+        if mm and nm(mm.group(1)):
+            cond.append('playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once '
+                        f'"{nm(mm.group(1))[1]}" is bought'); continue
+        if t == '§#3§ == -1' or t == '§8G§.§#3§ == -1':
+            cond.append('having no prestige faction'); continue
         bad.append(t)
     if fac_lo is not None and fac_hi is not None:
         r = faction_range(fac_lo, fac_hi)
@@ -430,7 +441,9 @@ def fix_raw(name, c, paras):
 # the Misc upgrades covered so far (the rest of the category is seasonal events, research facilities, unlocks ...)
 MISC_GROUPS = {'GemUpgrade', 'ReincarnationPowerUpgrade', 'RubyUpgrade', 'ClickingBase', 'ClickingProduction',
                'ClickingTotalProduction', 'OfflineUpgrade', 'AssistantUpgrade'}
-MISC_NAMES = {'Gem Power', 'Challenge Power'}
+MISC_NAMES = {'Gem Power', 'Challenge Power',
+              # research slot upgrades: granted automatically, never shown in the game's list
+              'Magician', 'Artisan', 'Demigod', 'Businessman', 'Apothecary', 'Warlord'}
 SKIP_NAMES = {'Arcane Brilliance'}          # tied to the spell tier upgrades, which are covered later
 SPELL_TIER_CLASS = '§%p§'
 by_cat = {name: [] for name in CATS.values()}
@@ -485,6 +498,8 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
+    if r.get('auto') and r['cat'] == 1:
+        item['auto'] = True
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}

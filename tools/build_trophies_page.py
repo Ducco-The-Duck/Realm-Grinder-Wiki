@@ -12,8 +12,8 @@ trophies = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding=
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
 CATEGORIES = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}
-# 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown.
-EVENT_GROUPS = [('seasonal', 'Seasonal events')]  # excavation finds live on the Archaeology page
+# 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown. Event trophies
+# ('seasonal') are left out on purpose; so are the excavation finds, which live on the Archaeology page.
 
 
 def pretty(t):
@@ -44,18 +44,7 @@ listed = [t for t in trophies if t['listed']]
 for cat, title in CATEGORIES.items():
     its = [t for t in listed if t['category'] == cat]
     sections.append({'title': f'{title} Trophies', 'n': len(its), 'cells': cells(its)})
-subs = []
-for key, title in EVENT_GROUPS:
-    its = [t for t in trophies if t['group'] == key]
-    if its:
-        subs.append({'title': title, 'n': len(its), 'cells': cells(its)})
-n_event = sum(sum(len(c['items']) for c in sub['cells']) for sub in subs)
-if len(subs) == 1:
-    sections.append({'title': 'Event Exclusive Trophies', 'n': n_event, 'cells': subs[0]['cells']})
-else:
-    sections.append({'title': 'Event Exclusive Trophies', 'n': n_event, 'subs': subs})
-
-assert sum(sum(len(c['items']) for c in s['cells']) for s in sections[:5]) == len(listed)
+assert sum(sum(len(c['items']) for c in s['cells']) for s in sections) == len(listed)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 html = '''<!doctype html>

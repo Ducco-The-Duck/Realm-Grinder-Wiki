@@ -36,6 +36,12 @@ Only these need checking; remove an item when it is settled.
    Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
    upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
 
+6. **Research slot upgrades** (Magician, Artisan, Demigod, Businessman, Apothecary, Warlord) on the Upgrades page: built from
+   code. They are granted automatically (the game's auto-acquire flag) when their trophy is unlocked and the faction
+   conditions hold, and are never shown in the game's list; the user has the effect but never sees them. The conditions
+   (playing as a base faction, or as a Titan / Druid / Faceless once "Secrets of the Ancients" is bought, no prestige
+   faction) are unchecked.
+
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
