@@ -71,7 +71,7 @@ UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their
 
 PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'Proof of Neutrality': {'al': 3},
             'Proof of Order': {'ax': 4}, 'Proof of Chaos': {'ax': 5}, 'Proof of Balance': {'ax': 6}}
-KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'exchange': 5, 'spell': 6, 'unique': 7}
+KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
 def item(u):
@@ -138,10 +138,17 @@ def section(sid, name, items):
 
 
 def alleg_section():
+    pair_asc = {}
+    for u in pages['allegiances']:
+        if u['akind'] == 'unique':
+            b_ = u['name'][:-6] if u['name'].endswith(' Quest') else u['name']
+            pair_asc[b_] = max(pair_asc.get(b_, 0), u['asc_min'] or 0)
     def key(u):
         sub = u['tier_no'] or u['perk'] or 0
         if u['akind'] == 'heritage': sub = 1 if u['name'].startswith('Advanced') else 0
-        if u['akind'] == 'unique': sub = (u['name'][:-6] if u['name'].endswith(' Quest') else u['name'], 1 if not u['name'].endswith(' Quest') else 0)
+        if u['akind'] == 'unique':
+            base = u['name'][:-6] if u['name'].endswith(' Quest') else u['name']
+            sub = (pair_asc.get(base, 0), base, 0 if u['name'].endswith(' Quest') else 1)      # the Research one first, then the Ascension 2 one
         return (-1 if u['faction'] == -1 else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
     blood = [item(u) for u in allu if u['akind'] == 'bloodline']

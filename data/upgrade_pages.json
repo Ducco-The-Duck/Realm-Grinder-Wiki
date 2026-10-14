@@ -1,422 +1,6 @@
 {
 "allegiances": [
 {
-"name": "Fairy Exchange",
-"icon": null,
-"order": 6,
-"id": 6,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 0,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Fairy": 20
-},
-"fc_a4": {
-"Fairy": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Elven Exchange",
-"icon": null,
-"order": 7,
-"id": 7,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 1,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Elf": 20
-},
-"fc_a4": {
-"Elf": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Angelic Exchange",
-"icon": null,
-"order": 8,
-"id": 8,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 2,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Angel": 20
-},
-"fc_a4": {
-"Angel": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Goblin Exchange",
-"icon": null,
-"order": 9,
-"id": 9,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 3,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Goblin": 20
-},
-"fc_a4": {
-"Goblin": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Undead Exchange",
-"icon": null,
-"order": 10,
-"id": 10,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 4,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Undead": 20
-},
-"fc_a4": {
-"Undead": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Demonic Exchange",
-"icon": null,
-"order": 11,
-"id": 11,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 5,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Demon": 20
-},
-"fc_a4": {
-"Demon": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Dwarven Exchange",
-"icon": null,
-"order": 12,
-"id": 12,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 9,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Dwarf": 20
-},
-"fc_a4": {
-"Dwarf": 20
-},
-"free_start": false
-}
-},
-{
-"name": "Drow Exchange",
-"icon": null,
-"order": 13,
-"id": 13,
-"description": [
-{
-"text": "Click to open the Royal Market, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Increase the production of all buildings by 10% per Royal Exchange purchased.",
-"formulas": [],
-"s": null
-},
-{
-"text": "Total Exchanges purchased: INF",
-"formulas": [],
-"s": null
-}
-],
-"sources": [],
-"requirements": [],
-"conditions": [],
-"undecoded": [],
-"asc_min": null,
-"asc_max": null,
-"group": null,
-"tier": -1,
-"building": null,
-"faction": 10,
-"akind": "exchange",
-"perk": null,
-"tier_no": null,
-"cost": {
-"coins": [
-0,
-0,
-0,
-0,
-0
-],
-"fc": {
-"Drow": 20
-},
-"fc_a4": {
-"Drow": 20
-},
-"free_start": false
-}
-},
-{
 "name": "Proof of Good Deed",
 "icon": "GoodProofUpgrade",
 "order": 81,
@@ -2461,6 +2045,69 @@
 1e+90,
 0,
 1e+99
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Training Grounds",
+"icon": "BuildingTraining Grounds",
+"order": 242,
+"id": 242,
+"description": [
+{
+"text": "Upgrade Warrior Barracks to Training Grounds, boosting their production based on clicks made in this Reincarnation and unlocking more unique perks for the building.",
+"formulas": [
+{
+"latex": "v = 50 \\cdot C^{0.85} + 50 \\cdot \\left(\\ln\\left(1 + C\\right)\\right)^{6}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 1
+},
+{
+"text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Research Elven Trophy"
+}
+],
+"requirements": [],
+"conditions": [
+"playing as Elf",
+"being at Reincarnation 16 or higher",
+"not having a prestige faction, unless you have Miscellaneous trophy: Research Dwarven Trophy"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+103,
+0,
+0,
+0,
+0
 ],
 "fc": {},
 "fc_a4": {},
@@ -11730,6 +11377,57 @@
 }
 },
 {
+"name": "Archon Quest",
+"icon": "ArchonMaskTrophy",
+"order": 424,
+"id": 424,
+"description": [
+{
+"text": "Collect all three Iron Fragments and accumulate 3 hours of Temporal Flux activity time in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "First Iron Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Second Iron Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Third Iron Fragment"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 13,
+"akind": "quest",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+147,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
 "name": "Archon Trade Treaty",
 "icon": "ArchonTradeTreaty",
 "order": 425,
@@ -12587,6 +12285,57 @@
 0,
 0,
 1e+180,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Djinn Quest",
+"icon": "DjinnMaskTrophy",
+"order": 442,
+"id": 442,
+"description": [
+{
+"text": "Collect all three Crystal Fragments and accumulate 3 hours of Maelstrom activity time in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "First Crystal Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Second Crystal Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Third Crystal Fragment"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 14,
+"akind": "quest",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+147,
 0,
 0
 ],
@@ -13476,6 +13225,57 @@
 0,
 0,
 1e+180,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Makers Quest",
+"icon": "MakersMaskTrophy",
+"order": 460,
+"id": 460,
+"description": [
+{
+"text": "Collect all three Stone Fragments and accumulate 3 hours of All Creation activity time in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Quest artifact",
+"name": "First Stone Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Second Stone Fragment"
+},
+{
+"kind": "Quest artifact",
+"name": "Third Stone Fragment"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 15,
+"akind": "quest",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+1e+147,
 0,
 0
 ],
@@ -14940,6 +14740,58 @@
 }
 },
 {
+"name": "Training Grounds Quest",
+"icon": "UniqueElvenQuest",
+"order": 536,
+"id": 536,
+"description": [
+{
+"text": "Hello, mellonamin. We require a new place to train our soldiers. Build enough Warrior Barracks, and we'll make them worthy of you.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "1750 Warrior Barracks",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Elf",
+"having no prestige faction",
+"being at Reincarnation 16 or higher"
+],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 1,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+100,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
 "name": "Heaven's Domain Quest",
 "icon": "UniqueAngelQuest",
 "order": 537,
@@ -15447,6 +15299,57 @@
 "coins": [
 0,
 1e+74,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Encampment Quest",
+"icon": "UniqueMercenaryQuest",
+"order": 547,
+"id": 547,
+"description": [
+{
+"text": "We salute you, commander. Your strategical skills had not gone unnoticed within our ranks. We have decided to offer you a chance to establish a formal encampment within your boundaries... Build more structures to strengthen our city.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "125000 Buildings",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [],
+"conditions": [
+"playing as Mercenary",
+"being at Reincarnation 75 or higher"
+],
+"undecoded": [],
+"asc_min": 1,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"akind": "unique",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+1e+121,
 0,
 0,
 0
@@ -17731,17 +17634,33 @@
 "text": "Gain additional research slots for all branches based on time spent in this Era.",
 "formulas": [
 {
-"latex": "v = 1 + \\max\\left(0, \\left\\lfloor \\frac{\\left(1 + \\frac{\\frac{\\frac{8 \\cdot t}{60}}{60}}{36}\\right)^{0.5} - 1}{2} \\right\\rfloor\\right)",
+"latex": "v_{1} = 1 + \\max\\left(0, \\left\\lfloor \\frac{\\sqrt{1 + \\frac{8 \\cdot h}{36}} - 1}{2} \\right\\rfloor\\right)",
+"vars": [
+{
+"symbol": "h",
+"text": "Hours played in this Era"
+}
+],
+"label": "Research slots for every branch (Ascension 0 to 2)"
+}
+],
+"s": 3
+},
+{
+"text": "From Ascension 3 it gives research budget instead of research slots: increase Research budget based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = \\left(\\ln\\left(1 + t\\right)\\right)^{3}",
 "vars": [
 {
 "symbol": "t",
 "text": "Time played in this Era (seconds)"
 }
 ],
-"shown": true
+"label": "Research budget (Ascension 3 and up)"
 }
 ],
-"s": 3
+"s": null
 }
 ],
 "sources": [],
@@ -19545,6 +19464,168 @@
 ],
 "fc": {},
 "fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Sturdy Bearded Man's Quest",
+"icon": "ArcheologyDwarf",
+"order": 1564,
+"id": 1564,
+"description": [
+{
+"text": "Aye lad, nice realm ye have thar! Me people and I wanna see more, but only from a good hearted man, mind ye. Show us some good ol' architecture, make sure ye work on those clicks, and don't forget tha beer!",
+"formulas": [],
+"s": null
+},
+{
+"text": "Allows you to contact the Dwarves directly. If you meet their requirements, you will be able to start diplomatic negotiations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Good Alignment",
+"formulas": [],
+"s": null
+},
+{
+"text": "7000 or more buildings",
+"formulas": [],
+"s": null
+},
+{
+"text": "800 or more Inns",
+"formulas": [],
+"s": null
+},
+{
+"text": "10000 or more clicks in this Reincarnation",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Archeology Underworld Trophy"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 9,
+"akind": "quest",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+46,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 10000,
+"Elf": 10000,
+"Angel": 10000
+},
+"fc_a4": {
+"Fairy": 10000,
+"Elf": 10000,
+"Angel": 10000
+},
+"free_start": false
+}
+},
+{
+"name": "Cloaked Shady Figure's Quest",
+"icon": "ArcheologyDrow",
+"order": 1565,
+"id": 1565,
+"description": [
+{
+"text": "Greetings, kivvil. We have noticed your endeavors, and we have seen potential in you. If you wish to prove yourself worthy, we have three simple tasks for you: prove your devotion to our dark gods, your magic prowess, and the greatness of your deeds. Remember, do not show compassion for anyone but for yourself. Aluve.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Allows you to contact the Drow directly. If you meet their requirements, you will be able to start diplomatic negotiations.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Requirements:",
+"formulas": [],
+"s": null
+},
+{
+"text": "Evil Alignment",
+"formulas": [],
+"s": null
+},
+{
+"text": "325 or more trophies unlocked",
+"formulas": [],
+"s": null
+},
+{
+"text": "650 or more Dark Temples",
+"formulas": [],
+"s": null
+},
+{
+"text": "7500 or more spells cast in this Reincarnation",
+"formulas": [],
+"s": null
+}
+],
+"sources": [
+{
+"kind": "Miscellaneous trophy",
+"name": "Archeology Underworld Trophy"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 10,
+"akind": "quest",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+1e+46,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Goblin": 10000,
+"Undead": 10000,
+"Demon": 10000
+},
+"fc_a4": {
+"Goblin": 10000,
+"Undead": 10000,
+"Demon": 10000
+},
 "free_start": false
 }
 }

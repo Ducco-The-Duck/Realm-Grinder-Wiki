@@ -38,4 +38,14 @@ FORMULAS.update({
                                 ('D', 'Your excavation depth (excavations made since your last Excavation Reset)'), TIER,
                                 label='Base production added to each building (per second)'))],
     'Goblin Bloodline': [(0, F(r'v = 0.01', ('v', 'Amount taken off the cost multiplier of all buildings'), label='Cost multiplier'))],
+    'Archon Bloodline': [(0, F(r'v = 1 + \max\left(0, \left\lfloor \frac{\sqrt{1 + \frac{8 \cdot h}{36}} - 1}{2} \right\rfloor\right)',
+                               ('h', 'Hours played in this Era'), label='Research slots for every branch (Ascension 0 to 2)'))],
 })
+
+# paragraphs added after the game's own text: name -> [(text, formula, first Ascension of the Ascension penalty)]
+EXTRA_PARAS = {
+    'Archon Bloodline': [('From Ascension 3 it gives research budget instead of research slots: increase Research budget based on '
+                          'time spent in this Era.',
+                          F(r'v = \left(\ln\left(1 + t\right)\right)^{3}', ('t', 'Time played in this Era (seconds)'),
+                            label='Research budget (Ascension 3 and up)'))],
+}

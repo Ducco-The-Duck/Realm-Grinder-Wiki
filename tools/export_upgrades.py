@@ -16,7 +16,7 @@ from as3parse import parse_all, resolve
 import desc_tools as D
 import misc_manual as MM
 import alleg_manual as AM
-import alleg_manual_family  # noqa: F401  (adds the family formulas to AM.FORMULAS)
+import alleg_manual_family as AMF  # (also adds the family formulas to AM.FORMULAS)
 from numtext import pow10_text
 from chance_latex import convert
 
@@ -609,8 +609,10 @@ def tier_of(name):
     return None
 
 
-UNIQUE_NAMES = {n for b_ in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))
-                for n in (b_.get('unique_names_list') or {}).values()}
+# the unique building upgrades are the ones whose text starts "Upgrade X to Y, boosting their production"
+UNIQUE_NAMES = {r_['n'] for r_ in rows if r_['cat'] == 0 and str(r_.get('d', '')).startswith('Upgrade ') and 'boosting' in str(r_.get('d', ''))}
+QUEST_FACTION = {"Sturdy Bearded Man's Quest": 9, "Cloaked Shady Figure's Quest": 10}      # entry quests of the prestige factions
+ASTRAL_QUESTS = {'Archon Quest', 'Djinn Quest', 'Makers Quest'}
 
 
 def alleg_kind(r):
@@ -620,12 +622,13 @@ def alleg_kind(r):
     if r.get('grp') in ALLEG_TAGS and tier_of(n) is not None: return 'tier'
     if n in MERC_PERKS: return 'perk'
     if n.startswith('Proof of ') and r['f'] == -1: return 'proof'
+    if n in QUEST_FACTION: return 'quest'
     if r['f'] != -1:
         if n.endswith('Heritage'): return 'heritage'
-        if n.endswith(' Exchange') and n != 'Royal Exchange': return 'exchange'
         if n.endswith(' Bloodline'): return 'bloodline'
         if r.get('tg') == 'SpellFactionUpgrade': return 'spell'
-        if n in UNIQUE_NAMES or (n.endswith(' Quest') and n[:-6] in UNIQUE_NAMES): return 'unique'
+        if n in ASTRAL_QUESTS: return 'quest'
+        if n in UNIQUE_NAMES or (n.endswith(' Quest') and (n[:-6] in UNIQUE_NAMES or n == 'Mercenary Encampment Quest')): return 'unique'
     if n == 'Bloodline': return 'bloodline_c'
     return None
 
@@ -703,13 +706,15 @@ for idx, r in todo:
                 if pi not in _done:
                     ps[pi]['formulas'] = []; _done.add(pi)
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
+        for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
+            item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])], 's': None})
         if r['n'] in AM.TIER_NAMED:
             al_ = AM.FACTION_ALIGN.get(r['f'], 1)
             names_ = [plural(AM.TIER_BUILDING[al_][t - 1]) for t in AM.TIER_NAMED[r['n']]]
             for p_ in item['description']:
                 for nn_ in names_:
                     p_['text'] = p_['text'].replace('Farms', nn_, 1)
-        item['faction'] = r['f']
+        item['faction'] = QUEST_FACTION.get(r['n'], r['f'])
         item['akind'] = alleg_kind(r)
         item['perk'] = r.get('idx') or None
         item['tier_no'] = None if r.get('idx') else tier_of(r['n'])
