@@ -15848,7 +15848,25 @@
 "description": [
 {
 "text": "Multiplicatively increase Maximum Mana based on active spells.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 2 \\cdot S \\cdot \\max\\left(0,\\, C + 1 - A\\right)",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+},
+{
+"symbol": "C",
+"text": "The number of Arcane Brilliance trophies you have unlocked"
+},
+{
+"symbol": "A",
+"text": "Your Ascension number"
+}
+]
+}
+],
 "s": null
 }
 ],
@@ -16914,7 +16932,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 1,
+"asc_min": null,
 "asc_max": null,
 "group": "Spiritual SurgeMultipleCasting",
 "tier": null,
@@ -16975,7 +16993,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 2,
+"asc_min": null,
 "asc_max": null,
 "group": "Spiritual SurgeMultipleCasting",
 "tier": null,
@@ -17036,7 +17054,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 3,
+"asc_min": null,
 "asc_max": null,
 "group": "Spiritual SurgeMultipleCasting",
 "tier": null,
@@ -17097,7 +17115,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 4,
+"asc_min": null,
 "asc_max": null,
 "group": "Spiritual SurgeMultipleCasting",
 "tier": null,
@@ -19813,7 +19831,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 1,
+"asc_min": null,
 "asc_max": null,
 "group": "Dragon's BreathMultipleCasting",
 "tier": null,
@@ -19845,7 +19863,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 2,
+"asc_min": null,
 "asc_max": null,
 "group": "Dragon's BreathMultipleCasting",
 "tier": null,
@@ -19877,7 +19895,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 3,
+"asc_min": null,
 "asc_max": null,
 "group": "Dragon's BreathMultipleCasting",
 "tier": null,
@@ -19909,7 +19927,7 @@
 ],
 "conditions": [],
 "undecoded": [],
-"asc_min": 4,
+"asc_min": null,
 "asc_max": null,
 "group": "Dragon's BreathMultipleCasting",
 "tier": null,

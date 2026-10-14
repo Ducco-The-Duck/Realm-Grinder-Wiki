@@ -484,6 +484,10 @@ def fix_text(name, paras):
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []     # the code only has the constant 4*10 + 3 + 0*0.1 + 14*0.01
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
+    if name == 'Arcane Brilliance':
+        paras[0]['formulas'] = [_m(r'v = 2 \cdot S \cdot \max\left(0,\, C + 1 - A\right)',
+            ('S', 'Total tier of your active spells (each active spell counts its tier)'),
+            ('C', 'The number of Arcane Brilliance trophies you have unlocked'), ('A', 'Your Ascension number'))]
     if name == 'Ancestral Hourglass':
         paras[0]['formulas'] = [_m(r'v = \frac{0.002 \cdot R}{A}',
             ('v', 'Amount taken off the Lineage cost exponent growth (per 25 levels of a Lineage)'),
@@ -692,7 +696,7 @@ for idx, r in enumerate(rows):
     by_cat['magic'].append({
         'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
         'description': paras, 'sources': [], 'requirements': reqs, 'conditions': [], 'undecoded': [],
-        'asc_min': reaches or None, 'asc_max': None, 'group': r.get('grp'), 'tier': None, 'building': None,
+        'asc_min': (None if all('Reincarnations' in v for v in ra.values()) and ra else reaches or None), 'asc_max': None, 'group': r.get('grp'), 'tier': None, 'building': None,
         'spell': spell, 'spell_tier': r['sr'] + 1, 'unlock_by_asc': ra,
     })
 
