@@ -354,7 +354,7 @@ the base values <i>v</i>.</div>
     }
     if(it.m || it.bl) tip.appendChild(el('div','more','Click for more info'));
     var rq=it.s.slice();
-    if(it.ra && ASC>=1){ var ra=it.ra[String(Math.min(ASC,4))]; if(ra) rq.unshift(ra); }
+    if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
     if(rq.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
