@@ -48,6 +48,7 @@ PROBE = f"""(function () {{ __MUT
     var keepR = {g}.{J('§8!H§')};
     if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
     var keepAl = {g}.{J('§,!Y§')}, ial = o.{J('§,!Y§')};
+    r.ial = ial;
     if (ial === 1 || ial === 2 || ial === 3) {g}.{J('§,!Y§')} = ial;      // tier lookups ("the tier 7 building") depend on the alignment
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
     try {{ if (o.{J('§8!1§')}) r.d2 = o.{J('§8!1§')}(); }} catch (e) {{}}      // lineage perks: the text shown once owned
@@ -723,6 +724,20 @@ for idx, r in todo:
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
         for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
             item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])], 's': None})
+        # a tier lookup names the building of the PLAYER's alignment (the upgrade can be used through a Legacy or as a
+        # Mercenary), so the text names the tier and lists the three possibilities instead of the faction's own building
+        _src = '\n'.join(m_.body for m_ in c.methods if m_.name in ('§@"§', '§8!1§', '§>!d§', '§1!6§'))
+        _al = r.get('ial') or AM.FACTION_ALIGN.get(r['f'])
+        for t_ in dict.fromkeys(int(x_) for x_ in re.findall(r'§8G§\.§-e§\((\d+)\)\.id', _src)):
+            if t_ < 4 or not _al: continue
+            nm_ = plural(AM.TIER_BUILDING[_al][t_ - 1])
+            names3 = [plural(AM.TIER_BUILDING[a_][t_ - 1]) for a_ in (1, 2, 3)]
+            if len(set(names3)) == 1: continue          # the same building for every alignment (Halls of Legends)
+            alts = ', '.join(names3[:-1]) + ' or ' + names3[-1]
+            ph_ = f'the tier {t_} building of your alignment ({alts})'
+            for p_ in item['description']:
+                if nm_ in p_['text']:
+                    p_['text'] = p_['text'].replace(nm_, ph_, 1); break
         if r['n'] in AMF.BUILDING_TEXT:
             for p_ in item['description']: p_['text'] = p_['text'].replace(AMF.BUILDING_TEXT[r['n']][0], AMF.BUILDING_TEXT[r['n']][1], 1)
         item['faction'] = QUEST_FACTION.get(r['n'], r['f'])

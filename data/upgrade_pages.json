@@ -2502,14 +2502,14 @@
 "id": 251,
 "description": [
 {
-"text": "Increase the base production of Cathedrals by +98000 and increase their production based on their quantity.",
+"text": "Increase the base production of the tier 7 building of your alignment (Cathedrals, Dark Temples or Monasteries) by +98000 and increase their production based on their quantity.",
 "formulas": [
 {
 "latex": "v = 40 + 40 \\cdot N^{0.4}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Cathedral\" buildings you own"
+"text": "Number of buildings of tier 7 of your alignment you own (Cathedrals, Dark Temples or Monasteries)"
 }
 ],
 "label": null
@@ -5085,7 +5085,7 @@
 "id": 302,
 "description": [
 {
-"text": "Increase the production of Evil Fortresses based on assistants owned.",
+"text": "Increase the production of the tier 9 building of your alignment (Royal Castles, Evil Fortresses or Iron Strongholds) based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 7 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3.5}",
@@ -5136,14 +5136,14 @@
 "id": 303,
 "description": [
 {
-"text": "Increase Mana Regeneration based on Hell Portals owned.",
+"text": "Increase Mana Regeneration based on the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) owned.",
 "formulas": [
 {
 "latex": "v = 3 + 1.5 \\cdot N^{0.5}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hell Portal\" buildings you own"
+"text": "Number of buildings of tier 10 of your alignment you own (Heaven's Gates, Hell Portals or Ancient Pyramids)"
 }
 ],
 "label": null
@@ -5187,14 +5187,14 @@
 "id": 304,
 "description": [
 {
-"text": "Gain additional assistants based on the highest amount of Hell Portals built in this Reincarnation.",
+"text": "Gain additional assistants based on the highest amount of the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) built in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 6 + 1.6 \\cdot N^{0.6}",
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+"text": "Most buildings of tier 10 of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -5238,7 +5238,7 @@
 "id": 305,
 "description": [
 {
-"text": "Increase the base production of Evil Fortresses by +900000 and Hell Portals by +8.8 × 10⁶.",
+"text": "Increase the base production of the tier 9 building of your alignment (Royal Castles, Evil Fortresses or Iron Strongholds) by +900000 and the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) by +8.8 × 10⁶.",
 "formulas": [],
 "s": null
 }
@@ -5487,7 +5487,7 @@
 "id": 310,
 "description": [
 {
-"text": "Increase the production of Hell Portals based on Hellfire Blast activity time in this Reincarnation.",
+"text": "Increase the production of the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) based on Hellfire Blast activity time in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 35 + 0.7 \\cdot t^{0.7}",
@@ -6170,7 +6170,7 @@
 "id": 323,
 "description": [
 {
-"text": "Increase the base production of Deep Mines by +19635 and Monasteries by +98000. Also increase their production by 2500%.",
+"text": "Increase the base production of the tier 4 building of your alignment (Warrior Barracks, Slave Pens or Deep Mines) by +19635 and the tier 7 building of your alignment (Cathedrals, Dark Temples or Monasteries) by +98000. Also increase their production by 2500%.",
 "formulas": [],
 "s": 1
 }
@@ -7837,7 +7837,7 @@
 "id": 356,
 "description": [
 {
-"text": "Increase the production of Labyrinths based on assistants owned.",
+"text": "Increase the production of the tier 8 building of your alignment (Citadels, Necropolises or Labyrinths) based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 50 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{3}",
@@ -20004,7 +20004,7 @@
 "id": 669,
 "description": [
 {
-"text": "Reduce Farms, Iron Strongholds and Halls of Legends building cost multiplier and increase their production based on Royal Exchanges made.",
+"text": "Reduce Farms, the tier 9 building of your alignment (Royal Castles, Evil Fortresses or Iron Strongholds) and Halls of Legends building cost multiplier and increase their production based on Royal Exchanges made.",
 "formulas": [
 {
 "latex": "v = 7 \\cdot N^{0.7}",
