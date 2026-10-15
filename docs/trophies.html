@@ -122,7 +122,8 @@ select option{font-family:"Liony",system-ui,sans-serif}
 #more ul.vars{margin:1px 0}
 #pop .card,#more .card{padding:10px 12px}
 /* the Upgrades entry of the nav drops down to the four upgrade pages */
-.dd-nav{position:relative;display:inline-block}
+.dd-nav{position:relative;display:flex}
+.dd-nav>a{display:block}
 .dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
 .dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}
