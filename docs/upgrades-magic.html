@@ -56,9 +56,10 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
 #more .bonus{border-top:1px solid var(--line);padding:8px 0}
-#more .rtab{display:grid;grid-template-columns:max-content 1fr;margin:2px 0 8px;border-top:1px solid var(--line)}
-#more .rtab>span{padding:3px 0;border-bottom:1px solid var(--line)}
-#more .rtab .d{color:var(--accent);font-weight:700;white-space:nowrap;padding-right:14px}
+#more .rtab{display:grid;grid-template-columns:max-content 1fr;border-top:1px solid var(--line)}
+#more .rtab>.d,#more .rtab>.bonus{border-top:0;border-bottom:1px solid var(--line);padding:6px 0}
+#more .rtab>.d{color:var(--accent);font-weight:700;white-space:nowrap;padding-right:14px;text-align:right}
+#more .card.wide{width:min(700px,100%)}
 #more .bonus p{margin:0 0 2px}
 #more .formula{padding:2px 0;overflow-wrap:anywhere}
 #more ul.vars{list-style:none;padding-left:0;margin:2px 0;color:var(--muted);font-size:.9rem}
@@ -162,6 +163,12 @@ select option{font-family:"Liony",system-ui,sans-serif}
 /* the Upgrades entry of the nav drops down to the four upgrade pages */
 .dd-nav{position:relative;display:flex}
 .dd-nav>a{display:block}
+/* dark scrollbars (the default one flashes white on hover) */
+*{scrollbar-width:thin;scrollbar-color:#4a443a transparent}
+::-webkit-scrollbar{width:10px;height:10px;background:transparent}
+::-webkit-scrollbar-thumb{background:#4a443a;border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:#6a6150}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
 .dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
 .dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}
@@ -537,28 +544,18 @@ the base values <i>v</i>.</div>
   var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
   function openMore(it){
     moretitle.textContent=it.n; morebody.textContent='';
+    more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power/.test(it.n));
     var seen={}, scaled=false;
-    if(/^Reincarnation Power/.test(it.n)){
-      // the Reincarnation numbers at which each bonus starts (and ends), as a table above the details
-      var rows=[], first=null;
-      it.o.forEach(function(c){ var q=/Reincarnation ([0-9]+)/.exec(c); if(q) first=+q[1]; });
-      it.m.forEach(function(b){
-        var m1=/[Ff]rom Reincarnation ([0-9]+)/.exec(b.t), m2=/up to ([0-9]+)/.exec(b.t), t=b.t, st=m1 ? +m1[1] : null;
-        t=t.replace(/,? ?[Ff]rom Reincarnation [0-9]+(, [^:.]*)?:? ?/,' ').replace(/ up to [0-9]+/,'').replace(/ It applies together.*$/,'')
-           .replace(/^ +/,'').replace(/ ?\.$/,'').replace(/ ?,$/,'').replace(/ \(.*\)/,'');
-        t=t.charAt(0).toUpperCase()+t.slice(1);
-                rows.push([st, m2 ? +m2[1] : null, t]);
-      });
-      var tb=el('div','rtab');
-      rows.forEach(function(r){
-        var st=r[0]!==null ? r[0] : first;
-        var d=el('span','d',st===null ? 'Always' : 'Reincarnation '+st+(r[1]!==null ? ' to '+r[1] : ''));
-        tb.appendChild(d); tb.appendChild(el('span','tx',r[2]));
-      });
-      morebody.appendChild(tb);
+    var isRP=/^Reincarnation Power/.test(it.n), rtab=null, rfirst=null;
+    if(isRP){
+      // each bonus sits in a table row beside the Reincarnation it starts at
+      it.o.forEach(function(c){ var q=/Reincarnation ([0-9]+)/.exec(c); if(q) rfirst=+q[1]; });
+      rtab=el('div','rtab'); morebody.appendChild(rtab);
     }
     it.m.forEach(function(b){
-      var blk=el('div','bonus'), p=el('p',null,b.t);
+      var bt=b.t;
+      if(isRP){ bt=bt.replace(/^From Reincarnation [0-9]+: /,''); bt=bt.charAt(0).toUpperCase()+bt.slice(1); }
+      var blk=el('div','bonus'), p=el('p',null,bt);
       if(b.s){ scaled=true; if(ASC>=b.s){ p.appendChild(document.createTextNode(' ')); p.appendChild(el('span','mark',As(ASC-b.s+1))); } }
       blk.appendChild(p);
       var vars=[];
@@ -572,7 +569,11 @@ the base values <i>v</i>.</div>
           li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li); });
         blk.appendChild(ul);
       }
-      morebody.appendChild(blk);
+      if(isRP){
+        var m1=/[Ff]rom Reincarnation ([0-9]+)/.exec(b.t), m2=/up to ([0-9]+)/.exec(b.t), st=m1 ? +m1[1] : rfirst;
+        rtab.appendChild(el('span','d',st===null ? 'Always' : 'Reincarnation '+st+(m2 ? ' to '+m2[1] : '')));
+        rtab.appendChild(blk);
+      } else morebody.appendChild(blk);
     });
     if(scaled) morebody.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
     if(it.mn) morebody.appendChild(el('div','more',it.mn));
