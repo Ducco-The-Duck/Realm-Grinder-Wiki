@@ -1,6 +1,7 @@
-/* the game's alignment background, faded out towards the bottom, with a drape behind the content */
+/* the game's alignment background, dimmed and faded into the page colour towards the bottom, with a drape behind the content.
+   No mask / opacity / blurred shadow here: those made scrolling repaint the whole screen. */
 #bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;background-size:cover;background-position:center top;background-repeat:no-repeat;
-  opacity:.4;-webkit-mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
-main{position:relative;background:color-mix(in srgb,var(--bg) 90%,transparent);
-  box-shadow:0 0 32px 16px color-mix(in srgb,var(--bg) 90%,transparent)}
+  transform:translateZ(0)}
+#bgfx::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,color-mix(in srgb,var(--bg) 62%,transparent) 0%,color-mix(in srgb,var(--bg) 85%,transparent) 45%,var(--bg) 100%)}
+main{position:relative;background:color-mix(in srgb,var(--bg) 90%,transparent)}

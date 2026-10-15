@@ -82,17 +82,20 @@ section.dd h2 .chev{margin-left:auto;align-self:center;width:9px;height:9px;marg
 section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 .dd-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s ease,opacity .3s ease}
 .dd.open .dd-body,body.searching .dd .dd-body{grid-template-rows:1fr;opacity:1}
-.dd-in{overflow:hidden;min-height:0}
+.dd-in{overflow:hidden;min-height:0;content-visibility:auto;contain-intrinsic-size:auto 700px}
 @keyframes ddcell{from{opacity:0;transform:translateY(-10px) scale(.9)}to{opacity:1;transform:none}}
 .dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
 /* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
-body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.5;letter-spacing:.01em}
-main{max-width:780px}
+html{font-size:21px}
+body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.45;letter-spacing:.01em}
+main{max-width:880px}
+#tip{width:min(560px,calc(100vw - 16px))}
+#pop .card{width:min(560px,100%)}
+#more .card{width:min(580px,100%)}
 h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
 input,select,button,textarea{font-family:inherit}
-#tip,#pop,#more{font-size:17px}
 /* formulas: KaTeX keeps its own fonts for symbols and brackets (their sizes are baked into its layout);
    letters and digits take the game's font */
 .katex .mathnormal,.katex .mathit,.katex .mathrm,.katex .mord:not(.mop):not(.mspace):not(.delimsizing):not(.sizing){font-family:"Liony",KaTeX_Main,serif}
