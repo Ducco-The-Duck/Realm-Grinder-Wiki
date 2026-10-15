@@ -67,6 +67,8 @@ Only these need checking; remove an item when it is settled.
    single-tier formula. The spells' own Reincarnation (R42 to R48) and dragon-growth upgrade prerequisites are left for the Unlocks page; the three Lore-artifact requirements (Precognition, Limited Wish, Infinite Spiral) are read from the code. Arcane Brilliance
    needs one Arcane Brilliance trophy per Ascension (count + 1 > Ascension).
 
+9. **Faction-unlocking upgrades** (for the Unlocks page): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
