@@ -70,7 +70,7 @@ h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid v
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .subh small{font-weight:400;margin-left:8px}
 .subh{font-size:.9rem;color:var(--muted);margin:14px 0 6px;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(7,minmax(0,70px));justify-content:start;gap:6px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell.group{cursor:pointer}

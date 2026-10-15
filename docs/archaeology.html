@@ -21,7 +21,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
-.grid{display:grid;grid-template-columns:repeat(7,minmax(0,70px));justify-content:start;gap:6px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
@@ -86,7 +86,7 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
 html{font-size:30px}
 body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.2;letter-spacing:.01em}
-main{max-width:960px}
+main{max-width:680px}
 #tip{width:min(620px,calc(100vw - 16px))}
 #pop .card{width:min(620px,100%)}
 #more .card{width:min(640px,100%)}

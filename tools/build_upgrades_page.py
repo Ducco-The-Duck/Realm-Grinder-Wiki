@@ -217,7 +217,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
 .bar .hint{color:var(--muted);font-size:.85rem}
 .bar .row[hidden]{display:none}
-.grid.cols3{grid-template-columns:repeat(3,minmax(0,70px));justify-content:center;width:100%;margin:0 auto}
+.grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
 .cell.gap{visibility:hidden}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
@@ -225,7 +225,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
-.grid{display:grid;grid-template-columns:repeat(7,minmax(0,70px));justify-content:start;gap:6px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
