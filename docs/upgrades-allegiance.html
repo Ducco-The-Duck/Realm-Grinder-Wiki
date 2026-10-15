@@ -123,8 +123,8 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 /* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
-html{font-size:33px}
-body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.32;letter-spacing:.01em}
+html{font-size:36px}
+body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.2;letter-spacing:.01em}
 main{max-width:960px}
 #tip{width:min(620px,calc(100vw - 16px))}
 #pop .card{width:min(620px,100%)}
@@ -158,6 +158,31 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
+/* less vertical air everywhere */
+main{padding-top:18px;padding-bottom:50px}
+nav{margin:0 0 8px}
+h1{margin:0 0 2px}
+.sub{margin:0 0 8px;line-height:1.2}
+.pen-note{margin:0 0 8px;padding:6px 10px;line-height:1.2}
+.search{margin:0 0 8px}
+.bar{padding:4px 16px;gap:2px;margin-bottom:8px}
+.bar .row{gap:2px 14px}
+section{margin:0 0 14px}
+h2{margin:0 0 5px;padding-bottom:3px}
+.subh{margin:8px 0 4px}
+.grid{gap:5px}
+/* drop-downs drawn by the page, so that they use the game's font (the browser's own list does not) */
+.cs{position:relative;display:inline-block}
+.cs>button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 28px 1px 10px;
+  cursor:pointer;text-align:left;position:relative;min-width:3ch;line-height:1.2}
+.cs>button::after{content:"";position:absolute;right:10px;top:50%;width:7px;height:7px;border-right:2px solid var(--muted);
+  border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg)}
+.cs ul{position:absolute;z-index:80;left:0;top:100%;margin:2px 0 0;padding:4px;list-style:none;background:var(--card);
+  border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);max-height:55vh;overflow:auto;min-width:100%;display:none}
+.cs.open ul{display:block}
+.cs li{padding:1px 10px;border-radius:5px;cursor:pointer;white-space:nowrap;line-height:1.25}
+.cs li:hover,.cs li.sel{background:var(--cellhi)}
+.cs.dis>button{opacity:.5;cursor:default}
 .search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
 .search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
@@ -242,8 +267,44 @@ the base values <i>v</i>.</div>
     h.addEventListener('click', toggle);
     h.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
   }
+  function enhanceSelects(){
+    var proto=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value');
+    document.querySelectorAll('select').forEach(function(sel){
+      if(sel._cs) return; sel._cs=1;
+      var wrap=document.createElement('span'); wrap.className='cs';
+      var btn=document.createElement('button'); btn.type='button';
+      var ul=document.createElement('ul'); ul.setAttribute('role','listbox');
+      sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(btn); wrap.appendChild(ul); wrap.appendChild(sel); sel.style.display='none';
+      function sync(){
+        ul.textContent='';
+        var cur=sel.options[sel.selectedIndex];
+        btn.textContent=cur ? cur.textContent : '';
+        Array.prototype.forEach.call(sel.options,function(o){
+          var li=document.createElement('li'); li.textContent=o.textContent; if(o.value===proto.get.call(sel)) li.className='sel';
+          li.addEventListener('click',function(e){
+            e.stopPropagation(); proto.set.call(sel,o.value); sync(); wrap.classList.remove('open');
+            sel.dispatchEvent(new Event('change'));
+          });
+          ul.appendChild(li);
+        });
+        wrap.classList.toggle('dis',sel.disabled); btn.disabled=sel.disabled;
+      }
+      Object.defineProperty(sel,'value',{get:function(){ return proto.get.call(sel); }, set:function(v){ proto.set.call(sel,v); sync(); }, configurable:true});
+      new MutationObserver(sync).observe(sel,{childList:true,attributes:true,attributeFilter:['disabled']});
+      btn.addEventListener('click',function(e){
+        e.stopPropagation();
+        var was=wrap.classList.contains('open');
+        document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); });
+        if(!was && !sel.disabled) wrap.classList.add('open');
+      });
+      sync();
+    });
+    document.addEventListener('click',function(){ document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
+  }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
+    enhanceSelects();
     var box=document.getElementById('q'), note=document.getElementById('qn');
     function run(){
       QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
