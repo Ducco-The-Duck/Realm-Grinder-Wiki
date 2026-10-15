@@ -123,10 +123,6 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
-/* formulas: KaTeX keeps its own fonts for symbols and brackets (their sizes are baked into its layout);
-   letters and digits take the game's font */
-.katex .mathnormal,.katex .mathit,.katex .mathrm,.katex .mord:not(.mop):not(.mspace):not(.delimsizing):not(.sizing){font-family:"Liony",KaTeX_Main,serif}
-.katex .mathnormal,.katex .mathit{font-style:normal}
 .search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
 .search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
