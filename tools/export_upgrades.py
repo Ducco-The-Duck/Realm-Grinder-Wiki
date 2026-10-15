@@ -843,7 +843,7 @@ for u_ in by_cat['allegiances']:
     if u_['akind'] != 'tier' or u_['faction'] not in FACTION or u_['faction'] == 11: continue
     for suf_, prev_ in _PREV.items():
         if u_['name'].endswith(suf_) and (u_['faction'], prev_) in _TIERS:
-            u_['conditions'].insert(0, 'having ' + _TIERS[(u_['faction'], prev_)])
+            # (the previous tier upgrade is not listed: it is implied by the stack)
             if suf_ == 'Union':
                 bld_ = [r_ for r_ in u_['requirements'] if r_.startswith('Upgrade: ')]
                 u_['requirements'] = [r_ for r_ in u_['requirements'] if r_ not in bld_]
@@ -883,7 +883,7 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     for c_ in u['conditions']:
         m_ = re.fullmatch(r'having used (.+) for at least (.+) of activity time', c_)
         if m_:
-            u['requirements'].append(f'Use {m_.group(1)} for {m_.group(2)} of activity time in a single Reincarnation (it stays unlocked afterwards)')
+            u['requirements'].append(f'Use {m_.group(1)} for {m_.group(2)} of activity time in a single Reincarnation')
             continue
         m_ = re.fullmatch(r'having completed (.+)', c_)
         if m_ and 'this Era' not in c_:

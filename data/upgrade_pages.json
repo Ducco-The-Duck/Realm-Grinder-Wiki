@@ -361,9 +361,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Fairies Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -405,9 +403,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Fairies Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -466,7 +462,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Fairies Alliance",
 "having the upgrade Swarming Tower"
 ],
 "undecoded": [],
@@ -1294,9 +1289,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Elven Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1338,9 +1331,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Elven Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1404,7 +1395,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Elven Alliance",
 "having the upgrade Arboreal City"
 ],
 "undecoded": [],
@@ -2249,9 +2239,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Angels Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2293,9 +2281,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Angels Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2354,7 +2340,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Angels Alliance",
 "having the upgrade Holy Site"
 ],
 "undecoded": [],
@@ -3163,9 +3148,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Goblins Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3207,9 +3190,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Goblins Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3268,7 +3249,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Goblins Alliance",
 "having the upgrade Slave Market"
 ],
 "undecoded": [],
@@ -4097,9 +4077,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Undead Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4141,9 +4119,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Undead Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4202,7 +4178,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Undead Alliance",
 "having the upgrade Flesh Workshop"
 ],
 "undecoded": [],
@@ -5018,9 +4993,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Demons Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5062,9 +5035,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Demons Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5128,7 +5099,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Demons Alliance",
 "having the upgrade Burning Abyss"
 ],
 "undecoded": [],
@@ -5952,9 +5922,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Titans Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5998,9 +5966,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Titans Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6077,7 +6043,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Titans Alliance",
 "having the upgrade Mountain Palace"
 ],
 "undecoded": [],
@@ -6876,9 +6841,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Druids Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6922,9 +6885,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Druids Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6989,7 +6950,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Druids Alliance",
 "having the upgrade Ziggurat"
 ],
 "undecoded": [],
@@ -7830,9 +7790,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Faceless Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7876,9 +7834,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Faceless Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7939,7 +7895,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Faceless Alliance",
 "having the upgrade Forbidden Library"
 ],
 "undecoded": [],
@@ -8761,9 +8716,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dwarven Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8805,9 +8758,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dwarven Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8904,7 +8855,6 @@
 "Reincarnation 115 or higher"
 ],
 "conditions": [
-"having Dwarven Alliance",
 "having the upgrade High Bastion"
 ],
 "undecoded": [],
@@ -9725,9 +9675,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Drow Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9769,9 +9717,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Drow Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9864,7 +9810,6 @@
 "Reincarnation 115 or higher"
 ],
 "conditions": [
-"having Drow Alliance",
 "having the upgrade Brothel"
 ],
 "undecoded": [],
@@ -10678,9 +10623,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dragons Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -10724,9 +10667,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dragons Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -10825,7 +10766,6 @@
 "Reincarnation 115 or higher"
 ],
 "conditions": [
-"having Dragons Alliance",
 "having the upgrade Dragon Pasture"
 ],
 "undecoded": [],
@@ -11762,9 +11702,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Archon Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11808,9 +11746,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Archon Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11857,7 +11793,6 @@
 "Reincarnation 130 or higher"
 ],
 "conditions": [
-"having Archon Alliance",
 "having the upgrade Nexus"
 ],
 "undecoded": [],
@@ -12672,9 +12607,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Djinn Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12718,9 +12651,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Djinn Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12767,7 +12698,6 @@
 "Reincarnation 130 or higher"
 ],
 "conditions": [
-"having Djinn Alliance",
 "having the upgrade Pavilion"
 ],
 "undecoded": [],
@@ -13605,9 +13535,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Makers Trade Treaty"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13651,9 +13579,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Makers Friendship Pact"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13700,7 +13626,6 @@
 "Reincarnation 130 or higher"
 ],
 "conditions": [
-"having Makers Alliance",
 "having the upgrade Hall of Origination"
 ],
 "undecoded": [],
@@ -23338,7 +23263,7 @@
 }
 ],
 "requirements": [
-"Use Fairy Chanting for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Fairy Chanting for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23412,7 +23337,7 @@
 }
 ],
 "requirements": [
-"Use Moon Blessing for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Moon Blessing for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23486,7 +23411,7 @@
 }
 ],
 "requirements": [
-"Use God's Hand for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use God's Hand for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23560,7 +23485,7 @@
 }
 ],
 "requirements": [
-"Use Goblin's Greed for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Goblin's Greed for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23634,7 +23559,7 @@
 }
 ],
 "requirements": [
-"Use Night Time for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Night Time for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23708,7 +23633,7 @@
 }
 ],
 "requirements": [
-"Use Hellfire Blast for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Hellfire Blast for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23782,7 +23707,7 @@
 }
 ],
 "requirements": [
-"Use Lightning Strike for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Lightning Strike for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23858,7 +23783,7 @@
 }
 ],
 "requirements": [
-"Use Grand Balance for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Grand Balance for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23934,7 +23859,7 @@
 }
 ],
 "requirements": [
-"Use Brainwave for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Brainwave for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -24010,7 +23935,7 @@
 }
 ],
 "requirements": [
-"Use Diamond Pickaxe for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Diamond Pickaxe for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -24088,7 +24013,7 @@
 }
 ],
 "requirements": [
-"Use Combo Strike for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Combo Strike for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
@@ -24162,7 +24087,7 @@
 }
 ],
 "requirements": [
-"Use Dragon's Breath for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
+"Use Dragon's Breath for 1 hour of activity time in a single Reincarnation"
 ],
 "conditions": [],
 "undecoded": [],
