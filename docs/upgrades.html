@@ -74,12 +74,36 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
-.cell{padding:0;border:0;border-radius:6px}
-.cell img{position:absolute;left:6.14%;top:6.14%;width:87.72%;height:87.72%;max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
-.cell::after{content:"";position:absolute;inset:0;background:url(assets/ui/icon_border.png) center/100% 100% no-repeat;image-rendering:pixelated;pointer-events:none}
-.cell:hover,.cell:focus-visible{background:var(--cellhi);outline:none;filter:brightness(1.3) saturate(1.15);box-shadow:0 0 0 2px var(--accent),0 0 10px 2px var(--accent)}
-.cell.na:hover{filter:grayscale(1) brightness(1.3)}
+/* the game's icon frames: gold by default, a colour of their own for each faction (9-slice of the 20x20 sprites) */
+.cell{--tr:url(assets/ui/trim/Gold.png);--trh:url(assets/ui/trim/Gold_Hover.png);padding:0;border:6px solid transparent;border-radius:0;
+  background:none;border-image-source:var(--tr);border-image-slice:5 fill;border-image-width:6px;border-image-repeat:stretch;image-rendering:pixelated}
+.cell img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(87.7% + 10.5px);height:calc(87.7% + 10.5px);max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
+.cell:hover,.cell:focus-visible{background:none;outline:none;box-shadow:none;border-image-source:var(--trh);filter:brightness(1.15)}
+.cell.na{opacity:.35;filter:grayscale(1)}
+.cell.na:hover{filter:grayscale(1) brightness(1.2)}
 .badge{z-index:3}
+.t-Fairy{--tr:url(assets/ui/trim/FairyTrim.png);--trh:url(assets/ui/trim/FairyTrim_Hover.png)}
+.t-Elven{--tr:url(assets/ui/trim/ElvenTrim.png);--trh:url(assets/ui/trim/ElvenTrim_Hover.png)}
+.t-Angel{--tr:url(assets/ui/trim/AngelTrim.png);--trh:url(assets/ui/trim/AngelTrim_Hover.png)}
+.t-Goblin{--tr:url(assets/ui/trim/GoblinTrim.png);--trh:url(assets/ui/trim/GoblinTrim_Hover.png)}
+.t-Undead{--tr:url(assets/ui/trim/UndeadTrim.png);--trh:url(assets/ui/trim/UndeadTrim_Hover.png)}
+.t-Demon{--tr:url(assets/ui/trim/DemonTrim.png);--trh:url(assets/ui/trim/DemonTrim_Hover.png)}
+.t-Titan{--tr:url(assets/ui/trim/TitanTrim.png);--trh:url(assets/ui/trim/TitanTrim_Hover.png)}
+.t-Druid{--tr:url(assets/ui/trim/DruidTrim.png);--trh:url(assets/ui/trim/DruidTrim_Hover.png)}
+.t-Faceless{--tr:url(assets/ui/trim/FacelessTrim.png);--trh:url(assets/ui/trim/FacelessTrim_Hover.png)}
+.t-Dwarven{--tr:url(assets/ui/trim/DwarvenTrim.png);--trh:url(assets/ui/trim/DwarvenTrim_Hover.png)}
+.t-Drow{--tr:url(assets/ui/trim/DrowTrim.png);--trh:url(assets/ui/trim/DrowTrim_Hover.png)}
+.t-Mercenary{--tr:url(assets/ui/trim/MercenaryTrim.png);--trh:url(assets/ui/trim/MercenaryTrim_Hover.png)}
+.t-Dragon{--tr:url(assets/ui/trim/DragonTrim.png);--trh:url(assets/ui/trim/DragonTrim_Hover.png)}
+.t-Archon{--tr:url(assets/ui/trim/ArchonTrim.png);--trh:url(assets/ui/trim/ArchonTrim_Hover.png)}
+.t-Djinn{--tr:url(assets/ui/trim/DjinnTrim.png);--trh:url(assets/ui/trim/DjinnTrim_Hover.png)}
+.t-Makers{--tr:url(assets/ui/trim/MakersTrim.png);--trh:url(assets/ui/trim/MakersTrim_Hover.png)}
+.t-Good{--tr:url(assets/ui/trim/GoodTrim.png);--trh:url(assets/ui/trim/GoodTrim_Hover.png)}
+.t-Evil{--tr:url(assets/ui/trim/EvilTrim.png);--trh:url(assets/ui/trim/EvilTrim_Hover.png)}
+.t-Order{--tr:url(assets/ui/trim/OrderTrim.png);--trh:url(assets/ui/trim/OrderTrim_Hover.png)}
+.t-Chaos{--tr:url(assets/ui/trim/ChaosTrim.png);--trh:url(assets/ui/trim/ChaosTrim_Hover.png)}
+.t-Balance{--tr:url(assets/ui/trim/BalanceTrim.png);--trh:url(assets/ui/trim/BalanceTrim_Hover.png)}
+.t-Silver{--tr:url(assets/ui/trim/Silver.png);--trh:url(assets/ui/trim/Silver.png)}
 
 .search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
@@ -245,8 +269,14 @@ the base values <i>v</i>.</div>
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
 
+  var TRIMF={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
+  function trimOf(it){
+    if(it.pr) return it.pr.al===1 ? 'Good' : it.pr.al===2 ? 'Evil' : it.pr.al===3 ? 'Silver' : {4:'Order',5:'Chaos',6:'Balance'}[it.pr.ax];
+    return it.fn && TRIMF[it.fn] ? it.fn : null;
+  }
   function itemCell(it, plain){
     var b=el('button','cell'); b.type='button'; b.setAttribute('aria-label', it.n);
+    var tr=trimOf(it); if(tr) b.classList.add('t-'+tr);
     if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
