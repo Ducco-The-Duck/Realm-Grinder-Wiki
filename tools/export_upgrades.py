@@ -765,6 +765,13 @@ for idx, r in todo:
         item['more_note'] = mo.get('note')
     by_cat[CATS[r['cat']]].append(item)
 
+# the Dragon faction (a prestige faction) becomes available at Ascension 1, and so does everything that needs it
+for items_ in by_cat.values():
+    for u in items_:
+        if u.get('faction') == 12 or u.get('spell') == "Dragon's Breath" or u['name'] == 'Dragon Tamer' \
+                or any('Dragon as your prestige faction' in c_ for c_ in u['conditions']):
+            if (u['asc_min'] or 0) < 1: u['asc_min'] = 1
+
 # the astral factions (Archon, Djinn, Makers) exist from Ascension 2, and so does everything that belongs to them
 for u in by_cat['allegiances']:
     if u['faction'] in (13, 14, 15) and (u['asc_min'] or 0) < 2: u['asc_min'] = 2
@@ -854,7 +861,7 @@ for idx, r in enumerate(rows):
     by_cat['magic'].append({
         'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
         'description': paras, 'sources': [], 'requirements': reqs, 'conditions': [], 'undecoded': [],
-        'asc_min': (None if all('Reincarnations' in v for v in ra.values()) and ra else reaches or None), 'asc_max': None, 'group': r.get('grp'), 'tier': None, 'building': None,
+        'asc_min': (None if ra and all(v.startswith('To unlock, you need to have at least') and 'activity time' not in v for v in ra.values()) else reaches or None), 'asc_max': None, 'group': r.get('grp'), 'tier': None, 'building': None,
         'spell': spell, 'spell_tier': r['sr'] + 1, 'unlock_by_asc': ra,
     })
 
