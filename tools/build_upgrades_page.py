@@ -1,4 +1,4 @@
-"""Generate docs/upgrades.html from data/upgrade_pages.json.
+"""Generate the four upgrade pages (Allegiance, Magic, Secret, Miscellaneous) and the hub docs/upgrades.html from data/upgrade_pages.json.
 
     python -I tools/build_upgrades_page.py
 """
@@ -194,7 +194,7 @@ html = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Upgrades</title>
+<title>__TITLE__</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
@@ -271,8 +271,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <body>
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
-<h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Click a section header to fold it. Magic (with the spell tiers), Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
+<h1>__H1__</h1>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Click a section header to fold it. __SUB__</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -544,7 +544,9 @@ the base values <i>v</i>.</div>
     opts.forEach(function(o){ var op=el('option',null,o[1]); op.value=String(o[0]); sel.appendChild(op); });
     sel.value=String(val); sel.disabled=!!disabled;
   }
+  var HAS_PICK=!!document.getElementById('pk-b');
   function syncPick(){
+    if(!HAS_PICK) return;
     var base=facOf(PICK.b), hint='';
     var bo=[[-1,'All factions']]; FACS.forEach(function(f){ if(f.role==='base'||f.role==='merc') bo.push([f.i,f.n]); });
     fillSel(document.getElementById('pk-b'), bo, PICK.b, false);
@@ -620,7 +622,7 @@ the base values <i>v</i>.</div>
   }
   function savePick(){ try{ localStorage.setItem('alleg-pick', JSON.stringify(PICK)); }catch(e){} }
   try{ var sp=JSON.parse(localStorage.getItem('alleg-pick')||'null'); if(sp && typeof sp.b==='number') PICK={b:sp.b|0, p:sp.p|0, a:sp.a|0}; }catch(e){}
-  bindPick('pk-b','b'); bindPick('pk-p','p'); bindPick('pk-a','a');
+  if(HAS_PICK){ bindPick('pk-b','b'); bindPick('pk-p','p'); bindPick('pk-a','a'); }
 
   function apply(){
     cells.forEach(function(p){ decorate(p[0], p[1]); });
@@ -643,7 +645,64 @@ the base values <i>v</i>.</div>
 </html>
 '''
 import search_snippet
-html = html.replace('__DATA__', data)
-html = search_snippet.apply(html, 'Search upgrade names and descriptions')
-open(os.path.join(ROOT, 'docs', 'upgrades.html'), 'w', encoding='utf8').write(html)
-print('docs/upgrades.html', len(html) // 1024, 'KB;', [(x['id'], x['count']) for x in sections])
+import re as _re
+SPLIT = [
+    ('upgrades-allegiance.html', 'Allegiance Upgrades', ['allegiances'],
+     'The treaty tiers and the twelve faction upgrades of every faction, the Proofs, Heritages, unique buildings, Bloodlines and '
+     'Lineages. Pick a base faction to see its upgrades together with those of a prestige and an astral faction.'),
+    ('upgrades-magic.html', 'Magic Upgrades', ['magic'],
+     'The Magic upgrades, including the spell tiers: one stack per spell with its tiers 2 to 5 and what unlocks each.'),
+    ('upgrades-secret.html', 'Secret Upgrades', ['secret'],
+     'The Secret upgrades: the ones that appear once you own a trophy or an artifact.'),
+    ('upgrades-misc.html', 'Miscellaneous Upgrades', ['misc', 'buildings'],
+     'The Misc upgrades (the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series) and '
+     'the Building upgrades.'),
+]
+total = 0
+for fname, title, ids, sub in SPLIT:
+    secs = [x for x in sections if x['id'] in ids]
+    secs.sort(key=lambda x: ids.index(x['id']))
+    pdata = json.dumps({'max': meta['max_ascension'], 'sections': secs, 'factions': FACTIONS}, ensure_ascii=False,
+                       separators=(',', ':')).replace('</', '<\\/')
+    h = html.replace('__DATA__', pdata).replace('__TITLE__', 'Realm Grinder ' + title).replace('__H1__', title).replace('__SUB__', sub)
+    if 'allegiances' not in ids:      # no faction picker on the other pages
+        h = _re.sub(r'  <div class="row" id="alleg-row">.*?</div>\n', '', h, flags=_re.S)
+    h = search_snippet.apply(h, 'Search upgrade names and descriptions', fname)
+    open(os.path.join(ROOT, 'docs', fname), 'w', encoding='utf8').write(h)
+    print('docs/' + fname, len(h) // 1024, 'KB;', [(x['id'], x['count']) for x in secs])
+    total += len(h)
+
+# the old address becomes the hub of the four pages
+hub = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
+<title>Realm Grinder Upgrades</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
+@media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:620px;margin:0 auto;padding:32px 16px}
+nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 18px;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--fg);font-weight:600;border-bottom:2px solid var(--accent)}
+h1{margin:0 0 4px;font-size:1.7rem}
+.sub{color:var(--muted);margin:0 0 20px}
+.cards{display:grid;gap:12px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
+a.card:hover{border-color:var(--accent)}a.card b{display:block}a.card span{color:var(--muted);font-size:.92rem}
+/*SEARCH_CSS*/
+</style></head><body><main>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
+<h1>Upgrades</h1>
+<p class="sub">The upgrades are split into four pages.</p>
+<div class="cards">
+__CARDS__
+</div></main></body></html>
+"""
+cards = '\n'.join(f'<a class="card" href="{f}"><b>{t}</b><span>{sub}</span></a>' for f, t, ids, sub in SPLIT)
+hub = hub.replace('__CARDS__', cards)
+hub = search_snippet.apply(hub.replace('<div class="search">', ''), '', None)
+open(os.path.join(ROOT, 'docs', 'upgrades.html'), 'w', encoding='utf8').write(hub)
+print('docs/upgrades.html (hub)', len(hub) // 1024, 'KB')

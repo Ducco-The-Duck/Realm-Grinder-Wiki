@@ -52,14 +52,22 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 /* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
-html{font-size:21px}
+html{font-size:25px}
 body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.45;letter-spacing:.01em}
-main{max-width:880px}
-#tip{width:min(560px,calc(100vw - 16px))}
-#pop .card{width:min(560px,100%)}
-#more .card{width:min(580px,100%)}
+main{max-width:940px}
+#tip{width:min(620px,calc(100vw - 16px))}
+#pop .card{width:min(620px,100%)}
+#more .card{width:min(640px,100%)}
 h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
 input,select,button,textarea{font-family:inherit}
+/* the Upgrades entry of the nav drops down to the four upgrade pages */
+.dd-nav{position:relative;display:inline-block}
+.dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu{display:flex}
+.dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
+.dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
+.dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
 /* formulas: KaTeX keeps its own fonts for symbols and brackets (their sizes are baked into its layout);
    letters and digits take the game's font */
 .katex .mathnormal,.katex .mathit,.katex .mathrm,.katex .mord:not(.mop):not(.mspace):not(.delimsizing):not(.sizing){font-family:"Liony",KaTeX_Main,serif}
@@ -139,7 +147,20 @@ JS = r'''
 '''
 
 
-def apply(html, placeholder):
+UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),
+                 ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
+
+
+def upgrades_nav(current_file=None, parent_current=False):
+    """the nav entry "Upgrades" with its drop-down of the four upgrade pages"""
+    links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
+    return ('<span class="dd-nav"><a href="upgrades.html"' + (' aria-current="page"' if parent_current else '') +
+            '>Upgrades</a><span class="dd-menu">' + links + '</span></span>')
+
+
+def apply(html, placeholder, current_file=None):
     """Fill the three markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/."""
+    html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
+    html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
     return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
                 .replace('/*SEARCH_JS*/', JS))

@@ -93,14 +93,22 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 /* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
-html{font-size:21px}
+html{font-size:25px}
 body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.45;letter-spacing:.01em}
-main{max-width:880px}
-#tip{width:min(560px,calc(100vw - 16px))}
-#pop .card{width:min(560px,100%)}
-#more .card{width:min(580px,100%)}
+main{max-width:940px}
+#tip{width:min(620px,calc(100vw - 16px))}
+#pop .card{width:min(620px,100%)}
+#more .card{width:min(640px,100%)}
 h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
 input,select,button,textarea{font-family:inherit}
+/* the Upgrades entry of the nav drops down to the four upgrade pages */
+.dd-nav{position:relative;display:inline-block}
+.dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu{display:flex}
+.dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
+.dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
+.dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
 /* formulas: KaTeX keeps its own fonts for symbols and brackets (their sizes are baked into its layout);
    letters and digits take the game's font */
 .katex .mathnormal,.katex .mathit,.katex .mathrm,.katex .mord:not(.mop):not(.mspace):not(.delimsizing):not(.sizing){font-family:"Liony",KaTeX_Main,serif}
@@ -115,7 +123,7 @@ input,select,button,textarea{font-family:inherit}
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a><span class="dd-nav"><a href="upgrades.html">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Challenges</h1>
 <p class="sub">66 challenges. The first square of each faction is the permanent spell upgrade you get for completing all of that faction's challenges. Hover an icon for the requirements, the challenge itself, the reward and its formula. Everything from the Mercenary section on is read from the game code and has not been checked in the game.</p>
 <div class="search"><input id="q" type="search" placeholder="Search challenge names, flavor text, challenge and reward descriptions" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
