@@ -11656,13 +11656,12 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the Archon Quest",
-"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
+"Complete the Archon Quest"
 ],
 "conditions": [
 "having the Alliance of your base faction",
 "having the Alliance of your prestige faction",
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the artifact Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -12562,13 +12561,12 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the Djinn Quest",
-"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
+"Complete the Djinn Quest"
 ],
 "conditions": [
 "having the Alliance of your base faction",
 "having the Alliance of your prestige faction",
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the artifact Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -13491,13 +13489,12 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the Makers Quest",
-"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
+"Complete the Makers Quest"
 ],
 "conditions": [
 "having the Alliance of your base faction",
 "having the Alliance of your prestige faction",
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the artifact Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,

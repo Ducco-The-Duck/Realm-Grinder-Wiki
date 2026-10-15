@@ -870,9 +870,8 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
                 for part_ in c_.split('; '):
                     m_ = re.match(r'(?:having reached )?Ascension (\d): Reincarnation (\d+)\+( and the trophy .*)?$', part_)
                     if m_:
-                        steps_.append((int(m_.group(1)), f'Reincarnation {m_.group(2)}'))
-                        if m_.group(3):      # an artifact found once, not something about the current Era: an unlock
-                            u['requirements'].append(f"Artifact: {m_.group(3)[len(' and the trophy '):]} (needed from Ascension {m_.group(1)})")
+                        extra_ = m_.group(3)[len(' and the trophy '):] if m_.group(3) else ''
+                        steps_.append((int(m_.group(1)), f'Reincarnation {m_.group(2)}' + (f' and the artifact {extra_}' if extra_ else '')))
         if steps_:
             al_ = [r_ for r_ in u['requirements'] if r_.startswith('Upgrade: the Alliance of your')]
             u['requirements'] = [r_ for r_ in u['requirements'] if r_ not in al_]
