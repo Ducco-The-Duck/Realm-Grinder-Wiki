@@ -1151,7 +1151,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Enchanted Field Quest"
+"Complete the Enchanted Field Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -1204,7 +1204,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Swarming Tower Quest"
+"Complete the Swarming Tower Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -2101,7 +2101,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Training Grounds Quest"
+"Complete the Training Grounds Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -2154,7 +2154,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Arboreal City Quest"
+"Complete the Arboreal City Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -3010,7 +3010,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Heaven's Domain Quest"
+"Complete the Heaven's Domain Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -3063,7 +3063,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Holy Site Quest"
+"Complete the Holy Site Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -3939,7 +3939,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Goblin Bank Quest"
+"Complete the Goblin Bank Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -3992,7 +3992,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Slave Market Quest"
+"Complete the Slave Market Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -4855,7 +4855,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Undercity Quest"
+"Complete the Undercity Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -4908,7 +4908,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Flesh Workshop Quest"
+"Complete the Flesh Workshop Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -5772,7 +5772,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Infernal Realm Quest"
+"Complete the Infernal Realm Quest"
 ],
 "conditions": [
 "being at Reincarnation 16 or higher"
@@ -5833,7 +5833,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Burning Abyss Quest"
+"Complete the Burning Abyss Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -6699,7 +6699,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Olympian Hall Quest"
+"Complete the Olympian Hall Quest"
 ],
 "conditions": [
 "being at Reincarnation 24 or higher"
@@ -6752,7 +6752,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Mountain Palace Quest"
+"Complete the Mountain Palace Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -7648,7 +7648,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Stonehenge Quest"
+"Complete the Stonehenge Quest"
 ],
 "conditions": [
 "being at Reincarnation 24 or higher"
@@ -7701,7 +7701,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Ziggurat Quest"
+"Complete the Ziggurat Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -8576,7 +8576,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Sunken City Quest"
+"Complete the Sunken City Quest"
 ],
 "conditions": [
 "being at Reincarnation 24 or higher"
@@ -8629,7 +8629,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Forbidden Library Quest"
+"Complete the Forbidden Library Quest"
 ],
 "conditions": [],
 "undecoded": [],
@@ -8669,15 +8669,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Sturdy Bearded Man's Quest",
+"Complete the Sturdy Bearded Man's Quest",
 "Upgrade: the Alliance of your base faction"
 ],
 "conditions": [
-"having Good alignment",
-"having no prestige faction",
-"not playing as Mercenary",
-"not having a Research Facility or any research bought, unless you have the upgrade Secrets of the Underworld",
-"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+"starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -9537,7 +9533,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Dwarven Forge Quest"
+"Complete the Dwarven Forge Quest"
 ],
 "conditions": [
 "being at Reincarnation 32 or higher"
@@ -9590,7 +9586,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest High Bastion Quest"
+"Complete the High Bastion Quest"
 ],
 "conditions": [
 "being at Reincarnation 112 or higher"
@@ -9632,15 +9628,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Cloaked Shady Figure's Quest",
+"Complete the Cloaked Shady Figure's Quest",
 "Upgrade: the Alliance of your base faction"
 ],
 "conditions": [
-"having Evil alignment",
-"having no prestige faction",
-"not playing as Mercenary",
-"not having a Research Facility or any research bought, unless you have the upgrade Secrets of the Underworld",
-"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+"starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -10484,7 +10476,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Spider Sanctuary Quest"
+"Complete the Spider Sanctuary Quest"
 ],
 "conditions": [
 "being at Reincarnation 32 or higher"
@@ -10537,7 +10529,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Brothel Quest"
+"Complete the Brothel Quest"
 ],
 "conditions": [
 "being at Reincarnation 112 or higher"
@@ -10587,10 +10579,7 @@
 "Upgrade: the Alliance of your base faction"
 ],
 "conditions": [
-"having Neutral alignment",
-"having no prestige faction",
-"not playing as Mercenary",
-"having reached Ascension 2: Reincarnation 110+; Ascension 3: Reincarnation 165+; Ascension 4: Reincarnation 235+"
+"starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 1,
@@ -11522,7 +11511,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Wyrm's Den Quest"
+"Complete the Wyrm's Den Quest"
 ],
 "conditions": [
 "being at Reincarnation 46 or higher"
@@ -11575,7 +11564,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Dragon Pasture Quest"
+"Complete the Dragon Pasture Quest"
 ],
 "conditions": [
 "being at Reincarnation 112 or higher"
@@ -11677,12 +11666,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the path of Order",
-"having a prestige faction",
-"not having an astral faction yet",
-"not playing as Mercenary",
-"being at Reincarnation 125 or higher",
-"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -12489,7 +12473,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Nexus Quest"
+"Complete the Nexus Quest"
 ],
 "conditions": [
 "being at Reincarnation 130 or higher"
@@ -12591,12 +12575,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the path of Chaos",
-"having a prestige faction",
-"not having an astral faction yet",
-"not playing as Mercenary",
-"being at Reincarnation 125 or higher",
-"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -13426,7 +13405,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Pavilion Quest"
+"Complete the Pavilion Quest"
 ],
 "conditions": [
 "being at Reincarnation 130 or higher"
@@ -13528,12 +13507,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the path of Balance",
-"having a prestige faction",
-"not having an astral faction yet",
-"not playing as Mercenary",
-"being at Reincarnation 125 or higher",
-"having reached Ascension 4: Reincarnation 255+ and the trophy Mask of Scorch'Rah; Ascension 3: Reincarnation 172+"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -14357,7 +14331,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Hall of Origination Quest"
+"Complete the Hall of Origination Quest"
 ],
 "conditions": [
 "being at Reincarnation 130 or higher"
@@ -14410,7 +14384,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Mercenary Encampment Quest"
+"Complete the Mercenary Encampment Quest"
 ],
 "conditions": [
 "being at Reincarnation 75 or higher"
@@ -14463,7 +14437,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Mercenary Encampment Quest"
+"Complete the Mercenary Encampment Quest"
 ],
 "conditions": [
 "being at Reincarnation 75 or higher"
@@ -14516,7 +14490,7 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the quest Mercenary Encampment Quest"
+"Complete the Mercenary Encampment Quest"
 ],
 "conditions": [
 "being at Reincarnation 75 or higher"

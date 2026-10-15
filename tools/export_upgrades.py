@@ -784,7 +784,7 @@ for u in by_cat['allegiances']:
     q_ = _q.get(u['name'] + ' Quest') or (_q.get('Mercenary Encampment Quest') if u['faction'] == 11 and u['akind'] == 'unique' else None)
     if u['akind'] != 'unique' or u['name'].endswith(' Quest') or not q_: continue
     if (u['asc_min'] or 0) < (q_['asc_min'] or 0): u['asc_min'] = q_['asc_min']
-    if not u['sources']: u['requirements'].insert(0, f"Complete the quest {q_['name']}")
+    if not u['sources']: u['requirements'].insert(0, f"Complete the {q_['name']}")
     for c_ in q_['conditions']:
         if c_.startswith('being at Reincarnation') and c_ not in u['conditions']: u['conditions'].append(c_)
 
@@ -803,7 +803,7 @@ for u in by_cat['allegiances']:
     for s_ in u['sources']:
         m_ = re.fullmatch(r'Research (\w+) Trophy', s_['name'])
         if m_ and m_.group(1) in _RF and _RQ.get(_RF[m_.group(1)]):
-            u['requirements'].insert(0, f"Complete the quest {_RQ[_RF[m_.group(1)]]}")
+            u['requirements'].insert(0, f"Complete the {_RQ[_RF[m_.group(1)]]}")
         else: keep.append(s_)
     u['sources'] = keep
     u['conditions'] = [re.sub(r'Miscellaneous trophy: Research (\w+) Trophy',
@@ -818,7 +818,7 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     for s_ in u['sources']:
         m_ = re.fullmatch(r'Archeology (\w+) Trophy', s_['name'])
         if m_ and m_.group(1) in _ARCH:
-            u['requirements'].insert(0, 'Upgrade: ' + _ARCH[m_.group(1)])
+            u['requirements'].insert(0, ('Complete the ' if _ARCH[m_.group(1)].endswith('Quest') else 'Upgrade: ') + _ARCH[m_.group(1)])
         else: keep.append(s_)
     u['sources'] = keep
     for k_ in ('requirements', 'conditions'):
@@ -827,7 +827,7 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
             ms_ = _ARCH_RE.findall(c_)
             if ms_ and all(m in _ARCH for m in ms_):
                 names_ = [_ARCH[m] for m in ms_]
-                c_ = ('Upgrade: ' + names_[0]) if len(names_) == 1 else 'Any one of the upgrades: ' + ', '.join(names_)
+                c_ = (('Complete the ' if names_[0].endswith('Quest') else 'Upgrade: ') + names_[0]) if len(names_) == 1 else 'Any one of the upgrades: ' + ', '.join(names_)
             out_.append(c_)
         u[k_] = out_
 
@@ -848,6 +848,18 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
         c_ = re.sub(r'^following the (\w+) path$', r'following the path of \1', c_)
         out_.append(c_)
     u['conditions'] = out_
+    # prestige and astral Trade Treaties: only the Reincarnation needed at each Ascension is worth listing
+    if u.get('akind') == 'tier' and u['name'].endswith('Trade Treaty') and f_ in (9, 10, 12, 13, 14, 15):
+        steps_ = []
+        for c_ in u['conditions']:
+            m_ = re.match(r'being at Reincarnation (\d+) or higher$', c_)
+            if m_ and f_ >= 13: steps_.append((2, f'Reincarnation {m_.group(1)}'))
+            if c_.startswith('having reached Ascension'):
+                for part_ in c_.split('; '):
+                    m_ = re.match(r'(?:having reached )?Ascension (\d): Reincarnation (\d+)\+( and the trophy .*)?$', part_)
+                    if m_: steps_.append((int(m_.group(1)), f'Reincarnation {m_.group(2)}' + (m_.group(3) or '')))
+        if steps_:
+            u['conditions'] = ['starting from ' + ' / '.join(f'{t_} (Ascension {a_})' for a_, t_ in sorted(steps_))]
     u['description'] = [p_ for p_ in u['description'] if not p_['text'].startswith('Note: purchasing this upgrade will prevent you')]
 
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
