@@ -848,6 +848,16 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
         c_ = re.sub(r'^following the (\w+) path$', r'following the path of \1', c_)
         out_.append(c_)
     u['conditions'] = out_
+    # one-time things (activity time, completed challenges, upgrades bought) are unlocks, not availability: they go to the requirements
+    keep_ = []
+    for c_ in u['conditions']:
+        m_ = re.fullmatch(r'having used (.+) for at least (.+) of activity time', c_)
+        if m_: u['requirements'].append(f'Use {m_.group(1)} for at least {m_.group(2)} of activity time'); continue
+        m_ = re.fullmatch(r'having (completed|bought) (.+)', c_)
+        if m_ and 'this Era' not in c_:
+            u['requirements'].append(('Complete ' if m_.group(1) == 'completed' else 'Buy ') + m_.group(2)); continue
+        keep_.append(c_)
+    u['conditions'] = keep_
     # prestige and astral Trade Treaties: only the Reincarnation needed at each Ascension is worth listing
     if u.get('akind') == 'tier' and u['name'].endswith('Trade Treaty') and f_ in (9, 10, 12, 13, 14, 15):
         steps_ = []
@@ -857,7 +867,10 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
             if c_.startswith('having reached Ascension'):
                 for part_ in c_.split('; '):
                     m_ = re.match(r'(?:having reached )?Ascension (\d): Reincarnation (\d+)\+( and the trophy .*)?$', part_)
-                    if m_: steps_.append((int(m_.group(1)), f'Reincarnation {m_.group(2)}' + (m_.group(3) or '')))
+                    if m_:
+                        steps_.append((int(m_.group(1)), f'Reincarnation {m_.group(2)}'))
+                        if m_.group(3):      # an artifact found once, not something about the current Era: an unlock
+                            u['requirements'].append(f"Artifact: {m_.group(3)[len(' and the trophy '):]} (needed from Ascension {m_.group(1)})")
         if steps_:
             u['conditions'] = ['starting from ' + ' / '.join(f'{t_} (Ascension {a_})' for a_, t_ in sorted(steps_))]
     u['description'] = [p_ for p_ in u['description'] if not p_['text'].startswith('Note: purchasing this upgrade will prevent you')]

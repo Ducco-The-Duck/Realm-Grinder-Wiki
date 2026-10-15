@@ -11663,10 +11663,11 @@
 ],
 "requirements": [
 "Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction"
+"Upgrade: the Alliance of your prestige faction",
+"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -12572,10 +12573,11 @@
 ],
 "requirements": [
 "Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction"
+"Upgrade: the Alliance of your prestige faction",
+"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -13504,10 +13506,11 @@
 ],
 "requirements": [
 "Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction"
+"Upgrade: the Alliance of your prestige faction",
+"Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
-"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 and the trophy Mask of Scorch'Rah (Ascension 4)"
+"starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -23279,10 +23282,10 @@
 "name": "Fairy Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Fairy Chanting for at least 1 hour of activity time"
+"requirements": [
+"Use Fairy Chanting for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23353,10 +23356,10 @@
 "name": "Elven Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Moon Blessing for at least 1 hour of activity time"
+"requirements": [
+"Use Moon Blessing for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23427,10 +23430,10 @@
 "name": "Angel Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used God's Hand for at least 1 hour of activity time"
+"requirements": [
+"Use God's Hand for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23501,10 +23504,10 @@
 "name": "Goblin Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Goblin's Greed for at least 1 hour of activity time"
+"requirements": [
+"Use Goblin's Greed for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23575,10 +23578,10 @@
 "name": "Undead Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Night Time for at least 1 hour of activity time"
+"requirements": [
+"Use Night Time for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23649,10 +23652,10 @@
 "name": "Demon Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Hellfire Blast for at least 1 hour of activity time"
+"requirements": [
+"Use Hellfire Blast for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23723,10 +23726,10 @@
 "name": "Titan Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Lightning Strike for at least 1 hour of activity time"
+"requirements": [
+"Use Lightning Strike for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23799,10 +23802,10 @@
 "name": "Druid Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Grand Balance for at least 1 hour of activity time"
+"requirements": [
+"Use Grand Balance for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23875,10 +23878,10 @@
 "name": "Faceless Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Brainwave for at least 1 hour of activity time"
+"requirements": [
+"Use Brainwave for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23951,10 +23954,10 @@
 "name": "Dwarven Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Diamond Pickaxe for at least 1 hour of activity time"
+"requirements": [
+"Use Diamond Pickaxe for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -24029,10 +24032,10 @@
 "name": "Drow Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Combo Strike for at least 1 hour of activity time"
+"requirements": [
+"Use Combo Strike for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -24103,10 +24106,10 @@
 "name": "Dragon Master"
 }
 ],
-"requirements": [],
-"conditions": [
-"having used Dragon's Breath for at least 1 hour of activity time"
+"requirements": [
+"Use Dragon's Breath for at least 1 hour of activity time"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -28300,10 +28303,11 @@
 "name": "True Harlequin"
 }
 ],
-"requirements": [],
+"requirements": [
+"Buy upgrades from at least 5 different factions other than Mercenary"
+],
 "conditions": [
-"playing as Mercenary",
-"having bought upgrades from at least 5 different factions other than Mercenary"
+"playing as Mercenary"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -50097,10 +50101,10 @@
 }
 ],
 "sources": [],
-"requirements": [],
-"conditions": [
-"having completed at least one challenge of the Fairy, Elven, Angel, Goblin, Undead or Demon factions"
+"requirements": [
+"Complete at least one challenge of the Fairy, Elven, Angel, Goblin, Undead or Demon factions"
 ],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
