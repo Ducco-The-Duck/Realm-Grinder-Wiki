@@ -30,7 +30,7 @@ MANUAL_PARAS = {
     ],
 }
 
-NB = ' (Reincarnations made − {k})'
+NB = ' (Reincarnations made - {k})'
 
 
 def n_after(k):
