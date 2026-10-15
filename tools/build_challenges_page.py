@@ -173,6 +173,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     var g=el('div','grid');
     s.items.forEach(function(it){
       var b=el('button','cell'+(it.su?' su':'')); b.type='button';
+      var tn=trimName(s.name); if(tn) b.classList.add('t-'+tn);
       b.setAttribute('aria-label', it.n);
       b._s=normS([it.n,it.fl,it.c,it.r.join(' '),s.name,it.a].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }

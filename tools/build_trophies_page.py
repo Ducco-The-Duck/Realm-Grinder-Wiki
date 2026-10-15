@@ -182,8 +182,10 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
   }
   SECTIONS.forEach(function(s){
     var sec=el('section'); var h=el('h2',null,s.title); h.appendChild(el('small',null,s.n+' trophies')); sec.appendChild(h);
-    if(s.subs){ s.subs.forEach(function(sub){ var sh=el('h3','subh',sub.title); sh.appendChild(el('small',null,sub.n+' trophies')); sec.appendChild(sh); sec.appendChild(grid(sub.cells)); }); }
-    else sec.appendChild(grid(s.cells));
+    var inner=el('div');
+    if(s.subs){ s.subs.forEach(function(sub){ var sh=el('h3','subh',sub.title); sh.appendChild(el('small',null,sub.n+' trophies')); inner.appendChild(sh); inner.appendChild(grid(sub.cells)); }); }
+    else inner.appendChild(grid(s.cells));
+    foldable(sec, h, inner, s.title);
     root.appendChild(sec);
   });
   searchInit(root);

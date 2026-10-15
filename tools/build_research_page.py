@@ -268,6 +268,7 @@ popups are always the base values <i>v</i>.</div>
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
     if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
+    var tn=trimName(it.fn); if(tn) b.classList.add('t-'+tn);
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
     function show(){ showTip(it,b); }
@@ -283,7 +284,8 @@ popups are always the base values <i>v</i>.</div>
     var g=el('div','grid');
     g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl},'buy'));
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
-    sec.appendChild(g); root.appendChild(sec);
+    var inner=el('div'); inner.appendChild(g); foldable(sec, h, inner, br.name);
+    root.appendChild(sec);
   });
   searchInit(root);
   function apply(){

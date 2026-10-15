@@ -161,7 +161,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
       b.addEventListener('click',function(e){ e.stopPropagation(); showTip(it,b); });
       g.appendChild(b);
     });
-    sec.appendChild(g); root.appendChild(sec);
+    var inner=el('div'); inner.appendChild(g); foldable(sec, h, inner, s.title);
+    root.appendChild(sec);
   });
   searchInit(root);
 })();

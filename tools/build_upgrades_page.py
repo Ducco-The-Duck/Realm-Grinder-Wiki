@@ -264,47 +264,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
-/* the game's icon frames: gold by default, a colour of their own for each faction (9-slice of the 20x20 sprites) */
-.cell{--tr:url(assets/ui/trim/Gold.png);--trh:url(assets/ui/trim/Gold_Hover.png);padding:0;border:6px solid transparent;border-radius:0;
-  background:none;border-image-source:var(--tr);border-image-slice:5 fill;border-image-width:6px;border-image-repeat:stretch;image-rendering:pixelated}
-.cell img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(87.7% + 10.5px);height:calc(87.7% + 10.5px);max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
-.cell:hover,.cell:focus-visible{background:none;outline:none;box-shadow:none;border-image-source:var(--trh);filter:brightness(1.15)}
-.cell.na{opacity:.35;filter:grayscale(1)}
-.cell.na:hover{filter:grayscale(1) brightness(1.2)}
-.badge{z-index:3}
-.t-Fairy{--tr:url(assets/ui/trim/FairyTrim.png);--trh:url(assets/ui/trim/FairyTrim_Hover.png)}
-.t-Elven{--tr:url(assets/ui/trim/ElvenTrim.png);--trh:url(assets/ui/trim/ElvenTrim_Hover.png)}
-.t-Angel{--tr:url(assets/ui/trim/AngelTrim.png);--trh:url(assets/ui/trim/AngelTrim_Hover.png)}
-.t-Goblin{--tr:url(assets/ui/trim/GoblinTrim.png);--trh:url(assets/ui/trim/GoblinTrim_Hover.png)}
-.t-Undead{--tr:url(assets/ui/trim/UndeadTrim.png);--trh:url(assets/ui/trim/UndeadTrim_Hover.png)}
-.t-Demon{--tr:url(assets/ui/trim/DemonTrim.png);--trh:url(assets/ui/trim/DemonTrim_Hover.png)}
-.t-Titan{--tr:url(assets/ui/trim/TitanTrim.png);--trh:url(assets/ui/trim/TitanTrim_Hover.png)}
-.t-Druid{--tr:url(assets/ui/trim/DruidTrim.png);--trh:url(assets/ui/trim/DruidTrim_Hover.png)}
-.t-Faceless{--tr:url(assets/ui/trim/FacelessTrim.png);--trh:url(assets/ui/trim/FacelessTrim_Hover.png)}
-.t-Dwarven{--tr:url(assets/ui/trim/DwarvenTrim.png);--trh:url(assets/ui/trim/DwarvenTrim_Hover.png)}
-.t-Drow{--tr:url(assets/ui/trim/DrowTrim.png);--trh:url(assets/ui/trim/DrowTrim_Hover.png)}
-.t-Mercenary{--tr:url(assets/ui/trim/MercenaryTrim.png);--trh:url(assets/ui/trim/MercenaryTrim_Hover.png)}
-.t-Dragon{--tr:url(assets/ui/trim/DragonTrim.png);--trh:url(assets/ui/trim/DragonTrim_Hover.png)}
-.t-Archon{--tr:url(assets/ui/trim/ArchonTrim.png);--trh:url(assets/ui/trim/ArchonTrim_Hover.png)}
-.t-Djinn{--tr:url(assets/ui/trim/DjinnTrim.png);--trh:url(assets/ui/trim/DjinnTrim_Hover.png)}
-.t-Makers{--tr:url(assets/ui/trim/MakersTrim.png);--trh:url(assets/ui/trim/MakersTrim_Hover.png)}
-.t-Good{--tr:url(assets/ui/trim/GoodTrim.png);--trh:url(assets/ui/trim/GoodTrim_Hover.png)}
-.t-Evil{--tr:url(assets/ui/trim/EvilTrim.png);--trh:url(assets/ui/trim/EvilTrim_Hover.png)}
-.t-Order{--tr:url(assets/ui/trim/OrderTrim.png);--trh:url(assets/ui/trim/OrderTrim_Hover.png)}
-.t-Chaos{--tr:url(assets/ui/trim/ChaosTrim.png);--trh:url(assets/ui/trim/ChaosTrim_Hover.png)}
-.t-Balance{--tr:url(assets/ui/trim/BalanceTrim.png);--trh:url(assets/ui/trim/BalanceTrim_Hover.png)}
-.t-Silver{--tr:url(assets/ui/trim/Silver.png);--trh:url(assets/ui/trim/Silver.png)}
-/* section headers are dropdowns */
-section.dd h2{display:flex;align-items:baseline;gap:8px;cursor:pointer;user-select:none}
-section.dd h2:hover{color:var(--accent)}
-section.dd h2 .chev{margin-left:auto;align-self:center;width:9px;height:9px;margin-right:6px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
-  transform:translateY(-3px) rotate(45deg);transition:transform .3s ease}
-section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
-.dd-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s ease,opacity .3s ease}
-.dd.open .dd-body,body.searching .dd .dd-body{grid-template-rows:1fr;opacity:1}
-.dd-in{overflow:hidden;min-height:0}
-@keyframes ddcell{from{opacity:0;transform:translateY(-10px) scale(.9)}to{opacity:1;transform:none}}
-.dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
+
 /*SEARCH_CSS*/
 </style>
 </head>
