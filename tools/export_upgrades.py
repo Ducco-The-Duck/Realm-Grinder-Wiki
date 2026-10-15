@@ -808,7 +808,7 @@ for u in by_cat['allegiances']:
                               lambda m: 'completed ' + (_RQ.get(_RF.get(m.group(1))) or m.group(0)), c_) for c_ in u['conditions']]
 
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
-for u in by_cat['allegiances']:
+for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     ns = [int(m.group(1)) for c_ in u['conditions'] for m in [re.search(r'Reincarnation (\d+)', c_)] if m and c_.startswith('being at')]
     if ns:
         need = 1 if max(ns) < 100 else 2 if max(ns) < 160 else 3 if max(ns) < 220 else 4

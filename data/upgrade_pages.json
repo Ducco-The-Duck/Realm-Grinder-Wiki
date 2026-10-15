@@ -49505,7 +49505,7 @@
 "being at Reincarnation 43 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 1,
 "asc_max": null,
 "group": "ReincarnationPowerUpgrade",
 "tier": -1,
@@ -49657,7 +49657,7 @@
 "being at Reincarnation 100 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 2,
 "asc_max": null,
 "group": "ReincarnationPowerUpgrade",
 "tier": -1,
@@ -49773,7 +49773,7 @@
 "being at Reincarnation 170 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 3,
 "asc_max": null,
 "group": "ReincarnationPowerUpgrade",
 "tier": -1,
@@ -49839,7 +49839,7 @@
 "being at Reincarnation 220 or higher"
 ],
 "undecoded": [],
-"asc_min": null,
+"asc_min": 4,
 "asc_max": null,
 "group": "ReincarnationPowerUpgrade",
 "tier": -1,
