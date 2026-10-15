@@ -120,6 +120,10 @@ body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radi
   --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
 body.steel .cs>button{padding:0 30px 0 6px}
 body.steel .cs ul{box-shadow:none}
+/* no bullets anywhere; the A marks on icons are small and in the game's font */
+ul{list-style:none;padding-left:0}
+li::marker{content:""}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.42rem;line-height:1;padding:1px 3px;border-radius:3px;letter-spacing:0}
 /* less vertical air everywhere */
 main{padding-top:10px;padding-bottom:40px}
 nav{margin:0 0 6px}

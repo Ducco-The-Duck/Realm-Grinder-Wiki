@@ -178,6 +178,10 @@ body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radi
   --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
 body.steel .cs>button{padding:0 30px 0 6px}
 body.steel .cs ul{box-shadow:none}
+/* no bullets anywhere; the A marks on icons are small and in the game's font */
+ul{list-style:none;padding-left:0}
+li::marker{content:""}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.42rem;line-height:1;padding:1px 3px;border-radius:3px;letter-spacing:0}
 /* less vertical air everywhere */
 main{padding-top:10px;padding-bottom:40px}
 nav{margin:0 0 6px}
@@ -643,7 +647,7 @@ the base values <i>v</i>.</div>
         var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
         if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
         if(!its.length) return;
-        allegBox.appendChild(el('div','subh',fi<0 ? 'General (the proofs for the alignment and path of your base faction, the bloodlines and the heritages)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);

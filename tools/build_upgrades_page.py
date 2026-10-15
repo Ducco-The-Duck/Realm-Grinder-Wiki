@@ -602,7 +602,7 @@ the base values <i>v</i>.</div>
         var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
         if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
         if(!its.length) return;
-        allegBox.appendChild(el('div','subh',fi<0 ? 'General (the proofs for the alignment and path of your base faction, the bloodlines and the heritages)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);
