@@ -138,7 +138,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 /* research slot pop-up: a number column and the source next to it */
 #tip .slots{display:grid;grid-template-columns:max-content 1fr;margin-top:5px;border-top:1px solid var(--line)}
 #tip .slots>span{padding:3px 0;border-bottom:1px solid var(--line);display:flex;align-items:center}
-#tip .slots .d{justify-content:center;min-width:2.1em;margin-right:12px;font-weight:700;white-space:nowrap}
+#tip .slots .d{justify-content:center;min-width:2.1em;padding-right:12px;font-weight:700;white-space:nowrap}
+#tip .slots>span:nth-last-child(-n+2){border-bottom:0}
 #tip .slots .d.base{color:var(--accent);font-size:1.2em}
 #tip .slots .d.pos{color:#8fe09a}
 #tip .slots .d.neg{color:#ef9b8c}

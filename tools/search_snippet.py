@@ -93,12 +93,13 @@ select option{font-family:"Liony",system-ui,sans-serif}
 body.steel #tip,body.steel #pop .card,body.steel #more .card{border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 6px;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:#ece6d8}
+sup{font-size:.62em;line-height:0;vertical-align:.5em;font-family:inherit}
 body.steel .pen-note,body.steel .search input{border:8px solid transparent;border-radius:0;background:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a}
 body.steel .search input{padding:0 8px}
 body.steel #tip{overflow:visible;line-height:1.15}
-body.steel #more header{background:#141414;margin-top:0}
+body.steel #more header{background:transparent;margin-top:0}
 #pop .card.narrow{width:auto;max-width:min(330px,100%);margin:0 auto}
 body.steel #pop .card.narrow{padding:0 12px 18px}
 #pop .card.narrow header{margin-bottom:12px}
@@ -226,6 +227,29 @@ JS = r'''
     });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
   }
+  // exponents written as superscript characters (10\u2076, x\u207b\u00b2) become real <sup> elements, so they are drawn in the page font
+  var SUPMAP={'\u2070':'0','\u00b9':'1','\u00b2':'2','\u00b3':'3','\u2074':'4','\u2075':'5','\u2076':'6','\u2077':'7','\u2078':'8','\u2079':'9','\u207b':'-'};
+  var SUPRE=/[\u2070\u00b9\u00b2\u00b3\u2074-\u2079\u207b]+/;
+  function supify(root){
+    var w=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), todo=[], n;
+    while((n=w.nextNode())){
+      if(SUPRE.test(n.nodeValue) && !(n.parentNode.closest && n.parentNode.closest('.katex,script,style'))) todo.push(n);
+    }
+    todo.forEach(function(t){
+      var frag=document.createDocumentFragment(), txt=t.nodeValue, re=new RegExp(SUPRE.source,'g'), last=0, m;
+      while((m=re.exec(txt))){
+        if(m.index>last) frag.appendChild(document.createTextNode(txt.slice(last,m.index)));
+        var sp=document.createElement('sup'); sp.textContent=m[0].replace(/./g,function(c){ return SUPMAP[c]||c; });
+        frag.appendChild(sp); last=m.index+m[0].length;
+      }
+      if(last<txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) supify(n); else if(n.nodeType===3 && n.parentNode) supify(n.parentNode); }); });
+  }).observe(document.body,{childList:true,subtree:true});
+  document.addEventListener('DOMContentLoaded',function(){ supify(document.body); });
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     enhanceSelects();

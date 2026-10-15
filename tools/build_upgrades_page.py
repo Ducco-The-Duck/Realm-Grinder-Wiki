@@ -243,7 +243,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
 #more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(480px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
-#more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;position:sticky;top:-14px;background:var(--card);padding:6px 0}
+#more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
 #more .bonus{border-top:1px solid var(--line);padding:8px 0}
 #more .bonus p{margin:0 0 2px}
@@ -430,7 +430,7 @@ the base values <i>v</i>.</div>
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function openGroup(en){
     var real=en.items.filter(function(it){ return !!it; });
-    poptitle.textContent=en.g+' ('+real.length+' upgrades)';
+    poptitle.textContent = en.cols ? en.g : en.g+' ('+real.length+' upgrades)';
     popgrid.textContent='';
     popgrid.className = en.cols ? 'grid cols'+en.cols : 'grid';
     pop.querySelector('.card').classList.toggle('narrow', !!en.cols);
