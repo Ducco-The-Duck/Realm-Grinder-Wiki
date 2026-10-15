@@ -108,7 +108,7 @@ section.dd h2 .chev{margin-left:auto;align-self:center;width:9px;height:9px;marg
 section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 .dd-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s ease,opacity .3s ease}
 .dd.open .dd-body,body.searching .dd .dd-body{grid-template-rows:1fr;opacity:1}
-.dd-in{overflow:hidden;min-height:0;content-visibility:auto;contain-intrinsic-size:auto 700px}
+.dd-in{overflow:hidden;min-height:0}
 @keyframes ddcell{from{opacity:0;transform:translateY(-10px) scale(.9)}to{opacity:1;transform:none}}
 .dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
 /* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */

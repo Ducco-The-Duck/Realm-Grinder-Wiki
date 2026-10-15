@@ -129,6 +129,7 @@ def entries(items):
         out[pos[g]]['items'].append(item(u))
     for e in out:
         if e['g'] and len(e['items']) == 1: e['g'] = None
+        elif e['g']: e['g'] = re.sub(r'\s*\bupgrades?\b', '', e['g'])      # a stack is named for what it is, not "... upgrades"
     return out
 
 
@@ -587,7 +588,7 @@ the base values <i>v</i>.</div>
       (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
       FACS.forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
-        var en={g:f.n+' upgrades', items:its}, gb=itemCell(its[0],true);
+        var en={g:f.n, items:its}, gb=itemCell(its[0],true);
         gb.classList.add('group');
         gb.setAttribute('aria-label', en.g+', '+its.length+' upgrades');
         gb.appendChild(el('span','badge','\u00d7'+its.length));

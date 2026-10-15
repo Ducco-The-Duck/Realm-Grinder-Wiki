@@ -21,6 +21,24 @@ def pretty(t):
     return re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', t)
 
 
+_BLD = {re.sub(r"[^a-z]", '', b['name'].lower()): b.get('name_plural') or b['name']
+        for b in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))}
+STACK_TITLES = {'Gain Coin': 'Coins', 'Gain Coin Clicking': 'Coins from Clicks', 'Click Treasure': 'Clicks',
+                'Find Faction Coin': 'Faction Coins', 'Have Assistants': 'Assistants', 'Find Artifact': 'Artifacts',
+                'Gain Gem': 'Gems', 'Gain Ruby': 'Rubies', 'Purchase Upgrade': 'Upgrades', 'Gain Reincarnate': 'Reincarnations',
+                'Spend Mana': 'Mana', 'Cast Spell': 'Spells', 'Unlock Spell Tier': 'Arcane Brilliance',
+                'Build Building': 'Buildings'}
+
+
+def stack_title(t):
+    """the name shown for a stack of tiers: what the trophies count, e.g. Coins, Spells, Farms"""
+    p = pretty(t)
+    if p in STACK_TITLES: return STACK_TITLES[p]
+    if p.startswith('Build '):
+        return _BLD.get(re.sub(r"[^a-z]", '', p[6:].lower()), p[6:] + 's')
+    return p
+
+
 def item(t):
     return {'n': t['name'], 'r': t['requirement'], 'i': icons.get(t['icon']) if t['icon'] else None}
 
@@ -31,7 +49,7 @@ def cells(items):
     for t in sorted(items, key=lambda t: t['order']):
         if t['type']:
             if t['type'] not in by_type:
-                by_type[t['type']] = {'title': pretty(t['type']), 'items': []}
+                by_type[t['type']] = {'title': stack_title(t['type']), 'items': []}
                 out.append(by_type[t['type']])
             by_type[t['type']]['items'].append(item(t))
         else:
