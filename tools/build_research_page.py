@@ -135,6 +135,12 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:2px 0;overflow-wrap:anywhere}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/* research slot pop-up: a number column and the source next to it */
+#tip .slots{display:grid;grid-template-columns:max-content 1fr;gap:1px 12px;margin-top:4px;align-items:baseline}
+#tip .slots .d{font-weight:700;text-align:right;white-space:nowrap}
+#tip .slots .d.base{color:var(--accent)}
+#tip .slots .d.pos{color:#7fd48a}
+#tip .slots .d.neg{color:#e58a7a}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -183,14 +189,17 @@ popups are always the base values <i>v</i>.</div>
     tip.textContent='';
     if(it.sl){
       if(ASC>=3){ hideTip(); return; }
-      tip.appendChild(el('b',null,it.n+' research slots'));
-      tip.appendChild(el('div',null,'Base: '+(ASC>=2?1:4)+(ASC>=2?' slot':' slots')));
-      var rows=it.sl.filter(function(r){ return ASC>=r[2] && ASC<r[3]; });
-      if(rows.length){
-        var ulS=el('ul');
-        rows.forEach(function(r){ var li=el('li'); li.appendChild(el('b',null,r[0]+' ')); li.appendChild(document.createTextNode(r[1])); ulS.appendChild(li); });
-        tip.appendChild(ulS);
+      tip.appendChild(el('b','t',it.n+' research slots'));
+      var tbl=el('div','slots');
+      function row(d, txt, cls){
+        var dd=el('span','d'+(cls?' '+cls:''),d); var tt=el('span','tx',txt);
+        tbl.appendChild(dd); tbl.appendChild(tt);
       }
+      row(String(ASC>=2?1:4), ASC>=2 ? 'Base' : 'Base', 'base');
+      it.sl.filter(function(r){ return ASC>=r[2] && ASC<r[3]; }).forEach(function(r){
+        row(r[0].replace('-','\u2212'), r[1], r[0].charAt(0)==='-' ? 'neg' : 'pos');
+      });
+      tip.appendChild(tbl);
       if(ASC===2) tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));
       place(anchor); return;
     }
