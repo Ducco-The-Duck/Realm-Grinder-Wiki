@@ -153,17 +153,19 @@ def alleg_section():
         general = u['faction'] == -1 or u['akind'] == 'heritage'      # the heritages are not tied to the faction you play
         return (-1 if general else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
-    blood = [item(u) for u in allu if u['akind'] == 'bloodline']
+    bl_by = {u['faction']: item(u) for u in allu if u['akind'] == 'bloodline'}
+    blood = [bl_by.get(i) for i in range(16)]          # the game's grid: three columns, faction order, a gap at the Mercenaries
     perks = {}
     for u in allu:
         if u['akind'] == 'lineage_perk':
             perks[(u['faction'], int(u['name'].rsplit(' ', 1)[1]))] = item(u)
-    lineages = []
+    lin_by = {}
     for u in allu:
         if u['akind'] != 'lineage': continue
         it = item(u)
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
-        lineages.append(it)
+        lin_by[u['faction']] = it
+    lineages = [lin_by.get(i) for i in range(16)]
     es = []
     for u in allu:
         if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
@@ -214,6 +216,8 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
 .bar .hint{color:var(--muted);font-size:.85rem}
 .bar .row[hidden]{display:none}
+.grid.cols3{grid-template-columns:repeat(3,1fr);width:min(270px,100%);margin:0 auto}
+.cell.gap{visibility:hidden}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -390,7 +394,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl}); else if(it.lg) openGroup({g:'Lineages', items:it.lg}); else if(it.lp) openPerks(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
@@ -414,9 +418,14 @@ the base values <i>v</i>.</div>
   }
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function openGroup(en){
-    poptitle.textContent=en.g+' ('+en.items.length+' upgrades)';
+    var real=en.items.filter(function(it){ return !!it; });
+    poptitle.textContent=en.g+' ('+real.length+' upgrades)';
     popgrid.textContent='';
-    en.items.forEach(function(it){ if(!qmatch(sOf(it))) return; var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
+    popgrid.className = en.cols ? 'grid cols'+en.cols : 'grid';
+    en.items.forEach(function(it){
+      if(!it){ if(en.cols){ var gp=el('div','cell gap'); popgrid.appendChild(gp); } return; }       // an empty slot of the game's grid
+      if(!en.cols && !qmatch(sOf(it))) return;
+      var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
     hideTip(); pop.classList.add('open'); document.getElementById('popclose').focus();
   }
   function closePop(){ pop.classList.remove('open'); hideTip(); }
