@@ -81,6 +81,18 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 .dd-in{overflow:hidden;min-height:0}
 @keyframes ddcell{from{opacity:0;transform:translateY(-10px) scale(.9)}to{opacity:1;transform:none}}
 .dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
+/* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
+@font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
+body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.5;letter-spacing:.01em}
+main{max-width:780px}
+h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
+input,select,button,textarea{font-family:inherit}
+#tip,#pop,#more{font-size:17px}
+/* formulas: KaTeX keeps its own fonts for symbols and brackets (their sizes are baked into its layout);
+   letters and digits take the game's font */
+.katex .mathnormal,.katex .mathit,.katex .mathrm,.katex .mord:not(.mop):not(.mspace):not(.delimsizing):not(.sizing){font-family:"Liony",KaTeX_Main,serif}
+.katex .mathnormal,.katex .mathit{font-style:normal}
 .search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
 .search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
