@@ -377,6 +377,8 @@ the base values <i>v</i>.</div>
     if(!s.entries) return;
     var sec=el('section'); sec.hidden=!on;
     var h=el('h2',null,s.name); h.appendChild(el('small',null,s.count+' upgrades')); sec.appendChild(h);
+    h.style.cursor='pointer'; h.title='Click to hide this section (tick it again under Show)';
+    h.addEventListener('click',function(){ cb.checked=false; cb.dispatchEvent(new Event('change')); });
     if(s.alleg){
       s.entries.forEach(function(en){ var it=en.items[0]; (allegItems[it.fa]=allegItems[it.fa]||[]).push(it); });
       allegBox=el('div'); sec.appendChild(allegBox); root.appendChild(sec);
@@ -427,7 +429,7 @@ the base values <i>v</i>.</div>
     fillSel(document.getElementById('pk-b'), bo, PICK.b, false);
     // prestige: the one whose alignment matches the base faction (Mercenaries have none)
     var po=[[-1,'None']];
-    if(base && base.role==='base') FACS.forEach(function(f){ if(f.role==='prestige' && f.al===base.al) po.push([f.i,f.n]); });
+    if(base && base.role==='base') FACS.forEach(function(f){ if(f.role==='prestige' && f.al===base.al && (f.i!==12 || ASC>=1)) po.push([f.i,f.n]); });      // the Dragon exists from Ascension 1
     else PICK.p=-1;
     if(PICK.p>=0 && !po.some(function(o){ return o[0]===PICK.p; })) PICK.p=-1;
     fillSel(document.getElementById('pk-p'), po, PICK.p, po.length<2);
