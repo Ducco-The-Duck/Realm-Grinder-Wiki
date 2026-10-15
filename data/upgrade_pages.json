@@ -8669,10 +8669,10 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the Sturdy Bearded Man's Quest",
-"Upgrade: the Alliance of your base faction"
+"Complete the Sturdy Bearded Man's Quest"
 ],
 "conditions": [
+"having the Alliance of your base faction",
 "starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
@@ -9628,10 +9628,10 @@
 ],
 "sources": [],
 "requirements": [
-"Complete the Cloaked Shady Figure's Quest",
-"Upgrade: the Alliance of your base faction"
+"Complete the Cloaked Shady Figure's Quest"
 ],
 "conditions": [
+"having the Alliance of your base faction",
 "starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
@@ -10575,10 +10575,9 @@
 "name": "Dragon Tamer"
 }
 ],
-"requirements": [
-"Upgrade: the Alliance of your base faction"
-],
+"requirements": [],
 "conditions": [
+"having the Alliance of your base faction",
 "starting from Reincarnation 110 (Ascension 2) / Reincarnation 165 (Ascension 3) / Reincarnation 235 (Ascension 4)"
 ],
 "undecoded": [],
@@ -11655,18 +11654,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archon Quest Trophy"
-}
-],
+"sources": [],
 "requirements": [
-"Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction",
+"Complete the Archon Quest",
 "Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
+"having the Alliance of your base faction",
+"having the Alliance of your prestige faction",
 "starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
@@ -12565,18 +12560,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Djinn Quest Trophy"
-}
-],
+"sources": [],
 "requirements": [
-"Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction",
+"Complete the Djinn Quest",
 "Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
+"having the Alliance of your base faction",
+"having the Alliance of your prestige faction",
 "starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
@@ -13498,18 +13489,14 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Makers Quest Trophy"
-}
-],
+"sources": [],
 "requirements": [
-"Upgrade: the Alliance of your base faction",
-"Upgrade: the Alliance of your prestige faction",
+"Complete the Makers Quest",
 "Artifact: Mask of Scorch'Rah (needed from Ascension 4)"
 ],
 "conditions": [
+"having the Alliance of your base faction",
+"having the Alliance of your prestige faction",
 "starting from Reincarnation 125 (Ascension 2) / Reincarnation 172 (Ascension 3) / Reincarnation 255 (Ascension 4)"
 ],
 "undecoded": [],
@@ -23283,7 +23270,7 @@
 }
 ],
 "requirements": [
-"Use Fairy Chanting for at least 1 hour of activity time"
+"Use Fairy Chanting for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23357,7 +23344,7 @@
 }
 ],
 "requirements": [
-"Use Moon Blessing for at least 1 hour of activity time"
+"Use Moon Blessing for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23431,7 +23418,7 @@
 }
 ],
 "requirements": [
-"Use God's Hand for at least 1 hour of activity time"
+"Use God's Hand for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23505,7 +23492,7 @@
 }
 ],
 "requirements": [
-"Use Goblin's Greed for at least 1 hour of activity time"
+"Use Goblin's Greed for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23579,7 +23566,7 @@
 }
 ],
 "requirements": [
-"Use Night Time for at least 1 hour of activity time"
+"Use Night Time for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23653,7 +23640,7 @@
 }
 ],
 "requirements": [
-"Use Hellfire Blast for at least 1 hour of activity time"
+"Use Hellfire Blast for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23727,7 +23714,7 @@
 }
 ],
 "requirements": [
-"Use Lightning Strike for at least 1 hour of activity time"
+"Use Lightning Strike for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23803,7 +23790,7 @@
 }
 ],
 "requirements": [
-"Use Grand Balance for at least 1 hour of activity time"
+"Use Grand Balance for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23879,7 +23866,7 @@
 }
 ],
 "requirements": [
-"Use Brainwave for at least 1 hour of activity time"
+"Use Brainwave for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -23955,7 +23942,7 @@
 }
 ],
 "requirements": [
-"Use Diamond Pickaxe for at least 1 hour of activity time"
+"Use Diamond Pickaxe for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -24033,7 +24020,7 @@
 }
 ],
 "requirements": [
-"Use Combo Strike for at least 1 hour of activity time"
+"Use Combo Strike for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -24107,7 +24094,7 @@
 }
 ],
 "requirements": [
-"Use Dragon's Breath for at least 1 hour of activity time"
+"Use Dragon's Breath for 1 hour of activity time in a single Reincarnation (it stays unlocked afterwards)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -28303,11 +28290,10 @@
 "name": "True Harlequin"
 }
 ],
-"requirements": [
-"Buy upgrades from at least 5 different factions other than Mercenary"
-],
+"requirements": [],
 "conditions": [
-"playing as Mercenary"
+"playing as Mercenary",
+"having bought upgrades from at least 5 different factions other than Mercenary"
 ],
 "undecoded": [],
 "asc_min": null,

@@ -365,10 +365,10 @@ the base values <i>v</i>.</div>
     if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
-      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else os.push(c); });
+      var st=[];
+      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else if(c.indexOf('starting from')===0) st.push(c); else os.push(c); });
       var ps=os.map(pred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
-      if(it.o[0].indexOf('starting from')===0) txt='Can only be bought '+it.o[0]+'.';
-      else txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+'.';
+      txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+(st.length?(os.length||rs.length?', ':' ')+st.join(' and '):'')+'.';
       tip.appendChild(el('div','faction',txt));
     }
     if(unavailable(it)){
