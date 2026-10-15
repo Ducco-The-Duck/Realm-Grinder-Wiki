@@ -99,7 +99,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip{position:fixed;z-index:50;max-width:min(320px,calc(100vw - 16px));padding:8px 10px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none}
 #tip b{display:block}
-#tip span{color:var(--muted);white-space:pre-line;font-size:.92rem}
+#tip span{display:block;color:var(--fg);white-space:pre-line;font-size:.92rem;line-height:1.05}
 #tip em{display:block;color:var(--accent);font-style:normal;font-size:.8rem;margin-top:4px}
 #pop{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #pop.open{display:flex}
@@ -139,7 +139,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
   function showTip(it, anchor, hint){
     tip.textContent='';
     tip.appendChild(el('b',null,it.n));
-    if(it.r) tip.appendChild(el('span',null,it.r));
+    if(it.r) tip.appendChild(el('span',null,it.r.replace(/\n{2,}/g,'\\n').trim()));
     if(hint) tip.appendChild(el('em',null,hint));
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
