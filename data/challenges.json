@@ -507,7 +507,7 @@
 "Goblin Unique Building purchased",
 "Completion of Goblin Challenge 2"
 ],
-"challenge": "Have at least 10⁷⁵ Gems in the abdication treasury while using Goblin Bloodline (after your first Ascension: 10⁹).",
+"challenge": "Have at least 1e75 Gems in the abdication treasury while using Goblin Bloodline (after your first Ascension: 1e9).",
 "rewards": [
 "Each time you cast a spell, you also cast a free Tax Collection. Multiplicatively increase your triggered Tax Collections by 25%."
 ],
@@ -631,7 +631,7 @@
 "Undead Unique Building purchased",
 "Completion of Undead Challenge 2"
 ],
-"challenge": "Find at least 10⁹ Faction Coins in this Era.",
+"challenge": "Find at least 1e9 Faction Coins in this Era.",
 "rewards": [
 "Multiplicatively increase assistants and Offline production by 10%."
 ],
@@ -1895,7 +1895,7 @@
 "Archon Unique Building Purchased",
 "20000 research points used"
 ],
-"challenge": "Have at least 10²⁰ mana regen without using any Chaos or Balance upgrade or effect except Challenges and Royal Exchanges",
+"challenge": "Have at least 1e20 mana regen without using any Chaos or Balance upgrade or effect except Challenges and Royal Exchanges",
 "rewards": [
 "Gain Base, Prestige and Astral Bloodlines for your alignments."
 ],
@@ -1939,7 +1939,7 @@
 "Mercenary Set",
 "40000 deepest Excavations made in this Reincarnation"
 ],
-"challenge": "Have assistants, maximum mana, mana regen and faction coin chance fall within the same order of magnitude while above 10¹²",
+"challenge": "Have assistants, maximum mana, mana regen and faction coin chance fall within the same order of magnitude while above 1e12",
 "rewards": [
 "Gain Base and Prestige Sets for your alignments."
 ],
@@ -1960,7 +1960,7 @@
 "Reincarnation 202",
 "All lineages level 75"
 ],
-"challenge": "Have exactly one assistant and reach a total of 10⁴⁰ Faction Coins within 10 minutes of a new Era",
+"challenge": "Have exactly one assistant and reach a total of 1e40 Faction Coins within 10 minutes of a new Era",
 "rewards": [
 "You can pick one additional Union Power."
 ],
@@ -2098,7 +2098,7 @@
 "Dragon Bloodline purchased",
 "Completion of Titan, Druid, Faceless, Dwarven and Drow challenge 2",
 "Completion of Dragon challenge 1",
-"Produce at least 10⁹ mana in this Era."
+"Produce at least 1e9 mana in this Era."
 ],
 "challenge": "Have Grand Balance target at least 5 buildings.",
 "rewards": [
@@ -2262,7 +2262,7 @@
 "Completion of Dragon challenge 5",
 "12000 Research points across all facilities"
 ],
-"challenge": "Have at least 10²⁵ Faction Coins, 10¹⁵⁰ Diamond Coins, 120000 Buildings, 2 × 10¹⁰ Mana Produced, 9000 Excavation depth, 10⁷ Assistants, 10⁷ Max Mana and 2 × 10⁷ Mana Regen.",
+"challenge": "Have at least 1e25 Faction Coins, 1e150 Diamond Coins, 120000 Buildings, 2e10 Mana Produced, 9000 Excavation depth, 1e7 Assistants, 1e7 Max Mana and 2e7 Mana Regen.",
 "rewards": [
 "Multiplicatively increase production bonus from Gems over time based on Artifacts found and time spent in this Era."
 ],
@@ -2381,7 +2381,7 @@
 "Archon Bloodline purchased",
 "Completion of Archon Challenge 1"
 ],
-"challenge": "Have an Offline production of at least 10²⁰% and at least 10¹¹ assistants.",
+"challenge": "Have an Offline production of at least 1e20% and at least 1e11 assistants.",
 "rewards": [
 "Multiplicatively increase assistants based on Offline production.",
 "Temporal Flux also increases Offline production and gains 1 tier.",
@@ -2418,7 +2418,7 @@
 "Titan Set purchased",
 "Completion of Archon Challenge 2"
 ],
-"challenge": "Have a Royal Exchange bonus of at least 10⁷% within 5 minutes of a new Era.",
+"challenge": "Have a Royal Exchange bonus of at least 1e7% within 5 minutes of a new Era.",
 "rewards": [
 "Reduce Royal Exchange cost multiplier by -0.02 and multiplicatively increase Royal Exchange bonus by 100%.",
 "Increase Royal Exchange bonus based on Royal Exchanges purchased.",
@@ -2614,7 +2614,7 @@
 "Djinn Bloodline purchased",
 "Completion of Djinn Challenge 1"
 ],
-"challenge": "Produce at least 6.6 × 10¹⁰ Mana within 6 hours of a new Era.",
+"challenge": "Produce at least 6.6e10 Mana within 6 hours of a new Era.",
 "rewards": [
 "Increase Maximum Mana based on Trophies unlocked.",
 "Each time you cast an Evil or Chaos spell, you gain additional casts based on Trophies unlocked."
@@ -2661,7 +2661,7 @@
 "Faceless Set purchased",
 "Completion of Djinn Challenge 2"
 ],
-"challenge": "Have at least 3 × 10¹⁴ base assistants within 5 minutes of a new Era.",
+"challenge": "Have at least 3e14 base assistants within 5 minutes of a new Era.",
 "rewards": [
 "Gain the Catalyst spell. Also increases Catalyst casts stat by 100 per cast.",
 "Increase the minimum value for Limited Wish, based on Research Budget spent."
@@ -2792,7 +2792,7 @@
 "Reincarnation 135",
 "Reality Crater upgrade purchased"
 ],
-"challenge": "Get 10⁷ clicks in this Reincarnation and trigger Elven Luck at least 7777 times in this Era.",
+"challenge": "Get 1e7 clicks in this Reincarnation and trigger Elven Luck at least 7777 times in this Era.",
 "rewards": [
 "While offline, increase Elven Luck stat based on Elven Luck chance. Multiplicatively increase assistants based on Elven Luck triggered in this Era.",
 "Multiply Faction Coins by x8 if they match your Faction, Bloodline or Set. Effect stacks multiplicatively per match."
@@ -2827,7 +2827,7 @@
 "Makers Bloodline purchased",
 "Completion of Makers Challenge 1"
 ],
-"challenge": "Find 10⁴⁰ Faction Coins in this Era with at least 3 Excavation Resets in this Reincarnation.",
+"challenge": "Find 1e40 Faction Coins in this Era with at least 3 Excavation Resets in this Reincarnation.",
 "rewards": [
 "While Mana Regeneration is higher than Maximum Mana, each time you cast a spell, increase triggered Tax Collections based on the difference between them.",
 "Multiplicatively increase production bonus from Gems based on Tax Collections cast in this Era.",
@@ -2879,7 +2879,7 @@
 "Druid Set purchased",
 "Completion of Makers Challenge 2"
 ],
-"challenge": "Have at least 1.2 × 10¹³ Maximum Mana and build at least 30000 of each building within 5 minutes of a new Era.",
+"challenge": "Have at least 1.2e13 Maximum Mana and build at least 30000 of each building within 5 minutes of a new Era.",
 "rewards": [
 "Assistants effect from Infinite Spiral are also increased by Mana Regeneration.",
 "Lineage levels count 50% more for your base lineage effect and increase the bonus of all Advanced Heritage by 50%."
@@ -2924,7 +2924,7 @@
 "Completion of Makers Challenge 4",
 "Have all Balance Lineages at least level 45"
 ],
-"challenge": "Have at least 10¹² assistants, 10⁸ Maximum Mana and 2 × 10²⁰% Faction Coin find chance within 8 minutes of a new Era.",
+"challenge": "Have at least 1e12 assistants, 1e8 Maximum Mana and 2e20% Faction Coin find chance within 8 minutes of a new Era.",
 "rewards": [
 "Multiplicatively increase Maximum Mana based on Faction Coins found and mana produced in this Era; spells cast and clicks made in this Reincarnation."
 ],

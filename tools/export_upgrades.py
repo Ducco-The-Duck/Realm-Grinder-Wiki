@@ -166,7 +166,7 @@ def num_text(n):
     if n < 1e6: return f'{int(n)}' if n == int(n) else f'{n:g}'
     e = len(str(int(n))) - 1
     mant = n / 10 ** e
-    return f'10{str(e).translate(_SUP)}' if mant == 1 else f'{mant:g} × 10{str(e).translate(_SUP)}'
+    return f'{mant:g}e{e}'
 
 
 def plural(name):

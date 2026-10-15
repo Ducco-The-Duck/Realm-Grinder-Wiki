@@ -919,7 +919,7 @@
 "description": "Increase the production of buildings based on mana produced in this Era, depending on their tiers. Gives better bonuses for lower tiers.",
 "formulas": [],
 "requirements": [
-"Reach 10⁷ Mana Produced"
+"Reach 1e7 Mana Produced"
 ],
 "hint": "I thirst for mana.",
 "faction": -1,
@@ -1127,7 +1127,7 @@
 "description": "Multiplicatively increase mana regen by 12% per active spell.\n\nAlso multiplicatively increase offline spells cast amount by 1200%.",
 "formulas": [],
 "requirements": [
-"Reach 10⁹ Tax Collection Cast",
+"Reach 1e9 Tax Collection Cast",
 "Have bought the researches Calefaction (Alchemy 1325) and Psionics (Spellcraft 1500)"
 ],
 "hint": "First spell, many served.",
@@ -1166,7 +1166,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁹ Mana Produced",
+"Reach 1e9 Mana Produced",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1255,7 +1255,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹² Assistants",
+"Reach 1e12 Assistants",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1294,7 +1294,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹² Spells cast",
+"Reach 1e12 Spells cast",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1371,7 +1371,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹⁰ Max Mana",
+"Reach 1e10 Max Mana",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1410,7 +1410,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹⁵ Spells cast",
+"Reach 1e15 Spells cast",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1555,7 +1555,7 @@
 }
 ],
 "requirements": [
-"Reach 10²¹ Mana Produced in this Reincarnation",
+"Reach 1e21 Mana Produced in this Reincarnation",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1594,7 +1594,7 @@
 }
 ],
 "requirements": [
-"Reach 10²³ Faction Coin find chance. Fairy Set required.",
+"Reach 1e23 Faction Coin find chance. Fairy Set required.",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -1746,7 +1746,7 @@
 ],
 "requirements": [
 "Play as Elf",
-"Reach 10⁹ Faction Coins"
+"Reach 1e9 Faction Coins"
 ],
 "hint": "Faction Coin treasury.",
 "faction": 5,
@@ -2596,7 +2596,7 @@
 }
 ],
 "requirements": [
-"Reach 5 × 10⁷ Mana Produced"
+"Reach 5e7 Mana Produced"
 ],
 "hint": "I've gotta take a Mana shower.",
 "faction": -1,
@@ -3155,7 +3155,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹⁵ Assistants. Dwarven Bloodline required.",
+"Reach 1e15 Assistants. Dwarven Bloodline required.",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -3345,7 +3345,7 @@
 }
 ],
 "requirements": [
-"Reach 3 × 10⁶ Mana Produced"
+"Reach 3e6 Mana Produced"
 ],
 "hint": "Massively produced blue energy.",
 "faction": -1,
@@ -4276,7 +4276,7 @@
 }
 ],
 "requirements": [
-"Reach 10²⁶ % Offline production",
+"Reach 1e26 % Offline production",
 "Have bought the researches Intervention (Divine 2850) and Upheaval (Warfare 3150)"
 ],
 "hint": "Sound the alarms, production has gone offline!",
@@ -4315,7 +4315,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹⁸ Faction Coin find chance",
+"Reach 1e18 Faction Coin find chance",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -4592,7 +4592,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹² Tax Collections cast in this Era. Titan Bloodline required.",
+"Reach 1e12 Tax Collections cast in this Era. Titan Bloodline required.",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -4698,7 +4698,7 @@
 }
 ],
 "requirements": [
-"Reach 10²³ Mana Regeneration. Druid Bloodline required.",
+"Reach 1e23 Mana Regeneration. Druid Bloodline required.",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -4811,7 +4811,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁸ Faction Coins"
+"Reach 1e8 Faction Coins"
 ],
 "hint": "Colored wealth.",
 "faction": 1,
@@ -5470,7 +5470,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹¹ Faction Coins"
+"Reach 1e11 Faction Coins"
 ],
 "hint": "Got enough Faction Coins?",
 "faction": -1,
@@ -5651,7 +5651,7 @@
 "description": "Increase the Ascension multiplier for Royal Market bonus by 0.7.",
 "formulas": [],
 "requirements": [
-"Reach 10¹² Faction Coins"
+"Reach 1e12 Faction Coins"
 ],
 "hint": "Massive numismatics.",
 "faction": 12,
@@ -5908,7 +5908,7 @@
 }
 ],
 "requirements": [
-"Reach 5 × 10¹⁵⁰ Gold",
+"Reach 5e150 Gold",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -6063,7 +6063,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹⁸ Assistants",
+"Reach 1e18 Assistants",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -6102,7 +6102,7 @@
 }
 ],
 "requirements": [
-"Reach 10²⁷ Gems (always higher than Reincarnation requirements)",
+"Reach 1e27 Gems (always higher than Reincarnation requirements)",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -6770,7 +6770,7 @@
 }
 ],
 "requirements": [
-"Reach 2 × 10¹⁰ Faction Coins"
+"Reach 2e10 Faction Coins"
 ],
 "hint": "Faction Currency.",
 "faction": -1,
@@ -6845,7 +6845,7 @@
 ],
 "requirements": [
 "Play as Druid",
-"Reach 5 × 10⁶ Mana Produced"
+"Reach 5e6 Mana Produced"
 ],
 "hint": "Blue Production.",
 "faction": 8,
@@ -7363,7 +7363,7 @@
 }
 ],
 "requirements": [
-"Reach 10³⁰ Faction Coins",
+"Reach 1e30 Faction Coins",
 "Have bought the researches Customizing (Craftsmanship 3000) and Manipulation (Spellcraft 3200)"
 ],
 "hint": "Get attracted to Faction Coins.",
@@ -7511,7 +7511,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁴⁰ Faction Coins",
+"Reach 1e40 Faction Coins",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -7627,7 +7627,7 @@
 }
 ],
 "requirements": [
-"Reach 10²⁰ Mana Regeneration",
+"Reach 1e20 Mana Regeneration",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -7666,7 +7666,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹³ Faction Coin find chance",
+"Reach 1e13 Faction Coin find chance",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -7939,7 +7939,7 @@
 }
 ],
 "requirements": [
-"Reach 10¹³² Coins"
+"Reach 1e132 Coins"
 ],
 "hint": "Get rich.",
 "faction": 3,
@@ -8909,7 +8909,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁸ Base Assistants",
+"Reach 1e8 Base Assistants",
 "Have bought the researches Authority (Warfare 1275) and Intimidation (Economics 1325)"
 ],
 "hint": "Find more of those little armymen.",
@@ -9052,7 +9052,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁶ Clicks",
+"Reach 1e6 Clicks",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -9080,7 +9080,7 @@
 "description": "Time spent with Prestige factions counts 500% more. Time spent with Astral factions or Mercenaries counts 1000% more.\n\nWhile affiliated with your least used faction (Fairy), increase Faction Coin find chance by 500%.",
 "formulas": [],
 "requirements": [
-"Reach 10²⁰ Max Mana",
+"Reach 1e20 Max Mana",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -9235,7 +9235,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁷ Offline production",
+"Reach 1e7 Offline production",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -9313,7 +9313,7 @@
 }
 ],
 "requirements": [
-"Reach 10⁶ Combo Strike counter",
+"Reach 1e6 Combo Strike counter",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -9450,7 +9450,7 @@
 }
 ],
 "requirements": [
-"Reach 10²⁰ Mana Regeneration",
+"Reach 1e20 Mana Regeneration",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",
@@ -9717,7 +9717,7 @@
 "description": "Allows the purchase of one additional Legacy Combo upgrade.",
 "formulas": [],
 "requirements": [
-"Reach 10³³ Faction Coins",
+"Reach 1e33 Faction Coins",
 "Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
 ],
 "hint": "",

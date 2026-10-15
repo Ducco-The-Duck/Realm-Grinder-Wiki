@@ -63,7 +63,7 @@ def fmt_num(n):
     mant, e = float(m_), int(e_)
     if abs(mant - round(mant)) < 1e-6: mant = round(mant)
     sup = str(e).translate(_SUP)
-    return f'10{sup}' if mant == 1 else f'{mant:g} × 10{sup}'
+    return f'{mant:g}e{e}'
 
 
 UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their icons exist per path (Order / Chaos / Balance)

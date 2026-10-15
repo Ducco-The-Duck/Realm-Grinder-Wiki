@@ -1,4 +1,4 @@
-"""The game's short number notation ("10 M", "1.5 B", "2 Qa") rewritten as powers of ten ("10⁷", "1.5 × 10⁹").
+"""The game's short number notation ("10 M", "1.5 B", "2 Qa") rewritten in e notation ("1e7", "1.5e9").
 
 The suffix table is read from the game's number formatter, so every suffix it can print is understood.
 """
@@ -14,12 +14,11 @@ _SUP = str.maketrans('0123456789-', '⁰¹²³⁴⁵⁶⁷⁸⁹⁻')
 
 
 def pow10_text(text):
-    """'10 M' -> '10⁷', '1.5 B' -> '1.5 × 10⁹' (plain numbers and times are left alone)."""
+    """'10 M' -> '1e7', '1.5 B' -> '1.5e9' (plain numbers and times are left alone)."""
     def rep(m):
         mant, e = float(m.group(1)), SUFFIX_EXP[m.group(2)]
         while mant >= 10: mant /= 10; e += 1
         while 0 < mant < 1: mant *= 10; e -= 1
         mant = round(mant, 6)
-        pw = '10' + str(e).translate(_SUP)
-        return pw if mant == 1 else f'{mant:g} × {pw}'
+        return f'{mant:g}e{e}'
     return SUFFIX_RE.sub(rep, text)

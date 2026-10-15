@@ -5238,7 +5238,7 @@
 "id": 305,
 "description": [
 {
-"text": "Increase the base production of the tier 9 building of your alignment (Royal Castles, Evil Fortresses or Iron Strongholds) by +900000 and the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) by +8.8 × 10⁶.",
+"text": "Increase the base production of the tier 9 building of your alignment (Royal Castles, Evil Fortresses or Iron Strongholds) by +900000 and the tier 10 building of your alignment (Heaven's Gates, Hell Portals or Ancient Pyramids) by +8.8e6.",
 "formulas": [],
 "s": null
 }
@@ -15367,7 +15367,7 @@
 "s": null
 },
 {
-"text": "10⁶ Assistants",
+"text": "1e6 Assistants",
 "formulas": [],
 "s": null
 }
@@ -15417,7 +15417,7 @@
 "s": null
 },
 {
-"text": "10²⁰ Elven Coins",
+"text": "1e20 Elven Coins",
 "formulas": [],
 "s": null
 }
@@ -15467,7 +15467,7 @@
 "s": null
 },
 {
-"text": "10⁶ Mana Regen",
+"text": "1e6 Mana Regen",
 "formulas": [],
 "s": null
 }
@@ -15868,7 +15868,7 @@
 "s": null
 },
 {
-"text": "10⁹ Spell Casts",
+"text": "1e9 Spell Casts",
 "formulas": [],
 "s": null
 }
@@ -16072,7 +16072,7 @@
 "s": null
 },
 {
-"text": "5 × 10⁴² Faction Coins",
+"text": "5e42 Faction Coins",
 "formulas": [],
 "s": null
 }
@@ -17853,7 +17853,7 @@
 "n": 2,
 "reinc": "82",
 "level": 22,
-"challenge": "Reach 10⁶ assistants within the first 10 minutes of a new Era."
+"challenge": "Reach 1e6 assistants within the first 10 minutes of a new Era."
 },
 {
 "n": 3,
@@ -18896,7 +18896,7 @@
 "n": 2,
 "reinc": "73",
 "level": 13,
-"challenge": "Cast 10⁶ Tax Collections in a single Era."
+"challenge": "Cast 1e6 Tax Collections in a single Era."
 },
 {
 "n": 3,
@@ -22089,7 +22089,7 @@
 "n": 2,
 "reinc": "130",
 "level": 25,
-"challenge": "Have at least 3 × 10¹⁰ Mana Regeneration within the first 45 seconds of a new Era."
+"challenge": "Have at least 3e10 Mana Regeneration within the first 45 seconds of a new Era."
 },
 {
 "n": 3,
@@ -22437,7 +22437,7 @@
 "n": 2,
 "reinc": "130",
 "level": 25,
-"challenge": "Have at least 10⁹ assistants within the first 45 seconds of a new Era."
+"challenge": "Have at least 1e9 assistants within the first 45 seconds of a new Era."
 },
 {
 "n": 3,
@@ -25355,7 +25355,7 @@
 "id": 1495,
 "description": [
 {
-"text": "Increase your base clicking reward by +10⁶.",
+"text": "Increase your base clicking reward by +1e6.",
 "formulas": [],
 "s": null
 }
@@ -26423,7 +26423,7 @@
 "id": 1551,
 "description": [
 {
-"text": "Instantly add 10¹⁶ Coins.",
+"text": "Instantly add 1e16 Coins.",
 "formulas": [],
 "s": null
 }
@@ -28849,7 +28849,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 2 × 10⁶ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 2e6 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -28878,7 +28878,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 6 × 10⁶ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 6e6 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -28912,7 +28912,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 1.2 × 10⁷ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 1.2e7 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -28951,7 +28951,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 2 × 10⁷ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 2e7 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -28985,7 +28985,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 3 × 10⁷ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 3e7 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -29019,7 +29019,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 5 × 10⁷ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 5e7 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [],
 "undecoded": [],
@@ -29059,7 +29059,7 @@
 ],
 "sources": [],
 "requirements": [
-"Produce at least 1.5 × 10⁸ mana in this Reincarnation (before bonus multipliers)"
+"Produce at least 1.5e8 mana in this Reincarnation (before bonus multipliers)"
 ],
 "conditions": [
 "starting from Ascension 1, at Reincarnation 40+"
@@ -29976,10 +29976,10 @@
 "spell": "Gem Grinder",
 "spell_tier": 2,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
-"2": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
-"3": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems.",
-"4": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 10³³ Gems."
+"1": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 1e33 Gems.",
+"2": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 1e33 Gems.",
+"3": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 1e33 Gems.",
+"4": "To unlock, you need to have at least 1h of Gem Grinder activity time in this Reincarnation and have at least 1e33 Gems."
 }
 },
 {
@@ -30037,10 +30037,10 @@
 "spell": "Gem Grinder",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
-"2": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
-"3": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems.",
-"4": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 10³⁶ Gems."
+"1": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 1e36 Gems.",
+"2": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 1e36 Gems.",
+"3": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 1e36 Gems.",
+"4": "To unlock, you need to have at least 2h of Gem Grinder activity time in this Reincarnation and have at least 1e36 Gems."
 }
 },
 {
@@ -30098,10 +30098,10 @@
 "spell": "Gem Grinder",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
-"2": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
-"3": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems.",
-"4": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 10³⁹ Gems."
+"1": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 1e39 Gems.",
+"2": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 1e39 Gems.",
+"3": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 1e39 Gems.",
+"4": "To unlock, you need to have at least 3h of Gem Grinder activity time in this Reincarnation and have at least 1e39 Gems."
 }
 },
 {
@@ -30159,10 +30159,10 @@
 "spell": "Gem Grinder",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
-"2": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
-"3": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems.",
-"4": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 10⁴² Gems."
+"1": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 1e42 Gems.",
+"2": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 1e42 Gems.",
+"3": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 1e42 Gems.",
+"4": "To unlock, you need to have at least 4h of Gem Grinder activity time in this Reincarnation and have at least 1e42 Gems."
 }
 },
 {
@@ -30708,10 +30708,10 @@
 "spell": "Moon Blessing",
 "spell_tier": 2,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
-"2": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
-"3": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins.",
-"4": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8 × 10¹² Faction Coins."
+"1": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8e12 Faction Coins.",
+"2": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8e12 Faction Coins.",
+"3": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8e12 Faction Coins.",
+"4": "To unlock, you need to have at least 1h of Moon Blessing activity time in this Reincarnation and have at least 8e12 Faction Coins."
 }
 },
 {
@@ -30769,10 +30769,10 @@
 "spell": "Moon Blessing",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
-"2": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
-"3": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins.",
-"4": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6 × 10¹³ Faction Coins."
+"1": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6e13 Faction Coins.",
+"2": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6e13 Faction Coins.",
+"3": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6e13 Faction Coins.",
+"4": "To unlock, you need to have at least 2h of Moon Blessing activity time in this Reincarnation and have at least 1.6e13 Faction Coins."
 }
 },
 {
@@ -30830,10 +30830,10 @@
 "spell": "Moon Blessing",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
-"2": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
-"3": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins.",
-"4": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4 × 10¹³ Faction Coins."
+"1": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4e13 Faction Coins.",
+"2": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4e13 Faction Coins.",
+"3": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4e13 Faction Coins.",
+"4": "To unlock, you need to have at least 3h of Moon Blessing activity time in this Reincarnation and have at least 2.4e13 Faction Coins."
 }
 },
 {
@@ -30891,10 +30891,10 @@
 "spell": "Moon Blessing",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
-"2": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
-"3": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins.",
-"4": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2 × 10¹³ Faction Coins."
+"1": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2e13 Faction Coins.",
+"2": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2e13 Faction Coins.",
+"3": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2e13 Faction Coins.",
+"4": "To unlock, you need to have at least 4h of Moon Blessing activity time in this Reincarnation and have at least 3.2e13 Faction Coins."
 }
 },
 {
@@ -31013,10 +31013,10 @@
 "spell": "God's Hand",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
-"2": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
-"3": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration.",
-"4": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 10⁶ Mana Regeneration."
+"1": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 1e6 Mana Regeneration.",
+"2": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 1e6 Mana Regeneration.",
+"3": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 1e6 Mana Regeneration.",
+"4": "To unlock, you need to have at least 2h of God's Hand activity time in this Reincarnation and have at least 1e6 Mana Regeneration."
 }
 },
 {
@@ -31074,10 +31074,10 @@
 "spell": "God's Hand",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
-"2": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
-"3": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration.",
-"4": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5 × 10⁶ Mana Regeneration."
+"1": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5e6 Mana Regeneration.",
+"2": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5e6 Mana Regeneration.",
+"3": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5e6 Mana Regeneration.",
+"4": "To unlock, you need to have at least 3h of God's Hand activity time in this Reincarnation and have at least 1.5e6 Mana Regeneration."
 }
 },
 {
@@ -31135,10 +31135,10 @@
 "spell": "God's Hand",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
-"2": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
-"3": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration.",
-"4": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2 × 10⁶ Mana Regeneration."
+"1": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2e6 Mana Regeneration.",
+"2": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2e6 Mana Regeneration.",
+"3": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2e6 Mana Regeneration.",
+"4": "To unlock, you need to have at least 4h of God's Hand activity time in this Reincarnation and have at least 2e6 Mana Regeneration."
 }
 },
 {
@@ -31196,10 +31196,10 @@
 "spell": "Goblin's Greed",
 "spell_tier": 2,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
-"2": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
-"3": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts.",
-"4": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 10⁶ Tax Collection casts."
+"1": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 1e6 Tax Collection casts.",
+"2": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 1e6 Tax Collection casts.",
+"3": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 1e6 Tax Collection casts.",
+"4": "To unlock, you need to have at least 1h of Goblin's Greed activity time in this Reincarnation and have at least 1e6 Tax Collection casts."
 }
 },
 {
@@ -31257,10 +31257,10 @@
 "spell": "Goblin's Greed",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
-"2": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
-"3": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts.",
-"4": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2 × 10⁶ Tax Collection casts."
+"1": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2e6 Tax Collection casts.",
+"2": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2e6 Tax Collection casts.",
+"3": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2e6 Tax Collection casts.",
+"4": "To unlock, you need to have at least 2h of Goblin's Greed activity time in this Reincarnation and have at least 2e6 Tax Collection casts."
 }
 },
 {
@@ -31318,10 +31318,10 @@
 "spell": "Goblin's Greed",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
-"2": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
-"3": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts.",
-"4": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3 × 10⁶ Tax Collection casts."
+"1": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3e6 Tax Collection casts.",
+"2": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3e6 Tax Collection casts.",
+"3": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3e6 Tax Collection casts.",
+"4": "To unlock, you need to have at least 3h of Goblin's Greed activity time in this Reincarnation and have at least 3e6 Tax Collection casts."
 }
 },
 {
@@ -31379,10 +31379,10 @@
 "spell": "Goblin's Greed",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
-"2": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
-"3": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts.",
-"4": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4 × 10⁶ Tax Collection casts."
+"1": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4e6 Tax Collection casts.",
+"2": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4e6 Tax Collection casts.",
+"3": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4e6 Tax Collection casts.",
+"4": "To unlock, you need to have at least 4h of Goblin's Greed activity time in this Reincarnation and have at least 4e6 Tax Collection casts."
 }
 },
 {
@@ -34301,10 +34301,10 @@
 "spell": "Limited Wish",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
-"2": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
-"3": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana.",
-"4": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10⁷ Maximum Mana."
+"1": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162e7 Maximum Mana.",
+"2": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162e7 Maximum Mana.",
+"3": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162e7 Maximum Mana.",
+"4": "To unlock, you need to have at least 2h of Limited Wish activity time in this Reincarnation and have at least 3.162e7 Maximum Mana."
 }
 },
 {
@@ -34362,10 +34362,10 @@
 "spell": "Limited Wish",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
-"2": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
-"3": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana.",
-"4": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 10¹⁰ Maximum Mana."
+"1": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 1e10 Maximum Mana.",
+"2": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 1e10 Maximum Mana.",
+"3": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 1e10 Maximum Mana.",
+"4": "To unlock, you need to have at least 3h of Limited Wish activity time in this Reincarnation and have at least 1e10 Maximum Mana."
 }
 },
 {
@@ -34423,10 +34423,10 @@
 "spell": "Limited Wish",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
-"2": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
-"3": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana.",
-"4": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162 × 10¹² Maximum Mana."
+"1": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162e12 Maximum Mana.",
+"2": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162e12 Maximum Mana.",
+"3": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162e12 Maximum Mana.",
+"4": "To unlock, you need to have at least 4h of Limited Wish activity time in this Reincarnation and have at least 3.162e12 Maximum Mana."
 }
 },
 {
@@ -34484,10 +34484,10 @@
 "spell": "Infinite Spiral",
 "spell_tier": 2,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
-"2": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
-"3": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins.",
-"4": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6 × 10⁴¹ Faction Coins."
+"1": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6e41 Faction Coins.",
+"2": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6e41 Faction Coins.",
+"3": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6e41 Faction Coins.",
+"4": "To unlock, you need to have at least 1h of Infinite Spiral activity time in this Reincarnation and have at least 1.6e41 Faction Coins."
 }
 },
 {
@@ -34545,10 +34545,10 @@
 "spell": "Infinite Spiral",
 "spell_tier": 3,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
-"2": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
-"3": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins.",
-"4": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2 × 10⁴¹ Faction Coins."
+"1": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2e41 Faction Coins.",
+"2": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2e41 Faction Coins.",
+"3": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2e41 Faction Coins.",
+"4": "To unlock, you need to have at least 2h of Infinite Spiral activity time in this Reincarnation and have at least 3.2e41 Faction Coins."
 }
 },
 {
@@ -34606,10 +34606,10 @@
 "spell": "Infinite Spiral",
 "spell_tier": 4,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
-"2": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
-"3": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins.",
-"4": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8 × 10⁴¹ Faction Coins."
+"1": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8e41 Faction Coins.",
+"2": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8e41 Faction Coins.",
+"3": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8e41 Faction Coins.",
+"4": "To unlock, you need to have at least 3h of Infinite Spiral activity time in this Reincarnation and have at least 4.8e41 Faction Coins."
 }
 },
 {
@@ -34667,10 +34667,10 @@
 "spell": "Infinite Spiral",
 "spell_tier": 5,
 "unlock_by_asc": {
-"1": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
-"2": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
-"3": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins.",
-"4": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4 × 10⁴¹ Faction Coins."
+"1": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4e41 Faction Coins.",
+"2": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4e41 Faction Coins.",
+"3": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4e41 Faction Coins.",
+"4": "To unlock, you need to have at least 4h of Infinite Spiral activity time in this Reincarnation and have at least 6.4e41 Faction Coins."
 }
 }
 ],
@@ -49082,7 +49082,7 @@
 "id": 1353,
 "description": [
 {
-"text": "Increase the base production of Halls of Legends by 2 × 10⁶ and Halls of Legends production by 150% per every other building owned.",
+"text": "Increase the base production of Halls of Legends by 2e6 and Halls of Legends production by 150% per every other building owned.",
 "formulas": [],
 "s": 1
 }
@@ -49106,7 +49106,7 @@
 "id": 1354,
 "description": [
 {
-"text": "Increase the base production of Halls of Legends by 7 × 10⁶ and Halls of Legends production by 225% per every other building owned.",
+"text": "Increase the base production of Halls of Legends by 7e6 and Halls of Legends production by 225% per every other building owned.",
 "formulas": [],
 "s": 1
 }
@@ -49931,7 +49931,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having at least 10⁶ Gems"
+"having at least 1e6 Gems"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -49965,7 +49965,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having at least 10 × 10³⁸ Gems"
+"having at least 10e38 Gems"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -49999,7 +49999,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having at least 10⁶³ Gems"
+"having at least 1e63 Gems"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51498,7 +51498,7 @@
 "id": 762,
 "description": [
 {
-"text": "Increase base clicking reward by +5 × 10⁷.",
+"text": "Increase base clicking reward by +5e7.",
 "formulas": [],
 "s": null
 },
@@ -51530,7 +51530,7 @@
 "id": 763,
 "description": [
 {
-"text": "Increase base clicking reward by +5 × 10¹⁰.",
+"text": "Increase base clicking reward by +5e10.",
 "formulas": [],
 "s": null
 },
@@ -51594,7 +51594,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 5 × 10⁶ Coins by clicking in this Era"
+"having gained at least 5e6 Coins by clicking in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51618,7 +51618,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 5 × 10⁹ Coins by clicking in this Era"
+"having gained at least 5e9 Coins by clicking in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51642,7 +51642,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 5 × 10¹² Coins by clicking in this Era"
+"having gained at least 5e12 Coins by clicking in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51666,7 +51666,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 5 × 10¹⁵ Coins by clicking in this Era"
+"having gained at least 5e15 Coins by clicking in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51714,7 +51714,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 10⁸ Coins in this Era"
+"having gained at least 1e8 Coins in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51738,7 +51738,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 10¹¹ Coins in this Era"
+"having gained at least 1e11 Coins in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51762,7 +51762,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 10¹⁴ Coins in this Era"
+"having gained at least 1e14 Coins in this Era"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -51786,7 +51786,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having gained at least 10¹⁷ Coins in this Era"
+"having gained at least 1e17 Coins in this Era"
 ],
 "undecoded": [],
 "asc_min": null,

@@ -82,8 +82,7 @@ def pow10_text(text):
         while mant >= 10: mant /= 10; e += 1
         while 0 < mant < 1: mant *= 10; e -= 1
         mant = round(mant, 6)
-        pw = '10' + str(e).translate(_SUP)
-        return pw if mant == 1 else f'{mant:g} × {pw}'
+        return f'{mant:g}e{e}'
     return SUFFIX_RE.sub(rep, text)
 
 
