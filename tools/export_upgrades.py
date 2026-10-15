@@ -853,6 +853,14 @@ for u_ in by_cat['allegiances']:
                 u_['requirements'] += [c_.replace('being at ', '').replace(' or higher', ' or higher') for c_ in rs_]
                 if rs_ and (u_['asc_min'] or 0) < 2: u_['asc_min'] = 2      # Reincarnation 115 / 130 are Ascension 2 territory
 
+# the faction upgrades (bronze, silver, gold, diamond) are shown once the tier upgrade is owned (or its Legacy): availability
+for u_ in by_cat['allegiances']:
+    if u_['akind'] == 'perk':
+        mv_ = [r_ for r_ in u_['requirements'] if r_.startswith('Upgrade: ')]
+        u_['requirements'] = [r_ for r_ in u_['requirements'] if r_ not in mv_]
+        u_['conditions'] = ['having ' + r_.replace('Upgrade: ', '') for r_ in mv_] + u_['conditions']
+    u_['conditions'] = [c_ for c_ in u_['conditions'] if c_ != 'having found at least one Dwarven Coin and one Drow Coin in this Era']
+
 # conditions the reader already knows from the page: the faction picked in the selector, the spell's own parenthesis,
 # the warning that the description gives, the treaty's note
 for u in [u_ for items_ in by_cat.values() for u_ in items_]:

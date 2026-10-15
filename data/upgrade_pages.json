@@ -520,10 +520,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Trade Treaty, or Fairy Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -571,10 +571,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Trade Treaty, or Fairy Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -630,10 +630,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Trade Treaty, or Upgrade: Fairy Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Trade Treaty, or Fairy Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -681,10 +681,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Friendship Pact, or Fairy Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -726,10 +726,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Friendship Pact, or Fairy Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -785,10 +785,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Friendship Pact, or Upgrade: Fairy Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Friendship Pact, or Fairy Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -836,10 +836,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Alliance, or Fairy Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -895,10 +895,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Alliance, or Fairy Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -946,10 +946,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Alliance, or Upgrade: Fairy Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Fairies Alliance, or Fairy Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -997,10 +997,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Fairies Union and Swarming Tower, or Fairy Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1048,10 +1048,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Fairies Union and Swarming Tower, or Fairy Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1099,10 +1099,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Fairies Union and Upgrade: Swarming Tower, or Upgrade: Fairy Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Fairies Union and Swarming Tower, or Fairy Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1452,10 +1452,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Trade Treaty, or Elven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1503,10 +1503,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Trade Treaty, or Elven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1554,10 +1554,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Trade Treaty, or Upgrade: Elven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Trade Treaty, or Elven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1605,10 +1605,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Friendship Pact, or Elven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1656,10 +1656,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Friendship Pact, or Elven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1707,10 +1707,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Friendship Pact, or Upgrade: Elven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Friendship Pact, or Elven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1758,10 +1758,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Alliance, or Elven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1813,10 +1813,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Alliance, or Elven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1864,10 +1864,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Alliance, or Upgrade: Elven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Elven Alliance, or Elven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1940,10 +1940,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Elven Union and Arboreal City, or Elven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1991,10 +1991,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Elven Union and Arboreal City, or Elven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2054,10 +2054,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Elven Union and Upgrade: Arboreal City, or Upgrade: Elven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Elven Union and Arboreal City, or Elven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2408,10 +2408,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Trade Treaty, or Angel Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2459,10 +2459,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Trade Treaty, or Angel Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2510,10 +2510,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Trade Treaty, or Upgrade: Angel Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Trade Treaty, or Angel Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2561,10 +2561,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Friendship Pact, or Angel Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2617,10 +2617,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Friendship Pact, or Angel Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2668,10 +2668,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Friendship Pact, or Upgrade: Angel Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Friendship Pact, or Angel Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2719,10 +2719,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Alliance, or Angel Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2775,10 +2775,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Alliance, or Angel Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2826,10 +2826,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Alliance, or Upgrade: Angel Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Angels Alliance, or Angel Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2877,10 +2877,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Angels Union and Holy Site, or Angel Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2928,10 +2928,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Angels Union and Holy Site, or Angel Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2968,10 +2968,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Angels Union and Upgrade: Holy Site, or Upgrade: Angel Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Angels Union and Holy Site, or Angel Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3322,10 +3322,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Trade Treaty, or Goblin Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3373,10 +3373,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Trade Treaty, or Goblin Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3424,10 +3424,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Trade Treaty, or Upgrade: Goblin Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Trade Treaty, or Goblin Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3475,10 +3475,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Friendship Pact, or Goblin Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3526,10 +3526,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Friendship Pact, or Goblin Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3577,10 +3577,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Friendship Pact, or Upgrade: Goblin Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Friendship Pact, or Goblin Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3628,10 +3628,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Alliance, or Goblin Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3695,10 +3695,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Alliance, or Goblin Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3735,10 +3735,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Alliance, or Upgrade: Goblin Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Goblins Alliance, or Goblin Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3786,10 +3786,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Goblins Union and Slave Market, or Goblin Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3837,10 +3837,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Goblins Union and Slave Market, or Goblin Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3898,10 +3898,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Goblins Union and Upgrade: Slave Market, or Upgrade: Goblin Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Goblins Union and Slave Market, or Goblin Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4256,10 +4256,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Trade Treaty, or Undead Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4307,10 +4307,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Trade Treaty, or Undead Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4358,10 +4358,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Trade Treaty, or Upgrade: Undead Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Trade Treaty, or Undead Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4409,10 +4409,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Friendship Pact, or Undead Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4460,10 +4460,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Friendship Pact, or Undead Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4516,10 +4516,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Friendship Pact, or Upgrade: Undead Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Friendship Pact, or Undead Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4556,10 +4556,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Alliance, or Undead Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4607,10 +4607,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Alliance, or Undead Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4670,10 +4670,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Alliance, or Upgrade: Undead Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Undead Alliance, or Undead Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4721,10 +4721,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Undead Union and Flesh Workshop, or Undead Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4772,10 +4772,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Undead Union and Flesh Workshop, or Undead Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4823,10 +4823,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Undead Union and Upgrade: Flesh Workshop, or Upgrade: Undead Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Undead Union and Flesh Workshop, or Undead Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5182,10 +5182,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Trade Treaty, or Demon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5233,10 +5233,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Trade Treaty, or Demon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5284,10 +5284,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Trade Treaty, or Upgrade: Demon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Trade Treaty, or Demon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5324,10 +5324,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Friendship Pact, or Demon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5375,10 +5375,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Friendship Pact, or Demon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5426,10 +5426,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Friendship Pact, or Upgrade: Demon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Friendship Pact, or Demon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5482,10 +5482,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Alliance, or Demon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5533,10 +5533,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Alliance, or Demon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5584,10 +5584,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Alliance, or Upgrade: Demon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Demons Alliance, or Demon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5639,10 +5639,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Demons Union and Burning Abyss, or Demon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5694,10 +5694,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Demons Union and Burning Abyss, or Demon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5745,10 +5745,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Demons Union and Upgrade: Burning Abyss, or Upgrade: Demon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Demons Union and Burning Abyss, or Demon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6133,10 +6133,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Trade Treaty, or Titan Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6194,10 +6194,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Trade Treaty, or Titan Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6245,10 +6245,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Trade Treaty, or Upgrade: Titan Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Trade Treaty, or Titan Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6285,10 +6285,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Friendship Pact, or Titan Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6336,10 +6336,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Friendship Pact, or Titan Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6387,10 +6387,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Friendship Pact, or Upgrade: Titan Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Friendship Pact, or Titan Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6438,10 +6438,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Alliance, or Titan Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6478,10 +6478,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Alliance, or Titan Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6529,10 +6529,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Alliance, or Upgrade: Titan Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Titans Alliance, or Titan Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6580,10 +6580,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Titans Union and Mountain Palace, or Titan Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6631,10 +6631,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Titans Union and Mountain Palace, or Titan Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6682,10 +6682,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Titans Union and Upgrade: Mountain Palace, or Upgrade: Titan Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Titans Union and Mountain Palace, or Titan Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7045,10 +7045,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Trade Treaty, or Druid Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7096,10 +7096,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Trade Treaty, or Druid Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7157,10 +7157,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Trade Treaty, or Upgrade: Druid Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Trade Treaty, or Druid Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7208,10 +7208,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Friendship Pact, or Druid Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7259,10 +7259,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Friendship Pact, or Druid Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7310,10 +7310,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Friendship Pact, or Upgrade: Druid Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Friendship Pact, or Druid Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7361,10 +7361,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Alliance, or Druid Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7412,10 +7412,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Alliance, or Druid Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7463,10 +7463,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Alliance, or Upgrade: Druid Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Druids Alliance, or Druid Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7514,10 +7514,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Druids Union and Ziggurat, or Druid Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7585,10 +7585,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Druids Union and Ziggurat, or Druid Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7636,10 +7636,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Druids Union and Upgrade: Ziggurat, or Upgrade: Druid Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Druids Union and Ziggurat, or Druid Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7995,10 +7995,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Trade Treaty, or Faceless Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8046,10 +8046,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Trade Treaty, or Faceless Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8097,10 +8097,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Trade Treaty, or Upgrade: Faceless Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Trade Treaty, or Faceless Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8148,10 +8148,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Friendship Pact, or Faceless Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8199,10 +8199,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Friendship Pact, or Faceless Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8250,10 +8250,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Friendship Pact, or Upgrade: Faceless Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Friendship Pact, or Faceless Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8301,10 +8301,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Alliance, or Faceless Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8352,10 +8352,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Alliance, or Faceless Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8403,10 +8403,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Alliance, or Upgrade: Faceless Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Faceless Alliance, or Faceless Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8458,10 +8458,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Faceless Union and Forbidden Library, or Faceless Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8514,10 +8514,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Faceless Union and Forbidden Library, or Faceless Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8565,10 +8565,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Faceless Union and Upgrade: Forbidden Library, or Upgrade: Faceless Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Faceless Union and Forbidden Library, or Faceless Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8958,10 +8958,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Trade Treaty, or Dwarven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9009,10 +9009,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Trade Treaty, or Dwarven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9060,10 +9060,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Trade Treaty, or Upgrade: Dwarven Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Trade Treaty, or Dwarven Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9111,10 +9111,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Friendship Pact, or Dwarven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9162,10 +9162,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Friendship Pact, or Dwarven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9213,10 +9213,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Friendship Pact, or Upgrade: Dwarven Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Friendship Pact, or Dwarven Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9264,10 +9264,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Alliance, or Dwarven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9315,10 +9315,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Alliance, or Dwarven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9366,10 +9366,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Alliance, or Upgrade: Dwarven Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dwarven Alliance, or Dwarven Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9417,10 +9417,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dwarven Union and High Bastion, or Dwarven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -9472,10 +9472,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dwarven Union and High Bastion, or Dwarven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -9531,10 +9531,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dwarven Union and Upgrade: High Bastion, or Upgrade: Dwarven Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dwarven Union and High Bastion, or Dwarven Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -9918,10 +9918,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Trade Treaty, or Drow Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9969,10 +9969,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Trade Treaty, or Drow Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10020,10 +10020,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Trade Treaty, or Upgrade: Drow Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Trade Treaty, or Drow Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10071,10 +10071,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Friendship Pact, or Drow Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10122,10 +10122,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Friendship Pact, or Drow Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10173,10 +10173,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Friendship Pact, or Upgrade: Drow Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Friendship Pact, or Drow Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10224,10 +10224,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Alliance, or Drow Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10275,10 +10275,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Alliance, or Drow Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10326,10 +10326,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Alliance, or Upgrade: Drow Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Drow Alliance, or Drow Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -10377,10 +10377,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Drow Union and Brothel, or Drow Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -10428,10 +10428,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Drow Union and Brothel, or Drow Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -10479,10 +10479,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Drow Union and Upgrade: Brothel, or Upgrade: Drow Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Drow Union and Brothel, or Drow Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -10679,8 +10679,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragons Trade Treaty",
-"having found at least one Dwarven Coin and one Drow Coin in this Era"
+"having Dragons Trade Treaty"
 ],
 "undecoded": [],
 "asc_min": 1,
@@ -10726,8 +10725,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragons Friendship Pact",
-"having found at least one Dwarven Coin and one Drow Coin in this Era"
+"having Dragons Friendship Pact"
 ],
 "undecoded": [],
 "asc_min": 1,
@@ -10893,10 +10891,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Trade Treaty, or Dragon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -10953,10 +10951,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Trade Treaty, or Dragon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11019,10 +11017,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Trade Treaty, or Upgrade: Dragon Bronze Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Trade Treaty, or Dragon Bronze Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11090,10 +11088,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Friendship Pact, or Dragon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11141,10 +11139,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Friendship Pact, or Dragon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11204,10 +11202,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Friendship Pact, or Upgrade: Dragon Silver Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Friendship Pact, or Dragon Silver Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11267,10 +11265,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Alliance, or Dragon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11318,10 +11316,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Alliance, or Dragon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11374,10 +11372,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragons Alliance, or Upgrade: Dragon Gold Legacy instead"
+"requirements": [],
+"conditions": [
+"having Dragons Alliance, or Dragon Gold Legacy instead"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
@@ -11425,10 +11423,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dragon Union and Dragon Pasture, or Dragon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11465,10 +11463,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dragon Union and Dragon Pasture, or Dragon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11516,10 +11514,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Dragon Union and Upgrade: Dragon Pasture, or Upgrade: Dragon Diamond Legacy instead of both"
+"requirements": [],
+"conditions": [
+"having Dragon Union and Dragon Pasture, or Dragon Diamond Legacy instead of both"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11915,10 +11913,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Archon Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11971,10 +11969,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Archon Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12022,10 +12020,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Archon Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12073,10 +12071,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Archon Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12140,10 +12138,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Archon Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12195,10 +12193,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Archon Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12246,10 +12244,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Alliance"
+"requirements": [],
+"conditions": [
+"having Archon Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12297,10 +12295,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Alliance"
+"requirements": [],
+"conditions": [
+"having Archon Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12348,10 +12346,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Alliance"
+"requirements": [],
+"conditions": [
+"having Archon Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12388,10 +12386,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Union"
+"requirements": [],
+"conditions": [
+"having Archon Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12428,10 +12426,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Union"
+"requirements": [],
+"conditions": [
+"having Archon Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12479,10 +12477,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Archon Union"
+"requirements": [],
+"conditions": [
+"having Archon Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12825,10 +12823,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Djinn Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12876,10 +12874,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Djinn Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12927,10 +12925,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Djinn Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12978,10 +12976,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Djinn Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13045,10 +13043,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Djinn Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13096,10 +13094,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Djinn Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13147,10 +13145,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Alliance"
+"requirements": [],
+"conditions": [
+"having Djinn Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13208,10 +13206,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Alliance"
+"requirements": [],
+"conditions": [
+"having Djinn Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13259,10 +13257,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Alliance"
+"requirements": [],
+"conditions": [
+"having Djinn Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13310,10 +13308,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Union"
+"requirements": [],
+"conditions": [
+"having Djinn Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13361,10 +13359,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Union"
+"requirements": [],
+"conditions": [
+"having Djinn Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13412,10 +13410,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Djinn Union"
+"requirements": [],
+"conditions": [
+"having Djinn Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13758,10 +13756,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Makers Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13809,10 +13807,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Makers Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13860,10 +13858,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Trade Treaty"
+"requirements": [],
+"conditions": [
+"having Makers Trade Treaty"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13911,10 +13909,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Makers Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13962,10 +13960,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Makers Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14013,10 +14011,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Friendship Pact"
+"requirements": [],
+"conditions": [
+"having Makers Friendship Pact"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14064,10 +14062,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Alliance"
+"requirements": [],
+"conditions": [
+"having Makers Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14119,10 +14117,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Alliance"
+"requirements": [],
+"conditions": [
+"having Makers Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14170,10 +14168,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Alliance"
+"requirements": [],
+"conditions": [
+"having Makers Alliance"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14221,10 +14219,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Union"
+"requirements": [],
+"conditions": [
+"having Makers Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14272,10 +14270,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Union"
+"requirements": [],
+"conditions": [
+"having Makers Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -14339,10 +14337,10 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Makers Union"
+"requirements": [],
+"conditions": [
+"having Makers Union"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
