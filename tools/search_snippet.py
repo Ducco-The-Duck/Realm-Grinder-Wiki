@@ -83,7 +83,7 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav{position:relative;display:inline-block}
 .dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
-.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu{display:flex}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}
 .dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
@@ -214,7 +214,10 @@ JS = r'''
       });
       sync();
     });
-    document.addEventListener('click',function(){ document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
+    document.addEventListener('click',function(e){
+      document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); });
+      document.querySelectorAll('.dd-nav.open').forEach(function(w){ if(!w.contains(e.target)) w.classList.remove('open'); });
+    });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
   }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
@@ -254,8 +257,8 @@ UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.ht
 def upgrades_nav(current_file=None, parent_current=False):
     """the nav entry "Upgrades" with its drop-down of the four upgrade pages"""
     links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
-    return ('<span class="dd-nav"><a href="upgrades-allegiance.html"' + (' aria-current="page"' if parent_current else '') +
-            '>Upgrades</a><span class="dd-menu">' + links + '</span></span>')
+    return ('<span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer"' + (' aria-current="page"' if parent_current else '') +
+            " onclick=\"this.parentNode.classList.toggle('open')\">Upgrades</a><span class=\"dd-menu\">" + links + '</span></span>')
 
 
 def apply(html, placeholder, current_file=None):

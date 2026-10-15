@@ -119,7 +119,7 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav{position:relative;display:inline-block}
 .dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
-.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu{display:flex}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}
 .dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
@@ -182,7 +182,7 @@ h2{margin:0 0 3px;padding-bottom:2px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades-allegiance.html">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Trophies</h1>
 <div class="search"><input id="q" type="search" placeholder="Search trophy names and requirements" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div id="root"></div>
@@ -267,7 +267,10 @@ h2{margin:0 0 3px;padding-bottom:2px}
       });
       sync();
     });
-    document.addEventListener('click',function(){ document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
+    document.addEventListener('click',function(e){
+      document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); });
+      document.querySelectorAll('.dd-nav.open').forEach(function(w){ if(!w.contains(e.target)) w.classList.remove('open'); });
+    });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); }); });
   }
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
