@@ -53,7 +53,7 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
 html{font-size:30px}
-body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.2;letter-spacing:.01em}
+body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.12;letter-spacing:.01em}
 main{max-width:680px}
 #tip{width:min(620px,calc(100vw - 16px))}
 #pop .card{width:min(620px,100%)}
@@ -108,18 +108,18 @@ body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radi
 body.steel .cs>button{padding:0 30px 0 6px}
 body.steel .cs ul{box-shadow:none}
 /* less vertical air everywhere */
-main{padding-top:18px;padding-bottom:50px}
-nav{margin:0 0 8px}
+main{padding-top:10px;padding-bottom:40px}
+nav{margin:0 0 6px}
 h1{margin:0 0 2px}
-.sub{margin:0 0 8px;line-height:1.2}
-.pen-note{margin:0 0 8px;padding:6px 10px;line-height:1.2}
-.search{margin:0 0 8px}
-.bar{padding:4px 16px;gap:2px;margin-bottom:8px}
+.sub{margin:0 0 6px;line-height:1.12}
+.pen-note{margin:0 0 6px;padding:3px 8px;line-height:1.12}
+.search{margin:0 0 6px}
+.bar{padding:2px 16px;gap:0;margin-bottom:6px}
 .bar .row{gap:2px 14px}
-section{margin:0 0 14px}
-h2{margin:0 0 5px;padding-bottom:3px}
-.subh{margin:8px 0 4px}
-.grid{gap:5px}
+section{margin:0 0 10px}
+h2{margin:0 0 3px;padding-bottom:2px}
+.subh{margin:6px 0 3px}
+.grid{gap:4px}
 /* drop-downs drawn by the page, so that they use the game's font (the browser's own list does not) */
 .cs{position:relative;display:inline-block}
 .cs>button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 28px 1px 10px;
@@ -255,7 +255,15 @@ def upgrades_nav(current_file=None, parent_current=False):
 
 
 def apply(html, placeholder, current_file=None):
-    """Fill the three markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/."""
+    """Fill the markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/ (and the nav, the tooltip arrow)."""
+    import re as _re
+    # every page's tooltip placement: remember the side and where the object is, so the game's arrow can point at it
+    html = _re.sub(r"var y=(\w)\.top-t\.height-8; if\(y<8\) y=\1\.bottom\+8;",
+                   lambda m: ("var up=%(a)s.top-t.height-18>=8, y=up?%(a)s.top-t.height-18:%(a)s.bottom+18; "
+                              "tip.className=up?'above':'below'; "
+                              "tip.style.setProperty('--ax', Math.min(Math.max(%(a)s.left+%(a)s.width/2-x,24),t.width-24)+'px');")
+                   % {'a': m.group(1)}, html)
+    html = html.replace('<body>', '<body class="steel">', 1)
     html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
     html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
     return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
