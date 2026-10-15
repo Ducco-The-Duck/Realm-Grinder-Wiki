@@ -807,6 +807,28 @@ for u in by_cat['allegiances']:
     u['conditions'] = [re.sub(r'Miscellaneous trophy: Research (\w+) Trophy',
                               lambda m: 'completed ' + (_RQ.get(_RF.get(m.group(1))) or m.group(0)), c_) for c_ in u['conditions']]
 
+# the hidden "Archeology <X> Trophy" is not on the Trophies page: it is only the flag an archaeology upgrade sets when bought
+_ARCH = {'Titan': 'Fragment of a Titan Statue', 'Druid': 'Druidic Runestone', 'Faceless': 'Octopus Shaped Spine',
+         'Dwarf': "Sturdy Bearded Man's Quest", 'Drow': "Cloaked Shady Figure's Quest", 'Underworld': 'Passage to the Underworld'}
+_ARCH_RE = re.compile(r'(?:Allegiances|Miscellaneous) trophy: Archeology (\w+) Trophy')
+for u in [u_ for items_ in by_cat.values() for u_ in items_]:
+    keep = []
+    for s_ in u['sources']:
+        m_ = re.fullmatch(r'Archeology (\w+) Trophy', s_['name'])
+        if m_ and m_.group(1) in _ARCH:
+            u['requirements'].insert(0, 'Upgrade: ' + _ARCH[m_.group(1)])
+        else: keep.append(s_)
+    u['sources'] = keep
+    for k_ in ('requirements', 'conditions'):
+        out_ = []
+        for c_ in u[k_]:
+            ms_ = _ARCH_RE.findall(c_)
+            if ms_ and all(m in _ARCH for m in ms_):
+                names_ = [_ARCH[m] for m in ms_]
+                c_ = ('Upgrade: ' + names_[0]) if len(names_) == 1 else 'Any one of the upgrades: ' + ', '.join(names_)
+            out_.append(c_)
+        u[k_] = out_
+
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
 for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     ns = [int(m.group(1)) for c_ in u['conditions'] for m in [re.search(r'Reincarnation (\d+)', c_)] if m and c_.startswith('being at')]

@@ -94,7 +94,7 @@
 ],
 "sources": [],
 "requirements": [
-"Allegiances trophy: Archeology Titan Trophy or Allegiances trophy: Archeology Druid Trophy or Allegiances trophy: Archeology Faceless Trophy"
+"Any one of the upgrades: Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine"
 ],
 "conditions": [
 "not having an alignment yet"
@@ -5825,13 +5825,10 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archeology Titan Trophy"
-}
+"sources": [],
+"requirements": [
+"Upgrade: Fragment of a Titan Statue"
 ],
-"requirements": [],
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
@@ -6719,13 +6716,10 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archeology Druid Trophy"
-}
+"sources": [],
+"requirements": [
+"Upgrade: Druidic Runestone"
 ],
-"requirements": [],
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
@@ -7655,13 +7649,10 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archeology Faceless Trophy"
-}
+"sources": [],
+"requirements": [
+"Upgrade: Octopus Shaped Spine"
 ],
-"requirements": [],
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
@@ -8574,13 +8565,9 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archeology Dwarf Trophy"
-}
-],
+"sources": [],
 "requirements": [
+"Upgrade: Sturdy Bearded Man's Quest",
 "Upgrade: the Alliance of your base faction"
 ],
 "conditions": [
@@ -9490,13 +9477,9 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Allegiances trophy",
-"name": "Archeology Drow Trophy"
-}
-],
+"sources": [],
 "requirements": [
+"Upgrade: Cloaked Shady Figure's Quest",
 "Upgrade: the Alliance of your base faction"
 ],
 "conditions": [
@@ -24782,13 +24765,10 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Archeology Underworld Trophy"
-}
+"sources": [],
+"requirements": [
+"Upgrade: Passage to the Underworld"
 ],
-"requirements": [],
 "conditions": [],
 "undecoded": [],
 "asc_min": null,
@@ -24863,13 +24843,10 @@
 "s": null
 }
 ],
-"sources": [
-{
-"kind": "Miscellaneous trophy",
-"name": "Archeology Underworld Trophy"
-}
+"sources": [],
+"requirements": [
+"Upgrade: Passage to the Underworld"
 ],
-"requirements": [],
 "conditions": [],
 "undecoded": [],
 "asc_min": null,
