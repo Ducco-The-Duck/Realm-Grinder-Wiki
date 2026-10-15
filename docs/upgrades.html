@@ -238,10 +238,6 @@ the base values <i>v</i>.</div>
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
     if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : 'Can only be bought when '+it.o.map(pred).join(' and ')+'.')));
-    // Ascension and Reincarnation track the same progress: Ascension N starts at Reincarnation 40 / 100 / 160 / 220
-    var RMIN=[0,40,100,160,220];
-    if(it.lo) tip.appendChild(el('div','faction','Needs Ascension '+it.lo+' or higher (Reincarnation '+RMIN[it.lo]+'+).'));
-    if(it.hi!==null) tip.appendChild(el('div','faction','Not available from Ascension '+it.hi+' on (Reincarnation '+RMIN[it.hi]+'+).'));
     if(unavailable(it)){
       tip.appendChild(el('span','lbl','Not available'));
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
