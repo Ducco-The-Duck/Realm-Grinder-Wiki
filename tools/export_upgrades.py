@@ -853,7 +853,7 @@ for idx, r in enumerate(rows):
     reqs = []
     if spell: reqs.append(f'Spell: {spell}')
     pre = TIER_PREREQ.get(spell)
-    if pre: reqs.append(f'Reincarnation {pre[0]}+ and Upgrade: {pre[1]}')
+    # the Reincarnation / dragon-growth upgrade each spell group needs belongs to the Unlocks page, not here
     if r.get('sv') and r.get('sw'):
         d_ = describe_source({'kind': 'artifact' if r['sw'] in ARTIFACT else 'trophy', 'name': r['sw']})
         reqs.append(f"{d_['kind']}: {d_['name']}")

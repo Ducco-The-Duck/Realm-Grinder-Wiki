@@ -64,8 +64,7 @@ Only these need checking; remove an item when it is settled.
    or higher, except Dragon's Breath (Reincarnation 54 / 60 / 66 / 72, any Ascension). The "Offline production" bonus reads v = (Mmax^(2/max(3,A)) + (30 R)^(2/max(3,A)))^0.4 (Maximum Mana, mana
    regeneration per second) with the Ascension penalty starting at the tier number. The game's tooltip shows the product of this
    tier and the lower tiers while a display setting (stored value 23, default off) is at its default; the page shows the
-   single-tier formula. The spells' own Maximum Mana / Reincarnation prerequisites (R42 to R48 plus a Dragon growth upgrade) and
-   the three Lore-artifact requirements (Precognition, Limited Wish, Infinite Spiral) are read from the code. Arcane Brilliance
+   single-tier formula. The spells' own Reincarnation (R42 to R48) and dragon-growth upgrade prerequisites are left for the Unlocks page; the three Lore-artifact requirements (Precognition, Limited Wish, Infinite Spiral) are read from the code. Arcane Brilliance
    needs one Arcane Brilliance trophy per Ascension (count + 1 > Ascension).
 
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
