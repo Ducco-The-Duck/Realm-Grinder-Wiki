@@ -865,6 +865,9 @@ for idx, r in enumerate(rows):
         'spell': spell, 'spell_tier': r['sr'] + 1, 'unlock_by_asc': ra,
     })
 
+for u in by_cat['magic']:      # the spell tiers were added after the pass above
+    if u.get('spell') == "Dragon's Breath" and (u['asc_min'] or 0) < 1: u['asc_min'] = 1
+
 # value symbols: v, or v1, v2 ... when a description has several computed values
 raw = []
 for items in by_cat.values():
