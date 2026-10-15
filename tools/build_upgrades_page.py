@@ -294,6 +294,17 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .t-Chaos{--tr:url(assets/ui/trim/ChaosTrim.png);--trh:url(assets/ui/trim/ChaosTrim_Hover.png)}
 .t-Balance{--tr:url(assets/ui/trim/BalanceTrim.png);--trh:url(assets/ui/trim/BalanceTrim_Hover.png)}
 .t-Silver{--tr:url(assets/ui/trim/Silver.png);--trh:url(assets/ui/trim/Silver.png)}
+/* section headers are dropdowns */
+section.dd h2{display:flex;align-items:baseline;gap:8px;cursor:pointer;user-select:none}
+section.dd h2:hover{color:var(--accent)}
+section.dd h2 .chev{margin-left:auto;align-self:center;width:9px;height:9px;margin-right:6px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-3px) rotate(45deg);transition:transform .3s ease}
+section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
+.dd-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s ease,opacity .3s ease}
+.dd.open .dd-body,body.searching .dd .dd-body{grid-template-rows:1fr;opacity:1}
+.dd-in{overflow:hidden;min-height:0}
+@keyframes ddcell{from{opacity:0;transform:translateY(-10px) scale(.9)}to{opacity:1;transform:none}}
+.dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -301,7 +312,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Magic (with the spell tiers), Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
+<p class="sub">Hover an upgrade for what it does and what unlocks it. Click a section header to fold it. Magic (with the spell tiers), Buildings and Secret upgrades are filled in so far; Misc has the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series so far; Allegiances has the treaty tiers and the twelve faction upgrades of every faction so far (bloodlines, lineages, heritages, sets and legacies are still to come).</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -313,8 +324,7 @@ the base values <i>v</i>.</div>
 <div class="bar">
   <div class="row"><label for="asc"><b>Ascension</b></label><select id="asc"></select>
   <span class="hint">The A marks and the greyed-out upgrades (not available in it) follow the chosen Ascension.</span></div>
-  <div class="row" id="filter"><b>Show</b></div>
-  <div class="row" id="alleg-row" hidden><b>Factions</b>
+  <div class="row" id="alleg-row"><b>Factions</b>
     <label>Base <select id="pk-b"></select></label>
     <label>Prestige <select id="pk-p"></select></label>
     <label>Astral <select id="pk-a"></select></label>
@@ -517,29 +527,13 @@ the base values <i>v</i>.</div>
 
   var saved={};
   try{ saved=JSON.parse(localStorage.getItem('upgrade-sections')||'{}')||{}; }catch(e){}
-  SECTIONS.forEach(function(s){
-    var on = s.entries ? (saved[s.id]!==false) : false;
-    var lab=el('label', s.entries ? '' : 'off');
-    var cb=el('input'); cb.type='checkbox'; cb.checked=on; cb.disabled=!s.entries;
-    lab.appendChild(cb);
-    lab.appendChild(document.createTextNode(s.name.replace(' Upgrades','')+(s.entries ? ' ('+s.count+')' : ' (not filled in yet)')));
-    filter.appendChild(lab);
-    if(!s.entries) return;
-    var sec=el('section'); sec.hidden=!on;
-    var h=el('h2',null,s.name); h.appendChild(el('small',null,s.count+' upgrades')); sec.appendChild(h);
-    h.style.cursor='pointer'; h.title='Click to hide this section (tick it again under Show)';
-    h.addEventListener('click',function(){ cb.checked=false; cb.dispatchEvent(new Event('change')); });
-    if(s.alleg){
-      s.entries.forEach(function(en){ var it=en.items[0]; (allegItems[it.fa]=allegItems[it.fa]||[]).push(it); });
-      allegBox=el('div'); sec.appendChild(allegBox); root.appendChild(sec);
-      document.getElementById('alleg-row').hidden=!on;
-      cb.addEventListener('change',function(){
-        sec.hidden=!cb.checked; hideTip(); document.getElementById('alleg-row').hidden=!cb.checked;
-        saved[s.id]=cb.checked;
-        try{ localStorage.setItem('upgrade-sections', JSON.stringify(saved)); }catch(e){}
-      });
-      return;
-    }
+  function cascade(inner){
+    var cs=inner.querySelectorAll('.cell');
+    for(var k=0;k<cs.length && k<90;k++) cs[k].style.setProperty('--i', k);
+    inner.classList.add('casc');
+    setTimeout(function(){ inner.classList.remove('casc'); }, 1300);
+  }
+  function addGrid(inner, s){
     var g=el('div','grid');
     s.entries.forEach(function(en){
       if(en.items.length===1){
@@ -558,12 +552,29 @@ the base values <i>v</i>.</div>
         g.appendChild(gb); gcells.push([gb,en]);
       }
     });
-    sec.appendChild(g); root.appendChild(sec);
-    cb.addEventListener('change',function(){
-      sec.hidden=!cb.checked; hideTip();
-      saved[s.id]=cb.checked;
+    inner.appendChild(g);
+  }
+  SECTIONS.forEach(function(s){
+    if(!s.entries) return;
+    var open = saved[s.id]!==false;
+    var sec=el('section','dd'+(open?' open':''));
+    var h=el('h2',null,s.name); h.appendChild(el('small',null,s.count+' upgrades')); h.appendChild(el('span','chev'));
+    h.tabIndex=0; h.setAttribute('role','button'); h.setAttribute('aria-expanded', String(open));
+    var body=el('div','dd-body'), inner=el('div','dd-in'); body.appendChild(inner);
+    sec.appendChild(h); sec.appendChild(body);
+    function toggle(){
+      open=!open; sec.classList.toggle('open', open); h.setAttribute('aria-expanded', String(open)); hideTip();
+      if(open) cascade(inner);
+      saved[s.id]=open;
       try{ localStorage.setItem('upgrade-sections', JSON.stringify(saved)); }catch(e){}
-    });
+    }
+    h.addEventListener('click', toggle);
+    h.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+    if(s.alleg){
+      s.entries.forEach(function(en){ var it=en.items[0]; (allegItems[it.fa]=allegItems[it.fa]||[]).push(it); });
+      allegBox=el('div'); inner.appendChild(allegBox);
+    } else addGrid(inner, s);
+    root.appendChild(sec);
   });
   // ---- Allegiances: the base / prestige / astral faction picker
   var ROLE_TXT={base:'base faction', merc:'base faction', prestige:'prestige faction', astral:'astral faction'};
@@ -662,7 +673,7 @@ the base values <i>v</i>.</div>
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
-  runSearch=searchInit(root);
+  runSearch=searchInit(root, function(){ document.body.classList.toggle('searching', QT.length>0); });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });
