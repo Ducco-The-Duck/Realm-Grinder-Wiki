@@ -840,6 +840,7 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     for c_ in u['conditions']:
         if f_ in FACTION and c_ in ('playing as ' + FACTION[f_], f'having {FACTION[f_]} as your prestige faction',
                                     f'having {FACTION[f_]} as your astral faction'): continue
+        if f_ in FACTION and c_ == 'not having a faction yet': continue
         if c_.startswith('not having a prestige faction, unless') and 'prestige faction' in desc_: continue
         c_ = re.sub(r'^(having the spell [^()]+) \(.*\)$', r'\1', c_)
         c_ = re.sub(r'^following the (\w+) path \(needed from Ascension 2\)$',

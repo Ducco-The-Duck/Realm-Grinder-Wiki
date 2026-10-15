@@ -318,7 +318,6 @@
 "requirements": [],
 "conditions": [
 "having Good alignment",
-"not having a faction yet",
 "following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -1247,7 +1246,6 @@
 "requirements": [],
 "conditions": [
 "having Good alignment",
-"not having a faction yet",
 "following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -2198,7 +2196,6 @@
 "requirements": [],
 "conditions": [
 "having Good alignment",
-"not having a faction yet",
 "following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -3108,7 +3105,6 @@
 "requirements": [],
 "conditions": [
 "having Evil alignment",
-"not having a faction yet",
 "following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -4038,7 +4034,6 @@
 "requirements": [],
 "conditions": [
 "having Evil alignment",
-"not having a faction yet",
 "following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -4955,7 +4950,6 @@
 "requirements": [],
 "conditions": [
 "having Evil alignment",
-"not having a faction yet",
 "following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -5883,7 +5877,6 @@
 ],
 "conditions": [
 "having Neutral alignment",
-"not having a faction yet",
 "following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -6803,7 +6796,6 @@
 ],
 "conditions": [
 "having Neutral alignment",
-"not having a faction yet",
 "following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
@@ -7753,7 +7745,6 @@
 ],
 "conditions": [
 "having Neutral alignment",
-"not having a faction yet",
 "following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
