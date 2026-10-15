@@ -831,6 +831,28 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
             out_.append(c_)
         u[k_] = out_
 
+# the chain of a faction's tier upgrades: Pact needs the Treaty, Alliance the Pact, Union the Alliance and the faction's
+# second unique building (that is an availability condition: it is checked every time, together with the Ascension / faction).
+_TIERS = {}
+for u_ in by_cat['allegiances']:
+    if u_['akind'] == 'tier' and u_['faction'] in FACTION and u_['faction'] != 11:
+        for suf_ in ('Trade Treaty', 'Friendship Pact', 'Alliance', 'Union'):
+            if u_['name'].endswith(suf_): _TIERS[(u_['faction'], suf_)] = u_['name']
+_PREV = {'Friendship Pact': 'Trade Treaty', 'Alliance': 'Friendship Pact', 'Union': 'Alliance'}
+for u_ in by_cat['allegiances']:
+    if u_['akind'] != 'tier' or u_['faction'] not in FACTION or u_['faction'] == 11: continue
+    for suf_, prev_ in _PREV.items():
+        if u_['name'].endswith(suf_) and (u_['faction'], prev_) in _TIERS:
+            u_['conditions'].insert(0, 'having ' + _TIERS[(u_['faction'], prev_)])
+            if suf_ == 'Union':
+                bld_ = [r_ for r_ in u_['requirements'] if r_.startswith('Upgrade: ')]
+                u_['requirements'] = [r_ for r_ in u_['requirements'] if r_ not in bld_]
+                u_['conditions'] += ['having the upgrade ' + r_[len('Upgrade: '):] for r_ in bld_]
+                rs_ = [c_ for c_ in u_['conditions'] if re.match(r'being at Reincarnation \d+ or higher$', c_)]
+                u_['conditions'] = [c_ for c_ in u_['conditions'] if c_ not in rs_]
+                u_['requirements'] += [c_.replace('being at ', '').replace(' or higher', ' or higher') for c_ in rs_]
+                if rs_ and (u_['asc_min'] or 0) < 2: u_['asc_min'] = 2      # Reincarnation 115 / 130 are Ascension 2 territory
+
 # conditions the reader already knows from the page: the faction picked in the selector, the spell's own parenthesis,
 # the warning that the description gives, the treaty's note
 for u in [u_ for items_ in by_cat.values() for u_ in items_]:

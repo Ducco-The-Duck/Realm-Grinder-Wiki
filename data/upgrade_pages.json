@@ -361,7 +361,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Fairies Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -403,7 +405,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Fairies Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -460,10 +464,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Swarming Tower"
+"requirements": [],
+"conditions": [
+"having Fairies Alliance",
+"having the upgrade Swarming Tower"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1289,7 +1294,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Elven Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1331,7 +1338,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Elven Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1393,10 +1402,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Arboreal City"
+"requirements": [],
+"conditions": [
+"having Elven Alliance",
+"having the upgrade Arboreal City"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2239,7 +2249,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Angels Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2281,7 +2293,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Angels Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2338,10 +2352,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Holy Site"
+"requirements": [],
+"conditions": [
+"having Angels Alliance",
+"having the upgrade Holy Site"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3148,7 +3163,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Goblins Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3190,7 +3207,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Goblins Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3247,10 +3266,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Slave Market"
+"requirements": [],
+"conditions": [
+"having Goblins Alliance",
+"having the upgrade Slave Market"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4077,7 +4097,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Undead Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4119,7 +4141,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Undead Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4176,10 +4200,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Flesh Workshop"
+"requirements": [],
+"conditions": [
+"having Undead Alliance",
+"having the upgrade Flesh Workshop"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4993,7 +5018,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Demons Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5035,7 +5062,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Demons Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5097,10 +5126,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Burning Abyss"
+"requirements": [],
+"conditions": [
+"having Demons Alliance",
+"having the upgrade Burning Abyss"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5922,7 +5952,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Titans Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5966,7 +5998,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Titans Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6041,10 +6075,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Mountain Palace"
+"requirements": [],
+"conditions": [
+"having Titans Alliance",
+"having the upgrade Mountain Palace"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6841,7 +6876,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Druids Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6885,7 +6922,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Druids Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6948,10 +6987,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Ziggurat"
+"requirements": [],
+"conditions": [
+"having Druids Alliance",
+"having the upgrade Ziggurat"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7790,7 +7830,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Faceless Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7834,7 +7876,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Faceless Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7893,10 +7937,11 @@
 }
 ],
 "sources": [],
-"requirements": [
-"Upgrade: Forbidden Library"
+"requirements": [],
+"conditions": [
+"having Faceless Alliance",
+"having the upgrade Forbidden Library"
 ],
-"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8716,7 +8761,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Dwarven Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8758,7 +8805,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Dwarven Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8852,10 +8901,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: High Bastion"
+"Reincarnation 115 or higher"
 ],
 "conditions": [
-"being at Reincarnation 115 or higher"
+"having Dwarven Alliance",
+"having the upgrade High Bastion"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -9675,7 +9725,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Drow Trade Treaty"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9717,7 +9769,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Drow Friendship Pact"
+],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9807,10 +9861,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Brothel"
+"Reincarnation 115 or higher"
 ],
 "conditions": [
-"being at Reincarnation 115 or higher"
+"having Drow Alliance",
+"having the upgrade Brothel"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -10624,6 +10679,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
+"having Dragons Trade Treaty",
 "having found at least one Dwarven Coin and one Drow Coin in this Era"
 ],
 "undecoded": [],
@@ -10670,6 +10726,7 @@
 "sources": [],
 "requirements": [],
 "conditions": [
+"having Dragons Friendship Pact",
 "having found at least one Dwarven Coin and one Drow Coin in this Era"
 ],
 "undecoded": [],
@@ -10767,10 +10824,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Dragon Pasture"
+"Reincarnation 115 or higher"
 ],
 "conditions": [
-"being at Reincarnation 115 or higher"
+"having Dragons Alliance",
+"having the upgrade Dragon Pasture"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -11706,7 +11764,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Archon Trade Treaty"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11750,7 +11810,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Archon Friendship Pact"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11794,10 +11856,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Nexus"
+"Reincarnation 130 or higher"
 ],
 "conditions": [
-"being at Reincarnation 130 or higher"
+"having Archon Alliance",
+"having the upgrade Nexus"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -12611,7 +12674,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Djinn Trade Treaty"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12655,7 +12720,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Djinn Friendship Pact"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12699,10 +12766,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Pavilion"
+"Reincarnation 130 or higher"
 ],
 "conditions": [
-"being at Reincarnation 130 or higher"
+"having Djinn Alliance",
+"having the upgrade Pavilion"
 ],
 "undecoded": [],
 "asc_min": 2,
@@ -13539,7 +13607,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Makers Trade Treaty"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13583,7 +13653,9 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [],
+"conditions": [
+"having Makers Friendship Pact"
+],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13627,10 +13699,11 @@
 ],
 "sources": [],
 "requirements": [
-"Upgrade: Hall of Origination"
+"Reincarnation 130 or higher"
 ],
 "conditions": [
-"being at Reincarnation 130 or higher"
+"having Makers Alliance",
+"having the upgrade Hall of Origination"
 ],
 "undecoded": [],
 "asc_min": 2,
