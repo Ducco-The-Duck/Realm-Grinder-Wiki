@@ -154,7 +154,7 @@ def alleg_section():
         return (-1 if general else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
     bl_by = {u['faction']: item(u) for u in allu if u['akind'] == 'bloodline'}
-    blood = [bl_by.get(i) for i in range(16)]          # the game's grid: three columns, faction order, a gap at the Mercenaries
+    blood = [bl_by[i] for i in range(16) if i in bl_by]          # the game's grid: three columns in faction order (Mercenaries have none)
     perks = {}
     for u in allu:
         if u['akind'] == 'lineage_perk':
@@ -165,7 +165,7 @@ def alleg_section():
         it = item(u)
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
         lin_by[u['faction']] = it
-    lineages = [lin_by.get(i) for i in range(16)]
+    lineages = [lin_by[i] for i in range(16) if i in lin_by]
     es = []
     for u in allu:
         if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
