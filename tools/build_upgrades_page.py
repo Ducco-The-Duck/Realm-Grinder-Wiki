@@ -381,8 +381,10 @@ the base values <i>v</i>.</div>
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
+    var up=r.top-t.height-18>=8, y=up ? r.top-t.height-18 : r.bottom+18;
     if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
+    tip.className=up?'above':'below';
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   function hideTip(){ tip.style.display='none'; }
@@ -420,7 +422,9 @@ the base values <i>v</i>.</div>
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
+    var up=r.top-t.height-18>=8, y=up ? r.top-t.height-18 : r.bottom+18;
+    tip.className=up?'above':'below';
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');

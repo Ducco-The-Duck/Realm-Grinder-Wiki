@@ -159,13 +159,20 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
 /* the game's tooltip border (black_SteelTrim, 9-slice 8 px) instead of rounded corners; used on one page so far */
-body.steel #tip,body.steel #pop .card,body.steel #more .card{border:16px solid transparent;border-radius:0;background:none;box-shadow:none;
-  border-image:url(assets/ui/trim/Steel.png) 8 fill / 16px / 0 stretch;image-rendering:pixelated;padding:0 4px;
+body.steel #tip,body.steel #pop .card,body.steel #more .card{border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 6px;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:#ece6d8}
 body.steel .pen-note,body.steel .search input{border:8px solid transparent;border-radius:0;background:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a}
 body.steel .search input{padding:0 8px}
+body.steel #tip{overflow:visible;line-height:1.15}
+body.steel #tip .lbl{margin-top:3px}
+body.steel #tip p{margin:1px 0 0}
+body.steel #tip.above::after,body.steel #tip.below::after{content:"";position:absolute;left:var(--ax,50%);width:21px;height:12px;
+  transform:translateX(-50%);image-rendering:pixelated;background-repeat:no-repeat}
+body.steel #tip.above::after{bottom:-20px;background-image:url(assets/ui/TooltipTipDown.png)}
+body.steel #tip.below::after{top:-20px;background-image:url(assets/ui/TooltipTipUp.png)}
 body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radius:0;background:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
   --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
@@ -410,8 +417,10 @@ the base values <i>v</i>.</div>
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
+    var up=r.top-t.height-18>=8, y=up ? r.top-t.height-18 : r.bottom+18;
     if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
+    tip.className=up?'above':'below';
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   function hideTip(){ tip.style.display='none'; }
@@ -449,7 +458,9 @@ the base values <i>v</i>.</div>
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
+    var up=r.top-t.height-18>=8, y=up ? r.top-t.height-18 : r.bottom+18;
+    tip.className=up?'above':'below';
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
