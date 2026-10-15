@@ -435,7 +435,14 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.o.length) tip.appendChild(el('div','faction',(it.o[0].indexOf('starting from')===0 ? 'Can only be bought '+it.o[0]+'.' : 'Can only be bought when '+it.o.map(pred).join(' and ')+'.')));
+    if(it.o.length){
+      var rs=[], os=[];
+      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else os.push(c); });
+      var txt;
+      if(it.o[0].indexOf('starting from')===0) txt='Can only be bought '+it.o[0]+'.';
+      else txt='Can only be bought'+(os.length?' when '+os.map(pred).join(' and '):'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+'.';
+      tip.appendChild(el('div','faction',txt));
+    }
     if(unavailable(it)){
       tip.appendChild(el('span','lbl','Not available'));
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));

@@ -312,11 +312,6 @@
 "text": "Fairies focus on the small and common things and make them magically powerful. Affiliating yourself with the Fairy faction will hugely improve the output of lower tier buildings.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -324,7 +319,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Chaos path (needed from Ascension 2)"
+"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -367,9 +362,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Fairy"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -411,9 +404,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Fairy"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -446,14 +437,34 @@
 "icon": "FairyUnion",
 "order": 211,
 "id": 211,
-"description": [],
+"description": [
+{
+"text": "Unlock Fairy upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase assistant production based on Farms, Inns and Blacksmiths if buildings are even, or on all other buildings if odd.",
+"formulas": [
+{
+"latex": "v = 13 \\cdot X^{0.65}",
+"vars": [
+{
+"symbol": "X",
+"text": "Farms, Inns and Blacksmiths owned added together if the total number of buildings you own is even, otherwise all your other buildings added together"
+}
+],
+"label": "Assistant production (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Swarming Tower"
 ],
-"conditions": [
-"playing as Fairy"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1144,9 +1155,7 @@
 "Complete the quest Enchanted Field Quest"
 ],
 "conditions": [
-"playing as Fairy",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Dwarven Forge Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -1198,9 +1207,7 @@
 "requirements": [
 "Complete the quest Swarming Tower Quest"
 ],
-"conditions": [
-"playing as Fairy"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -1234,11 +1241,6 @@
 "text": "Elves are masters of efficiency and expertise, taking the best results from every single action. Affiliating yourself with the Elves faction will dramatically boost your clicking rewards while forsaking passive production.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -1246,7 +1248,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Balance path (needed from Ascension 2)"
+"following the Balance path (Proof of Balance, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -1289,9 +1291,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Elf"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1333,9 +1333,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Elf"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -1368,14 +1366,39 @@
 "icon": "ElvenUnion",
 "order": 229,
 "id": 229,
-"description": [],
+"description": [
+{
+"text": "Unlock Elven upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase clicking reward based on faction coins found in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also autoclicks 10 times per second.",
+"formulas": [],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Arboreal City"
 ],
-"conditions": [
-"playing as Elf"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2083,9 +2106,7 @@
 "Complete the quest Training Grounds Quest"
 ],
 "conditions": [
-"playing as Elf",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Dwarven Forge Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -2137,9 +2158,7 @@
 "requirements": [
 "Complete the quest Arboreal City Quest"
 ],
-"conditions": [
-"playing as Elf"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2173,11 +2192,6 @@
 "text": "Angels' ability with magic is unparalleled as they have the innate power to infuse mana into everything they touch. Affiliating yourself with the Angels faction will grant you nearly unlimited spell power and the ability to take advantage of it directly.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -2185,7 +2199,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Order path (needed from Ascension 2)"
+"following the Order path (Proof of Order, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -2228,9 +2242,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Angel"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2272,9 +2284,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Angel"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -2307,14 +2317,34 @@
 "icon": "AngelUnion",
 "order": 247,
 "id": 247,
-"description": [],
+"description": [
+{
+"text": "Unlock Angel upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Multiplicatively increase Mana Regeneration based on mana produced in this Era.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + W\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "W",
+"text": "Mana produced in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Holy Site"
 ],
-"conditions": [
-"playing as Angel"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -2986,9 +3016,7 @@
 "Complete the quest Heaven's Domain Quest"
 ],
 "conditions": [
-"playing as Angel",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Dwarven Forge Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -3040,9 +3068,7 @@
 "requirements": [
 "Complete the quest Holy Site Quest"
 ],
-"conditions": [
-"playing as Angel"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3076,11 +3102,6 @@
 "text": "The sly Goblins excel at making the best possible deals and bargains. Affiliating yourself with the Goblin faction will offer you economic opportunities and allows you to benefit from larger quantities of everything.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -3088,7 +3109,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Balance path (needed from Ascension 2)"
+"following the Balance path (Proof of Balance, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -3131,9 +3152,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Goblin"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3175,9 +3194,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Goblin"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -3210,14 +3227,34 @@
 "icon": "GoblinUnion",
 "order": 265,
 "id": 265,
-"description": [],
+"description": [
+{
+"text": "Unlock Goblin upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Multiplicatively increase Faction Coin find chance based on spells cast in this Era.",
+"formulas": [
+{
+"latex": "v = 2.25 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + T\\right)\\right)^{2.25}",
+"vars": [
+{
+"symbol": "T",
+"text": "Total casts of all spells in this Era"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Slave Market"
 ],
-"conditions": [
-"playing as Goblin"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3909,9 +3946,7 @@
 "Complete the quest Goblin Bank Quest"
 ],
 "conditions": [
-"playing as Goblin",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -3963,9 +3998,7 @@
 "requirements": [
 "Complete the quest Slave Market Quest"
 ],
-"conditions": [
-"playing as Goblin"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -3999,11 +4032,6 @@
 "text": "Undead are resilient and tireless, but most importantly, they can't die. Affiliating yourself with the Undead faction will grant you a steady flow of production which increases drastically as time passes.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -4011,7 +4039,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Order path (needed from Ascension 2)"
+"following the Order path (Proof of Order, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4054,9 +4082,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Undead"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4098,9 +4124,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Undead"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -4133,14 +4157,34 @@
 "icon": "UndeadUnion",
 "order": 283,
 "id": 283,
-"description": [],
+"description": [
+{
+"text": "Unlock Undead upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of Unique Buildings based on your Offline production bonus.",
+"formulas": [
+{
+"latex": "v = 360 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{3}",
+"vars": [
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Flesh Workshop"
 ],
-"conditions": [
-"playing as Undead"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4819,9 +4863,7 @@
 "Complete the quest Undercity Quest"
 ],
 "conditions": [
-"playing as Undead",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4873,9 +4915,7 @@
 "requirements": [
 "Complete the quest Flesh Workshop Quest"
 ],
-"conditions": [
-"playing as Undead"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -4909,11 +4949,6 @@
 "text": "The mighty and fearless Demons cannot bother with petty trifles, they only care for greatness and power. Affiliating yourself with the Demons faction will hugely improve the output of higher tier buildings.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Note: purchasing this upgrade will prevent you from changing to any other faction until you abdicate.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
@@ -4921,7 +4956,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Chaos path (needed from Ascension 2)"
+"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4964,9 +4999,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Demon"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5008,9 +5041,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Demon"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5043,14 +5074,39 @@
 "icon": "DemonUnion",
 "order": 301,
 "id": 301,
-"description": [],
+"description": [
+{
+"text": "Unlock Demon upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "A fraction of Non-Evil spells cast in this Era count as Evil.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Trophies count more based on time spent offline in this Reincarnation.",
+"formulas": [
+{
+"latex": "v = 30 + 0.3 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Burning Abyss"
 ],
-"conditions": [
-"playing as Demon"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5725,9 +5781,7 @@
 "Complete the quest Infernal Realm Quest"
 ],
 "conditions": [
-"playing as Demon",
-"being at Reincarnation 16 or higher",
-"not having a prestige faction, unless you have completed Spider Sanctuary Quest"
+"being at Reincarnation 16 or higher"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -5787,9 +5841,7 @@
 "requirements": [
 "Complete the quest Burning Abyss Quest"
 ],
-"conditions": [
-"playing as Demon"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -5832,7 +5884,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Order path (needed from Ascension 2)"
+"following the Order path (Proof of Order, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -5877,9 +5929,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Titan"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5923,9 +5973,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Titan"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -5960,14 +6008,50 @@
 "icon": "TitanUnion",
 "order": 319,
 "id": 319,
-"description": [],
+"description": [
+{
+"text": "Unlock Titan upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Multiplicatively increase Faction Coin find chance based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v_{1} = 50 \\cdot \\left(\\frac{\\frac{t}{60}}{60}\\right)^{0.85}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+},
+{
+"text": "Also increase Maximum Mana based on time spent in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = 20 \\cdot t^{0.75}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"shown": true
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Mountain Palace"
 ],
-"conditions": [
-"playing as Titan"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6625,7 +6709,6 @@
 "Complete the quest Olympian Hall Quest"
 ],
 "conditions": [
-"playing as Titan",
 "being at Reincarnation 24 or higher"
 ],
 "undecoded": [],
@@ -6678,9 +6761,7 @@
 "requirements": [
 "Complete the quest Mountain Palace Quest"
 ],
-"conditions": [
-"playing as Titan"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -6723,7 +6804,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Balance path (needed from Ascension 2)"
+"following the Balance path (Proof of Balance, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -6768,9 +6849,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Druid"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6814,9 +6893,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Druid"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -6851,14 +6928,38 @@
 "icon": "DruidUnion",
 "order": 337,
 "id": 337,
-"description": [],
+"description": [
+{
+"text": "Unlock Druid upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Increase the production of Non-Unique Buildings based on your total Lineage level and the maximum amount of Grand Balance targets.",
+"formulas": [
+{
+"latex": "v = L \\cdot \\min\\left(11, G\\right)^{1.25}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your total Lineage level"
+},
+{
+"symbol": "G",
+"text": "The maximum amount of Grand Balance targets"
+}
+],
+"label": "Non-Unique Buildings production (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Ziggurat"
 ],
-"conditions": [
-"playing as Druid"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7558,7 +7659,6 @@
 "Complete the quest Stonehenge Quest"
 ],
 "conditions": [
-"playing as Druid",
 "being at Reincarnation 24 or higher"
 ],
 "undecoded": [],
@@ -7611,9 +7711,7 @@
 "requirements": [
 "Complete the quest Ziggurat Quest"
 ],
-"conditions": [
-"playing as Druid"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -7656,7 +7754,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Chaos path (needed from Ascension 2)"
+"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -7701,9 +7799,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Faceless"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7747,9 +7843,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Faceless"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -7784,14 +7878,34 @@
 "icon": "FacelessUnion",
 "order": 355,
 "id": 355,
-"description": [],
+"description": [
+{
+"text": "Unlock Faceless upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Multiplicatively increase assistants based on total time spent as a random faction. Updates every 3 minutes.",
+"formulas": [
+{
+"latex": "v = 40 + 0.4 \\cdot t^{0.4}",
+"vars": [
+{
+"symbol": "t",
+"text": "Total time spent as the random faction currently chosen (seconds)"
+}
+],
+"label": "Assistants (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Forbidden Library"
 ],
-"conditions": [
-"playing as Faceless"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8474,7 +8588,6 @@
 "Complete the quest Sunken City Quest"
 ],
 "conditions": [
-"playing as Faceless",
 "being at Reincarnation 24 or higher"
 ],
 "undecoded": [],
@@ -8527,9 +8640,7 @@
 "requirements": [
 "Complete the quest Forbidden Library Quest"
 ],
-"conditions": [
-"playing as Faceless"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -8697,7 +8808,65 @@
 "icon": null,
 "order": 373,
 "id": 373,
-"description": [],
+"description": [
+{
+"text": "Unlock Dwarven upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Order path: Increase the production of all buildings based on time spent in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 3.5 \\cdot t^{0.65}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Reincarnation (seconds)"
+}
+],
+"label": "Production (%)"
+}
+],
+"s": null
+},
+{
+"text": "Balance path: Multiplicatively increase Mana Regeneration based on clicks made in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{2} = 1.5 \\cdot \\left(\\ln\\left(1 + C\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "C",
+"text": "Clicks made in this Reincarnation"
+}
+],
+"label": "Mana Regeneration (%)"
+}
+],
+"s": null
+},
+{
+"text": "Chaos path: Multiplicatively increase assistants with a chaotic formula based on spells cast in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{3} = \\left(\\sum_{i} d_{i}^{\\,p}\\right)^{0.8}",
+"vars": [
+{
+"symbol": "d_{i}",
+"text": "The decimal digits of your total spells cast in this Reincarnation"
+},
+{
+"symbol": "p",
+"text": "Exponent: 2 + (the number of digits of that total) / 10"
+}
+],
+"label": "Assistants (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: High Bastion"
@@ -9609,7 +9778,61 @@
 "icon": null,
 "order": 391,
 "id": 391,
-"description": [],
+"description": [
+{
+"text": "Unlock Drow upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Order path: Increase Offline production based on Maximum Mana.",
+"formulas": [
+{
+"latex": "v_{1} = 0.1 \\cdot M^{0.85}",
+"vars": [
+{
+"symbol": "M",
+"text": "Your Maximum Mana"
+}
+],
+"label": "Offline production (%)"
+}
+],
+"s": null
+},
+{
+"text": "Balance path: Multiplicatively increase Maximum Mana based on Tax Collections cast in this Era.",
+"formulas": [
+{
+"latex": "v_{2} = 0.05 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{2.5}",
+"vars": [
+{
+"symbol": "T",
+"text": "Tax Collections cast in this Era"
+}
+],
+"label": "Maximum Mana (%)"
+}
+],
+"s": null
+},
+{
+"text": "Chaos path: Increase the production of a specific building tier, depending on buildings built, based on time spent offline in this Reincarnation. The tier is 1 + (the number of buildings you have built) modulo 11.",
+"formulas": [
+{
+"latex": "v_{3} = 100 + 3 \\cdot t^{0.87}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"label": "Production (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Brothel"
@@ -10520,7 +10743,65 @@
 "icon": null,
 "order": 409,
 "id": 409,
-"description": [],
+"description": [
+{
+"text": "Unlock Dragon upgrades.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Order path: Increase the production of all buildings based on time spent as Order in this Reincarnation.",
+"formulas": [
+{
+"latex": "v_{1} = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Order in this Reincarnation (seconds)"
+}
+],
+"label": "Production (%)"
+}
+],
+"s": null
+},
+{
+"text": "Balance path: Multiplicatively increase Maximum Mana based on your current lineage level.",
+"formulas": [
+{
+"latex": "v_{2} = 8 \\cdot L^{0.8}",
+"vars": [
+{
+"symbol": "L",
+"text": "Your current Lineage level"
+}
+],
+"label": "Maximum Mana (%)"
+}
+],
+"s": null
+},
+{
+"text": "Chaos path: Increase the production of Unique or Non-Unique Buildings based on assistants owned. Target buildings depend on Faction Coin find chance: Non-Unique Buildings when the whole part of ln(1 + Faction Coin find chance) is odd, Unique Buildings otherwise.",
+"formulas": [
+{
+"latex": "v_{3} = k \\cdot 2 \\cdot A^{0.3}",
+"vars": [
+{
+"symbol": "A",
+"text": "Your number of assistants"
+},
+{
+"symbol": "k",
+"text": "3 for Non-Unique Buildings, 1 for Unique Buildings"
+}
+],
+"label": "Production (%)"
+}
+],
+"s": null
+}
+],
 "sources": [],
 "requirements": [
 "Upgrade: Dragon Pasture"
@@ -14178,7 +14459,6 @@
 "Complete the quest Mercenary Encampment Quest"
 ],
 "conditions": [
-"playing as Mercenary",
 "being at Reincarnation 75 or higher"
 ],
 "undecoded": [],
@@ -14232,7 +14512,6 @@
 "Complete the quest Mercenary Encampment Quest"
 ],
 "conditions": [
-"playing as Mercenary",
 "being at Reincarnation 75 or higher"
 ],
 "undecoded": [],
@@ -14286,7 +14565,6 @@
 "Complete the quest Mercenary Encampment Quest"
 ],
 "conditions": [
-"playing as Mercenary",
 "being at Reincarnation 75 or higher"
 ],
 "undecoded": [],
@@ -14371,9 +14649,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Mercenary"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -14590,9 +14866,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Mercenary"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -14635,9 +14909,7 @@
 }
 ],
 "requirements": [],
-"conditions": [
-"playing as Mercenary"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -14686,7 +14958,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Fairy",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14738,7 +15009,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Elf",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14790,7 +15060,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Angel",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14842,7 +15111,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Goblin",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14894,7 +15162,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Undead",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14946,7 +15213,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Demon",
 "having no prestige faction",
 "being at Reincarnation 16 or higher"
 ],
@@ -14998,7 +15264,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Titan",
 "having no prestige faction",
 "being at Reincarnation 24 or higher"
 ],
@@ -15050,7 +15315,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Druid",
 "having no prestige faction",
 "being at Reincarnation 24 or higher"
 ],
@@ -15102,7 +15366,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Faceless",
 "having no prestige faction",
 "being at Reincarnation 24 or higher"
 ],
@@ -15307,7 +15570,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"playing as Mercenary",
 "being at Reincarnation 75 or higher"
 ],
 "undecoded": [],
@@ -15357,9 +15619,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Fairy"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15407,9 +15667,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Elf"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15457,9 +15715,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Angel"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15507,9 +15763,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Goblin"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15557,9 +15811,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Undead"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15607,9 +15859,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Demon"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15657,9 +15907,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Titan"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15707,9 +15955,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Druid"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -15757,9 +16003,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"playing as Faceless"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -23993,7 +24237,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell Fairy Chanting (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell Fairy Chanting"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -24038,7 +24282,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell Moon Blessing (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell Moon Blessing"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -24094,7 +24338,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell God's Hand (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell God's Hand"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -24139,7 +24383,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell Goblin's Greed (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell Goblin's Greed"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -24200,7 +24444,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell Night Time (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell Night Time"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -24245,7 +24489,7 @@
 ],
 "requirements": [],
 "conditions": [
-"having the spell Hellfire Blast (the Djinn Bloodline, or Identity Shaper together with Challenge Power, also counts)"
+"having the spell Hellfire Blast"
 ],
 "undecoded": [],
 "asc_min": null,

@@ -38,8 +38,8 @@ def slot_sources(b):
     rows = [
         ['-1', 'Mercenary', 1, 2],
         ['+1', f'Secret Trophy: {SLOT_UPGRADE[b]}', 0, 2],
-        ['+1', 'Reincarnation Power, R90+', 1, 2],
-        ['+1', f'Reincarnation Power, R75+ ({MERC_ALIGN[b]} Mercenary)', 1, 2],
+        ['+1', 'Reincarnation Power, from Reincarnation 90', 1, 2],
+        ['+1', f'Reincarnation Power, from Reincarnation 75 ({MERC_ALIGN[b]} Mercenary)', 1, 2],
         ['+1', f'Ancient Device Power ({NEUTRAL_AFFINITY[b]})', 0, 2],
     ]
     if b == 1:

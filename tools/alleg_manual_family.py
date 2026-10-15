@@ -69,3 +69,51 @@ BUILDING_TEXT = {
     'Nexus': ('Farms', 'the tier 6 building of your alignment (Wizard Towers, Witch Conclaves or Alchemist Labs)'),
     'Pavilion': ('Farms', 'the tier 4 building of your alignment (Warrior Barracks, Slave Pens or Deep Mines)'),
 }
+
+# the Unions: text and value functions the generic converter cannot read
+FORMULAS.update({
+    'Fairies Union': [(1, F(r'v = 13 \cdot X^{0.65}',
+                            ('X', 'Farms, Inns and Blacksmiths owned added together if the total number of buildings you own is even, '
+                                  'otherwise all your other buildings added together'), label='Assistant production (%)'))],
+    'Druids Union': [(1, F(r'v = L \cdot \min\left(11, G\right)^{1.25}',
+                           ('L', 'Your total Lineage level'), ('G', 'The maximum amount of Grand Balance targets'),
+                           label='Non-Unique Buildings production (%)'))],
+    'Faceless Union': [(1, F(r'v = 40 + 0.4 \cdot t^{0.4}', ('t', 'Total time spent as the random faction currently chosen (seconds)'),
+                             label='Assistants (%)'))],
+})
+_DU = 'Unlock %s upgrades.'
+_AX = {'O': 'Order path: ', 'C': 'Chaos path: ', 'B': 'Balance path: '}
+EXTRA_PARAS.update({
+    'Dwarven Union': [
+        (_DU % 'Dwarven', None),
+        (_AX['O'] + 'Increase the production of all buildings based on time spent in this Reincarnation.',
+         F(r'v = 3.5 \cdot t^{0.65}', ('t', 'Time played in this Reincarnation (seconds)'), label='Production (%)')),
+        (_AX['B'] + 'Multiplicatively increase Mana Regeneration based on clicks made in this Reincarnation.',
+         F(r'v = 1.5 \cdot \left(\ln\left(1 + C\right)\right)^{2.5}', ('C', 'Clicks made in this Reincarnation'), label='Mana Regeneration (%)')),
+        (_AX['C'] + 'Multiplicatively increase assistants with a chaotic formula based on spells cast in this Reincarnation.',
+         F(r'v = \left(\sum_{i} d_{i}^{\,p}\right)^{0.8}', ('d_{i}', 'The decimal digits of your total spells cast in this Reincarnation'),
+           ('p', 'Exponent: 2 + (the number of digits of that total) / 10'), label='Assistants (%)')),
+    ],
+    'Drow Union': [
+        (_DU % 'Drow', None),
+        (_AX['O'] + 'Increase Offline production based on Maximum Mana.',
+         F(r'v = 0.1 \cdot M^{0.85}', ('M', 'Your Maximum Mana'), label='Offline production (%)')),
+        (_AX['B'] + 'Multiplicatively increase Maximum Mana based on Tax Collections cast in this Era.',
+         F(r'v = 0.05 \cdot \left(\ln\left(1 + T\right)\right)^{2.5}', ('T', 'Tax Collections cast in this Era'), label='Maximum Mana (%)')),
+        (_AX['C'] + 'Increase the production of a specific building tier, depending on buildings built, based on time spent offline in this '
+                    'Reincarnation. The tier is 1 + (the number of buildings you have built) modulo 11.',
+         F(r'v = 100 + 3 \cdot t^{0.87}', ('t', 'Time spent offline in this Reincarnation (seconds)'), label='Production (%)')),
+    ],
+    'Dragon Union': [
+        (_DU % 'Dragon', None),
+        (_AX['O'] + 'Increase the production of all buildings based on time spent as Order in this Reincarnation.',
+         F(r'v = 0.7 \cdot t^{0.7}', ('t', 'Time spent as Order in this Reincarnation (seconds)'), label='Production (%)')),
+        (_AX['B'] + 'Multiplicatively increase Maximum Mana based on your current lineage level.',
+         F(r'v = 8 \cdot L^{0.8}', ('L', 'Your current Lineage level'), label='Maximum Mana (%)')),
+        (_AX['C'] + 'Increase the production of Unique or Non-Unique Buildings based on assistants owned. Target buildings depend on '
+                    'Faction Coin find chance: Non-Unique Buildings when the whole part of ln(1 + Faction Coin find chance) is odd, '
+                    'Unique Buildings otherwise.',
+         F(r'v = k \cdot 2 \cdot A^{0.3}', ('A', 'Your number of assistants'), ('k', '3 for Non-Unique Buildings, 1 for Unique Buildings'),
+           label='Production (%)')),
+    ],
+})

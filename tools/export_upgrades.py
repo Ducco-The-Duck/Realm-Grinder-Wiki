@@ -46,14 +46,16 @@ PROBE = f"""(function () {{ __MUT
     try {{ r.bld = o.{J('§%<§')}.{J('§1i§')}; }} catch (e) {{}}
     try {{ r.tid = o.{J('§`!5§')}; }} catch (e) {{}}
     var keepR = {g}.{J('§8!H§')};
-    if (r.grp === 'ReincarnationPowerUpgrade') {g}.{J('§8!H§')} = 9999;      // show every line of the text
+    var keepFa = {g}.{J('§-!^§')}, isUnion = /Union$/.test(r.n) && r.f >= 0;
+    if (r.grp === 'ReincarnationPowerUpgrade' || isUnion) {g}.{J('§8!H§')} = 9999;      // show every line of the text
+    if (isUnion) {g}.{J('§-!^§')} = r.f;      // the Union's text is the one of its own faction
     var keepAl = {g}.{J('§,!Y§')}, ial = o.{J('§,!Y§')};
     r.ial = ial;
     if (ial === 1 || ial === 2 || ial === 3) {g}.{J('§,!Y§')} = ial;      // tier lookups ("the tier 7 building") depend on the alignment
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
     try {{ if (o.{J('§8!1§')}) r.d2 = o.{J('§8!1§')}(); }} catch (e) {{}}      // lineage perks: the text shown once owned
     {g}.{J('§,!Y§')} = keepAl;
-    {g}.{J('§8!H§')} = keepR;
+    {g}.{J('§8!H§')} = keepR; {g}.{J('§-!^§')} = keepFa;
     out.push(r); }}
   var tmap = {{}}; {g}.{J('§0Q§')}.forEach(function (t) {{ tmap[t.id] = t.{J('§1i§')}; }});
   var smap = {{}}; {g}.{J('§0!A§')}.forEach(function (sp) {{ smap[sp.id] = sp.{J('§1i§')}; }});
@@ -723,7 +725,7 @@ for idx, r in todo:
                     ps[pi]['formulas'] = []; _done.add(pi)
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
         for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
-            item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])], 's': None})
+            item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])] if f_ else [], 's': None})
         # a tier lookup names the building of the PLAYER's alignment (the upgrade can be used through a Legacy or as a
         # Mercenary), so the text names the tier and lists the three possibilities instead of the faction's own building
         _src = '\n'.join(m_.body for m_ in c.methods if m_.name in ('§@"§', '§8!1§', '§>!d§', '§1!6§'))
@@ -828,6 +830,22 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
                 c_ = ('Upgrade: ' + names_[0]) if len(names_) == 1 else 'Any one of the upgrades: ' + ', '.join(names_)
             out_.append(c_)
         u[k_] = out_
+
+# conditions the reader already knows from the page: the faction picked in the selector, the spell's own parenthesis,
+# the warning that the description gives, the treaty's note
+for u in [u_ for items_ in by_cat.values() for u_ in items_]:
+    f_ = u.get('faction', -1)
+    desc_ = ' '.join(p_['text'] for p_ in u['description']).lower()
+    out_ = []
+    for c_ in u['conditions']:
+        if f_ in FACTION and c_ == 'playing as ' + FACTION[f_]: continue
+        if c_.startswith('not having a prestige faction, unless') and 'prestige faction' in desc_: continue
+        c_ = re.sub(r'^(having the spell [^()]+) \(.*\)$', r'\1', c_)
+        c_ = re.sub(r'^following the (\w+) path \(needed from Ascension 2\)$',
+                    r'following the \1 path (Proof of \1, required from Ascension 2 on)', c_)
+        out_.append(c_)
+    u['conditions'] = out_
+    u['description'] = [p_ for p_ in u['description'] if not p_['text'].startswith('Note: purchasing this upgrade will prevent you')]
 
 # a Reincarnation requirement that the Ascension's range of Reincarnations cannot reach rules that Ascension out
 for u in [u_ for items_ in by_cat.values() for u_ in items_]:
