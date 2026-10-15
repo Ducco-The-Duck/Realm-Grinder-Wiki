@@ -534,6 +534,7 @@ the base values <i>v</i>.</div>
     }
     h.addEventListener('click', toggle);
     h.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+    if(SECTIONS.length===1){ open=true; sec.classList.add('open'); h.style.display='none'; }      // a page with one section needs no header
     if(s.alleg){
       s.entries.forEach(function(en){ var it=en.items[0]; (allegItems[it.fa]=allegItems[it.fa]||[]).push(it); });
       allegBox=el('div'); inner.appendChild(allegBox);
