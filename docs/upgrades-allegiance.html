@@ -158,6 +158,19 @@ select option{font-family:"Liony",system-ui,sans-serif}
 .dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
 .dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
 .dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
+/* the game's tooltip border (black_SteelTrim, 9-slice 8 px) instead of rounded corners; used on one page so far */
+body.steel #tip,body.steel #pop .card,body.steel #more .card{border:16px solid transparent;border-radius:0;background:none;box-shadow:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 16px / 0 stretch;image-rendering:pixelated;padding:0 4px;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:#ece6d8}
+body.steel .pen-note,body.steel .search input{border:8px solid transparent;border-radius:0;background:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a}
+body.steel .search input{padding:0 8px}
+body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radius:0;background:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
+  --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
+body.steel .cs>button{padding:0 30px 0 6px}
+body.steel .cs ul{box-shadow:none}
 /* less vertical air everywhere */
 main{padding-top:18px;padding-bottom:50px}
 nav{margin:0 0 8px}
@@ -191,7 +204,7 @@ h2{margin:0 0 5px;padding-bottom:3px}
 
 </style>
 </head>
-<body>
+<body class="steel">
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades.html" aria-current="page">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html" aria-current="page">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Allegiance Upgrades</h1>

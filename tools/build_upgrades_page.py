@@ -667,6 +667,7 @@ for fname, title, ids, sub in SPLIT:
     h = html.replace('__DATA__', pdata).replace('__TITLE__', 'Realm Grinder ' + title).replace('__H1__', title).replace('__SUB__', sub)
     if 'allegiances' not in ids:      # no faction picker on the other pages
         h = _re.sub(r'  <div class="row" id="alleg-row">.*?</div>\n', '', h, flags=_re.S)
+    if fname == 'upgrades-allegiance.html': h = h.replace('<body>', '<body class="steel">', 1)      # the game's tooltip borders, tried on one page
     h = search_snippet.apply(h, 'Search upgrade names and descriptions', fname)
     open(os.path.join(ROOT, 'docs', fname), 'w', encoding='utf8').write(h)
     print('docs/' + fname, len(h) // 1024, 'KB;', [(x['id'], x['count']) for x in secs])
