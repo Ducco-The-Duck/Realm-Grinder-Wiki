@@ -264,6 +264,12 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
 #tip .flabel{margin-top:6px;font-weight:600}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+.cell{padding:0;border:0;border-radius:6px}
+.cell img{position:absolute;left:6.14%;top:6.14%;width:87.72%;height:87.72%;max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
+.cell::after{content:"";position:absolute;inset:0;background:url(assets/ui/icon_border.png) center/100% 100% no-repeat;image-rendering:pixelated;pointer-events:none}
+.cell:hover,.cell:focus-visible{background:var(--cellhi);outline:none;filter:brightness(1.3) saturate(1.15);box-shadow:0 0 0 2px var(--accent),0 0 10px 2px var(--accent)}
+.cell.na:hover{filter:grayscale(1) brightness(1.3)}
+.badge{z-index:3}
 /*SEARCH_CSS*/
 </style>
 </head>
