@@ -64,7 +64,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
-.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,70px));justify-content:start;gap:6px}
 .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}

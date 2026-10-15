@@ -105,7 +105,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
-.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+.grid{display:grid;grid-template-columns:repeat(10,minmax(0,62px));justify-content:start;gap:4px}
 .cell{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:6px;background:var(--cell);padding:2px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell.buy{grid-column:1 / span 2;grid-row:1 / span 2;aspect-ratio:auto;border-radius:10px;padding:6px}
