@@ -181,7 +181,7 @@ body.steel .cs ul{box-shadow:none}
 /* no bullets anywhere; the A marks on icons are small and in the game's font */
 ul{list-style:none;padding-left:0}
 li::marker{content:""}
-.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.42rem;line-height:1;padding:1px 3px;border-radius:3px;letter-spacing:0}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.58rem;line-height:1;padding:1px 4px;border-radius:3px;letter-spacing:0;top:auto;bottom:3px;right:3px}
 /* less vertical air everywhere */
 main{padding-top:10px;padding-bottom:40px}
 nav{margin:0 0 6px}
@@ -217,9 +217,8 @@ h2{margin:0 0 3px;padding-bottom:2px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades.html" aria-current="page">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html" aria-current="page">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades-allegiance.html" aria-current="page">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html" aria-current="page">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Allegiance Upgrades</h1>
-<p class="sub">Hover an upgrade for what it does and what unlocks it. Click a section header to fold it. The treaty tiers and the twelve faction upgrades of every faction, the Proofs, Heritages, unique buildings, Bloodlines and Lineages. Pick a base faction to see its upgrades together with those of a prestige and an astral faction.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
@@ -647,7 +646,7 @@ the base values <i>v</i>.</div>
         var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
         if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
         if(!its.length) return;
-        allegBox.appendChild(el('div','subh',fi<0 ? 'General' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General ('+its.length+' upgrades)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);

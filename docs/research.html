@@ -162,7 +162,7 @@ body.steel .cs ul{box-shadow:none}
 /* no bullets anywhere; the A marks on icons are small and in the game's font */
 ul{list-style:none;padding-left:0}
 li::marker{content:""}
-.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.42rem;line-height:1;padding:1px 3px;border-radius:3px;letter-spacing:0}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.58rem;line-height:1;padding:1px 4px;border-radius:3px;letter-spacing:0;top:auto;bottom:3px;right:3px}
 /* less vertical air everywhere */
 main{padding-top:10px;padding-bottom:40px}
 nav{margin:0 0 6px}
@@ -198,9 +198,8 @@ h2{margin:0 0 3px;padding-bottom:2px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades.html">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a href="upgrades-allegiance.html">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Research</h1>
-<p class="sub">264 researches in 7 branches, in the in-game order (by research number). Hover a research for what it does, its formula and its requirements. The large icon is where you buy research points for the branch.</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces most percentage effects. If a research's formula
 gives <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
 marks on the research: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2

@@ -110,7 +110,7 @@ body.steel .cs ul{box-shadow:none}
 /* no bullets anywhere; the A marks on icons are small and in the game's font */
 ul{list-style:none;padding-left:0}
 li::marker{content:""}
-.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.42rem;line-height:1;padding:1px 3px;border-radius:3px;letter-spacing:0}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.58rem;line-height:1;padding:1px 4px;border-radius:3px;letter-spacing:0;top:auto;bottom:3px;right:3px}
 /* less vertical air everywhere */
 main{padding-top:10px;padding-bottom:40px}
 nav{margin:0 0 6px}
@@ -254,7 +254,7 @@ UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.ht
 def upgrades_nav(current_file=None, parent_current=False):
     """the nav entry "Upgrades" with its drop-down of the four upgrade pages"""
     links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
-    return ('<span class="dd-nav"><a href="upgrades.html"' + (' aria-current="page"' if parent_current else '') +
+    return ('<span class="dd-nav"><a href="upgrades-allegiance.html"' + (' aria-current="page"' if parent_current else '') +
             '>Upgrades</a><span class="dd-menu">' + links + '</span></span>')
 
 
@@ -267,6 +267,7 @@ def apply(html, placeholder, current_file=None):
                               "tip.className=up?'above':'below'; "
                               "tip.style.setProperty('--ax', Math.min(Math.max(%(a)s.left+%(a)s.width/2-x,24),t.width-24)+'px');")
                    % {'a': m.group(1)}, html)
+    html = _re.sub(r'<p class="sub">.*?</p>\n?', '', html, flags=_re.S)      # no explanation under the page header
     html = html.replace('<body>', '<body class="steel">', 1)
     html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
     html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))

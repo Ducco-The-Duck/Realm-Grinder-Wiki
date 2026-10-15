@@ -1,4 +1,4 @@
-"""Generate the four upgrade pages (Allegiance, Magic, Secret, Miscellaneous) and the hub docs/upgrades.html from data/upgrade_pages.json.
+"""Generate the four upgrade pages (Allegiance, Magic, Secret, Miscellaneous) from data/upgrade_pages.json.
 
     python -I tools/build_upgrades_page.py
 """
@@ -602,7 +602,7 @@ the base values <i>v</i>.</div>
         var f=fi<0 ? {n:'General',role:'gen'} : facOf(fi), its=allegItems[fi]||[];
         if(fi<0) its=its.filter(function(it){ return !it.pr || !bf || bf.role==='merc' || it.pr.al===bf.al || it.pr.ax===bf.ax; });
         if(!its.length) return;
-        allegBox.appendChild(el('div','subh',fi<0 ? 'General' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
+        allegBox.appendChild(el('div','subh',fi<0 ? 'General ('+its.length+' upgrades)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
         its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);
@@ -676,38 +676,3 @@ for fname, title, ids, sub in SPLIT:
     open(os.path.join(ROOT, 'docs', fname), 'w', encoding='utf8').write(h)
     print('docs/' + fname, len(h) // 1024, 'KB;', [(x['id'], x['count']) for x in secs])
     total += len(h)
-
-# the old address becomes the hub of the four pages
-hub = """<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Upgrades</title>
-<style>
-:root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:620px;margin:0 auto;padding:32px 16px}
-nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 18px;font-size:.95rem}
-nav a{color:var(--muted);text-decoration:none}
-nav a[aria-current]{color:var(--fg);font-weight:600;border-bottom:2px solid var(--accent)}
-h1{margin:0 0 4px;font-size:1.7rem}
-.sub{color:var(--muted);margin:0 0 20px}
-.cards{display:grid;gap:12px}
-a.card{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
-a.card:hover{border-color:var(--accent)}a.card b{display:block}a.card span{color:var(--muted);font-size:.92rem}
-/*SEARCH_CSS*/
-</style></head><body><main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
-<h1>Upgrades</h1>
-<p class="sub">The upgrades are split into four pages.</p>
-<div class="cards">
-__CARDS__
-</div></main></body></html>
-"""
-cards = '\n'.join(f'<a class="card" href="{f}"><b>{t}</b><span>{sub}</span></a>' for f, t, ids, sub in SPLIT)
-hub = hub.replace('__CARDS__', cards)
-hub = search_snippet.apply(hub.replace('<div class="search">', ''), '', None)
-open(os.path.join(ROOT, 'docs', 'upgrades.html'), 'w', encoding='utf8').write(hub)
-print('docs/upgrades.html (hub)', len(hub) // 1024, 'KB')
