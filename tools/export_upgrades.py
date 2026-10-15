@@ -838,11 +838,13 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     desc_ = ' '.join(p_['text'] for p_ in u['description']).lower()
     out_ = []
     for c_ in u['conditions']:
-        if f_ in FACTION and c_ == 'playing as ' + FACTION[f_]: continue
+        if f_ in FACTION and c_ in ('playing as ' + FACTION[f_], f'having {FACTION[f_]} as your prestige faction',
+                                    f'having {FACTION[f_]} as your astral faction'): continue
         if c_.startswith('not having a prestige faction, unless') and 'prestige faction' in desc_: continue
         c_ = re.sub(r'^(having the spell [^()]+) \(.*\)$', r'\1', c_)
         c_ = re.sub(r'^following the (\w+) path \(needed from Ascension 2\)$',
-                    r'following the \1 path (Proof of \1, required from Ascension 2 on)', c_)
+                    r'following the path of \1 (Ascension 2 onwards)', c_)
+        c_ = re.sub(r'^following the (\w+) path$', r'following the path of \1', c_)
         out_.append(c_)
     u['conditions'] = out_
     u['description'] = [p_ for p_ in u['description'] if not p_['text'].startswith('Note: purchasing this upgrade will prevent you')]

@@ -319,7 +319,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
+"following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -1248,7 +1248,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Balance path (Proof of Balance, required from Ascension 2 on)"
+"following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -2199,7 +2199,7 @@
 "conditions": [
 "having Good alignment",
 "not having a faction yet",
-"following the Order path (Proof of Order, required from Ascension 2 on)"
+"following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -3109,7 +3109,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Balance path (Proof of Balance, required from Ascension 2 on)"
+"following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4039,7 +4039,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Order path (Proof of Order, required from Ascension 2 on)"
+"following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -4956,7 +4956,7 @@
 "conditions": [
 "having Evil alignment",
 "not having a faction yet",
-"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
+"following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -5884,7 +5884,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Order path (Proof of Order, required from Ascension 2 on)"
+"following the path of Order (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -6804,7 +6804,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Balance path (Proof of Balance, required from Ascension 2 on)"
+"following the path of Balance (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -7754,7 +7754,7 @@
 "conditions": [
 "having Neutral alignment",
 "not having a faction yet",
-"following the Chaos path (Proof of Chaos, required from Ascension 2 on)"
+"following the path of Chaos (Ascension 2 onwards)"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -8729,9 +8729,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dwarf as your prestige faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8773,9 +8771,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Dwarf as your prestige faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -8872,7 +8868,6 @@
 "Upgrade: High Bastion"
 ],
 "conditions": [
-"having Dwarf as your prestige faction",
 "being at Reincarnation 115 or higher"
 ],
 "undecoded": [],
@@ -9554,7 +9549,6 @@
 "Complete the quest Dwarven Forge Quest"
 ],
 "conditions": [
-"having Dwarf as your prestige faction",
 "being at Reincarnation 32 or higher"
 ],
 "undecoded": [],
@@ -9608,7 +9602,6 @@
 "Complete the quest High Bastion Quest"
 ],
 "conditions": [
-"having Dwarf as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -9699,9 +9692,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Drow as your prestige faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9743,9 +9734,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Drow as your prestige faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -9838,7 +9827,6 @@
 "Upgrade: Brothel"
 ],
 "conditions": [
-"having Drow as your prestige faction",
 "being at Reincarnation 115 or higher"
 ],
 "undecoded": [],
@@ -10508,7 +10496,6 @@
 "Complete the quest Spider Sanctuary Quest"
 ],
 "conditions": [
-"having Drow as your prestige faction",
 "being at Reincarnation 32 or higher"
 ],
 "undecoded": [],
@@ -10562,7 +10549,6 @@
 "Complete the quest Brothel Quest"
 ],
 "conditions": [
-"having Drow as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -10659,7 +10645,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragon as your prestige faction",
 "having found at least one Dwarven Coin and one Drow Coin in this Era"
 ],
 "undecoded": [],
@@ -10706,7 +10691,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragon as your prestige faction",
 "having found at least one Dwarven Coin and one Drow Coin in this Era"
 ],
 "undecoded": [],
@@ -10807,7 +10791,6 @@
 "Upgrade: Dragon Pasture"
 ],
 "conditions": [
-"having Dragon as your prestige faction",
 "being at Reincarnation 115 or higher"
 ],
 "undecoded": [],
@@ -11551,7 +11534,6 @@
 "Complete the quest Wyrm's Den Quest"
 ],
 "conditions": [
-"having Dragon as your prestige faction",
 "being at Reincarnation 46 or higher"
 ],
 "undecoded": [],
@@ -11605,7 +11587,6 @@
 "Complete the quest Dragon Pasture Quest"
 ],
 "conditions": [
-"having Dragon as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -11705,7 +11686,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the Order path",
+"following the path of Order",
 "having a prestige faction",
 "not having an astral faction yet",
 "not playing as Mercenary",
@@ -11755,9 +11736,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Archon as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11801,9 +11780,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Archon as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -11850,7 +11827,6 @@
 "Upgrade: Nexus"
 ],
 "conditions": [
-"having Archon as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -12525,7 +12501,6 @@
 "Complete the quest Nexus Quest"
 ],
 "conditions": [
-"having Archon as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -12625,7 +12600,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the Chaos path",
+"following the path of Chaos",
 "having a prestige faction",
 "not having an astral faction yet",
 "not playing as Mercenary",
@@ -12675,9 +12650,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Djinn as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12721,9 +12694,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Djinn as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -12770,7 +12741,6 @@
 "Upgrade: Pavilion"
 ],
 "conditions": [
-"having Djinn as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -13468,7 +13438,6 @@
 "Complete the quest Pavilion Quest"
 ],
 "conditions": [
-"having Djinn as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -13568,7 +13537,7 @@
 "Upgrade: the Alliance of your prestige faction"
 ],
 "conditions": [
-"following the Balance path",
+"following the path of Balance",
 "having a prestige faction",
 "not having an astral faction yet",
 "not playing as Mercenary",
@@ -13618,9 +13587,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Makers as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13664,9 +13631,7 @@
 ],
 "sources": [],
 "requirements": [],
-"conditions": [
-"having Makers as your astral faction"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,
@@ -13713,7 +13678,6 @@
 "Upgrade: Hall of Origination"
 ],
 "conditions": [
-"having Makers as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -14405,7 +14369,6 @@
 "Complete the quest Hall of Origination Quest"
 ],
 "conditions": [
-"having Makers as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -15417,7 +15380,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dwarf as your prestige faction",
 "being at Reincarnation 32 or higher"
 ],
 "undecoded": [],
@@ -15468,7 +15430,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Drow as your prestige faction",
 "being at Reincarnation 32 or higher"
 ],
 "undecoded": [],
@@ -15519,7 +15480,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragon as your prestige faction",
 "being at Reincarnation 46 or higher"
 ],
 "undecoded": [],
@@ -16052,7 +16012,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dwarf as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -16103,7 +16062,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Drow as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -16154,7 +16112,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Dragon as your prestige faction",
 "being at Reincarnation 112 or higher"
 ],
 "undecoded": [],
@@ -16205,7 +16162,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Archon as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -16256,7 +16212,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Djinn as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],
@@ -16307,7 +16262,6 @@
 "sources": [],
 "requirements": [],
 "conditions": [
-"having Makers as your astral faction",
 "being at Reincarnation 130 or higher"
 ],
 "undecoded": [],

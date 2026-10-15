@@ -366,9 +366,9 @@ the base values <i>v</i>.</div>
     if(it.o.length){
       var rs=[], os=[];
       it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else os.push(c); });
-      var txt;
+      var ps=os.map(pred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
       if(it.o[0].indexOf('starting from')===0) txt='Can only be bought '+it.o[0]+'.';
-      else txt='Can only be bought'+(os.length?' when '+os.map(pred).join(' and '):'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+'.';
+      else txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+'.';
       tip.appendChild(el('div','faction',txt));
     }
     if(unavailable(it)){
