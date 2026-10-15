@@ -86,7 +86,7 @@ MORE = {
             ('Gain one additional Research Slot in each branch.', None),
         ],
         'more': [
-            ('From Reincarnation 43, and only from Ascension 1: increase Maximum Mana.',
+            ('From Reincarnation 43: increase Maximum Mana.',
              [F(r'v = 70 \cdot N^{1.25}', n_after(39))], None),
             ('From Reincarnation 46: increase the production of all buildings.', [F(r'v = 10 \cdot N', n_after(39))], 2),
             ('From Reincarnation 50: multiplicatively increase Faction Coin find chance (%).',

@@ -124,6 +124,13 @@ select option{font-family:"Liony",system-ui,sans-serif}
 /* the Upgrades entry of the nav drops down to the four upgrade pages */
 .dd-nav{position:relative;display:flex}
 .dd-nav>a{display:block}
+#tip>b+.more{margin-top:0;margin-bottom:2px}
+/* dark scrollbars (the default one flashes white on hover) */
+*{scrollbar-width:thin;scrollbar-color:#4a443a transparent}
+::-webkit-scrollbar{width:10px;height:10px;background:transparent}
+::-webkit-scrollbar-thumb{background:#4a443a;border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:#6a6150}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
 .dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
 .dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}

@@ -88,6 +88,7 @@ select option{font-family:"Liony",system-ui,sans-serif}
 /* the Upgrades entry of the nav drops down to the four upgrade pages */
 .dd-nav{position:relative;display:flex}
 .dd-nav>a{display:block}
+#tip>b+.more{margin-top:0;margin-bottom:2px}
 /* dark scrollbars (the default one flashes white on hover) */
 *{scrollbar-width:thin;scrollbar-color:#4a443a transparent}
 ::-webkit-scrollbar{width:10px;height:10px;background:transparent}

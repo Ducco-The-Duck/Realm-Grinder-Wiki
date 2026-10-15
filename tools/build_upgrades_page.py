@@ -362,6 +362,7 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
+    if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
       it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else os.push(c); });
@@ -383,7 +384,6 @@ the base values <i>v</i>.</div>
     if(it.f.length){
       formulas(tip, it.f);
     }
-    if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
     var rq=it.s.slice();
     if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
     if(rq.length){
@@ -470,7 +470,7 @@ the base values <i>v</i>.</div>
     }
     it.m.forEach(function(b){
       var bt=b.t;
-      if(isRP){ bt=bt.replace(/^From Reincarnation [0-9]+: /,''); bt=bt.charAt(0).toUpperCase()+bt.slice(1); }
+      if(isRP){ bt=bt.replace(/^From Reincarnation [0-9]+(, before Ascension [0-9])?: /,''); bt=bt.charAt(0).toUpperCase()+bt.slice(1); }
       var blk=el('div','bonus'), p=el('p',null,bt);
       if(b.s){ scaled=true; if(ASC>=b.s){ p.appendChild(document.createTextNode(' ')); p.appendChild(el('span','mark',As(ASC-b.s+1))); } }
       blk.appendChild(p);
@@ -487,6 +487,8 @@ the base values <i>v</i>.</div>
       }
       if(isRP){
         var m1=/[Ff]rom Reincarnation ([0-9]+)/.exec(b.t), m2=/up to ([0-9]+)/.exec(b.t), st=m1 ? +m1[1] : rfirst;
+        var m3=/before Ascension ([0-9])/.exec(b.t), ASCSTART=[0,40,100,160,220];
+        if(m3 && !m2) m2=[null, ASCSTART[+m3[1]]-1];
         rtab.appendChild(el('span','d',st===null ? 'Always' : 'Reincarnation '+st+(m2 ? ' to '+m2[1] : '')));
         rtab.appendChild(blk);
       } else morebody.appendChild(blk);

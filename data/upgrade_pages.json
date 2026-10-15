@@ -49669,7 +49669,7 @@
 "building": null,
 "more": [
 {
-"text": "From Reincarnation 43, and only from Ascension 1: increase Maximum Mana.",
+"text": "From Reincarnation 43: increase Maximum Mana.",
 "formulas": [
 {
 "latex": "v = 70 \\cdot N^{1.25}",
