@@ -136,11 +136,14 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .formula{padding:2px 0;overflow-wrap:anywhere}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 /* research slot pop-up: a number column and the source next to it */
-#tip .slots{display:grid;grid-template-columns:max-content 1fr;gap:1px 12px;margin-top:4px;align-items:baseline}
-#tip .slots .d{font-weight:700;text-align:right;white-space:nowrap}
-#tip .slots .d.base{color:var(--accent)}
-#tip .slots .d.pos{color:#7fd48a}
-#tip .slots .d.neg{color:#e58a7a}
+#tip .slots{display:grid;grid-template-columns:max-content 1fr;margin-top:5px;border-top:1px solid var(--line)}
+#tip .slots>span{padding:3px 0;border-bottom:1px solid var(--line);display:flex;align-items:center}
+#tip .slots .d{justify-content:center;min-width:2.1em;margin-right:12px;font-weight:700;white-space:nowrap}
+#tip .slots .d.base{color:var(--accent);font-size:1.2em}
+#tip .slots .d.pos{color:#8fe09a}
+#tip .slots .d.neg{color:#ef9b8c}
+#tip .slots .tx{color:var(--fg)}
+#tip .slots .d.base+.tx{font-weight:700}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -197,7 +200,7 @@ popups are always the base values <i>v</i>.</div>
       }
       row(String(ASC>=2?1:4), ASC>=2 ? 'Base' : 'Base', 'base');
       it.sl.filter(function(r){ return ASC>=r[2] && ASC<r[3]; }).forEach(function(r){
-        row(r[0].replace('-','\u2212'), r[1], r[0].charAt(0)==='-' ? 'neg' : 'pos');
+        row(r[0], r[1], r[0].charAt(0)==='-' ? 'neg' : 'pos');
       });
       tip.appendChild(tbl);
       if(ASC===2) tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));

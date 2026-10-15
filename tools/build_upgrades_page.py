@@ -433,6 +433,7 @@ the base values <i>v</i>.</div>
     poptitle.textContent=en.g+' ('+real.length+' upgrades)';
     popgrid.textContent='';
     popgrid.className = en.cols ? 'grid cols'+en.cols : 'grid';
+    pop.querySelector('.card').classList.toggle('narrow', !!en.cols);
     en.items.forEach(function(it){
       if(!it){ if(en.cols){ var gp=el('div','cell gap'); popgrid.appendChild(gp); } return; }       // an empty slot of the game's grid
       if(!en.cols && !qmatch(sOf(it))) return;
