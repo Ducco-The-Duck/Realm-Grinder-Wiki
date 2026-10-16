@@ -384,10 +384,12 @@ the base values <i>v</i>.</div>
       tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
     }
     tip.appendChild(el('span','lbl','What it does'));
+    var noted=false;
     it.d.forEach(function(p){
       var e=el('p',null,p.t);
       if(p.s && ASC>=p.s){ e.appendChild(document.createTextNode(' ')); e.appendChild(el('span','mark',As(ASC-p.s+1))); }
       tip.appendChild(e);
+      if(it.nt && !noted && /cost scaling/.test(p.t)){ tip.appendChild(el('div','more',it.nt)); noted=true; }
     });
     if(it.f.length){
       formulas(tip, it.f);
@@ -398,7 +400,7 @@ the base values <i>v</i>.</div>
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
     }
-    if(it.nt) tip.appendChild(el('div','more',it.nt));
+    if(it.nt && !noted) tip.appendChild(el('div','more',it.nt));
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
@@ -512,9 +514,10 @@ the base values <i>v</i>.</div>
       var blk=el('div','bonus'), head=el('p'), pi=p.it;
       var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
       if(pi){
-        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); });
+        var pn=false;
+        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); if(pi.nt && !pn && /cost scaling/.test(d.t)){ blk.appendChild(el('div','more',pi.nt)); pn=true; } });
         if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
-        if(pi.nt) blk.appendChild(el('div','more',pi.nt));
+        if(pi.nt && !pn) blk.appendChild(el('div','more',pi.nt));
       }
       var rq='Requires Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
       blk.appendChild(el('div','more',rq));
