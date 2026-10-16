@@ -537,6 +537,8 @@ def fix_text(name, paras):
     if name == 'Djinn Perk 3':
         t_ = re.sub(r'\s*\(Add: .*\)\s*$', '', paras[0]['text'])      # a live readout
         paras[0]['text'] = re.sub(r'by (\d+)% for every', r'by +\1 and \1% for every', t_)      # it adds +N and N% together
+    if name == 'Elven Perk 1':      # the Ascension penalty the probe saw is the one on the Elven Luck text below, not on this value
+        paras[0]['s'] = None
     if name == 'Djinn Perk 6':
         paras[0]['text'] = paras[0]['text'].replace('its active spells', 'its activated spells')
     if name == 'Dragon Perk 4':
