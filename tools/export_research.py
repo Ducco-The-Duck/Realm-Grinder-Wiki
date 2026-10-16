@@ -180,6 +180,40 @@ print('research cap artifact:', CAP_ARTIFACT)
 KEEP_TEXT_VARIANTS = {'Estates'}
 # Weighting's first value is 2000^tier (%), the targeted building's own bonus; the user judged it self-evident from the text
 DROP_FORMULAS = {'Weighting': {0}}
+
+# values read from the production / spell code (the research's own text shows no number)
+def _F(latex, *vs, label=None):
+    f = {'latex': latex, 'vars': [{'symbol': a, 'text': b} for a, b in vs], 'scale': None}
+    if label: f['label'] = label
+    return f
+
+
+_T = ('T', "The building's tier (1 for the first building in the list)")
+_J = ('j', 'Tier Brainwave is cast at, minus 1 (0 for the base tier)')
+_BW = ('t', 'Seconds since Brainwave was cast (while it is active)')
+MANUAL_FORMULAS = {
+    'Illusion': [_F(r'v = 1 + 0.25 \cdot \left(t + 600 \cdot j\right)^{1.5}', _BW, _J)],
+    'Compression': [_F(r'v = 1.5 \cdot \left(\frac{t + 600 \cdot j}{60}\right)^{2.25}', _BW, _J)],
+    'Hierarchy': [_F(r'v = 0.1 \cdot W^{0.45} \cdot \left(12 - T\right)^{2}', ('W', 'Mana produced in this Era'), _T,
+                     label='Production of each building (%)')],
+    'Journeymen': [_F(r'v = 25 + 1.25 \cdot t^{0.75}',
+                      ('t', "Time spent with the building's alignment, plus the time on its path (Order, Chaos or Balance) if it has one, in this Reincarnation (seconds)"),
+                      label='Production of each Unique Building (%)')],
+    'Distribution': [_F(r'v = 0.4 \cdot t^{0.6}',
+                        ('t', 'Time spent with alignments other than your current one in this Reincarnation (seconds); from Ascension 2 the paths other than your current one are added'))],
+    'Installation': [_F(r'v = 1.3 \cdot N^{0.7}', ('N', 'Number of buildings of that type you own'), label='Production of each building (%)')],
+    'Scriptures': [_F(r'v = 0.3 \cdot t^{0.7}',
+                      ('t', "Time spent with the spell's requirement (its faction, path or alignment) in this Reincarnation (seconds)"),
+                      label='Duration of each spell (%)')],
+    'Asceticism': [_F(r'v = 10', label='Share of the time you spend with a faction that you also gain with every other faction (%)')],
+    'Decentralization': [_F(r'v = \left(3 - 0.25 \cdot T\right)^{4} \cdot B^{0.6}', _T, ('B', 'Buildings you have built'),
+                            label='Production of each building (%)')],
+    'Reduction': [_F(r'v = \max\left(10, \min\left(90, \left(\ln\left(1 + \frac{D}{D_{0}}\right)\right)^{2}\right)\right)',
+                     ('D', "The spell's duration (seconds)"), (r'D_{0}', "The spell's base duration (seconds)"), label='Spell cost reduction (%)')],
+    'Upheaval': [_F(r'v = 0.5 \cdot \left(60 + t\right)^{0.75} \cdot \left(12 - T\right)^{2.15}',
+                    ('t', 'Time spent with your least used alignment in this Reincarnation (seconds)'), _T,
+                    label='Production of each building (%)')],
+}
 # factions that can be a prestige faction (the research condition is "faction == X or prestige faction == X")
 PRESTIGE = {9, 10, 12}
 TRIM = {0: 'Fairy', 1: 'Elven', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless',
@@ -233,6 +267,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
     desc = clean_desc(texts) if not r['desc'].startswith('ERR') else ''
     if not desc and r['n'] == 'Paradox':   # its description reads a set bonus that needs a live game state
         desc = 'Gain the Primary Set bonus of the base faction of your opposite alignments.'
+    if r['n'] == 'Patience': desc = re.sub(r' \([A-Z][a-z]+\)', '', desc)      # a live readout: the faction that is least used right now
     fs, dm = formulas_for(c, r['q']) if c else ([], None)
     forms = []
     for key, expr, body in fs:
@@ -248,6 +283,8 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         if cv: forms.append({'latex': cv['latex'].replace('p = ', 'v = ', 1), 'vars': cv['vars'], 'scale': scale})
         else: unconv[(r['n'], key)] = expr
     forms = merge_same(forms, r['n'])
+    if r['n'] in MANUAL_FORMULAS and not forms:
+        forms = [dict(f, vars=list(f['vars'])) for f in MANUAL_FORMULAS[r['n']]]
     if r['n'] in DROP_FORMULAS:
         forms = [f for i, f in enumerate(forms) if i not in DROP_FORMULAS[r['n']]]
     if len(forms) > 1:

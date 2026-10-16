@@ -61,12 +61,17 @@ for b in range(7):
     items = []
     tight = lambda t: re.sub(r'\n{2,}', '\n', t) if t else t      # no blank line between the lines of a description
     TIER_COST_NOTE = 'See the Spells page for more on tier cost scaling.'
+    BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
+    EXCAVATION_COST = 'See the Excavations page for more on the excavation cost multiplier.'
+    EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'
+    NOTES = {'S1275': [TIER_COST_NOTE], 'E50': [BUILDING_COST], 'E135': [BUILDING_COST], 'E270': [EXCAVATION_COST], 'E1325': [EXCHANGE_COST],
+             'E13125': [EXCHANGE_COST, EXCAVATION_COST, BUILDING_COST]}      # faded notes pointing to the pages that explain the cost multipliers
     for r in its:
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
             'd': tight(r['description']), 'q': r['requirements'], 'h': r['hint'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'],
-            'nt': TIER_COST_NOTE if r['code'] == 'S1275' else None,
+            'nt': NOTES.get(r['code']),
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
             'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
@@ -238,7 +243,7 @@ popups are always the base values <i>v</i>.</div>
       var dd=el('div','desc',t.d), pk0=penalty(it);
       if(pk0 && it.f && it.f.length===1){ dd.appendChild(document.createTextNode(' ')); dd.appendChild(el('span','mark',new Array(pk0+1).join('A'))); }
       tip.appendChild(dd);
-      if(it.nt){ tip.appendChild(el('div','more',it.nt)); noted=true; }
+      if(it.nt){ it.nt.forEach(function(n){ tip.appendChild(el('div','more',n)); }); noted=true; }
     }
     if(it.f && it.f.length){
       tip.appendChild(el('span','lbl',it.f.length>1?'Formulas':'Formula'));
@@ -263,7 +268,7 @@ popups are always the base values <i>v</i>.</div>
       });
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
     }
-    if(it.nt && !noted) tip.appendChild(el('div','more',it.nt));
+    if(it.nt && !noted) it.nt.forEach(function(n){ tip.appendChild(el('div','more',n)); });
     if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','hint',it.h)); }
     if(t.q && t.q.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
