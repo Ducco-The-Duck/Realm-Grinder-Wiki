@@ -71,6 +71,8 @@ Only these need checking; remove an item when it is settled.
 
 10. **Artifact Sets** (Allegiance page, popup of the "Artifact Set" upgrade; built from code, unchecked). Texts, artifacts and the Ascension 2 gate are read from the code; the formulas are hand-written from the Sets' value functions and show the base values (the game multiplies them further when upgrades that strengthen Sets are owned). Not shown: the Dragon Set primary bonus (its value function is unused; the effect sits in the spell cost code, not yet traced), the Elven Set's autoclick count (a constant 10), the Dragon and Mercenary constants. The helper meanings (Good buildings built, Evil spells cast, Royal Exchange bonus, the stat indexes) are readings of the code.
 
+11. **Spell tier cost scaling** (for the Spells page; read from the spell cost function in the game code, unchecked). Tiered spells cost base ^ (1 + k x n) with k = 0.6 and n the tier (plus 1 while below the highest available tier). Tax Collection upgraded to Share Benefits (Round Table) and Twisting Nether instead cost base x m ^ n with m = 3. Lowering k by 0.1 each: Sequence (S1275), Angel Perk 1, Dragon Set; Dragon's Breath also by 0.3 with Iron Flight (Dragon perk 2). Lowering m: Sequence 0.5, Angel Perk 1 0.3, Dragon Set 0.2. Open: which flag makes a spell use the tiered rule, the highest-available-tier count per spell. The tooltips of the four items carry a note pointing to the Spells page.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)

@@ -74,6 +74,10 @@ PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'P
 KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'set': 9, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
+TIER_COST_NOTE = 'See the Spells page for more on tier cost scaling.'
+TIER_COST_NAMES = {'Iron Flight', 'Dragon Set', 'Angel Perk 1'}      # the upgrades that lower spell tier cost scaling
+
+
 def item(u):
     forms = []
     for p in u['description']:
@@ -88,6 +92,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        **({'nt': TIER_COST_NOTE} if u['name'] in TIER_COST_NAMES else {}),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
         **({'pr': PROOF_OF[u['name']]} if u.get('akind') == 'proof' else {}),
@@ -393,6 +398,7 @@ the base values <i>v</i>.</div>
       tip.appendChild(el('span','lbl','Unlock requirement'));
       var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
     }
+    if(it.nt) tip.appendChild(el('div','more',it.nt));
     tip.style.display='block';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
@@ -508,6 +514,7 @@ the base values <i>v</i>.</div>
       if(pi){
         pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); });
         if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
+        if(pi.nt) blk.appendChild(el('div','more',pi.nt));
       }
       var rq='Requires Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
       blk.appendChild(el('div','more',rq));

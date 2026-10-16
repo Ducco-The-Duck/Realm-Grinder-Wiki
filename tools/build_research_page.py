@@ -59,11 +59,13 @@ for b in range(7):
     name = its[0]['branch_name']
     bicon = icon_file('Research' + name)
     items = []
+    TIER_COST_NOTE = 'See the Spells page for more on tier cost scaling.'
     for r in its:
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
             'd': r['description'], 'q': r['requirements'], 'h': r['hint'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'],
+            'nt': TIER_COST_NOTE if r['code'] == 'S1275' else None,
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
             'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
@@ -259,6 +261,7 @@ popups are always the base values <i>v</i>.</div>
       });
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
     }
+    if(it.nt) tip.appendChild(el('div','more',it.nt));
     if(it.h){ tip.appendChild(el('span','lbl','Hint')); tip.appendChild(el('div','hint',it.h)); }
     if(t.q && t.q.length){
       tip.appendChild(el('span','lbl','Unlock requirement'));
