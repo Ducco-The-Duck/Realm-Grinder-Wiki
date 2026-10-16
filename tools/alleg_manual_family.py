@@ -141,7 +141,8 @@ FORMULAS.update({
     'Dwarven Set': [(0, F(r'v = 8 \cdot X^{0.4}', ('X', 'Your Royal Exchange bonus (%)'))),
                     (1, F(r'v = 0.7 \cdot t^{0.7}', _TE))],
     'Drow Set': [(0, F(r'v = 6 \cdot \left(\ln\left(1 + t\right)\right)^{1.6}', ('t', 'Time spent as Evil in this Reincarnation (seconds)')))],
-    'Druid Set': [(1, F(r'v = 0.5 \cdot \left(\ln\left(1 + N\right)\right)^{1.5}', ('N', 'Spells cast in this Era')))],
+    'Druid Set': [(0, F(r'v = 0.5 \cdot t^{0.5}', ('t', 'Activity time of that spell in this Era (seconds)'), label='Duration of each spell (+%)')),
+                   (1, F(r'v = 0.5 \cdot \left(\ln\left(1 + N\right)\right)^{1.5}', ('N', 'Spells cast in this Era')))],
     'Faceless Set': [(0, F(r'v = 4500 + 12 \cdot A^{0.3}', ('A', 'Highest number of assistants you had in a previous Era'))),
                      (1, F(r'v = \min\left(3000, \left(\ln\left(1 + F\right)\right)^{1.5}\right)', ('F', 'Faction Coins found in this Era')))],
 })

@@ -915,7 +915,7 @@ for u in [u_ for items_ in by_cat.values() for u_ in items_]:
     for c_ in u['conditions']:
         m_ = re.fullmatch(r'having used (.+) for at least (.+) of activity time', c_)
         if m_:
-            u['requirements'].append(f'Use {m_.group(1)} for {m_.group(2)} of activity time in a single Reincarnation')
+            u['requirements'].append(f'Use {m_.group(1)} for {m_.group(2)} of activity time in a single Era')
             continue
         m_ = re.fullmatch(r'having completed (.+)', c_)
         if m_ and 'this Era' not in c_:
