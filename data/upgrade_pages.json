@@ -17909,10 +17909,11 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Reincarnation 7 or higher"
+],
 "conditions": [
-"not having a bloodline yet",
-"being at Reincarnation 7 or higher"
+"not having a bloodline yet"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -23191,13 +23192,14 @@
 }
 ],
 "sources": [],
-"requirements": [],
+"requirements": [
+"Reincarnation 60 or higher (Reincarnation 230 at Ascension 4)"
+],
 "conditions": [
-"not having a lineage yet",
-"being at Reincarnation 60 or higher (230 at Ascension 4)"
+"not having a lineage yet"
 ],
 "undecoded": [],
-"asc_min": 1,
+"asc_min": null,
 "asc_max": null,
 "group": null,
 "tier": -1,

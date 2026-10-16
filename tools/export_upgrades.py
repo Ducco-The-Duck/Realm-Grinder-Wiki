@@ -860,6 +860,10 @@ for u_ in by_cat['allegiances']:
         u_['requirements'] = [r_ for r_ in u_['requirements'] if r_ not in mv_]
         u_['conditions'] = ['having ' + r_.replace('Upgrade: ', '') for r_ in mv_] + u_['conditions']
     u_['conditions'] = [c_ for c_ in u_['conditions'] if c_ != 'having found at least one Dwarven Coin and one Drow Coin in this Era']
+    if u_['akind'] in ('bloodline_c', 'lineage_c'):      # the Reincarnation that makes them appear is an unlock
+        rc_ = [c_ for c_ in u_['conditions'] if c_.startswith('being at Reincarnation')]
+        u_['conditions'] = [c_ for c_ in u_['conditions'] if c_ not in rc_]
+        u_['requirements'] += [c_.replace('being at ', '').replace(' (230 at', ' (Reincarnation 230 at') for c_ in rc_]
 
 # conditions the reader already knows from the page: the faction picked in the selector, the spell's own parenthesis,
 # the warning that the description gives, the treaty's note
