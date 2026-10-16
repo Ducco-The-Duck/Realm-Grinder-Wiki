@@ -22,18 +22,21 @@ def hexc(p):
 
 
 def side_gradient(rows, x):
-    """vertical gradient of the sprite's left (x=0) or right (x=19) column: 5 rows fixed at each end, the middle stretched"""
+    """vertical gradient of the sprite's left (x=0) or right (x=19) column: 5 rows fixed at each end, the middle stretched.
+    Positions are the shared variables --q0..--q10 (the stretched middle) and --e1..--e5 (from the bottom edge)."""
     col = [rows[y][x] for y in range(20)]
     for y in range(20):                      # the rounded corner pixels are transparent: borrow the next row
         if col[y][3] == 0: col[y] = col[y + 1] if y < 10 else col[y - 1]
-    segs = []                                # (colour, start, end) with start/end as CSS lengths
+
+    def pos(y):                              # start of row y
+        if y <= 5: return f'{y}px'
+        if y < 15: return f'var(--q{y - 5})'
+        return 'calc(100% - ' + str(20 - y) + 'px)' if y < 20 else '100%'
+    runs = []                                # (colour, first row, last row + 1)
     for y in range(20):
-        if y < 5: a, b = f'{y}px', f'{y + 1}px'
-        elif y < 15: a, b = f'calc(5px + (100% - 10px) * {(y - 5) / 10:g})', f'calc(5px + (100% - 10px) * {(y - 4) / 10:g})'
-        else: a, b = f'calc(100% - {20 - y}px)', f'calc(100% - {19 - y}px)'
-        if segs and segs[-1][0] == col[y]: segs[-1] = (col[y], segs[-1][1], b)
-        else: segs.append((col[y], a, b))
-    return 'linear-gradient(to bottom,' + ','.join(f'{hexc(c)} {a},{hexc(c)} {b}' for c, a, b in segs) + ')'
+        if runs and runs[-1][0] == col[y]: runs[-1][2] = y + 1
+        else: runs.append([col[y], y, y + 1])
+    return 'linear-gradient(to bottom,' + ','.join(f'{hexc(c)} {pos(a)} {pos(b)}' for c, a, b in runs) + ')'
 
 
 def props(rows, k):
@@ -48,13 +51,14 @@ def props(rows, k):
     for c, n in runs[:-1]:
         spread += n
         shadows.append(f'inset 0 0 0 {spread}px {hexc(c)}')
-    return (f'--{k}t:{hexc(top)};--{k}b:{hexc(bot)};--{k}l:{side_gradient(rows, 0)};--{k}r:{side_gradient(rows, 19)};'
+    gl, gr = side_gradient(rows, 0), side_gradient(rows, 19)
+    return (f'--{k}t:{hexc(top)};--{k}b:{hexc(bot)};--{k}l:{gl};--{k}r:{"var(--" + k + "l)" if gr == gl else gr};'
             f'--{k}c:{hexc(fill)};--{k}s:{",".join(shadows) or "none"}')
 
 
 def frame_css():
     out = [
-        '.cell{position:relative;padding:0;border:5px solid transparent;border-radius:0;background:none}',
+        '.cell{position:relative;padding:0;border:5px solid transparent;border-radius:0;background:none;--q1:calc(5px + (100% - 10px) * 0.1);--q2:calc(5px + (100% - 10px) * 0.2);--q3:calc(5px + (100% - 10px) * 0.3);--q4:calc(5px + (100% - 10px) * 0.4);--q5:calc(5px + (100% - 10px) * 0.5);--q6:calc(5px + (100% - 10px) * 0.6);--q7:calc(5px + (100% - 10px) * 0.7);--q8:calc(5px + (100% - 10px) * 0.8);--q9:calc(5px + (100% - 10px) * 0.9);--q10:calc(5px + (100% - 10px) * 1)}',
         # the frame is a pseudo element over the border area, under the icon
         '.cell::before{content:"";position:absolute;inset:-5px;box-sizing:border-box;pointer-events:none;border:1px solid transparent;'
         'border-top-color:var(--fxt);border-bottom-color:var(--fxb);background-color:var(--fxc);'
