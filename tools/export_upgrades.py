@@ -864,6 +864,7 @@ for u_ in by_cat['allegiances']:
         rc_ = [c_ for c_ in u_['conditions'] if c_.startswith('being at Reincarnation')]
         u_['conditions'] = [c_ for c_ in u_['conditions'] if c_ not in rc_]
         u_['requirements'] += [c_.replace('being at ', '').replace(' (230 at', ' (Reincarnation 230 at') for c_ in rc_]
+        if u_['akind'] == 'lineage_c' and (u_['asc_min'] or 0) < 1: u_['asc_min'] = 1      # Reincarnation 60 is Ascension 1 territory
 
 # conditions the reader already knows from the page: the faction picked in the selector, the spell's own parenthesis,
 # the warning that the description gives, the treaty's note
