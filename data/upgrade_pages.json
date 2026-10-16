@@ -18943,7 +18943,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -19291,7 +19291,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -19660,7 +19660,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -19997,7 +19997,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -20345,7 +20345,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -20719,7 +20719,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -21056,7 +21056,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -21404,7 +21404,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -21772,7 +21772,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -22131,7 +22131,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -22490,7 +22490,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -22869,7 +22869,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -23217,7 +23217,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Archon Lineage level (upgrades that make Lineage levels count more are included)"
+"text": "Your Archon Lineage level"
 }
 ],
 "label": null
@@ -23565,7 +23565,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Lineage level of that faction (upgrades that make Lineage levels count more are included)"
+"text": "Your Lineage level of that faction"
 }
 ],
 "shown": true
@@ -23891,7 +23891,7 @@
 "vars": [
 {
 "symbol": "L",
-"text": "Your Makers Lineage level (upgrades that make Lineage levels count more are included)"
+"text": "Your Makers Lineage level"
 }
 ],
 "label": null
