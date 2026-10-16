@@ -258,7 +258,7 @@ JS = r'''
       var shown=0;
       root.querySelectorAll('.cell').forEach(function(c){
         var ok = qmatch(c._s||'');
-        c.classList.toggle('sx', !ok); if(ok) shown++;
+        c.classList.toggle('sx', !ok); if(ok && !(QT.length && c.hasAttribute('data-un'))) shown++;
       });
       root.querySelectorAll('.grid').forEach(function(g){
         var any = !QT.length || !!g.querySelector('.cell:not(.sx)');
