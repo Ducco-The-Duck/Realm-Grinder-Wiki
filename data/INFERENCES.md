@@ -20,6 +20,9 @@ Only these need checking; remove an item when it is settled.
    0.5 * floor(Time played this Era), unit and size unconfirmed. Check the tooltip with and without the perk.
    **Lantern of Guidance (artifact):** patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second
    (no +1). The wiki shows the code. Check the chance tooltip.
+   **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
+   2 * (ln(1 + A))^2 with A = assistants. The wiki shows the code. Not mentioned in any more recent document. Needs the
+   in-game tooltip value once the perk is reached.
 3. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
    Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
    Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom

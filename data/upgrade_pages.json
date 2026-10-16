@@ -6586,7 +6586,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -6688,7 +6688,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -9000,7 +9000,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -10210,7 +10210,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -10518,7 +10518,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -12114,7 +12114,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 },
 {
 "symbol": "E",
@@ -13126,7 +13126,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -13279,7 +13279,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -13926,7 +13926,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -13977,7 +13977,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -16768,7 +16768,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -16826,7 +16826,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -17455,7 +17455,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -17618,7 +17618,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 },
 {
 "symbol": "T",
@@ -19395,6 +19395,11 @@
 "text": "Each time you click you have 1% chance to gain additional coins equal to 10000% of your production. Manual clicks give more coins. Also generate Faction Coins based on reincarnations made.",
 "formulas": [],
 "s": null
+},
+{
+"text": "Elven Luck is affected by Ascension penalties.",
+"formulas": [],
+"s": null
 }
 ],
 "sources": [],
@@ -19611,7 +19616,7 @@
 "vars": [
 {
 "symbol": "C",
-"text": "Most clicks you have made at once in this Reincarnation"
+"text": "Highest amount of clicks in this Reincarnation"
 }
 ],
 "label": null
@@ -21143,7 +21148,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -22218,7 +22223,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -22441,7 +22446,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -22729,7 +22734,7 @@
 "vars": [
 {
 "symbol": "C",
-"text": "Combo Strike casts in this Era"
+"text": "Combo Strike counter"
 },
 {
 "symbol": "j",
@@ -22820,7 +22825,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "shown": true
@@ -23732,7 +23737,7 @@
 "id": 720,
 "description": [
 {
-"text": "Additively and multiplicatively increase triggered Tax Collections by 1% for every 5000 Unique buildings built.",
+"text": "Additively and multiplicatively increase triggered Tax Collections by +1 and 1% for every 5000 Unique buildings built.",
 "formulas": [],
 "s": null
 }
@@ -23771,7 +23776,18 @@
 "description": [
 {
 "text": "Limited Wish casts also increase the automatic click counter.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 888 \\cdot n",
+"vars": [
+{
+"symbol": "n",
+"text": "Limited Wish casts"
+}
+],
+"label": "Automatic clicks added"
+}
+],
 "s": null
 }
 ],
@@ -23846,7 +23862,7 @@
 "id": 723,
 "description": [
 {
-"text": "Catalyst doubles the spell tier bonus of its active spells.",
+"text": "Catalyst doubles the spell tier bonus of its activated spells.",
 "formulas": [],
 "s": null
 }
@@ -23977,7 +23993,18 @@
 },
 {
 "text": "Also increase assistants based on time spent offline in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.75 \\cdot t^{0.75}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent offline in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -24695,7 +24722,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 },
 {
 "symbol": "m",
@@ -24923,7 +24950,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 },
 {
 "symbol": "m",
@@ -26665,7 +26692,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "shown": true
@@ -28852,7 +28879,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ]
 }
@@ -28867,7 +28894,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ]
 }

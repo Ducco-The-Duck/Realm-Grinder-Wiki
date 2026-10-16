@@ -535,7 +535,10 @@ def fix_text(name, paras):
         paras[0]['formulas'] += p['formulas']
         if paras[0].get('s') is None: paras[0]['s'] = p.get('s')
     if name == 'Djinn Perk 3':
-        paras[0]['text'] = re.sub(r'\s*\(Add: .*\)\s*$', '', paras[0]['text'])      # a live readout
+        t_ = re.sub(r'\s*\(Add: .*\)\s*$', '', paras[0]['text'])      # a live readout
+        paras[0]['text'] = re.sub(r'by (\d+)% for every', r'by +\1 and \1% for every', t_)      # it adds +N and N% together
+    if name == 'Djinn Perk 6':
+        paras[0]['text'] = paras[0]['text'].replace('its active spells', 'its activated spells')
     if name == 'Dragon Perk 4':
         paras[0]['text'] = 'Red and Black Breath count their stats in this Reincarnation instead of this Era.'
     if name == 'Drow Perk 4' and len(paras) == 1:      # one sentence per value
@@ -571,8 +574,8 @@ def fix_text(name, paras):
             ('c', 'The Lineage upgrade cost without this upgrade'))]
     if name == 'Art of the Crow':
         spec = {
-            'Good:': (r'v = 0.1 \cdot D^{0.9}', ('D', 'Your excavation depth (excavations made since your last Excavation Reset)')),
-            'Neutral:': (r'v = 1.5 \cdot N^{0.6}', ('N', 'Royal Exchanges made in this Era')),
+            'Good:': (r'v = 0.1 \cdot D^{0.9}', ('D', 'Your excavation depth')),
+            'Neutral:': (r'v = 1.5 \cdot N^{0.6}', ('N', 'Royal Exchanges purchased in this Era')),
             'Evil:': (r'v = \left(\ln\left(1 + W\right)\right)^{2}', ('W', 'Mana produced in this Reincarnation')),
         }
         for p in paras:

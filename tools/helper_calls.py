@@ -17,7 +17,7 @@ STAT_NAMES = {1: ('t', 'Time played'), 2: ('t', 'Time spent with Good alignment'
               3: ('t', 'Time spent with Evil alignment'), 14: ('t', 'Time spent with Balance alignment'),
               36: ('t', 'Time spent with Chaos alignment'), 48: ('t', 'Time spent with Order alignment'),
               4: ('C', 'Clicks made'), 15: ('N', 'Spells cast'), 16: ('W', 'Mana produced'),
-              24: ('N', 'Royal Exchanges made'), 45: ('t', 'Time spent offline'),
+              24: ('N', 'Royal Exchanges purchased'), 45: ('t', 'Time spent offline'),
               49: ('N', 'Times you affiliated with the Mercenaries'),
               97: ('t', 'Time spent with at least one spell active'), 102: ('N', 'Rubies collected'),
               13: ('N', 'Upgrades purchased'), 134: ('N', 'Elven Luck triggered')}
@@ -118,7 +118,7 @@ def helper_call(cls, mem, args, name_of):
         if not args or args == ['']: return 'P', 'Your total Research points'
         if isinstance(first, int) and 0 <= first < len(BRANCH): return 'P', f'Your {BRANCH[first]} Research points'
         return None
-    if mem == '§!!8§': return 'D', 'Your excavation depth (excavations made since your last Excavation Reset)'
+    if mem == '§!!8§': return 'D', 'Your excavation depth'
     if mem == '§?&§': return 'S', 'Total tier of your active spells (each active spell counts its tier)'
     if mem == '§3L§':
         return 't', 'Time spent offline ' + ('in this Era' if g(0) else 'in this Reincarnation') + ' (seconds)'
@@ -129,7 +129,7 @@ def helper_call(cls, mem, args, name_of):
         if first in (0, 1, 2, 4) and len(args) == 1:
             return 'B', f'{ {0: "Neutral", 1: "Good", 2: "Evil", 4: "Order"}[first] } buildings you have built'
         return None
-    if mem == '§`!D§': return 'N', 'Royal Exchanges made in this Era'
+    if mem == '§`!D§': return 'N', 'Royal Exchanges purchased in this Era'
     if mem == '§`!=§': return 'L', 'Your total Lineage level (all factions added together)'
     if mem == '§=`§': return 'B', 'Unique buildings you have built'
     if mem == '§1"O§': return 'B', 'Non-Unique buildings you have built'

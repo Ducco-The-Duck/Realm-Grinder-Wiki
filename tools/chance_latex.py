@@ -21,7 +21,7 @@ def stat_desc(i, scope):
     if i == 49: return f'Number of times you affiliated with the Mercenaries {SCOPE[scope]}'
     if i == 1: return f'Time played {SCOPE[scope]} (seconds)'
     if i == 4: return f'Clicks made {SCOPE[scope]}'
-    if i == 24: return f'Royal Exchanges made {SCOPE[scope]}'
+    if i == 24: return f'Royal Exchanges purchased {SCOPE[scope]}'
     return None
 
 
@@ -60,7 +60,7 @@ VARS = [
     (G + r'§5!V§\[4\]', 'C', 'Clicks made in this Era'),
     (G + r'§5!V§\[1\]', 'E', 'Time played in this Era (seconds)'),
     (G + r'§=y§\[39\]', r'E_{\max}', 'Length of your longest Era in this Reincarnation, not counting the current one (seconds)'),
-    (G + r'§5!V§\[24\]', 'N', 'Royal Exchanges made in this Era'),
+    (G + r'§5!V§\[24\]', 'N', 'Royal Exchanges purchased in this Era'),
     (r'§#!!§\.§@!\?§\(\)', 'X', 'Your Royal Exchange bonus (%)'),
     (r'§&c§\.§0#§\(-1,true\)', 'B', 'Total buildings you own'),
     (r'§&c§\.§@!\[§\(true,false,true\)', 'F', 'Faction Coins found in this Era'),
@@ -80,7 +80,7 @@ VARS = [
     (G + r'§1!#§\[(\d+)\]', 'L', lambda m: f'Your {FACTION[int(m.group(1))]} Lineage level'),
     (r'§&c§\.§`!=§\(\)', 'L', 'Your total Lineage level (all factions added together)'),
     (G + r'§8!H§', 'R', 'Your Reincarnation number'),
-    (G + r'§1!5§', 'N', 'Excavations made since your last Excavation Reset (the game\'s Excavations counter)'),
+    (G + r'§1!5§', 'N', 'Your excavation depth'),
     (G + r'§\["&§', 'D', 'Consecutive days you have logged in (days counted in UTC)'),
     (r'§&c§\.§,o§\(' + G + r'§"!0§\)', 'G', 'Order of magnitude of your Gems (e.g. 3.2e45 Gems counts as 45)'),
     (r'§@W§\.§\'!b§\(\)', 'K', 'Combo Strike\'s current production bonus (%)'),

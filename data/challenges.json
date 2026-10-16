@@ -858,7 +858,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "label": null,
@@ -2203,7 +2203,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Your excavation depth (excavations made since your last Excavation Reset)"
+"text": "Your excavation depth"
 }
 ],
 "label": "Production of all buildings",
@@ -2430,7 +2430,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ],
 "label": null,

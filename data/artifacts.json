@@ -262,7 +262,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
+"text": "Your excavation depth"
 }
 ]
 },
@@ -1133,7 +1133,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
+"text": "Your excavation depth"
 }
 ]
 },
@@ -1159,7 +1159,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
+"text": "Your excavation depth"
 }
 ]
 },
@@ -1518,7 +1518,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ]
 },
@@ -2611,7 +2611,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Royal Exchanges made in this Era"
+"text": "Royal Exchanges purchased in this Era"
 }
 ]
 },

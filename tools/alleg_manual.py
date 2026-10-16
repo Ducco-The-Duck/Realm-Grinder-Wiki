@@ -97,7 +97,7 @@ FORMULAS = {
         (0, F(r'v_{1} = L', ('L', 'Your current Lineage level'), label='Assistants (%)')),
         (1, F(r'v_{2} = 1.15 \cdot L^{1.15}', ('L', 'Your current Lineage level'), label='Mana produced while offline (%)'))],
     'Absent-mindedness': [(0, F(r'v = 30 + 0.75 \cdot D^{0.75} + 4 \cdot \left(1 + E\right)^{4}',
-                                ('D', 'Your excavation depth (excavations made since your last Excavation Reset)'),
+                                ('D', 'Your excavation depth'),
                                 ('E', 'Excavation Resets made in this Reincarnation (regular and free)')))],
     'Superior Consciousness': [(0, F(r'v = N', ('N', 'Number of buildings of that type you own'),
                                      label='Production of each Unique building (%)'))],

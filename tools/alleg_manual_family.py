@@ -17,11 +17,11 @@ FORMULAS.update({
     'Advanced Undead Heritage': [(0, F(r'v = 0.5 \cdot t^{0.5} \cdot m', ('t', 'Time spent offline in this Reincarnation (seconds)'), LIN))],
     'Advanced Demonic Heritage': [(0, F(r'v = 0.25 \cdot N^{0.75} \cdot m', ('N', 'Number of trophies you have unlocked'), LIN))],
     'Advanced Titan Heritage': [(0, F(r'v = 0.85 \cdot \left(\ln\left(1 + N\right)\right)^{1.15} \cdot m',
-                                      ('N', 'Royal Exchanges made in this Era'), LIN))],
+                                      ('N', 'Royal Exchanges purchased in this Era'), LIN))],
     'Advanced Druid Heritage': [(0, F(r'v = 9 \cdot D^{0.3} \cdot m', ('D', 'The durations of all your spells added together (seconds)'), LIN))],
     'Advanced Faceless Heritage': [(0, F(r'v = 2.25 \cdot U^{0.8} \cdot m', ('U', 'Unique buildings you have built'), LIN))],
     'Advanced Dwarven Heritage': [(0, F(r'v = 0.025 \cdot D^{0.65} \cdot m',
-                                        ('D', 'Your excavation depth (excavations made since your last Excavation Reset)'), LIN))],
+                                        ('D', 'Your excavation depth'), LIN))],
     'Advanced Drow Heritage': [(0, F(r'v = 0.2 \cdot \ln\left(1 + O\right) \cdot t^{0.4} \cdot m',
                                      ('O', 'Your Offline production bonus'), ('t', 'Time played in this Era (seconds)'), LIN))],
     'Advanced Dragon Heritage': [(0, F(r'v = \left\lfloor \left(1 + 0.05 \cdot \left(\ln\left(1 + A\right)\right)^{1.15}\right) \cdot m \right\rfloor',
@@ -35,10 +35,10 @@ FORMULAS.update({
     "Wyrm's Den": [(0, F(r'v = 0.25 \cdot \left(\ln\left(1 + F\right)\right)^{5}', ('F', 'Faction Coins found in this Era')))],
     'Demon Bloodline': [(0, F(r'v = 2.5 \cdot N^{0.5}', ('N', most('Hell Portal'))))],
     'Dwarven Bloodline': [(0, F(r'v = \left(\ln\left(1 + D\right)\right)^{1.75} \cdot 10^{\left(1.25 \cdot T\right)^{0.75}}',
-                                ('D', 'Your excavation depth (excavations made since your last Excavation Reset)'), TIER,
+                                ('D', 'Your excavation depth'), TIER,
                                 label='Base production added to each building (per second)'))],
     'Goblin Bloodline': [(0, F(r'v = 0.01', ('v', 'Amount taken off the cost multiplier of all buildings'), label='Cost multiplier'))],
-    'Elven Perk 6': [(0, F(r'v = 1.6 \cdot C^{0.4}', ('C', 'Most clicks you have made at once in this Reincarnation')))],
+    'Elven Perk 6': [(0, F(r'v = 1.6 \cdot C^{0.4}', ('C', 'Highest amount of clicks in this Reincarnation')))],
     'Goblin Perk 6': [(0, F(r'v = \min\left(3000,\, 4 \cdot W^{0.5}\right)', ('W', 'The worth of a Tax Collection, as the spell computes it')))],
     'Undead Perk 1': [(1, F(r'v_{1} = D^{0.6}', ('D', 'Duration of Spiritual Surge (seconds)'), label='Offline production (%)')),
                       (1, F(r'v_{2} = 0.6 \cdot D^{0.6}', ('D', 'Duration of Spiritual Surge (seconds)'),
@@ -155,6 +155,15 @@ FORMULAS.update({
                             label='Production of each Unique Building (%)'))],
     'Drow Perk 4': [(0, F(r'v = 0.5 \cdot \left\lfloor t \right\rfloor', ('t', 'Time played in this Era (seconds)'), label='Combo Strike combo bonus (%)')),
                     (1, F(r'v = 2 \cdot \left(\ln\left(1 + \left(C^{0.9}\right)^{j + 1}\right)\right)^{2}',
-                          ('C', 'Combo Strike casts in this Era'), ('j', 'Tier Combo Strike is cast at, minus 1 (0 for the base tier)'),
+                          ('C', 'Combo Strike counter'), ('j', 'Tier Combo Strike is cast at, minus 1 (0 for the base tier)'),
                           label='Production of all buildings (%)'))],
+})
+
+# more lineage perks
+FORMULAS.update({
+    'Djinn Perk 4': [(0, F(r'v = 888 \cdot n', ('n', 'Limited Wish casts'), label='Automatic clicks added'))],
+    'Makers Perk 1': [(1, F(r'v = 0.75 \cdot t^{0.75}', ('t', 'Time spent offline in this Reincarnation (seconds)')))],
+})
+EXTRA_PARAS.update({
+    'Elven Perk 1': [('Elven Luck is affected by Ascension penalties.', None)],
 })
