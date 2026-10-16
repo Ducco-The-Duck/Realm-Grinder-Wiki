@@ -286,6 +286,7 @@ popups are always the base values <i>v</i>.</div>
     if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     var tn=trimName(it.fn); if(tn) b.classList.add('t-'+tn);
+    if(!tn && (it.al==='Good' || it.al==='Evil')) b.classList.add('t-'+it.al);      // alignment-locked researches: the Good / Evil frame
     function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
     function show(){ showTip(it,b); }

@@ -57,17 +57,17 @@ def frame_css():
         '.cell{position:relative;padding:0;border:5px solid transparent;border-radius:0;background:none}',
         # the frame is a pseudo element over the border area, under the icon
         '.cell::before{content:"";position:absolute;inset:-5px;box-sizing:border-box;pointer-events:none;border:1px solid transparent;'
-        'border-top-color:var(--ft);border-bottom-color:var(--fb);background-color:var(--fc);'
-        'background-image:var(--fl),var(--fr);background-position:left top,right top;background-size:1px 100%,1px 100%;'
-        'background-repeat:no-repeat;background-origin:border-box;background-clip:border-box;box-shadow:var(--fs)}',
-        '.cell:hover::before,.cell:focus-visible::before{border-top-color:var(--ht);border-bottom-color:var(--hb);background-color:var(--hc);'
-        'background-image:var(--hl),var(--hr);box-shadow:var(--hs)}',
+        'border-top-color:var(--fxt);border-bottom-color:var(--fxb);background-color:var(--fxc);'
+        'background-image:var(--fxl),var(--fxr);background-position:left top,right top;background-size:1px 100%,1px 100%;'
+        'background-repeat:no-repeat;background-origin:border-box;background-clip:border-box;box-shadow:var(--fxs)}',
+        '.cell:hover::before,.cell:focus-visible::before{border-top-color:var(--hxt);border-bottom-color:var(--hxb);background-color:var(--hxc);'
+        'background-image:var(--hxl),var(--hxr);box-shadow:var(--hxs)}',
     ]
     for name, normal, hover in THEMES:
         rows_n = pixels(os.path.join(TRIM, normal + '.png'))[2]
         rows_h = pixels(os.path.join(TRIM, hover + '.png'))[2]
         sel = '.cell' if not name else f'.t-{name}'
-        out.append(f'{sel}{{{props(rows_n, "f")};{props(rows_h, "h")}}}')
+        out.append(f'{sel}{{{props(rows_n, "fx")};{props(rows_h, "hx")}}}')
     return '\n'.join(out)
 
 
