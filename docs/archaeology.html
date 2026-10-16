@@ -44,6 +44,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
   max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
 .cell:hover,.cell:focus-visible,.cell.fac:hover{background:none;outline:none;box-shadow:none;border-image-source:var(--trh);filter:brightness(1.15)}
 .cell.fac{background:none;border-color:transparent}
+/* diagnostic: add ?flat to the address to draw plain CSS borders instead of the sprite frames (to tell whether the frames are what gets clipped while scrolling) */
+html.flat .cell{border-image:none!important;border:2px solid #b8923a!important;background:#201d18!important}
 .cell.na{opacity:.35;filter:grayscale(1)}
 .cell.na:hover{filter:grayscale(1) brightness(1.2)}
 .badge{z-index:3}
@@ -312,6 +314,7 @@ body.steel .search input{padding:0 96px 0 8px}
     ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) supify(n); else if(n.nodeType===3 && n.parentNode) supify(n.parentNode); }); });
   }).observe(document.body,{childList:true,subtree:true});
   document.addEventListener('DOMContentLoaded',function(){ supify(document.body); });
+  if(/[?&]flat/.test(location.search)) document.documentElement.classList.add('flat');
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     enhanceSelects();
