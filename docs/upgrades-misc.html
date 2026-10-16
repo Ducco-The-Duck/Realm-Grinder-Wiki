@@ -236,6 +236,11 @@ h2{margin:0 0 3px;padding-bottom:2px}
 .search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
 .search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .search .qn{color:var(--muted);font-size:.9rem}
+/* the search box is as wide as the notes box; the result count sits inside it */
+.search{position:relative;display:block}
+.search input{display:block;width:100%;box-sizing:border-box;padding-right:96px}
+body.steel .search input{padding:0 96px 0 8px}
+.search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
 .sx{display:none!important}
 
 </style>

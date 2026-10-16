@@ -17912,9 +17912,7 @@
 "requirements": [
 "Reincarnation 7 or higher"
 ],
-"conditions": [
-"not having a bloodline yet"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": null,
 "asc_max": null,
@@ -23195,9 +23193,7 @@
 "requirements": [
 "Reincarnation 60 or higher (Reincarnation 230 at Ascension 4)"
 ],
-"conditions": [
-"not having a lineage yet"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 1,
 "asc_max": null,
