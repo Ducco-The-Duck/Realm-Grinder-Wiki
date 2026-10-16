@@ -266,6 +266,8 @@ body.searching .cell.group[data-un]{display:none}
 #more .card.wide{width:min(700px,100%)}
 #more .bonus p{margin:0 0 2px}
 #more .formula{padding:2px 0;overflow-wrap:anywhere}
+#more .flabel{margin-top:4px;font-weight:600}
+#more .fsep{border-top:1px solid var(--line);margin:6px 0 2px}
 #more ul.vars{list-style:none;padding-left:0;margin:2px 0}
 #more .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
 #more .more{color:var(--muted);margin-top:10px}
