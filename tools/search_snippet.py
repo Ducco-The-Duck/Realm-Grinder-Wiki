@@ -8,7 +8,7 @@ text, description) on every cell it wants searchable, then calls `searchInit(roo
 CSS = r'''
 /* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
 /*FRAMES*/
-.cell img,.cell img.ov{position:absolute;inset:auto;margin:0;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(87.7% + 10.5px);height:calc(87.7% + 10.5px);
+.cell img,.cell img.ov{position:absolute;inset:auto;margin:0;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% + 4px);height:calc(100% + 4px);
   max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
 .cell:hover,.cell:focus-visible,.cell.fac:hover{background:none;outline:none;box-shadow:none;filter:brightness(1.15)}
 .cell.fac{background:none;border-color:transparent}
