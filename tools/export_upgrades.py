@@ -534,6 +534,14 @@ def fix_text(name, paras):
     for p in drop:
         paras[0]['formulas'] += p['formulas']
         if paras[0].get('s') is None: paras[0]['s'] = p.get('s')
+    if name == 'Djinn Perk 3':
+        paras[0]['text'] = re.sub(r'\s*\(Add: .*\)\s*$', '', paras[0]['text'])      # a live readout
+    if name == 'Dragon Perk 4':
+        paras[0]['text'] = 'Red and Black Breath count their stats in this Reincarnation instead of this Era.'
+    if name == 'Drow Perk 4' and len(paras) == 1:      # one sentence per value
+        t0, sp = paras[0]['text'], paras[0].get('s')
+        a_, b_ = t0.split('. While ', 1)
+        paras[:] = [{'text': a_ + '.', 'formulas': [], 's': None}, {'text': 'While ' + b_, 'formulas': [], 's': sp}]
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []     # the code only has the constant 4*10 + 3 + 0*0.1 + 14*0.01
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'

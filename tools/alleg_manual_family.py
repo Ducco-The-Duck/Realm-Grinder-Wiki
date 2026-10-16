@@ -1,5 +1,5 @@
 """Formulas of the faction heritages, spell upgrades, unique building upgrades and bloodlines (merged into FORMULAS)."""
-from alleg_manual import F, most, TIER, FORMULAS
+from alleg_manual import F, most, TIER, FORMULAS, S_ACTIVE
 
 LIN = ('m', 'Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise '
             '(other upgrades change the numbers)')
@@ -51,7 +51,6 @@ FORMULAS.update({
                           label='Combo Strike bonus'))],
     'Archon Lineage': [(0, F(r'v = 15 \cdot L', ('L', 'Your Archon Lineage level (upgrades that make Lineage levels count more are included)')))],
     'Makers Lineage': [(0, F(r'v = 3 \cdot L', ('L', 'Your Makers Lineage level (upgrades that make Lineage levels count more are included)')))],
-    'Makers Perk 4': [(0, F(r'v = 2 \cdot s', ('s', 'Seconds since Infinite Spiral was cast, up to its duration')))],
     'Archon Bloodline': [(0, F(r'v = 1 + \max\left(0, \left\lfloor \frac{\sqrt{1 + \frac{t}{16200}} - 1}{2} \right\rfloor\right)',
                                ('t', 'Time played in this Era (seconds)'), label='Research slots for every branch (Ascension 0 to 2)'))],
     'Angel Bloodline': [(1, F(r'v = 1 + 0.5 \cdot t^{0.5}', ('t', 'Seconds since Holy Light was cast (rounded)'),
@@ -147,4 +146,15 @@ FORMULAS.update({
                    (1, F(r'v = 0.5 \cdot \left(\ln\left(1 + N\right)\right)^{1.5}', ('N', 'Spells cast in this Era')))],
     'Faceless Set': [(0, F(r'v = 4500 + 12 \cdot A^{0.3}', ('A', 'Highest number of assistants you had in a previous Era'))),
                      (1, F(r'v = \min\left(3000, \left(\ln\left(1 + F\right)\right)^{1.5}\right)', ('F', 'Faction Coins found in this Era')))],
+})
+
+# lineage perks: values read from the code
+FORMULAS.update({
+    'Angel Perk 6': [(0, F(r'v = 1.5 \cdot S^{0.75}', S_ACTIVE))],
+    'Dragon Perk 1': [(0, F(r'v = 1.95 \cdot N^{0.95}', ('N', 'Number of buildings of that type you own'),
+                            label='Production of each Unique Building (%)'))],
+    'Drow Perk 4': [(0, F(r'v = 0.5 \cdot \left\lfloor t \right\rfloor', ('t', 'Time played in this Era (seconds)'), label='Combo Strike combo bonus (%)')),
+                    (1, F(r'v = 2 \cdot \left(\ln\left(1 + \left(C^{0.9}\right)^{j + 1}\right)\right)^{2}',
+                          ('C', 'Combo Strike casts in this Era'), ('j', 'Tier Combo Strike is cast at, minus 1 (0 for the base tier)'),
+                          label='Production of all buildings (%)'))],
 })

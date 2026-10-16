@@ -19942,7 +19942,18 @@
 "description": [
 {
 "text": "Multiplicatively increase autoclick power based on active spells.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.5 \\cdot S^{0.75}",
+"vars": [
+{
+"symbol": "S",
+"text": "Total tier of your active spells (each active spell counts its tier)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -22695,21 +22706,37 @@
 "id": 700,
 "description": [
 {
-"text": "Increase Combo Strike's combo bonus based on time spent in this Era. While Combo Strike is active, increase the production of all buildings based on the current Combo Strike bonus.",
+"text": "Increase Combo Strike's combo bonus based on time spent in this Era.",
 "formulas": [
 {
-"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + \\left(C^{0.9}\\right)^{j + 1}\\right)\\right)^{2}",
+"latex": "v_{1} = 0.5 \\cdot \\left\\lfloor t \\right\\rfloor",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Combo Strike combo bonus (%)"
+}
+],
+"s": null
+},
+{
+"text": "While Combo Strike is active, increase the production of all buildings based on the current Combo Strike bonus.",
+"formulas": [
+{
+"latex": "v_{2} = 2 \\cdot \\left(\\ln\\left(1 + \\left(C^{0.9}\\right)^{j + 1}\\right)\\right)^{2}",
 "vars": [
 {
 "symbol": "C",
-"text": "Combo Strike counter"
+"text": "Combo Strike casts in this Era"
 },
 {
 "symbol": "j",
 "text": "Tier Combo Strike is cast at, minus 1 (0 for the base tier)"
 }
 ],
-"label": "Combo Strike bonus"
+"label": "Production of all buildings (%)"
 }
 ],
 "s": 3
@@ -22923,7 +22950,18 @@
 "description": [
 {
 "text": "Increase the production of Unique Buildings based on buildings of the same type.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 1.95 \\cdot N^{0.95}",
+"vars": [
+{
+"symbol": "N",
+"text": "Number of buildings of that type you own"
+}
+],
+"label": "Production of each Unique Building (%)"
+}
+],
 "s": null
 }
 ],
@@ -23047,7 +23085,7 @@
 "id": 707,
 "description": [
 {
-"text": "Converts Red and Black Breaths to this Reincarnation values.",
+"text": "Red and Black Breath count their stats in this Reincarnation instead of this Era.",
 "formulas": [],
 "s": null
 }
@@ -23694,7 +23732,7 @@
 "id": 720,
 "description": [
 {
-"text": "Additively and multiplicatively increase triggered Tax Collections by 1% for every 5000 Unique buildings built. (Add: +0, Mult: 0%)",
+"text": "Additively and multiplicatively increase triggered Tax Collections by 1% for every 5000 Unique buildings built.",
 "formulas": [],
 "s": null
 }
@@ -24053,18 +24091,7 @@
 "description": [
 {
 "text": "While Infinite Spiral is active, the production of all buildings increases by 2% each second, up to its maximum duration.",
-"formulas": [
-{
-"latex": "v = 2 \\cdot s",
-"vars": [
-{
-"symbol": "s",
-"text": "Seconds since Infinite Spiral was cast, up to its duration"
-}
-],
-"label": null
-}
-],
+"formulas": [],
 "s": null
 }
 ],
