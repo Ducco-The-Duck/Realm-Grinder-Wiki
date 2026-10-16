@@ -23,6 +23,7 @@ STAT_NAMES = {1: ('t', 'Time played'), 2: ('t', 'Time spent with Good alignment'
               13: ('N', 'Upgrades purchased'), 134: ('N', 'Elven Luck triggered')}
 for _i in range(50, 64):
     STAT_NAMES[_i] = ('t', f'Time spent as {FACTION.get(_i - 50, "?")}')
+STAT_NAMES[63] = ('C', 'Automatic clicks made')      # the game adds the autoclicker's clicks here (Elven Challenge, Elven Set)
 TIME_SYMS = {'t'}
 # stat index -> description of "highest value in this Reincarnation" (max of this Era and earlier Eras)
 MAXSTAT = {40: ('N', 'Most spells cast in a single Era of this Reincarnation'),

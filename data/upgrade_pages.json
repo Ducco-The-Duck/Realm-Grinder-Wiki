@@ -17944,12 +17944,34 @@
 "description": [
 {
 "text": "Multiplicatively increase Maximum Mana based on Good buildings built.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = G^{0.5}",
+"vars": [
+{
+"symbol": "G",
+"text": "Good buildings you have built"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Farms, Blacksmiths and Inns count more based on time spent with Fairies in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = 2 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Fairy in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18003,7 +18025,18 @@
 },
 {
 "text": "Set Bonus 2: Clicks count more based on autoclicks made in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = \\left(\\ln\\left(1 + C\\right)\\right)^{2.5} + C^{0.25}",
+"vars": [
+{
+"symbol": "C",
+"text": "Automatic clicks made in this Era"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18052,12 +18085,34 @@
 "description": [
 {
 "text": "Increase Mana Regeneration based on highest amount of spells cast in a single Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 3.5 \\cdot N^{0.35}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most spells cast in a single Era of this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Increase the duration of all spells based on Unique buildings built.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = B^{0.5}",
+"vars": [
+{
+"symbol": "B",
+"text": "Unique buildings you have built"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18106,12 +18161,44 @@
 "description": [
 {
 "text": "Increase Faction Coin find chance additively and multiplicatively based on time spent in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 70 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Faction Coin find chance (+%)"
+},
+{
+"latex": "v_{2} = 0.6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Faction Coin find chance (multiplicative, %)"
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Each time you cast a spell, you also cast free Tax Collections based on time spent in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{3} = \\left\\lfloor 1 + 0.25 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{1.5} \\right\\rfloor",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Free Tax Collections per spell cast"
+}
+],
 "s": null
 }
 ],
@@ -18160,12 +18247,34 @@
 "description": [
 {
 "text": "Increase Maximum Mana based on your Offline production bonus.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 7500 + 7.5 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{3.75}",
+"vars": [
+{
+"symbol": "O",
+"text": "Your Offline production bonus"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Multiplicatively increase production bonus from Gems based on Faction Coins found in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = \\left(\\ln\\left(1 + F\\right)\\right)^{2}",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18214,12 +18323,34 @@
 "description": [
 {
 "text": "Trophies count more based on the three highest tier buildings built.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = N^{0.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Buildings of tier 9, 10 and 11 of your alignment you own, added together"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Increase production bonus from Gems based on Evil spells cast in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = 2.25 \\cdot \\left(\\ln\\left(1 + S\\right)\\right)^{2.25}",
+"vars": [
+{
+"symbol": "S",
+"text": "Evil spells cast in this Reincarnation"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18268,12 +18399,44 @@
 "description": [
 {
 "text": "Increase Royal Exchange Bonus additively and multiplicatively based on time spent in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 3 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Royal Exchange Bonus (+%)"
+},
+{
+"latex": "v_{2} = 0.6 \\cdot t^{0.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": "Royal Exchange Bonus (multiplicative, %)"
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Whenever you cast a spell, your production is increased based on Lightning Strike activity in this Reincarnation for 20 seconds. If another spell is cast while this effect is active, it is restored to full duration.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{3} = A^{0.7}",
+"vars": [
+{
+"symbol": "A",
+"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+}
+],
+"label": "Production (%)"
+}
+],
 "s": 5
 }
 ],
@@ -18327,7 +18490,18 @@
 },
 {
 "text": "Set Bonus 2: Lineage levels count more based on spells cast in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.5 \\cdot \\left(\\ln\\left(1 + N\\right)\\right)^{1.5}",
+"vars": [
+{
+"symbol": "N",
+"text": "Spells cast in this Era"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18376,12 +18550,34 @@
 "description": [
 {
 "text": "Gain assistants based on the highest amount of assistants you had in a previous Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 4500 + 12 \\cdot A^{0.3}",
+"vars": [
+{
+"symbol": "A",
+"text": "Highest number of assistants you had in a previous Era"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Increase Research Budget based on Faction Coins found in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = \\min\\left(3000, \\left(\\ln\\left(1 + F\\right)\\right)^{1.5}\\right)",
+"vars": [
+{
+"symbol": "F",
+"text": "Faction Coins found in this Era"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18430,12 +18626,34 @@
 "description": [
 {
 "text": "Multiplicatively increase assistants based on Royal Exchange bonus.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 8 \\cdot X^{0.4}",
+"vars": [
+{
+"symbol": "X",
+"text": "Your Royal Exchange bonus (%)"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
 "text": "Set Bonus 2: Multiplicatively increase Mana Regeneration based on time spent in this Era.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = 0.7 \\cdot t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],
@@ -18484,7 +18702,18 @@
 "description": [
 {
 "text": "Spells cast count more based on time spent as Evil in this Reincarnation.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 6 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{1.6}",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent as Evil in this Reincarnation (seconds)"
+}
+],
+"label": null
+}
+],
 "s": null
 },
 {
@@ -18656,11 +18885,10 @@
 ],
 "sources": [],
 "requirements": [
+"Reincarnation 100 or higher (Reincarnation 225 at Ascension 4)",
 "Complete one faction Artifact Set (all three of its artifacts)"
 ],
-"conditions": [
-"starting from Reincarnation 225 at Ascension 4"
-],
+"conditions": [],
 "undecoded": [],
 "asc_min": 2,
 "asc_max": null,

@@ -117,3 +117,31 @@ EXTRA_PARAS.update({
            label='Production (%)')),
     ],
 })
+
+# the Artifact Sets: (paragraph 0 = the Set's own bonus, paragraph 1 = Set Bonus 2).  Values are the base ones: the game
+# multiplies them further when upgrades that strengthen Sets are owned.
+_TE = ('t', 'Time played in this Era (seconds)')
+FORMULAS.update({
+    'Fairy Set': [(0, F(r'v = G^{0.5}', ('G', 'Good buildings you have built'))),
+                  (1, F(r'v = 2 \cdot \left(\ln\left(1 + t\right)\right)^{1.5}', ('t', 'Time spent as Fairy in this Reincarnation (seconds)')))],
+    'Elven Set': [(1, F(r'v = \left(\ln\left(1 + C\right)\right)^{2.5} + C^{0.25}', ('C', 'Automatic clicks made in this Era')))],
+    'Angel Set': [(0, F(r'v = 3.5 \cdot N^{0.35}', ('N', 'Most spells cast in a single Era of this Reincarnation'))),
+                  (1, F(r'v = B^{0.5}', ('B', 'Unique buildings you have built')))],
+    'Goblin Set': [(0, F(r'v_{1} = 70 \cdot t^{0.7}', _TE, label='Faction Coin find chance (+%)')),
+                   (0, F(r'v_{2} = 0.6 \cdot t^{0.6}', _TE, label='Faction Coin find chance (multiplicative, %)')),
+                   (1, F(r'v = \left\lfloor 1 + 0.25 \cdot \left(\ln\left(1 + t\right)\right)^{1.5} \right\rfloor', _TE,
+                         label='Free Tax Collections per spell cast'))],
+    'Undead Set': [(0, F(r'v = 7500 + 7.5 \cdot \left(\ln\left(1 + O\right)\right)^{3.75}', ('O', 'Your Offline production bonus'))),
+                   (1, F(r'v = \left(\ln\left(1 + F\right)\right)^{2}', ('F', 'Faction Coins found in this Era')))],
+    'Demon Set': [(0, F(r'v = N^{0.5}', ('N', 'Buildings of tier 9, 10 and 11 of your alignment you own, added together'))),
+                  (1, F(r'v = 2.25 \cdot \left(\ln\left(1 + S\right)\right)^{2.25}', ('S', 'Evil spells cast in this Reincarnation')))],
+    'Titan Set': [(0, F(r'v_{1} = 3 \cdot t^{0.7}', _TE, label='Royal Exchange Bonus (+%)')),
+                  (0, F(r'v_{2} = 0.6 \cdot t^{0.6}', _TE, label='Royal Exchange Bonus (multiplicative, %)')),
+                  (1, F(r'v = A^{0.7}', ('A', 'Activity time of "Lightning Strike" in this Reincarnation (seconds)'), label='Production (%)'))],
+    'Dwarven Set': [(0, F(r'v = 8 \cdot X^{0.4}', ('X', 'Your Royal Exchange bonus (%)'))),
+                    (1, F(r'v = 0.7 \cdot t^{0.7}', _TE))],
+    'Drow Set': [(0, F(r'v = 6 \cdot \left(\ln\left(1 + t\right)\right)^{1.6}', ('t', 'Time spent as Evil in this Reincarnation (seconds)')))],
+    'Druid Set': [(1, F(r'v = 0.5 \cdot \left(\ln\left(1 + N\right)\right)^{1.5}', ('N', 'Spells cast in this Era')))],
+    'Faceless Set': [(0, F(r'v = 4500 + 12 \cdot A^{0.3}', ('A', 'Highest number of assistants you had in a previous Era'))),
+                     (1, F(r'v = \min\left(3000, \left(\ln\left(1 + F\right)\right)^{1.5}\right)', ('F', 'Faction Coins found in this Era')))],
+})

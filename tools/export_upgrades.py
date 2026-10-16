@@ -736,8 +736,8 @@ for idx, r in todo:
         item['asc_min'] = 2
         for p_ in item['description']: p_['formulas'] = []      # the values are not decoded reliably yet (INFERENCES.md)
     if r['cat'] == 0 and alleg_kind(r) == 'set_c':
-        item['conditions'] = ['starting from Reincarnation 225 at Ascension 4']; item['undecoded'] = []
-        item['requirements'] = ['Complete one faction Artifact Set (all three of its artifacts)']
+        item['conditions'] = []; item['undecoded'] = []
+        item['requirements'] = ['Reincarnation 100 or higher (Reincarnation 225 at Ascension 4)', 'Complete one faction Artifact Set (all three of its artifacts)']
         item['description'].append({'text': 'A second Set can be chosen after completing Stoneheart (Makers Challenge 4), while playing as Makers.',
                                     'formulas': [], 's': None})
         item['asc_min'] = 2
