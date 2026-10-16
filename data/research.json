@@ -2037,7 +2037,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent with the building's alignment, plus the time on its path (Order, Chaos or Balance) if it has one, in this Reincarnation (seconds)"
+"text": "Time spent with the building's alignment in this Reincarnation (seconds)"
 }
 ],
 "scale": null,
@@ -2412,7 +2412,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent with alignments other than your current one in this Reincarnation (seconds); from Ascension 2 the paths other than your current one are added"
+"text": "Time spent with alignments other than your current one in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -4533,7 +4533,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Time spent with the spell's requirement (its faction, path or alignment) in this Reincarnation (seconds)"
+"text": "Time spent with the spell's requirement (its faction or alignment) in this Reincarnation (seconds)"
 }
 ],
 "scale": null,

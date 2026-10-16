@@ -75,6 +75,12 @@ Only these need checking; remove an item when it is settled.
 
 10. **Spell tier cost scaling** (for the Spells page; read from the spell cost function in the game code, unchecked). Tiered spells cost base ^ (1 + k x n) with k = 0.6 and n the tier (plus 1 while below the highest available tier). Tax Collection upgraded to Share Benefits (Round Table) and Twisting Nether instead cost base x m ^ n with m = 3. Lowering k by 0.1 each: Sequence (S1275), Angel Perk 1, Dragon Set; Dragon's Breath also by 0.3 with Iron Flight (Dragon perk 2). Lowering m: Sequence 0.5, Angel Perk 1 0.3, Dragon Set 0.2. Which spells use the first rule: every spell the code flags as having tiers (23 of the 32 spell classes), so read the flag, do not hardcode a list. Not flagged: Tax Collection (Reap Interests and Share Benefits are its upgraded forms), Catalyst, Chaos Madness, and the event spells (Cannibalize, Hailstorm, Heatwave, Shadow Embrace, Wail of the Banshee). This matches what the user described. Share Benefits (Tax Collection with Round Table) and Twisting Nether use the second rule; their maximum tier count is unknown (Twisting Nether is fixed at 98 in the code). The tier count n in the rule is the number of that spell's tier upgrades owned (the user reports 5 tiers at most so far), plus 1 for each of several upgrades that add a tier to named spells (the Dragon Set's Set Bonus 2 adds one to six alignment spells; four more such upgrades are in the code and not yet identified by name). The tooltips of the four reducing items carry a note pointing to the Spells page.
 
+11. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
+   - "Spells page, tier cost scaling": Sequence (S1275), Angel Perk 1, Iron Flight, Dragon Set.
+   - "Buildings page, building cost multiplier": Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
+   - "Excavations page, excavation cost multiplier": Surveyorship (E270), Discount (E13125).
+   - "Royal Exchanges page, Royal Exchange cost multiplier": Intimidation (E1325), Discount (E13125).
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
