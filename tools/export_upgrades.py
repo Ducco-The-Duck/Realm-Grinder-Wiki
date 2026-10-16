@@ -738,8 +738,6 @@ for idx, r in todo:
     if r['cat'] == 0 and alleg_kind(r) == 'set_c':
         item['conditions'] = []; item['undecoded'] = []
         item['requirements'] = ['Reincarnation 100 or higher (Reincarnation 225 at Ascension 4)', 'Complete one faction Artifact Set (all three of its artifacts)']
-        item['description'].append({'text': 'A second Set can be chosen after completing Stoneheart (Makers Challenge 4), while playing as Makers.',
-                                    'formulas': [], 's': None})
         item['asc_min'] = 2
     if r['cat'] == 0:
         if alleg_kind(r) == 'exchange':          # a live readout ("Current overall bonus: ...")
