@@ -115,7 +115,7 @@ def helper_call(cls, mem, args, name_of):
     if mem == '§2!&§': return r'M_{\max}', 'Your Maximum Mana'
     if mem == '§[!j§': return 'N', 'Number of artifacts you have found'
     if mem == '§&!<§':
-        if not args or args == ['']: return 'P', 'Your total Research points (all branches)'
+        if not args or args == ['']: return 'P', 'Your total Research points'
         if isinstance(first, int) and 0 <= first < len(BRANCH): return 'P', f'Your {BRANCH[first]} Research points'
         return None
     if mem == '§!!8§': return 'D', 'Your excavation depth (excavations made since your last Excavation Reset)'

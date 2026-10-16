@@ -23516,7 +23516,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
@@ -27017,7 +27017,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
@@ -27227,7 +27227,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
@@ -27533,7 +27533,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
@@ -28194,7 +28194,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
@@ -28232,7 +28232,7 @@
 "vars": [
 {
 "symbol": "P",
-"text": "Your total Research points (all branches)"
+"text": "Your total Research points"
 }
 ],
 "shown": true
