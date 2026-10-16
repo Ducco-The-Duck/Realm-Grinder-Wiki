@@ -71,7 +71,7 @@ UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their
 
 PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'Proof of Neutrality': {'al': 3},
             'Proof of Order': {'ax': 4}, 'Proof of Chaos': {'ax': 5}, 'Proof of Balance': {'ax': 6}}
-KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
+KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'set': 9, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
 def item(u):
@@ -167,13 +167,16 @@ def alleg_section():
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
         lin_by[u['faction']] = it
     lineages = [lin_by[i] for i in range(16) if i in lin_by]
+    set_by = {u['faction']: item(u) for u in allu if u['akind'] == 'set'}
+    sets = [set_by[i] for i in range(16) if i in set_by]
     es = []
     for u in allu:
-        if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
+        if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk', 'set') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
         it = item(u)
         if u['akind'] == 'heritage': it['fa'] = -1
         if u['akind'] == 'bloodline_c': it['bl'] = blood
         if u['akind'] == 'lineage_c': it['lg'] = lineages
+        if u['akind'] == 'set_c': it['st'] = sets
         es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
@@ -362,7 +365,7 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
+    if(it.m || it.bl || it.lg || it.lp || it.st) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
       var st=[];
@@ -415,7 +418,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);

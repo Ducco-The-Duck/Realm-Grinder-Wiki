@@ -52,7 +52,10 @@ PROBE = f"""(function () {{ __MUT
     var keepAl = {g}.{J('§,!Y§')}, ial = o.{J('§,!Y§')};
     r.ial = ial;
     if (ial === 1 || ial === 2 || ial === 3) {g}.{J('§,!Y§')} = ial;      // tier lookups ("the tier 7 building") depend on the alignment
+    var isSet = / Set$/.test(r.n) && r.f >= 0, keepT = null;
+    if (isSet) {{ keepT = {g}.{J('§0Q§')}.map(function (t) {{ return t.{J('§4!K§')}; }}); {g}.{J('§0Q§')}.forEach(function (t) {{ t.{J('§4!K§')} = true; }}); }}
     try {{ r.d = o.{J('§@"§')}(); }} catch (e) {{ r.d = 'ERR ' + e; }}
+    if (isSet) {g}.{J('§0Q§')}.forEach(function (t, i) {{ t.{J('§4!K§')} = keepT[i]; }});
     try {{ if (o.{J('§8!1§')}) r.d2 = o.{J('§8!1§')}(); }} catch (e) {{}}      // lineage perks: the text shown once owned
     {g}.{J('§,!Y§')} = keepAl;
     {g}.{J('§8!H§')} = keepR; {g}.{J('§-!^§')} = keepFa;
@@ -642,6 +645,8 @@ def alleg_kind(r):
         if n in ASTRAL_QUESTS: return 'quest'
         if n in UNIQUE_NAMES or (n.endswith(' Quest') and (n[:-6] in UNIQUE_NAMES or n == 'Mercenary Encampment Quest')): return 'unique'
     if n == 'Bloodline': return 'bloodline_c'
+    if n == 'Artifact Set': return 'set_c'
+    if r['f'] != -1 and n.endswith(' Set') and r.get('tg') != 'SpellFactionUpgrade': return 'set'
     if n == 'Lineage': return 'lineage_c'
     if r['f'] != -1 and n.endswith(' Lineage'): return 'lineage'
     if r['f'] != -1 and re.fullmatch(r'.+ Perk \d+', n): return 'lineage_perk'
@@ -706,6 +711,7 @@ for idx, r in todo:
         cond.append('starting from Ascension 1, at Reincarnation 40+')
     if r['f'] != -1 and r['cat'] not in (0, 4):
         cond.insert(0, f"playing as {FACTION.get(r['f'], r['f'])}")
+    if alleg_kind(r) in ('set', 'set_c'): bad = []
     if bad: problems.append((r['n'], bad))
     item = {
         'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
@@ -713,6 +719,28 @@ for idx, r in todo:
         'conditions': cond, 'undecoded': bad, 'asc_min': alo, 'asc_max': ahi, 'group': r.get('grp') or None,
         'tier': r.get('tier'), 'building': r.get('bld'),
     }
+    if r['cat'] == 0 and alleg_kind(r) == 'set':
+        _init = next((m_.body for m_ in c.methods if m_.name == '§[!C§'), '')
+        _bonus = next((m_.body for m_ in c.methods if m_.name == '§8"M§'), '')
+
+        def _art(short_):
+            q_ = c.imports.get(short_)
+            nm_ = named.get(q_) if q_ else None
+            return nm_[1] if nm_ else f'?{short_}'
+        item['set_artifacts'] = [_art(x_) for _, x_ in re.findall(r'(§[^§]+§) = (§[^§]+§)\.id;', _init)]
+        _b2 = re.findall(r'§<P§\((§[^§]+§)\.id\)', _bonus)
+        item['set_artifact4'] = _art(_b2[0]) if _b2 else None
+        item['conditions'] = []
+        item['requirements'] = ['Artifact: ' + a_ for a_ in item['set_artifacts']]
+        if item['set_artifact4']: item['requirements'].append(f"Artifact: {item['set_artifact4']} (for Set Bonus 2)")
+        item['asc_min'] = 2
+        for p_ in item['description']: p_['formulas'] = []      # the values are not decoded reliably yet (INFERENCES.md)
+    if r['cat'] == 0 and alleg_kind(r) == 'set_c':
+        item['conditions'] = ['starting from Reincarnation 225 at Ascension 4']; item['undecoded'] = []
+        item['requirements'] = ['Complete one faction Artifact Set (all three of its artifacts)']
+        item['description'].append({'text': 'A second Set can be chosen after completing Stoneheart (Makers Challenge 4), while playing as Makers.',
+                                    'formulas': [], 's': None})
+        item['asc_min'] = 2
     if r['cat'] == 0:
         if alleg_kind(r) == 'exchange':          # a live readout ("Current overall bonus: ...")
             item['description'] = [p_ for p_ in item['description'] if not p_['text'].startswith('Current overall bonus')]

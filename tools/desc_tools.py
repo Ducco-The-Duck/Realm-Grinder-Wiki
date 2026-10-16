@@ -30,12 +30,28 @@ def source_templates(c):
     meths = {m.name: m for m in c.methods}
     desc = meths.get('§@"§') or meths.get('§>!d§') or meths.get('§1!6§') or meths.get('§8!1§')       # bloodlines describe themselves through the second one
     bodies = [desc.body] if desc else []
+    if not desc:      # Artifact Sets: the base class assembles the text from two methods of the Set
+        bodies = [meths[n].body for n in ('§=!s§', '§8"M§') if n in meths]
     for n in re.findall(r'(§[^§]*§)\(\)', desc.body if desc else ''):
         m = meths.get(n)
         if m is not None and n not in ('§@"§', '§>!d§', '§1!6§', '§8!1§') and '_("' in m.body: bodies.append(m.body)
     return meths, '\n'.join(bodies)
 
 
+
+
+def strip_set_bonus(expr):
+    """`§&c§.§6"&§(value, faction)` multiplies a Set's value by the bonus of the upgrades that strengthen it: the wiki
+    shows the base value, so the wrapper is removed."""
+    key = '§&c§.§6"&§('
+    while key in expr:
+        i = expr.index(key); j = i + len(key); depth = 1; k = j
+        while k < len(expr) and depth:
+            depth += {'(': 1, ')': -1}.get(expr[k], 0); k += 1
+        inner = expr[j:k - 1]
+        first = split_args(inner)[0]
+        expr = expr[:i] + '(' + first + ')' + expr[k:]
+    return expr
 
 
 def inline_helpers(c, expr):
@@ -107,6 +123,7 @@ def formulas_for(c, gname=''):
             if re.fullmatch(r'-?[\d.]+', e): forms[i] = ('const', e); continue
             readout = True
             e = inline_helpers(c, e)
+            e = strip_set_bonus(e)
             # a single read of a this-Era stat array entry -> the game's helper call for the same value
             e = re.sub(r'§8G§\.§5!V§\[(\d+)\]', lambda mt_: '§&c§.§"!B§(' + mt_.group(1) + ',false,true)', e)
             cv = convert(e, name_of_for(c))

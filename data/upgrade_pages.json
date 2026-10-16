@@ -17937,6 +17937,754 @@
 }
 },
 {
+"name": "Fairy Set",
+"icon": "FairySet",
+"order": 611,
+"id": 611,
+"description": [
+{
+"text": "Multiplicatively increase Maximum Mana based on Good buildings built.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Farms, Blacksmiths and Inns count more based on time spent with Fairies in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Pink Carrot",
+"Artifact: Bottled Voice",
+"Artifact: Silk Cloth",
+"Artifact: Glowing Wing (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Pink Carrot",
+"Bottled Voice",
+"Silk Cloth"
+],
+"set_artifact4": "Glowing Wing",
+"faction": 0,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Elven Set",
+"icon": "ElvenSet",
+"order": 612,
+"id": 612,
+"description": [
+{
+"text": "Autoclick 10 times per second.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Clicks count more based on autoclicks made in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Lucky Clover",
+"Artifact: Mini-treasure",
+"Artifact: Raw Emerald",
+"Artifact: Sylvan Mirror (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Lucky Clover",
+"Mini-treasure",
+"Raw Emerald"
+],
+"set_artifact4": "Sylvan Mirror",
+"faction": 1,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Angel Set",
+"icon": "AngelSet",
+"order": 613,
+"id": 613,
+"description": [
+{
+"text": "Increase Mana Regeneration based on highest amount of spells cast in a single Era.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Increase the duration of all spells based on Unique buildings built.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Pillar Fragment",
+"Artifact: Divine Sword",
+"Artifact: Fossilized Wing",
+"Artifact: Solid Cloud (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Pillar Fragment",
+"Divine Sword",
+"Fossilized Wing"
+],
+"set_artifact4": "Solid Cloud",
+"faction": 2,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Goblin Set",
+"icon": "GoblinSet",
+"order": 614,
+"id": 614,
+"description": [
+{
+"text": "Increase Faction Coin find chance additively and multiplicatively based on time spent in this Era.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Each time you cast a spell, you also cast free Tax Collections based on time spent in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Ancient Coin Piece",
+"Artifact: Goblin Purse",
+"Artifact: Spiked Whip",
+"Artifact: Orc Fang Necklace (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Ancient Coin Piece",
+"Goblin Purse",
+"Spiked Whip"
+],
+"set_artifact4": "Orc Fang Necklace",
+"faction": 3,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Undead Set",
+"icon": "UndeadSet",
+"order": 615,
+"id": 615,
+"description": [
+{
+"text": "Increase Maximum Mana based on your Offline production bonus.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Multiplicatively increase production bonus from Gems based on Faction Coins found in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Rotten Organ",
+"Artifact: Jaw Bone",
+"Artifact: Dusty Coffin",
+"Artifact: Blood Chalice (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Rotten Organ",
+"Jaw Bone",
+"Dusty Coffin"
+],
+"set_artifact4": "Blood Chalice",
+"faction": 4,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Demon Set",
+"icon": "DemonSet",
+"order": 616,
+"id": 616,
+"description": [
+{
+"text": "Trophies count more based on the three highest tier buildings built.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Increase production bonus from Gems based on Evil spells cast in this Reincarnation.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Demonic Figurine",
+"Artifact: Demon Horn",
+"Artifact: Crystallized Lava",
+"Artifact: Demon Tail (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Demonic Figurine",
+"Demon Horn",
+"Crystallized Lava"
+],
+"set_artifact4": "Demon Tail",
+"faction": 5,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Titan Set",
+"icon": "TitanSet",
+"order": 617,
+"id": 617,
+"description": [
+{
+"text": "Increase Royal Exchange Bonus additively and multiplicatively based on time spent in this Era.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Whenever you cast a spell, your production is increased based on Lightning Strike activity in this Reincarnation for 20 seconds. If another spell is cast while this effect is active, it is restored to full duration.",
+"formulas": [],
+"s": 5
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Huge Titan Statue",
+"Artifact: Titan Shield",
+"Artifact: Titan Helmet",
+"Artifact: Frozen Lightning (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Huge Titan Statue",
+"Titan Shield",
+"Titan Helmet"
+],
+"set_artifact4": "Frozen Lightning",
+"faction": 6,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Druid Set",
+"icon": "DruidSet",
+"order": 618,
+"id": 618,
+"description": [
+{
+"text": "Increase the duration of each spell based on their respective activity time in this Era.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Lineage levels count more based on spells cast in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Glyph Table",
+"Artifact: Stone of Balance",
+"Artifact: Branch of the Life Tree",
+"Artifact: Primal Leaf (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Glyph Table",
+"Stone of Balance",
+"Branch of the Life Tree"
+],
+"set_artifact4": "Primal Leaf",
+"faction": 7,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Faceless Set",
+"icon": "FacelessSet",
+"order": 619,
+"id": 619,
+"description": [
+{
+"text": "Gain assistants based on the highest amount of assistants you had in a previous Era.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Increase Research Budget based on Faction Coins found in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Translucent Goo",
+"Artifact: Octopus-shaped Helmet",
+"Artifact: Nightmare Figment",
+"Artifact: The Blackest Ink (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Translucent Goo",
+"Octopus-shaped Helmet",
+"Nightmare Figment"
+],
+"set_artifact4": "The Blackest Ink",
+"faction": 8,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dwarven Set",
+"icon": "DwarvenSet",
+"order": 620,
+"id": 620,
+"description": [
+{
+"text": "Multiplicatively increase assistants based on Royal Exchange bonus.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Multiplicatively increase Mana Regeneration based on time spent in this Era.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Dwarven Bow",
+"Artifact: Stone Tankard",
+"Artifact: Beard Hair",
+"Artifact: Dwarven Anvil (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Dwarven Bow",
+"Stone Tankard",
+"Beard Hair"
+],
+"set_artifact4": "Dwarven Anvil",
+"faction": 9,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Drow Set",
+"icon": "DrowSet",
+"order": 621,
+"id": 621,
+"description": [
+{
+"text": "Spells cast count more based on time spent as Evil in this Reincarnation.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: Increase the Ascension multiplier for Royal Market bonus by 0.7.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Ceremonial Dagger",
+"Artifact: Arachnid Figurine",
+"Artifact: Poison Vial",
+"Artifact: Stiletto Heel (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Ceremonial Dagger",
+"Arachnid Figurine",
+"Poison Vial"
+],
+"set_artifact4": "Stiletto Heel",
+"faction": 10,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Dragon Set",
+"icon": "DragonSet",
+"order": 622,
+"id": 622,
+"description": [
+{
+"text": "Reduce higher tier cost scaling for all spells.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Set Bonus 2: All alignment spells gain 1 tier.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Dragon Fang",
+"Artifact: Dragon Soul",
+"Artifact: Dragon Scale",
+"Artifact: Eye of the Dragon (for Set Bonus 2)"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Dragon Fang",
+"Dragon Soul",
+"Dragon Scale"
+],
+"set_artifact4": "Eye of the Dragon",
+"faction": 12,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Set",
+"icon": "MercenarySet",
+"order": 623,
+"id": 623,
+"description": [
+{
+"text": "Allows you to pick the same lineage as your faction.",
+"formulas": [],
+"s": null
+},
+{
+"text": "Lineage levels count v% more.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Artifact: Steel Plate",
+"Artifact: Black Sword",
+"Artifact: Mercenary Insignia"
+],
+"conditions": [],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"set_artifacts": [
+"Steel Plate",
+"Black Sword",
+"Mercenary Insignia"
+],
+"set_artifact4": null,
+"faction": 11,
+"akind": "set",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
+"name": "Artifact Set",
+"icon": "SetContainer",
+"order": 624,
+"id": 624,
+"description": [
+{
+"text": "Choose your Set. You can only have one Set, and it will persist until you abdicate.",
+"formulas": [],
+"s": null
+},
+{
+"text": "A second Set can be chosen after completing Stoneheart (Makers Challenge 4), while playing as Makers.",
+"formulas": [],
+"s": null
+}
+],
+"sources": [],
+"requirements": [
+"Complete one faction Artifact Set (all three of its artifacts)"
+],
+"conditions": [
+"starting from Reincarnation 225 at Ascension 4"
+],
+"undecoded": [],
+"asc_min": 2,
+"asc_max": null,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": -1,
+"akind": "set_c",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {},
+"fc_a4": {},
+"free_start": false
+}
+},
+{
 "name": "Fairy Lineage",
 "icon": "FairyLineage",
 "order": 626,

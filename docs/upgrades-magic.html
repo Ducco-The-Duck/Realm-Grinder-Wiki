@@ -452,7 +452,7 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.m || it.bl || it.lg || it.lp) tip.appendChild(el('div','more','Click for more info'));
+    if(it.m || it.bl || it.lg || it.lp || it.st) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
       var st=[];
@@ -505,7 +505,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);

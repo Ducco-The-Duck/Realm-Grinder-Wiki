@@ -69,6 +69,8 @@ Only these need checking; remove an item when it is settled.
 
 9. **Faction-unlocking upgrades** (for the Unlocks page): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
 
+10. **Artifact Sets** (Allegiance page, popup of the "Artifact Set" upgrade; built from code, unchecked). Texts, artifacts and the Ascension 2 gate are read from the code. The values (formulas) of the 13 Sets and their Set Bonus 2 are not shown: the converter read some of them, but a stat label came out wrong for the Elven Set, so none are published until checked. The Mercenary Set has no fourth artifact.
+
 Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
