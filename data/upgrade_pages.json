@@ -18778,7 +18778,18 @@
 "description": [
 {
 "text": "Reduce higher tier cost scaling for all spells.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 0.6",
+"vars": [],
+"label": "Spell cost exponent added per tier without the Set"
+},
+{
+"latex": "v_{2} = 0.6 - 0.1",
+"vars": [],
+"label": "With the Dragon Set (other upgrades lower it further)"
+}
+],
 "s": null
 },
 {
@@ -18836,7 +18847,7 @@
 "s": null
 },
 {
-"text": "Lineage levels count v% more.",
+"text": "Lineage levels count 25% more.",
 "formulas": [],
 "s": null
 }

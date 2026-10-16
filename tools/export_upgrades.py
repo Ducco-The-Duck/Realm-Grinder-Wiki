@@ -735,6 +735,8 @@ for idx, r in todo:
         if item['set_artifact4']: item['requirements'].append(f"Artifact: {item['set_artifact4']} (for Set Bonus 2)")
         item['asc_min'] = 2
         for p_ in item['description']: p_['formulas'] = []      # the values are not decoded reliably yet (INFERENCES.md)
+        if r['n'] == 'Mercenary Set':      # a constant: the game writes 25, the converter would show v
+            for p_ in item['description']: p_['text'] = p_['text'].replace('v%', '25%')
     if r['cat'] == 0 and alleg_kind(r) == 'set_c':
         item['conditions'] = []; item['undecoded'] = []
         item['requirements'] = ['Reincarnation 100 or higher (Reincarnation 225 at Ascension 4)', 'Complete one faction Artifact Set (all three of its artifacts)']
