@@ -52,8 +52,10 @@ FORMULAS.update({
     'Archon Lineage': [(0, F(r'v = 15 \cdot L', ('L', 'Your Archon Lineage level (upgrades that make Lineage levels count more are included)')))],
     'Makers Lineage': [(0, F(r'v = 3 \cdot L', ('L', 'Your Makers Lineage level (upgrades that make Lineage levels count more are included)')))],
     'Makers Perk 4': [(0, F(r'v = 2 \cdot s', ('s', 'Seconds since Infinite Spiral was cast, up to its duration')))],
-    'Archon Bloodline': [(0, F(r'v = 1 + \max\left(0, \left\lfloor \frac{\sqrt{1 + \frac{8 \cdot h}{36}} - 1}{2} \right\rfloor\right)',
-                               ('h', 'Hours played in this Era'), label='Research slots for every branch (Ascension 0 to 2)'))],
+    'Archon Bloodline': [(0, F(r'v = 1 + \max\left(0, \left\lfloor \frac{\sqrt{1 + \frac{t}{16200}} - 1}{2} \right\rfloor\right)',
+                               ('t', 'Time played in this Era (seconds)'), label='Research slots for every branch (Ascension 0 to 2)'))],
+    'Angel Bloodline': [(1, F(r'v = 1 + 0.5 \cdot t^{0.5}', ('t', 'Seconds since Holy Light was cast (rounded)'),
+                              label='Holy Light bonus multiplier (Good alignment)'))],
 })
 
 # paragraphs added after the game's own text: name -> [(text, formula, first Ascension of the Ascension penalty)]

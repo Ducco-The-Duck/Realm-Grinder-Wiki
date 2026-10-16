@@ -74,8 +74,10 @@ PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'P
 KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'set': 9, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
-TIER_COST_NOTE = 'See the Spells page for more on tier cost scaling.'
-TIER_COST_NAMES = {'Iron Flight', 'Dragon Set', 'Angel Perk 1'}      # the upgrades that lower spell tier cost scaling
+# notes shown (faded) right under the sentence of the description that matches the pattern: name -> (note, pattern)
+TIER_COST = ('See the Spells page for more on tier cost scaling.', 'cost scaling')      # the upgrades that lower spell tier cost scaling
+NOTES = {'Iron Flight': TIER_COST, 'Dragon Set': TIER_COST, 'Angel Perk 1': TIER_COST,
+         'Goblin Bloodline': ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier')}
 
 
 def item(u):
@@ -92,7 +94,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
-        **({'nt': TIER_COST_NOTE} if u['name'] in TIER_COST_NAMES else {}),
+        **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
         **({'pr': PROOF_OF[u['name']]} if u.get('akind') == 'proof' else {}),
@@ -392,7 +394,7 @@ the base values <i>v</i>.</div>
       var e=el('p',null,p.t);
       if(p.s && ASC>=p.s){ e.appendChild(document.createTextNode(' ')); e.appendChild(el('span','mark',As(ASC-p.s+1))); }
       tip.appendChild(e);
-      if(it.nt && !noted && /cost scaling/.test(p.t)){ tip.appendChild(el('div','more',it.nt)); noted=true; }
+      if(it.nt && !noted && new RegExp(it.nr).test(p.t)){ tip.appendChild(el('div','more',it.nt)); noted=true; }
     });
     if(it.f.length){
       formulas(tip, it.f);
@@ -518,7 +520,7 @@ the base values <i>v</i>.</div>
       var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
       if(pi){
         var pn=false;
-        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); if(pi.nt && !pn && /cost scaling/.test(d.t)){ blk.appendChild(el('div','more',pi.nt)); pn=true; } });
+        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); if(pi.nt && !pn && new RegExp(pi.nr).test(d.t)){ blk.appendChild(el('div','more',pi.nt)); pn=true; } });
         if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
         if(pi.nt && !pn) blk.appendChild(el('div','more',pi.nt));
       }

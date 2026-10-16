@@ -17223,7 +17223,7 @@
 "text": "Increase the duration of all spells based on spells cast in this Era.",
 "formulas": [
 {
-"latex": "v = 5 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{1.5}",
+"latex": "v_{1} = 5 \\cdot \\left(\\ln\\left(1 + T\\right)\\right)^{1.5}",
 "vars": [
 {
 "symbol": "T",
@@ -17237,7 +17237,18 @@
 },
 {
 "text": "Also provides the ability to cast Holy Light regardless of alignment. If your alignment is Good, Holy Light bonus increases over its duration.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{2} = 1 + 0.5 \\cdot t^{0.5}",
+"vars": [
+{
+"symbol": "t",
+"text": "Seconds since Holy Light was cast (rounded)"
+}
+],
+"label": "Holy Light bonus multiplier (Good alignment)"
+}
+],
 "s": null
 }
 ],
@@ -17754,11 +17765,11 @@
 "text": "Gain additional research slots for all branches based on time spent in this Era.",
 "formulas": [
 {
-"latex": "v_{1} = 1 + \\max\\left(0, \\left\\lfloor \\frac{\\sqrt{1 + \\frac{8 \\cdot h}{36}} - 1}{2} \\right\\rfloor\\right)",
+"latex": "v_{1} = 1 + \\max\\left(0, \\left\\lfloor \\frac{\\sqrt{1 + \\frac{t}{16200}} - 1}{2} \\right\\rfloor\\right)",
 "vars": [
 {
-"symbol": "h",
-"text": "Hours played in this Era"
+"symbol": "t",
+"text": "Time played in this Era (seconds)"
 }
 ],
 "label": "Research slots for every branch (Ascension 0 to 2)"
