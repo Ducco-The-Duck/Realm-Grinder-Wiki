@@ -41,6 +41,10 @@ def _lit(a):
     if a == 'true': return True
     if a == 'false': return False
     if re.fullmatch(r'-?\d+', a): return int(a)
+    # an argument that depends on owning an upgrade / trophy / challenge: the wiki shows the base case (nothing owned)
+    own = r'(?:§8G§\.§(?:7d|<P)§|§&c§\.§%"-§)\([^()]*\)'
+    if re.fullmatch(own, a): return False
+    if re.fullmatch('!' + own, a): return True
     return None
 
 

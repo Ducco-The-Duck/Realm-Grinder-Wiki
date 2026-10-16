@@ -17227,7 +17227,7 @@
 "vars": [
 {
 "symbol": "T",
-"text": "Total casts of all spells in this Reincarnation"
+"text": "Total casts of all spells in this Era"
 }
 ],
 "shown": true
@@ -17542,7 +17542,7 @@
 "vars": [
 {
 "symbol": "W",
-"text": "Mana produced in this Reincarnation"
+"text": "Mana produced in this Era"
 }
 ],
 "shown": true
