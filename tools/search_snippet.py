@@ -6,39 +6,15 @@ text, description) on every cell it wants searchable, then calls `searchInit(roo
 """
 
 CSS = r'''
-/* the game's icon frames: gold by default, a colour of their own per faction (9-slice of the 20x20 sprites) */
-.cell{position:relative;--tr:url(assets/ui/trim/Gold.png);--trh:url(assets/ui/trim/Gold_Hover.png);padding:0;border:5px solid transparent;border-radius:0;
-  background:none;border-image-source:var(--tr);border-image-slice:5 fill;border-image-width:5px;border-image-repeat:stretch;image-rendering:pixelated}
+/* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
+/*FRAMES*/
 .cell img,.cell img.ov{position:absolute;inset:auto;margin:0;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(87.7% + 10.5px);height:calc(87.7% + 10.5px);
   max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
-.cell:hover,.cell:focus-visible,.cell.fac:hover{background:none;outline:none;box-shadow:none;border-image-source:var(--trh);filter:brightness(1.15)}
+.cell:hover,.cell:focus-visible,.cell.fac:hover{background:none;outline:none;box-shadow:none;filter:brightness(1.15)}
 .cell.fac{background:none;border-color:transparent}
-/* diagnostic: add ?flat to the address to draw plain CSS borders instead of the sprite frames (to tell whether the frames are what gets clipped while scrolling) */
-html.flat .cell{border-image:none!important;border:2px solid #b8923a!important;background:#201d18!important}
 .cell.na{opacity:.35;filter:grayscale(1)}
 .cell.na:hover{filter:grayscale(1) brightness(1.2)}
 .badge{z-index:3}
-.t-Fairy{--tr:url(assets/ui/trim/FairyTrim.png);--trh:url(assets/ui/trim/FairyTrim_Hover.png)}
-.t-Elven{--tr:url(assets/ui/trim/ElvenTrim.png);--trh:url(assets/ui/trim/ElvenTrim_Hover.png)}
-.t-Angel{--tr:url(assets/ui/trim/AngelTrim.png);--trh:url(assets/ui/trim/AngelTrim_Hover.png)}
-.t-Goblin{--tr:url(assets/ui/trim/GoblinTrim.png);--trh:url(assets/ui/trim/GoblinTrim_Hover.png)}
-.t-Undead{--tr:url(assets/ui/trim/UndeadTrim.png);--trh:url(assets/ui/trim/UndeadTrim_Hover.png)}
-.t-Demon{--tr:url(assets/ui/trim/DemonTrim.png);--trh:url(assets/ui/trim/DemonTrim_Hover.png)}
-.t-Titan{--tr:url(assets/ui/trim/TitanTrim.png);--trh:url(assets/ui/trim/TitanTrim_Hover.png)}
-.t-Druid{--tr:url(assets/ui/trim/DruidTrim.png);--trh:url(assets/ui/trim/DruidTrim_Hover.png)}
-.t-Faceless{--tr:url(assets/ui/trim/FacelessTrim.png);--trh:url(assets/ui/trim/FacelessTrim_Hover.png)}
-.t-Dwarven{--tr:url(assets/ui/trim/DwarvenTrim.png);--trh:url(assets/ui/trim/DwarvenTrim_Hover.png)}
-.t-Drow{--tr:url(assets/ui/trim/DrowTrim.png);--trh:url(assets/ui/trim/DrowTrim_Hover.png)}
-.t-Mercenary{--tr:url(assets/ui/trim/MercenaryTrim.png);--trh:url(assets/ui/trim/MercenaryTrim_Hover.png)}
-.t-Dragon{--tr:url(assets/ui/trim/DragonTrim.png);--trh:url(assets/ui/trim/DragonTrim_Hover.png)}
-.t-Archon{--tr:url(assets/ui/trim/ArchonTrim.png);--trh:url(assets/ui/trim/ArchonTrim_Hover.png)}
-.t-Djinn{--tr:url(assets/ui/trim/DjinnTrim.png);--trh:url(assets/ui/trim/DjinnTrim_Hover.png)}
-.t-Makers{--tr:url(assets/ui/trim/MakersTrim.png);--trh:url(assets/ui/trim/MakersTrim_Hover.png)}
-.t-Good{--tr:url(assets/ui/trim/GoodTrim.png);--trh:url(assets/ui/trim/GoodTrim_Hover.png)}
-.t-Evil{--tr:url(assets/ui/trim/EvilTrim.png);--trh:url(assets/ui/trim/EvilTrim_Hover.png)}
-.t-Order{--tr:url(assets/ui/trim/OrderTrim.png);--trh:url(assets/ui/trim/OrderTrim_Hover.png)}
-.t-Chaos{--tr:url(assets/ui/trim/ChaosTrim.png);--trh:url(assets/ui/trim/ChaosTrim_Hover.png)}
-.t-Balance{--tr:url(assets/ui/trim/BalanceTrim.png);--trh:url(assets/ui/trim/BalanceTrim_Hover.png)}.t-Silver{--tr:url(assets/ui/trim/Silver.png);--trh:url(assets/ui/trim/Silver.png)}
 
 /* section headers are dropdowns */
 section.dd h2{display:flex;align-items:baseline;gap:8px;cursor:pointer;user-select:none}
@@ -170,6 +146,8 @@ body.steel .search input{padding:0 96px 0 8px}
 .search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
 .sx{display:none!important}
 '''
+from frame_css import frame_css
+CSS = CSS.replace('/*FRAMES*/', frame_css())
 
 BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLDER__" autocomplete="off" '
        'aria-label="Search"><span class="qn" id="qn"></span></div>')
@@ -271,7 +249,6 @@ JS = r'''
     ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) supify(n); else if(n.nodeType===3 && n.parentNode) supify(n.parentNode); }); });
   }).observe(document.body,{childList:true,subtree:true});
   document.addEventListener('DOMContentLoaded',function(){ supify(document.body); });
-  if(/[?&]flat/.test(location.search)) document.documentElement.classList.add('flat');
   function qmatch(s){ return !QT.length || QT.every(function(t){ return s.indexOf(t)>=0; }); }
   function searchInit(root, after){
     enhanceSelects();
