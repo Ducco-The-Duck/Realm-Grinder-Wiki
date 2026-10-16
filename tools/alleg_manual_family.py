@@ -164,6 +164,3 @@ FORMULAS.update({
     'Djinn Perk 4': [(0, F(r'v = 888 \cdot n', ('n', 'Limited Wish casts'), label='Automatic clicks added'))],
     'Makers Perk 1': [(1, F(r'v = 0.75 \cdot t^{0.75}', ('t', 'Time spent offline in this Reincarnation (seconds)')))],
 })
-EXTRA_PARAS.update({
-    'Elven Perk 1': [('Elven Luck is affected by Ascension penalties.', None)],
-})

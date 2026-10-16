@@ -78,6 +78,7 @@ KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'set
 TIER_COST = ('See the Spells page for more on tier cost scaling.', 'cost scaling')      # the upgrades that lower spell tier cost scaling
 NOTES = {'Iron Flight': TIER_COST, 'Dragon Set': TIER_COST, 'Angel Perk 1': TIER_COST,
          'Goblin Bloodline': ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier'),
+         'Elven Perk 1': ('Elven Luck is affected by Ascension penalties.', 'Faction Coins based on'),
          'Titan Perk 1': ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier')}
 
 

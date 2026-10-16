@@ -19395,11 +19395,6 @@
 "text": "Each time you click you have 1% chance to gain additional coins equal to 10000% of your production. Manual clicks give more coins. Also generate Faction Coins based on reincarnations made.",
 "formulas": [],
 "s": null
-},
-{
-"text": "Elven Luck is affected by Ascension penalties.",
-"formulas": [],
-"s": null
 }
 ],
 "sources": [],
