@@ -80,7 +80,7 @@ VARS = [
     (G + r'§1!#§\[(\d+)\]', 'L', lambda m: f'Your {FACTION[int(m.group(1))]} Lineage level'),
     (r'§&c§\.§`!=§\(\)', 'L', 'Your total Lineage level (all factions added together)'),
     (G + r'§8!H§', 'R', 'Your Reincarnation number'),
-    (G + r'§1!5§', 'N', 'Excavations made since your last Excavation Reset (the game\'s "Excavations" counter)'),
+    (G + r'§1!5§', 'N', 'Excavations made since your last Excavation Reset (the game\'s Excavations counter)'),
     (G + r'§\["&§', 'D', 'Consecutive days you have logged in (days counted in UTC)'),
     (r'§&c§\.§,o§\(' + G + r'§"!0§\)', 'G', 'Order of magnitude of your Gems (e.g. 3.2e45 Gems counts as 45)'),
     (r'§@W§\.§\'!b§\(\)', 'K', 'Combo Strike\'s current production bonus (%)'),
@@ -93,24 +93,24 @@ VARS = [
 # patterns with one entity token (group 1); description gets the entity's display name
 SPELL_SCOPE = {('false', 'true'): 'era', ('false', 'false'): 'reinc', ('true', 'false'): 'all'}
 ENTITY_VARS = [
-    (r'(?!§&c§|§#!!§|§8G§)(' + S + r')\.§>!V§\.length', 'spell', 'n', lambda n, m: f'Number of buildings "{n}" is currently targeting'),
+    (r'(?!§&c§|§#!!§|§8G§)(' + S + r')\.§>!V§\.length', 'spell', 'n', lambda n, m: f'Number of buildings {n} is currently targeting'),
     (r'(?!§&c§|§#!!§|§8G§)(' + S + r')\.§0#§\(\)', 'spell', 'K',
-     lambda n, m: f'Number of buildings "{n}" counts (all buildings you have built, 15 times as many once you have bought the upgrade "Formation")'),
+     lambda n, m: f'Number of buildings {n} counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)'),
     (r'Math\.max\(0,' + G + r'§#N§\((' + S + r')\.id\)\.§' + "'" + r'!X§\) / 30', 'spell', 'e',
-     lambda n, m: f'Seconds since "{n}" was cast (while it is active)'),
+     lambda n, m: f'Seconds since {n} was cast (while it is active)'),
     (G + r'§#N§\((' + S + r')\.id\)\.§' + "'" + r'!X§ / 30', 'spell', 'e',
-     lambda n, m: f'Seconds since "{n}" was cast (while it is active)'),
-    (G + r'§#N§\((' + S + r')\.id\)\.§2-§', 'spell', 'S', lambda n, m: f'Number of times you have cast "{n}" in this Era'),
+     lambda n, m: f'Seconds since {n} was cast (while it is active)'),
+    (G + r'§#N§\((' + S + r')\.id\)\.§2-§', 'spell', 'S', lambda n, m: f'Number of times you have cast {n} in this Era'),
     (r'§&c§\.§9!P§\((' + S + r')\.id,false,true,true\)', 'spell', 'S',
-     lambda n, m: f'Number of times you have cast "{n}" in this Era (before bonus multipliers)'),
+     lambda n, m: f'Number of times you have cast {n} in this Era (before bonus multipliers)'),
     (r'§&c§\.§7i§\((' + S + r')\.id,(true|false),(true|false),true\)', 'spell', 't',
-     lambda n, m: f'Activity time of "{n}" {SCOPE[SPELL_SCOPE[(m.group(2), m.group(3))]]} (seconds)'
+     lambda n, m: f'Activity time of {n} {SCOPE[SPELL_SCOPE[(m.group(2), m.group(3))]]} (seconds)'
      if (m.group(2), m.group(3)) in SPELL_SCOPE else None),
     (r'§&c§\.§1!;§\((' + S + r')\.id,true\)', 'spell', 'D',
-     lambda n, m: f'Duration of "{n}" (seconds, as set when it was cast)'),
-    (G + r'§%Z§\((' + S + r')\.id,true\)', 'building', 'N', lambda n, m: f'Number of "{n}" buildings you own (bonuses that make buildings count as more are not included)'),
+     lambda n, m: f'Duration of {n} (seconds, as set when it was cast)'),
+    (G + r'§%Z§\((' + S + r')\.id,true\)', 'building', 'N', lambda n, m: f'Number of {n} buildings you own (bonuses that make buildings count as more are not included)'),
     (G + r'§%Z§\((' + S + r')\.id\)', 'building', 'N',
-     lambda n, m: f'Number of "{n}" buildings you own'),
+     lambda n, m: f'Number of {n} buildings you own'),
 ]
 
 
@@ -149,12 +149,12 @@ def convert(expr, name_of):
 
     def _most(m):
         n = name_of(m.group(1))
-        return slot('N', f'Most "{n[1]}" buildings you have had in this Reincarnation') if n and n[0] == 'building' else m.group(0)
+        return slot('N', f'Most {n[1]} buildings you have had in this Reincarnation') if n and n[0] == 'building' else m.group(0)
     s = re.sub(G + r'§\^"C§\((' + S + r')\.id,0\)', _most, s)
 
     def _tier(m):
         n = name_of(m.group(1))
-        return slot('j', f'Tier "{n[1]}" is cast at (1 is the base tier)') if n and n[0] == 'spell' else m.group(0)
+        return slot('j', f'Tier {n[1]} is cast at (1 is the base tier)') if n and n[0] == 'spell' else m.group(0)
     s = re.sub(G + r'§#N§\((' + S + r')\.id\)\.§`r§ \+ 1', _tier, s)
     s = re.sub(G + r'§8t§', lambda m: slot('N', 'Number of trophies you have unlocked'), s)
     s = subst_stats(s, slot)

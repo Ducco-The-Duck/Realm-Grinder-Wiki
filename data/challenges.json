@@ -53,7 +53,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Fairy Chanting\" in this Reincarnation (seconds)"
+"text": "Activity time of Fairy Chanting in this Reincarnation (seconds)"
 }
 ],
 "label": null,
@@ -109,15 +109,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "label": null,
@@ -153,7 +153,7 @@
 "vars": [
 {
 "symbol": "e",
-"text": "Seconds since \"Moon Blessing\" was cast (while it is active)"
+"text": "Seconds since Moon Blessing was cast (while it is active)"
 }
 ],
 "label": null,
@@ -483,7 +483,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "label": null,
@@ -731,7 +731,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "label": null,
@@ -966,7 +966,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "label": null,
@@ -1207,7 +1207,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Brainwave\" in this Reincarnation (seconds)"
+"text": "Activity time of Brainwave in this Reincarnation (seconds)"
 }
 ],
 "label": null,
@@ -1510,11 +1510,11 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Knights Joust\" buildings you own"
+"text": "Number of Knights Joust buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Wizard Tower\" buildings you own"
+"text": "Number of Wizard Tower buildings you own"
 }
 ],
 "label": null,
@@ -1577,7 +1577,7 @@
 },
 {
 "symbol": "N_{\\mathrm{CS}}",
-"text": "Times you have cast \"Combo Strike\" in this Era (it is part of N and is taken out again)"
+"text": "Times you have cast Combo Strike in this Era (it is part of N and is taken out again)"
 }
 ],
 "label": "Combo Strike counter",
@@ -1813,7 +1813,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "label": "Good: Tax Collection casts added to the base of Call to Arms' bonus",
@@ -1824,7 +1824,7 @@
 "vars": [
 {
 "symbol": "K",
-"text": "Number of buildings \"Call to Arms\" counts (all buildings you have built, 15 times as many once you have bought the upgrade \"Formation\")"
+"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
 }
 ],
 "label": "Evil: Tax Collection worth",
@@ -1835,7 +1835,7 @@
 "vars": [
 {
 "symbol": "K",
-"text": "Number of buildings \"Call to Arms\" counts (all buildings you have built, 15 times as many once you have bought the upgrade \"Formation\")"
+"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
 }
 ],
 "label": "Neutral: Faction Coin find chance",
@@ -1846,7 +1846,7 @@
 "vars": [
 {
 "symbol": "K",
-"text": "Number of buildings \"Call to Arms\" counts (all buildings you have built, 15 times as many once you have bought the upgrade \"Formation\")"
+"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
 }
 ],
 "label": "Order: Autoclicks per second",
@@ -1857,7 +1857,7 @@
 "vars": [
 {
 "symbol": "K",
-"text": "Number of buildings \"Call to Arms\" counts (all buildings you have built, 15 times as many once you have bought the upgrade \"Formation\")"
+"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
 }
 ],
 "label": "Chaos: Assistants, temporarily",
@@ -1868,7 +1868,7 @@
 "vars": [
 {
 "symbol": "K",
-"text": "Number of buildings \"Call to Arms\" counts (all buildings you have built, 15 times as many once you have bought the upgrade \"Formation\")"
+"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
 }
 ],
 "label": "Balance: Royal Exchange bonus",
@@ -2029,7 +2029,7 @@
 "vars": [
 {
 "symbol": "j",
-"text": "Tier \"Dragon's Breath\" is cast at (1 is the base tier)"
+"text": "Tier Dragon's Breath is cast at (1 is the base tier)"
 }
 ],
 "label": null,
@@ -2074,7 +2074,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Lightning Strike in this Reincarnation (seconds)"
 }
 ],
 "label": null,
@@ -2111,7 +2111,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Number of buildings \"Grand Balance\" is currently targeting"
+"text": "Number of buildings Grand Balance is currently targeting"
 }
 ],
 "label": "Production of Non-Unique Buildings",
@@ -2122,7 +2122,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Grand Balance\" in this Reincarnation (seconds)"
+"text": "Activity time of Grand Balance in this Reincarnation (seconds)"
 }
 ],
 "label": "Maximum Mana",
@@ -2133,7 +2133,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Grand Balance\" in this Reincarnation (seconds)"
+"text": "Activity time of Grand Balance in this Reincarnation (seconds)"
 }
 ],
 "label": "Mana Regeneration",
@@ -2571,7 +2571,7 @@
 "vars": [
 {
 "symbol": "i",
-"text": "Position of the lowest-tier building that \"Maelstrom\" is targeting (0 for the first building, 1 for the second, and so on). Only counts while \"Maelstrom\" is active"
+"text": "Position of the lowest-tier building that Maelstrom is targeting (0 for the first building, 1 for the second, and so on). Only counts while Maelstrom is active"
 }
 ],
 "label": "Assistants, temporarily (while Maelstrom is active)",
@@ -2582,11 +2582,11 @@
 "vars": [
 {
 "symbol": "e",
-"text": "Seconds since \"Fairy Chanting\" was cast (while it is active)"
+"text": "Seconds since Fairy Chanting was cast (while it is active)"
 },
 {
 "symbol": "j",
-"text": "Tier \"Fairy Chanting\" is cast at (1 is the base tier)"
+"text": "Tier Fairy Chanting is cast at (1 is the base tier)"
 },
 {
 "symbol": "M_{\\max}",
@@ -2854,7 +2854,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "label": "Production bonus from Gems",

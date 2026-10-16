@@ -607,15 +607,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "shown": true
@@ -762,15 +762,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "shown": true
@@ -821,7 +821,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Fairy Chanting\" in this Reincarnation (seconds)"
+"text": "Activity time of Fairy Chanting in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -872,15 +872,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "shown": true
@@ -982,7 +982,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Wizard Tower\" buildings you have had in this Reincarnation"
+"text": "Most Wizard Tower buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -1895,7 +1895,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+"text": "Most Arboreal City buildings you have built in this Reincarnation"
 }
 ],
 "label": "Chance to trigger (+%)"
@@ -1905,7 +1905,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+"text": "Most Arboreal City buildings you have built in this Reincarnation"
 }
 ],
 "label": "Production (%)"
@@ -1915,7 +1915,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Arboreal City\" buildings you have built in this Reincarnation"
+"text": "Most Arboreal City buildings you have built in this Reincarnation"
 }
 ],
 "label": "Faction Coins found (+%)"
@@ -2745,7 +2745,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"God's Hand\" in this Era (seconds)"
+"text": "Activity time of God's Hand in this Era (seconds)"
 }
 ],
 "label": "Production bonus from Gems (+%)"
@@ -2852,7 +2852,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Cathedral\" buildings you have had in this Reincarnation"
+"text": "Most Cathedral buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -3445,7 +3445,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Witch Conclave\" buildings you have built in this Reincarnation"
+"text": "Most Witch Conclave buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -3665,7 +3665,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "shown": true
@@ -3756,7 +3756,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Slave Pen\" buildings you have had in this Reincarnation"
+"text": "Most Slave Pen buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -3807,7 +3807,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "shown": true
@@ -4272,7 +4272,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Necropolis\" buildings you have built in this Reincarnation"
+"text": "Most Necropolis buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -4323,7 +4323,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Necropolis\" buildings you have built in this Reincarnation"
+"text": "Most Necropolis buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -4686,7 +4686,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Orcish Arena\" buildings you have had in this Reincarnation"
+"text": "Most Orcish Arena buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -5493,7 +5493,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+"text": "Most Hell Portal buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -5544,7 +5544,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Hellfire Blast\" in this Reincarnation (seconds)"
+"text": "Activity time of Hellfire Blast in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -5599,7 +5599,7 @@
 },
 {
 "symbol": "N",
-"text": "Most \"Burning Abyss\" buildings you have built in this Reincarnation"
+"text": "Most Burning Abyss buildings you have built in this Reincarnation"
 }
 ],
 "label": "Production of each building (%)"
@@ -6291,7 +6291,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Lightning Strike in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -6484,7 +6484,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "shown": true
@@ -6535,7 +6535,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Deep Mine\" buildings you have had in this Reincarnation"
+"text": "Most Deep Mine buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -7158,7 +7158,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Stone Pillars\" buildings you have built in this Reincarnation"
+"text": "Most Stone Pillars buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -7362,7 +7362,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Stone Pillars\" buildings you have built in this Reincarnation"
+"text": "Most Stone Pillars buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -7464,7 +7464,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Ancient Pyramid\" buildings you have had in this Reincarnation"
+"text": "Most Ancient Pyramid buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -7991,7 +7991,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Labyrinth\" buildings you have built in this Reincarnation"
+"text": "Most Labyrinth buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -8399,7 +8399,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Monastery\" buildings you have had in this Reincarnation"
+"text": "Most Monastery buildings you have had in this Reincarnation"
 },
 {
 "symbol": "t",
@@ -8454,7 +8454,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Brainwave\" (seconds)"
+"text": "Duration of Brainwave (seconds)"
 }
 ],
 "shown": true
@@ -8898,7 +8898,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "shown": true
@@ -9357,7 +9357,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Royal Castle\" buildings you have had in this Reincarnation"
+"text": "Most Royal Castle buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -10057,7 +10057,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Dark Temple\" buildings you have built in this Reincarnation"
+"text": "Most Dark Temple buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -10312,7 +10312,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Inn\" buildings you have had in this Reincarnation"
+"text": "Most Inn buildings you have had in this Reincarnation"
 }
 ],
 "shown": true
@@ -11297,7 +11297,7 @@
 "vars": [
 {
 "symbol": "j",
-"text": "Tier \"Dragon's Breath\" is cast at (1 is the base tier); 0 bonus while the spell is unavailable"
+"text": "Tier Dragon's Breath is cast at (1 is the base tier); 0 bonus while the spell is unavailable"
 }
 ],
 "label": null
@@ -11353,7 +11353,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Dragon Pasture\" buildings you have built in this Reincarnation"
+"text": "Most Dragon Pasture buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -13228,7 +13228,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Limited Wish\" in this Reincarnation (seconds)"
+"text": "Activity time of Limited Wish in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -16249,15 +16249,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "shown": true
@@ -16541,7 +16541,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "shown": true
@@ -16993,7 +16993,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Limited Wish\" in this Reincarnation (seconds)"
+"text": "Activity time of Limited Wish in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -17053,7 +17053,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "shown": true
@@ -17390,7 +17390,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Hell Portal\" buildings you have built in this Reincarnation"
+"text": "Most Hell Portal buildings you have built in this Reincarnation"
 }
 ],
 "label": null
@@ -18442,7 +18442,7 @@
 "vars": [
 {
 "symbol": "A",
-"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Lightning Strike in this Reincarnation (seconds)"
 }
 ],
 "label": "Production (%)"
@@ -19155,7 +19155,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Fairy Chanting\" (seconds)"
+"text": "Duration of Fairy Chanting (seconds)"
 }
 ],
 "shown": true
@@ -19524,7 +19524,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Moon Blessing\" (seconds)"
+"text": "Duration of Moon Blessing (seconds)"
 }
 ],
 "shown": true
@@ -19861,7 +19861,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"God's Hand\" (seconds)"
+"text": "Duration of God's Hand (seconds)"
 }
 ],
 "shown": true
@@ -20209,7 +20209,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Goblin's Greed\" (seconds)"
+"text": "Duration of Goblin's Greed (seconds)"
 }
 ],
 "shown": true
@@ -20437,7 +20437,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Spiritual Surge\" (seconds)"
+"text": "Duration of Spiritual Surge (seconds)"
 }
 ],
 "label": "Offline production (%)"
@@ -20447,7 +20447,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Spiritual Surge\" (seconds)"
+"text": "Duration of Spiritual Surge (seconds)"
 }
 ],
 "label": "Offline gains of mana produced and spells cast (%)"
@@ -20583,7 +20583,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Night Time\" in this Reincarnation (seconds)"
+"text": "Activity time of Night Time in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -21632,11 +21632,11 @@
 "vars": [
 {
 "symbol": "j",
-"text": "Tier \"Grand Balance\" is cast at (1 is the base tier)"
+"text": "Tier Grand Balance is cast at (1 is the base tier)"
 },
 {
 "symbol": "D",
-"text": "Duration of \"Grand Balance\" (seconds)"
+"text": "Duration of Grand Balance (seconds)"
 }
 ],
 "shown": true
@@ -21995,7 +21995,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Brainwave\" (seconds)"
+"text": "Duration of Brainwave (seconds)"
 }
 ],
 "shown": true
@@ -22354,7 +22354,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Diamond Pickaxe\" (seconds)"
+"text": "Duration of Diamond Pickaxe (seconds)"
 }
 ],
 "shown": true
@@ -23168,7 +23168,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Dragon's Breath\" (seconds)"
+"text": "Duration of Dragon's Breath (seconds)"
 }
 ],
 "shown": true
@@ -23652,7 +23652,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Catalyst\" in this Reincarnation (seconds)"
+"text": "Activity time of Catalyst in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -25342,7 +25342,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Night Time\" in this Reincarnation (seconds)"
+"text": "Activity time of Night Time in this Reincarnation (seconds)"
 }
 ],
 "shown": true
@@ -25688,7 +25688,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Dragon's Breath\" (seconds)"
+"text": "Duration of Dragon's Breath (seconds)"
 }
 ],
 "shown": true
@@ -25744,7 +25744,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Precognition\" (seconds)"
+"text": "Duration of Precognition (seconds)"
 }
 ],
 "shown": true
@@ -51161,7 +51161,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Assistant\" bought in the Shop"
+"text": "Levels of Ruby Assistant bought in the Shop"
 }
 ]
 }
@@ -51176,7 +51176,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+"text": "Levels of Ruby Max Mana bought in the Shop"
 }
 ]
 },
@@ -51185,7 +51185,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Max Mana\" bought in the Shop"
+"text": "Levels of Ruby Max Mana bought in the Shop"
 }
 ]
 }
@@ -51200,7 +51200,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Mana Regeneration\" bought in the Shop"
+"text": "Levels of Ruby Mana Regeneration bought in the Shop"
 }
 ]
 }
@@ -51215,7 +51215,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Gem Bonus\" bought in the Shop"
+"text": "Levels of Ruby Gem Bonus bought in the Shop"
 }
 ]
 }
@@ -51230,7 +51230,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "Levels of \"Ruby Royal Trading\" bought in the Shop"
+"text": "Levels of Ruby Royal Trading bought in the Shop"
 }
 ]
 }

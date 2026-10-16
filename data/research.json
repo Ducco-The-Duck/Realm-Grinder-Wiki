@@ -28,7 +28,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Enchanted Field\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -51,7 +51,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Heaven's Gate\" buildings you own"
+"text": "Number of Heaven's Gate buildings you own"
 }
 ],
 "scale": 1
@@ -66,7 +66,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Heaven's Domain\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -139,7 +139,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Witch Conclave\" buildings you own"
+"text": "Number of Witch Conclave buildings you own"
 }
 ],
 "scale": null
@@ -155,7 +155,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Goblin Bank\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -308,7 +308,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Elven Luck\" and the upgrade \"Elven Perk 1\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Elven Luck and the upgrade Elven Perk 1.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -407,7 +407,7 @@
 "vars": [
 {
 "symbol": "j",
-"text": "Tier \"Spiritual Surge\" is cast at (1 is the base tier)"
+"text": "Tier Spiritual Surge is cast at (1 is the base tier)"
 },
 {
 "symbol": "S",
@@ -450,7 +450,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Necropolis\" buildings you own"
+"text": "Number of Necropolis buildings you own"
 }
 ],
 "scale": 1
@@ -465,7 +465,7 @@
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Undercity\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -581,7 +581,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Sunken City\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Sunken City.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -604,7 +604,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Lightning Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Lightning Strike in this Reincarnation (seconds)"
 }
 ],
 "scale": 1
@@ -620,7 +620,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Lightning Strike\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Lightning Strike unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -724,7 +724,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Brainwave\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Brainwave unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -884,7 +884,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Combo Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Combo Strike in this Reincarnation (seconds)"
 }
 ],
 "scale": 1,
@@ -1167,7 +1167,7 @@
 ],
 "requirements": [
 "Reach 1e9 Mana Produced",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1217,7 +1217,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1256,7 +1256,7 @@
 ],
 "requirements": [
 "Reach 1e12 Assistants",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1295,7 +1295,7 @@
 ],
 "requirements": [
 "Reach 1e12 Spells cast",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1333,7 +1333,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1372,7 +1372,7 @@
 ],
 "requirements": [
 "Reach 1e10 Max Mana",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1411,7 +1411,7 @@
 ],
 "requirements": [
 "Reach 1e15 Spells cast",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1450,7 +1450,7 @@
 ],
 "requirements": [
 "Reach 900 Trophies",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1478,7 +1478,7 @@
 "formulas": [],
 "requirements": [
 "Reach 5000 Unique Buildings",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1517,7 +1517,7 @@
 ],
 "requirements": [
 "Reach 8h Time Spent (Offline) in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1556,7 +1556,7 @@
 ],
 "requirements": [
 "Reach 1e21 Mana Produced in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1595,7 +1595,7 @@
 ],
 "requirements": [
 "Reach 1e23 Faction Coin find chance. Fairy Set required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -1639,7 +1639,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Training Grounds\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -1662,7 +1662,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 }
 ],
 "scale": 1
@@ -1677,7 +1677,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Enchanted Field\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -1754,7 +1754,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Infernal Realm\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2048,7 +2048,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Training Grounds\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2122,7 +2122,7 @@
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Olympian Hall\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2145,7 +2145,7 @@
 "vars": [
 {
 "symbol": "j",
-"text": "Tier \"Grand Balance\" is cast at (1 is the base tier)"
+"text": "Tier Grand Balance is cast at (1 is the base tier)"
 },
 {
 "symbol": "M_{\\max}",
@@ -2165,7 +2165,7 @@
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Stonehenge\" and the spell \"Grand Balance\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge and the spell Grand Balance unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2308,7 +2308,7 @@
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Lightning Strike\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Lightning Strike unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2434,7 +2434,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "scale": 1
@@ -2447,7 +2447,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Dwarven Forge\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Dwarven Forge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -2750,7 +2750,7 @@
 ],
 "requirements": [
 "Reach 100 Autoclick power",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2800,7 +2800,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2839,7 +2839,7 @@
 ],
 "requirements": [
 "Reach 25000 Excavation depth",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2878,7 +2878,7 @@
 ],
 "requirements": [
 "Reach 70 Active spells",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2916,7 +2916,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2944,7 +2944,7 @@
 "formulas": [],
 "requirements": [
 "Reach 20000 Buildings",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -2983,7 +2983,7 @@
 ],
 "requirements": [
 "Reach 2h Evil Time Spent in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3011,7 +3011,7 @@
 "formulas": [],
 "requirements": [
 "Reach 100000 Clicks in this Era",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3042,7 +3042,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Moon Blessing\" in this Reincarnation (seconds)"
+"text": "Activity time of Moon Blessing in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -3050,7 +3050,7 @@
 ],
 "requirements": [
 "Reach 100 Autoclick Power",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3078,7 +3078,7 @@
 "formulas": [],
 "requirements": [
 "Reach 2d Brainwave duration",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3117,7 +3117,7 @@
 ],
 "requirements": [
 "Reach 40 Active spells. Elven Set required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3156,7 +3156,7 @@
 ],
 "requirements": [
 "Reach 1e15 Assistants. Dwarven Bloodline required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -3200,7 +3200,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Heaven's Domain\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3223,7 +3223,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hell Portal\" buildings you own"
+"text": "Number of Hell Portal buildings you own"
 }
 ],
 "scale": 1
@@ -3238,7 +3238,7 @@
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Infernal Realm\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3299,7 +3299,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Warrior Barracks\" buildings you own"
+"text": "Number of Warrior Barracks buildings you own"
 }
 ],
 "scale": null
@@ -3315,7 +3315,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Training Grounds\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3453,7 +3453,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"God's Hand\" in this Reincarnation (seconds)"
+"text": "Activity time of God's Hand in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -3468,7 +3468,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"God's Hand\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell God's Hand unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3572,7 +3572,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Enchanted Field\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3722,7 +3722,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Labyrinth\" buildings you own"
+"text": "Number of Labyrinth buildings you own"
 }
 ],
 "scale": 1
@@ -3737,7 +3737,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Sunken City\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Sunken City.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3863,7 +3863,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "scale": null
@@ -3878,7 +3878,7 @@
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Olympian Hall\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3977,7 +3977,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Holy Light\" (seconds)"
+"text": "Duration of Holy Light (seconds)"
 }
 ],
 "scale": null
@@ -3992,7 +3992,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Holy Light\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Holy Light unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -4144,7 +4144,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Wyrm's Den\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Wyrm's Den.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -4316,7 +4316,7 @@
 ],
 "requirements": [
 "Reach 1e18 Faction Coin find chance",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4354,7 +4354,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4393,7 +4393,7 @@
 ],
 "requirements": [
 "Reach 30m Least used faction time",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4421,7 +4421,7 @@
 "formulas": [],
 "requirements": [
 "Reach 10000 Royal Exchanges",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4448,7 +4448,7 @@
 "description": "Increase the duration of all spells based on time spent with their respective requirement (Faction or Alignment).",
 "formulas": [],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4487,7 +4487,7 @@
 ],
 "requirements": [
 "Reach 100 Artifacts",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4515,7 +4515,7 @@
 "formulas": [],
 "requirements": [
 "Reach 4h Spiritual Surge Activity Time in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4554,7 +4554,7 @@
 ],
 "requirements": [
 "Reach 2h Chaos Time Spent in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4585,7 +4585,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Most \"Deep Mine\" buildings you have had in this Reincarnation"
+"text": "Most Deep Mine buildings you have had in this Reincarnation"
 }
 ],
 "scale": null
@@ -4593,7 +4593,7 @@
 ],
 "requirements": [
 "Reach 1e12 Tax Collections cast in this Era. Titan Bloodline required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4624,7 +4624,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"God's Hand\" in this Reincarnation (seconds)"
+"text": "Activity time of God's Hand in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -4632,7 +4632,7 @@
 ],
 "requirements": [
 "Reach 2h Time Spent in this Era. Angel Bloodline required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4660,7 +4660,7 @@
 "formulas": [],
 "requirements": [
 "Reach 5 Active Dragon's Breath Colors",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4699,7 +4699,7 @@
 ],
 "requirements": [
 "Reach 1e23 Mana Regeneration. Druid Bloodline required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -4743,7 +4743,7 @@
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Goblin Bank\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4766,7 +4766,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Necropolis\" buildings you own"
+"text": "Number of Necropolis buildings you own"
 }
 ],
 "scale": 1
@@ -4781,7 +4781,7 @@
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Undercity\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4897,7 +4897,7 @@
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Enchanted Field\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5094,7 +5094,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Witch Conclave\" buildings you own"
+"text": "Number of Witch Conclave buildings you own"
 }
 ],
 "scale": 1
@@ -5109,7 +5109,7 @@
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Goblin Bank\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5235,7 +5235,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Stone Pillars\" buildings you own"
+"text": "Number of Stone Pillars buildings you own"
 }
 ],
 "scale": 1
@@ -5250,7 +5250,7 @@
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Stonehenge\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5539,7 +5539,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "scale": 1
@@ -5554,7 +5554,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Dwarven Forge\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Dwarven Forge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -5577,7 +5577,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Dark Temple\" buildings you own"
+"text": "Number of Dark Temple buildings you own"
 }
 ],
 "scale": null
@@ -5593,7 +5593,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Spider Sanctuary\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -5820,7 +5820,7 @@
 "formulas": [],
 "requirements": [
 "Reach 500000 Buildings",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -5851,7 +5851,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "scale": null,
@@ -5862,7 +5862,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "scale": null,
@@ -5870,7 +5870,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -5909,7 +5909,7 @@
 ],
 "requirements": [
 "Reach 5e150 Gold",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -5948,7 +5948,7 @@
 ],
 "requirements": [
 "Reach 30m Least used spell activity time",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -5986,7 +5986,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6025,7 +6025,7 @@
 ],
 "requirements": [
 "Reach 20000 Neutral Buildings",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6064,7 +6064,7 @@
 ],
 "requirements": [
 "Reach 1e18 Assistants",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6103,7 +6103,7 @@
 ],
 "requirements": [
 "Reach 1e27 Gems (always higher than Reincarnation requirements)",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6142,7 +6142,7 @@
 ],
 "requirements": [
 "Reach 3500 Slave Markets",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6181,7 +6181,7 @@
 ],
 "requirements": [
 "Reach 30m Least used spell activity time in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6209,7 +6209,7 @@
 "formulas": [],
 "requirements": [
 "Reach 200 Tax Collection cost reduction",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6237,7 +6237,7 @@
 "formulas": [],
 "requirements": [
 "Reach 1000 Total Lineage levels",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -6281,7 +6281,7 @@
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Undercity\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6304,7 +6304,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Witch Conclave\" buildings you own"
+"text": "Number of Witch Conclave buildings you own"
 }
 ],
 "scale": 1
@@ -6319,7 +6319,7 @@
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Goblin Bank\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6346,7 +6346,7 @@
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Hellfire Blast\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Hellfire Blast unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6369,15 +6369,15 @@
 "vars": [
 {
 "symbol": "N_{1}",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 },
 {
 "symbol": "N_{2}",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 },
 {
 "symbol": "N_{3}",
-"text": "Number of \"Blacksmith\" buildings you own"
+"text": "Number of Blacksmith buildings you own"
 }
 ],
 "scale": null
@@ -6392,7 +6392,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the spell \"Fairy Chanting\" unlocked.",
+"mercenary_note": "Mercenaries can also buy it once they have the spell Fairy Chanting unlocked.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6435,7 +6435,7 @@
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Heaven's Domain\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6814,7 +6814,7 @@
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Stonehenge\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -7060,7 +7060,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Dark Temple\" buildings you own"
+"text": "Number of Dark Temple buildings you own"
 }
 ],
 "scale": 1
@@ -7075,7 +7075,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Spider Sanctuary\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -7214,7 +7214,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Iron Stronghold\" buildings you own"
+"text": "Number of Iron Stronghold buildings you own"
 }
 ],
 "scale": 2
@@ -7229,7 +7229,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Wyrm's Den\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Wyrm's Den.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -7407,7 +7407,7 @@
 ],
 "requirements": [
 "Reach 2h Time",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7445,7 +7445,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7473,7 +7473,7 @@
 "formulas": [],
 "requirements": [
 "Reach 1d Longest spell duration",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7512,7 +7512,7 @@
 ],
 "requirements": [
 "Reach 1e40 Faction Coins",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7550,7 +7550,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7589,7 +7589,7 @@
 ],
 "requirements": [
 "Reach 25 Active spells",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7628,7 +7628,7 @@
 ],
 "requirements": [
 "Reach 1e20 Mana Regeneration",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7667,7 +7667,7 @@
 ],
 "requirements": [
 "Reach 1e13 Faction Coin find chance",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7698,7 +7698,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Hellfire Blast\" in this Reincarnation (seconds)"
+"text": "Activity time of Hellfire Blast in this Reincarnation (seconds)"
 }
 ],
 "scale": 5
@@ -7706,7 +7706,7 @@
 ],
 "requirements": [
 "Reach 2h Time Spent in this Era. Demon Bloodline required.",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7749,7 +7749,7 @@
 ],
 "requirements": [
 "Reach 3 Excavation Resets in this Era",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7780,7 +7780,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "scale": null
@@ -7788,7 +7788,7 @@
 ],
 "requirements": [
 "Reach 2h Catalyst Activity Time in this Era",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7827,7 +7827,7 @@
 ],
 "requirements": [
 "Reach 2h Balance Time Spent in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -7858,7 +7858,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Hellfire Blast\" in this Era"
+"text": "Number of times you have cast Hellfire Blast in this Era"
 }
 ],
 "scale": 1
@@ -7871,7 +7871,7 @@
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Infernal Realm\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -7894,7 +7894,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Warrior Barracks\" buildings you own"
+"text": "Number of Warrior Barracks buildings you own"
 }
 ],
 "scale": 1
@@ -7909,7 +7909,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Training Grounds\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -7932,7 +7932,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ],
 "scale": 1
@@ -7970,7 +7970,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Necropolis\" buildings you own"
+"text": "Number of Necropolis buildings you own"
 }
 ],
 "scale": null
@@ -7986,7 +7986,7 @@
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Undercity\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8267,7 +8267,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Holy Light\" in this Reincarnation (seconds)"
+"text": "Activity time of Holy Light in this Reincarnation (seconds)"
 }
 ],
 "scale": 1
@@ -8282,7 +8282,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Heaven's Domain\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8381,7 +8381,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own"
+"text": "Number of Hall of Legends buildings you own"
 }
 ],
 "scale": 1
@@ -8396,7 +8396,7 @@
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Olympian Hall\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8533,7 +8533,7 @@
 "vars": [
 {
 "symbol": "Y",
-"text": "Production of your \"Stone Pillars\" buildings (per second)"
+"text": "Production of your Stone Pillars buildings (per second)"
 }
 ],
 "scale": 1
@@ -8548,7 +8548,7 @@
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Stonehenge\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8611,7 +8611,7 @@
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade \"Spider Sanctuary\".",
+"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -8634,7 +8634,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Combo Strike\" in this Reincarnation (seconds)"
+"text": "Activity time of Combo Strike in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -8788,7 +8788,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Call to Arms\" in this Reincarnation (seconds)"
+"text": "Activity time of Call to Arms in this Reincarnation (seconds)"
 }
 ],
 "scale": null
@@ -8976,7 +8976,7 @@
 ],
 "requirements": [
 "Reach 50000 Halls of Legends",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9014,7 +9014,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9053,7 +9053,7 @@
 ],
 "requirements": [
 "Reach 1e6 Clicks",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9081,7 +9081,7 @@
 "formulas": [],
 "requirements": [
 "Reach 1e20 Max Mana",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9119,7 +9119,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9158,7 +9158,7 @@
 ],
 "requirements": [
 "Reach 10m Call to Arms duration",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9197,7 +9197,7 @@
 ],
 "requirements": [
 "Reach 2h Neutral Time Spent in this Era",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9236,7 +9236,7 @@
 ],
 "requirements": [
 "Reach 1e7 Offline production",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9275,7 +9275,7 @@
 ],
 "requirements": [
 "Reach 5 Primal Balance targets",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9314,7 +9314,7 @@
 ],
 "requirements": [
 "Reach 1e6 Combo Strike counter",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9353,7 +9353,7 @@
 ],
 "requirements": [
 "Reach 3m, 20s Triggered Tax Collection Power",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9412,7 +9412,7 @@
 ],
 "requirements": [
 "Reach 30m Least used alignment time in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9451,7 +9451,7 @@
 ],
 "requirements": [
 "Reach 1e20 Mana Regeneration",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9490,7 +9490,7 @@
 ],
 "requirements": [
 "Reach 2 Excavation Resets",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9518,7 +9518,7 @@
 "formulas": [],
 "requirements": [
 "Reach 250000 Unique Buildings",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9557,7 +9557,7 @@
 ],
 "requirements": [
 "Reach 1h Mercenary Time spent",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": 11,
@@ -9595,7 +9595,7 @@
 }
 ],
 "requirements": [
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9634,7 +9634,7 @@
 ],
 "requirements": [
 "Reach 15000 Max Excavation Depth in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9662,7 +9662,7 @@
 "formulas": [],
 "requirements": [
 "Reach 60000 Total Research Budget",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9690,7 +9690,7 @@
 "formulas": [],
 "requirements": [
 "Reach 5500 Royal Exchanges",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9718,7 +9718,7 @@
 "formulas": [],
 "requirements": [
 "Reach 1e33 Faction Coins",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9757,7 +9757,7 @@
 ],
 "requirements": [
 "Reach 4 Different Legacies",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9796,7 +9796,7 @@
 ],
 "requirements": [
 "Reach 3h Call To Arms Activity Time in this Reincarnation",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,
@@ -9835,7 +9835,7 @@
 ],
 "requirements": [
 "Reach 4000 Forbidden Libraries",
-"Reincarnation 180 or higher, and the artifact \"Forgotten Relic\""
+"Reincarnation 180 or higher, and the artifact Forgotten Relic"
 ],
 "hint": "",
 "faction": -1,

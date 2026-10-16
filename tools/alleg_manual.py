@@ -15,11 +15,11 @@ def F(latex, *vs, label=None):
 
 
 def most(b):      # the highest number of a building built in this Reincarnation
-    return f'Most "{b}" buildings you have built in this Reincarnation'
+    return f'Most {b} buildings you have built in this Reincarnation'
 
 
 def owned(b):
-    return f'Number of "{b}" buildings you own'
+    return f'Number of {b} buildings you own'
 
 
 TIER = ('T', "The building's tier (1 for the first building in the list)")
@@ -38,7 +38,7 @@ FORMULAS = {
     'Guardian Angels': [(0, F(r'v = 40 + 40 \cdot N^{0.4}', ('N', 'Number of buildings of tier 7 of your alignment you own (Cathedrals, Dark Temples or Monasteries)')))],
     'Angelic Wisdom': [(0, F(r'v = 5 \cdot \ln\left(1 + M\right)',
                              ('M', 'Your offline mana regeneration per second'), label='Offline spell casts (%)'))],
-    'Angelic Dominance': [(0, F(r'v = 0.3 \cdot t^{0.7}', ('t', "Activity time of \"God's Hand\" in this Era (seconds)"),
+    'Angelic Dominance': [(0, F(r'v = 0.3 \cdot t^{0.7}', ('t', "Activity time of God's Hand in this Era (seconds)"),
                                 label='Production bonus from Gems (+%)'))],
     'Angelic Fortitude': [(0, F(r'v = U^{0.7}', ('U', 'Combined activity time of all your available spells in this Reincarnation (seconds)')))],
     "Fool's Gold": [(0, F(r'v = 2 \cdot N^{0.6}', ('N', most('Witch Conclave'))))],
@@ -89,7 +89,7 @@ FORMULAS = {
         (0, F(r'v_{1} = 5 \cdot t^{0.5}', ('t', 'All-time time spent as Dragon (seconds)'), label='Additive assistants')),
         (0, F(r'v_{2} = 0.6 \cdot t^{0.4}', ('t', 'All-time time spent as Dragon (seconds)'), label='Multiplicative assistants (%)')),
         (0, F(r'v_{3} = 0.8 \cdot t^{0.4}', ('t', 'All-time time spent as Dragon (seconds)'), label='Assistant production (%)'))],
-    'Chromatic Scales': [(0, F(r'v = 250 \cdot j^{2}', ('j', "Tier \"Dragon's Breath\" is cast at (1 is the base tier); 0 bonus while the spell is unavailable")))],
+    'Chromatic Scales': [(0, F(r'v = 250 \cdot j^{2}', ('j', "Tier Dragon's Breath is cast at (1 is the base tier); 0 bonus while the spell is unavailable")))],
     'Fang Food': [(0, F(r'v = 0.6 \cdot N^{0.6}', ('N', most('Dragon Pasture'))))],
     'Star Trading': [(0, F(r'v = 0.9 \cdot X', ('X', 'Most Royal Exchanges you have made at once in this Reincarnation')))],
     'Energy Recharge': [(0, F(r'v = 0.25 \cdot t^{0.5}', ('t', 'Time spent with Order alignment in this Reincarnation (seconds)')))],

@@ -440,7 +440,7 @@ def decode(body, c, ctx=None):
                           r'§8G§\.§-!\^§ == 8\) && §8G§\.§7d§\((§[^§]*§)\.id\)\)', t)
         if mm and nm(mm.group(1)):
             cond.append('playing as a Fairy, Elf, Angel, Goblin, Undead or Demon, or as a Titan, Druid or Faceless once '
-                        f'"{nm(mm.group(1))[1]}" is bought'); continue
+                        f'{nm(mm.group(1))[1]} is bought'); continue
         if t == '§#3§ == -1' or t == '§8G§.§#3§ == -1':
             cond.append('having no prestige faction'); continue
         bad.append(t)

@@ -183,18 +183,18 @@ def _one(s, c, art, reqs, undec, ref_name):
     if m:
         n = ref_name(m.group(1))
         if n and n[0] == 'spell':
-            reqs.append(f'Have "{n[1]}" active for {dur(int(m.group(2)))} in total in this Era'); return
+            reqs.append(f'Have {n[1]} active for {dur(int(m.group(2)))} in total in this Era'); return
     m = re.fullmatch(G + r'§#N§\((§[^§]*§)\.id\)\.§`r§ >= (\d+)', s)
     if m:
         n = ref_name(m.group(1))
         # the stored tier counts from 0; the game displays it from 1 ("Unlock Tier %0" uses +1)
         if n and n[0] == 'spell':
-            reqs.append(f'Have "{n[1]}" active at tier {int(m.group(2)) + 1} or higher'); return
+            reqs.append(f'Have {n[1]} active at tier {int(m.group(2)) + 1} or higher'); return
     m = re.fullmatch(G + r'§\'"§\((§[^§]*§)\.id\)', s)
     if m:
         n = ref_name(m.group(1))
         if n and n[0] == 'upgrade':
-            reqs.append(f'Have completed the challenge that unlocks "{n[1]}" (Dragon Challenge 6)' if n[1] == 'Dracomet Vault' else f'Have completed the challenge that unlocks "{n[1]}"'); return
+            reqs.append(f'Have completed the challenge that unlocks {n[1]} (Dragon Challenge 6)' if n[1] == 'Dracomet Vault' else f'Have completed the challenge that unlocks {n[1]}'); return
     m = re.fullmatch(G + r'§,P§ >= (\d+)', s)
     if m: reqs.append(f'Ascension {m.group(1)} or higher'); return
     m = re.fullmatch(G + r'§8!H§ >= (\d+)', s)
@@ -214,12 +214,12 @@ def _one(s, c, art, reqs, undec, ref_name):
     if m:
         n = ref_name(m.group(1))
         if n and n[1] in FLAG_TROPHY: reqs.append(FLAG_TROPHY[n[1]]); return
-        if n: reqs.append(f'Requires {n[0]} "{n[1]}"'); return
+        if n: reqs.append(f'Requires {n[0]} {n[1]}'); return
     m = re.fullmatch(r'\(?((?:' + G + r'§7d§\(§[^§]*§\.id\)(?: \|\| )?)+)\)?', s)
     if m:
         toks = re.findall(r'(§[^§]*§)\.id', m.group(1))
         ns = [ref_name(t) for t in toks]
-        if all(ns): reqs.append('Requires one of: ' + ', '.join(f'{k} "{v}"' for k, v in ns)); return
+        if all(ns): reqs.append('Requires one of: ' + ', '.join(f'{k} {v}' for k, v in ns)); return
     undec.append(s)
 
 

@@ -86,7 +86,7 @@ def helper_call(cls, mem, args, name_of):
         if mem == '§6!Y§': return 'Z', 'Your production bonus from Gems (%)'
         if mem == '§>Z§' and args:
             n = name_of(args[0].replace('.id', ''))
-            if n and n[0] == 'building': return 'Y', f'Production of your "{n[1]}" buildings (per second)'
+            if n and n[0] == 'building': return 'Y', f'Production of your {n[1]} buildings (per second)'
         return None
     if cls != C: return None
     first = L[0] if L else None
@@ -167,15 +167,15 @@ def helper_call(cls, mem, args, name_of):
     if mem == '§9[§': return 't', 'Time spent as your current faction ' + ('all-time' if g(0) else 'in this Reincarnation') + ' (seconds)'
     if mem == '§1!;§' and args:
         n = name_of(args[0].replace('.id', ''))
-        if n and n[0] == 'spell': return 'D', f'Duration of "{n[1]}" (seconds)'
+        if n and n[0] == 'spell': return 'D', f'Duration of {n[1]} (seconds)'
     if mem in ('§9!P§', '§7i§') and args:
         n = name_of(args[0].replace('.id', ''))
         if n and n[0] == 'spell':
             sc = _scope(bool(g(1)), bool(g(2)))
             if not sc: return None
             if mem == '§9!P§':
-                return 'S', f'Number of times you have cast "{n[1]}" {sc}' + (' (before bonus multipliers)' if g(3) else '')
-            return 't', f'Activity time of "{n[1]}" {sc} (seconds)'
+                return 'S', f'Number of times you have cast {n[1]} {sc}' + (' (before bonus multipliers)' if g(3) else '')
+            return 't', f'Activity time of {n[1]} {sc} (seconds)'
     return None
 
 

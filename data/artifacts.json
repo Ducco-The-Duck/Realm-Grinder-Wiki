@@ -139,7 +139,7 @@
 "percent": 0.2
 },
 "requirements": [
-"Requires one of: upgrade \"Olympian Hall\", upgrade \"Stonehenge\", upgrade \"Sunken City\"",
+"Requires one of: upgrade Olympian Hall, upgrade Stonehenge, upgrade Sunken City",
 "2,000 excavations since your last Excavation Reset"
 ],
 "undecoded_conditions": 0,
@@ -179,7 +179,7 @@
 "requirements": [
 "3,250 excavations since your last Excavation Reset",
 "Dwarf as prestige faction",
-"Requires upgrade \"Dwarven Forge\""
+"Requires upgrade Dwarven Forge"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -199,7 +199,7 @@
 "requirements": [
 "3,000 excavations since your last Excavation Reset",
 "Drow as prestige faction",
-"Requires upgrade \"Spider Sanctuary\""
+"Requires upgrade Spider Sanctuary"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -237,7 +237,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Ancient Pyramid\" buildings you own"
+"text": "Number of Ancient Pyramid buildings you own"
 }
 ]
 },
@@ -262,7 +262,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
 }
 ]
 },
@@ -333,7 +333,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Farm\" buildings you own"
+"text": "Number of Farm buildings you own"
 }
 ]
 },
@@ -359,7 +359,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Fairy Chanting\" in this Era"
+"text": "Number of times you have cast Fairy Chanting in this Era"
 }
 ]
 },
@@ -437,7 +437,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Heaven's Gate\" buildings you own"
+"text": "Number of Heaven's Gate buildings you own"
 }
 ]
 },
@@ -516,7 +516,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ]
 },
@@ -568,14 +568,14 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Night Time\" in this Era (seconds)"
+"text": "Activity time of Night Time in this Era (seconds)"
 }
 ]
 },
 "requirements": [
 "Playing as Undead",
 "No prestige faction",
-"Have \"Night Time\" active for 1 hour in total in this Era"
+"Have Night Time active for 1 hour in total in this Era"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -642,7 +642,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Lightning Strike\" in this Era"
+"text": "Number of times you have cast Lightning Strike in this Era"
 }
 ]
 },
@@ -715,7 +715,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Grand Balance\" in this Era"
+"text": "Number of times you have cast Grand Balance in this Era"
 }
 ]
 },
@@ -741,7 +741,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Brainwave\" in this Era"
+"text": "Number of times you have cast Brainwave in this Era"
 }
 ]
 },
@@ -767,7 +767,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Labyrinth\" buildings you own"
+"text": "Number of Labyrinth buildings you own"
 }
 ]
 },
@@ -818,7 +818,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Inn\" buildings you own"
+"text": "Number of Inn buildings you own"
 }
 ]
 },
@@ -940,7 +940,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Iron Stronghold\" buildings you own"
+"text": "Number of Iron Stronghold buildings you own"
 }
 ]
 },
@@ -966,14 +966,14 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Dragon's Breath\" in this Era"
+"text": "Number of times you have cast Dragon's Breath in this Era"
 }
 ]
 },
 "requirements": [
 "Reincarnation 50 or higher",
 "Dragon as prestige faction",
-"Have \"Dragon's Breath\" active at tier 5 or higher"
+"Have Dragon's Breath active at tier 5 or higher"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1051,7 +1051,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Witch Conclave\" buildings you own (bonuses that make buildings count as more are not included)"
+"text": "Number of Witch Conclave buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1133,7 +1133,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
 }
 ]
 },
@@ -1159,7 +1159,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Excavations made since your last Excavation Reset (the game's \"Excavations\" counter)"
+"text": "Excavations made since your last Excavation Reset (the game's Excavations counter)"
 }
 ]
 },
@@ -1256,7 +1256,7 @@
 },
 "requirements": [
 "Reincarnation 85 or higher",
-"Have completed the challenge that unlocks \"Dracomet Vault\" (Dragon Challenge 6)"
+"Have completed the challenge that unlocks Dracomet Vault (Dragon Challenge 6)"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1344,7 +1344,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Wizard Tower\" buildings you own (bonuses that make buildings count as more are not included)"
+"text": "Number of Wizard Tower buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1352,8 +1352,8 @@
 "Playing as Fairy",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Bottled Voice\"",
-"Requires trophy \"Pink Carrot\""
+"Requires trophy Bottled Voice",
+"Requires trophy Pink Carrot"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1381,8 +1381,8 @@
 "Playing as Elf",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Lucky Clover\"",
-"Requires trophy \"Mini-treasure\""
+"Requires trophy Lucky Clover",
+"Requires trophy Mini-treasure"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1410,8 +1410,8 @@
 "Playing as Angel",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Pillar Fragment\"",
-"Requires trophy \"Divine Sword\""
+"Requires trophy Pillar Fragment",
+"Requires trophy Divine Sword"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1431,7 +1431,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Slave Pen\" buildings you own (bonuses that make buildings count as more are not included)"
+"text": "Number of Slave Pen buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1439,8 +1439,8 @@
 "Playing as Goblin",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Ancient Coin Piece\"",
-"Requires trophy \"Goblin Purse\""
+"Requires trophy Ancient Coin Piece",
+"Requires trophy Goblin Purse"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1468,8 +1468,8 @@
 "Playing as Undead",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Rotten Organ\"",
-"Requires trophy \"Jaw Bone\""
+"Requires trophy Rotten Organ",
+"Requires trophy Jaw Bone"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1489,7 +1489,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of \"Hall of Legends\" buildings you own (bonuses that make buildings count as more are not included)"
+"text": "Number of Hall of Legends buildings you own (bonuses that make buildings count as more are not included)"
 }
 ]
 },
@@ -1497,8 +1497,8 @@
 "Playing as Demon",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Demonic Figurine\"",
-"Requires trophy \"Demon Horn\""
+"Requires trophy Demonic Figurine",
+"Requires trophy Demon Horn"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1526,8 +1526,8 @@
 "Playing as Titan",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Huge Titan Statue\"",
-"Requires trophy \"Titan Shield\""
+"Requires trophy Huge Titan Statue",
+"Requires trophy Titan Shield"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1555,8 +1555,8 @@
 "Playing as Druid",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Glyph Table\"",
-"Requires trophy \"Stone of Balance\""
+"Requires trophy Glyph Table",
+"Requires trophy Stone of Balance"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1584,8 +1584,8 @@
 "Playing as Faceless",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Translucent Goo\"",
-"Requires trophy \"Octopus-shaped Helmet\""
+"Requires trophy Translucent Goo",
+"Requires trophy Octopus-shaped Helmet"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1613,8 +1613,8 @@
 "Dwarf as prestige faction",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Dwarven Bow\"",
-"Requires trophy \"Stone Tankard\""
+"Requires trophy Dwarven Bow",
+"Requires trophy Stone Tankard"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1642,8 +1642,8 @@
 "Drow as prestige faction",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Ceremonial Dagger\"",
-"Requires trophy \"Arachnid Figurine\""
+"Requires trophy Ceremonial Dagger",
+"Requires trophy Arachnid Figurine"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1671,8 +1671,8 @@
 "Dragon as prestige faction",
 "Ascension 2 or higher",
 "2,000 excavations since your last Excavation Reset",
-"Requires trophy \"Dragon Fang\"",
-"Requires trophy \"Dragon Soul\""
+"Requires trophy Dragon Fang",
+"Requires trophy Dragon Soul"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1719,15 +1719,15 @@
 "vars": [
 {
 "symbol": "t_{1}",
-"text": "Activity time of \"Fairy Chanting\" all-time (seconds)"
+"text": "Activity time of Fairy Chanting all-time (seconds)"
 },
 {
 "symbol": "t_{2}",
-"text": "Activity time of \"Hellfire Blast\" all-time (seconds)"
+"text": "Activity time of Hellfire Blast all-time (seconds)"
 },
 {
 "symbol": "t_{3}",
-"text": "Activity time of \"Brainwave\" all-time (seconds)"
+"text": "Activity time of Brainwave all-time (seconds)"
 }
 ]
 },
@@ -2013,7 +2013,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era"
+"text": "Number of times you have cast Tax Collection in this Era"
 }
 ]
 },
@@ -2049,8 +2049,8 @@
 "requirements": [
 "Ascension 2 or higher",
 "Reincarnation 100 or higher",
-"Requires trophy \"Dawnstone\"",
-"Requires trophy \"Duskstone\""
+"Requires trophy Dawnstone",
+"Requires trophy Duskstone"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2077,8 +2077,8 @@
 "requirements": [
 "Playing as Mercenary",
 "Ascension 3 or higher",
-"Requires trophy \"Steel Plate\"",
-"Requires trophy \"Black Sword\""
+"Requires trophy Steel Plate",
+"Requires trophy Black Sword"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2415,7 +2415,7 @@
 "vars": [
 {
 "symbol": "S",
-"text": "Number of times you have cast \"Tax Collection\" in this Era (before bonus multipliers)"
+"text": "Number of times you have cast Tax Collection in this Era (before bonus multipliers)"
 }
 ]
 },
@@ -2443,7 +2443,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Duration of \"Blood Frenzy\" (seconds, as set when it was cast)"
+"text": "Duration of Blood Frenzy (seconds, as set when it was cast)"
 }
 ]
 },
@@ -2499,7 +2499,7 @@
 "vars": [
 {
 "symbol": "t",
-"text": "Activity time of \"Lightning Strike\" in this Era (seconds)"
+"text": "Activity time of Lightning Strike in this Era (seconds)"
 }
 ]
 },

@@ -262,7 +262,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
             reqs.append(f'Have {fn} as prestige faction' if r['f'] in PRESTIGE else f'Play as {fn}')
         reqs += clean_req(game_text, r)
         if r['w'] >= 5000:
-            reqs.append(f'Reincarnation 180 or higher, and the artifact "{CAP_ARTIFACT}"' if CAP_ARTIFACT
+            reqs.append(f'Reincarnation 180 or higher, and the artifact {CAP_ARTIFACT}' if CAP_ARTIFACT
                         else 'Reincarnation 180 or higher')
         return reqs
     reqs = make_reqs(r['req'])
@@ -289,7 +289,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
                 n = name_of_for(c)(tok)
                 if n and n[0] in ('upgrade', 'spell'): items.append(n)
             if items:
-                bits = [f'the spell "{v}" unlocked' if k == 'spell' else f'the upgrade "{v}"' for k, v in items]
+                bits = [f'the spell {v} unlocked' if k == 'spell' else f'the upgrade {v}' for k, v in items]
                 merc_note = 'Mercenaries can also buy it once they have ' + ' and '.join(bits) + '.'
             else:
                 merc_note = 'Mercenaries can also buy it.'
