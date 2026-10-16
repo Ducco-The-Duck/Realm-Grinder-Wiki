@@ -2,7 +2,7 @@
 
     python -I tools/build_research_page.py
 """
-import json, os, shutil, sys
+import json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 research = json.load(open(os.path.join(ROOT, 'data', 'research.json'), encoding='utf8'))
@@ -59,17 +59,18 @@ for b in range(7):
     name = its[0]['branch_name']
     bicon = icon_file('Research' + name)
     items = []
+    tight = lambda t: re.sub(r'\n{2,}', '\n', t) if t else t      # no blank line between the lines of a description
     TIER_COST_NOTE = 'See the Spells page for more on tier cost scaling.'
     for r in its:
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
-            'd': r['description'], 'q': r['requirements'], 'h': r['hint'],
+            'd': tight(r['description']), 'q': r['requirements'], 'h': r['hint'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'],
             'nt': TIER_COST_NOTE if r['code'] == 'S1275' else None,
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
             'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
-            'a': {k: {'d': v['description'], 'q': v['requirements']} for k, v in r['by_ascension'].items()},
+            'a': {k: {'d': tight(v['description']), 'q': v['requirements']} for k, v in r['by_ascension'].items()},
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
     BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None})
