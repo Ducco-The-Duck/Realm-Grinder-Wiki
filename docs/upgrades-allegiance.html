@@ -62,7 +62,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #more .card.wide{width:min(700px,100%)}
 #more .bonus p{margin:0 0 2px}
 #more .formula{padding:2px 0;overflow-wrap:anywhere}
-#more ul.vars{list-style:none;padding-left:0;margin:2px 0;color:var(--muted);font-size:.9rem}
+#more ul.vars{list-style:none;padding-left:0;margin:2px 0}
+#more .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
 #more .more{color:var(--muted);margin-top:10px}
 #pop button.x,#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 #tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
@@ -137,7 +138,7 @@ main{max-width:680px}
 #pop h3,#more h3{font-size:1.25em}
 #pop .card{width:min(620px,100%)}
 #more .card{width:min(640px,100%)}
-h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
+h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#more .lbl,#tip .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
 input,select,button,textarea,option,optgroup{font-family:"Liony",system-ui,sans-serif;font-size:1rem}
 select option{font-family:"Liony",system-ui,sans-serif}
 /* tighter tooltips and popups */
@@ -608,8 +609,9 @@ the base values <i>v</i>.</div>
         if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
         if(pi.nt && !pn) blk.appendChild(el('div','more',pi.nt));
       }
-      var rq='Requires Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
-      blk.appendChild(el('div','more',rq));
+      var rq='Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
+      blk.appendChild(el('span','lbl','Unlock requirement'));
+      blk.appendChild(el('div',null,rq));
       morebody.appendChild(blk);
     });
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
