@@ -96,6 +96,9 @@ def split_args(a):
 
 
 
+NOPEN = {}      # template -> every penalized value of it skips the penalty at Ascension 4
+
+
 def formulas_for(c, gname=''):
     """-> [(template, {placeholder index: ('const'|'f'|'raw', value)}, is_readout)] for each `_("template", args)`
     of the description (and of the string helpers it calls) whose arguments call getters of the class."""
@@ -107,9 +110,12 @@ def formulas_for(c, gname=''):
         if '§%`§' in args: continue
         forms, readout = {}, bool(re.search(r'§8G§\.|§#!!§\.', args))
         scales = {}     # placeholder -> Ascension the penalty (§6!T§) of that value starts at
+        nop = {}        # placeholder -> the helper's third argument is true: no penalty at Ascension 4
         for i, a in enumerate(split_args(args)):
-            pm = re.search(r'§6!T§\((?:(§[^§]*§)\(\)|(-?[\d.]+))(?:,(\d+))?', a)
-            if pm: scales[i] = int(pm.group(3) or 1)
+            pm = re.search(r'§6!T§\((?:(§[^§]*§)\(\)|(-?[\d.]+))(?:,(\d+))?(?:,\s*(true|false))?', a)
+            if pm:
+                scales[i] = int(pm.group(3) or 1)
+                nop[i] = pm.group(4) == 'true'
             keys = re.findall(r'(?<![.\w§])(§[^§]*§)\(\)', a)
             if not keys: continue
             mt = meths.get(keys[0])
@@ -130,6 +136,7 @@ def formulas_for(c, gname=''):
             if cv: forms[i] = ('f', {'latex': cv['latex'].replace('p = ', 'v = ', 1), 'vars': cv['vars']})
             else: forms[i] = ('raw', e)
         out.append((tmpl, forms, readout, scales))
+        NOPEN[tmpl] = bool(nop) and all(nop.values())
     return out
 
 
@@ -195,6 +202,7 @@ def para(c, templates, raw, ctx):
         fl.append(f)
     for i in sorted(forms):
         if forms[i][0] == 'raw': fl.append({'raw': forms[i][1], 'label': labels.get(i)})
-    return {'text': pow10_text(text), 'formulas': fl, 's': min(scales.values()) if scales else None}
+    return {'text': pow10_text(text), 'formulas': fl, 's': min(scales.values()) if scales else None,
+            **({'np': True} if scales and NOPEN.get(tmpl) else {})}
 
 

@@ -86,11 +86,12 @@ def item(u):
     forms = []
     for p in u['description']:
         for f in p['formulas']:
-            forms.append({'l': f['latex'], 'v': f['vars'], 'lb': f.get('label') or effect_label(p['text']), 's': p['s']})
+            forms.append({'l': f['latex'], 'v': f['vars'], 'lb': f.get('label') or effect_label(p['text']), 's': p['s'],
+                          **({'np': 1} if p.get('np') else {})})
     if len(forms) == 1: forms[0]['lb'] = None
     return {
         'n': u['name'], 'i': icon_file(u['icon']),
-        'd': [{'t': p['text'], 's': p['s']} for p in u['description']], 'f': forms,
+        'd': [{'t': p['text'], 's': p['s'], **({'np': 1} if p.get('np') else {})} for p in u['description']], 'f': forms,
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
         'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
@@ -344,7 +345,7 @@ the base values <i>v</i>.</div>
   }
   function As(k){ return new Array(k+1).join('A'); }
   function penalty(it){
-    var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
+    var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s && !(p.np && ASC>=4)) k=Math.max(k, ASC-p.s+1); });
     if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
     return k;
   }
@@ -361,7 +362,7 @@ the base values <i>v</i>.</div>
         var suf='', badge=null;
         if(anyScaled){
           if(!f.s) suf='';
-          else if(ASC>=f.s){ suf=' · '; badge=el('span','mark',As(ASC-f.s+1)); }
+          else if(ASC>=f.s && !(f.np && ASC>=4)){ suf=' · '; badge=el('span','mark',As(ASC-f.s+1)); }
         }
         lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); parent.appendChild(lab);
       }
@@ -396,7 +397,7 @@ the base values <i>v</i>.</div>
     var noted=false;
     it.d.forEach(function(p){
       var e=el('p',null,p.t);
-      if(p.s && ASC>=p.s){ e.appendChild(document.createTextNode(' ')); e.appendChild(el('span','mark',As(ASC-p.s+1))); }
+      if(p.s && ASC>=p.s && !(p.np && ASC>=4)){ e.appendChild(document.createTextNode(' ')); e.appendChild(el('span','mark',As(ASC-p.s+1))); }
       tip.appendChild(e);
       if(it.nt && !noted && new RegExp(it.nr).test(p.t)){ tip.appendChild(el('div','more',it.nt)); noted=true; }
     });

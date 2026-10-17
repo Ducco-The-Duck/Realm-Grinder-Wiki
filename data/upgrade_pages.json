@@ -562,7 +562,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -886,7 +887,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -1141,7 +1143,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
@@ -1199,7 +1202,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -1591,7 +1595,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -1693,7 +1698,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -1977,7 +1983,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -2091,7 +2098,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
@@ -2149,7 +2157,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -2440,7 +2449,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -2542,7 +2552,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -2649,7 +2660,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -3000,7 +3012,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
@@ -3058,7 +3071,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -3349,7 +3363,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -3671,7 +3686,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -3987,7 +4003,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -4278,7 +4295,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -4482,7 +4500,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also adds offline time in this Era to Night Time activity time.",
@@ -4578,7 +4597,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -4743,7 +4763,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -4794,7 +4815,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -4845,7 +4867,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
@@ -4903,7 +4926,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -5148,7 +5172,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -5341,7 +5366,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -5499,7 +5525,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -5550,7 +5577,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -5711,7 +5739,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -5762,7 +5791,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also allows access to the Research Facilities, but it will prevent you from joining a Prestige Faction unless you have discovered the Secrets of the Underworld.",
@@ -5828,7 +5858,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -6094,7 +6125,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6246,7 +6278,8 @@
 {
 "text": "Increase the base production of the tier 4 building of your alignment (Warrior Barracks, Slave Pens or Deep Mines) by +19635 and the tier 7 building of your alignment (Cathedrals, Dark Temples or Monasteries) by +98000. Also increase their production by 2500%.",
 "formulas": [],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6297,7 +6330,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6348,7 +6382,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6399,7 +6434,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6592,7 +6628,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -6694,7 +6731,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -6747,7 +6785,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -7215,7 +7254,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7643,7 +7683,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7696,7 +7737,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -7946,7 +7988,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -8099,7 +8142,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -8201,7 +8245,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -8303,7 +8348,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -8460,7 +8506,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 },
 {
 "text": "Also multiplicatively increase Brainwave headstart by 100%",
@@ -8516,7 +8563,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -8571,7 +8619,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -8624,7 +8673,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -9006,7 +9056,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9108,7 +9159,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9159,7 +9211,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9210,7 +9263,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9418,7 +9472,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -9528,7 +9583,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9581,7 +9637,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -9859,7 +9916,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -9961,7 +10019,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -10063,7 +10122,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -10267,7 +10327,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -10369,7 +10430,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -10471,7 +10533,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -10524,7 +10587,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -10827,7 +10891,8 @@
 "label": "The three buildings it names (%)"
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -10882,7 +10947,8 @@
 "label": null
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 },
 {
 "text": "Also reduces spell tier cost scaling for Dragon's Breath higher tiers.",
@@ -11024,7 +11090,8 @@
 "label": "Assistant production (%)"
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -11075,7 +11142,8 @@
 "shown": true
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -11252,7 +11320,8 @@
 "shown": true
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -11303,12 +11372,14 @@
 "label": null
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 },
 {
 "text": "Also increase Offline production by 100%.",
 "formulas": [],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -11450,7 +11521,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -11501,7 +11573,8 @@
 "label": null
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -11554,7 +11627,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -11844,7 +11918,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -12124,7 +12199,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -12277,7 +12353,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -12459,7 +12536,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -12749,7 +12827,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -12902,7 +12981,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13071,7 +13151,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13132,7 +13213,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13234,7 +13316,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13387,7 +13470,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13728,7 +13812,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13779,7 +13864,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -13983,7 +14069,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -14089,7 +14176,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -14309,7 +14397,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -14362,7 +14451,8 @@
 "shown": true
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -14415,7 +14505,8 @@
 "shown": true
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -14468,7 +14559,8 @@
 "shown": true
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [],
@@ -16263,7 +16355,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16431,7 +16524,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16547,7 +16641,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16714,7 +16809,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16774,7 +16870,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16832,7 +16929,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -16890,7 +16988,8 @@
 "label": null
 }
 ],
-"s": 2
+"s": 2,
+"np": true
 }
 ],
 "sources": [
@@ -16999,7 +17098,8 @@
 "shown": true
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 }
 ],
 "sources": [
@@ -17119,7 +17219,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [
@@ -24725,7 +24826,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 },
 {
 "text": "Requires 1 hour of faction spell activity time to unlock.",
@@ -25027,7 +25129,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 },
 {
 "text": "Requires 1 hour of faction spell activity time to unlock.",
@@ -25105,7 +25208,8 @@
 "label": null
 }
 ],
-"s": 3
+"s": 3,
+"np": true
 },
 {
 "text": "Requires 1 hour of faction spell activity time to unlock.",
