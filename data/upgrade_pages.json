@@ -16242,7 +16242,7 @@
 "id": 563,
 "description": [
 {
-"text": "Increase the production of all buildings by 0.075% per Farm, Inn and Blacksmith owned.",
+"text": "Increase the production of all buildings based on Farms, Inns and Blacksmiths owned.",
 "formulas": [
 {
 "latex": "v = 0.075 \\cdot \\left(N_{1} + N_{2} + N_{3}\\right)",
@@ -16534,7 +16534,7 @@
 "id": 568,
 "description": [
 {
-"text": "Increase the production of all buildings by 0.3% per Hall of Legends owned.",
+"text": "Increase the production of all buildings based on Halls of Legends owned.",
 "formulas": [
 {
 "latex": "v = 0.3 \\cdot N",
@@ -17095,6 +17095,78 @@
 "fc_a4": {
 "Elf": 1e+48,
 "Goblin": 1e+48
+},
+"free_start": false
+}
+},
+{
+"name": "Mercenary Badge",
+"icon": "MercenaryBadge",
+"order": 578,
+"id": 578,
+"description": [
+{
+"text": "Increase the production of all buildings based on the highest amount of coins you gained in a single Era.",
+"formulas": [
+{
+"latex": "v = 2.5 \\cdot \\ln\\left(1 + C\\right)",
+"vars": [
+{
+"symbol": "C",
+"text": "Highest amount of coins you gained in a single Era of this Reincarnation"
+}
+],
+"shown": true
+}
+],
+"s": 1
+}
+],
+"sources": [
+{
+"kind": "Allegiances trophy",
+"name": "Mercenary Champion"
+}
+],
+"requirements": [],
+"conditions": [],
+"undecoded": [],
+"asc_min": null,
+"asc_max": 4,
+"group": null,
+"tier": -1,
+"building": null,
+"faction": 11,
+"akind": "heritage",
+"perk": null,
+"tier_no": null,
+"cost": {
+"coins": [
+0,
+0,
+0,
+0,
+0
+],
+"fc": {
+"Fairy": 100000,
+"Elf": 100000,
+"Angel": 100000,
+"Goblin": 100000,
+"Undead": 100000,
+"Demon": 100000,
+"Dwarf": 100000,
+"Drow": 100000
+},
+"fc_a4": {
+"Fairy": 1e+30,
+"Elf": 1e+30,
+"Angel": 1e+30,
+"Goblin": 1e+30,
+"Undead": 1e+30,
+"Demon": 1e+30,
+"Dwarf": 1e+30,
+"Drow": 1e+30
 },
 "free_start": false
 }

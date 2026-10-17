@@ -550,8 +550,10 @@ def fix_text(name, paras):
     if name == 'Suggestion Master':
         paras[0]['formulas'] = []     # the code only has the constant 4*10 + 3 + 0*0.1 + 14*0.01
         paras[0]['text'] = 'Increase the production of all buildings based on mysterious events. (43.14%)'
-    if name == 'Fairy Heritage':
-        paras[0]['text'] = 'Increase the production of all buildings by 0.075% per Farm, Inn and Blacksmith owned.'
+    if name == 'Fairy Heritage':      # from Ascension 1 the game words it this way (the number is in the formula)
+        paras[0]['text'] = 'Increase the production of all buildings based on Farms, Inns and Blacksmiths owned.'
+    if name == 'Demonic Heritage':
+        paras[0]['text'] = 'Increase the production of all buildings based on Halls of Legends owned.'
     if name == 'Arcane Brilliance':
         paras[0]['formulas'] = [_m(r'v = 2 \cdot S \cdot \max\left(0,\, C + 1 - A\right)',
             ('S', 'Total tier of your active spells (each active spell counts its tier)'),
@@ -651,6 +653,7 @@ def alleg_kind(r):
     if n in MERC_PERKS: return 'perk'
     if n.startswith('Proof of ') and r['f'] == -1: return 'proof'
     if n in QUEST_FACTION: return 'quest'
+    if n == 'Mercenary Badge': return 'heritage'      # the Mercenary's Heritage
     if r['f'] != -1:
         if n.endswith('Heritage'): return 'heritage'
         if n.endswith(' Bloodline'): return 'bloodline'

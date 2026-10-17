@@ -27,6 +27,7 @@ STAT_NAMES[63] = ('C', 'Automatic clicks made')      # the game adds the autocli
 TIME_SYMS = {'t'}
 # stat index -> description of "highest value in this Reincarnation" (max of this Era and earlier Eras)
 MAXSTAT = {40: ('N', 'Most spells cast in a single Era of this Reincarnation'),
+           31: ('C', 'Highest amount of coins you gained in a single Era of this Reincarnation'),
            155: ('K', 'Highest Combo Strike counter you had in this Reincarnation'),
            156: ('N', 'Most Grand Balance targets you had at once in this Reincarnation'),
            96: (r'A_{\max}', 'Highest number of assistants you have had in this Reincarnation'),

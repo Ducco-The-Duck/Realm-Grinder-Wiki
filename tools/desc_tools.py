@@ -125,7 +125,7 @@ def formulas_for(c, gname=''):
             e = inline_helpers(c, e)
             e = strip_set_bonus(e)
             # a single read of a this-Era stat array entry -> the game's helper call for the same value
-            e = re.sub(r'§8G§\.§5!V§\[(\d+)\]', lambda mt_: '§&c§.§"!B§(' + mt_.group(1) + ',false,true)', e)
+            e = re.sub(r'§8G§\.§5!V§\[(\d+)\](?!,§8G§\.§=y§\[)', lambda mt_: '§&c§.§"!B§(' + mt_.group(1) + ',false,true)', e)
             cv = convert(e, name_of_for(c))
             if cv: forms[i] = ('f', {'latex': cv['latex'].replace('p = ', 'v = ', 1), 'vars': cv['vars']})
             else: forms[i] = ('raw', e)
