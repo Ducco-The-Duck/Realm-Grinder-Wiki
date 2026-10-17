@@ -54,9 +54,8 @@ Only these need checking; remove an item when it is settled.
      the Dwarven and Drow coin counters because stats 6 to 11 and 41, 42 are summed as faction coins found).
    - **Formulas written by hand** (`tools/alleg_manual.py`, `tools/alleg_manual_family.py`, read from the static value functions
      and the production code, not shown in any tooltip): the Druid, Dragon, Archon, Djinn and other faction upgrades without a
-     number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. Doubtful readings: the "worth" of a
-     Tax Collection (Hobgoblin Gladiators), the digit sum behind Magical Circuit, the
-     digit-sum rule of Burning Abyss. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
+     number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. The earlier doubtful readings (the Tax Collection worth, the Magical Circuit digit sum, the Burning Abyss digit rule) were
+     explained by the user and the texts reworded. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
      terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
    - Iron Flight counts spell *effects* on Iron Strongholds (a spell with two effects counts twice): confirmed by the user's tooltip.
    - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.

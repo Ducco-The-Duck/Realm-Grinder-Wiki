@@ -43,7 +43,7 @@ FORMULAS = {
     'Angelic Fortitude': [(0, F(r'v = U^{0.7}', ('U', 'Combined activity time of all your available spells in this Reincarnation (seconds)')))],
     "Fool's Gold": [(0, F(r'v = 2 \cdot N^{0.6}', ('N', most('Witch Conclave'))))],
     'Hobgoblin Gladiators': [(0, F(r'v = 4 \cdot \left(\ln\left(1 + W\right)\right)^{2}',
-                                   ('W', 'The worth of a Tax Collection, as the spell computes it')))],
+                                   ('W', 'The worth of a Tax Collection (seconds)')))],
     'Lousy Architecture': [
         (0, F(r'v = 2 \cdot N^{0.75}', ('N', 'Number of buildings of that type you own'), label='Production of each Non-Unique building (%)')),
         (0, F(r'v = 0.01', ('v', 'Amount taken off the cost multiplier of Non-Unique buildings'), label='Cost multiplier'))],
@@ -106,7 +106,7 @@ FORMULAS = {
     'Forbidden Will': [(0, F(r'v = 0.2 \cdot \left(0.5 \cdot \ln\left(1 + F\right)\right)^{2}',
                              ('F', 'Most Faction Coins you have found at once in this Reincarnation')))],
     'Magical Circuit': [(0, F(r'v = D^{1.15}',
-                              ('D', 'Sum, over the researches you have bought, of the digit sum of a number the game keeps for each research')))],
+                              ('D', 'Sum, over the researches you have selected, of the digit sum of the number for each research')))],
     'Sylvan Treasure Frills': [(0, F(r'v = 0.5 \cdot P', ('P', 'Your total building production per second'),
                                      label='Added to the base clicking reward'))],
     'Heresiarchs': [(0, F(r'v = 30 + 0.7 \cdot t^{0.7}', ('t', 'Combined activity time of your available Evil spells in this Reincarnation (seconds)')))],

@@ -3547,7 +3547,7 @@
 "vars": [
 {
 "symbol": "W",
-"text": "The worth of a Tax Collection, as the spell computes it"
+"text": "The worth of a Tax Collection (seconds)"
 }
 ],
 "label": null
@@ -5810,19 +5810,19 @@
 "text": "Upgrade Halls of Legends to Burning Abysses, boosting their production chaotically based on time spent as Evil and unlocking more unique perks for the building.",
 "formulas": [
 {
-"latex": "v = \\sum_{i} d_{i}^{\\,p}",
+"latex": "v = \\sum_{i} d_{i}^{\\,p}, \\quad p = 2 + \\frac{\\left\\lfloor 0.5 \\cdot \\ln\\left(1 + x\\right) \\right\\rfloor + 1}{10}",
 "vars": [
 {
-"symbol": "d",
-"text": "The decimal digits of x (each digit is raised to the power p and they are added up)"
-},
-{
-"symbol": "p",
-"text": "2 + (floor(0.5 * ln(1 + x)) + 1) / 10"
+"symbol": "d_{i}",
+"text": "Decimal digits of x"
 },
 {
 "symbol": "x",
-"text": "1.25 times your time with Evil alignment in this Reincarnation (seconds)"
+"text": "⌊1.25 · y⌋"
+},
+{
+"symbol": "y",
+"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
 }
 ],
 "label": null
@@ -12845,7 +12845,7 @@
 "vars": [
 {
 "symbol": "D",
-"text": "Sum, over the researches you have bought, of the digit sum of a number the game keeps for each research"
+"text": "Sum, over the researches you have selected, of the digit sum of the number for each research"
 }
 ],
 "label": null
@@ -20368,7 +20368,7 @@
 "vars": [
 {
 "symbol": "W",
-"text": "The worth of a Tax Collection, as the spell computes it"
+"text": "The worth of a Tax Collection (seconds)"
 }
 ],
 "label": null
