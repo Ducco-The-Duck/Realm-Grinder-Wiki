@@ -413,6 +413,13 @@ the base values <i>v</i>.</div>
 
   function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  // text of a variable explanation: the parts between $ ... $ are formulas (drawn in the formula font)
+  function rich(parent, txt){
+    txt.split('$').forEach(function(s,i){
+      if(i%2){ var sp=el('span'); math(s, sp); parent.appendChild(sp); }
+      else if(s) parent.appendChild(document.createTextNode(s));
+    });
+  }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;
@@ -450,7 +457,7 @@ the base values <i>v</i>.</div>
       f.v.forEach(function(v){
         var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
         var li=el('li'); var b=el('b'); b.style.display='inline'; math(v.symbol,b); li.appendChild(b);
-        li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li);
+        rich(li, ' — '+v.text); ul.appendChild(li);
       });
       if(n) parent.appendChild(ul);
     });
@@ -582,7 +589,7 @@ the base values <i>v</i>.</div>
       if(vars.length){
         var ul=el('ul','vars');
         vars.forEach(function(v){ var li=el('li'), bb=el('b'); bb.style.display='inline'; math(v.symbol, bb); li.appendChild(bb);
-          li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li); });
+          rich(li, ' — '+v.text); ul.appendChild(li); });
         blk.appendChild(ul);
       }
       if(isRP){

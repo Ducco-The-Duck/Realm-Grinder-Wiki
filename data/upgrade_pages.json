@@ -5814,11 +5814,11 @@
 "vars": [
 {
 "symbol": "d_{i}",
-"text": "Decimal digits of x"
+"text": "Decimal digits of $x$"
 },
 {
 "symbol": "x",
-"text": "⌊1.25 · y⌋"
+"text": "$\\lfloor 1.25 \\cdot y \\rfloor$"
 },
 {
 "symbol": "y",
