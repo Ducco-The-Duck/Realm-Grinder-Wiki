@@ -34,4 +34,4 @@ versions of a program. Needs both builds side by side (keep the old `out/script`
 Limits: a method whose body changed a lot in the update will not match (that is exactly what `diff_data.py` then flags
 for review); only one old/new pair of builds can validate it, so build it when a second version exists.
 
-**Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y floor$`; every page draws those parts in the formula font (`rich()` in `tools/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
+**Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y \rfloor$`; every page draws those parts in the formula font (`rich()` in `tools/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
