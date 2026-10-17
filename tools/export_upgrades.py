@@ -546,7 +546,7 @@ def fix_text(name, paras):
         'Green Fingers Discount': (1, False), 'Wings of Liberty': (None, True),
         'Unholy Rituals': (None, True), 'Hive Mind': (None, True), 'Hobgoblin Gladiators': (None, True), 'Oversized Legends': (None, True),
         'Legendary Lands': (2, None), 'Legendary Participation': (2, None), 'Legendary Attendance': (2, None), 'Legendary Party': (3, None)}
-    if name in ('Sylvan Treasure Frills', 'Advisor Insight'):      # they add to a base amount or multiply after the penalty is applied
+    if name == 'Sylvan Treasure Frills':      # adds to the base clicking reward, which the penalty does not touch
         for p_ in paras: p_['s'] = None; p_['np'] = None
     if name == 'Elven Luck': paras[0]['np'] = True      # its start Ascension returns 5 (no penalty) at Ascension 4
     if name in PEN_AUDIT:
