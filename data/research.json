@@ -2406,10 +2406,7 @@ false
 "code": "C375",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
-"pen": [
-1,
-false
-],
+"pen": null,
 "description": "Olympian Halls are always hit by Lightning Strike in addition to the primary target. Olympian Halls can no longer be a primary target.",
 "formulas": [],
 "requirements": [

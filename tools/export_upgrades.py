@@ -543,9 +543,12 @@ def fix_text(name, paras):
     # marks found by the Ascension penalty audit (production code): name -> (first Ascension or None to keep, no penalty at Ascension 4)
     PEN_AUDIT = {'Scarab of Fortune': (1, False), 'Druidic Vocabulary': (1, True), 'Mabinogion': (1, True), 'Building Jungle': (1, True),
         'Superior Consciousness': (3, True), 'Abyssal Furnace': (3, True), 'Grove Farming': (3, True), 'Lousy Architecture': (3, True),
-        'Sylvan Treasure Frills': (1, False), 'Green Fingers Discount': (1, False), 'Wings of Liberty': (None, True),
+        'Green Fingers Discount': (1, False), 'Wings of Liberty': (None, True),
         'Unholy Rituals': (None, True), 'Hive Mind': (None, True), 'Hobgoblin Gladiators': (None, True), 'Oversized Legends': (None, True),
         'Legendary Lands': (2, None), 'Legendary Participation': (2, None), 'Legendary Attendance': (2, None), 'Legendary Party': (3, None)}
+    if name in ('Sylvan Treasure Frills', 'Advisor Insight'):      # they add to a base amount or multiply after the penalty is applied
+        for p_ in paras: p_['s'] = None; p_['np'] = None
+    if name == 'Elven Luck': paras[0]['np'] = True      # its start Ascension returns 5 (no penalty) at Ascension 4
     if name in PEN_AUDIT:
         st_, np_ = PEN_AUDIT[name]
         for p_ in paras:
