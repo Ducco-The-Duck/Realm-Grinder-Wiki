@@ -6047,10 +6047,7 @@ false
 "code": "E3300",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
-"pen": [
-1,
-true
-],
+"pen": null,
 "description": "Gain all the Unique Buildings for your alignment.",
 "formulas": [],
 "requirements": [

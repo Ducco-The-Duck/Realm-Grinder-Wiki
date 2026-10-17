@@ -180,7 +180,7 @@ print('research cap artifact:', CAP_ARTIFACT)
 KEEP_TEXT_VARIANTS = {'Estates'}
 # production effects the Ascension penalty hits that the description does not show: name -> (first Ascension, no penalty at Ascension 4)
 PEN_FIX = {'Journeymen': (1, False), 'Lightning Rod': (1, False), 'Hierarchy': (1, False), 'Solemnity': (2, False),
-           'Upheaval': (2, False), 'Decentralization': (4, False), 'Estates': (1, True)}
+           'Upheaval': (2, False), 'Decentralization': (4, False)}
 # Weighting's first value is 2000^tier (%), the targeted building's own bonus; the user judged it self-evident from the text
 DROP_FORMULAS = {'Weighting': {0}}
 
