@@ -1,8 +1,7 @@
 """Formulas of the faction heritages, spell upgrades, unique building upgrades and bloodlines (merged into FORMULAS)."""
 from alleg_manual import F, most, TIER, FORMULAS, S_ACTIVE
 
-LIN = ('m', 'Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise '
-            '(other upgrades change the numbers)')
+LIN = ('m', 'Multiplier from your Lineage level of that faction: 1 + 0.2 x the level while you use that lineage, 1 otherwise')
 FORMULAS.update({
     'Elven Heritage': [(0, F(r'v = 2 \cdot \left(\ln\left(1 + Q\right)\right)^{2}', ('Q', 'Your Faction Coin find chance (%)'),
                              label='Clicking reward (%)'))],
