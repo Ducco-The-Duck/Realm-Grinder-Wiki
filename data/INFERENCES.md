@@ -56,9 +56,9 @@ Only these need checking; remove an item when it is settled.
      and the production code, not shown in any tooltip): the Druid, Dragon, Archon, Djinn and other faction upgrades without a
      number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. Doubtful readings: the "worth" of a
      Tax Collection (Hobgoblin Gladiators), the spell count in Iron Flight, the digit sum behind Magical Circuit, the
-     lineage multiplier `m` of the Advanced Heritages (1 + 0.2 x level; other upgrades change it), and the digit-sum rule of
-     Burning Abyss. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
+     digit-sum rule of Burning Abyss. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
      terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
+   - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
    - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of
      Druid Perk 4 is open, see item 2).
    - Mercenary Upgrades 1-16, Legacies, Remnants and the Mercenary contracts' extras are still not covered.
