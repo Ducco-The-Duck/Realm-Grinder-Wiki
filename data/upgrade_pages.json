@@ -5469,7 +5469,8 @@
 "label": null
 }
 ],
-"s": null
+"s": 1,
+"np": true
 },
 {
 "text": "Also makes the three highest building tiers count more by 100%.",
