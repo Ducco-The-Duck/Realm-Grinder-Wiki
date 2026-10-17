@@ -10872,7 +10872,7 @@
 "vars": [
 {
 "symbol": "n",
-"text": "The number of spells affecting Iron Strongholds (their share of the bonus)"
+"text": "The number of spell effects on Iron Strongholds (a spell with several effects counts several times)"
 },
 {
 "symbol": "O",

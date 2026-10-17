@@ -79,7 +79,7 @@ FORMULAS = {
         (0, F(r'v_{2} = 7.5 \cdot t^{0.75}', ('t', 'Time spent with Neutral alignment in this Reincarnation (seconds)'),
               label='The three buildings it names (%)'))],
     'Iron Flight': [(0, F(r'v = n \cdot \left(\ln\left(1 + O\right)\right)^{3}',
-                          ('n', 'The number of spells affecting Iron Strongholds (their share of the bonus)'),
+                          ('n', 'The number of spell effects on Iron Strongholds (a spell with several effects counts several times)'),
                           ('O', 'Your Offline production bonus')))],
     'Imposing Presence': [
         (0, F(r'v_{1} = 0.7 \cdot B^{0.7}', ('B', 'Neutral buildings you have built'), label='Mana Regeneration (+)')),
