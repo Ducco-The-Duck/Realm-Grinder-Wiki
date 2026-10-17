@@ -16430,7 +16430,8 @@
 "label": "Clicking reward (%)"
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 },
 {
 "text": "Also autoclick once per second.",
@@ -36192,7 +36193,7 @@
 {
 "text": "Increase all Good buildings production by 100%.",
 "formulas": [],
-"s": 2
+"s": 1
 }
 ],
 "sources": [],
@@ -36288,7 +36289,7 @@
 {
 "text": "Increase all Evil buildings production by 100%.",
 "formulas": [],
-"s": 2
+"s": 1
 }
 ],
 "sources": [],

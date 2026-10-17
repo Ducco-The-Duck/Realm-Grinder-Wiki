@@ -1,3 +1,49 @@
+Know your enemy part 1 and 2 shouldn't say factions other than merc (mercs don't get their own upgrades to begin with)	
 
 
-(Check Advance Heritage. What it Does says it requires 1hr of faction spell activcity time. Also the multiplier variable)
+
+
+
+
+
+
+
+
+
+
+
+Okay, I want to clean up the open items in inference.
+
+1. Ascension penalty start: you'll have to pull the weight on this, its close to impossible to verify this. We'll get info for this from wiki users later, maybe, but right now we just have to believe the ascension penalty flags and whatever other way you can ascertain this. Close this issue. 
+
+2. Fragment factors: This one and item 5 can be combined together as just formula disagreements. I tracked the formulae for this as far as I could and the last version of them disagreed significantly with the current version. I feel like all of these are going to resolve in your favor, since youre literally reading all this from code, but yeah keep this around. For each formula to check, mention the name of the object along with where it is on the wiki.
+
+3. Challenges: I can and will verify the entire challenges page at some point. Keep this around.
+
+4. Magic Upgrades: Same note as above. Make a new item called Upgrade page verification for this and other items related to this.
+
+5. Covered in 2.
+
+6. Research slot: I will read about how it works in A3 and 4. A2 and earlier is confirmed. Keep this around.
+
+7. Allegiances upgrades: We have already confirmed Bloodlines, Lineages, Artifact Sets, Heritages and Advanced Heritages to be completely correct. Each individual faction upgrade is still remaining. Keep this item around and add it to the upgrade page verification item.
+
+8. Spell tiers: We will cover this for the spell page. Combine this item with 10. and call it Spells. Keep this around.
+
+9. Faction unlocking upgrades: We eill cover all mechanic unlocks in the Unlocks page. Don't bundle this item with the upgrade page item.
+
+10. Already covered in 8.
+
+11. Keep this one around.
+
+New items:
+
+1. Verify the research page.
+
+2. Check the secrets and misc upgrades page (part of the upgrade page verification item)
+
+3. Major mechanic: Legacies
+
+4. Ask you for anything that is left.
+
+5. Event stuff (not very important).

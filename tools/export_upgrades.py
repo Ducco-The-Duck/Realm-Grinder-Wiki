@@ -544,7 +544,8 @@ def fix_text(name, paras):
     PEN_AUDIT = {'Scarab of Fortune': (1, False), 'Druidic Vocabulary': (1, True), 'Mabinogion': (1, True), 'Building Jungle': (1, True),
         'Superior Consciousness': (3, True), 'Abyssal Furnace': (3, True), 'Grove Farming': (3, True), 'Lousy Architecture': (3, True),
         'Green Fingers Discount': (1, False), 'Wings of Liberty': (None, True),
-        'Unholy Rituals': (None, True), 'Hive Mind': (None, True), 'Hobgoblin Gladiators': (None, True), 'Oversized Legends': (None, True),
+        'Unholy Rituals': (None, True), 'Hive Mind': (None, True), 'Hobgoblin Gladiators': (None, True), 'Oversized Legends': (None, True), 'Elven Heritage': (None, True), 'Black Market': (None, True),
+        'Heroic Proclamation': (1, None), 'Villainous Proclamation': (1, None),
         'Legendary Lands': (2, None), 'Legendary Participation': (2, None), 'Legendary Attendance': (2, None), 'Legendary Party': (3, None)}
     if name == 'Sylvan Treasure Frills':      # adds to the base clicking reward, which the penalty does not touch
         for p_ in paras: p_['s'] = None; p_['np'] = None
