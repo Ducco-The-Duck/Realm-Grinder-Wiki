@@ -76,6 +76,7 @@ for b in range(7):
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
             'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
             'a': {k: {'d': tight(v['description']), 'q': v['requirements']} for k, v in r['by_ascension'].items()},
+            'ps': r.get('pen'),
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
     BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None})
@@ -189,6 +190,7 @@ popups are always the base values <i>v</i>.</div>
   }
   function penalty(it){
     var k=0; (it.f||[]).forEach(function(f){ if(f.s && ASC>=f.s) k=Math.max(k, ASC-f.s+1); });
+    if(it.ps && ASC>=it.ps[0] && !(it.ps[1] && ASC>=4)) k=Math.max(k, ASC-it.ps[0]+1);
     return k;
   }
   function unavailable(it){ return it.u!==null && it.u!==undefined && ASC>=it.u; }

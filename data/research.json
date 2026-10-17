@@ -8,6 +8,7 @@
 "code": "S1",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Farms based on mana produced in this Era.",
 "formulas": [
 {
@@ -44,6 +45,7 @@
 "code": "S10",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all other buildings by 160% per Heaven's Gate owned.",
 "formulas": [
 {
@@ -82,6 +84,7 @@
 "code": "S30",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase Maximum Mana and Mana Regeneration based on time spent in this Era.",
 "formulas": [
 {
@@ -132,6 +135,7 @@
 "code": "S50",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Each time you cast a spell, you also cast free Tax Collections based on Goblin Banks owned.\n\nAlso multiplicatively increase offline spells cast by 150%.",
 "formulas": [
 {
@@ -171,6 +175,7 @@
 "code": "S105",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase Mana Regeneration based on Research points.",
 "formulas": [
 {
@@ -209,6 +214,7 @@
 "code": "S135",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on Maximum Mana.",
 "formulas": [
 {
@@ -248,6 +254,7 @@
 "code": "S150",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of the two highest building tiers based on your Mana Regeneration.",
 "formulas": [
 {
@@ -286,6 +293,7 @@
 "code": "S175",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on clicks made in this Era for 20 seconds each time you trigger Elven Luck, and increase the chance to trigger it by 24%.",
 "formulas": [
 {
@@ -324,6 +332,7 @@
 "code": "S180",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on Mana Regeneration.",
 "formulas": [
 {
@@ -362,6 +371,7 @@
 "code": "S200",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the duration of all spells based on mana produced in this Era.",
 "formulas": [
 {
@@ -400,6 +410,7 @@
 "code": "S215",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "While Spiritual Surge is active, increase the production of all buildings based on active spells.",
 "formulas": [
 {
@@ -443,6 +454,7 @@
 "code": "S225",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of assistants based on Necropolises owned.",
 "formulas": [
 {
@@ -481,6 +493,7 @@
 "code": "S250",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on mana produced in this Era.",
 "formulas": [
 {
@@ -519,6 +532,7 @@
 "code": "S270",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on Gems owned.",
 "formulas": [
 {
@@ -557,6 +571,7 @@
 "code": "S281",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Labyrinths based on time spent as factions different than the Faceless.",
 "formulas": [
 {
@@ -597,6 +612,7 @@
 "code": "S300",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "While Lightning Strike is active, all non-target buildings have their production increased based on Lightning Strike activity time in this Era.",
 "formulas": [
 {
@@ -636,6 +652,7 @@
 "code": "S305",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on your Offline production bonus.",
 "formulas": [
 {
@@ -675,6 +692,7 @@
 "code": "S330",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on active spells you have. You must have at least 3 active spells to generate a bonus.",
 "formulas": [
 {
@@ -713,6 +731,7 @@
 "code": "S375",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Brainwave also provides progressively more temporary assistants over its duration.",
 "formulas": [
 {
@@ -755,6 +774,7 @@
 "code": "S400",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Artifacts and Trophies count more based on the highest amount of spells cast in a single Era.",
 "formulas": [
 {
@@ -793,6 +813,7 @@
 "code": "S425",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase production bonus from Gems based on the activity time of your faction spells in this Era.",
 "formulas": [
 {
@@ -831,6 +852,7 @@
 "code": "S475",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase Maximum Mana and Mana Regeneration based on Artifacts found.",
 "formulas": [
 {
@@ -881,6 +903,7 @@
 "code": "S525",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Call to Arms counts more buildings based on time spent offline in this Reincarnation.\n\nAlso increase Offline production based on Combo Strike activity time in this Reincarnation.",
 "formulas": [
 {
@@ -931,6 +954,10 @@
 "code": "S550",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": [
+1,
+false
+],
 "description": "Increase the production of buildings based on mana produced in this Era, depending on their tiers. Gives better bonuses for lower tiers.",
 "formulas": [
 {
@@ -974,6 +1001,7 @@
 "code": "S700",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Neutral buildings based on Maximum Mana.",
 "formulas": [
 {
@@ -1013,6 +1041,7 @@
 "code": "S1275",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Reduce spell cost for higher spell tiers.",
 "formulas": [],
 "requirements": [
@@ -1040,6 +1069,7 @@
 "code": "S1450",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on the duration of your longest spell.",
 "formulas": [
 {
@@ -1078,6 +1108,7 @@
 "code": "S1500",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase triggered Tax Collections based on assistants owned.",
 "formulas": [
 {
@@ -1117,6 +1148,7 @@
 "code": "S2900",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Non-Unique Buildings based on Unique buildings built.",
 "formulas": [
 {
@@ -1155,6 +1187,7 @@
 "code": "S3200",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Multiplicatively increase mana regen by 12% per active spell.\n\nAlso multiplicatively increase offline spells cast amount by 1200%.",
 "formulas": [],
 "requirements": [
@@ -1183,6 +1216,7 @@
 "code": "S5125",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of buildings affected by at least 3 spells based on Mana Produced in this Era.",
 "formulas": [
 {
@@ -1222,6 +1256,7 @@
 "code": "S5375",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase Maximum Mana additively and multiplicatively based on the activity time of your least used spell.",
 "formulas": [
 {
@@ -1272,6 +1307,7 @@
 "code": "S5625",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on assistants owned.",
 "formulas": [
 {
@@ -1311,6 +1347,7 @@
 "code": "S5875",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Multiplicatively increase assistants based on spells cast in this Reincarnation.",
 "formulas": [
 {
@@ -1350,6 +1387,7 @@
 "code": "S10875",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase Maximum Mana based on the highest amount of Maximum Mana you had in this Reincarnation.",
 "formulas": [
 {
@@ -1388,6 +1426,7 @@
 "code": "S11125",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Spells cast count more based on mana produced in this Era.",
 "formulas": [
 {
@@ -1427,6 +1466,7 @@
 "code": "S11375",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of Unique buildings based on Spells cast in this Era.",
 "formulas": [
 {
@@ -1466,6 +1506,7 @@
 "code": "S11625",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Multiplicatively increase Faction Coin find chance based on Trophies unlocked.",
 "formulas": [
 {
@@ -1505,6 +1546,7 @@
 "code": "S11875",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "While both Holy Light and Fairy Chanting are active, reduce the cost of all other spells by 85%.",
 "formulas": [],
 "requirements": [
@@ -1533,6 +1575,7 @@
 "code": "S12250",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Reincarnations count more based on time spent as Undead in this Reincarnation.",
 "formulas": [
 {
@@ -1572,6 +1615,7 @@
 "code": "S13125",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Multiplicatively increase assistants based on mana produced in this Era.",
 "formulas": [
 {
@@ -1611,6 +1655,7 @@
 "code": "S13500",
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
+"pen": null,
 "description": "Increase the production of all buildings based on Royal Exchange bonus.",
 "formulas": [
 {
@@ -1650,6 +1695,7 @@
 "code": "C1",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Warrior Barracks production based on Faction Coins you found in this Era.",
 "formulas": [
 {
@@ -1686,6 +1732,7 @@
 "code": "C10",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Inns and Blacksmiths by 70% per Farm owned.",
 "formulas": [
 {
@@ -1724,6 +1771,7 @@
 "code": "C25",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Mana Regeneration based on spells cast in this Era.",
 "formulas": [
 {
@@ -1762,6 +1810,7 @@
 "code": "C50",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Hell Portals based on Demon Coins you found in this Era.",
 "formulas": [
 {
@@ -1801,6 +1850,7 @@
 "code": "C80",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on Faction Coins found in this Era, giving the best bonus to the lowest.",
 "formulas": [
 {
@@ -1839,6 +1889,7 @@
 "code": "C105",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase the chance to find Faction Coins based on Unique buildings built.",
 "formulas": [
 {
@@ -1877,6 +1928,7 @@
 "code": "C120",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase clicking reward based on Gems owned.",
 "formulas": [
 {
@@ -1915,6 +1967,7 @@
 "code": "C135",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Non-Unique buildings based on clicks made in this Era.",
 "formulas": [
 {
@@ -1954,6 +2007,7 @@
 "code": "C150",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on Research points.",
 "formulas": [
 {
@@ -1992,6 +2046,7 @@
 "code": "C175",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase production bonus from Gems based on buildings built.",
 "formulas": [
 {
@@ -2030,6 +2085,10 @@
 "code": "C200",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": [
+1,
+false
+],
 "description": "Increase the production of Unique Buildings based on time spent as that alignment in this Reincarnation.",
 "formulas": [
 {
@@ -2069,6 +2128,7 @@
 "code": "C225",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Training Grounds count more for Call to Arms purposes, based on assistants owned.",
 "formulas": [
 {
@@ -2107,6 +2167,7 @@
 "code": "C250",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Faction Coin find chance based on time spent offline in this Reincarnation.\n\nAlso increase Faction Coin find chance by a multiplicative 50%.",
 "formulas": [
 {
@@ -2145,6 +2206,7 @@
 "code": "C281",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Halls of Legends based on buildings built.",
 "formulas": [
 {
@@ -2181,6 +2243,7 @@
 "code": "C300",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "While Grand Balance targets Stone Pillars, increase its production by 2000%. Also increase the production of every Grand Balance target based on Maximum Mana.",
 "formulas": [
 {
@@ -2224,6 +2287,7 @@
 "code": "C305",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase assistants based on time spent offline in this Reincarnation.",
 "formulas": [
 {
@@ -2263,6 +2327,7 @@
 "code": "C330",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Maximum Mana based on Research points.",
 "formulas": [
 {
@@ -2301,6 +2366,7 @@
 "code": "C340",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase production bonus from Gems based on Rubies you collected.",
 "formulas": [
 {
@@ -2340,6 +2406,10 @@
 "code": "C375",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": [
+1,
+false
+],
 "description": "Olympian Halls are always hit by Lightning Strike in addition to the primary target. Olympian Halls can no longer be a primary target.",
 "formulas": [],
 "requirements": [
@@ -2367,6 +2437,7 @@
 "code": "C400",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Faction Coin find chance based on Faction Coins found in this Era.\n\nAlso increase Faction Coin find chance by a multiplicative 100%.",
 "formulas": [
 {
@@ -2405,6 +2476,7 @@
 "code": "C425",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increases production bonus from Gems based on time spent with alignments different than your current.",
 "formulas": [
 {
@@ -2443,6 +2515,7 @@
 "code": "C475",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase production bonus from Gems based on Excavation depth.",
 "formulas": [
 {
@@ -2481,6 +2554,7 @@
 "code": "C501",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Blacksmiths based on Blacksmiths owned.",
 "formulas": [
 {
@@ -2517,6 +2591,7 @@
 "code": "C600",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Unique Buildings production based on artifacts found.",
 "formulas": [
 {
@@ -2555,6 +2630,7 @@
 "code": "C700",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase clicking reward based on Faction Coin find chance and autoclick 10 times per second.",
 "formulas": [
 {
@@ -2594,6 +2670,7 @@
 "code": "C1300",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on Maximum Mana and production bonus from Gems.",
 "formulas": [
 {
@@ -2636,6 +2713,7 @@
 "code": "C1325",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase assistants based on mana produced in this Era.",
 "formulas": [
 {
@@ -2674,6 +2752,7 @@
 "code": "C1500",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on time spent as Neutral in this Reincarnation.",
 "formulas": [
 {
@@ -2713,6 +2792,7 @@
 "code": "C3000",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on Artifacts found.",
 "formulas": [
 {
@@ -2751,6 +2831,7 @@
 "code": "C3100",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase Maximum Mana based on clicks made in this Reincarnation.",
 "formulas": [
 {
@@ -2789,6 +2870,7 @@
 "code": "C5125",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on assistants owned.",
 "formulas": [
 {
@@ -2828,6 +2910,7 @@
 "code": "C5375",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase Faction Coin find chance additively and multiplicatively based on clicks made in this Era.",
 "formulas": [
 {
@@ -2878,6 +2961,7 @@
 "code": "C5625",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Trophies and Artifacts count more based on Excavation depth.",
 "formulas": [
 {
@@ -2917,6 +3001,7 @@
 "code": "C5875",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase Maximum Mana based on the lowest Lineage level.",
 "formulas": [
 {
@@ -2956,6 +3041,7 @@
 "code": "C10875",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase Faction Coin find chance based on Excavation depth.",
 "formulas": [
 {
@@ -2994,6 +3080,7 @@
 "code": "C11125",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of all buildings based on their quantity.",
 "formulas": [
 {
@@ -3034,6 +3121,7 @@
 "code": "C11375",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Trophies count more based on buildings built.",
 "formulas": [
 {
@@ -3073,6 +3161,7 @@
 "code": "C11625",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase autoclick power by 100%.",
 "formulas": [],
 "requirements": [
@@ -3101,6 +3190,7 @@
 "code": "C11875",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Unique Buildings count more for Call to Arms purposes based on Moon Blessing activity time in this Reincarnation. (xX)",
 "formulas": [
 {
@@ -3140,6 +3230,7 @@
 "code": "C12250",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Brainwave increases Faction Coin find chance progressively over its duration.",
 "formulas": [
 {
@@ -3183,6 +3274,7 @@
 "code": "C13125",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Multiplicatively increase Faction Coin find chance based on active spells.",
 "formulas": [
 {
@@ -3222,6 +3314,7 @@
 "code": "C13500",
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
+"pen": null,
 "description": "Increase the production of Non-Unique buildings based on assistants owned.",
 "formulas": [
 {
@@ -3261,6 +3354,7 @@
 "code": "D1",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Heaven's Gates based on time spent with at least one active spell in this Reincarnation.",
 "formulas": [
 {
@@ -3297,6 +3391,7 @@
 "code": "D10",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of all other buildings by 160% per Hell Portal owned.",
 "formulas": [
 {
@@ -3335,6 +3430,7 @@
 "code": "D25",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of all buildings based on your Offline production bonus.",
 "formulas": [
 {
@@ -3373,6 +3469,7 @@
 "code": "D50",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Faction Coin find chance based on Training Grounds owned.",
 "formulas": [
 {
@@ -3412,6 +3509,7 @@
 "code": "D55",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase clicking reward based on spells cast in this Era.",
 "formulas": [
 {
@@ -3450,6 +3548,7 @@
 "code": "D135",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Mana Regeneration based on Gems owned.",
 "formulas": [
 {
@@ -3489,6 +3588,7 @@
 "code": "D150",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Faction Coin find chance based on Research points.\n\nAlso increase Faction Coin find chance by a multiplicative 50%.",
 "formulas": [
 {
@@ -3527,6 +3627,7 @@
 "code": "D175",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Gain additional assistants based on God's Hand's activity time in this Reincarnation.",
 "formulas": [
 {
@@ -3565,6 +3666,7 @@
 "code": "D200",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Decrease the cost of all spells by 20% and increase their duration by 20%.",
 "formulas": [],
 "requirements": [
@@ -3592,6 +3694,7 @@
 "code": "D205",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Holy Light duration based on time spent in this Era.\n\nAlso multiplicatively increase autoclick power by 10%.",
 "formulas": [
 {
@@ -3631,6 +3734,7 @@
 "code": "D225",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Farms based on Maximum Mana.",
 "formulas": [
 {
@@ -3669,6 +3773,7 @@
 "code": "D245",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on Non-Unique buildings built.",
 "formulas": [
 {
@@ -3708,6 +3813,7 @@
 "code": "D250",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase assistants based on Faction Coins found in this Era.",
 "formulas": [
 {
@@ -3746,6 +3852,7 @@
 "code": "D270",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Each artifact you discover increases Maximum Mana additively and multiplicatively.",
 "formulas": [
 {
@@ -3796,6 +3903,7 @@
 "code": "D290",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of all other buildings by 160% per Labyrinth owned.",
 "formulas": [
 {
@@ -3834,6 +3942,7 @@
 "code": "D300",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on Maximum Mana.\n\nAlso increases offline spells cast amount multiplicatively by 300%.",
 "formulas": [
 {
@@ -3872,6 +3981,7 @@
 "code": "D320",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase assistants production based on Mana Regeneration.",
 "formulas": [
 {
@@ -3910,6 +4020,7 @@
 "code": "D330",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Double the duration of all Faction Spells.",
 "formulas": [],
 "requirements": [
@@ -3937,6 +4048,7 @@
 "code": "D350",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase assistants based on Halls of Legends owned.",
 "formulas": [
 {
@@ -3975,6 +4087,7 @@
 "code": "D400",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of a random building based on mana produced in this Era. Target changes every 2 minutes.\n\nWhile offline, increase the production of all buildings by 12000%.",
 "formulas": [
 {
@@ -4013,6 +4126,7 @@
 "code": "D450",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Non-Unique Buildings based on time spent with your least used alignment.",
 "formulas": [
 {
@@ -4051,6 +4165,7 @@
 "code": "D525",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Reduce Holy Light mana cost by 50% and multiplicatively increase production bonus from Gems based on Holy Light duration.",
 "formulas": [
 {
@@ -4089,6 +4204,7 @@
 "code": "D625",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "While Holy Light is active, increase the production of all buildings based on times you cast faction spells in this Era.",
 "formulas": [
 {
@@ -4128,6 +4244,7 @@
 "code": "D650",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Mana Regeneration based on Trophies unlocked.",
 "formulas": [
 {
@@ -4166,6 +4283,7 @@
 "code": "D700",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase Royal Exchange bonus based on Mana Regeneration.",
 "formulas": [
 {
@@ -4205,6 +4323,7 @@
 "code": "D1175",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Iron Strongholds based on Faction Coin find chance.",
 "formulas": [
 {
@@ -4241,6 +4360,10 @@
 "code": "D1275",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": [
+2,
+false
+],
 "description": "Increase the production of each building by 0.3% per building of the same type. Non-Unique buildings get a 100x higher bonus.",
 "formulas": [],
 "requirements": [
@@ -4268,6 +4391,7 @@
 "code": "D1375",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Reincarnations count 50% more.",
 "formulas": [],
 "requirements": [
@@ -4295,6 +4419,7 @@
 "code": "D2850",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on time spent with Mercenaries.",
 "formulas": [
 {
@@ -4331,6 +4456,7 @@
 "code": "D3350",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase assistants additively and multiplicatively based on your Offline production.",
 "formulas": [
 {
@@ -4382,6 +4508,7 @@
 "code": "D5125",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on clicks made in this Era.",
 "formulas": [
 {
@@ -4421,6 +4548,7 @@
 "code": "D5375",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on Royal Exchanges purchased in this Era.",
 "formulas": [
 {
@@ -4459,6 +4587,7 @@
 "code": "D5625",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Empower the effects of your faction's Set based on time spent with your least used faction. Lineage levels count more, by the same amount, for your faction's Advanced Heritage.",
 "formulas": [
 {
@@ -4498,6 +4627,7 @@
 "code": "D5875",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Gain the Bloodline effects of the base faction of your opposite alignments.",
 "formulas": [],
 "requirements": [
@@ -4526,6 +4656,7 @@
 "code": "D10875",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the duration of all spells based on time spent with their respective requirement (Faction or Alignment).",
 "formulas": [
 {
@@ -4565,6 +4696,7 @@
 "code": "D11125",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Lineage levels count more based on Artifacts found.",
 "formulas": [
 {
@@ -4604,6 +4736,7 @@
 "code": "D11375",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Reincarnations count 50% more.",
 "formulas": [],
 "requirements": [
@@ -4632,6 +4765,7 @@
 "code": "D11625",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase the production of Non-Unique buildings based on time spent with your least used alignment.",
 "formulas": [
 {
@@ -4671,6 +4805,7 @@
 "code": "D11875",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Tax Collection worth based on the highest amount of Mountain Palaces built in this Reincarnation.",
 "formulas": [
 {
@@ -4710,6 +4845,7 @@
 "code": "D12250",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Increase Angel Coins found based on God's Hand activity time in this Reincarnation.",
 "formulas": [
 {
@@ -4749,6 +4885,7 @@
 "code": "D13125",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Neutral Buildings also count as both Good and Evil buildings. Non-Unique buildings also count as Unique buildings.\n\nWhen you spend time with a faction, you also gain a fraction of that time spent with all factions.",
 "formulas": [
 {
@@ -4784,6 +4921,7 @@
 "code": "D13500",
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on the highest amount of Mana Regeneration you had in this Reincarnation.",
 "formulas": [
 {
@@ -4823,6 +4961,7 @@
 "code": "E1",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of Witch Conclaves based on buildings built.",
 "formulas": [
 {
@@ -4859,6 +4998,7 @@
 "code": "E10",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all other buildings by 140% per Necropolis owned.",
 "formulas": [
 {
@@ -4897,6 +5037,7 @@
 "code": "E25",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Gain additional assistants based on Royal Exchanges made.",
 "formulas": [
 {
@@ -4935,6 +5076,7 @@
 "code": "E30",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Faction Coin find chance and Royal Exchange bonus based on time spent in this Era.",
 "formulas": [
 {
@@ -4985,6 +5127,7 @@
 "code": "E50",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce Enchanted Fields cost multiplier.",
 "formulas": [],
 "requirements": [
@@ -5013,6 +5156,7 @@
 "code": "E80",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of Good and Evil buildings based on neutral buildings built.",
 "formulas": [
 {
@@ -5051,6 +5195,7 @@
 "code": "E135",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce the cost multiplier for Unique Buildings.",
 "formulas": [],
 "requirements": [
@@ -5079,6 +5224,7 @@
 "code": "E145",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Tax Collection reward by 30 seconds worth of production.",
 "formulas": [],
 "requirements": [
@@ -5107,6 +5253,7 @@
 "code": "E150",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase production bonus from Gems based on Royal Exchange bonus.",
 "formulas": [
 {
@@ -5145,6 +5292,7 @@
 "code": "E200",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all buildings based on your percentage of trophies unlocked.",
 "formulas": [
 {
@@ -5187,6 +5335,7 @@
 "code": "E225",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of Evil Buildings based on Witch Conclaves owned.",
 "formulas": [
 {
@@ -5225,6 +5374,7 @@
 "code": "E230",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Trophies count more based on time spent as Evil in this Reincarnation.",
 "formulas": [
 {
@@ -5263,6 +5413,7 @@
 "code": "E250",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Mana Regeneration based on Royal Exchanges purchased.",
 "formulas": [
 {
@@ -5301,6 +5452,7 @@
 "code": "E270",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce Excavation cost multiplier.",
 "formulas": [],
 "requirements": [
@@ -5328,6 +5480,7 @@
 "code": "E290",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all other buildings by 200% per Stone Pillars owned.",
 "formulas": [
 {
@@ -5366,6 +5519,7 @@
 "code": "E300",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Mana Regeneration based on Royal Exchange Bonus.",
 "formulas": [
 {
@@ -5404,6 +5558,7 @@
 "code": "E320",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Faction Coin find chance based on Unique buildings built.\n\nAlso increase Faction Coin find chance by a multiplicative 100%.",
 "formulas": [
 {
@@ -5442,6 +5597,7 @@
 "code": "E330",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all buildings based on Artifacts found.",
 "formulas": [
 {
@@ -5480,6 +5636,7 @@
 "code": "E350",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all buildings based on Reincarnations you made.",
 "formulas": [
 {
@@ -5518,6 +5675,7 @@
 "code": "E400",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Research points count more based on clicks made in this Era.",
 "formulas": [
 {
@@ -5556,6 +5714,7 @@
 "code": "E425",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Royal Exchange bonus based on Faction Coins found in this Era.",
 "formulas": [
 {
@@ -5594,6 +5753,7 @@
 "code": "E450",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on Gems owned.",
 "formulas": [
 {
@@ -5632,6 +5792,7 @@
 "code": "E510",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the production of all other buildings by 25% per Blacksmith owned.",
 "formulas": [
 {
@@ -5670,6 +5831,7 @@
 "code": "E575",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase production bonus from Gems based on Dark Temples owned.",
 "formulas": [
 {
@@ -5709,6 +5871,7 @@
 "code": "E700",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase assistants production based on Non-Unique buildings built.",
 "formulas": [
 {
@@ -5748,6 +5911,7 @@
 "code": "E1225",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase the Ascension multiplier for Royal Market bonus by 0.7.",
 "formulas": [],
 "requirements": [
@@ -5775,6 +5939,7 @@
 "code": "E1325",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce Royal Exchange cost multiplier.",
 "formulas": [],
 "requirements": [
@@ -5802,6 +5967,7 @@
 "code": "E1425",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Gem Grinder bonus based on Artifacts found.",
 "formulas": [
 {
@@ -5841,6 +6007,7 @@
 "code": "E3250",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Gain additional assistants based on Faction Coins found in this Era.",
 "formulas": [
 {
@@ -5880,6 +6047,10 @@
 "code": "E3300",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": [
+1,
+true
+],
 "description": "Gain all the Unique Buildings for your alignment.",
 "formulas": [],
 "requirements": [
@@ -5916,6 +6087,10 @@
 "code": "E5125",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": [
+4,
+false
+],
 "description": "Increase the production of all buildings based on buildings built. Lower tiers get higher bonuses.",
 "formulas": [
 {
@@ -5960,6 +6135,7 @@
 "code": "E5375",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Royal Exchange bonus additively and multiplicatively based on Tax Collections cast in this Era.",
 "formulas": [
 {
@@ -6010,6 +6186,7 @@
 "code": "E5625",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Tax Collection is worth more seconds based on Gold owned.",
 "formulas": [
 {
@@ -6049,6 +6226,7 @@
 "code": "E5875",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Multiplicatively increase Faction Coin find chance based on the sum of your faction spell activity time in this Era.",
 "formulas": [
 {
@@ -6088,6 +6266,7 @@
 "code": "E10875",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase Royal Exchange bonus based on the highest amount of assistants you had in this Reincarnation.",
 "formulas": [
 {
@@ -6126,6 +6305,7 @@
 "code": "E11125",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce building cost multiplier, and increase production of all buildings based on Royal Exchange bonus.",
 "formulas": [
 {
@@ -6165,6 +6345,7 @@
 "code": "E11375",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Increase production bonus of Gems based on assistants you have.",
 "formulas": [
 {
@@ -6204,6 +6385,7 @@
 "code": "E11625",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Multiplicatively increase assistants based on Gems you have.",
 "formulas": [
 {
@@ -6243,6 +6425,7 @@
 "code": "E11875",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "While Goblin's Greed is active, increase triggered Tax Collections based on assistants owned.",
 "formulas": [
 {
@@ -6282,6 +6465,7 @@
 "code": "E12250",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "While both Lightning Strike and Gem Grinder are active, multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
 "formulas": [
 {
@@ -6321,6 +6505,7 @@
 "code": "E13125",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Reduce Royal Exchange, Excavation and Building cost multipliers.",
 "formulas": [],
 "requirements": [
@@ -6349,6 +6534,7 @@
 "code": "E13500",
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
+"pen": null,
 "description": "Gain all Lineage base effects that match your alignments, up to a maximum of level 25.",
 "formulas": [],
 "requirements": [
@@ -6377,6 +6563,7 @@
 "code": "A1",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of Necropolises based on assistants owned.",
 "formulas": [
 {
@@ -6413,6 +6600,7 @@
 "code": "A10",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all other buildings by 90% per Witch Conclave owned.",
 "formulas": [
 {
@@ -6451,6 +6639,7 @@
 "code": "A25",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Set Hellfire Blast duration to 4 seconds, and it will not be modified by other effects. Also reduce its mana cost by 400 and increase its effect by 1600%.",
 "formulas": [],
 "requirements": [
@@ -6478,6 +6667,7 @@
 "code": "A30",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Fairy Chanting duration based on Farms, Inns and Blacksmiths owned and provides a progressively increasing bonus to the spell.",
 "formulas": [
 {
@@ -6524,6 +6714,7 @@
 "code": "A50",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Heaven's Gates production when your Mana Regeneration is higher than Maximum Mana.",
 "formulas": [
 {
@@ -6567,6 +6758,7 @@
 "code": "A55",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Offline production based on spells cast in this Reincarnation.",
 "formulas": [
 {
@@ -6605,6 +6797,7 @@
 "code": "A105",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all buildings based on Faction Coins found in this Era.",
 "formulas": [
 {
@@ -6643,6 +6836,7 @@
 "code": "A120",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Gain additional assistants based on Maximum Mana.",
 "formulas": [
 {
@@ -6681,6 +6875,7 @@
 "code": "A135",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all buildings based on time spent in this Reincarnation.",
 "formulas": [
 {
@@ -6720,6 +6915,7 @@
 "code": "A150",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the duration of all spells based on Faction Coins found in this Era.",
 "formulas": [
 {
@@ -6758,6 +6954,7 @@
 "code": "A175",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all buildings based on times you Reincarnated.",
 "formulas": [
 {
@@ -6796,6 +6993,7 @@
 "code": "A200",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase clicking reward based on time spent in this Era.",
 "formulas": [
 {
@@ -6834,6 +7032,7 @@
 "code": "A250",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase production bonus from Gems based on Research points.",
 "formulas": [
 {
@@ -6872,6 +7071,7 @@
 "code": "A270",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of the building affected by most spell effects based on Excavation depth.",
 "formulas": [
 {
@@ -6910,6 +7110,7 @@
 "code": "A281",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of Stone Pillars based on mana produced in this Reincarnation.",
 "formulas": [
 {
@@ -6946,6 +7147,7 @@
 "code": "A300",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on mana produced in this Reincarnation.",
 "formulas": [
 {
@@ -6985,6 +7187,7 @@
 "code": "A305",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Faction Coin find chance based on spells cast in this Era.\n\nAlso increase Faction Coin find chance by a multiplicative 100%.",
 "formulas": [
 {
@@ -7024,6 +7227,7 @@
 "code": "A330",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all buildings based on time spent playing as other factions.",
 "formulas": [
 {
@@ -7066,6 +7270,7 @@
 "code": "A375",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Gain 300 assistants. Multiplicatively increase assistants based on mana produced in this Era.",
 "formulas": [
 {
@@ -7104,6 +7309,7 @@
 "code": "A400",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "You get your faction's Bloodline effect for free. Bloodstream counts time spent with your current faction(s).",
 "formulas": [],
 "requirements": [
@@ -7131,6 +7337,7 @@
 "code": "A450",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Offline production based on Royal Exchanges purchased.",
 "formulas": [
 {
@@ -7169,6 +7376,7 @@
 "code": "A510",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all other buildings by 120% per Dark Temple owned.",
 "formulas": [
 {
@@ -7207,6 +7415,7 @@
 "code": "A550",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of Non-Unique Buildings based on spells cast in this Reincarnation.",
 "formulas": [
 {
@@ -7245,6 +7454,7 @@
 "code": "A575",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase Maximum mana based on Research points.",
 "formulas": [
 {
@@ -7284,6 +7494,7 @@
 "code": "A700",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all buildings based on mana produced in this Era.",
 "formulas": [
 {
@@ -7323,6 +7534,7 @@
 "code": "A1200",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of all other buildings by 135% per Iron Stronghold owned.",
 "formulas": [
 {
@@ -7361,6 +7573,7 @@
 "code": "A1325",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Mana Regeneration based on excavation depth.",
 "formulas": [
 {
@@ -7399,6 +7612,7 @@
 "code": "A1500",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
 "formulas": [
 {
@@ -7438,6 +7652,7 @@
 "code": "A2950",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Select an additional Bloodline. You also gain the base effect of its respective Lineage.",
 "formulas": [],
 "requirements": [
@@ -7465,6 +7680,7 @@
 "code": "A3400",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase Faction Coin find chance based on the total amount of Lineage levels you have.\n\nAlso increase Faction Coin find chance by a multiplicative 300%.",
 "formulas": [
 {
@@ -7504,6 +7720,7 @@
 "code": "A5125",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of Non-Unique buildings based on the time spent on your longest Era in this Reincarnation.",
 "formulas": [
 {
@@ -7547,6 +7764,7 @@
 "code": "A5375",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the duration of all spells based on spells cast in this Era.",
 "formulas": [
 {
@@ -7585,6 +7803,7 @@
 "code": "A5625",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Reduce all spells cost based on their individual duration.",
 "formulas": [
 {
@@ -7629,6 +7848,7 @@
 "code": "A5875",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase Royal Exchange bonus based on Factions Coins found in this Era.",
 "formulas": [
 {
@@ -7668,6 +7888,7 @@
 "code": "A10875",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase mana regeneration based on time spent with the faction opposite to your current one, in this Reincarnation.",
 "formulas": [
 {
@@ -7706,6 +7927,7 @@
 "code": "A11125",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Clicks count more based on active spells.",
 "formulas": [
 {
@@ -7745,6 +7967,7 @@
 "code": "A11375",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase clicking reward based on Mana Regeneration.",
 "formulas": [
 {
@@ -7784,6 +8007,7 @@
 "code": "A11625",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Multiplicatively increase Maximum Mana based on Faction coins found in this Reincarnation.",
 "formulas": [
 {
@@ -7823,6 +8047,7 @@
 "code": "A11875",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "Increase the production of the three highest building tiers based on Hellfire Blast activity time in this Reincarnation.",
 "formulas": [
 {
@@ -7862,6 +8087,7 @@
 "code": "A12250",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "While both Diamond Pickaxe and God's Hand are active, multiplicatively increase Mana Regeneration and Faction Coin find chance based on Excavations and Excavation resets made in this Reincarnation.",
 "formulas": [
 {
@@ -7905,6 +8131,7 @@
 "code": "A13125",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "All spells activity time counts more based on Tax Collection casts in this Era.",
 "formulas": [
 {
@@ -7944,6 +8171,7 @@
 "code": "A13500",
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
+"pen": null,
 "description": "All Balance spells gain 1 tier.\nIncrease Offline production based on the maximum amount of time spent as Balance in this Reincarnation.",
 "formulas": [
 {
@@ -7983,6 +8211,7 @@
 "code": "W1",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of Hell Portals based on Hellfire Blasts cast in this Era.",
 "formulas": [
 {
@@ -8019,6 +8248,7 @@
 "code": "W10",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all other buildings by 130% per Warrior Barracks owned.",
 "formulas": [
 {
@@ -8057,6 +8287,7 @@
 "code": "W25",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all buildings based on Tax Collections cast in this Era.",
 "formulas": [
 {
@@ -8095,6 +8326,7 @@
 "code": "W50",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase Faction Coin find chance based on Necropolises owned.",
 "formulas": [
 {
@@ -8134,6 +8366,7 @@
 "code": "W120",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of Non-Unique Buildings based on assistants owned.",
 "formulas": [
 {
@@ -8172,6 +8405,7 @@
 "code": "W135",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase Maximum Mana based on Trophies unlocked.",
 "formulas": [
 {
@@ -8211,6 +8445,7 @@
 "code": "W150",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all buildings based on assistants owned.",
 "formulas": [
 {
@@ -8249,6 +8484,7 @@
 "code": "W175",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Gain additional assistants based on Evil spells cast in this Reincarnation.",
 "formulas": [
 {
@@ -8287,6 +8523,7 @@
 "code": "W180",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Buildings counts 15 times for Call to Arms purposes.",
 "formulas": [],
 "requirements": [
@@ -8315,6 +8552,7 @@
 "code": "W200",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase Royal Exchange bonus based on Research Points.",
 "formulas": [
 {
@@ -8353,6 +8591,7 @@
 "code": "W205",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "While Blood Frenzy is active, increase Mana Regeneration based on assistants owned.\n\nAlso increase offline spells cast amount multiplicatively by 300%.",
 "formulas": [
 {
@@ -8392,6 +8631,7 @@
 "code": "W225",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Holy Light empowers Heaven's Gates based on Holy Light activity time in this reincarnation.",
 "formulas": [
 {
@@ -8430,6 +8670,7 @@
 "code": "W250",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase assistants by 10% and gain additional assistants based on trophies you unlocked.",
 "formulas": [
 {
@@ -8468,6 +8709,7 @@
 "code": "W270",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of Unique Buildings based on Excavation depth.",
 "formulas": [
 {
@@ -8506,6 +8748,7 @@
 "code": "W290",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all other buildings by 200% per Hall of Legends owned.",
 "formulas": [
 {
@@ -8544,6 +8787,7 @@
 "code": "W300",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase Faction Coin find chance based on the highest amount of assistants you had in a single Era.\n\nAlso increase Faction Coin find chance by a multiplicative 100%.",
 "formulas": [
 {
@@ -8582,6 +8826,7 @@
 "code": "W320",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase offline production based on Excavation depth.",
 "formulas": [
 {
@@ -8620,6 +8865,7 @@
 "code": "W330",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase your clicking reward based on Trophies unlocked.",
 "formulas": [
 {
@@ -8658,6 +8904,7 @@
 "code": "W350",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all other buildings based on the production of your Stone Pillars.",
 "formulas": [
 {
@@ -8696,6 +8943,7 @@
 "code": "W400",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Each building in the three highest building tiers count as 2 buildings.",
 "formulas": [],
 "requirements": [
@@ -8723,6 +8971,7 @@
 "code": "W501",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of Dark Temples based on Offline production.",
 "formulas": [
 {
@@ -8759,6 +9008,7 @@
 "code": "W600",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase assistants based on Combo Strike activity time in this Reincarnation.",
 "formulas": [
 {
@@ -8797,6 +9047,7 @@
 "code": "W625",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "While Blood Frenzy is active, increase the production of all buildings based on times you cast faction spells in this Era.",
 "formulas": [
 {
@@ -8836,6 +9087,7 @@
 "code": "W650",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase assistants based on clicks made in this Era.",
 "formulas": [
 {
@@ -8874,6 +9126,7 @@
 "code": "W700",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase assistants production based on time spent in this Reincarnation.",
 "formulas": [
 {
@@ -8913,6 +9166,7 @@
 "code": "W1275",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the duration of all spells based on Call to Arms activity time in this Reincarnation.",
 "formulas": [
 {
@@ -8951,6 +9205,7 @@
 "code": "W1375",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the chance to find Faction Coins based on assistants owned.\n\nAlso increase Faction Coin find chance by a multiplicative 160%.",
 "formulas": [
 {
@@ -8989,6 +9244,7 @@
 "code": "W1400",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase Maximum Mana based on clicks made in this Era.",
 "formulas": [
 {
@@ -9027,6 +9283,7 @@
 "code": "W3050",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of buildings tiers directly above or below Unique Buildings based on assistants owned.",
 "formulas": [
 {
@@ -9066,6 +9323,10 @@
 "code": "W3150",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": [
+2,
+false
+],
 "description": "Increase the production of all buildings based on time spent with your least used alignment in this Reincarnation. Effect is increased based on their tier, giving the best bonus to the lowest.",
 "formulas": [
 {
@@ -9109,6 +9370,7 @@
 "code": "W5125",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of the two highest building tiers based on assistants owned.",
 "formulas": [
 {
@@ -9148,6 +9410,7 @@
 "code": "W5375",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Multiplicatively increase assistants based on Trophies unlocked.",
 "formulas": [
 {
@@ -9186,6 +9449,7 @@
 "code": "W5625",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Offline time counts 50% more and increase production bonus from Gems based on mana produced in this Era.",
 "formulas": [
 {
@@ -9225,6 +9489,7 @@
 "code": "W5875",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Time spent with Prestige factions counts 500% more. Time spent with Astral factions or Mercenaries counts 1000% more.\n\nWhile affiliated with your least used faction, increase Faction Coin find chance by 500%.",
 "formulas": [],
 "requirements": [
@@ -9253,6 +9518,7 @@
 "code": "W10875",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Gain assistants based on Royal Exchanges made.",
 "formulas": [
 {
@@ -9291,6 +9557,7 @@
 "code": "W11125",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase Offline production based on the duration of your longest spell.",
 "formulas": [
 {
@@ -9330,6 +9597,7 @@
 "code": "W11375",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the duration of all spells based on time spent in this Era.",
 "formulas": [
 {
@@ -9369,6 +9637,7 @@
 "code": "W11625",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all buildings based on time spent with the least used faction.",
 "formulas": [
 {
@@ -9408,6 +9677,7 @@
 "code": "W11875",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Buildings count more based on the maximum amount of Grand Balance targets you had in this Reincarnation.",
 "formulas": [
 {
@@ -9447,6 +9717,7 @@
 "code": "W12250",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of all buildings based on the highest Combo Strike counter you had in this Reincarnation.",
 "formulas": [
 {
@@ -9486,6 +9757,7 @@
 "code": "W13125",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase triggered Tax Collections based on the highest amount of spells cast in this Reincarnation.",
 "formulas": [
 {
@@ -9525,6 +9797,7 @@
 "code": "W13500",
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
+"pen": null,
 "description": "Increase the production of Evil buildings based on time spent as Good, the production of Chaos buildings based on time spent as Order, and the production of Chaos Evil buildings as the sum of time spent as Good and Order.\nAlso increases the production of Good and Order buildings based on Evil and Chaos in the same way.",
 "formulas": [
 {
@@ -9584,6 +9857,7 @@
 "code": "F5250",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Increase Offline production bonus based on time spent offline in this Reincarnation.",
 "formulas": [
 {
@@ -9623,6 +9897,7 @@
 "code": "F5500",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Increase production bonus from Gems based on your Faction Coin find chance.",
 "formulas": [
 {
@@ -9662,6 +9937,7 @@
 "code": "F5750",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Gain the Base Union effect of the base faction of your opposite alignments",
 "formulas": [],
 "requirements": [
@@ -9690,6 +9966,7 @@
 "code": "F6000",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Increase your next run time headstart based on time spent in this Era.\n\nTime granted cannot be higher than your time spent in your current Reincarnation.",
 "formulas": [
 {
@@ -9729,6 +10006,7 @@
 "code": "F11000",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Active spells count more based on the sum of your faction spells activity time.",
 "formulas": [
 {
@@ -9767,6 +10045,7 @@
 "code": "F11250",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Excavations count more based on time spent offline in this Era.",
 "formulas": [
 {
@@ -9806,6 +10085,7 @@
 "code": "F11500",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Gain the Primary Set bonus of the base faction of your opposite alignments.",
 "formulas": [],
 "requirements": [
@@ -9834,6 +10114,7 @@
 "code": "F11750",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "You can purchase one Legacy of your choice for free.",
 "formulas": [],
 "requirements": [
@@ -9862,6 +10143,7 @@
 "code": "F12000",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Allows the purchase of one additional Legacy Combo upgrade.",
 "formulas": [],
 "requirements": [
@@ -9890,6 +10172,7 @@
 "code": "F12500",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Multiplicatively increase assistants based on different Factions in your Legacies.",
 "formulas": [
 {
@@ -9929,6 +10212,7 @@
 "code": "F13250",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Increase the production of all buildings based on faction upgrades different than your own.",
 "formulas": [
 {
@@ -9968,6 +10252,7 @@
 "code": "F13750",
 "icon": "ResearchForbidden",
 "icon_name": "ResearchForbidden",
+"pen": null,
 "description": "Increase Offline production based on the maximum amount of assistants you had in this Reincarnation.",
 "formulas": [
 {

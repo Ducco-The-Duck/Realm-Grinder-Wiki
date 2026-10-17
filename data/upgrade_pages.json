@@ -1493,7 +1493,8 @@
 "label": "Added to the base clicking reward"
 }
 ],
-"s": null
+"s": 1,
+"np": false
 }
 ],
 "sources": [],
@@ -2819,7 +2820,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -3568,7 +3570,8 @@
 "label": null
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -3727,7 +3730,8 @@
 {
 "text": "Gain coins randomly every 120 seconds based on your total production. Value increases over time spent in this Reincarnation. Also works while offline.",
 "formulas": [],
-"s": null
+"s": 1,
+"np": false
 }
 ],
 "sources": [],
@@ -3890,7 +3894,8 @@
 "label": "Cost multiplier"
 }
 ],
-"s": null
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -4661,7 +4666,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -5634,7 +5640,8 @@
 "label": "Production of each building (%)"
 }
 ],
-"s": null
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -6527,7 +6534,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7041,7 +7049,8 @@
 "label": "Production of each building (%)"
 }
 ],
-"s": null
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7358,7 +7367,8 @@
 "label": "Production of each building (%)"
 }
 ],
-"s": null
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7460,7 +7470,8 @@
 "label": "Production of each building (%)"
 }
 ],
-"s": null
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -7633,7 +7644,8 @@
 "label": "Production of each building (%)"
 }
 ],
-"s": null
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -8401,7 +8413,8 @@
 "shown": true
 }
 ],
-"s": 1
+"s": 1,
+"np": true
 }
 ],
 "sources": [],
@@ -12252,7 +12265,8 @@
 "label": "Production of each Unique building (%)"
 }
 ],
-"s": null
+"s": 3,
+"np": true
 }
 ],
 "sources": [],
@@ -14603,7 +14617,7 @@
 {
 "text": "When a mercenary crosses your path, there's only one thing that can save your life: offer him more money than he can get by killing you. If you gain the favor of the mercenaries, you will be able to combine the power of all races at once.",
 "formulas": [],
-"s": 3
+"s": null
 }
 ],
 "sources": [],
@@ -14903,7 +14917,7 @@
 {
 "text": "Unlock Tier 4 upgrades.",
 "formulas": [],
-"s": 3
+"s": null
 }
 ],
 "sources": [
@@ -17949,7 +17963,7 @@
 "label": "Research slots for every branch (Ascension 0 to 2)"
 }
 ],
-"s": 3
+"s": null
 },
 {
 "text": "From Ascension 3 it gives research budget instead of research slots: increase Research budget based on time spent in this Era.",
@@ -26981,7 +26995,7 @@
 ]
 }
 ],
-"s": 2
+"s": 1
 }
 ],
 "sources": [
@@ -28021,7 +28035,8 @@
 "shown": true
 }
 ],
-"s": null
+"s": 1,
+"np": false
 }
 ],
 "sources": [
@@ -29664,7 +29679,7 @@
 {
 "text": "Select one additional upgrade from any of the Good factions.",
 "formulas": [],
-"s": 3
+"s": null
 },
 {
 "text": "Upgrade Tax Collection spell to Share Benefits: Increase the production of all buildings and Faction Coin find chance based on this spell tier level for 20 seconds. Can be cast up to 36 tiers.",
@@ -50240,7 +50255,7 @@
 {
 "text": "Increase the production of Halls of Legends by 19% and increase the production of all other buildings by 0.10% per trophy you unlocked.",
 "formulas": [],
-"s": 1
+"s": 2
 }
 ],
 "sources": [],
@@ -50264,7 +50279,7 @@
 {
 "text": "Increase the production of Halls of Legends by 39% and increase the production of all other buildings by 0.15% per trophy you unlocked.",
 "formulas": [],
-"s": 1
+"s": 2
 }
 ],
 "sources": [],
@@ -50288,7 +50303,7 @@
 {
 "text": "Increase the production of Halls of Legends by 60% and increase the production of all other buildings by 0.20% per trophy you unlocked.",
 "formulas": [],
-"s": 1
+"s": 2
 }
 ],
 "sources": [],
@@ -50312,7 +50327,7 @@
 {
 "text": "Increase the production of Halls of Legends by 80% and increase the production of all other buildings by 0.25% per trophy you unlocked.",
 "formulas": [],
-"s": 1
+"s": 3
 }
 ],
 "sources": [],

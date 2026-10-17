@@ -113,6 +113,7 @@ def availability(indexes):
     return {int(k): v for k, v in json.loads(ctx.eval(BB.replace('__IDX__', json.dumps(indexes)))).items()}
 
 
+FALLBACK_S = []      # items whose Ascension penalty start came from comparing the game's text at Ascension 1 to 4 (no penalty call in the text)
 runs = [probe(), probe(1000), probe(98765)]
 asc_runs = [probe(None, a) for a in range(1, 5)]
 rows, named, TMAP = runs[0]['rows'], runs[0]['named'], runs[0]['tmap']
@@ -539,6 +540,22 @@ def fix_text(name, paras):
         paras[0]['text'] = re.sub(r'by (\d+)% for every', r'by +\1 and \1% for every', t_)      # it adds +N and N% together
     if name == 'Devil Tyrant':      # its text holds two paragraphs in one template, so the penalty call (from Ascension 1, none at 4) was not matched
         paras[0]['s'] = 1; paras[0]['np'] = True
+    # marks found by the Ascension penalty audit (production code): name -> (first Ascension or None to keep, no penalty at Ascension 4)
+    PEN_AUDIT = {'Scarab of Fortune': (1, False), 'Druidic Vocabulary': (1, True), 'Mabinogion': (1, True), 'Building Jungle': (1, True),
+        'Superior Consciousness': (3, True), 'Abyssal Furnace': (3, True), 'Grove Farming': (3, True), 'Lousy Architecture': (3, True),
+        'Sylvan Treasure Frills': (1, False), 'Green Fingers Discount': (1, False), 'Wings of Liberty': (None, True),
+        'Unholy Rituals': (None, True), 'Hive Mind': (None, True), 'Hobgoblin Gladiators': (None, True), 'Oversized Legends': (None, True),
+        'Legendary Lands': (2, None), 'Legendary Participation': (2, None), 'Legendary Attendance': (2, None), 'Legendary Party': (3, None)}
+    if name in PEN_AUDIT:
+        st_, np_ = PEN_AUDIT[name]
+        for p_ in paras:
+            if p_.get('s') or st_:
+                if st_: p_['s'] = st_
+                if np_ is not None: p_['np'] = np_
+                break
+    if name in ('Mercenary First Contract', 'Mercenary Fourth Contract', 'Archon Bloodline'):
+        for p_ in paras: p_['s'] = None
+    if name == 'Round Table' and paras: paras[0]['s'] = None
     if name == 'Elven Perk 1':      # the Ascension penalty the probe saw is the one on the Elven Luck text below, not on this value
         paras[0]['s'] = None
     if name == 'Djinn Perk 6':
@@ -568,7 +585,7 @@ def fix_text(name, paras):
     TIER = ('T', "The building's tier (1 for the first building in the list)")
     if name == 'Mathematician':
         paras[0]['formulas'] = [_m(r'v = 10 \cdot \left(12 - T\right)', TIER)]
-        paras[0]['s'] = 2
+        paras[0]['s'] = 1
     if name == 'Wall Fragment':
         paras[0]['formulas'] = [_m(r'v = 500 \cdot \left(2 \cdot \left(11 - T\right)\right)^{2.5}', TIER)]
         paras[0]['s'] = 2
@@ -708,7 +725,7 @@ for idx, r in todo:
         base = texts[0]
         for a, ar in enumerate(asc_runs, 1):
             if ar['rows'][idx].get('d2', ar['rows'][idx]['d']) != base:
-                paras[0]['s'] = a; break
+                paras[0]['s'] = a; FALLBACK_S.append(r['n']); break
     fix_raw(r['n'], c, paras)
     fix_text(r['n'], paras)
     av = next((m for m in c.methods if m.name == '§-6§'), None)
@@ -1050,3 +1067,4 @@ print('ambiguous trophy names:', amb)
 print('data/upgrade_pages.json:', {k: len(v) for k, v in by_cat.items()},
       '| undecoded conditions:', len(problems))
 for n, b in problems: print('  ', n, b)
+

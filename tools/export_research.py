@@ -178,6 +178,9 @@ _cap_q = resolve(_base, '§#"3§', cl) if _base else None
 CAP_ARTIFACT = (named.get(_cap_q) or [None, None])[1] if _cap_q else None
 print('research cap artifact:', CAP_ARTIFACT)
 KEEP_TEXT_VARIANTS = {'Estates'}
+# production effects the Ascension penalty hits that the description does not show: name -> (first Ascension, no penalty at Ascension 4)
+PEN_FIX = {'Journeymen': (1, False), 'Lightning Rod': (1, False), 'Hierarchy': (1, False), 'Solemnity': (2, False),
+           'Upheaval': (2, False), 'Decentralization': (4, False), 'Estates': (1, True)}
 # Weighting's first value is 2000^tier (%), the targeted building's own bonus; the user judged it self-evident from the text
 DROP_FORMULAS = {'Weighting': {0}}
 
@@ -348,7 +351,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         'branch': r['b'], 'branch_name': branch, 'number': r['w'], 'index': r['u'], 'name': r['n'],
         'code': CODE_LETTER.get(r['b'], '?') + str(r['w']),
         'icon': r['icon'] if r['icon'] in sprites else None, 'icon_name': r['icon'],
-        'description': desc, 'formulas': forms, 'requirements': reqs, 'hint': (r['hint'] or '').strip(),
+        'pen': PEN_FIX.get(r['n']), 'description': desc, 'formulas': forms, 'requirements': reqs, 'hint': (r['hint'] or '').strip(),
         'faction': r['h'], 'faction_name': FACTION.get(r['h']) if r['h'] != -1 else None,
         'faction_kind': None if r['h'] == -1 else ('prestige' if r['h'] in PRESTIGE else 'base'),
         'unlock_faction': r['f'], 'unlock_faction_name': FACTION.get(r['f']) if r['f'] != -1 else None,
