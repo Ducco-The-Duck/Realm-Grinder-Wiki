@@ -124,7 +124,7 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 | Spell counter = "time active" | Number of **casts** | Game UI: "Cast This Era: %0, Total: %1" |
 | `§#!!§.§!-§()` = "clicking reward" | **Number of assistants** (before multipliers) | User, from the 4.3.x patch notes; confirmed in code: Titan Sized Walls ("based on assistants owned") calls the wrapper `§&c§.§!-§()`, which calls it |
 | "Neutral Order path" | "Order alignment" (a second alignment axis: Order/Chaos/Balance) | Contradiction with "Evil alignment" on the same artifact |
-| "Make N excavations" | "N excavations since your last Excavation Reset" | Code: the counter `§1!5§` is zeroed by both kinds of Excavation Reset |
+| "Make N excavations" | "N excavations" (the Excavation Reset wording was dropped) | Code: the counter `§1!5§` is zeroed by both kinds of Excavation Reset |
 
 ## Notation
 

@@ -12,7 +12,7 @@
 "percent": 100.0
 },
 "requirements": [
-"5 excavations since your last Excavation Reset"
+"5 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -30,7 +30,7 @@
 "percent": 100.0
 },
 "requirements": [
-"10 excavations since your last Excavation Reset"
+"10 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -48,7 +48,7 @@
 "percent": 100.0
 },
 "requirements": [
-"15 excavations since your last Excavation Reset"
+"15 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -66,7 +66,7 @@
 "percent": 100.0
 },
 "requirements": [
-"20 excavations since your last Excavation Reset"
+"20 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -84,7 +84,7 @@
 "percent": 100.0
 },
 "requirements": [
-"25 excavations since your last Excavation Reset"
+"25 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -102,7 +102,7 @@
 "percent": 100.0
 },
 "requirements": [
-"30 excavations since your last Excavation Reset"
+"30 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -120,7 +120,7 @@
 "percent": 100.0
 },
 "requirements": [
-"1,500 excavations since your last Excavation Reset",
+"1,500 excavations",
 "Reincarnation 24 or higher"
 ],
 "undecoded_conditions": 0,
@@ -140,7 +140,7 @@
 },
 "requirements": [
 "Requires one of: upgrade Olympian Hall, upgrade Stonehenge, upgrade Sunken City",
-"2,000 excavations since your last Excavation Reset"
+"2,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -159,7 +159,7 @@
 },
 "requirements": [
 "Reincarnation 32 or higher",
-"2,750 excavations since your last Excavation Reset"
+"2,750 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -177,7 +177,7 @@
 "percent": 0.5
 },
 "requirements": [
-"3,250 excavations since your last Excavation Reset",
+"3,250 excavations",
 "Dwarf as prestige faction",
 "Requires upgrade Dwarven Forge"
 ],
@@ -197,7 +197,7 @@
 "percent": 0.5
 },
 "requirements": [
-"3,000 excavations since your last Excavation Reset",
+"3,000 excavations",
 "Drow as prestige faction",
 "Requires upgrade Spider Sanctuary"
 ],
@@ -1093,7 +1093,7 @@
 "percent": 2.0
 },
 "requirements": [
-"1,500 excavations since your last Excavation Reset",
+"1,500 excavations",
 "Reincarnation 42 or higher"
 ],
 "undecoded_conditions": 0,
@@ -1209,7 +1209,7 @@
 },
 "requirements": [
 "Reincarnation 75 or higher",
-"1,500 excavations since your last Excavation Reset"
+"1,500 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1351,7 +1351,7 @@
 "requirements": [
 "Playing as Fairy",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Bottled Voice",
 "Requires trophy Pink Carrot"
 ],
@@ -1380,7 +1380,7 @@
 "requirements": [
 "Playing as Elf",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Lucky Clover",
 "Requires trophy Mini-treasure"
 ],
@@ -1409,7 +1409,7 @@
 "requirements": [
 "Playing as Angel",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Pillar Fragment",
 "Requires trophy Divine Sword"
 ],
@@ -1438,7 +1438,7 @@
 "requirements": [
 "Playing as Goblin",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Ancient Coin Piece",
 "Requires trophy Goblin Purse"
 ],
@@ -1467,7 +1467,7 @@
 "requirements": [
 "Playing as Undead",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Rotten Organ",
 "Requires trophy Jaw Bone"
 ],
@@ -1496,7 +1496,7 @@
 "requirements": [
 "Playing as Demon",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Demonic Figurine",
 "Requires trophy Demon Horn"
 ],
@@ -1525,7 +1525,7 @@
 "requirements": [
 "Playing as Titan",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Huge Titan Statue",
 "Requires trophy Titan Shield"
 ],
@@ -1554,7 +1554,7 @@
 "requirements": [
 "Playing as Druid",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Glyph Table",
 "Requires trophy Stone of Balance"
 ],
@@ -1583,7 +1583,7 @@
 "requirements": [
 "Playing as Faceless",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Translucent Goo",
 "Requires trophy Octopus-shaped Helmet"
 ],
@@ -1612,7 +1612,7 @@
 "requirements": [
 "Dwarf as prestige faction",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Dwarven Bow",
 "Requires trophy Stone Tankard"
 ],
@@ -1641,7 +1641,7 @@
 "requirements": [
 "Drow as prestige faction",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Ceremonial Dagger",
 "Requires trophy Arachnid Figurine"
 ],
@@ -1670,7 +1670,7 @@
 "requirements": [
 "Dragon as prestige faction",
 "Ascension 2 or higher",
-"2,000 excavations since your last Excavation Reset",
+"2,000 excavations",
 "Requires trophy Dragon Fang",
 "Requires trophy Dragon Soul"
 ],
@@ -1789,7 +1789,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1818,7 +1818,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -1847,7 +1847,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Order alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -1876,7 +1876,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1905,7 +1905,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -1934,7 +1934,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Chaos alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -1963,7 +1963,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Good alignment"
 ],
 "undecoded_conditions": 0,
@@ -1992,7 +1992,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Neutral alignment"
 ],
 "undecoded_conditions": 0,
@@ -2021,7 +2021,7 @@
 "Ascension 2 or higher",
 "Reincarnation 125 or higher",
 "Balance alignment",
-"5,000 excavations since your last Excavation Reset",
+"5,000 excavations",
 "Evil alignment"
 ],
 "undecoded_conditions": 0,
@@ -2339,7 +2339,7 @@
 "Playing as Fairy",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2367,7 +2367,7 @@
 "Playing as Elf",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2395,7 +2395,7 @@
 "Playing as Angel",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2423,7 +2423,7 @@
 "Playing as Goblin",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2451,7 +2451,7 @@
 "Playing as Undead",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2479,7 +2479,7 @@
 "Playing as Demon",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2507,7 +2507,7 @@
 "Playing as Titan",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2535,7 +2535,7 @@
 "Playing as Druid",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2563,7 +2563,7 @@
 "Playing as Faceless",
 "Ascension 4 or higher",
 "Reincarnation 225 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2591,7 +2591,7 @@
 "Dwarf as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2619,7 +2619,7 @@
 "Drow as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2647,7 +2647,7 @@
 "Dragon as prestige faction",
 "Ascension 4 or higher",
 "Reincarnation 235 or higher",
-"10,000 excavations since your last Excavation Reset"
+"10,000 excavations"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2674,7 +2674,7 @@
 "requirements": [
 "Ascension 4 or higher",
 "Reincarnation 255 or higher",
-"50,000 excavations since your last Excavation Reset",
+"50,000 excavations",
 "Own 4 Legacy upgrades"
 ],
 "undecoded_conditions": 0,

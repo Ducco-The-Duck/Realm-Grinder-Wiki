@@ -139,7 +139,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     s = s.strip()
     if s == '§-6§': return
     thr = art['threshold']
-    EXC = '{:,} excavations since your last Excavation Reset'
+    EXC = '{:,} excavations'
     m = re.fullmatch(G + r'§1!5§ >= §\?"M§', s)
     if m: reqs.append(EXC.format(int(thr))); return
     m = re.fullmatch(G + r'§1!5§ >= (\d+)', s)
