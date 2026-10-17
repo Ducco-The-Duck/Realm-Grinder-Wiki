@@ -1577,7 +1577,7 @@
 },
 {
 "symbol": "N_{\\mathrm{CS}}",
-"text": "Times you have cast Combo Strike in this Era (it is part of N and is taken out again)"
+"text": "Times you have cast Combo Strike in this Era (it is part of $N$ and is taken out again)"
 }
 ],
 "label": "Combo Strike counter",

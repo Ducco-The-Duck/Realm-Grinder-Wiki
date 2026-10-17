@@ -333,13 +333,6 @@ the base values <i>v</i>.</div>
 /*SEARCH_JS*/
   function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  // text of a variable explanation: the parts between $ ... $ are formulas (drawn in the formula font)
-  function rich(parent, txt){
-    txt.split('$').forEach(function(s,i){
-      if(i%2){ var sp=el('span'); math(s, sp); parent.appendChild(sp); }
-      else if(s) parent.appendChild(document.createTextNode(s));
-    });
-  }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;

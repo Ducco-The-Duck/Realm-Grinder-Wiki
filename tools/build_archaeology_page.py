@@ -124,7 +124,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
       } else if(it.l && it.v){
         tip.appendChild(el('div','chance',lead+'a chance to find it, which depends on:'));
         var ul2=el('ul','vars');
-        it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul2.appendChild(li); });
+        it.v.forEach(function(v){ var li=el('li'); var b=el('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); rich(li, ' — '+v.text); ul2.appendChild(li); });
         tip.appendChild(ul2);
         var f=el('div','formula');
         if(window.katex){ try{ katex.render('\\\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }

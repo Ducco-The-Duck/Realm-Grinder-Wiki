@@ -304,6 +304,16 @@ the base values <i>v</i>.</div>
   // ---- foldable sections (header = dropdown) and icon frames
   var TRIMF={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
   function trimName(n){ n={Elf:'Elven',Dwarf:'Dwarven',Angel:'Angel'}[n]||n; return TRIMF[n] ? n : null; }
+  // text of a variable explanation: the parts between $ ... $ are formulas, drawn in the formula font (shared by every page)
+  function rich(parent, txt){
+    txt.split('$').forEach(function(s,i){
+      if(i%2){
+        var sp=document.createElement('span');
+        if(window.katex){ try{ katex.render(s, sp, {throwOnError:false}); }catch(e){ sp.textContent=s; } } else sp.textContent=s;
+        parent.appendChild(sp);
+      } else if(s) parent.appendChild(document.createTextNode(s));
+    });
+  }
   function foldable(sec, h, inner, key){
     var store={}, sk='fold:'+location.pathname;
     try{ store=JSON.parse(localStorage.getItem(sk)||'{}')||{}; }catch(e){}
@@ -418,13 +428,6 @@ the base values <i>v</i>.</div>
 
   function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  // text of a variable explanation: the parts between $ ... $ are formulas (drawn in the formula font)
-  function rich(parent, txt){
-    txt.split('$').forEach(function(s,i){
-      if(i%2){ var sp=el('span'); math(s, sp); parent.appendChild(sp); }
-      else if(s) parent.appendChild(document.createTextNode(s));
-    });
-  }
   function math(tex, host){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;

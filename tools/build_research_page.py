@@ -263,7 +263,7 @@ popups are always the base values <i>v</i>.</div>
         }
         var d=el('div','formula'); var m=el('span'); math(tex,m); d.appendChild(m); tip.appendChild(d);
         var ul=el('ul','vars');
-        f.v.forEach(function(v){ var li=el('li'); var b=el('b'); b.style.display='inline'; math(v.symbol,b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li); });
+        f.v.forEach(function(v){ var li=el('li'); var b=el('b'); b.style.display='inline'; math(v.symbol,b); li.appendChild(b); rich(li, ' — '+v.text); ul.appendChild(li); });
         tip.appendChild(ul);
       });
       tip.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));

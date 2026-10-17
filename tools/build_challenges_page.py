@@ -126,7 +126,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
       f.v.forEach(function(v){
         var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
         var li=el('li'); var b=el('b'); b.style.display='inline'; math(v.symbol,b); li.appendChild(b);
-        li.appendChild(document.createTextNode(' — '+v.text)); ul.appendChild(li);
+        rich(li, ' — '+v.text); ul.appendChild(li);
       });
       if(n) parent.appendChild(ul);
     });

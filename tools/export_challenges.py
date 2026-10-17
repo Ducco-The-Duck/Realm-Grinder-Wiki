@@ -266,7 +266,7 @@ MANUAL = {
     ('Drow Challenge', '§^"I§'): _m(
         r'v = N - N_{\mathrm{CS}}',
         ('N', 'Spells you have cast in this Era, not counting Tax Collection'),
-        (r'N_{\mathrm{CS}}', 'Times you have cast Combo Strike in this Era (it is part of N and is taken out again)')),
+        (r'N_{\mathrm{CS}}', 'Times you have cast Combo Strike in this Era (it is part of $N$ and is taken out again)')),
     ('Dragon Challenge', '§,!G§'): _m(
         r"v = \begin{cases} 5\,j & \text{if Dragon's Breath is active} \\ 0 & \text{otherwise} \end{cases}",
         ('j', 'Tier Dragon\'s Breath is cast at (1 is the base tier)')),

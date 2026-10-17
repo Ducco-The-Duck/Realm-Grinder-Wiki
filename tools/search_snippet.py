@@ -165,6 +165,16 @@ JS = r'''
   // ---- foldable sections (header = dropdown) and icon frames
   var TRIMF={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
   function trimName(n){ n={Elf:'Elven',Dwarf:'Dwarven',Angel:'Angel'}[n]||n; return TRIMF[n] ? n : null; }
+  // text of a variable explanation: the parts between $ ... $ are formulas, drawn in the formula font (shared by every page)
+  function rich(parent, txt){
+    txt.split('$').forEach(function(s,i){
+      if(i%2){
+        var sp=document.createElement('span');
+        if(window.katex){ try{ katex.render(s, sp, {throwOnError:false}); }catch(e){ sp.textContent=s; } } else sp.textContent=s;
+        parent.appendChild(sp);
+      } else if(s) parent.appendChild(document.createTextNode(s));
+    });
+  }
   function foldable(sec, h, inner, key){
     var store={}, sk='fold:'+location.pathname;
     try{ store=JSON.parse(localStorage.getItem(sk)||'{}')||{}; }catch(e){}
