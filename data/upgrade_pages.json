@@ -29520,7 +29520,7 @@
 "requirements": [],
 "conditions": [
 "playing as Mercenary",
-"having bought upgrades from at least 5 different factions other than Mercenary"
+"having bought upgrades from at least 5 different factions"
 ],
 "undecoded": [],
 "asc_min": null,

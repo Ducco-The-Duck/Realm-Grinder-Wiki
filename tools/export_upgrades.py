@@ -411,7 +411,7 @@ def decode(body, c, ctx=None):
             cond.append('having a Set faction (or Astral Set faction) with the same alignment as your faction'); continue
         mm = re.fullmatch(r'§-"3§\.§\+"8§\((\d+)\)', t)
         if mm:
-            cond.append(f'having bought upgrades from at least {mm.group(1)} different factions other than Mercenary'); continue
+            cond.append(f'having bought upgrades from at least {mm.group(1)} different factions'); continue
         # Misc upgrades
         mm = re.fullmatch(r'§8G§\.§8!H§ > (\d+)', t)
         if mm: cond.append(f'being at Reincarnation {int(mm.group(1)) + 1} or higher'); continue
