@@ -564,7 +564,7 @@ def fix_text(name, paras):
         for f_ in paras[0]['formulas']:
             for v_ in f_['vars']:
                 v_['text'] = v_['text'].replace('as your current faction', 'as Mercenary')
-    if name == 'True Harlequin':
+    if name in ('True Harlequin', 'Harlequin'):
         for f_ in paras[0]['formulas']:
             for v_ in f_['vars']:
                 v_['text'] = v_['text'].replace(' (other than yours)', '')

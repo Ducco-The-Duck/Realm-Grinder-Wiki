@@ -26918,7 +26918,7 @@
 "vars": [
 {
 "symbol": "F",
-"text": "Number of different factions (other than yours) involved in your Mercenary upgrades"
+"text": "Number of different factions involved in your Mercenary upgrades"
 },
 {
 "symbol": "t",
