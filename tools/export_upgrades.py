@@ -564,6 +564,10 @@ def fix_text(name, paras):
         for f_ in paras[0]['formulas']:
             for v_ in f_['vars']:
                 v_['text'] = v_['text'].replace('as your current faction', 'as Mercenary')
+    if name == 'True Harlequin':
+        for f_ in paras[0]['formulas']:
+            for v_ in f_['vars']:
+                v_['text'] = v_['text'].replace(' (other than yours)', '')
     if name == 'Elven Perk 1':      # the Ascension penalty the probe saw is the one on the Elven Luck text below, not on this value
         paras[0]['s'] = None
     if name == 'Djinn Perk 6':
