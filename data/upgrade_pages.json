@@ -28201,7 +28201,7 @@
 },
 {
 "symbol": "t_{2}",
-"text": "Time spent as your current faction all-time (seconds)"
+"text": "Time spent as Mercenary all-time (seconds)"
 }
 ],
 "shown": true
@@ -28757,7 +28757,7 @@
 },
 {
 "symbol": "t_{2}",
-"text": "Time spent as your current faction all-time (seconds)"
+"text": "Time spent as Mercenary all-time (seconds)"
 }
 ],
 "shown": true

@@ -560,6 +560,10 @@ def fix_text(name, paras):
     if name in ('Mercenary First Contract', 'Mercenary Fourth Contract', 'Archon Bloodline'):
         for p_ in paras: p_['s'] = None
     if name == 'Round Table' and paras: paras[0]['s'] = None
+    if name.startswith('Know Your Enemy, Part'):      # only Mercenaries can use these, so their current faction is Mercenary
+        for f_ in paras[0]['formulas']:
+            for v_ in f_['vars']:
+                v_['text'] = v_['text'].replace('as your current faction', 'as Mercenary')
     if name == 'Elven Perk 1':      # the Ascension penalty the probe saw is the one on the Elven Luck text below, not on this value
         paras[0]['s'] = None
     if name == 'Djinn Perk 6':
