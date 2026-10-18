@@ -11,77 +11,80 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 
 Only these need checking; remove an item when it is settled.
 
-1. **Ascension-penalty start for 16 research formulas** that start at Ascension 2 (10) or 4 (6); the Ascension 1 group is
-   confirmed (S1). The user considers the rest most likely correct but cannot confirm it yet. Needs Ascension 2-4.
-2. **Fragment factors:** Second Crystal 4x, Third Crystal 66x, Second Stone 2x differ between the code and the old patch-notes
-   doc. The wiki shows the code. Needs the in-game "Chance: X%" tooltip (visible only before you own the artifact).
-   **Poison Vial** (same check, once reached): the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter,
-   K before the Ascension penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus,
-   0.5 * floor(Time played this Era), unit and size unconfirmed. Check the tooltip with and without the perk.
-   **Lantern of Guidance (artifact):** patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second
-   (no +1). The wiki shows the code. Check the chance tooltip.
-   **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
-   2 * (ln(1 + A))^2 with A = assistants. The wiki shows the code. Not mentioned in any more recent document. Needs the
-   in-game tooltip value once the perk is reached.
-3. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
+1. **Formula disagreements** (code against older sources; the wiki shows the code, which is probably right; each needs the
+   in-game tooltip value). Object, then where it is on the wiki:
+   - **Second Crystal** (4x), **Third Crystal** (66x), **Second Stone** (2x): fragment factors that differ between the code and
+     the old patch-notes doc (4.3.11). Archaeology page (artifact chances). The in-game "Chance: X%" tooltip is visible only
+     before you own the artifact.
+   - **Poison Vial:** the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter, K before the Ascension
+     penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus, 0.5 * floor(Time played this
+     Era), unit and size unconfirmed. Archaeology page; the perk is on the Allegiance upgrades page (Drow Perk 4). Check the
+     tooltip with and without the perk.
+   - **Lantern of Guidance (artifact):** patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second
+     (no +1). Archaeology page. Check the chance tooltip.
+   - **Lantern of Guidance (secret upgrade)** and **Oil Lamp (secret upgrade):** the code reads (4 * M^0.2)^p for Lantern (Mana
+     Regeneration) and (9 * Mmax^0.2)^p for Oil Lamp (Maximum Mana), with p = 1.5 for an Order / Chaos faction, which is
+     8 * M^0.3 and 27 * Mmax^0.3. The patch notes give 27 * x^0.3 for Lantern and 8 * x^0.3 for Oil Lamp, so the two constants
+     are swapped between the code and the notes (4.3.11 notes: Lantern 9 * x^0.2 -> 27 * x^0.3, Oil Lamp 4 * x^0.2 -> 8 * x^0.3).
+     Spark of Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not
+     touch these upgrades after 4.3.2. Secret upgrades page. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
+   - **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
+     2 * (ln(1 + A))^2 with A = assistants. Allegiance upgrades page (Druid lineage perks). Not mentioned in any more recent
+     document. Needs the in-game tooltip value once the perk is reached.
+2. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
    Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
    Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom
    targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
    section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
-
-4. **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): built from code, unchecked
-   because the user has not reached them. Arcane Brilliance is left for the Spell Tiers part.
-
-5. **Secret upgrades Lantern of Guidance and Oil Lamp:** the code reads (4 * M^0.2)^p for Lantern (Mana Regeneration) and
-   (9 * Mmax^0.2)^p for Oil Lamp (Maximum Mana), with p = 1.5 for an Order / Chaos faction, which is 8 * M^0.3 and
-   27 * Mmax^0.3. The patch notes give 27 * x^0.3 for Lantern and 8 * x^0.3 for Oil Lamp, so the two constants are swapped
-   between the code and the notes (4.3.11 notes: Lantern 9 * x^0.2 -> 27 * x^0.3, Oil Lamp 4 * x^0.2 -> 8 * x^0.3). Spark of
-   Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not touch these
-   upgrades after 4.3.2. The wiki keeps the code values. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
-
-6. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
+3. **Upgrade page verification** (the user checks the upgrade pages in game; built from code until then):
+   - **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): unchecked because the user has
+     not reached them. Arcane Brilliance is left for the Spells item.
+   - **Secret and Misc upgrades pages:** to be checked as a whole (what was confirmed so far is under Resolved).
+   - **Allegiances upgrades** (treaty tiers and the twelve faction upgrades per faction; built from code, unchecked; prices are
+     not shown on the page). A Reincarnation requirement also rules out the Ascensions that cannot reach it (A1 spans R40-99,
+     A2 R100-159, A3 R160-219), so Dwarven / Drow Union (R115) start at Ascension 2:
+     - **Alternatives:** a faction upgrade's tier requirement can be replaced by the faction's Legacy upgrade (Bronze / Silver /
+       Gold / Diamond), and a Union's building upgrade by the Mercenary Building Contract in some cases (helper `§`!i§`, not
+       spelled out on the page).
+     - **Dragon Friendship Pact / Alliance** require Dwarven Coins and Drow Coins found in this Era (stats 41 and 42, read as
+       the Dwarven and Drow coin counters because stats 6 to 11 and 41, 42 are summed as faction coins found).
+     - **Formulas written by hand** (`tools/alleg_manual.py`, `tools/alleg_manual_family.py`, read from the static value functions
+       and the production code, not shown in any tooltip): the Druid, Dragon, Archon, Djinn and other faction upgrades without a
+       number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. The earlier doubtful readings (the Tax Collection worth, the Magical Circuit digit sum, the Burning Abyss digit rule) were
+       explained by the user and the texts reworded. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
+       terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
+     - Iron Flight counts spell *effects* on Iron Strongholds (a spell with two effects counts twice): confirmed by the user's tooltip.
+     - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
+     - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of Druid Perk 4 is open, see item 1).
+     - Mercenary Upgrades 1-16, Remnants and the Mercenary contracts' extras are still not covered (Legacies: see their own item). Each individual faction upgrade is still to be checked.
+4. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
    function, unchecked. Base 4 slots, 1 from Ascension 2; before Ascension 2 the extras are the six slot upgrades (granted
    automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
    R90 every branch), Ancient Device Power, Legacy of the Dwarven Kings, Dark Light of Bondelnar, and -1 for Mercenaries at
    Ascension 1; at Ascension 2 only, the Archon Bloodline. From Ascension 2 on every other source is ignored.
-7. **Allegiances upgrades** (treaty tiers and the twelve faction upgrades per faction; built from code, unchecked; prices are
-   not shown on the page). A Reincarnation requirement also rules out the Ascensions that cannot reach it (A1 spans R40-99,
-   A2 R100-159, A3 R160-219), so Dwarven / Drow Union (R115) start at Ascension 2:
-   - **Alternatives:** a faction upgrade's tier requirement can be replaced by the faction's Legacy upgrade (Bronze / Silver /
-     Gold / Diamond), and a Union's building upgrade by the Mercenary Building Contract in some cases (helper `§`!i§`, not
-     spelled out on the page).
-   - **Dragon Friendship Pact / Alliance** require Dwarven Coins and Drow Coins found in this Era (stats 41 and 42, read as
-     the Dwarven and Drow coin counters because stats 6 to 11 and 41, 42 are summed as faction coins found).
-   - **Formulas written by hand** (`tools/alleg_manual.py`, `tools/alleg_manual_family.py`, read from the static value functions
-     and the production code, not shown in any tooltip): the Druid, Dragon, Archon, Djinn and other faction upgrades without a
-     number in the text, the Advanced Heritages, bloodlines, Burning Abyss, Wyrm's Den. The earlier doubtful readings (the Tax Collection worth, the Magical Circuit digit sum, the Burning Abyss digit rule) were
-     explained by the user and the texts reworded. Not given a formula: Green Fingers Discount (value depends on total production), Seraphim Wings' extra
-     terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
-   - Iron Flight counts spell *effects* on Iron Strongholds (a spell with two effects counts twice): confirmed by the user's tooltip.
-   - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
-   - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of
-     Druid Perk 4 is open, see item 2).
-   - Mercenary Upgrades 1-16, Legacies, Remnants and the Mercenary contracts' extras are still not covered.
-
-8. **Spell tiers** (Magic upgrades; 23 spells x tiers 2 to 5, plus Arcane Brilliance; built from code, unchecked). The unlock
+5. **Spells page** (Magic upgrades spell tiers and the spell cost scaling; for the Spells page, unchecked).
+   - Spell tiers (Magic upgrades; 23 spells x tiers 2 to 5, plus Arcane Brilliance; built from code, unchecked). The unlock
    text is the game's own, evaluated at Ascension 1 to 4 (the thresholds depend on the Ascension). Tier N needs Ascension N-1
    or higher, except Dragon's Breath (Reincarnation 54 / 60 / 66 / 72, any Ascension). The "Offline production" bonus reads v = (Mmax^(2/max(3,A)) + (30 R)^(2/max(3,A)))^0.4 (Maximum Mana, mana
    regeneration per second) with the Ascension penalty starting at the tier number. The game's tooltip shows the product of this
    tier and the lower tiers while a display setting (stored value 23, default off) is at its default; the page shows the
    single-tier formula. The spells' own Reincarnation (R42 to R48) and dragon-growth upgrade prerequisites are left for the Unlocks page; the three Lore-artifact requirements (Precognition, Limited Wish, Infinite Spiral) are read from the code. Arcane Brilliance
    needs one Arcane Brilliance trophy per Ascension (count + 1 > Ascension).
-
-9. **Faction-unlocking upgrades** (for the Unlocks page): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
-
-10. **Spell tier cost scaling** (for the Spells page; read from the spell cost function in the game code, unchecked). Tiered spells cost base ^ (1 + k x n) with k = 0.6 and n the tier (plus 1 while below the highest available tier). Tax Collection upgraded to Share Benefits (Round Table) and Twisting Nether instead cost base x m ^ n with m = 3. Lowering k by 0.1 each: Sequence (S1275), Angel Perk 1, Dragon Set; Dragon's Breath also by 0.3 with Iron Flight (Dragon perk 2). Lowering m: Sequence 0.5, Angel Perk 1 0.3, Dragon Set 0.2. Which spells use the first rule: every spell the code flags as having tiers (23 of the 32 spell classes), so read the flag, do not hardcode a list. Not flagged: Tax Collection (Reap Interests and Share Benefits are its upgraded forms), Catalyst, Chaos Madness, and the event spells (Cannibalize, Hailstorm, Heatwave, Shadow Embrace, Wail of the Banshee). This matches what the user described. Share Benefits (Tax Collection with Round Table) and Twisting Nether use the second rule; their maximum tier count is unknown (Twisting Nether is fixed at 98 in the code). The tier count n in the rule is the number of that spell's tier upgrades owned (the user reports 5 tiers at most so far), plus 1 for each of several upgrades that add a tier to named spells (the Dragon Set's Set Bonus 2 adds one to six alignment spells; four more such upgrades are in the code and not yet identified by name). The tooltips of the four reducing items carry a note pointing to the Spells page.
-
-11. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
+   - Spell tier cost scaling (read from the spell cost function in the game code, unchecked). Tiered spells cost base ^ (1 + k x n) with k = 0.6 and n the tier (plus 1 while below the highest available tier). Tax Collection upgraded to Share Benefits (Round Table) and Twisting Nether instead cost base x m ^ n with m = 3. Lowering k by 0.1 each: Sequence (S1275), Angel Perk 1, Dragon Set; Dragon's Breath also by 0.3 with Iron Flight (Dragon perk 2). Lowering m: Sequence 0.5, Angel Perk 1 0.3, Dragon Set 0.2. Which spells use the first rule: every spell the code flags as having tiers (23 of the 32 spell classes), so read the flag, do not hardcode a list. Not flagged: Tax Collection (Reap Interests and Share Benefits are its upgraded forms), Catalyst, Chaos Madness, and the event spells (Cannibalize, Hailstorm, Heatwave, Shadow Embrace, Wail of the Banshee). This matches what the user described. Share Benefits (Tax Collection with Round Table) and Twisting Nether use the second rule; their maximum tier count is unknown (Twisting Nether is fixed at 98 in the code). The tier count n in the rule is the number of that spell's tier upgrades owned (the user reports 5 tiers at most so far), plus 1 for each of several upgrades that add a tier to named spells (the Dragon Set's Set Bonus 2 adds one to six alignment spells; four more such upgrades are in the code and not yet identified by name). The tooltips of the four reducing items carry a note pointing to the Spells page.
+6. **Unlocks page** (all mechanic unlocks): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
+7. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
    - "Spells page, tier cost scaling": Sequence (S1275), Angel Perk 1, Iron Flight, Dragon Set.
    - "Buildings page, building cost multiplier": Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
    - "Excavations page, excavation cost multiplier": Surveyorship (E270), Discount (E13125).
    - "Royal Exchanges page, Royal Exchange cost multiplier": Intimidation (E1325), Discount (E13125).
+8. **Verify the research page** (researches, formulas, requirements; built from code, checked so far only as listed under
+   Resolved).
+9. **Major mechanic: Legacies** (the faction Legacy upgrades, with their Bronze / Silver / Gold / Diamond tiers, and the other
+   Legacy effects): not covered yet.
+10. **Event stuff** (not very important): not covered.
+11. **Anything left:** ask the user for whatever else is missing before calling the project done.
 
-Accepted without further checking: the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
+Accepted without further checking: the Ascension-penalty flags (which values are reduced and from which Ascension; from the game's own text and the code, impossible to verify in game; revisit if wiki users report a mismatch); the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
 ### Resolved (confirmed by the user; do not re-open)
 
@@ -98,7 +101,7 @@ Accepted without further checking: the offline-time terms in Fusion and Gargantu
 - Building upgrades: the series are removed from Ascension 3 on, the building count thresholds, and the Ascension penalties.
 
 - Lore artifact chance formulas confirmed against the patch notes / old wiki apart from cleanup terms (0.5, +1), inputs
-  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Raw Emerald, Branch of the Life Tree, Dragon Scale, Planetary Force, Mercenary Insignia, Solid Cloud, Blood Chalice, Frozen Lightning, The Blackest Ink, Beard Hair, Athanor, Demon Tail, Oil Lamp (artifact), Fossilized Wing, Dusty Coffin, Mythos, Wall Chunk, Apeiron, Stiletto Heel, Titan Helmet, Crystallized Lava, Silk Cloth, Spiked Whip (building count excludes "count as more" bonuses in the code), Poison Vial (base formula; the Drow Perk 4 term is open under 2).
+  confirmed: Excavated Mirage, Eye of the Dragon, Spark of Life, Primal Leaf, Dwarven Anvil, Factory, Battlefield, Mana Loom, Glowing Wing, Sylvan Mirror, Orc Fang Necklace, Ancestral Hourglass (and its upgrade formula), Ancient Heirloom (upgrade formula), Nightmare Figment, Raw Emerald, Branch of the Life Tree, Dragon Scale, Planetary Force, Mercenary Insignia, Solid Cloud, Blood Chalice, Frozen Lightning, The Blackest Ink, Beard Hair, Athanor, Demon Tail, Oil Lamp (artifact), Fossilized Wing, Dusty Coffin, Mythos, Wall Chunk, Apeiron, Stiletto Heel, Titan Helmet, Crystallized Lava, Silk Cloth, Spiked Whip (building count excludes "count as more" bonuses in the code), Poison Vial (base formula; the Drow Perk 4 term is open under item 1).
 
 - Research availability by Ascension: Ascension 3 removes researches numbered 400 or lower and Ascension 4 those 5000 or lower
   (patch notes).
