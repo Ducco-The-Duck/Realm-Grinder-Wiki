@@ -1031,7 +1031,7 @@
 "requirements": [
 "Reincarnation 12 or higher",
 "Playing as Mercenary",
-"Purchase one upgrade from 11 different factions (as a Mercenary)"
+"Purchase one upgrade from 11 different factions"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -1230,7 +1230,7 @@
 "Reincarnation 75 or higher",
 "Playing as Mercenary",
 "Mercenary researches unlocked",
-"Have purchased upgrades from 12 different factions other than Mercenary"
+"Have purchased upgrades from 12 different factions"
 ],
 "undecoded_conditions": 0,
 "undecoded": []
@@ -2311,7 +2311,7 @@
 "requirements": [
 "Reincarnation 180 or higher",
 "Playing as Mercenary",
-"Purchase one upgrade from 15 different factions (as a Mercenary)"
+"Purchase one upgrade from 15 different factions"
 ],
 "undecoded_conditions": 0,
 "undecoded": []

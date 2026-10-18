@@ -104,7 +104,7 @@ def decode(c, art):
             names = [n for n, al in res['blds'] if al in (0, 3)]
             extra = 'Own exactly the same number of each of these buildings: ' + ', '.join(names)
         elif mi and UNION.search(body):
-            extra = f'Have purchased upgrades from {UNION.search(body).group(1)} different factions other than Mercenary'
+            extra = f'Have purchased upgrades from {UNION.search(body).group(1)} different factions'
         else:
             return [], [body[:200]], True
         expr = mi.group(1).strip()
@@ -170,7 +170,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     m = re.fullmatch(G + r'§8t§ >= (\d+)', s)
     if m: reqs.append(f'Unlock {int(m.group(1)):,} trophies'); return
     m = re.fullmatch(r'§#!!§\.§\^!&§\(\) >= (\d+)', s)
-    if m: reqs.append(f'Purchase one upgrade from {m.group(1)} different factions (as a Mercenary)'); return
+    if m: reqs.append(f'Purchase one upgrade from {m.group(1)} different factions'); return
     m = re.fullmatch(G + r'§-!\^§ == -1', s)
     if m: reqs.append('No faction chosen yet'); return
     m = re.fullmatch(r'§&c§\.§`!=§\(\) > 0', s)
