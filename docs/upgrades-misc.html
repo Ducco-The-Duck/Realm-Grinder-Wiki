@@ -713,7 +713,9 @@ the base values <i>v</i>.</div>
     document.getElementById('pk-h').textContent=hint;
   }
   var MERC_ICON={good:'Holy Crusaders',evil:'Heresiarchs',neutral:'Trade Lords'};
-  document.addEventListener('bgkind',function(){ if(typeof renderAlleg==='function' && allegBox) renderAlleg(); });
+  // the background picks its alignment at random after this script has run: read it from the background element, and draw again once it exists
+  function bgKind(){ var d=document.getElementById('bgfx'), m=/bg\/(good|evil|neutral)/.exec((d&&d.style.backgroundImage)||''); return m?m[1]:window.bgKind||'neutral'; }
+  document.addEventListener('DOMContentLoaded',function(){ if(allegBox) renderAlleg(); });
   function renderAlleg(){
     if(!allegBox) return;
     allegBox.textContent='';
@@ -726,7 +728,7 @@ the base values <i>v</i>.</div>
       (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
       FACS.forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
-        var en={g:f.n, items:its}, al=its.filter(function(x){ return f.role==='merc' ? x.n===MERC_ICON[window.bgKind||'neutral'] : /(Alliance|Third Contract)$/.test(x.n); })[0], gb=itemCell(al||its[0],true);
+        var en={g:f.n, items:its}, al=its.filter(function(x){ return f.role==='merc' ? x.n===MERC_ICON[bgKind()] : /(Alliance|Third Contract)$/.test(x.n); })[0], gb=itemCell(al||its[0],true);
         gb.setAttribute('data-un','1');
         gb.classList.add('group');
         gb.setAttribute('aria-label', en.g+', '+its.length+' upgrades');
