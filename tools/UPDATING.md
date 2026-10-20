@@ -1,6 +1,8 @@
 # After a game update
 
-1. Put the new `RealmGrinderDesktop.swf` in `raw/` and extract: `sh tools/extract.sh`, then `python -I tools/parse_mo.py`.
+1. Put the new `RealmGrinderDesktop.swf` in `raw/<version>/` (one folder per version) and extract it: `sh tools/extract.sh <version> out_<version>` first,
+   compare it with `out/` (same file names = the scrambled names did not move), then make it current (rename `out` to `out_<old version>`, the new folder to `out`)
+   and run `python -I tools/parse_mo.py`. `sh tools/extract.sh <version>` with no destination writes straight to `out/`. `out/VERSION` says which build `out/` is.
 2. `python -I tools/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
