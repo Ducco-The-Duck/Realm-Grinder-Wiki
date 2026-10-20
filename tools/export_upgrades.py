@@ -855,7 +855,8 @@ for u in by_cat['allegiances']:
         u['asc_not'] = [2, 4]
         if u['name'] == 'Mercenary First Contract': u['asc_not_say'] = True      # its text spells the rule out
 
-# the Advanced Heritages need the faction Master trophies, which cannot be unlocked before Ascension 2 (user)
+# the Advanced Heritages need the faction Master trophies (Lineage level 30), and a Lineage cannot go above 25 x Ascension (the lineage upgrade's availability
+# test), so they start at Ascension 2
 for u in by_cat['allegiances']:
     if u['akind'] == 'heritage' and u['name'].startswith('Advanced') and (u['asc_min'] or 0) < 2: u['asc_min'] = 2
 

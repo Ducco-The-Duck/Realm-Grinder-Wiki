@@ -106,6 +106,7 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 - Secret upgrades: Future Linkin (last Era length), MAD Masks, Bloodstream and Art of the Crow formulas and variable meanings;
   the Ascension availability ranges of the Secret upgrades.
 
+- Advanced Heritages start at Ascension 2: the faction Master trophies need Lineage level 30 and a Lineage cannot go above 25 x Ascension (the Lineage upgrade is not available at or above that level), confirmed by the user and by the code.
 - Mercenaries cannot be played at Ascension 2 and 4: Mercenary First Contract (the only way to become one) has no availability there (code), so the Mercenary faction's contracts, perks, unique buildings and quest are unavailable then too. The Mercenary Badge heritage and the Mercenary Set do not need the faction.
 - Faction cell colours; Neutral has no tint; alignment-locked researches and the 11 locked ones.
 - Home faction vs unlock faction (S300 Chain Lightning: unlock as Faceless, buy as Titan); the unlock flag persists.
