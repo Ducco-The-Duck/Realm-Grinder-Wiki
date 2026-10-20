@@ -855,6 +855,10 @@ for u in by_cat['allegiances']:
         u['asc_not'] = [2, 4]
         if u['name'] == 'Mercenary First Contract': u['asc_not_say'] = True      # its text spells the rule out
 
+# the Advanced Heritages need the faction Master trophies, which cannot be unlocked before Ascension 2 (user)
+for u in by_cat['allegiances']:
+    if u['akind'] == 'heritage' and u['name'].startswith('Advanced') and (u['asc_min'] or 0) < 2: u['asc_min'] = 2
+
 # the astral factions (Archon, Djinn, Makers) exist from Ascension 2, and so does everything that belongs to them
 for u in by_cat['allegiances']:
     if u['faction'] in (13, 14, 15) and (u['asc_min'] or 0) < 2: u['asc_min'] = 2
