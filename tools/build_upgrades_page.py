@@ -350,7 +350,7 @@ the base values <i>v</i>.</div>
     if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
     return k;
   }
-  function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || (it.an && it.an.indexOf(ASC)>=0); }
+  function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
   function formulas(parent, list){
     var many=list.length>1, seen={};
     parent.appendChild(el('span','lbl',many?'Formulas':'Formula'));
