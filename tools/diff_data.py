@@ -14,14 +14,21 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..'))
 VERBOSE = '-v' in sys.argv
 REF = sys.argv[sys.argv.index('--ref') + 1] if '--ref' in sys.argv else 'HEAD'
-IGNORE = {'order'}          # registry order shifts whenever something is inserted; not a content change
+IGNORE = {'order', 'id'}    # registry order and ids shift whenever something is inserted; not a content change
 
 
 def items_trophies(d):    return {x['id']: x for x in d}
 def items_artifacts(d):   return {x['name']: x for x in d}
 def items_research(d):    return {x['code']: x for x in d}
 def items_challenges(d):  return {f"{f['name']}: {i['name']}": i for f in d for i in f['items']}
-def items_upgrades(d):    return {f"{sec}: {u['name']} ({u['id']})": u for sec, lst in d.items() for u in lst}
+def items_upgrades(d):
+    out = {}
+    for sec, lst in d.items():
+        for u in lst:
+            k = f"{sec}: {u['name']}"
+            while k in out: k += ' (again)'
+            out[k] = u
+    return out
 
 
 FILES = [('trophies.json', items_trophies), ('artifacts.json', items_artifacts), ('research.json', items_research),
