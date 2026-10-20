@@ -208,7 +208,13 @@
 "applies_to": "Elven",
 "game_name": "Advanced Civilization",
 "note": null,
-"bug": null
+"bug": null,
+"rnotes": [
+[
+0,
+"See the Royal Exchanges page for more on the Royal Exchange cost multiplier."
+]
+]
 },
 {
 "name": "Light Collector",
@@ -689,7 +695,7 @@
 ],
 "challenge": "Find at least 2000 Demon Coins without using Gem Power, Reincarnation Power or Excavations.",
 "rewards": [
-"Increase the production of all buildings by v% and the Faction Coin find chance by +v%, based on upgrades purchased."
+"Increase the production of all Buildings and Faction Coin find chance based on upgrades purchased."
 ],
 "formulas": [
 {
@@ -725,19 +731,7 @@
 "rewards": [
 "Increase Maximum Mana by 6.66% of your amount of Hall of Legends."
 ],
-"formulas": [
-{
-"latex": "v = \\left\\lfloor 0.01 \\cdot 6.66 \\cdot N \\right\\rfloor",
-"vars": [
-{
-"symbol": "N",
-"text": "Number of Hall of Legends buildings you own"
-}
-],
-"label": null,
-"shown": true
-}
-],
+"formulas": [],
 "applies_to": "Fairy",
 "game_name": "Legendary Antics",
 "note": null,
@@ -1092,19 +1086,7 @@
 "rewards": [
 "Multiplicatively increase Mana regeneration by 1% for every 1000 buildings built."
 ],
-"formulas": [
-{
-"latex": "v = 1 \\cdot \\frac{B}{1000}",
-"vars": [
-{
-"symbol": "B",
-"text": "Total buildings you have built"
-}
-],
-"label": null,
-"shown": true
-}
-],
+"formulas": [],
 "applies_to": "Titan",
 "game_name": "Balanced Current",
 "note": null,
@@ -1127,19 +1109,7 @@
 "rewards": [
 "Gain 5 Maximum Mana for every 100 buildings built."
 ],
-"formulas": [
-{
-"latex": "v = 5 \\cdot \\left\\lfloor \\frac{B}{100} \\right\\rfloor",
-"vars": [
-{
-"symbol": "B",
-"text": "Total buildings you have built"
-}
-],
-"label": null,
-"shown": true
-}
-],
+"formulas": [],
 "applies_to": "Faceless",
 "game_name": "Eldritch Architecture",
 "note": null,
@@ -1171,7 +1141,7 @@
 },
 {
 "symbol": "k",
-"text": "Tier number of the building (the first building is tier 1); each Non-Unique building gets +v %"
+"text": "Tier number of the building; each Non-Unique building gets +v %"
 }
 ],
 "label": null,
@@ -1450,7 +1420,13 @@
 "applies_to": "Dwarven/Fairy",
 "game_name": "Biased Architecture",
 "note": null,
-"bug": null
+"bug": null,
+"rnotes": [
+[
+0,
+"See the Buildings page for more on the building cost multiplier."
+]
+]
 },
 {
 "name": "Rich Miners",
@@ -1803,11 +1779,22 @@
 "Good: Call to Arms gains 1 tier. Now adds Tax Collection casts in this Era as a base for its bonus.",
 "Evil: Multiplicatively increase Tax Collection worth.",
 "Neutral: Multiplicatively increase Faction Coin find chance.",
-"Order: Autoclick v₄ times per second and increase all spells duration by 500%.",
+"Order: Autoclick several times per second and increase all spells duration by 500%.",
 "Chaos: Multiplicatively increase assistants, temporarily.",
 "Balance: Multiplicatively increase Royal Exchange bonus and make them count more."
 ],
 "formulas": [
+{
+"latex": "y = 25 + \\left(0.3 \\cdot L\\right)^{0.975}",
+"vars": [
+{
+"symbol": "L",
+"text": "Number of buildings Call to Arms counts"
+}
+],
+"label": "Call to Arms bonus (used in the formulas below)",
+"shown": false
+},
 {
 "latex": "v_{1} = 1.5 \\cdot S^{0.5}",
 "vars": [
@@ -1820,57 +1807,32 @@
 "shown": true
 },
 {
-"latex": "v_{2} = \\left(25 + \\left(0.3 \\cdot K\\right)^{0.975}\\right)^{0.35}",
-"vars": [
-{
-"symbol": "K",
-"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
-}
-],
+"latex": "v_{2} = y^{0.35}",
+"vars": [],
 "label": "Evil: Tax Collection worth",
 "shown": true
 },
 {
-"latex": "v_{3} = 0.35 \\cdot \\left(25 + \\left(0.3 \\cdot K\\right)^{0.975}\\right)^{0.35}",
-"vars": [
-{
-"symbol": "K",
-"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
-}
-],
+"latex": "v_{3} = 0.35 \\cdot y^{0.35}",
+"vars": [],
 "label": "Neutral: Faction Coin find chance",
 "shown": true
 },
 {
-"latex": "v_{4} = \\left\\lfloor 1.25 \\cdot \\left(\\ln\\left(1 + 25 + \\left(0.3 \\cdot K\\right)^{0.975}\\right)\\right)^{1.25} \\right\\rfloor",
-"vars": [
-{
-"symbol": "K",
-"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
-}
-],
+"latex": "v_{4} = \\left\\lfloor 1.25 \\cdot \\left(\\ln\\left(1 + y\\right)\\right)^{1.25} \\right\\rfloor",
+"vars": [],
 "label": "Order: Autoclicks per second",
 "shown": true
 },
 {
-"latex": "v_{5} = 0.35 \\cdot \\left(25 + \\left(0.3 \\cdot K\\right)^{0.975}\\right)^{0.35}",
-"vars": [
-{
-"symbol": "K",
-"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
-}
-],
+"latex": "v_{5} = 0.35 \\cdot y^{0.35}",
+"vars": [],
 "label": "Chaos: Assistants, temporarily",
 "shown": true
 },
 {
-"latex": "v_{6} = 0.45 \\cdot \\left(25 + \\left(0.3 \\cdot K\\right)^{0.975}\\right)^{0.45}",
-"vars": [
-{
-"symbol": "K",
-"text": "Number of buildings Call to Arms counts (all buildings you have built, 15 times as many once you have bought the upgrade Formation)"
-}
-],
+"latex": "v_{6} = 0.45 \\cdot y^{0.45}",
+"vars": [],
 "label": "Balance: Royal Exchange bonus",
 "shown": true
 }
@@ -2023,19 +1985,7 @@
 "rewards": [
 "Reincarnations count 5% more per active Dragon's Breath."
 ],
-"formulas": [
-{
-"latex": "v = \\begin{cases} 5\\,j & \\text{if Dragon's Breath is active} \\\\ 0 & \\text{otherwise} \\end{cases}",
-"vars": [
-{
-"symbol": "j",
-"text": "Tier Dragon's Breath is cast at (1 is the base tier)"
-}
-],
-"label": null,
-"shown": true
-}
-],
+"formulas": [],
 "applies_to": null,
 "game_name": "Dragon Challenge",
 "note": null,
@@ -2097,10 +2047,9 @@
 "Reincarnation 56",
 "Dragon Bloodline purchased",
 "Completion of Titan, Druid, Faceless, Dwarven and Drow challenge 2",
-"Completion of Dragon challenge 1",
-"Produce at least 1e9 mana in this Era."
+"Completion of Dragon challenge 1"
 ],
-"challenge": "Have Grand Balance target at least 5 buildings.",
+"challenge": "Produce at least 1e9 mana in this Era. Have Grand Balance target at least 5 buildings.",
 "rewards": [
 "Increase the production of Non-Unique Buildings based on Grand Balance targets.",
 "Increase Maximum Mana and Mana Regeneration based on Grand Balance activity time in this Reincarnation."
@@ -2162,7 +2111,30 @@
 "rewards": [
 "Faction Coin find chance from Evolutive Mutation becomes multiplicative. Increase effects of Evolutive Mutation and Deep Memory. Remove 1 Ascension Penalty from Hive Mind."
 ],
-"formulas": [],
+"formulas": [
+{
+"latex": "v_{1} = 12 + 3 \\cdot N^{0.65}",
+"vars": [
+{
+"symbol": "N",
+"text": "Most Labyrinth buildings you have built in this Reincarnation"
+}
+],
+"label": "Evolutive Mutation with this challenge: Faction Coin find chance (%)",
+"shown": false
+},
+{
+"latex": "v_{2} = t^{0.7}",
+"vars": [
+{
+"symbol": "t",
+"text": "Length of your longest Era in this Reincarnation, including the current one (seconds)"
+}
+],
+"label": "Deep Memory with this challenge: assistants (%)",
+"shown": false
+}
+],
 "applies_to": "Faceless/Dragon",
 "game_name": "Serpent Queller",
 "note": null,
@@ -2440,7 +2412,13 @@
 "applies_to": "Neutral Archon",
 "game_name": "Titanomachy",
 "note": null,
-"bug": null
+"bug": null,
+"rnotes": [
+[
+0,
+"See the Royal Exchanges page for more on the Royal Exchange cost multiplier."
+]
+]
 },
 {
 "name": "Time Merge",
@@ -2461,29 +2439,14 @@
 ],
 "formulas": [
 {
-"latex": "v_{1} = 10 \\cdot 0.01 \\cdot \\left(t_{1} + t_{2}\\right)",
-"vars": [
-{
-"symbol": "t_{1}",
-"text": "Time spent with Chaos alignment in this Reincarnation (seconds)"
-},
-{
-"symbol": "t_{2}",
-"text": "Time spent with Balance alignment in this Reincarnation (seconds)"
-}
-],
-"label": "Time added to this Era (seconds)",
-"shown": true
-},
-{
-"latex": "v_{2} = 9 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{3}",
+"latex": "v = 9 \\cdot \\left(\\ln\\left(1 + t\\right)\\right)^{3}",
 "vars": [
 {
 "symbol": "t",
 "text": "Time played in this Era (seconds)"
 }
 ],
-"label": "Production of Unique buildings",
+"label": null,
 "shown": true
 }
 ],
@@ -2799,14 +2762,33 @@
 ],
 "formulas": [
 {
-"latex": "v = 1.5 \\cdot N^{0.85}",
+"latex": "v_{1} = \\left\\lfloor T \\cdot \\frac{1 + 24\\,E + D}{100} \\right\\rfloor",
+"vars": [
+{
+"symbol": "T",
+"text": "Time spent offline (seconds)"
+},
+{
+"symbol": "E",
+"text": "1 if you have the upgrade Empowered Luck; otherwise 0"
+},
+{
+"symbol": "D",
+"text": "Wooden Dice bonus: the highest number of Arboreal Cities you built in this Reincarnation, to the power 0.4 (0 without the upgrade Wooden Dice)"
+}
+],
+"label": "Elven Luck stat gained while offline",
+"shown": false
+},
+{
+"latex": "v_{2} = 1.5 \\cdot N^{0.85}",
 "vars": [
 {
 "symbol": "N",
 "text": "Elven Luck triggered in this Era"
 }
 ],
-"label": null,
+"label": "Assistants",
 "shown": true
 }
 ],
@@ -2831,7 +2813,7 @@
 "rewards": [
 "While Mana Regeneration is higher than Maximum Mana, each time you cast a spell, increase triggered Tax Collections based on the difference between them.",
 "Multiplicatively increase production bonus from Gems based on Tax Collections cast in this Era.",
-"Also removes Ascension Penalties from Goblin Upgrade 6."
+"Also removes Ascension Penalties from Hobgoblin Gladiators."
 ],
 "formulas": [
 {

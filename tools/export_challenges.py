@@ -225,7 +225,7 @@ def _getter(c, key, tail='', more=()):
 def _extra_overflowing(paras, c):
     paras[0]['formulas'].append(_getter(
         c, "§'!b§", r' \cdot \left(12 - k\right)',
-        [('k', 'Tier number of the building (the first building is tier 1); each Non-Unique building gets +v %')]))
+        [('k', 'Tier number of the building; each Non-Unique building gets +v %')]))
 
 
 def _extra_art_of_war(paras, c):
@@ -244,7 +244,26 @@ def _extra_altar(paras, c):
         paras.append({'text': t, 'formulas': []})
 
 
-EXTRA = {'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
+def _extra_seed(paras, c):
+    # the Elven Luck stat gained while offline (the game text gives no number for it)
+    paras[0]['formulas'].insert(0, _m(
+        r'v = \left\lfloor T \cdot \frac{1 + 24\,E + D}{100} \right\rfloor',
+        ('T', 'Time spent offline (seconds)'),
+        ('E', '1 if you have the upgrade Empowered Luck; otherwise 0'),
+        ('D', 'Wooden Dice bonus: the highest number of Arboreal Cities you built in this Reincarnation, to the power 0.4 '
+              '(0 without the upgrade Wooden Dice)')))
+    paras[0]['formulas'][0]['shown'] = False
+
+
+def _extra_serpent(paras, c):
+    # Evolutive Mutation and Deep Memory with this challenge done (their own pages show the values without it)
+    paras[0]['formulas'] += [
+        _m(r'v = 12 + 3 \cdot N^{0.65}', ('N', 'Most Labyrinth buildings you have built in this Reincarnation')),
+        _m(r'v = t^{0.7}', ('t', 'Length of your longest Era in this Reincarnation, including the current one (seconds)'))]
+    for f in paras[0]['formulas'][-2:]: f['shown'] = False
+
+
+EXTRA = {'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
          'Altar of Wishes': [_extra_altar]}
 
 
@@ -403,7 +422,8 @@ def requirement_lines(e):
                 old_toks = ln.split()
                 new = ' '.join(t for t in a1[i].split() if t not in old_toks).rstrip('.')
                 reqs[i] = f'{ln.rstrip(".")} (after your first Ascension: {new}).'
-    return reqs[:-1], reqs[-1]
+    n = CHALLENGE_LINES.get(e['game_name'], 1)
+    return reqs[:-n], ' '.join(reqs[-n:])
 
 
 LABEL_FIX = {'Max': 'Maximum Mana', 'Regen': 'Mana Regeneration'}
@@ -422,12 +442,25 @@ FORM_LABELS = {
     'Ifrit Ignition': ['Maximum Mana', 'Additional casts per Evil or Chaos spell'],
     'Artificial Currency': ['Increase of triggered Tax Collections', 'Production bonus from Gems'],
     'Drow Challenge': ['Combo Strike counter', 'Offline spells cast amount (%)'],
+    'Seed of Life': ['Elven Luck stat gained while offline', 'Assistants'],
+    'Serpent Queller': ['Evolutive Mutation with this challenge: Faction Coin find chance (%)',
+                        'Deep Memory with this challenge: assistants (%)'],
 }
-DROP_FORMULAS = {'Recruitment'}      # the text says everything
-TEXT_FIX = {
-    'Increase the production of all Buildings and Faction Coin find chance based on upgrades purchased.':
-        'Increase the production of all buildings by v% and the Faction Coin find chance by +v%, based on upgrades purchased.',
-}
+DROP_FORMULAS = {'Recruitment', 'Legendary Antics', 'Balanced Current', 'Eldritch Architecture', 'Dragon Challenge'}      # the text says everything
+TEXT_FIX = {}
+# wording replaced in the reward text (the game's own text has a live value there, or names an upgrade only by its number)
+TEXT_SUBS = [('Autoclick v₄ times per second and increase', 'Autoclick several times per second and increase'),
+             ('Goblin Upgrade 6', 'Hobgoblin Gladiators')]
+BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
+EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'
+# faded notes under one reward line: game name -> [(start of the line, note)]
+PARA_NOTES = {'Advanced Civilization': [('Reduces Elven Exchange', EXCHANGE_COST)],
+              'Biased Architecture': [('Reduce Farms, Inns and Blacksmiths cost', BUILDING_COST)],
+              'Titanomachy': [('Reduce Royal Exchange cost', EXCHANGE_COST)]}
+# the last N requirement lines of the game text belong to the challenge itself
+CHALLENGE_LINES = {'Barkscales': 2}
+# formulas of a reward that are not shown (by position in the reward)
+FORMULA_DROP_IDX = {'Time Merge': [0]}
 NOTES = {'Faceless Challenge': 'v is in seconds. The game shows it as minutes, hours or days as appropriate.'}
 BUGS = {'Mystic Maze': 'The reward text says "the highest amount of buildings you had in this Reincarnation", but the game '
                        'uses the highest number you currently own of any single building type (including bonuses that '
@@ -451,6 +484,16 @@ def flatten(e):
     if e['game_name'] in DROP_FORMULAS:
         return [p['text'] for p in e['rewards']], []
     paras = [(p, None) for p in e['rewards']]
+    drop = FORMULA_DROP_IDX.get(e['game_name'])
+    if drop:
+        pos, kept = 0, []
+        for p, a in paras:
+            keep = []
+            for f in p['formulas']:
+                if pos not in drop: keep.append(f)
+                pos += 1
+            kept.append((dict(p, formulas=keep), a))
+        paras = kept
     for al, ps in e['alignment_variants'].items():
         paras += [(p, al) for p in ps]
     total = sum(len(p['formulas']) for p, _ in paras)
@@ -477,8 +520,25 @@ def flatten(e):
                 loc = ('₁₂₃₄₅₆₇₈₉'.index(m.group(1)) if m.group(1) else 0)
                 return 'v' + SUBS[base + min(loc, len(fl) - 1)]
             text = _PH.sub(sub, text)
-        out.append(TEXT_FIX.get(text, text))
+        text = TEXT_FIX.get(text, text)
+        for old, new in TEXT_SUBS: text = text.replace(old, new)
+        out.append(text)
     return out, forms
+
+
+def merc_formulas(forms):
+    """the alignment values all use the Call to Arms bonus y: give it once, at the top"""
+    out = [{'latex': r'y = 25 + \left(0.3 \cdot L\right)^{0.975}',
+            'vars': [{'symbol': 'L', 'text': 'Number of buildings Call to Arms counts'}],
+            'label': 'Call to Arms bonus (used in the formulas below)', 'shown': False}]
+    old = r'25 + \left(0.3 \cdot K\right)^{0.975}'
+    for f in forms:
+        g = dict(f)
+        if old in f['latex']:
+            g['latex'] = f['latex'].replace(r'\left(' + old + r'\right)', 'y').replace(old, 'y')
+            g['vars'] = []
+        out.append(g)
+    return out
 
 
 facs = {}
@@ -490,6 +550,11 @@ for e in entries:
         'rewards': flatten(e)[0], 'formulas': flatten(e)[1], 'applies_to': e['applies_to'],
         'game_name': e['game_name'], 'note': NOTES.get(e['game_name']), 'bug': BUGS.get(e['game_name']),
     }
+    notes = [[next((i for i, t in enumerate(item['rewards']) if t.startswith(pre)), None), n] for pre, n in PARA_NOTES.get(e['game_name'], [])]
+    if notes:
+        assert all(i is not None for i, _ in notes), e['game_name']
+        item['rnotes'] = notes
+    if e['game_name'] == 'Mercenary Challenge': item['formulas'] = merc_formulas(item['formulas'])
     if e['spell_upgrade']:
         item['count'] = e['count']
         item['unlock'] = [{'kind': k, 'name': n} for k, n in e['unlock']]

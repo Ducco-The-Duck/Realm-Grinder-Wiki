@@ -31,11 +31,7 @@ Only these need checking; remove an item when it is settled.
    - **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
      2 * (ln(1 + A))^2 with A = assistants. Allegiance upgrades page (Druid lineage perks). Not mentioned in any more recent
      document. Needs the in-game tooltip value once the perk is reached.
-2. **Challenges** (page built from code). Checked by the user up to Drow Challenge 5. Still unchecked: Thunderstorm / Titan
-   Challenge (the tier of the building hit, Lightning Rod, the Titan lineage perk 4, which the user has not seen yet),
-   Prismatic Breath (5% times the tier of the active Dragon's Breath), Miniature Lamps (position of the lowest tier Maelstrom
-   targets), The Art of War and Altar of Wishes (the number of spells tied to an alignment), and everything from the Dragon
-   section on that the user cannot see yet (Dragon, Mercenary, Archon, Djinn, Makers), which is only in the code.
+2. **Challenges** (page built from code). Confirmed by the user: Fairy, Elven, Angel, Goblin, Undead, Demon, Titan, Druid, Faceless, Dwarven, Drow and Dragon. Still to confirm after the review changes: Archon, Djinn, Makers and Mercenary (Warcry now has the general Call to Arms formula y; the Men of the World requirement "40000 deepest Excavations made in this Reincarnation" means the deepest excavation depth reached in this Reincarnation, stat 35, its wording is still open).
 3. **Upgrade page verification** (the user checks the upgrade pages in game; built from code until then):
    - **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): unchecked because the user has
      not reached them. Arcane Brilliance is left for the Spells item.
@@ -74,9 +70,9 @@ Only these need checking; remove an item when it is settled.
 6. **Unlocks page** (all mechanic unlocks): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
 7. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
    - "Spells page, tier cost scaling": Sequence (S1275), Angel Perk 1, Iron Flight, Dragon Set.
-   - "Buildings page, building cost multiplier": Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
+   - "Buildings page, building cost multiplier": Biased Architecture (Dwarven challenge 2), Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
    - "Excavations page, excavation cost multiplier": Surveyorship (E270), Discount (E13125).
-   - "Royal Exchanges page, Royal Exchange cost multiplier": Intimidation (E1325), Discount (E13125).
+   - "Royal Exchanges page, Royal Exchange cost multiplier": Advanced Civilization (Elven challenge 1), Titanomachy (Archon challenge 3), Intimidation (E1325), Discount (E13125).
 8. **Verify the research page** (researches, formulas, requirements; built from code, checked so far only as listed under
    Resolved).
 9. **Major mechanic: Legacies** (the faction Legacy upgrades, with their Bronze / Silver / Gold / Diamond tiers, and the other

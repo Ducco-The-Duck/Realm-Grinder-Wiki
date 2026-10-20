@@ -27,12 +27,12 @@ def icon_file(n):
 def item(f, it):
     return {'n': it['name'], 'i': icon_file(it['icon']), 'su': it['spell_upgrade'], 'num': it['number'],
             'fl': it['flavor'], 'q': it['requirements'], 'c': it['challenge'], 'r': it['rewards'],
-            'f': [{'l': g['latex'], 'v': g['vars'], 'lb': g['label']} for g in it['formulas']], 'a': it['applies_to'], 'sh': any(g['shown'] for g in it['formulas']), 'nt': it['note'],
+            'f': [{'l': g['latex'], 'v': g['vars'], 'lb': g['label']} for g in it['formulas']], 'a': it['applies_to'], 'sh': any(g['shown'] for g in it['formulas']), 'nt': it['note'], 'rn': it.get('rnotes') or [],
             'g': it['game_name']}
 
 
 sections = [{'id': f['id'], 'name': f['name'], 'kind': f['kind'], 'items': [item(f, it) for it in f['items']]}
-            for f in factions]
+            for f in sorted(factions, key=lambda f: f['name'] == 'Mercenary')]      # the Mercenaries go last
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 import html as _html
@@ -112,16 +112,17 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     host.textContent = tex;
   }
   function formulas(parent, list){
-    var many=list.length>1, seen={};
+    var many=list.filter(function(f){ return /^v/.test(f.l); }).length>1, seen={}, vk=0;
     parent.appendChild(el('span','lbl',many?'Formulas':'Formula'));
     list.forEach(function(f,i){
       if(i>0) parent.appendChild(el('div','fsep'));
-      var vs=many?'v_{'+(i+1)+'}':'v';
+      var isy=!/^v/.test(f.l);
+      var vs=isy?'y':many?'v_{'+(++vk)+'}':'v';
       if(f.lb){
         var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
         lab.appendChild(document.createTextNode(' — '+f.lb)); parent.appendChild(lab);
       }
-      var d=el('div','formula'); var m=el('span'); math(f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
+      var d=el('div','formula'); var m=el('span'); math(isy?f.l:f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
       var ul=el('ul','vars'), n=0;
       f.v.forEach(function(v){
         var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
@@ -144,7 +145,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
       tip.appendChild(el('div','chal',it.c));
     }
     tip.appendChild(el('span','lbl',it.su ? 'Effect' : 'Reward'));
-    it.r.forEach(function(t){ tip.appendChild(el('p',null,t)); });
+    it.r.forEach(function(t,i){ tip.appendChild(el('p',null,t));
+      it.rn.forEach(function(n){ if(n[0]===i) tip.appendChild(el('div','more',n[1])); }); });
     if(it.f.length){
       formulas(tip, it.f);
       if(it.nt) tip.appendChild(el('div','more',it.nt));
@@ -158,7 +160,9 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
       tip.appendChild(el('div',null,txt));
     }
     if(it.fl){ tip.appendChild(el('span','lbl','Flavor text')); tip.appendChild(el('div','flavor',it.fl)); }
-    tip.style.display='block';
+    tip.style.width=''; tip.style.display='block';
+    var need=0; tip.querySelectorAll('.formula').forEach(function(f){ need=Math.max(need, f.scrollWidth-f.clientWidth); });
+    if(need>0) tip.style.width=Math.min(window.innerWidth-16, tip.getBoundingClientRect().width+need+8)+'px';
     var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
     var y=r.top-t.height-8; if(y<8) y=r.bottom+8;
