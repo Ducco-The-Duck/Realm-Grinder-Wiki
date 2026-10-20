@@ -9115,7 +9115,7 @@
 },
 {
 "order": 651,
-"id": "ignore1097",
+"id": "ignore1098",
 "name": "Efficient Autocasting",
 "requirement": "Reach 5e7 mana and unlock the Efficient Autocasting upgrade.",
 "icon": "EfficientAutocastUpgrade",
@@ -9129,7 +9129,7 @@
 },
 {
 "order": 652,
-"id": "ignore1098",
+"id": "ignore1099",
 "name": "Reverse Autocasting",
 "requirement": "Reach 1.5e8 mana and unlock the Reverse Autocasting upgrade.\nCan only be unlocked starting from Ascension 1, at Reincarnation 40+.",
 "icon": "ReverseAutocastUpgrade",
@@ -9143,7 +9143,7 @@
 },
 {
 "order": 653,
-"id": "ignore1099",
+"id": "ignore1100",
 "name": "Tiered Autocasting",
 "requirement": "Will automatically unlock at Reincarnation 42+.",
 "icon": "TieredAutocastUpgrade",
@@ -9703,7 +9703,7 @@
 },
 {
 "order": 693,
-"id": "ignore1100",
+"id": "ignore1101",
 "name": "1 Artifact",
 "requirement": "Find 1 Artifact.",
 "icon": "ArtifactTrophy1",
@@ -9717,7 +9717,7 @@
 },
 {
 "order": 694,
-"id": "ignore1101",
+"id": "ignore1102",
 "name": "5 Artifacts",
 "requirement": "Find 5 Artifacts.",
 "icon": "ArtifactTrophy2",
@@ -9731,7 +9731,7 @@
 },
 {
 "order": 695,
-"id": "ignore1102",
+"id": "ignore1103",
 "name": "10 Artifacts",
 "requirement": "Find 10 Artifacts.",
 "icon": "ArtifactTrophy3",
@@ -9745,7 +9745,7 @@
 },
 {
 "order": 696,
-"id": "ignore1103",
+"id": "ignore1104",
 "name": "20 Artifacts",
 "requirement": "Find 20 Artifacts.",
 "icon": "ArtifactTrophy4",
@@ -9759,7 +9759,7 @@
 },
 {
 "order": 697,
-"id": "ignore1104",
+"id": "ignore1105",
 "name": "35 Artifacts",
 "requirement": "Find 35 Artifacts.",
 "icon": "ArtifactTrophy5",
@@ -9773,7 +9773,7 @@
 },
 {
 "order": 698,
-"id": "ignore1105",
+"id": "ignore1106",
 "name": "50 Artifacts",
 "requirement": "Find 50 Artifacts.",
 "icon": "ArtifactTrophy6",
@@ -9787,7 +9787,7 @@
 },
 {
 "order": 699,
-"id": "ignore1106",
+"id": "ignore1107",
 "name": "75 Artifacts",
 "requirement": "Find 75 Artifacts.",
 "icon": "ArtifactTrophy7",
@@ -10123,7 +10123,7 @@
 },
 {
 "order": 723,
-"id": "ignore1107",
+"id": "ignore1108",
 "name": "1 Ruby",
 "requirement": "Gain 1 Ruby.",
 "icon": "GainRubyTrophy1",
@@ -10137,7 +10137,7 @@
 },
 {
 "order": 724,
-"id": "ignore1108",
+"id": "ignore1109",
 "name": "10 Rubies",
 "requirement": "Gain 10 Rubies.",
 "icon": "GainRubyTrophy2",
@@ -10151,7 +10151,7 @@
 },
 {
 "order": 725,
-"id": "ignore1109",
+"id": "ignore1110",
 "name": "25 Rubies",
 "requirement": "Gain 25 Rubies.",
 "icon": "GainRubyTrophy3",
@@ -10165,7 +10165,7 @@
 },
 {
 "order": 726,
-"id": "ignore1110",
+"id": "ignore1111",
 "name": "50 Rubies",
 "requirement": "Gain 50 Rubies.",
 "icon": "GainRubyTrophy4",
@@ -10837,7 +10837,7 @@
 },
 {
 "order": 774,
-"id": "ignore1111",
+"id": "ignore1112",
 "name": "Arcane Brilliance 1",
 "requirement": "Unlock Tier 2 for all spells.",
 "icon": "ArcaneBrillianceTrophy1",
@@ -10851,7 +10851,7 @@
 },
 {
 "order": 775,
-"id": "ignore1112",
+"id": "ignore1113",
 "name": "Arcane Brilliance 2",
 "requirement": "Unlock Tier 3 for all spells.",
 "icon": "ArcaneBrillianceTrophy2",
@@ -10865,7 +10865,7 @@
 },
 {
 "order": 776,
-"id": "ignore1113",
+"id": "ignore1114",
 "name": "Arcane Brilliance 3",
 "requirement": "Unlock Tier 4 for all spells.",
 "icon": "ArcaneBrillianceTrophy3",
@@ -10879,7 +10879,7 @@
 },
 {
 "order": 777,
-"id": "ignore1114",
+"id": "ignore1115",
 "name": "Arcane Brilliance 4",
 "requirement": "Unlock Tier 5 for all spells.",
 "icon": "ArcaneBrillianceTrophy4",
@@ -11061,7 +11061,7 @@
 },
 {
 "order": 790,
-"id": "ignore1115",
+"id": "ignore1116",
 "name": "Dragon's Roar",
 "requirement": "Cast Dragon's Breath while having at least 5 other active spells.",
 "icon": "DragonsRoarTrophy",
@@ -11075,7 +11075,7 @@
 },
 {
 "order": 791,
-"id": "ignore1116",
+"id": "ignore1117",
 "name": "Chrono Loading",
 "requirement": "Cast Precognition with at least 1e17 Mana Regeneration.",
 "icon": "ChronoLoadingTrophy",
@@ -11089,7 +11089,7 @@
 },
 {
 "order": 792,
-"id": "ignore1117",
+"id": "ignore1118",
 "name": "Persistent Entropy",
 "requirement": "Cast 100 Limited Wish within 30 minutes of a new Era.",
 "icon": "PersistentEntropyTrophy",
@@ -11103,7 +11103,7 @@
 },
 {
 "order": 793,
-"id": "ignore1118",
+"id": "ignore1119",
 "name": "Reality Crater",
 "requirement": "Cast Infinite Spiral while having at least 3 Excavation Resets in this Era.",
 "icon": "RealityCraterTrophy",
@@ -11117,7 +11117,7 @@
 },
 {
 "order": 794,
-"id": "ignore1119",
+"id": "ignore1120",
 "name": "Holy Frenzy",
 "requirement": "Within a single Reincarnation, have a combined activity time of at least 1 day from Blood Frenzy and Holy Light.",
 "icon": "HolyFrenzyTrophy",
@@ -11159,7 +11159,7 @@
 },
 {
 "order": 797,
-"id": "ignore1120",
+"id": "ignore1121",
 "name": "Fairy Grand Champion",
 "requirement": "Upgrade Fairy Lineage to level 25 and purchase the first 2 Fairy Lineage perks.",
 "icon": "FairyGrandChampion",
@@ -11173,7 +11173,7 @@
 },
 {
 "order": 798,
-"id": "ignore1121",
+"id": "ignore1122",
 "name": "Elven Grand Champion",
 "requirement": "Upgrade Elven Lineage to level 25 and purchase the first 2 Elven Lineage perks.",
 "icon": "ElvenGrandChampion",
@@ -11187,7 +11187,7 @@
 },
 {
 "order": 799,
-"id": "ignore1122",
+"id": "ignore1123",
 "name": "Angel Grand Champion",
 "requirement": "Upgrade Angel Lineage to level 25 and purchase the first 2 Angel Lineage perks.",
 "icon": "AngelGrandChampion",
@@ -11201,7 +11201,7 @@
 },
 {
 "order": 800,
-"id": "ignore1123",
+"id": "ignore1124",
 "name": "Goblin Grand Champion",
 "requirement": "Upgrade Goblin Lineage to level 25 and purchase the first 2 Goblin Lineage perks.",
 "icon": "GoblinGrandChampion",
@@ -11215,7 +11215,7 @@
 },
 {
 "order": 801,
-"id": "ignore1124",
+"id": "ignore1125",
 "name": "Undead Grand Champion",
 "requirement": "Upgrade Undead Lineage to level 25 and purchase the first 2 Undead Lineage perks.",
 "icon": "UndeadGrandChampion",
@@ -11229,7 +11229,7 @@
 },
 {
 "order": 802,
-"id": "ignore1125",
+"id": "ignore1126",
 "name": "Demon Grand Champion",
 "requirement": "Upgrade Demon Lineage to level 25 and purchase the first 2 Demon Lineage perks.",
 "icon": "DemonGrandChampion",
@@ -11243,7 +11243,7 @@
 },
 {
 "order": 803,
-"id": "ignore1126",
+"id": "ignore1127",
 "name": "Titan Grand Champion",
 "requirement": "Upgrade Titan Lineage to level 25 and purchase the first 2 Titan Lineage perks.",
 "icon": "TitanGrandChampion",
@@ -11257,7 +11257,7 @@
 },
 {
 "order": 804,
-"id": "ignore1127",
+"id": "ignore1128",
 "name": "Druid Grand Champion",
 "requirement": "Upgrade Druid Lineage to level 25 and purchase the first 2 Druid Lineage perks.",
 "icon": "DruidGrandChampion",
@@ -11271,7 +11271,7 @@
 },
 {
 "order": 805,
-"id": "ignore1128",
+"id": "ignore1129",
 "name": "Faceless Grand Champion",
 "requirement": "Upgrade Faceless Lineage to level 25 and purchase the first 2 Faceless Lineage perks.",
 "icon": "FacelessGrandChampion",
@@ -11285,7 +11285,7 @@
 },
 {
 "order": 806,
-"id": "ignore1129",
+"id": "ignore1130",
 "name": "Dwarven Grand Champion",
 "requirement": "Upgrade Dwarven Lineage to level 25 and purchase the first 2 Dwarven Lineage perks.",
 "icon": "DwarvenGrandChampion",
@@ -11299,7 +11299,7 @@
 },
 {
 "order": 807,
-"id": "ignore1130",
+"id": "ignore1131",
 "name": "Drow Grand Champion",
 "requirement": "Upgrade Drow Lineage to level 25 and purchase the first 2 Drow Lineage perks.",
 "icon": "DrowGrandChampion",
@@ -11313,7 +11313,7 @@
 },
 {
 "order": 808,
-"id": "ignore1131",
+"id": "ignore1132",
 "name": "Dragon Grand Champion",
 "requirement": "Upgrade Dragon Lineage to level 25 and purchase the first 2 Dragon Lineage perks.",
 "icon": "DragonGrandChampion",
@@ -11495,7 +11495,7 @@
 },
 {
 "order": 821,
-"id": "ignore1132",
+"id": "ignore1133",
 "name": "Dragon Tamer",
 "requirement": "Fully develop your Spiky Egg into an Elder Dragon.",
 "icon": "DragonTamerTrophy",
@@ -11509,7 +11509,7 @@
 },
 {
 "order": 822,
-"id": "ignore1133",
+"id": "ignore1134",
 "name": "Genealogist",
 "requirement": "Have a total of 180 Lineage levels.",
 "icon": "GenealogistTrophy",
@@ -11523,7 +11523,7 @@
 },
 {
 "order": 823,
-"id": "ignore1134",
+"id": "ignore1135",
 "name": "Art of the Crow",
 "requirement": "Excavate 6 full Faction Artifact Sets.",
 "icon": "ArtOfTheCrowTrophy",
@@ -11537,7 +11537,7 @@
 },
 {
 "order": 824,
-"id": "ignore1135",
+"id": "ignore1136",
 "name": "MAD Masks",
 "requirement": "Find all fragments for the Makers, Archon and Djinn masks.",
 "icon": "MADMasksTrophy",
@@ -11929,7 +11929,7 @@
 },
 {
 "order": 852,
-"id": "ignore1136",
+"id": "ignore1137",
 "name": "Vanilla Challenger",
 "requirement": "Complete all the Vanilla Challenges.",
 "icon": "VanillaChallengerTrophy",
@@ -11943,7 +11943,7 @@
 },
 {
 "order": 853,
-"id": "ignore1137",
+"id": "ignore1138",
 "name": "Neutral Challenger",
 "requirement": "Complete all the Neutral Challenges.",
 "icon": "NeutralChallengerTrophy",
@@ -11957,7 +11957,7 @@
 },
 {
 "order": 854,
-"id": "ignore1138",
+"id": "ignore1139",
 "name": "Prestige Challenger",
 "requirement": "Complete all the Prestige Challenges.",
 "icon": "PrestigeChallengerTrophy",
@@ -11971,7 +11971,7 @@
 },
 {
 "order": 855,
-"id": "ignore1139",
+"id": "ignore1140",
 "name": "Astral Challenger",
 "requirement": "Complete all the MAD Challenges.",
 "icon": "EliteChallengerTrophy",
@@ -12013,7 +12013,7 @@
 },
 {
 "order": 858,
-"id": "ignore1140",
+"id": "ignore1141",
 "name": "Intermediate Researcher",
 "requirement": "Research 1800 times across all fields.",
 "icon": "IntermediateResearcherTrophy",
@@ -12027,7 +12027,7 @@
 },
 {
 "order": 859,
-"id": "ignore1141",
+"id": "ignore1142",
 "name": "Expert Researcher",
 "requirement": "Research 2750 times across all fields.",
 "icon": "ExpertResearcherTrophy",
@@ -12041,7 +12041,7 @@
 },
 {
 "order": 860,
-"id": "ignore1142",
+"id": "ignore1143",
 "name": "Master Researcher",
 "requirement": "Research 10000 times across all fields.",
 "icon": "MasterResearcherTrophy",
@@ -12055,7 +12055,7 @@
 },
 {
 "order": 861,
-"id": "ignore1143",
+"id": "ignore1144",
 "name": "Grandmaster Researcher",
 "requirement": "Research 18500 times across all fields.",
 "icon": "GrandmasterResearcherTrophy",
@@ -12083,7 +12083,7 @@
 },
 {
 "order": 863,
-"id": "ignore1144",
+"id": "ignore1145",
 "name": "Ancient Researcher",
 "requirement": "Discover all the Ancient Races researches.",
 "icon": "AncientResearcherTrophy",
@@ -12097,7 +12097,7 @@
 },
 {
 "order": 864,
-"id": "ignore1145",
+"id": "ignore1146",
 "name": "Underworld Researcher",
 "requirement": "Discover all the Underworld researches.",
 "icon": "UnderworldResearcherTrophy",
@@ -12111,7 +12111,7 @@
 },
 {
 "order": 865,
-"id": "ignore1146",
+"id": "ignore1147",
 "name": "Eternal Researcher",
 "requirement": "Discover all the Dragon researches.",
 "icon": "EternalResearcherTrophy",
@@ -12125,7 +12125,7 @@
 },
 {
 "order": 866,
-"id": "ignore1147",
+"id": "ignore1148",
 "name": "Warrior Researcher",
 "requirement": "Discover all the Mercenary researches.",
 "icon": "WarriorResearcherTrophy",
@@ -12237,7 +12237,7 @@
 },
 {
 "order": 874,
-"id": "ignore1148",
+"id": "ignore1149",
 "name": "Faction Run",
 "requirement": "Reach 1.5e6 Faction Coins in less than 5 minutes, without using Gem Power, Excavations or any spell.",
 "icon": "FactionRunTrophy",
@@ -12251,7 +12251,7 @@
 },
 {
 "order": 875,
-"id": "ignore1149",
+"id": "ignore1150",
 "name": "No Recruiting",
 "requirement": "Reach 1e90 Gems in a Reincarnation without ever affiliating with the Mercenaries.",
 "icon": "NoRecruitingTrophy",
@@ -12265,7 +12265,7 @@
 },
 {
 "order": 876,
-"id": "ignore1150",
+"id": "ignore1151",
 "name": "That Excavated Quickly",
 "requirement": "Excavate 1000 times in the first 30 seconds of playtime.",
 "icon": "ThatExcavatedQuicklyTrophy",
@@ -12279,7 +12279,7 @@
 },
 {
 "order": 877,
-"id": "ignore1151",
+"id": "ignore1152",
 "name": "glho kohhl snod",
 "requirement": "Barely whispering these letters makes your heart pound harder...",
 "icon": "GlhoKohhlSnodTrophy",
@@ -12293,7 +12293,7 @@
 },
 {
 "order": 878,
-"id": "ignore1152",
+"id": "ignore1153",
 "name": "Mana Matrix",
 "requirement": "Have exactly 4767 Maximum Mana.",
 "icon": "ManaMatrixTrophy",
@@ -12307,7 +12307,7 @@
 },
 {
 "order": 879,
-"id": "ignore1153",
+"id": "ignore1154",
 "name": "Suggestion Master",
 "requirement": "Open the changelog and ponder about what could be added in there for 3 minutes.",
 "icon": "SuggestionMasterTrophy",
@@ -12321,7 +12321,7 @@
 },
 {
 "order": 880,
-"id": "ignore1154",
+"id": "ignore1155",
 "name": "Rule 'dis",
 "requirement": "Abdicate 10 times within 3 minutes.",
 "icon": "RuleDisTrophy",
@@ -12335,7 +12335,7 @@
 },
 {
 "order": 881,
-"id": "ignore1155",
+"id": "ignore1156",
 "name": "Because I Like to Grind",
 "requirement": "Spend at least 3 hours playing in a single Era.",
 "icon": "BecauseILikeToGrindTrophy",
@@ -12349,7 +12349,7 @@
 },
 {
 "order": 882,
-"id": "ignore1156",
+"id": "ignore1157",
 "name": "Triple Weirdness",
 "requirement": "Have exactly 333 Royal Exchanges for each type.",
 "icon": "TripleWeirdnessTrophy",
@@ -12363,7 +12363,7 @@
 },
 {
 "order": 883,
-"id": "ignore1157",
+"id": "ignore1158",
 "name": "Stoic Resistance",
 "requirement": "Reach an amount of Gems in your treasury equal to the requisite of the first Reincarnation without abdicating since the start of a new Reincarnation.",
 "icon": "StoicResistanceTrophy",
@@ -12377,7 +12377,7 @@
 },
 {
 "order": 884,
-"id": "ignore1158",
+"id": "ignore1159",
 "name": "Van!shment",
 "requirement": "Reach at least 1e15% Offline production.",
 "icon": "VanishmentTrophy",
@@ -12391,7 +12391,7 @@
 },
 {
 "order": 885,
-"id": "ignore1159",
+"id": "ignore1160",
 "name": "Iron Rush",
 "requirement": "Reach 725 Iron Strongholds without using Gem Power and Reincarnation Power within 5 minutes of a new Era.",
 "icon": "IronRushTrophy",
@@ -12405,7 +12405,7 @@
 },
 {
 "order": 886,
-"id": "ignore1160",
+"id": "ignore1161",
 "name": "Colorful Autocasting",
 "requirement": "Have each type of autocasting active simultaneously.",
 "icon": "ColorfulAutocastingTrophy",
@@ -12419,7 +12419,7 @@
 },
 {
 "order": 887,
-"id": "ignore1161",
+"id": "ignore1162",
 "name": "Spell Cataclysm",
 "requirement": "Have at least 6 spells active on tier 2 or higher.",
 "icon": "SpellCataclysmTrophy",
@@ -12433,7 +12433,7 @@
 },
 {
 "order": 888,
-"id": "ignore1162",
+"id": "ignore1163",
 "name": "Double Bottom",
 "requirement": "Reset excavations for the first time.",
 "icon": "DoubleBottomTrophy",
@@ -12447,7 +12447,7 @@
 },
 {
 "order": 889,
-"id": "ignore1163",
+"id": "ignore1164",
 "name": "Advisor Insight",
 "requirement": "Click the Hint button 100 times.",
 "icon": "UITipTrophy",
@@ -12461,7 +12461,7 @@
 },
 {
 "order": 890,
-"id": "ignore1164",
+"id": "ignore1165",
 "name": "Helden Sterben Nicht",
 "requirement": "Join Mercenaries, then Undead, then Angels within 15 minutes since the beginning of a game session.",
 "icon": "HeldenSterbenNichtTrophy",
@@ -12475,7 +12475,7 @@
 },
 {
 "order": 891,
-"id": "ignore1165",
+"id": "ignore1166",
 "name": "Mana Waste",
 "requirement": "Have Mana Regeneration higher than Maximum Mana.",
 "icon": "ManaWasteTrophy",
@@ -12489,7 +12489,7 @@
 },
 {
 "order": 892,
-"id": "ignore1166",
+"id": "ignore1167",
 "name": "Prismatic Mana",
 "requirement": "Cast the same amount of Faction spells with all Vanilla and Neutral factions with a minimum of 100 each.\nCan only be unlocked after Ascension 1 at Reincarnation 40+.",
 "icon": "PrismaticManaTrophy",
@@ -12503,7 +12503,7 @@
 },
 {
 "order": 893,
-"id": "ignore1167",
+"id": "ignore1168",
 "name": "Autoclicker",
 "requirement": "Have at least 40 autoclick power.\n\nOnly available at Reincarnation 60 or higher.",
 "icon": "AutoclickerTrophy",
@@ -12517,7 +12517,7 @@
 },
 {
 "order": 894,
-"id": "ignore1168",
+"id": "ignore1169",
 "name": "Exchange High Lord",
 "requirement": "Purchase 5000 Royal Exchanges in a single Era.",
 "icon": "ExchangeHighLordTrophy",
@@ -12531,7 +12531,7 @@
 },
 {
 "order": 895,
-"id": "ignore1169",
+"id": "ignore1170",
 "name": "Uniformity",
 "requirement": "In this Reincarnation, with no less than 1 day of playtime with Order, Chaos and Balance alignments, have less than 1 hour of playtime difference for those alignments.",
 "icon": "UniformityTrophy",
@@ -12545,7 +12545,7 @@
 },
 {
 "order": 896,
-"id": "ignore1170",
+"id": "ignore1171",
 "name": "Faction Ruler",
 "requirement": "Unlock all the Advanced Heritages.",
 "icon": "FactionRulerTrophy",
@@ -12559,7 +12559,7 @@
 },
 {
 "order": 897,
-"id": "ignore1171",
+"id": "ignore1172",
 "name": "Future Linkin",
 "requirement": "Abdicate with at least 100000 Unique Buildings.",
 "icon": "FutureLinkinTrophy",
@@ -12573,7 +12573,7 @@
 },
 {
 "order": 898,
-"id": "ignore1172",
+"id": "ignore1173",
 "name": "God's Fingers",
 "requirement": "Reach 1e8 automatic clicks in this Reincarnation.",
 "icon": "GodsFingersTrophy",
@@ -12587,7 +12587,7 @@
 },
 {
 "order": 899,
-"id": "ignore1173",
+"id": "ignore1174",
 "name": "True Harlequin",
 "requirement": "As a Mercenary, purchase one upgrade from 15 different factions.",
 "icon": "TrueHarlequinTrophy",
@@ -12601,7 +12601,7 @@
 },
 {
 "order": 900,
-"id": "ignore1174",
+"id": "ignore1175",
 "name": "The Architect",
 "requirement": "Build 100000 units of any individual building.",
 "icon": "TheArchitectTrophy",
@@ -12615,7 +12615,7 @@
 },
 {
 "order": 901,
-"id": "ignore1175",
+"id": "ignore1176",
 "name": "Novice Combinator",
 "requirement": "Have 4 different factions involved in your Legacy upgrades.",
 "icon": "NoviceCombinatorTrophy",
@@ -12629,7 +12629,7 @@
 },
 {
 "order": 902,
-"id": "ignore1176",
+"id": "ignore1177",
 "name": "Expert Combinator",
 "requirement": "Have 5 different factions involved in your Legacy upgrades.",
 "icon": "ExpertCombinatorTrophy",
@@ -12643,7 +12643,7 @@
 },
 {
 "order": 903,
-"id": "ignore1177",
+"id": "ignore1178",
 "name": "Ghost",
 "requirement": "Accompany yourself with a spooky Ghost, gaining powerful bonuses. Click on this upgrade to activate it and deactivate other monsters (if any).\n\nUnlock and empower the Crucible of Darkness upgrade. This perk is active even when using other monsters.\n\nAt level 10, you will unlock a new spell: Wail of the Banshee.",
 "icon": "HalloweenGhost1",
@@ -12657,7 +12657,7 @@
 },
 {
 "order": 904,
-"id": "ignore1178",
+"id": "ignore1179",
 "name": "Skeleton",
 "requirement": "Accompany yourself with a sturdy Skeleton, gaining powerful bonuses. Click on this upgrade to activate it and deactivate other monsters (if any).\n\nUnlock and empower the Crucible of Darkness upgrade. This perk is active even when using other monsters.\n\nAt level 10, you will unlock a new spell: Cannibalize.",
 "icon": "HalloweenSkeleton1",
@@ -12671,7 +12671,7 @@
 },
 {
 "order": 905,
-"id": "ignore1179",
+"id": "ignore1180",
 "name": "Vampire",
 "requirement": "Accompany yourself with an almighty Vampire, gaining powerful bonuses. Click on this upgrade to activate it and deactivate other monsters (if any).\n\nUnlock and empower the Crucible of Darkness upgrade. This perk is active even when using other monsters.\n\nAt level 10, you will unlock a new spell: Shadow Embrace.",
 "icon": "HalloweenVampire1",
@@ -12685,7 +12685,7 @@
 },
 {
 "order": 906,
-"id": "ignore1180",
+"id": "ignore1181",
 "name": "Thanksgiving",
 "requirement": "Play during the Thanksgiving season.",
 "icon": "ThanksgivingTrophy",
@@ -12699,7 +12699,7 @@
 },
 {
 "order": 907,
-"id": "ignore1181",
+"id": "ignore1182",
 "name": "Ruby Shine",
 "requirement": "Play during the Ruby Shine event.",
 "icon": "RubyShineTrophy",
@@ -12713,7 +12713,7 @@
 },
 {
 "order": 908,
-"id": "ignore1182",
+"id": "ignore1183",
 "name": "Santa's Helpers",
 "requirement": "Play as Elves during the Christmas season, and get at least 50 assistants.",
 "icon": "SantasHelpersFeat",
@@ -12727,7 +12727,7 @@
 },
 {
 "order": 909,
-"id": "ignore1183",
+"id": "ignore1184",
 "name": "Unholidays",
 "requirement": "Ally with the Undead during the Christmas season.",
 "icon": "UnholidaysFeat",
@@ -12741,7 +12741,7 @@
 },
 {
 "order": 910,
-"id": "ignore1184",
+"id": "ignore1185",
 "name": "Snowpile",
 "requirement": "Collect 21000 Snowballs.",
 "icon": "SnowpileFeat",
@@ -12755,7 +12755,7 @@
 },
 {
 "order": 911,
-"id": "ignore1185",
+"id": "ignore1186",
 "name": "Gift Collector",
 "requirement": "Open 13 Christmas Presents.",
 "icon": "GiftCollectorFeat",
@@ -12769,7 +12769,7 @@
 },
 {
 "order": 912,
-"id": "ignore1186",
+"id": "ignore1187",
 "name": "Freezing Hell",
 "requirement": "Collect a stack of at least 480 or more Snowballs while affiliated with the Demons.",
 "icon": "FreezingHellFeat",
@@ -12783,7 +12783,7 @@
 },
 {
 "order": 913,
-"id": "ignore1187",
+"id": "ignore1188",
 "name": "Perfect Snowflake",
 "requirement": "Collect Snowballs to find the Perfect Snowflake. Your chances increase as you collect more.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "PerfectSnowflakeFeat",
@@ -12797,7 +12797,7 @@
 },
 {
 "order": 914,
-"id": "ignore1188",
+"id": "ignore1189",
 "name": "Snowball Fight",
 "requirement": "Collect a stack of at least 720 Snowballs while Call to Arms is active.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "SnowballFightFeat",
@@ -12811,7 +12811,7 @@
 },
 {
 "order": 915,
-"id": "ignore1189",
+"id": "ignore1190",
 "name": "Golden Snowballs",
 "requirement": "Play as Goblins during the Christmas season, and get at least 1e60 Coins in a single manual click.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "GoldenSnowballsFeat",
@@ -12825,7 +12825,7 @@
 },
 {
 "order": 916,
-"id": "ignore1190",
+"id": "ignore1191",
 "name": "Anti-Christmas",
 "requirement": "Collect a stack of at least 720 Snowballs while Hellfire Blast is active.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "AntiChristmasFeat",
@@ -12839,7 +12839,7 @@
 },
 {
 "order": 917,
-"id": "ignore1191",
+"id": "ignore1192",
 "name": "Jingle Choir",
 "requirement": "Collect a stack of at least 720 Snowballs while having Fairy Chanting active and at least 100000 assistants.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "JingleChoirFeat",
@@ -12853,7 +12853,7 @@
 },
 {
 "order": 918,
-"id": "ignore1192",
+"id": "ignore1193",
 "name": "Underground Snow",
 "requirement": "Collect a stack of at least 720 Snowballs while affiliated with Dwarves or Drow.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "UndergroundSnowFeat",
@@ -12867,7 +12867,7 @@
 },
 {
 "order": 919,
-"id": "ignore1193",
+"id": "ignore1194",
 "name": "Yule Offering",
 "requirement": "Collect a stack of at least 720 Snowballs while having at least 720 Stonehenge affected by Grand Balance.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "YuleOfferingFeat",
@@ -12881,7 +12881,7 @@
 },
 {
 "order": 920,
-"id": "ignore1194",
+"id": "ignore1195",
 "name": "Feel the Love",
 "requirement": "Purchase 250 Heart Upgrades.",
 "icon": "FeelTheLoveFeat",
@@ -12895,7 +12895,7 @@
 },
 {
 "order": 921,
-"id": "ignore1195",
+"id": "ignore1196",
 "name": "I Love You in Every Language",
 "requirement": "Cast Call to Love at least once with 6 different factions. Prestige and Elite factions not included.",
 "icon": "LoveEveryLanguage",
@@ -12909,7 +12909,7 @@
 },
 {
 "order": 922,
-"id": "ignore1196",
+"id": "ignore1197",
 "name": "Assistant Love",
 "requirement": "Reach 50 assistants with Heart Upgrades only.\n\nIf you unlock this feat, you will permanently unlock a new color option for the mana bar.",
 "icon": "AssistantLoveFeat",
@@ -12923,7 +12923,7 @@
 },
 {
 "order": 923,
-"id": "ignore1197",
+"id": "ignore1198",
 "name": "Chocolate Box",
 "requirement": "Have at least 72 hours of Call to Love activity time during the Valentine event.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "ChocolateBoxFeat",
@@ -12937,7 +12937,7 @@
 },
 {
 "order": 924,
-"id": "ignore1198",
+"id": "ignore1199",
 "name": "Unrequitedness",
 "requirement": "Cast Call to Love while being affiliated with a Neutral faction and with at least 2 hours of activity time with the spell.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "UnrequitednessFeat",
@@ -12951,7 +12951,7 @@
 },
 {
 "order": 925,
-"id": "ignore1199",
+"id": "ignore1200",
 "name": "Fairy Love",
 "requirement": "While affiliated with the Fairies, click 1000 times during the Valentine event.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "FairyLoveFeat",
@@ -12965,7 +12965,7 @@
 },
 {
 "order": 926,
-"id": "ignore1200",
+"id": "ignore1201",
 "name": "Burning Passion",
 "requirement": "Have at least 2 hours of Hellfire Blast activity time during the Valentine event.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "BurningPassionFeat",
@@ -12979,7 +12979,7 @@
 },
 {
 "order": 927,
-"id": "ignore1201",
+"id": "ignore1202",
 "name": "Loyalty",
 "requirement": "Have 2 hours of Call to Love activity time while being affiliated with the same faction for at least 8 hours.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "LoyaltyFeat",
@@ -12993,7 +12993,7 @@
 },
 {
 "order": 928,
-"id": "ignore1202",
+"id": "ignore1203",
 "name": "Sweet Bedtime",
 "requirement": "Cast Call to Love while having at least 4000 Inns.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "SweetBedtimeFeat",
@@ -13007,7 +13007,7 @@
 },
 {
 "order": 929,
-"id": "ignore1203",
+"id": "ignore1204",
 "name": "Until Death Do Us Part",
 "requirement": "Have at least 2 hours of Call to Love activity time and 2 hours of Undead playtime without abdicating.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "UntilDeathDoUsPartFeat",
@@ -13021,7 +13021,7 @@
 },
 {
 "order": 930,
-"id": "ignore1204",
+"id": "ignore1205",
 "name": "Heart Blessing",
 "requirement": "Cast Moon Blessing with the Sun Blessing and Star Blessings effects active, while having at least 300 Heart Upgrades.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "HeartBlessingFeat",
@@ -13035,7 +13035,7 @@
 },
 {
 "order": 931,
-"id": "ignore1205",
+"id": "ignore1206",
 "name": "Egg Hunter",
 "requirement": "Gain 7000 Common Eggs.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "EggHunterFeat",
@@ -13049,7 +13049,7 @@
 },
 {
 "order": 932,
-"id": "ignore1206",
+"id": "ignore1207",
 "name": "Egg Collection",
 "requirement": "Find 8 Unique Eggs.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "EggCollectionFeat",
@@ -13063,7 +13063,7 @@
 },
 {
 "order": 933,
-"id": "ignore1207",
+"id": "ignore1208",
 "name": "Golden Chicken",
 "requirement": "Collect a stack of at least 480 Eggs while playing as Goblin.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GoldenChickenFeat",
@@ -13077,7 +13077,7 @@
 },
 {
 "order": 934,
-"id": "ignore1208",
+"id": "ignore1209",
 "name": "Grey Easter",
 "requirement": "Find at least one rare egg while playing with no faction and no alignment.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GreyEasterFeat",
@@ -13091,7 +13091,7 @@
 },
 {
 "order": 935,
-"id": "ignore1209",
+"id": "ignore1210",
 "name": "Bunny Helpers",
 "requirement": "Collect a stack of at least 480 Eggs while having exactly 480 assistants.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "BunnyHelpersFeat",
@@ -13105,7 +13105,7 @@
 },
 {
 "order": 936,
-"id": "ignore1210",
+"id": "ignore1211",
 "name": "Chocolate Egg",
 "requirement": "Collect a stack of at least 480 Eggs while having at least 3 active spells.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "ChocolateEggFeat",
@@ -13119,7 +13119,7 @@
 },
 {
 "order": 937,
-"id": "ignore1211",
+"id": "ignore1212",
 "name": "Eggsceptional",
 "requirement": "Collect a stack of at least 720 Eggs at any time during the Easter event.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "EggsceptionalFeat",
@@ -13133,7 +13133,7 @@
 },
 {
 "order": 938,
-"id": "ignore1212",
+"id": "ignore1213",
 "name": "Rotten Egg",
 "requirement": "Collect a stack of at least 720 Eggs while being affiliated with the Undead.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "RottenEggFeat",
@@ -13147,7 +13147,7 @@
 },
 {
 "order": 939,
-"id": "ignore1213",
+"id": "ignore1214",
 "name": "Colorfull",
 "requirement": "Collect a stack of at least 720 Eggs while Fairy Chanting is active.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "ColorfullFeat",
@@ -13161,7 +13161,7 @@
 },
 {
 "order": 940,
-"id": "ignore1214",
+"id": "ignore1215",
 "name": "Eggsercise",
 "requirement": "Find a Rare Egg while having at least 100000 assistants.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "EggserciseFeat",
@@ -13175,7 +13175,7 @@
 },
 {
 "order": 941,
-"id": "ignore1215",
+"id": "ignore1216",
 "name": "The Perfect Egg",
 "requirement": "Collect any amount of Eggs while having at least 1 day of playtime with each vanilla faction.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "ThePerfectEggFeat",
@@ -13189,7 +13189,7 @@
 },
 {
 "order": 942,
-"id": "ignore1216",
+"id": "ignore1217",
 "name": "Platinum Egg",
 "requirement": "Collect a stack of at least 720 Eggs while having 8 Unique Eggs and at least 1000 excavations.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "PlatinumEggFeat",
@@ -13203,7 +13203,7 @@
 },
 {
 "order": 943,
-"id": "ignore1217",
+"id": "ignore1218",
 "name": "Heavenly Omelette",
 "requirement": "Collect a stack of at least 720 Eggs while having at least 10 Heaven's Domains and 200 Rare Eggs collected.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "HeavenlyOmeletteFeat",
@@ -13217,7 +13217,7 @@
 },
 {
 "order": 944,
-"id": "ignore1218",
+"id": "ignore1219",
 "name": "Chill Out",
 "requirement": "Collect a stack of at least 480 Frost Orbs while affiliated with the Summeraans.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "ChillOutFeat",
@@ -13231,7 +13231,7 @@
 },
 {
 "order": 945,
-"id": "ignore1219",
+"id": "ignore1220",
 "name": "Warm Up",
 "requirement": "Collect a stack of at least 480 Flame Orbs while affiliated with the Winterly.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "WarmUpFeat",
@@ -13245,7 +13245,7 @@
 },
 {
 "order": 946,
-"id": "ignore1220",
+"id": "ignore1221",
 "name": "Summeraan Champion",
 "requirement": "Purchase all Summeraan Upgrades.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "SummeraanAlliance",
@@ -13259,7 +13259,7 @@
 },
 {
 "order": 947,
-"id": "ignore1221",
+"id": "ignore1222",
 "name": "Winterly Champion",
 "requirement": "Purchase all Winterly Upgrades.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "WinterlyAlliance",
@@ -13273,7 +13273,7 @@
 },
 {
 "order": 948,
-"id": "ignore1222",
+"id": "ignore1223",
 "name": "Climate Forecast",
 "requirement": "Collect a stack of at least 480 of any Orbs while unaffilliated with either of the Summer Festival factions.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "ClimateForecastFeat",
@@ -13287,7 +13287,7 @@
 },
 {
 "order": 949,
-"id": "ignore1223",
+"id": "ignore1224",
 "name": "Frostmelter",
 "requirement": "Collect a stack of at least 480 of any Orbs while having all three upgrades of either Summeraan or Winterly.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "FrostmelterFeat",
@@ -13301,7 +13301,7 @@
 },
 {
 "order": 950,
-"id": "ignore1224",
+"id": "ignore1225",
 "name": "Late Springtime",
 "requirement": "While affiliated with the Fairies, collect a stack of at least 720 of any Orbs.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "LateSpringtimeFeat",
@@ -13315,7 +13315,7 @@
 },
 {
 "order": 951,
-"id": "ignore1225",
+"id": "ignore1226",
 "name": "Searing Summer",
 "requirement": "Collect a stack of at least 720 Flame Orbs while Holy Light and Call to Arms are active simultaneously.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "SearingSummerFeat",
@@ -13329,7 +13329,7 @@
 },
 {
 "order": 952,
-"id": "ignore1226",
+"id": "ignore1227",
 "name": "Midsummer Night's Dream",
 "requirement": "Collect a stack of at least 720 Frost Orbs while Night Time is active.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "MidsummerNightsDreamFeat",
@@ -13343,7 +13343,7 @@
 },
 {
 "order": 953,
-"id": "ignore1227",
+"id": "ignore1228",
 "name": "Heat Core",
 "requirement": "Collect a stack of at least 720 Flame Orbs while you have at least 2 hours of Heatwave activity time in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "HeatCoreFeat",
@@ -13357,7 +13357,7 @@
 },
 {
 "order": 954,
-"id": "ignore1228",
+"id": "ignore1229",
 "name": "Still Lightning",
 "requirement": "Collect a stack of at least 720 Frost Orbs while you have at least 1 hour of Lightning Strike activity time in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "StillLightningFeat",
@@ -13371,7 +13371,7 @@
 },
 {
 "order": 955,
-"id": "ignore1229",
+"id": "ignore1230",
 "name": "White Hot Magic",
 "requirement": "Collect a stack of at least 720 Flame Orbs while you have at least 5 active spells.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "WhiteHotMagicFeat",
@@ -13385,7 +13385,7 @@
 },
 {
 "order": 956,
-"id": "ignore1230",
+"id": "ignore1231",
 "name": "General Winter",
 "requirement": "Collect a stack of at least 720 Frost Orbs while having active spells from at least 4 different alignments.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "GeneralWinterFeat",
@@ -13399,7 +13399,7 @@
 },
 {
 "order": 957,
-"id": "ignore1231",
+"id": "ignore1232",
 "name": "Monster Breeder",
 "requirement": "Grow all Halloween monsters to level 50.",
 "icon": "MonsterBreederFeat",
@@ -13413,7 +13413,7 @@
 },
 {
 "order": 958,
-"id": "ignore1232",
+"id": "ignore1233",
 "name": "Pumpkin Smasher",
 "requirement": "Smash 6 Halloween Pumpkins.",
 "icon": "PumpkinSmasherFeat",
@@ -13427,7 +13427,7 @@
 },
 {
 "order": 959,
-"id": "ignore1233",
+"id": "ignore1234",
 "name": "Spooky",
 "requirement": "Collect a stack of at least 480 Ectoplasm while having a Ghost monster pet.",
 "icon": "SpookyFeat",
@@ -13441,7 +13441,7 @@
 },
 {
 "order": 960,
-"id": "ignore1234",
+"id": "ignore1235",
 "name": "Bloodthirsty",
 "requirement": "Collect a stack of at least 480 or more Blood while having a Vampire monster pet.",
 "icon": "BloodthirstyFeat",
@@ -13455,7 +13455,7 @@
 },
 {
 "order": 961,
-"id": "ignore1235",
+"id": "ignore1236",
 "name": "Bonepicker",
 "requirement": "Collect a stack of at least 480 or more Bones while having a Skeleton monster pet.",
 "icon": "BonepickerFeat",
@@ -13469,7 +13469,7 @@
 },
 {
 "order": 962,
-"id": "ignore1236",
+"id": "ignore1237",
 "name": "Halloween Magic",
 "requirement": "Cast each Halloween Spell at least 100 times in this reincarnation.",
 "icon": "HalloweenMagicFeat",
@@ -13483,7 +13483,7 @@
 },
 {
 "order": 963,
-"id": "ignore1237",
+"id": "ignore1238",
 "name": "Spectral Surge",
 "requirement": "Collect at least 480 of each resource in this Era. It is not required to collect full stacks only.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "SpectralSurgeIcon",
@@ -13497,7 +13497,7 @@
 },
 {
 "order": 964,
-"id": "ignore1238",
+"id": "ignore1239",
 "name": "Pumpkin Collector",
 "requirement": "Collect a stack of at least 720 of any resource after having smashed at least 3 Pumpkins.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "PumpkinCollectorFeat",
@@ -13511,7 +13511,7 @@
 },
 {
 "order": 965,
-"id": "ignore1239",
+"id": "ignore1240",
 "name": "Monstrous",
 "requirement": "Collect a stack of at least 720 of any resource while using any level 50 monster.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "MonstrousFeat",
@@ -13525,7 +13525,7 @@
 },
 {
 "order": 966,
-"id": "ignore1240",
+"id": "ignore1241",
 "name": "Curse of the Fallen",
 "requirement": "Have at least 2 hours of Holy Light activity time while using a level 50 Vampire.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "CurseOfTheFallenFeat",
@@ -13539,7 +13539,7 @@
 },
 {
 "order": 967,
-"id": "ignore1241",
+"id": "ignore1242",
 "name": "Golden Bones",
 "requirement": "Have at least 1000 Tax Collection casts in this Era while having a level 50 Skeleton.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "GoldenBonesFeat",
@@ -13553,7 +13553,7 @@
 },
 {
 "order": 968,
-"id": "ignore1242",
+"id": "ignore1243",
 "name": "Ghostbuster",
 "requirement": "Have a Combo Strike counter of at least 500 while having a level 50 Ghost.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "GhostbusterFeat",
@@ -13567,7 +13567,7 @@
 },
 {
 "order": 969,
-"id": "ignore1243",
+"id": "ignore1244",
 "name": "Mummy?",
 "requirement": "Excavate once while having at least 1000 Ancient Pyramids and all three Halloween monsters at level 50.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "MummyFeat",
@@ -13581,7 +13581,7 @@
 },
 {
 "order": 970,
-"id": "ignore1244",
+"id": "ignore1245",
 "name": "Sacred Holiness",
 "requirement": "Collect a stack of at least 480 Holy Symbols while affiliated with the Angels.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "SacredHolinessFeat",
@@ -13595,7 +13595,7 @@
 },
 {
 "order": 971,
-"id": "ignore1245",
+"id": "ignore1246",
 "name": "Darkest Heresy",
 "requirement": "Collect a stack of at least 480 Lava Stones while affiliated with the Demons.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "DarkestHeresyFeat",
@@ -13609,7 +13609,7 @@
 },
 {
 "order": 972,
-"id": "ignore1246",
+"id": "ignore1247",
 "name": "Indifference",
 "requirement": "Collect a stack of at least 480 of any resource while affiliated with a Neutral faction.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "IndifferenceFeat",
@@ -13623,7 +13623,7 @@
 },
 {
 "order": 973,
-"id": "ignore1247",
+"id": "ignore1248",
 "name": "Seraphim Champion",
 "requirement": "Purchase all Seraphim Upgrades.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "SeraphimAlliance",
@@ -13637,7 +13637,7 @@
 },
 {
 "order": 974,
-"id": "ignore1248",
+"id": "ignore1249",
 "name": "Asmodean Champion",
 "requirement": "Purchase all Asmodean Upgrades.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "AsmodeanAlliance",
@@ -13651,7 +13651,7 @@
 },
 {
 "order": 975,
-"id": "ignore1249",
+"id": "ignore1250",
 "name": "World Restoration",
 "requirement": "Have the same total amount of Holy Symbols and Lava Stone at any given time, while having at least 1400 total.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "WorldRestorationFeat",
@@ -13665,7 +13665,7 @@
 },
 {
 "order": 976,
-"id": "ignore1250",
+"id": "ignore1251",
 "name": "Frenzied Army",
 "requirement": "Collect a stack of at least 720 of any resource while Blood Frenzy and Call to Arms are active simultaneously.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "FrenziedArmyFeat",
@@ -13679,7 +13679,7 @@
 },
 {
 "order": 977,
-"id": "ignore1251",
+"id": "ignore1252",
 "name": "Planar Tax",
 "requirement": "Collect a stack of at least 720 of any resource in an Era with at least 1000 Tax Collection casts.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "PlanarTaxFeat",
@@ -13693,7 +13693,7 @@
 },
 {
 "order": 978,
-"id": "ignore1252",
+"id": "ignore1253",
 "name": "Fields of Conflict",
 "requirement": "Collect a stack of at least 720 of any resource while having at least 20000 clicks in the current game.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "FieldsOfConflictFeat",
@@ -13707,7 +13707,7 @@
 },
 {
 "order": 979,
-"id": "ignore1253",
+"id": "ignore1254",
 "name": "Unwanted Truce",
 "requirement": "Collect a stack of at least 720 of any resource while being affiliated with any Neutral faction.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "UnwantedTruceFeat",
@@ -13721,7 +13721,7 @@
 },
 {
 "order": 980,
-"id": "ignore1254",
+"id": "ignore1255",
 "name": "10 Years War",
 "requirement": "Collect a stack of at least 720 of any resource while having at least 2 hours of Holy Light and 2 hours of Blood Frenzy in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "10YearsWarFeat",
@@ -13735,7 +13735,7 @@
 },
 {
 "order": 981,
-"id": "ignore1255",
+"id": "ignore1256",
 "name": "Hired Champions",
 "requirement": "Collect a stack of at least 720 of any resource while having at least 1 hour of God's Hand and 1 hour of Hellfire Blast activity time in this Era.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "HiredChampionsFeat",
@@ -13749,7 +13749,7 @@
 },
 {
 "order": 982,
-"id": "ignore1256",
+"id": "ignore1257",
 "name": "Eternal Battle",
 "requirement": "Collect a stack of at least 720 of any resource while having 3 upgrades of any Blood War faction.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "EternalBattleFeat",
@@ -13763,7 +13763,7 @@
 },
 {
 "order": 983,
-"id": "ignore1257",
+"id": "ignore1258",
 "name": "Goblin's Bane",
 "requirement": "Fight the Goblin Army 100 times.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "FightGoblinArmyUpgrade",
@@ -13777,7 +13777,7 @@
 },
 {
 "order": 984,
-"id": "ignore1258",
+"id": "ignore1259",
 "name": "Goblin's Commander",
 "requirement": "Support the Goblin Army 100 times.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "SupportGoblinArmyUpgrade",
@@ -13791,7 +13791,7 @@
 },
 {
 "order": 985,
-"id": "ignore1259",
+"id": "ignore1260",
 "name": "Goblins Everywhere!",
 "requirement": "Collect at least 10 Goblin Crowns in a single click while affiliated with any 6 different factions. Prestige and Elite factions not included.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GoblinsEverywhereFeat",
@@ -13805,7 +13805,7 @@
 },
 {
 "order": 986,
-"id": "ignore1260",
+"id": "ignore1261",
 "name": "Gold Hunt",
 "requirement": "Collect a stack of at least 480 Goblin Crowns while affiliated with Goblins.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GoldHuntFeat",
@@ -13819,7 +13819,7 @@
 },
 {
 "order": 987,
-"id": "ignore1261",
+"id": "ignore1262",
 "name": "The Undecided Armada",
 "requirement": "Collect a stack of at least 480 Goblin Crowns while having no faction.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "TheUndecidedArmadaFeat",
@@ -13833,7 +13833,7 @@
 },
 {
 "order": 988,
-"id": "ignore1262",
+"id": "ignore1263",
 "name": "Platinum Trophy",
 "requirement": "While affiliated with the Goblins and having supported the Army at least 70 times, collect a stack of at least 720 Goblin Crowns.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "PlatinumTrophyFeat",
@@ -13847,7 +13847,7 @@
 },
 {
 "order": 989,
-"id": "ignore1263",
+"id": "ignore1264",
 "name": "Bloody Crown",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while Blood Frenzy and Call to Arms are active simultaneously.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "BloodyCrownFeat",
@@ -13861,7 +13861,7 @@
 },
 {
 "order": 990,
-"id": "ignore1264",
+"id": "ignore1265",
 "name": "Under a Green Sun",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while having at least 2 hours of Goblin's Greed activity time in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "UnderAGreenSunFeat",
@@ -13875,7 +13875,7 @@
 },
 {
 "order": 991,
-"id": "ignore1265",
+"id": "ignore1266",
 "name": "Debt for Life",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while you are affiliated with Goblins and have 1000 Tax Collections cast in this Era.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "DebtForLifeFeat",
@@ -13889,7 +13889,7 @@
 },
 {
 "order": 992,
-"id": "ignore1266",
+"id": "ignore1267",
 "name": "Treachery",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while fighting the Goblin Army and have 1 hour of time spent as Evil in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "TreacheryFeat",
@@ -13903,7 +13903,7 @@
 },
 {
 "order": 993,
-"id": "ignore1267",
+"id": "ignore1268",
 "name": "Bribed Army",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while being affiliated with any Prestige faction and having at least 1e100 Gold in your treasury.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "BribedArmyFeat",
@@ -13917,7 +13917,7 @@
 },
 {
 "order": 994,
-"id": "ignore1268",
+"id": "ignore1269",
 "name": "Underhanded Tactics",
 "requirement": "Collect a stack of at least 720 Goblin Crowns while having at least 9 Drow upgrades and a Combo Strike counter of at least 100.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "UnderhandedTacticsFeat",
@@ -13931,7 +13931,7 @@
 },
 {
 "order": 995,
-"id": "ignore1269",
+"id": "ignore1270",
 "name": "Gentle Collector",
 "requirement": "While affiliated with the Fairies, collect a stack of at least 720 Entropic Drops.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GentleCollectorFeat",
@@ -13945,7 +13945,7 @@
 },
 {
 "order": 996,
-"id": "ignore1270",
+"id": "ignore1271",
 "name": "Aggressive Collector",
 "requirement": "While affiliated with the Undead, collect a stack of at least 720 Crystal Prisms.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "AggressiveCollectorFeat",
@@ -13959,7 +13959,7 @@
 },
 {
 "order": 997,
-"id": "ignore1271",
+"id": "ignore1272",
 "name": "Golden Age",
 "requirement": "Cast Remnant spells at least 1000 times. (Times cast: INF)\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "GoldenAgeFeat",
@@ -13973,7 +13973,7 @@
 },
 {
 "order": 998,
-"id": "ignore1272",
+"id": "ignore1273",
 "name": "Order Restoration",
 "requirement": "Upgrade Order Remnant to level 15.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "OrderRemnant",
@@ -13987,7 +13987,7 @@
 },
 {
 "order": 999,
-"id": "ignore1273",
+"id": "ignore1274",
 "name": "Chaos Restoration",
 "requirement": "Upgrade Chaos Remnant to level 15.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "ChaosRemnant",
@@ -14001,7 +14001,7 @@
 },
 {
 "order": 1000,
-"id": "ignore1274",
+"id": "ignore1275",
 "name": "Balance Restoration",
 "requirement": "Upgrade Balance Remnant to level 15.\n\nIf you unlock all of this event's feats, you will permanently unlock a new color option for the mana bar.",
 "icon": "BalanceRemnant",
@@ -14015,7 +14015,7 @@
 },
 {
 "order": 1001,
-"id": "ignore1275",
+"id": "ignore1276",
 "name": "Balanced Collector",
 "requirement": "While affiliated with the Druids, collect a stack of at least 720 Equilibrium Fragments.\n\nIf you unlock this feat, you will permanently unlock a new cosmetic shape for your coin particles.",
 "icon": "BalancedCollectorFeat",
@@ -14029,7 +14029,7 @@
 },
 {
 "order": 1002,
-"id": "ignore1276",
+"id": "ignore1277",
 "name": "Idillium Explorer",
 "requirement": "Cast a Remnant spell with 6 different factions.\n\nIf you unlock this feat, you will permanently unlock a new upgrade which can be used during any seasonal event.",
 "icon": "IdilliumExplorerFeat",
@@ -14043,7 +14043,7 @@
 },
 {
 "order": 1003,
-"id": "ignore1277",
+"id": "ignore1278",
 "name": "Beyond the Looking Glass",
 "requirement": "Collect a stack of at least 720 Equilibrium Fragments while Moon Blessing is active.\n\nIf you unlock this feat, you will permanently unlock a new icon option for the spell.",
 "icon": "BeyondTheLookingGlassFeat",
@@ -14057,7 +14057,7 @@
 },
 {
 "order": 1004,
-"id": "ignore1278",
+"id": "ignore1279",
 "name": "Full-spectrum Color",
 "requirement": "Collect a stack of at least 720 Entropic Drops while having at least 30 minutes spent with Fairies and Demons in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "FullSpectrumColorFeat",
@@ -14071,7 +14071,7 @@
 },
 {
 "order": 1005,
-"id": "ignore1279",
+"id": "ignore1280",
 "name": "Under the Rainbow",
 "requirement": "Collect a stack of at least 720 Crystal Prisms while having at least 1000 Excavations.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "UnderTheRainbowFeat",
@@ -14085,7 +14085,7 @@
 },
 {
 "order": 1006,
-"id": "ignore1280",
+"id": "ignore1281",
 "name": "Stream of Dreams",
 "requirement": "Collect a stack of at least 720 of any resource while having at least 15m of activity time with each of the three event spells in this Reincarnation.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "StreamOfDreamsFeat",
@@ -14099,7 +14099,7 @@
 },
 {
 "order": 1007,
-"id": "ignore1281",
+"id": "ignore1282",
 "name": "Nexus Descent",
 "requirement": "Collect a stack of at least 720 of any resource while having at least 2500 Nexuses.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
 "icon": "NexusDescentFeat",
@@ -14113,7 +14113,21 @@
 },
 {
 "order": 1008,
-"id": "ignore1282",
+"id": "ignore1283",
+"name": "Dragonblood",
+"requirement": "Collect a stack of at least 720 Blood while having at least 3000 Dragon Pastures and at least 5 Dragon's Breath effects active.\n\nIf you unlock this feat, you will permanently unlock a new upgrade.",
+"icon": null,
+"icon_name": "DragonbloodFeat",
+"type": null,
+"alignment": 0,
+"category": -1,
+"tier": -1,
+"listed": false,
+"group": "seasonal"
+},
+{
+"order": 1009,
+"id": "ignore1284",
 "name": "Snowpile 1",
 "requirement": "Collect 1000 Snowballs.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SnowpileQuest1",
@@ -14126,8 +14140,8 @@
 "group": "event-quest"
 },
 {
-"order": 1009,
-"id": "ignore1283",
+"order": 1010,
+"id": "ignore1285",
 "name": "Snowpile 2",
 "requirement": "Collect 4500 Snowballs.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SnowpileQuest2",
@@ -14140,8 +14154,8 @@
 "group": "event-quest"
 },
 {
-"order": 1010,
-"id": "ignore1284",
+"order": 1011,
+"id": "ignore1286",
 "name": "Snowpile 3",
 "requirement": "Collect 10000 Snowballs.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SnowpileQuest3",
@@ -14154,8 +14168,8 @@
 "group": "event-quest"
 },
 {
-"order": 1011,
-"id": "ignore1285",
+"order": 1012,
+"id": "ignore1287",
 "name": "Snowpile 4",
 "requirement": "Collect 21000 Snowballs.\n\nCompleting this Quest step will increase your Event bonus by an additional 3%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SnowpileFeat",
@@ -14168,8 +14182,8 @@
 "group": "event-quest"
 },
 {
-"order": 1012,
-"id": "ignore1286",
+"order": 1013,
+"id": "ignore1288",
 "name": "Gift Collector 1",
 "requirement": "Open 1 Present.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GiftCollectorQuest1",
@@ -14182,8 +14196,8 @@
 "group": "event-quest"
 },
 {
-"order": 1013,
-"id": "ignore1287",
+"order": 1014,
+"id": "ignore1289",
 "name": "Gift Collector 2",
 "requirement": "Open 4 Presents.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GiftCollectorQuest2",
@@ -14196,8 +14210,8 @@
 "group": "event-quest"
 },
 {
-"order": 1014,
-"id": "ignore1288",
+"order": 1015,
+"id": "ignore1290",
 "name": "Gift Collector 3",
 "requirement": "Open 8 Presents.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GiftCollectorQuest3",
@@ -14210,8 +14224,8 @@
 "group": "event-quest"
 },
 {
-"order": 1015,
-"id": "ignore1289",
+"order": 1016,
+"id": "ignore1291",
 "name": "Gift Collector 4",
 "requirement": "Open 13 Presents.\n\nCompleting this Quest step will increase your Event bonus by an additional 3%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GiftCollectorFeat",
@@ -14224,8 +14238,8 @@
 "group": "event-quest"
 },
 {
-"order": 1016,
-"id": "ignore1290",
+"order": 1017,
+"id": "ignore1292",
 "name": "Feel the Love 1",
 "requirement": "Purchase 50 Heart Upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "FeelTheLoveQuest1",
@@ -14238,8 +14252,8 @@
 "group": "event-quest"
 },
 {
-"order": 1017,
-"id": "ignore1291",
+"order": 1018,
+"id": "ignore1293",
 "name": "Feel the Love 2",
 "requirement": "Purchase 125 Heart Upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "FeelTheLoveQuest2",
@@ -14252,8 +14266,8 @@
 "group": "event-quest"
 },
 {
-"order": 1018,
-"id": "ignore1292",
+"order": 1019,
+"id": "ignore1294",
 "name": "Feel the Love 3",
 "requirement": "Purchase 250 Heart Upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "FeelTheLoveFeat",
@@ -14266,8 +14280,8 @@
 "group": "event-quest"
 },
 {
-"order": 1019,
-"id": "ignore1293",
+"order": 1020,
+"id": "ignore1295",
 "name": "Egg Hunter 1",
 "requirement": "Collect 750 Common Eggs.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggHunterQuest1",
@@ -14280,8 +14294,8 @@
 "group": "event-quest"
 },
 {
-"order": 1020,
-"id": "ignore1294",
+"order": 1021,
+"id": "ignore1296",
 "name": "Egg Hunter 2",
 "requirement": "Collect 2000 Common Eggs.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggHunterQuest2",
@@ -14294,8 +14308,8 @@
 "group": "event-quest"
 },
 {
-"order": 1021,
-"id": "ignore1295",
+"order": 1022,
+"id": "ignore1297",
 "name": "Egg Hunter 3",
 "requirement": "Collect 4000 Common Eggs.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggHunterQuest3",
@@ -14308,8 +14322,8 @@
 "group": "event-quest"
 },
 {
-"order": 1022,
-"id": "ignore1296",
+"order": 1023,
+"id": "ignore1298",
 "name": "Egg Hunter 4",
 "requirement": "Collect 7000 Common Eggs.\n\nCompleting this Quest step will increase your Event bonus by an additional 3%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggHunterFeat",
@@ -14322,8 +14336,8 @@
 "group": "event-quest"
 },
 {
-"order": 1023,
-"id": "ignore1297",
+"order": 1024,
+"id": "ignore1299",
 "name": "Egg Collection 1",
 "requirement": "Find 1 Unique Egg.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggCollectionQuest1",
@@ -14336,8 +14350,8 @@
 "group": "event-quest"
 },
 {
-"order": 1024,
-"id": "ignore1298",
+"order": 1025,
+"id": "ignore1300",
 "name": "Egg Collection 2",
 "requirement": "Find 3 Unique Eggs\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggCollectionQuest2",
@@ -14350,8 +14364,8 @@
 "group": "event-quest"
 },
 {
-"order": 1025,
-"id": "ignore1299",
+"order": 1026,
+"id": "ignore1301",
 "name": "Egg Collection 3",
 "requirement": "Find 5 Unique Eggs\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggCollectionQuest3",
@@ -14364,8 +14378,8 @@
 "group": "event-quest"
 },
 {
-"order": 1026,
-"id": "ignore1300",
+"order": 1027,
+"id": "ignore1302",
 "name": "Egg Collection 4",
 "requirement": "Find 8 Unique Eggs\n\nCompleting this Quest step will increase your Event bonus by an additional 3%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "EggCollectionFeat",
@@ -14378,8 +14392,8 @@
 "group": "event-quest"
 },
 {
-"order": 1027,
-"id": "ignore1301",
+"order": 1028,
+"id": "ignore1303",
 "name": "Summeraan Champion 1",
 "requirement": "Purchase 1 Summeraan upgrade.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SummeraanUpgrade1",
@@ -14392,8 +14406,8 @@
 "group": "event-quest"
 },
 {
-"order": 1028,
-"id": "ignore1302",
+"order": 1029,
+"id": "ignore1304",
 "name": "Summeraan Champion 2",
 "requirement": "Purchase 2 Summeraan upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SummeraanUpgrade2",
@@ -14406,8 +14420,8 @@
 "group": "event-quest"
 },
 {
-"order": 1029,
-"id": "ignore1303",
+"order": 1030,
+"id": "ignore1305",
 "name": "Summeraan Champion 3",
 "requirement": "Purchase 3 Summeraan upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SummeraanUpgrade3",
@@ -14420,8 +14434,8 @@
 "group": "event-quest"
 },
 {
-"order": 1030,
-"id": "ignore1304",
+"order": 1031,
+"id": "ignore1306",
 "name": "Winterly Champion 1",
 "requirement": "Purchase 1 Winterly upgrade.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "WinterlyUpgrade1",
@@ -14434,8 +14448,8 @@
 "group": "event-quest"
 },
 {
-"order": 1031,
-"id": "ignore1305",
+"order": 1032,
+"id": "ignore1307",
 "name": "Winterly Champion 2",
 "requirement": "Purchase 2 Winterly upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "WinterlyUpgrade2",
@@ -14448,8 +14462,8 @@
 "group": "event-quest"
 },
 {
-"order": 1032,
-"id": "ignore1306",
+"order": 1033,
+"id": "ignore1308",
 "name": "Winterly Champion 3",
 "requirement": "Purchase 3 Winterly upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "WinterlyUpgrade3",
@@ -14462,8 +14476,8 @@
 "group": "event-quest"
 },
 {
-"order": 1033,
-"id": "ignore1307",
+"order": 1034,
+"id": "ignore1309",
 "name": "Monster Breeder 1",
 "requirement": "Grow all monsters to level 10.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "MonsterBreeder1",
@@ -14476,8 +14490,8 @@
 "group": "event-quest"
 },
 {
-"order": 1034,
-"id": "ignore1308",
+"order": 1035,
+"id": "ignore1310",
 "name": "Monster Breeder 2",
 "requirement": "Grow all monsters to level 25.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "MonsterBreeder2",
@@ -14490,8 +14504,8 @@
 "group": "event-quest"
 },
 {
-"order": 1035,
-"id": "ignore1309",
+"order": 1036,
+"id": "ignore1311",
 "name": "Monster Breeder 3",
 "requirement": "Grow all monsters to level 50.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "MonsterBreederFeat",
@@ -14504,8 +14518,8 @@
 "group": "event-quest"
 },
 {
-"order": 1036,
-"id": "ignore1310",
+"order": 1037,
+"id": "ignore1312",
 "name": "Pumpkin Smasher 1",
 "requirement": "Smash 1 Pumpkin.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "PumpkinSmasher1",
@@ -14518,8 +14532,8 @@
 "group": "event-quest"
 },
 {
-"order": 1037,
-"id": "ignore1311",
+"order": 1038,
+"id": "ignore1313",
 "name": "Pumpkin Smasher 2",
 "requirement": "Smash 2 Pumpkins.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "PumpkinSmasher2",
@@ -14532,8 +14546,8 @@
 "group": "event-quest"
 },
 {
-"order": 1038,
-"id": "ignore1312",
+"order": 1039,
+"id": "ignore1314",
 "name": "Pumpkin Smasher 3",
 "requirement": "Smash 4 Pumpkins.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "PumpkinSmasher3",
@@ -14546,8 +14560,8 @@
 "group": "event-quest"
 },
 {
-"order": 1039,
-"id": "ignore1313",
+"order": 1040,
+"id": "ignore1315",
 "name": "Pumpkin Smasher 4",
 "requirement": "Smash 6 Pumpkins.\n\nCompleting this Quest step will increase your Event bonus by an additional 3%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "PumpkinSmasherFeat",
@@ -14560,8 +14574,8 @@
 "group": "event-quest"
 },
 {
-"order": 1040,
-"id": "ignore1314",
+"order": 1041,
+"id": "ignore1316",
 "name": "Seraphim Champion 1",
 "requirement": "Purchase 1 Seraphim upgrade.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SeraphimUpgrade1",
@@ -14574,8 +14588,8 @@
 "group": "event-quest"
 },
 {
-"order": 1041,
-"id": "ignore1315",
+"order": 1042,
+"id": "ignore1317",
 "name": "Seraphim Champion 2",
 "requirement": "Purchase 2 Seraphim upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SeraphimUpgrade2",
@@ -14588,8 +14602,8 @@
 "group": "event-quest"
 },
 {
-"order": 1042,
-"id": "ignore1316",
+"order": 1043,
+"id": "ignore1318",
 "name": "Seraphim Champion 3",
 "requirement": "Purchase 3 Seraphim upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "SeraphimUpgrade3",
@@ -14602,8 +14616,8 @@
 "group": "event-quest"
 },
 {
-"order": 1043,
-"id": "ignore1317",
+"order": 1044,
+"id": "ignore1319",
 "name": "Asmodean Champion 1",
 "requirement": "Purchase 1 Asmodean upgrade.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "AsmodeanUpgrade1",
@@ -14616,8 +14630,8 @@
 "group": "event-quest"
 },
 {
-"order": 1044,
-"id": "ignore1318",
+"order": 1045,
+"id": "ignore1320",
 "name": "Asmodean Champion 2",
 "requirement": "Purchase 2 Asmodean upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "AsmodeanUpgrade2",
@@ -14630,8 +14644,8 @@
 "group": "event-quest"
 },
 {
-"order": 1045,
-"id": "ignore1319",
+"order": 1046,
+"id": "ignore1321",
 "name": "Asmodean Champion 3",
 "requirement": "Purchase 3 Asmodean upgrades.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "AsmodeanUpgrade3",
@@ -14644,8 +14658,8 @@
 "group": "event-quest"
 },
 {
-"order": 1046,
-"id": "ignore1320",
+"order": 1047,
+"id": "ignore1322",
 "name": "Goblin's Bane 1",
 "requirement": "Fight the Goblin Army 25 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionGoodUpgrade1",
@@ -14658,8 +14672,8 @@
 "group": "event-quest"
 },
 {
-"order": 1047,
-"id": "ignore1321",
+"order": 1048,
+"id": "ignore1323",
 "name": "Goblin's Bane 2",
 "requirement": "Fight the Goblin Army 50 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionGoodUpgrade2",
@@ -14672,8 +14686,8 @@
 "group": "event-quest"
 },
 {
-"order": 1048,
-"id": "ignore1322",
+"order": 1049,
+"id": "ignore1324",
 "name": "Goblin's Bane 3",
 "requirement": "Fight the Goblin Army 100 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionGoodUpgrade3",
@@ -14686,8 +14700,8 @@
 "group": "event-quest"
 },
 {
-"order": 1049,
-"id": "ignore1323",
+"order": 1050,
+"id": "ignore1325",
 "name": "Goblin's Commander 1",
 "requirement": "Support the Goblin Army 25 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionEvilUpgrade1",
@@ -14700,8 +14714,8 @@
 "group": "event-quest"
 },
 {
-"order": 1050,
-"id": "ignore1324",
+"order": 1051,
+"id": "ignore1326",
 "name": "Goblin's Commander 2",
 "requirement": "Support the Goblin Army 50 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionEvilUpgrade2",
@@ -14714,8 +14728,8 @@
 "group": "event-quest"
 },
 {
-"order": 1051,
-"id": "ignore1325",
+"order": 1052,
+"id": "ignore1327",
 "name": "Goblin's Commander 3",
 "requirement": "Support the Goblin Army 100 times.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "GoblinInvasionEvilUpgrade3",
@@ -14728,8 +14742,8 @@
 "group": "event-quest"
 },
 {
-"order": 1052,
-"id": "ignore1326",
+"order": 1053,
+"id": "ignore1328",
 "name": "Order Restoration 1",
 "requirement": "Upgrade Order Remnant to level 5.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestOrderRestoration1",
@@ -14742,8 +14756,8 @@
 "group": "event-quest"
 },
 {
-"order": 1053,
-"id": "ignore1327",
+"order": 1054,
+"id": "ignore1329",
 "name": "Order Restoration 2",
 "requirement": "Upgrade Order Remnant to level 10.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestOrderRestoration2",
@@ -14756,8 +14770,8 @@
 "group": "event-quest"
 },
 {
-"order": 1054,
-"id": "ignore1328",
+"order": 1055,
+"id": "ignore1330",
 "name": "Order Restoration 3",
 "requirement": "Upgrade Order Remnant to level 15.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestOrderRestoration3",
@@ -14770,8 +14784,8 @@
 "group": "event-quest"
 },
 {
-"order": 1055,
-"id": "ignore1329",
+"order": 1056,
+"id": "ignore1331",
 "name": "Chaos Restoration 1",
 "requirement": "Upgrade Chaos Remnant to level 5.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestChaosRestoration1",
@@ -14784,8 +14798,8 @@
 "group": "event-quest"
 },
 {
-"order": 1056,
-"id": "ignore1330",
+"order": 1057,
+"id": "ignore1332",
 "name": "Chaos Restoration 2",
 "requirement": "Upgrade Chaos Remnant to level 10.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestChaosRestoration2",
@@ -14798,8 +14812,8 @@
 "group": "event-quest"
 },
 {
-"order": 1057,
-"id": "ignore1331",
+"order": 1058,
+"id": "ignore1333",
 "name": "Chaos Restoration 3",
 "requirement": "Upgrade Chaos Remnant to level 15.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestChaosRestoration3",
@@ -14812,8 +14826,8 @@
 "group": "event-quest"
 },
 {
-"order": 1058,
-"id": "ignore1332",
+"order": 1059,
+"id": "ignore1334",
 "name": "Balance Restoration 1",
 "requirement": "Upgrade Balance Remnant to level 5.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestBalanceRestoration1",
@@ -14826,8 +14840,8 @@
 "group": "event-quest"
 },
 {
-"order": 1059,
-"id": "ignore1333",
+"order": 1060,
+"id": "ignore1335",
 "name": "Balance Restoration 2",
 "requirement": "Upgrade Balance Remnant to level 10.\n\nCompleting this Quest step will increase your Event bonus by an additional 1%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestBalanceRestoration2",
@@ -14840,8 +14854,8 @@
 "group": "event-quest"
 },
 {
-"order": 1060,
-"id": "ignore1334",
+"order": 1061,
+"id": "ignore1336",
 "name": "Balance Restoration 3",
 "requirement": "Upgrade Balance Remnant to level 15.\n\nCompleting this Quest step will increase your Event bonus by an additional 2%,\nwhich will be added to your Cumulative Event bonus.",
 "icon": "QuestBalanceRestoration3",
@@ -14854,8 +14868,8 @@
 "group": "event-quest"
 },
 {
-"order": 1061,
-"id": "ignore1335",
+"order": 1062,
+"id": "ignore1337",
 "name": "Ancient Stoneslab 1",
 "requirement": "We discovered an ancient stoneslab written in old scriptures. It appears to say something about Halls of Legends.",
 "icon": "AncientStoneSlab1Artifact",
@@ -14868,8 +14882,8 @@
 "group": "excavation"
 },
 {
-"order": 1062,
-"id": "ignore1336",
+"order": 1063,
+"id": "ignore1338",
 "name": "Fossilized Piece of Bark 1",
 "requirement": "We discovered a fossilized piece of bark with the image of a Faction Coin carved into it.",
 "icon": "FossilizedPieceOfBark1Artifact",
@@ -14882,8 +14896,8 @@
 "group": "excavation"
 },
 {
-"order": 1063,
-"id": "ignore1337",
+"order": 1064,
+"id": "ignore1339",
 "name": "Bone Fragment 1",
 "requirement": "We discovered a sundial shaped artifact, probably made of animal bones.",
 "icon": "BoneFragment1Artifact",
@@ -14896,8 +14910,8 @@
 "group": "excavation"
 },
 {
-"order": 1064,
-"id": "ignore1338",
+"order": 1065,
+"id": "ignore1340",
 "name": "Ancient Stoneslab 2",
 "requirement": "We discovered an ancient stoneslab written in old scriptures. We can recognize the number 300.",
 "icon": "AncientStoneSlab2Artifact",
@@ -14910,8 +14924,8 @@
 "group": "excavation"
 },
 {
-"order": 1065,
-"id": "ignore1339",
+"order": 1066,
+"id": "ignore1341",
 "name": "Fossilized Piece of Bark 2",
 "requirement": "We discovered a fossilized piece of bark with the symbol of One Million.",
 "icon": "FossilizedPieceOfBark2Artifact",
@@ -14924,8 +14938,8 @@
 "group": "excavation"
 },
 {
-"order": 1066,
-"id": "ignore1340",
+"order": 1067,
+"id": "ignore1342",
 "name": "Bone Fragment 2",
 "requirement": "We discovered an artifact shaped like the number 36, probably made of animal bones.",
 "icon": "BoneFragment2Artifact",
@@ -14938,8 +14952,8 @@
 "group": "excavation"
 },
 {
-"order": 1067,
-"id": "ignore1341",
+"order": 1068,
+"id": "ignore1343",
 "name": "Key to the Lost City",
 "requirement": "Despite being thousands of years old, it's still shiny.",
 "icon": "KeyToTheLostCityArtifact",
@@ -14952,8 +14966,8 @@
 "group": "excavation"
 },
 {
-"order": 1068,
-"id": "ignore1342",
+"order": 1069,
+"id": "ignore1344",
 "name": "Ancient Device",
 "requirement": "This strange device seems to react to the Ancient Races magical capabilities... We may channel its power to increase their research potential!",
 "icon": "AncientDeviceArtifact",
@@ -14966,8 +14980,8 @@
 "group": "excavation"
 },
 {
-"order": 1069,
-"id": "ignore1343",
+"order": 1070,
+"id": "ignore1345",
 "name": "Earth Core",
 "requirement": "This piece of molten rock is continuously shifting its shape, responding to mysterious energy sources.",
 "icon": "EarthCoreArtifact",
@@ -14980,8 +14994,8 @@
 "group": "excavation"
 },
 {
-"order": 1070,
-"id": "ignore1344",
+"order": 1071,
+"id": "ignore1346",
 "name": "Horn of the Kings",
 "requirement": "It is said that when this horn is blown, the voices of past Dwarven Kings can be heard in the wind.",
 "icon": "HornOfTheKingsArtifact",
@@ -14994,8 +15008,8 @@
 "group": "excavation"
 },
 {
-"order": 1071,
-"id": "ignore1345",
+"order": 1072,
+"id": "ignore1347",
 "name": "Flame of Bondelnar",
 "requirement": "The magical azure flame of Bondelnar constantly emanates a silent, yet subtle, evil aura.",
 "icon": "FlameOfBondelnarArtifact",
@@ -15008,8 +15022,8 @@
 "group": "excavation"
 },
 {
-"order": 1072,
-"id": "ignore1346",
+"order": 1073,
+"id": "ignore1348",
 "name": "Rough Stone",
 "requirement": "A common, totally uninteresting stone.",
 "icon": "RoughStoneArtifact",
@@ -15022,8 +15036,8 @@
 "group": "excavation"
 },
 {
-"order": 1073,
-"id": "ignore1347",
+"order": 1074,
+"id": "ignore1349",
 "name": "Scarab of Fortune",
 "requirement": "You found the rarest of relics. This golden scarab will grant you 7 days of good luck, starting from now. Make good use of it!",
 "icon": "ScarabOfFortuneArtifact",
@@ -15036,8 +15050,8 @@
 "group": "excavation"
 },
 {
-"order": 1074,
-"id": "ignore1348",
+"order": 1075,
+"id": "ignore1350",
 "name": "Chocolate Cookie",
 "requirement": "Found in a wasteland made of cakes and sweets, snatched from the hands of an old woman...",
 "icon": "ChocolateCookieArtifact",
@@ -15050,8 +15064,8 @@
 "group": "excavation"
 },
 {
-"order": 1075,
-"id": "ignore1349",
+"order": 1076,
+"id": "ignore1351",
 "name": "Fossilized Rodent",
 "requirement": "What's this, a prehistoric mouse...?",
 "icon": "FossilizedRodentArtifact",
@@ -15064,8 +15078,8 @@
 "group": "excavation"
 },
 {
-"order": 1076,
-"id": "ignore1350",
+"order": 1077,
+"id": "ignore1352",
 "name": "Power Orb",
 "requirement": "Throbbing with arcane power.",
 "icon": "PowerOrbArtifact",
@@ -15078,8 +15092,8 @@
 "group": "excavation"
 },
 {
-"order": 1077,
-"id": "ignore1351",
+"order": 1078,
+"id": "ignore1353",
 "name": "Pink Carrot",
 "requirement": "The main product of properly nurtured Farms.",
 "icon": "PinkCarrotArtifact",
@@ -15092,8 +15106,8 @@
 "group": "excavation"
 },
 {
-"order": 1078,
-"id": "ignore1352",
+"order": 1079,
+"id": "ignore1354",
 "name": "Bottled Voice",
 "requirement": "The essence of a melodic Fairy voice.",
 "icon": "BottledVoiceArtifact",
@@ -15106,8 +15120,8 @@
 "group": "excavation"
 },
 {
-"order": 1079,
-"id": "ignore1353",
+"order": 1080,
+"id": "ignore1355",
 "name": "Lucky Clover",
 "requirement": "A perfectly shaped four-leaf clover. Each leaf is almost unnaturally identical to the other three.",
 "icon": "LuckyCloverArtifact",
@@ -15120,8 +15134,8 @@
 "group": "excavation"
 },
 {
-"order": 1080,
-"id": "ignore1354",
+"order": 1081,
+"id": "ignore1356",
 "name": "Mini-treasure",
 "requirement": "It's a small perfect replica of the old gold-filled treasure.",
 "icon": "MiniTreasureArtifact",
@@ -15134,8 +15148,8 @@
 "group": "excavation"
 },
 {
-"order": 1081,
-"id": "ignore1355",
+"order": 1082,
+"id": "ignore1357",
 "name": "Pillar Fragment",
 "requirement": "A tiny piece of the legendary pillars which sustain all the Heavens.",
 "icon": "PillarFragmentArtifact",
@@ -15148,8 +15162,8 @@
 "group": "excavation"
 },
 {
-"order": 1082,
-"id": "ignore1356",
+"order": 1083,
+"id": "ignore1358",
 "name": "Divine Sword",
 "requirement": "The shining golden sword of an Archangel. Its hilt feels pleasantly warm to the pure of heart, and burning hot for the villain.",
 "icon": "DivineSwordArtifact",
@@ -15162,8 +15176,8 @@
 "group": "excavation"
 },
 {
-"order": 1083,
-"id": "ignore1357",
+"order": 1084,
+"id": "ignore1359",
 "name": "Ancient Coin Piece",
 "requirement": "A common goblin lucky charm. The older it is, the luckier you are, or so they say.",
 "icon": "AncientCoinPieceArtifact",
@@ -15176,8 +15190,8 @@
 "group": "excavation"
 },
 {
-"order": 1084,
-"id": "ignore1358",
+"order": 1085,
+"id": "ignore1360",
 "name": "Goblin Purse",
 "requirement": "Heavy and roomy. Definitely too big for just pocket change.",
 "icon": "GoblinPurseArtifact",
@@ -15190,8 +15204,8 @@
 "group": "excavation"
 },
 {
-"order": 1085,
-"id": "ignore1359",
+"order": 1086,
+"id": "ignore1361",
 "name": "Rotten Organ",
 "requirement": "Ew... disgusting. It still pulses.",
 "icon": "RottenOrganArtifact",
@@ -15204,8 +15218,8 @@
 "group": "excavation"
 },
 {
-"order": 1086,
-"id": "ignore1360",
+"order": 1087,
+"id": "ignore1362",
 "name": "Jaw Bone",
 "requirement": "A jaw, missing more than half of its teeth.",
 "icon": "JawBoneArtifact",
@@ -15218,8 +15232,8 @@
 "group": "excavation"
 },
 {
-"order": 1087,
-"id": "ignore1361",
+"order": 1088,
+"id": "ignore1363",
 "name": "Demonic Figurine",
 "requirement": "An intricate figurine representing the evil face of a lesser demon.",
 "icon": "DemonicFigurineArtifact",
@@ -15232,8 +15246,8 @@
 "group": "excavation"
 },
 {
-"order": 1088,
-"id": "ignore1362",
+"order": 1089,
+"id": "ignore1364",
 "name": "Demon Horn",
 "requirement": "Still blazing with the flames of Hell. Handle with care.",
 "icon": "DemonHornArtifact",
@@ -15246,8 +15260,8 @@
 "group": "excavation"
 },
 {
-"order": 1089,
-"id": "ignore1363",
+"order": 1090,
+"id": "ignore1365",
 "name": "Huge Titan Statue",
 "requirement": "The granite representation of a giant wielding a lightning bolt in its fist. A foot appears to be missing.",
 "icon": "HugeTitanStatueArtifact",
@@ -15260,8 +15274,8 @@
 "group": "excavation"
 },
 {
-"order": 1090,
-"id": "ignore1364",
+"order": 1091,
+"id": "ignore1366",
 "name": "Titan Shield",
 "requirement": "A gargantuan metal shield, twice as tall as a common human.",
 "icon": "TitanShieldArtifact",
@@ -15274,8 +15288,8 @@
 "group": "excavation"
 },
 {
-"order": 1091,
-"id": "ignore1365",
+"order": 1092,
+"id": "ignore1367",
 "name": "Glyph Table",
 "requirement": "Contains all the secrets of the Druidic Alphabet.",
 "icon": "GlyphTableArtifact",
@@ -15288,8 +15302,8 @@
 "group": "excavation"
 },
 {
-"order": 1092,
-"id": "ignore1366",
+"order": 1093,
+"id": "ignore1368",
 "name": "Stone of Balance",
 "requirement": "A carved stone hovering above its pedestal.",
 "icon": "StoneOfBalanceArtifact",
@@ -15302,8 +15316,8 @@
 "group": "excavation"
 },
 {
-"order": 1093,
-"id": "ignore1367",
+"order": 1094,
+"id": "ignore1369",
 "name": "Translucent Goo",
 "requirement": "A completely odorless sticky substance with a diaphanous, unsettling glow.",
 "icon": "TranslucentGooArtifact",
@@ -15316,8 +15330,8 @@
 "group": "excavation"
 },
 {
-"order": 1094,
-"id": "ignore1368",
+"order": 1095,
+"id": "ignore1370",
 "name": "Octopus-shaped Helmet",
 "requirement": "A large helmet with empty metal prongs to accomodate tentacular appendages.",
 "icon": "OctopusShapedHelmetArtifact",
@@ -15330,8 +15344,8 @@
 "group": "excavation"
 },
 {
-"order": 1095,
-"id": "ignore1369",
+"order": 1096,
+"id": "ignore1371",
 "name": "Dwarven Bow",
 "requirement": "Actually a heavy throwing hammer.",
 "icon": "DwarvenBowArtifact",
@@ -15344,8 +15358,8 @@
 "group": "excavation"
 },
 {
-"order": 1096,
-"id": "ignore1370",
+"order": 1097,
+"id": "ignore1372",
 "name": "Stone Tankard",
 "requirement": "A very heavy mug for drinking the heaviest of beers.",
 "icon": "StoneTankardArtifact",
@@ -15358,8 +15372,8 @@
 "group": "excavation"
 },
 {
-"order": 1097,
-"id": "ignore1371",
+"order": 1098,
+"id": "ignore1373",
 "name": "Ceremonial Dagger",
 "requirement": "Its blade is unnaturally keen and sharp.",
 "icon": "CeremonialDaggerArtifact",
@@ -15372,8 +15386,8 @@
 "group": "excavation"
 },
 {
-"order": 1098,
-"id": "ignore1372",
+"order": 1099,
+"id": "ignore1374",
 "name": "Arachnid Figurine",
 "requirement": "If you are afraid of spiders, Drow aren't your faction.",
 "icon": "ArachnidFigurineArtifact",
@@ -15386,8 +15400,8 @@
 "group": "excavation"
 },
 {
-"order": 1099,
-"id": "ignore1373",
+"order": 1100,
+"id": "ignore1375",
 "name": "Steel Plate",
 "requirement": "A full plate made of hardened steel.",
 "icon": "SteelPlateArtifact",
@@ -15400,8 +15414,8 @@
 "group": "excavation"
 },
 {
-"order": 1100,
-"id": "ignore1374",
+"order": 1101,
+"id": "ignore1376",
 "name": "Black Sword",
 "requirement": "A long sword with an extremely sharp blade made of dark metal.",
 "icon": "BlackSwordArtifact",
@@ -15414,8 +15428,8 @@
 "group": "excavation"
 },
 {
-"order": 1101,
-"id": "ignore1375",
+"order": 1102,
+"id": "ignore1377",
 "name": "Dragon Fang",
 "requirement": "This huge fang can barely fit in the hands of a Titan.",
 "icon": "DragonFangArtifact",
@@ -15428,8 +15442,8 @@
 "group": "excavation"
 },
 {
-"order": 1102,
-"id": "ignore1376",
+"order": 1103,
+"id": "ignore1378",
 "name": "Dragon Soul",
 "requirement": "The extracted soul from an ancient dragon, wields the power to end the world in an instant. Also makes a good soup ingredient.",
 "icon": "DragonSoulArtifact",
@@ -15442,8 +15456,8 @@
 "group": "excavation"
 },
 {
-"order": 1103,
-"id": "ignore1377",
+"order": 1104,
+"id": "ignore1379",
 "name": "Vanilla Flavor Juice",
 "requirement": "An essence from extremely savory vanilla beans.",
 "icon": "VanillaFlavorJuiceArtifact",
@@ -15456,8 +15470,8 @@
 "group": "excavation"
 },
 {
-"order": 1104,
-"id": "ignore1378",
+"order": 1105,
+"id": "ignore1380",
 "name": "Ancient Cocoa Bean",
 "requirement": "Despite being centuries old, it still smells like top-quality cocoa.",
 "icon": "AncientCocoaBeanArtifact",
@@ -15470,8 +15484,8 @@
 "group": "excavation"
 },
 {
-"order": 1105,
-"id": "ignore1379",
+"order": 1106,
+"id": "ignore1381",
 "name": "Know Your Enemy, Part I",
 "requirement": "All the knowledge you need stored in a handy book.",
 "icon": "KnowYourEnemyPartIArtifact",
@@ -15484,8 +15498,8 @@
 "group": "excavation"
 },
 {
-"order": 1106,
-"id": "ignore1380",
+"order": 1107,
+"id": "ignore1382",
 "name": "Voodoo Doll",
 "requirement": "You are now CURSED! And you feel a sting in your lower rear.",
 "icon": "VoodooDollArtifact",
@@ -15498,8 +15512,8 @@
 "group": "excavation"
 },
 {
-"order": 1107,
-"id": "ignore1381",
+"order": 1108,
+"id": "ignore1383",
 "name": "Wall Fragment",
 "requirement": "A fragment of an utterly and completely unbreakable wall. Enjoy your paradox.",
 "icon": "WallFragmentArtifact",
@@ -15512,8 +15526,8 @@
 "group": "excavation"
 },
 {
-"order": 1108,
-"id": "ignore1382",
+"order": 1109,
+"id": "ignore1384",
 "name": "Spiky Rough Egg",
 "requirement": "What a weird egg... it looks ages old, yet something alive is inside. Perhaps if you wait long enough, something will hatch?",
 "icon": "SpikyRoughEggArtifact",
@@ -15526,8 +15540,8 @@
 "group": "excavation"
 },
 {
-"order": 1109,
-"id": "ignore1383",
+"order": 1110,
+"id": "ignore1385",
 "name": "Fortune Teller Machine",
 "requirement": "A devilish star gazes upon your future. Is this a good or a bad sign...?",
 "icon": "FortuneTellerMachineArtifact",
@@ -15540,8 +15554,8 @@
 "group": "excavation"
 },
 {
-"order": 1110,
-"id": "ignore1384",
+"order": 1111,
+"id": "ignore1386",
 "name": "Dawnstone",
 "requirement": "Only found during sunrise hours. Emits a faint glow.",
 "icon": "DawnstoneArtifact",
@@ -15554,8 +15568,8 @@
 "group": "excavation"
 },
 {
-"order": 1111,
-"id": "ignore1385",
+"order": 1112,
+"id": "ignore1387",
 "name": "Duskstone",
 "requirement": "Only found during sunset hours. Absorbs light in a small radius.",
 "icon": "DuskstoneArtifact",
@@ -15568,8 +15582,8 @@
 "group": "excavation"
 },
 {
-"order": 1112,
-"id": "ignore1386",
+"order": 1113,
+"id": "ignore1388",
 "name": "Ancient Heirloom",
 "requirement": "Passed down countless generations.",
 "icon": "AncientHeirloomArtifact",
@@ -15582,8 +15596,8 @@
 "group": "excavation"
 },
 {
-"order": 1113,
-"id": "ignore1387",
+"order": 1114,
+"id": "ignore1389",
 "name": "Obsidian Shard",
 "requirement": "Extremely hard and black as darkness itself, this material cannot apparently be carved or melted. It is a mystery how you can make this thing into a sword.",
 "icon": "ObsidianShardArtifact",
@@ -15596,8 +15610,8 @@
 "group": "excavation"
 },
 {
-"order": 1114,
-"id": "ignore1388",
+"order": 1115,
+"id": "ignore1390",
 "name": "Know Your Enemy, Part II",
 "requirement": "Much more knowledge than you need, stored in a handy book.",
 "icon": "KnowYourEnemyPartIIArtifact",
@@ -15610,8 +15624,8 @@
 "group": "excavation"
 },
 {
-"order": 1115,
-"id": "ignore1389",
+"order": 1116,
+"id": "ignore1391",
 "name": "Veteran Figurine",
 "requirement": "The warrior of a thousand battles, ultimate champion of the Realms.\n\nPassive effect: allows Mercenaries to benefit from all faction challenges.",
 "icon": "VeteranFigurineArtifact",
@@ -15624,8 +15638,8 @@
 "group": "excavation"
 },
 {
-"order": 1116,
-"id": "ignore1390",
+"order": 1117,
+"id": "ignore1392",
 "name": "Wall Chunk",
 "requirement": "A bigger piece of the infamous Ascension Wall.",
 "icon": "WallChunkArtifact",
@@ -15638,8 +15652,8 @@
 "group": "excavation"
 },
 {
-"order": 1117,
-"id": "ignore1391",
+"order": 1118,
+"id": "ignore1393",
 "name": "Excavated Mirage",
 "requirement": "You know all too well this does not exist, yet it fills you with hope and optimism.",
 "icon": "ExcavatedMirageArtifact",
@@ -15652,8 +15666,8 @@
 "group": "excavation"
 },
 {
-"order": 1118,
-"id": "ignore1392",
+"order": 1119,
+"id": "ignore1394",
 "name": "Ancestral Hourglass",
 "requirement": "The silver sands contained within seem to never stop flowing.",
 "icon": "AncestralHourglassArtifact",
@@ -15666,8 +15680,8 @@
 "group": "excavation"
 },
 {
-"order": 1119,
-"id": "ignore1393",
+"order": 1120,
+"id": "ignore1395",
 "name": "Silk Cloth",
 "requirement": "The purest silk made for Fairies, by Fairies, of Fairies.",
 "icon": "SilkClothArtifact",
@@ -15680,8 +15694,8 @@
 "group": "excavation"
 },
 {
-"order": 1120,
-"id": "ignore1394",
+"order": 1121,
+"id": "ignore1396",
 "name": "Raw Emerald",
 "requirement": "Just slightly less precious than a raw Ruby.",
 "icon": "RawEmeraldArtifact",
@@ -15694,8 +15708,8 @@
 "group": "excavation"
 },
 {
-"order": 1121,
-"id": "ignore1395",
+"order": 1122,
+"id": "ignore1397",
 "name": "Fossilized Wing",
 "requirement": "The remains of an Angel fallen to earth.",
 "icon": "FossilizedWingArtifact",
@@ -15708,8 +15722,8 @@
 "group": "excavation"
 },
 {
-"order": 1122,
-"id": "ignore1396",
+"order": 1123,
+"id": "ignore1398",
 "name": "Spiked Whip",
 "requirement": "Use with caution. You do not want to exterminate all your slaves.",
 "icon": "SpikedWhipArtifact",
@@ -15722,8 +15736,8 @@
 "group": "excavation"
 },
 {
-"order": 1123,
-"id": "ignore1397",
+"order": 1124,
+"id": "ignore1399",
 "name": "Dusty Coffin",
 "requirement": "Sealed since forever, yet you can hear a strange noise from within.",
 "icon": "DustyCoffinArtifact",
@@ -15736,8 +15750,8 @@
 "group": "excavation"
 },
 {
-"order": 1124,
-"id": "ignore1398",
+"order": 1125,
+"id": "ignore1400",
 "name": "Crystallized Lava",
 "requirement": "Incandescent but still. Can be used efficiently as a desk lamp.",
 "icon": "CrystallizedLavaArtifact",
@@ -15750,8 +15764,8 @@
 "group": "excavation"
 },
 {
-"order": 1125,
-"id": "ignore1399",
+"order": 1126,
+"id": "ignore1401",
 "name": "Titan Helmet",
 "requirement": "Made of enough metal to craft a human-sized full plate.",
 "icon": "TitanHelmetArtifact",
@@ -15764,8 +15778,8 @@
 "group": "excavation"
 },
 {
-"order": 1126,
-"id": "ignore1400",
+"order": 1127,
+"id": "ignore1402",
 "name": "Branch of the Life Tree",
 "requirement": "Despite being torn from its source tree, it keeps growing buds and leaves.",
 "icon": "BranchOfTheLifeTreeArtifact",
@@ -15778,8 +15792,8 @@
 "group": "excavation"
 },
 {
-"order": 1127,
-"id": "ignore1401",
+"order": 1128,
+"id": "ignore1403",
 "name": "Nightmare Figment",
 "requirement": "An unshaped, ephemeral substance which is politely trying to corrupt your mind.",
 "icon": "NightmareFigmentArtifact",
@@ -15792,8 +15806,8 @@
 "group": "excavation"
 },
 {
-"order": 1128,
-"id": "ignore1402",
+"order": 1129,
+"id": "ignore1404",
 "name": "Beard Hair",
 "requirement": "Hopefully coming from a real dwarven beard.",
 "icon": "BeardHairArtifact",
@@ -15806,8 +15820,8 @@
 "group": "excavation"
 },
 {
-"order": 1129,
-"id": "ignore1403",
+"order": 1130,
+"id": "ignore1405",
 "name": "Poison Vial",
 "requirement": "One drop of this is enough to fell thousands of non-immune creatures.",
 "icon": "PoisonVialArtifact",
@@ -15820,8 +15834,8 @@
 "group": "excavation"
 },
 {
-"order": 1130,
-"id": "ignore1404",
+"order": 1131,
+"id": "ignore1406",
 "name": "Dragon Scale",
 "requirement": "Very high on the realms' most accurate hardiness rankings.",
 "icon": "DragonScaleArtifact",
@@ -15834,8 +15848,8 @@
 "group": "excavation"
 },
 {
-"order": 1131,
-"id": "ignore1405",
+"order": 1132,
+"id": "ignore1407",
 "name": "Lantern of Guidance",
 "requirement": "Follow the guiding light, o wanderer, for it shall bring you fortune.",
 "icon": "LanternOfGuidanceArtifact",
@@ -15848,8 +15862,8 @@
 "group": "excavation"
 },
 {
-"order": 1132,
-"id": "ignore1406",
+"order": 1133,
+"id": "ignore1408",
 "name": "Oil Lamp",
 "requirement": "Rub it, polish it. And remember to express your desires precisely, lest you want to face dire consequences.",
 "icon": "OilLampArtifact",
@@ -15862,8 +15876,8 @@
 "group": "excavation"
 },
 {
-"order": 1133,
-"id": "ignore1407",
+"order": 1134,
+"id": "ignore1409",
 "name": "Spark of Life",
 "requirement": "The spark of Creation, dimly shining from the bottom of its encasing crystal.",
 "icon": "SparkOfLifeArtifact",
@@ -15876,8 +15890,8 @@
 "group": "excavation"
 },
 {
-"order": 1134,
-"id": "ignore1408",
+"order": 1135,
+"id": "ignore1410",
 "name": "First Iron Fragment",
 "requirement": "It looks like a piece of an iron object. It's broken off on two sides.",
 "icon": "FirstIronFragmentArtifact",
@@ -15890,8 +15904,8 @@
 "group": "excavation"
 },
 {
-"order": 1135,
-"id": "ignore1409",
+"order": 1136,
+"id": "ignore1411",
 "name": "Second Iron Fragment",
 "requirement": "It looks like a piece of an iron object. It's broken off on two sides.",
 "icon": "SecondIronFragmentArtifact",
@@ -15904,8 +15918,8 @@
 "group": "excavation"
 },
 {
-"order": 1136,
-"id": "ignore1410",
+"order": 1137,
+"id": "ignore1412",
 "name": "Third Iron Fragment",
 "requirement": "It looks like a piece of an iron object. It's broken off on two sides.",
 "icon": "ThirdIronFragmentArtifact",
@@ -15918,8 +15932,8 @@
 "group": "excavation"
 },
 {
-"order": 1137,
-"id": "ignore1411",
+"order": 1138,
+"id": "ignore1413",
 "name": "First Crystal Fragment",
 "requirement": "A strange, glass-like material that appears to have been shattered into three pieces.",
 "icon": "FirstCrystalFragmentArtifact",
@@ -15932,8 +15946,8 @@
 "group": "excavation"
 },
 {
-"order": 1138,
-"id": "ignore1412",
+"order": 1139,
+"id": "ignore1414",
 "name": "Second Crystal Fragment",
 "requirement": "A strange, glass-like material that appears to have been shattered into three pieces.",
 "icon": "SecondCrystalFragmentArtifact",
@@ -15946,8 +15960,8 @@
 "group": "excavation"
 },
 {
-"order": 1139,
-"id": "ignore1413",
+"order": 1140,
+"id": "ignore1415",
 "name": "Third Crystal Fragment",
 "requirement": "A strange, glass-like material that appears to have been shattered into three pieces.",
 "icon": "ThirdCrystalFragmentArtifact",
@@ -15960,8 +15974,8 @@
 "group": "excavation"
 },
 {
-"order": 1140,
-"id": "ignore1414",
+"order": 1141,
+"id": "ignore1416",
 "name": "First Stone Fragment",
 "requirement": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
 "icon": "FirstStoneFragmentArtifact",
@@ -15974,8 +15988,8 @@
 "group": "excavation"
 },
 {
-"order": 1141,
-"id": "ignore1415",
+"order": 1142,
+"id": "ignore1417",
 "name": "Second Stone Fragment",
 "requirement": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
 "icon": "SecondStoneFragmentArtifact",
@@ -15988,8 +16002,8 @@
 "group": "excavation"
 },
 {
-"order": 1142,
-"id": "ignore1416",
+"order": 1143,
+"id": "ignore1418",
 "name": "Third Stone Fragment",
 "requirement": "Made from stone so ancient it is unknown to the current world. Two parts seem to be missing.",
 "icon": "ThirdStoneFragmentArtifact",
@@ -16002,8 +16016,8 @@
 "group": "excavation"
 },
 {
-"order": 1143,
-"id": "ignore1417",
+"order": 1144,
+"id": "ignore1419",
 "name": "Planetary Force",
 "requirement": "Planets aligning seem to affect your realm in different ways...",
 "icon": "PlanetaryForceArtifact",
@@ -16016,8 +16030,8 @@
 "group": "excavation"
 },
 {
-"order": 1144,
-"id": "ignore1418",
+"order": 1145,
+"id": "ignore1420",
 "name": "Mercenary Insignia",
 "requirement": "The infamous metal cross of the Mercenaries. You should be both proud and afraid to carry one.",
 "icon": "MercenaryInsigniaArtifact",
@@ -16030,8 +16044,8 @@
 "group": "excavation"
 },
 {
-"order": 1145,
-"id": "ignore1419",
+"order": 1146,
+"id": "ignore1421",
 "name": "Obsidian Crown",
 "requirement": "The legendary Black Crown of the Mercenary Lord. Some words are engraved into the inner circle at its base: \"Aran en Ilya, Silas en Quenta\".",
 "icon": "ObsidianCrownArtifact",
@@ -16044,8 +16058,8 @@
 "group": "excavation"
 },
 {
-"order": 1146,
-"id": "ignore1420",
+"order": 1147,
+"id": "ignore1422",
 "name": "Forgotten Relic",
 "requirement": "Intricate leylines of mana cover the surface of this stone, moving and flailing endlessly to create ever-different patterns.",
 "icon": "ForgottenRelicArtifact",
@@ -16058,8 +16072,8 @@
 "group": "excavation"
 },
 {
-"order": 1147,
-"id": "ignore1421",
+"order": 1148,
+"id": "ignore1423",
 "name": "Mana Loom",
 "requirement": "Used to weave even the thinnest mana strings.\n\nProvides INF budget in the Spellcraft branch.",
 "icon": "FacilitySpellcraft2",
@@ -16072,8 +16086,8 @@
 "group": "excavation"
 },
 {
-"order": 1148,
-"id": "ignore1422",
+"order": 1149,
+"id": "ignore1424",
 "name": "Factory",
 "requirement": "Mass-production is the way to go.\n\nProvides INF budget in the Craftsmanship branch.",
 "icon": "FacilityCraftsmanship2",
@@ -16086,8 +16100,8 @@
 "group": "excavation"
 },
 {
-"order": 1149,
-"id": "ignore1423",
+"order": 1150,
+"id": "ignore1425",
 "name": "Mythos",
 "requirement": "Accurate historical list of every existing or non-existing deity.\n\nProvides INF budget in the Divine branch.",
 "icon": "FacilityDivine2",
@@ -16100,8 +16114,8 @@
 "group": "excavation"
 },
 {
-"order": 1150,
-"id": "ignore1424",
+"order": 1151,
+"id": "ignore1426",
 "name": "Vault",
 "requirement": "Never a place could be more secure.\n\nProvides INF budget in the Economics branch.",
 "icon": "FacilityEconomics2",
@@ -16114,8 +16128,8 @@
 "group": "excavation"
 },
 {
-"order": 1151,
-"id": "ignore1425",
+"order": 1152,
+"id": "ignore1427",
 "name": "Athanor",
 "requirement": "The legendary oven that could smelt souls into matter.\n\nProvides INF budget in the Alchemy branch.",
 "icon": "FacilityAlchemy2",
@@ -16128,8 +16142,8 @@
 "group": "excavation"
 },
 {
-"order": 1152,
-"id": "ignore1426",
+"order": 1153,
+"id": "ignore1428",
 "name": "Battlefield",
 "requirement": "An extremely accurate replica of a battle fought long ago.\n\nProvides INF budget in the Warfare branch.",
 "icon": "FacilityWarfare2",
@@ -16142,8 +16156,8 @@
 "group": "excavation"
 },
 {
-"order": 1153,
-"id": "ignore1427",
+"order": 1154,
+"id": "ignore1429",
 "name": "Apeiron",
 "requirement": "The source of everything. Can fit in the average pocket.",
 "icon": "FacilityForbidden",
@@ -16156,8 +16170,8 @@
 "group": "excavation"
 },
 {
-"order": 1154,
-"id": "ignore1428",
+"order": 1155,
+"id": "ignore1430",
 "name": "Glowing Wing",
 "requirement": "And this is why Fairies don't need torches.",
 "icon": "GlowingWingArtifact",
@@ -16170,8 +16184,8 @@
 "group": "excavation"
 },
 {
-"order": 1155,
-"id": "ignore1429",
+"order": 1156,
+"id": "ignore1431",
 "name": "Sylvan Mirror",
 "requirement": "An Elf with messy hair is not an Elf, by their own laws.",
 "icon": "SylvanMirrorArtifact",
@@ -16184,8 +16198,8 @@
 "group": "excavation"
 },
 {
-"order": 1156,
-"id": "ignore1430",
+"order": 1157,
+"id": "ignore1432",
 "name": "Solid Cloud",
 "requirement": "Angels have the power to save your life! And make a backup of it on the internet.",
 "icon": "SolidCloudArtifact",
@@ -16198,8 +16212,8 @@
 "group": "excavation"
 },
 {
-"order": 1157,
-"id": "ignore1431",
+"order": 1158,
+"id": "ignore1433",
 "name": "Orc Fang Necklace",
 "requirement": "To remind your slaves who's in charge.",
 "icon": "OrcFangNecklaceArtifact",
@@ -16212,8 +16226,8 @@
 "group": "excavation"
 },
 {
-"order": 1158,
-"id": "ignore1432",
+"order": 1159,
+"id": "ignore1434",
 "name": "Blood Chalice",
 "requirement": "The healthiest vampire breakfast.",
 "icon": "BloodChaliceArtifact",
@@ -16226,8 +16240,8 @@
 "group": "excavation"
 },
 {
-"order": 1159,
-"id": "ignore1433",
+"order": 1160,
+"id": "ignore1435",
 "name": "Demon Tail",
 "requirement": "Said to bring great luck to whom it possess...es.",
 "icon": "DemonTailArtifact",
@@ -16240,8 +16254,8 @@
 "group": "excavation"
 },
 {
-"order": 1160,
-"id": "ignore1434",
+"order": 1161,
+"id": "ignore1436",
 "name": "Frozen Lightning",
 "requirement": "A sculpture representing the embodiment of Titanic power.",
 "icon": "FrozenLightningArtifact",
@@ -16254,8 +16268,8 @@
 "group": "excavation"
 },
 {
-"order": 1161,
-"id": "ignore1435",
+"order": 1162,
+"id": "ignore1437",
 "name": "Primal Leaf",
 "requirement": "Druid Catalyst for channeling the power of nature.",
 "icon": "PrimalLeafArtifact",
@@ -16268,8 +16282,8 @@
 "group": "excavation"
 },
 {
-"order": 1162,
-"id": "ignore1436",
+"order": 1163,
+"id": "ignore1438",
 "name": "The Blackest Ink",
 "requirement": "High-quality, freshly produced Faceless ink.",
 "icon": "TheBlackestInkArtifact",
@@ -16282,8 +16296,8 @@
 "group": "excavation"
 },
 {
-"order": 1163,
-"id": "ignore1437",
+"order": 1164,
+"id": "ignore1439",
 "name": "Dwarven Anvil",
 "requirement": "Every dwarven child is required to bring this to school every day.",
 "icon": "DwarvenAnvilArtifact",
@@ -16296,8 +16310,8 @@
 "group": "excavation"
 },
 {
-"order": 1164,
-"id": "ignore1438",
+"order": 1165,
+"id": "ignore1440",
 "name": "Stiletto Heel",
 "requirement": "Drow make the most beautiful underground females.",
 "icon": "StilettoHeelArtifact",
@@ -16310,8 +16324,8 @@
 "group": "excavation"
 },
 {
-"order": 1165,
-"id": "ignore1439",
+"order": 1166,
+"id": "ignore1441",
 "name": "Eye of the Dragon",
 "requirement": "The ultimate thrill of the fight.",
 "icon": "EyeOfTheDragonArtifact",
@@ -16324,8 +16338,8 @@
 "group": "excavation"
 },
 {
-"order": 1166,
-"id": "ignore1440",
+"order": 1167,
+"id": "ignore1442",
 "name": "Mask of Scorch'Rah",
 "requirement": "An otherwordly, ever-burning mask that continuously shifts burn marks over its surface.",
 "icon": "MaskOfScorchRahArtifact",
@@ -16338,7 +16352,7 @@
 "group": "excavation"
 },
 {
-"order": 1167,
+"order": 1168,
 "id": "t:ArcheologyTitanTrophy",
 "name": "Archeology Titan Trophy",
 "requirement": "",
@@ -16352,7 +16366,7 @@
 "group": "special"
 },
 {
-"order": 1168,
+"order": 1169,
 "id": "t:ArcheologyDruidTrophy",
 "name": "Archeology Druid Trophy",
 "requirement": "",
@@ -16366,7 +16380,7 @@
 "group": "special"
 },
 {
-"order": 1169,
+"order": 1170,
 "id": "t:ArcheologyFacelessTrophy",
 "name": "Archeology Faceless Trophy",
 "requirement": "",
@@ -16380,7 +16394,7 @@
 "group": "special"
 },
 {
-"order": 1170,
+"order": 1171,
 "id": "t:ArcheologyUnderworldTrophy",
 "name": "Archeology Underworld Trophy",
 "requirement": "",
@@ -16394,7 +16408,7 @@
 "group": "special"
 },
 {
-"order": 1171,
+"order": 1172,
 "id": "t:ArcheologyDwarfTrophy",
 "name": "Archeology Dwarf Trophy",
 "requirement": "",
@@ -16408,7 +16422,7 @@
 "group": "special"
 },
 {
-"order": 1172,
+"order": 1173,
 "id": "t:ArcheologyDrowTrophy",
 "name": "Archeology Drow Trophy",
 "requirement": "",
@@ -16422,7 +16436,7 @@
 "group": "special"
 },
 {
-"order": 1173,
+"order": 1174,
 "id": "t:MercenaryOathTrophy",
 "name": "Mercenary Oath Trophy",
 "requirement": "",
@@ -16436,7 +16450,7 @@
 "group": "special"
 },
 {
-"order": 1174,
+"order": 1175,
 "id": "t:ResearchFairyTrophy",
 "name": "Research Fairy Trophy",
 "requirement": "",
@@ -16450,7 +16464,7 @@
 "group": "special"
 },
 {
-"order": 1175,
+"order": 1176,
 "id": "t:ResearchElvenTrophy",
 "name": "Research Elven Trophy",
 "requirement": "",
@@ -16464,7 +16478,7 @@
 "group": "special"
 },
 {
-"order": 1176,
+"order": 1177,
 "id": "t:ResearchAngelTrophy",
 "name": "Research Angel Trophy",
 "requirement": "",
@@ -16478,7 +16492,7 @@
 "group": "special"
 },
 {
-"order": 1177,
+"order": 1178,
 "id": "t:ResearchGoblinTrophy",
 "name": "Research Goblin Trophy",
 "requirement": "",
@@ -16492,7 +16506,7 @@
 "group": "special"
 },
 {
-"order": 1178,
+"order": 1179,
 "id": "t:ResearchUndeadTrophy",
 "name": "Research Undead Trophy",
 "requirement": "",
@@ -16506,7 +16520,7 @@
 "group": "special"
 },
 {
-"order": 1179,
+"order": 1180,
 "id": "t:ResearchDemonTrophy",
 "name": "Research Demon Trophy",
 "requirement": "",
@@ -16520,8 +16534,8 @@
 "group": "special"
 },
 {
-"order": 1180,
-"id": "ignore1441",
+"order": 1181,
+"id": "ignore1443",
 "name": "Research Titan Trophy",
 "requirement": "",
 "icon": null,
@@ -16534,8 +16548,8 @@
 "group": "special"
 },
 {
-"order": 1181,
-"id": "ignore1442",
+"order": 1182,
+"id": "ignore1444",
 "name": "Research Druid Trophy",
 "requirement": "",
 "icon": null,
@@ -16548,8 +16562,8 @@
 "group": "special"
 },
 {
-"order": 1182,
-"id": "ignore1443",
+"order": 1183,
+"id": "ignore1445",
 "name": "Research Faceless Trophy",
 "requirement": "",
 "icon": null,
@@ -16562,8 +16576,8 @@
 "group": "special"
 },
 {
-"order": 1183,
-"id": "ignore1444",
+"order": 1184,
+"id": "ignore1446",
 "name": "Research Dwarven Trophy",
 "requirement": "",
 "icon": null,
@@ -16576,8 +16590,8 @@
 "group": "special"
 },
 {
-"order": 1184,
-"id": "ignore1445",
+"order": 1185,
+"id": "ignore1447",
 "name": "Research Drow Trophy",
 "requirement": "",
 "icon": null,
@@ -16590,8 +16604,8 @@
 "group": "special"
 },
 {
-"order": 1185,
-"id": "ignore1446",
+"order": 1186,
+"id": "ignore1448",
 "name": "Research Dragon Trophy",
 "requirement": "",
 "icon": null,
@@ -16604,8 +16618,8 @@
 "group": "special"
 },
 {
-"order": 1186,
-"id": "ignore1447",
+"order": 1187,
+"id": "ignore1449",
 "name": "Research Mercenary Trophy",
 "requirement": "",
 "icon": null,
@@ -16618,8 +16632,8 @@
 "group": "special"
 },
 {
-"order": 1187,
-"id": "ignore1448",
+"order": 1188,
+"id": "ignore1450",
 "name": "Research Fairy Trophy2",
 "requirement": "",
 "icon": null,
@@ -16632,8 +16646,8 @@
 "group": "special"
 },
 {
-"order": 1188,
-"id": "ignore1449",
+"order": 1189,
+"id": "ignore1451",
 "name": "Research Elven Trophy2",
 "requirement": "",
 "icon": null,
@@ -16646,8 +16660,8 @@
 "group": "special"
 },
 {
-"order": 1189,
-"id": "ignore1450",
+"order": 1190,
+"id": "ignore1452",
 "name": "Research Angel Trophy2",
 "requirement": "",
 "icon": null,
@@ -16660,8 +16674,8 @@
 "group": "special"
 },
 {
-"order": 1190,
-"id": "ignore1451",
+"order": 1191,
+"id": "ignore1453",
 "name": "Research Goblin Trophy2",
 "requirement": "",
 "icon": null,
@@ -16674,8 +16688,8 @@
 "group": "special"
 },
 {
-"order": 1191,
-"id": "ignore1452",
+"order": 1192,
+"id": "ignore1454",
 "name": "Research Undead Trophy2",
 "requirement": "",
 "icon": null,
@@ -16688,8 +16702,8 @@
 "group": "special"
 },
 {
-"order": 1192,
-"id": "ignore1453",
+"order": 1193,
+"id": "ignore1455",
 "name": "Research Demon Trophy2",
 "requirement": "",
 "icon": null,
@@ -16702,8 +16716,8 @@
 "group": "special"
 },
 {
-"order": 1193,
-"id": "ignore1454",
+"order": 1194,
+"id": "ignore1456",
 "name": "Research Titan Trophy2",
 "requirement": "",
 "icon": null,
@@ -16716,8 +16730,8 @@
 "group": "special"
 },
 {
-"order": 1194,
-"id": "ignore1455",
+"order": 1195,
+"id": "ignore1457",
 "name": "Research Druid Trophy2",
 "requirement": "",
 "icon": null,
@@ -16730,8 +16744,8 @@
 "group": "special"
 },
 {
-"order": 1195,
-"id": "ignore1456",
+"order": 1196,
+"id": "ignore1458",
 "name": "Research Faceless Trophy2",
 "requirement": "",
 "icon": null,
@@ -16744,8 +16758,8 @@
 "group": "special"
 },
 {
-"order": 1196,
-"id": "ignore1457",
+"order": 1197,
+"id": "ignore1459",
 "name": "Research Dwarven Trophy2",
 "requirement": "",
 "icon": null,
@@ -16758,8 +16772,8 @@
 "group": "special"
 },
 {
-"order": 1197,
-"id": "ignore1458",
+"order": 1198,
+"id": "ignore1460",
 "name": "Research Drow Trophy2",
 "requirement": "",
 "icon": null,
@@ -16772,8 +16786,8 @@
 "group": "special"
 },
 {
-"order": 1198,
-"id": "ignore1459",
+"order": 1199,
+"id": "ignore1461",
 "name": "Research Dragon Trophy2",
 "requirement": "",
 "icon": null,
@@ -16786,8 +16800,8 @@
 "group": "special"
 },
 {
-"order": 1199,
-"id": "ignore1460",
+"order": 1200,
+"id": "ignore1462",
 "name": "Archon Quest Trophy",
 "requirement": "",
 "icon": null,
@@ -16800,8 +16814,8 @@
 "group": "special"
 },
 {
-"order": 1200,
-"id": "ignore1461",
+"order": 1201,
+"id": "ignore1463",
 "name": "Djinn Quest Trophy",
 "requirement": "",
 "icon": null,
@@ -16814,8 +16828,8 @@
 "group": "special"
 },
 {
-"order": 1201,
-"id": "ignore1462",
+"order": 1202,
+"id": "ignore1464",
 "name": "Makers Quest Trophy",
 "requirement": "",
 "icon": null,
@@ -16828,8 +16842,8 @@
 "group": "special"
 },
 {
-"order": 1202,
-"id": "ignore1463",
+"order": 1203,
+"id": "ignore1465",
 "name": "Research Archon Trophy",
 "requirement": "",
 "icon": null,
@@ -16842,8 +16856,8 @@
 "group": "special"
 },
 {
-"order": 1203,
-"id": "ignore1464",
+"order": 1204,
+"id": "ignore1466",
 "name": "Research Djinn Trophy",
 "requirement": "",
 "icon": null,
@@ -16856,8 +16870,8 @@
 "group": "special"
 },
 {
-"order": 1204,
-"id": "ignore1465",
+"order": 1205,
+"id": "ignore1467",
 "name": "Research Makers Trophy",
 "requirement": "",
 "icon": null,
@@ -16870,8 +16884,8 @@
 "group": "special"
 },
 {
-"order": 1205,
-"id": "ignore1466",
+"order": 1206,
+"id": "ignore1468",
 "name": "A Thousand Coins_Native",
 "requirement": "",
 "icon": null,
@@ -16884,8 +16898,8 @@
 "group": "special"
 },
 {
-"order": 1206,
-"id": "ignore1467",
+"order": 1207,
+"id": "ignore1469",
 "name": "1 Gem_Native",
 "requirement": "",
 "icon": null,
@@ -16898,8 +16912,8 @@
 "group": "special"
 },
 {
-"order": 1207,
-"id": "ignore1468",
+"order": 1208,
+"id": "ignore1470",
 "name": "50 Faction Coins_Native",
 "requirement": "",
 "icon": null,
@@ -16912,8 +16926,8 @@
 "group": "special"
 },
 {
-"order": 1208,
-"id": "ignore1469",
+"order": 1209,
+"id": "ignore1471",
 "name": "Village Grinder_Native",
 "requirement": "",
 "icon": null,
@@ -16926,8 +16940,8 @@
 "group": "special"
 },
 {
-"order": 1209,
-"id": "ignore1470",
+"order": 1210,
+"id": "ignore1472",
 "name": "Spell Prodigy_Native",
 "requirement": "",
 "icon": null,
@@ -16940,8 +16954,8 @@
 "group": "special"
 },
 {
-"order": 1210,
-"id": "ignore1471",
+"order": 1211,
+"id": "ignore1473",
 "name": "Assistant Horde_Native",
 "requirement": "",
 "icon": null,
@@ -16954,8 +16968,8 @@
 "group": "special"
 },
 {
-"order": 1211,
-"id": "ignore1472",
+"order": 1212,
+"id": "ignore1474",
 "name": "Mana Fountain_Native",
 "requirement": "",
 "icon": null,
@@ -16968,8 +16982,8 @@
 "group": "special"
 },
 {
-"order": 1212,
-"id": "ignore1473",
+"order": 1213,
+"id": "ignore1475",
 "name": "A Clicking Start_Native",
 "requirement": "",
 "icon": null,
@@ -16982,8 +16996,8 @@
 "group": "special"
 },
 {
-"order": 1213,
-"id": "ignore1474",
+"order": 1214,
+"id": "ignore1476",
 "name": "Automatic Casting_Native",
 "requirement": "",
 "icon": null,
@@ -16996,8 +17010,8 @@
 "group": "special"
 },
 {
-"order": 1214,
-"id": "ignore1475",
+"order": 1215,
+"id": "ignore1477",
 "name": "Archeology Expedition_Native",
 "requirement": "",
 "icon": null,
@@ -17010,8 +17024,8 @@
 "group": "special"
 },
 {
-"order": 1215,
-"id": "ignore1476",
+"order": 1216,
+"id": "ignore1478",
 "name": "1 Reincarnation_Native",
 "requirement": "",
 "icon": null,
@@ -17024,8 +17038,8 @@
 "group": "special"
 },
 {
-"order": 1216,
-"id": "ignore1477",
+"order": 1217,
+"id": "ignore1479",
 "name": "10 Artifacts_Native",
 "requirement": "",
 "icon": null,
@@ -17038,8 +17052,8 @@
 "group": "special"
 },
 {
-"order": 1217,
-"id": "ignore1478",
+"order": 1218,
+"id": "ignore1480",
 "name": "Mercenary Oath_Native",
 "requirement": "",
 "icon": null,
@@ -17052,8 +17066,8 @@
 "group": "special"
 },
 {
-"order": 1218,
-"id": "ignore1479",
+"order": 1219,
+"id": "ignore1481",
 "name": "Dragon Tamer_Native",
 "requirement": "",
 "icon": null,
@@ -17066,8 +17080,8 @@
 "group": "special"
 },
 {
-"order": 1219,
-"id": "ignore1480",
+"order": 1220,
+"id": "ignore1482",
 "name": "LdrRei_Native",
 "requirement": "",
 "icon": null,

@@ -76,7 +76,7 @@ Only these need checking; remove an item when it is settled.
    Resolved).
 8. **Major mechanic: Legacies** (the faction Legacy upgrades, with their Bronze / Silver / Gold / Diamond tiers, and the other
    Legacy effects): not covered yet.
-9. **Event stuff** (not very important): not covered.
+9. **Event stuff** (not very important): not covered. Seasonal items found so far: Dragonblood (4.3.15, Halloween): the feat (Collect a stack of at least 720 Blood with at least 3000 of the Idillium/Dragon-side stat and 5 Dragon's Breath effects active, unlocking the upgrade) and the upgrade (Maximum Mana x1.10 during any Seasonal Event). The feat is in `trophies.json`; the upgrade is not on any page yet.
 10. **Anything left:** ask the user for whatever else is missing before calling the project done.
 
 Accepted without further checking: the Ascension-penalty flags (which values are reduced and from which Ascension; from the game's own text and the code, impossible to verify in game; revisit if wiki users report a mismatch); the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
