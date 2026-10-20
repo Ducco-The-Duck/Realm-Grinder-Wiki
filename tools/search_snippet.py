@@ -296,6 +296,29 @@ def upgrades_nav(current_file=None, parent_current=False):
             " onclick=\"this.parentNode.classList.toggle('open')\">Upgrades</a><span class=\"dd-menu\">" + links + '</span></span>')
 
 
+GV_CSS = '.gv{margin-top:36px;text-align:center;font-size:11px;color:var(--muted);opacity:.5}'
+
+
+def game_version():
+    """the game build the pages were made from (out/VERSION, written by tools/extract.sh)"""
+    import os
+    try:
+        return open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'out', 'VERSION')).read().strip()
+    except OSError:
+        return ''
+
+
+def stamp(html):
+    """a small, faint "Game version X" line at the bottom of the page (replaces an earlier one)"""
+    import re as _re
+    v = game_version()
+    html = _re.sub(r'<div class="gv">.*?</div>', '', html)
+    html = _re.sub(r'\.gv\{[^}]*\}', '', html)
+    if not v: return html
+    if GV_CSS not in html: html = html.replace('</style>', GV_CSS + '</style>', 1)
+    return html.replace('</main>', '<div class="gv">Game version ' + v + '</div></main>', 1)
+
+
 def apply(html, placeholder, current_file=None):
     """Fill the markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/ (and the nav)."""
     import re as _re
@@ -309,5 +332,6 @@ def apply(html, placeholder, current_file=None):
     html = html.replace('<body>', '<body class="steel">', 1)
     html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
     html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
+    html = stamp(html)
     return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
                 .replace('/*SEARCH_JS*/', JS))

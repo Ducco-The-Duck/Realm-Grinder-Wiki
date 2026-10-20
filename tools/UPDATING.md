@@ -6,7 +6,7 @@
 2. `python -I tools/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
-3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts, then the `build_*_page.py` scripts
+3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts, then the `build_*_page.py` scripts and `build_index.py` (stamps the game version on the home page)
    (the commands are in `data/GLOSSARY.md`).
 4. `python -I tools/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
    overrides (formulas, notes, fixes in the exporters) whose item changed. Review that list, nothing else.
