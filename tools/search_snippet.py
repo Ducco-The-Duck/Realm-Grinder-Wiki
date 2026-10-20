@@ -296,7 +296,7 @@ def upgrades_nav(current_file=None, parent_current=False):
             " onclick=\"this.parentNode.classList.toggle('open')\">Upgrades</a><span class=\"dd-menu\">" + links + '</span></span>')
 
 
-GV_CSS = '.gv{margin-top:36px;text-align:center;font-size:11px;color:var(--muted);opacity:.5}'
+GV_CSS = '.gv{margin-top:36px;text-align:center;font-size:14px;color:var(--muted);opacity:.7}'
 
 
 def game_version():
