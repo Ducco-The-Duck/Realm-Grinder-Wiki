@@ -1,5 +1,12 @@
 # After a game update
 
+**Quick way:** put the new `RealmGrinderDesktop.swf` in `raw/<version>/` and run `python -I tools/update.py <version>`.
+It extracts, compares with the current build, runs the selfcheck, makes the new build current (the old one is kept as
+`out_<old version>/`), rebuilds all data and pages, and prints what changed. Add `--dry-run` to only extract and compare.
+It needs a clean git tree, never commits or pushes, and `git checkout -- data docs` undoes a rebuild. It cannot decode new
+kinds of items or write formulas and notes: read its summary, then handle what is new. Whenever a new page or exporter is
+added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
+
 1. Put the new `RealmGrinderDesktop.swf` in `raw/<version>/` (one folder per version) and extract it: `sh tools/extract.sh <version> out_<version>` first,
    compare it with `out/` (same file names = the scrambled names did not move), then make it current (rename `out` to `out_<old version>`, the new folder to `out`)
    and run `python -I tools/parse_mo.py`. `sh tools/extract.sh <version>` with no destination writes straight to `out/`. `out/VERSION` says which build `out/` is.

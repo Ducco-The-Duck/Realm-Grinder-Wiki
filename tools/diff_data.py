@@ -17,7 +17,15 @@ REF = sys.argv[sys.argv.index('--ref') + 1] if '--ref' in sys.argv else 'HEAD'
 IGNORE = {'order', 'id'}    # registry order and ids shift whenever something is inserted; not a content change
 
 
-def items_trophies(d):    return {x['id']: x for x in d}
+def items_trophies(d):
+    out = {}
+    for x in d:
+        k = x['id']
+        if str(k).startswith('ignore'):         # positional ids (ignore1139): they shift when a trophy is inserted, so key by name
+            k = 'ignore: ' + x['name']
+            while k in out: k += ' (again)'
+        out[k] = x
+    return out
 def items_artifacts(d):   return {x['name']: x for x in d}
 def items_research(d):    return {x['code']: x for x in d}
 def items_challenges(d):  return {f"{f['name']}: {i['name']}": i for f in d for i in f['items']}
