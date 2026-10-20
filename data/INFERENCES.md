@@ -11,7 +11,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 
 Only these need checking; remove an item when it is settled.
 
-1. **Formula disagreements** (code against older sources; the wiki shows the code, which is probably right; each needs the
+1. **Formula disagreements** (full register, including resolved ones: `data/FORMULA_MISMATCHES.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
    in-game tooltip value). Object, then where it is on the wiki:
    - **Second Crystal** (4x), **Third Crystal** (66x), **Second Stone** (2x): fragment factors that differ between the code and
      the old patch-notes doc (4.3.11). Archaeology page (artifact chances). The in-game "Chance: X%" tooltip is visible only
