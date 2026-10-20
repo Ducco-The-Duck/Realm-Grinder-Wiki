@@ -153,10 +153,6 @@ body.steel #pop .card.narrow{padding:0 12px 18px}
 #pop .card.narrow header{margin-bottom:12px}
 body.steel #tip .lbl{margin-top:3px}
 body.steel #tip p{margin:1px 0 0}
-body.steel #tip.above::after,body.steel #tip.below::after{content:"";position:absolute;left:var(--ax,50%);width:21px;height:12px;
-  transform:translateX(-50%);image-rendering:pixelated;background-repeat:no-repeat}
-body.steel #tip.above::after{bottom:-20px;background-image:url(assets/ui/TooltipTipDown.png)}
-body.steel #tip.below::after{top:-20px;background-image:url(assets/ui/TooltipTipUp.png)}
 body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radius:0;background:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
   --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
@@ -391,7 +387,7 @@ body.steel .search input{padding:0 96px 0 8px}
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2), window.innerWidth-t.width-8);
-    var up=a.top-t.height-18>=8, y=up?a.top-t.height-18:a.bottom+18; tip.className=up?'above':'below'; tip.style.setProperty('--ax', Math.min(Math.max(a.left+a.width/2-x,24),t.width-24)+'px');
+    var up=a.top-t.height-8>=8, y=up?a.top-t.height-8:a.bottom+8; tip.className=up?'above':'below'; tip.style.setProperty('--ax', Math.min(Math.max(a.left+a.width/2-x,24),t.width-24)+'px');
     if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }

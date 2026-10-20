@@ -97,10 +97,6 @@ body.steel #pop .card.narrow{padding:0 12px 18px}
 #pop .card.narrow header{margin-bottom:12px}
 body.steel #tip .lbl{margin-top:3px}
 body.steel #tip p{margin:1px 0 0}
-body.steel #tip.above::after,body.steel #tip.below::after{content:"";position:absolute;left:var(--ax,50%);width:21px;height:12px;
-  transform:translateX(-50%);image-rendering:pixelated;background-repeat:no-repeat}
-body.steel #tip.above::after{bottom:-20px;background-image:url(assets/ui/TooltipTipDown.png)}
-body.steel #tip.below::after{top:-20px;background-image:url(assets/ui/TooltipTipUp.png)}
 body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radius:0;background:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
   --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
@@ -301,11 +297,11 @@ def upgrades_nav(current_file=None, parent_current=False):
 
 
 def apply(html, placeholder, current_file=None):
-    """Fill the markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/ (and the nav, the tooltip arrow)."""
+    """Fill the markers of a page template: /*SEARCH_CSS*/, <!--SEARCH_BAR-->, /*SEARCH_JS*/ (and the nav)."""
     import re as _re
-    # every page's tooltip placement: remember the side and where the object is, so the game's arrow can point at it
+    # every page's tooltip placement: remember the side and where the object is, 
     html = _re.sub(r"var y=(\w)\.top-t\.height-8; if\(y<8\) y=\1\.bottom\+8;",
-                   lambda m: ("var up=%(a)s.top-t.height-18>=8, y=up?%(a)s.top-t.height-18:%(a)s.bottom+18; "
+                   lambda m: ("var up=%(a)s.top-t.height-8>=8, y=up?%(a)s.top-t.height-8:%(a)s.bottom+8; "
                               "tip.className=up?'above':'below'; "
                               "tip.style.setProperty('--ax', Math.min(Math.max(%(a)s.left+%(a)s.width/2-x,24),t.width-24)+'px');")
                    % {'a': m.group(1)}, html)
