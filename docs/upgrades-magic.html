@@ -434,7 +434,7 @@ the base values <i>v</i>.</div>
     if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
     return k;
   }
-  function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi); }
+  function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || (it.an && it.an.indexOf(ASC)>=0); }
   function formulas(parent, list){
     var many=list.length>1, seen={};
     parent.appendChild(el('span','lbl',many?'Formulas':'Formula'));
@@ -472,6 +472,7 @@ the base values <i>v</i>.</div>
       it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else if(c.indexOf('starting from')===0) st.push(c); else os.push(c); });
       var ps=os.map(pred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
       txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+(st.length?(os.length||rs.length?', ':' ')+st.join(' and '):'')+'.';
+      if(it.ns && it.an) txt+=' Cannot be bought at Ascension '+it.an.slice(0,-1).join(', ')+(it.an.length>1?' and ':'')+it.an[it.an.length-1]+'.';
       tip.appendChild(el('div','faction',txt));
     }
     if(unavailable(it)){
@@ -711,6 +712,8 @@ the base values <i>v</i>.</div>
     else if(PICK.a<0) hint='Astral factions need a prestige faction and follow the same path as the base faction (Order, Chaos or Balance).';
     document.getElementById('pk-h').textContent=hint;
   }
+  var MERC_ICON={good:'Holy Crusaders',evil:'Heresiarchs',neutral:'Trade Lords'};
+  document.addEventListener('bgkind',function(){ if(typeof renderAlleg==='function' && allegBox) renderAlleg(); });
   function renderAlleg(){
     if(!allegBox) return;
     allegBox.textContent='';
@@ -723,7 +726,7 @@ the base values <i>v</i>.</div>
       (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
       FACS.forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
-        var en={g:f.n, items:its}, al=its.filter(function(x){ return /(Alliance|Third Contract)$/.test(x.n); })[0], gb=itemCell(al||its[0],true);
+        var en={g:f.n, items:its}, al=its.filter(function(x){ return f.role==='merc' ? x.n===MERC_ICON[window.bgKind||'neutral'] : /(Alliance|Third Contract)$/.test(x.n); })[0], gb=itemCell(al||its[0],true);
         gb.setAttribute('data-un','1');
         gb.classList.add('group');
         gb.setAttribute('aria-label', en.g+', '+its.length+' upgrades');

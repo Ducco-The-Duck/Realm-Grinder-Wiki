@@ -5,4 +5,6 @@
   d.id = 'bgfx';
   d.style.backgroundImage = 'url(assets/bg/' + k + '.jpg)';
   document.body.insertBefore(d, document.body.firstChild);
+  window.bgKind = k;      // pages can follow the alignment of the background
+  document.dispatchEvent(new Event('bgkind'));
 })();

@@ -232,8 +232,7 @@ def decode(body, c, ctx=None):
                           r'return §8G§\.§<P§\((§[^§]*§)\.id\) && §8G§\.§,!Y§ != 0 && §8G§\.§-!\^§ == -1 && §8G§\.§#3§ == -1;', body)
         if mc:
             a3, a0 = nm(mc.group(1)), nm(mc.group(2))
-            return src, ['not having a faction or a prestige faction yet', 'having an alignment',
-                         'Not available at Ascension 2 or 4'], bad, (None, None), \
+            return src, ['having an alignment'], bad, (None, None), \
                 [f"Ascension 3: Upgrade: {a3[1]}" if a3 else 'Ascension 3: ?',
                  f"Other Ascensions: {describe_source({'kind': 'artifact' if a0 and a0[2] else 'trophy', 'name': a0[1]})['kind']}: {a0[1]}" if a0 else '?']
         if body.startswith('var ') and '; return ' in body:       # treaties of prestige / astral factions: drop the local declarations
@@ -848,6 +847,13 @@ for items_ in by_cat.values():
         if u.get('faction') == 12 or u.get('spell') == "Dragon's Breath" or u['name'] == 'Dragon Tamer' \
                 or any('Dragon as your prestige faction' in c_ for c_ in u['conditions']):
             if (u['asc_min'] or 0) < 1: u['asc_min'] = 1
+
+# nobody can play as a Mercenary at Ascension 2 or 4 (Mercenary First Contract cannot be bought then), so the upgrades of the
+# Mercenary faction cannot be bought either; the heritage (Mercenary Badge) and the Set do not need the faction
+for u in by_cat['allegiances']:
+    if u['faction'] == 11 and u['akind'] in ('tier', 'perk', 'unique'):
+        u['asc_not'] = [2, 4]
+        if u['name'] == 'Mercenary First Contract': u['asc_not_say'] = True      # its text spells the rule out
 
 # the astral factions (Archon, Djinn, Makers) exist from Ascension 2, and so does everything that belongs to them
 for u in by_cat['allegiances']:

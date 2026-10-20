@@ -14499,7 +14499,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Tyrant Garrison",
@@ -14553,7 +14557,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Freemason's Hall",
@@ -14607,7 +14615,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Mercenary First Contract",
@@ -14627,9 +14639,7 @@
 "Other Ascensions: Allegiances trophy: Mercenary Oath"
 ],
 "conditions": [
-"not having a faction or a prestige faction yet",
-"having an alignment",
-"Not available at Ascension 2 or 4"
+"having an alignment"
 ],
 "undecoded": [],
 "asc_min": null,
@@ -14652,7 +14662,12 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+],
+"asc_not_say": true
 },
 {
 "name": "Mercenary Second Contract",
@@ -14690,7 +14705,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Trade Lords",
@@ -14747,7 +14766,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Holy Crusaders",
@@ -14813,7 +14836,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Heresiarchs",
@@ -14869,7 +14896,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Mercenary Third Contract",
@@ -14907,7 +14938,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Mercenary Fourth Contract",
@@ -14950,7 +14985,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Enchanted Field Quest",
@@ -15609,7 +15648,11 @@
 "fc": {},
 "fc_a4": {},
 "free_start": false
-}
+},
+"asc_not": [
+2,
+4
+]
 },
 {
 "name": "Swarming Tower Quest",
