@@ -51,9 +51,9 @@ docs/*.html                               the site (committed)
 ## Rebuilding
 
 For a new game version: copy the swf to `raw/<version>/` and run `python -I tools/update.py <version>` (details in
-`tools/UPDATING.md`). The individual commands are in `data/GLOSSARY.md`; see for the commands and `tools/UPDATING.md` for a game update. In short: extract, run
-`selfcheck.py`, rebuild data and pages, read the `diff_data.py` list, commit. To preview locally, serve `docs/` (for
-example `python -m http.server 8123 --directory docs`).
+`tools/UPDATING.md`). It extracts, checks the new build, rebuilds the data and every page, and prints what changed;
+you then read the summary and commit. The individual commands are in `data/GLOSSARY.md`. To preview locally, serve
+`docs/` (for example `python -m http.server 8123 --directory docs`).
 
 ## Conventions
 
