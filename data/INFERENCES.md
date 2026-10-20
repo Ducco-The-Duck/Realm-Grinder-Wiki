@@ -31,8 +31,7 @@ Only these need checking; remove an item when it is settled.
    - **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
      2 * (ln(1 + A))^2 with A = assistants. Allegiance upgrades page (Druid lineage perks). Not mentioned in any more recent
      document. Needs the in-game tooltip value once the perk is reached.
-2. **Challenges** (page built from code). Confirmed by the user: Fairy, Elven, Angel, Goblin, Undead, Demon, Titan, Druid, Faceless, Dwarven, Drow and Dragon. Still to confirm after the review changes: Archon, Djinn, Makers and Mercenary (Warcry now has the general Call to Arms formula y; the Men of the World requirement "40000 deepest Excavations made in this Reincarnation" means the deepest excavation depth reached in this Reincarnation, stat 35, its wording is still open).
-3. **Upgrade page verification** (the user checks the upgrade pages in game; built from code until then):
+2. **Upgrade page verification** (the user checks the upgrade pages in game; built from code until then):
    - **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): unchecked because the user has
      not reached them. Arcane Brilliance is left for the Spells item.
    - **Secret and Misc upgrades pages:** to be checked as a whole (what was confirmed so far is under Resolved).
@@ -53,12 +52,12 @@ Only these need checking; remove an item when it is settled.
      - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
      - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of Druid Perk 4 is open, see item 1).
      - Mercenary Upgrades 1-16, Remnants and the Mercenary contracts' extras are still not covered (Legacies: see their own item). Each individual faction upgrade is still to be checked.
-4. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
+3. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
    function, unchecked. Base 4 slots, 1 from Ascension 2; before Ascension 2 the extras are the six slot upgrades (granted
    automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
    R90 every branch), Ancient Device Power, Legacy of the Dwarven Kings, Dark Light of Bondelnar, and -1 for Mercenaries at
    Ascension 1; at Ascension 2 only, the Archon Bloodline. From Ascension 2 on every other source is ignored.
-5. **Spells page** (Magic upgrades spell tiers and the spell cost scaling; for the Spells page, unchecked).
+4. **Spells page** (Magic upgrades spell tiers and the spell cost scaling; for the Spells page, unchecked).
    - Spell tiers (Magic upgrades; 23 spells x tiers 2 to 5, plus Arcane Brilliance; built from code, unchecked). The unlock
    text is the game's own, evaluated at Ascension 1 to 4 (the thresholds depend on the Ascension). Tier N needs Ascension N-1
    or higher, except Dragon's Breath (Reincarnation 54 / 60 / 66 / 72, any Ascension). The "Offline production" bonus reads v = (Mmax^(2/max(3,A)) + (30 R)^(2/max(3,A)))^0.4 (Maximum Mana, mana
@@ -67,18 +66,18 @@ Only these need checking; remove an item when it is settled.
    single-tier formula. The spells' own Reincarnation (R42 to R48) and dragon-growth upgrade prerequisites are left for the Unlocks page; the three Lore-artifact requirements (Precognition, Limited Wish, Infinite Spiral) are read from the code. Arcane Brilliance
    needs one Arcane Brilliance trophy per Ascension (count + 1 > Ascension).
    - Spell tier cost scaling (read from the spell cost function in the game code, unchecked). Tiered spells cost base ^ (1 + k x n) with k = 0.6 and n the tier (plus 1 while below the highest available tier). Tax Collection upgraded to Share Benefits (Round Table) and Twisting Nether instead cost base x m ^ n with m = 3. Lowering k by 0.1 each: Sequence (S1275), Angel Perk 1, Dragon Set; Dragon's Breath also by 0.3 with Iron Flight (Dragon perk 2). Lowering m: Sequence 0.5, Angel Perk 1 0.3, Dragon Set 0.2. Which spells use the first rule: every spell the code flags as having tiers (23 of the 32 spell classes), so read the flag, do not hardcode a list. Not flagged: Tax Collection (Reap Interests and Share Benefits are its upgraded forms), Catalyst, Chaos Madness, and the event spells (Cannibalize, Hailstorm, Heatwave, Shadow Embrace, Wail of the Banshee). This matches what the user described. Share Benefits (Tax Collection with Round Table) and Twisting Nether use the second rule; their maximum tier count is unknown (Twisting Nether is fixed at 98 in the code). The tier count n in the rule is the number of that spell's tier upgrades owned (the user reports 5 tiers at most so far), plus 1 for each of several upgrades that add a tier to named spells (the Dragon Set's Set Bonus 2 adds one to six alignment spells; four more such upgrades are in the code and not yet identified by name). The tooltips of the four reducing items carry a note pointing to the Spells page.
-6. **Unlocks page** (all mechanic unlocks): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
-7. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
+5. **Unlocks page** (all mechanic unlocks): Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine, Passage to the Underworld (Misc upgrades, not exported yet) set the hidden Archeology Titan/Druid/Faceless/Underworld flags that gate those factions; the allegiance pages already name them as "Upgrade: ...".
+6. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
    - "Spells page, tier cost scaling": Sequence (S1275), Angel Perk 1, Iron Flight, Dragon Set.
    - "Buildings page, building cost multiplier": Biased Architecture (Dwarven challenge 2), Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
    - "Excavations page, excavation cost multiplier": Surveyorship (E270), Discount (E13125).
    - "Royal Exchanges page, Royal Exchange cost multiplier": Advanced Civilization (Elven challenge 1), Titanomachy (Archon challenge 3), Intimidation (E1325), Discount (E13125).
-8. **Verify the research page** (researches, formulas, requirements; built from code, checked so far only as listed under
+7. **Verify the research page** (researches, formulas, requirements; built from code, checked so far only as listed under
    Resolved).
-9. **Major mechanic: Legacies** (the faction Legacy upgrades, with their Bronze / Silver / Gold / Diamond tiers, and the other
+8. **Major mechanic: Legacies** (the faction Legacy upgrades, with their Bronze / Silver / Gold / Diamond tiers, and the other
    Legacy effects): not covered yet.
-10. **Event stuff** (not very important): not covered.
-11. **Anything left:** ask the user for whatever else is missing before calling the project done.
+9. **Event stuff** (not very important): not covered.
+10. **Anything left:** ask the user for whatever else is missing before calling the project done.
 
 Accepted without further checking: the Ascension-penalty flags (which values are reduced and from which Ascension; from the game's own text and the code, impossible to verify in game; revisit if wiki users report a mismatch); the offline-time terms in Fusion and Gargantuaness (ignored, zero in normal play).
 
@@ -102,7 +101,7 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 - Research availability by Ascension: Ascension 3 removes researches numbered 400 or lower and Ascension 4 those 5000 or lower
   (patch notes).
 
-- Challenges: Versatile Combo, Overflowing Magic, the Mystic Maze bug, and the requirement changes with Ascension
+- Challenges page: fully confirmed by the user (all sixteen factions, including the review changes). Earlier notes: Versatile Combo, Overflowing Magic, the Mystic Maze bug, and the requirement changes with Ascension
   (Smuggled Jewels, Underground Foundations, Omnipresence).
 - Secret upgrades: Future Linkin (last Era length), MAD Masks, Bloodstream and Art of the Crow formulas and variable meanings;
   the Ascension availability ranges of the Secret upgrades.

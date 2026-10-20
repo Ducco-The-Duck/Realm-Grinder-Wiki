@@ -225,7 +225,7 @@ def _getter(c, key, tail='', more=()):
 def _extra_overflowing(paras, c):
     paras[0]['formulas'].append(_getter(
         c, "§'!b§", r' \cdot \left(12 - k\right)',
-        [('k', 'Tier number of the building; each Non-Unique building gets +v %')]))
+        [('k', 'Tier number of the building (the first building is tier 1)')]))
 
 
 def _extra_art_of_war(paras, c):
@@ -247,11 +247,9 @@ def _extra_altar(paras, c):
 def _extra_seed(paras, c):
     # the Elven Luck stat gained while offline (the game text gives no number for it)
     paras[0]['formulas'].insert(0, _m(
-        r'v = \left\lfloor T \cdot \frac{1 + 24\,E + D}{100} \right\rfloor',
+        r'v = \left\lfloor T \cdot E \right\rfloor',
         ('T', 'Time spent offline (seconds)'),
-        ('E', '1 if you have the upgrade Empowered Luck; otherwise 0'),
-        ('D', 'Wooden Dice bonus: the highest number of Arboreal Cities you built in this Reincarnation, to the power 0.4 '
-              '(0 without the upgrade Wooden Dice)')))
+        ('E', 'Your Elven Luck chance for autoclicks, as a fraction (1% is 0.01)')))
     paras[0]['formulas'][0]['shown'] = False
 
 
@@ -274,11 +272,8 @@ def _m(latex, *vs):
 # Getters with loops or several game systems, written out by hand from the game code (see INFERENCES.md).
 MANUAL = {
     ('Titan Challenge', '§ "D§'): _m(
-        r'v = 20 \cdot \left(T + 11\,R + P\,\Sigma\right)',
-        ('T', 'Tier number of the building the random target of Lightning Strike was (the first building is tier 1)'),
-        ('R', '1 if you have the research Lightning Rod (C375); otherwise 0'),
-        ('P', '1 if you have the Titan lineage perk 4; otherwise 0'),
-        (r'\Sigma', 'Sum of the tier numbers of your owned Unique Buildings')),
+        r'v = 20 \cdot T',
+        ('T', 'Sum of the tier numbers of the buildings hit (the first building is tier 1)')),
     ('Druid Challenge', '§&s§'): _m(
         r'v = 3 \cdot \max\left(0, v_{1} - 10\right)^{1.5}',
         ('v_{1}', 'Extra buildings Grand Balance affects (the first formula)')),
@@ -359,6 +354,11 @@ def reward_text(desc_text):
 def asc_name(i): return {0: 'Neutral'}.get(i)
 
 
+def req_fix(x):
+    m = re.fullmatch(r'([\d.e+]+) deepest Excavations made in this Reincarnation', x)
+    return f'Excavation depth of at least {m.group(1)} reached in this Reincarnation' if m else x
+
+
 entries = []
 for idx, r in enumerate(rows):
     c = class_of(r)
@@ -394,7 +394,7 @@ for idx, r in enumerate(rows):
         'faction': r['f'], 'spell_upgrade': r['spell'], 'name': r['reward'] if r['spell'] else r['n'], 'game_name': r['n'],
         'number': int(num.group(1)) if num and not r['spell'] else 0, 'icon_name': r['icon'],
         'icon': r['icon'] if r['icon'] in sprites else None, 'flavor': flavor,
-        'requirements': [pow10_text(x) for x in reqs], 'rewards': paras, 'applies_to': applies,
+        'requirements': [req_fix(pow10_text(x)) for x in reqs], 'rewards': paras, 'applies_to': applies,
         'alignment_variants': variants, 'by_ascension': by_asc, 'count': r.get('count'), 'unlock': unlock,
         'group': r['grp'],
     })

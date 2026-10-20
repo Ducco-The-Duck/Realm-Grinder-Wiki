@@ -791,23 +791,11 @@
 ],
 "formulas": [
 {
-"latex": "v = 20 \\cdot \\left(T + 11\\,R + P\\,\\Sigma\\right)",
+"latex": "v = 20 \\cdot T",
 "vars": [
 {
 "symbol": "T",
-"text": "Tier number of the building the random target of Lightning Strike was (the first building is tier 1)"
-},
-{
-"symbol": "R",
-"text": "1 if you have the research Lightning Rod (C375); otherwise 0"
-},
-{
-"symbol": "P",
-"text": "1 if you have the Titan lineage perk 4; otherwise 0"
-},
-{
-"symbol": "\\Sigma",
-"text": "Sum of the tier numbers of your owned Unique Buildings"
+"text": "Sum of the tier numbers of the buildings hit (the first building is tier 1)"
 }
 ],
 "label": null,
@@ -1141,7 +1129,7 @@
 },
 {
 "symbol": "k",
-"text": "Tier number of the building; each Non-Unique building gets +v %"
+"text": "Tier number of the building (the first building is tier 1)"
 }
 ],
 "label": null,
@@ -1899,7 +1887,7 @@
 "Balance Mercenary",
 "Reincarnation 198",
 "Mercenary Set",
-"40000 deepest Excavations made in this Reincarnation"
+"Excavation depth of at least 40000 reached in this Reincarnation"
 ],
 "challenge": "Have assistants, maximum mana, mana regen and faction coin chance fall within the same order of magnitude while above 1e12",
 "rewards": [
@@ -2762,7 +2750,7 @@
 ],
 "formulas": [
 {
-"latex": "v_{1} = \\left\\lfloor T \\cdot \\frac{1 + 24\\,E + D}{100} \\right\\rfloor",
+"latex": "v_{1} = \\left\\lfloor T \\cdot E \\right\\rfloor",
 "vars": [
 {
 "symbol": "T",
@@ -2770,11 +2758,7 @@
 },
 {
 "symbol": "E",
-"text": "1 if you have the upgrade Empowered Luck; otherwise 0"
-},
-{
-"symbol": "D",
-"text": "Wooden Dice bonus: the highest number of Arboreal Cities you built in this Reincarnation, to the power 0.4 (0 without the upgrade Wooden Dice)"
+"text": "Your Elven Luck chance for autoclicks, as a fraction (1% is 0.01)"
 }
 ],
 "label": "Elven Luck stat gained while offline",
