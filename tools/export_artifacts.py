@@ -194,7 +194,7 @@ def _one(s, c, art, reqs, undec, ref_name):
     if m:
         n = ref_name(m.group(1))
         if n and n[0] == 'upgrade':
-            reqs.append(f'Have completed the challenge that unlocks {n[1]} (Dragon Challenge 6)' if n[1] == 'Dracomet Vault' else f'Have completed the challenge that unlocks {n[1]}'); return
+            reqs.append(f'Have completed challenge {n[1]} (Dragon Challenge 6)' if n[1] == 'Dracomet Vault' else f'Have completed challenge {n[1]}'); return
     m = re.fullmatch(G + r'§,P§ >= (\d+)', s)
     if m: reqs.append(f'Ascension {m.group(1)} or higher'); return
     m = re.fullmatch(G + r'§8!H§ >= (\d+)', s)
