@@ -443,7 +443,7 @@
 "s": null
 },
 {
-"text": "Increase assistant production based on Farms, Inns and Blacksmiths if buildings are even, or on all other buildings if odd.",
+"text": "From Reincarnation 105: Increase assistant production based on Farms, Inns and Blacksmiths if buildings are even, or on all other buildings if odd.",
 "formulas": [
 {
 "latex": "v = 13 \\cdot X^{0.65}",
@@ -1375,7 +1375,7 @@
 "s": null
 },
 {
-"text": "Increase clicking reward based on faction coins found in this Reincarnation.",
+"text": "From Reincarnation 105: Increase clicking reward based on faction coins found in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 2 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{2}",
@@ -2332,7 +2332,7 @@
 "s": null
 },
 {
-"text": "Multiplicatively increase Mana Regeneration based on mana produced in this Era.",
+"text": "From Reincarnation 105: Multiplicatively increase Mana Regeneration based on mana produced in this Era.",
 "formulas": [
 {
 "latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + W\\right)\\right)^{2.5}",
@@ -3247,7 +3247,7 @@
 "s": null
 },
 {
-"text": "Multiplicatively increase Faction Coin find chance based on spells cast in this Era.",
+"text": "From Reincarnation 105: Multiplicatively increase Faction Coin find chance based on spells cast in this Era.",
 "formulas": [
 {
 "latex": "v = 2.25 \\cdot \\left(0.5 \\cdot \\ln\\left(1 + T\\right)\\right)^{2.25}",
@@ -4182,7 +4182,7 @@
 "s": null
 },
 {
-"text": "Increase the production of Unique Buildings based on your Offline production bonus.",
+"text": "From Reincarnation 105: Increase the production of Unique Buildings based on your Offline production bonus.",
 "formulas": [
 {
 "latex": "v = 360 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{3}",
@@ -5106,7 +5106,7 @@
 "s": null
 },
 {
-"text": "A fraction of Non-Evil spells cast in this Era count as Evil.",
+"text": "From Reincarnation 105: A fraction of Non-Evil spells cast in this Era count as Evil.",
 "formulas": [],
 "s": null
 },
@@ -6048,7 +6048,7 @@
 "s": null
 },
 {
-"text": "Multiplicatively increase Faction Coin find chance based on time spent in this Era.",
+"text": "From Reincarnation 105: Multiplicatively increase Faction Coin find chance based on time spent in this Era.",
 "formulas": [
 {
 "latex": "v_{1} = 50 \\cdot \\left(\\frac{\\frac{t}{60}}{60}\\right)^{0.85}",
@@ -6976,7 +6976,7 @@
 "s": null
 },
 {
-"text": "Increase the production of Non-Unique Buildings based on your total Lineage level and the maximum amount of Grand Balance targets.",
+"text": "From Reincarnation 105: Increase the production of Non-Unique Buildings based on your total Lineage level and the maximum amount of Grand Balance targets.",
 "formulas": [
 {
 "latex": "v = L \\cdot \\min\\left(11, G\\right)^{1.25}",
@@ -7932,7 +7932,7 @@
 "s": null
 },
 {
-"text": "Multiplicatively increase assistants based on total time spent as a random faction. Updates every 3 minutes.",
+"text": "From Reincarnation 105: Multiplicatively increase assistants based on total time spent as a random faction. Updates every 3 minutes.",
 "formulas": [
 {
 "latex": "v = 40 + 0.4 \\cdot t^{0.4}",

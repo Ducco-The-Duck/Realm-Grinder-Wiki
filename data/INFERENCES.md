@@ -107,6 +107,7 @@ Accepted without further checking: the Ascension-penalty flags (which values are
   the Ascension availability ranges of the Secret upgrades.
 
 - Advanced Heritages start at Ascension 2: the faction Master trophies need Lineage level 30 and a Lineage cannot go above 25 x Ascension (the Lineage upgrade is not available at or above that level), confirmed by the user and by the code.
+- The extra effect of the nine base-faction Unions (Fairies to Faceless) only works from Reincarnation 105 (the Union's text and the production code both test it); before that the Union only unlocks the faction's tier 4 upgrades. The Dwarven, Drow and Dragon Unions have no such gate (they need Reincarnation 115 to be bought).
 - Mercenaries cannot be played at Ascension 2 and 4: Mercenary First Contract (the only way to become one) has no availability there (code), so the Mercenary faction's contracts, perks, unique buildings and quest are unavailable then too. The Mercenary Badge heritage and the Mercenary Set do not need the faction.
 - Faction cell colours; Neutral has no tint; alignment-locked researches and the 11 locked ones.
 - Home faction vs unlock faction (S300 Chain Lightning: unlock as Faceless, buy as Titan); the unlock flag persists.
