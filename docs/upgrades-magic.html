@@ -612,7 +612,8 @@ the base values <i>v</i>.</div>
   }
   function openPerks(it){
     moretitle.textContent=it.n+' perks'; morebody.textContent='';
-    it.lp.forEach(function(p){
+    // while searching, only the perks that match (the lineage's own name counts for every perk of it)
+    it.lp.filter(function(p){ return qmatch(normS([it.n, it.fn||'', p.it ? p.it.n : 'Perk '+p.n].concat(p.it ? p.it.d.map(function(d){ return d.t; }) : []).join(' '))); }).forEach(function(p){
       var blk=el('div','bonus'), head=el('p'), pi=p.it;
       var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
       if(pi){
