@@ -53,49 +53,38 @@ def slot_sources(b):
 
 
 # ---- research budget (Ascension 3 and 4): the slots are replaced by a budget per branch ----------------------------------
-BUDGET_INTRO = ('From Ascension 3 the research slots are gone. Each branch (facility) has a research budget instead: a research can be bought '
-                'while the points already spent in its branch plus its own point value do not exceed the branch budget. The budget starts at 0 '
-                'and the sources below add to it. Every source adds its value to each branch unless it says otherwise. "Maximum" is the cap the '
-                'game puts on that one source.')
-NO_MAX = 'No maximum in the code'
 BUDGET_COMMON = [
     {'n': 'Reincarnation Power 4', 'q': 'From Reincarnation 170',
      'l': r'v = 150 \cdot A + 3.5 \cdot \left(R - 159\right)',
      'v': [['A', 'Your Ascension number'],
-           ['R', 'Reincarnations made, counting the effects that make Reincarnations count more (for example Prismatic Breath from the Dragon Challenge)']],
-     'mx': NO_MAX + ' (it grows with the Reincarnations)'},
+           ['R', 'Reincarnations made, counting the effects that make Reincarnations count more (for example Prismatic Breath from the Dragon Challenge)']],},
     {'n': 'Archon Bloodline', 'q': 'While using the Archon Bloodline',
-     'l': r'v = \left(\ln\left(1 + t\right)\right)^{3}', 'v': [['t', 'Time played in this Era (seconds)']], 'mx': NO_MAX},
+     'l': r'v = \left(\ln\left(1 + t\right)\right)^{3}', 'v': [['t', 'Time played in this Era (seconds)']],},
     {'n': 'Faceless Set, Set Bonus 2', 'q': 'Faceless Set, with The Blackest Ink found',
      'l': r'v = \min\left(3000,\; m \cdot \left(\ln\left(1 + F\right)\right)^{1.5}\right)',
      'v': [['F', 'Faction Coins found in this Era'],
-           ['m', 'The Makers Bloodline bonus (while you use it) and the Prophecy bonus (when Faceless is your base, prestige or astral faction) multiply the value; 1 without them']],
-     'mx': '3000'},
-    {'n': 'Homunculus Lab (a Legacy upgrade)', 'q': 'Homunculus Lab bought',
+           ['m', 'The Makers Bloodline bonus (while you use it) and the Prophecy bonus (when Faceless is your base, prestige or astral faction) multiply the value; 1 without them']],},
+    {'n': 'Homunculus Lab (a Legacy upgrade)', 'q': 'Homunculus Lab bought', 'a': 4,
      'l': r'v = \min\left(3000,\; 50 + 1.15 \cdot \left(\ln\left(1 + \min\left(T_{O}, T_{B}\right)\right)\right)^{3.15}\right)',
-     'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],
-     'mx': '3000'},
+     'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],},
     {'n': 'Goblin Perk 6', 'q': 'Goblin Perk 6 (Goblin Lineage)',
-     'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]], 'mx': '3000'},
+     'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]],},
     {'n': 'Dwarven Perk 6', 'q': 'Dwarven Perk 6 (Dwarven Lineage)',
-     'l': r'v = \min\left(3000,\; 0.6 \cdot D^{0.6}\right)', 'v': [['D', 'Excavation depth']], 'mx': '3000'},
+     'l': r'v = \min\left(3000,\; 0.6 \cdot D^{0.6}\right)', 'v': [['D', 'Excavation depth']],},
 ]
 BUDGET_MERC = [
-    {'n': 'Mercenary First Contract', 'q': 'Mercenaries', 'l': r'v = 500', 'v': [], 'mx': 'Fixed, 500'},
-    {'n': 'Mercenary Fourth Contract', 'q': 'Mercenaries, Mercenary Fourth Contract bought', 'l': r'v = 1000', 'v': [], 'mx': 'Fixed, 1000'},
-    {'n': 'Mercenary Magic Contract and Sorcery Contract', 'q': 'Mercenaries, a contract tied to a spell of your choice',
+    {'n': 'Mercenary First Contract', 'q': 'Requires playing as a Mercenary', 'l': r'v = 500', 'v': [],},
+    {'n': 'Mercenary Fourth Contract', 'q': 'Requires playing as a Mercenary, with the Mercenary Fourth Contract bought', 'l': r'v = 1000', 'v': [],},
+    {'n': 'Mercenary Magic Contract and Sorcery Contract', 'q': 'Requires playing as a Mercenary, with a contract tied to a spell of your choice',
      'l': r'v = w \cdot \min\left(5000,\; 1000 + 5 \cdot \sqrt{t}\right)',
-     'v': [['t', 'Activity time of the spell you tied the contract to'], ['w', 'The weight of that spell\'s faction in this branch (listed below)']],
-     'mx': '5000 for each contract, before the weight'},
-    {'n': 'Mercenary Union Contracts', 'q': 'Mercenaries, a contract tied to a faction of your choice',
-     'l': r'v = w \cdot 400 \cdot n', 'v': [['n', 'Upgrades you have bought from that faction'], ['w', 'The weight of that faction in this branch (listed below)']],
-     'mx': NO_MAX},
+     'v': [['t', 'Activity time of the spell you tied the contract to'], ['w', 'The weight of that spell\'s faction in this branch (listed below)']],},
+    {'n': 'Mercenary Union Contracts', 'q': 'Requires playing as a Mercenary, with a contract tied to a faction of your choice',
+     'l': r'v = w \cdot 400 \cdot n', 'v': [['n', 'Upgrades you have bought from that faction'], ['w', 'The weight of that faction in this branch (listed below)']],},
 ]
 BUDGET_A4 = [
-    {'n': 'Trade Treaties and Unions', 'q': 'Ascension 4, for each one you have bought',
+    {'n': 'Trade Treaties and Unions', 'q': 'For each one you have bought', 'a': 4,
      'l': r'v = 5000 \cdot n',
-     'v': [['n', 'Number of Trade Treaties and Unions of the nine base factions you have bought (Friendship Pacts and Alliances do not count)']],
-     'mx': '5000 for each of the 18 (9 Trade Treaties and 9 Unions); the Treaty and Union of the faction you play give 10000'},
+     'v': [['n', 'Number of Trade Treaties and Unions of the nine base factions you have bought (Friendship Pacts and Alliances do not count)']],},
 ]
 # the research facility upgrade of each branch: name, alignment, axis (stat indexes 2/3 = Good/Evil time, 48/36/14 = Order/Chaos/Balance time)
 FACILITY = {0: ('Mana Loom', 'Good', 'Chaos'), 1: ('Factory', 'Good', 'Balance'), 2: ('Mythos', 'Good', 'Order'),
@@ -121,13 +110,11 @@ def budget_for(b):
         ent = {'n': f'{name} (research facility upgrade)',
                'q': f'From Reincarnation 180: the Forgotten Relic and {name} artifacts, and at least 5000 research points spent in this branch',
                'l': r'v = 500 + \left(\ln\left(1 + \sqrt{a \cdot b}\right)\right)^{3}',
-               'v': [['a', f'Time spent with {a} alignment in this Reincarnation (seconds)'], ['b', f'Time spent with {x} alignment in this Reincarnation (seconds)']],
-               'mx': NO_MAX + '. This branch only'}
+               'v': [['a', f'Time spent with {a} alignment in this Reincarnation (seconds)'], ['b', f'Time spent with {x} alignment in this Reincarnation (seconds)']],}
     else:
         ent = {'n': 'Apeiron (research facility upgrade)', 'q': 'From Reincarnation 180: the Forgotten Relic and Apeiron artifacts',
                'l': r'v = 500 + 0.75 \cdot \left(\ln\left(1 + \max_{i} \sqrt{a_{i} \cdot b_{i}}\right)\right)^{3}',
-               'v': [['a_{i} \\cdot b_{i}', 'The six products of the time spent with an alignment (Good or Evil) and the time spent with an axis (Order, Chaos or Balance) in this Reincarnation (seconds); the largest counts']],
-               'mx': NO_MAX + '. This branch only'}
+               'v': [['a_{i} \\cdot b_{i}', 'The six products of the time spent with an alignment (Good or Evil) and the time spent with an axis (Order, Chaos or Balance) in this Reincarnation (seconds); the largest counts']],}
     weights = [[FAC_NAME[f], merc_weight(b, f)] for f in sorted(FAC_NAME) if merc_weight(b, f)]
     if len({w for _, w in weights}) == 1 and len(weights) > 3: weights = [['Every faction', weights[0][1]]]      # the Forbidden branch weighs them all the same
     return {'fac': ent, 'w': weights}
@@ -164,7 +151,7 @@ for b in range(7):
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
 payload = {'max': meta['max_ascension'], 'branches': BRANCHES,
-           'budget': {'intro': BUDGET_INTRO, 'common': BUDGET_COMMON, 'merc': BUDGET_MERC, 'a4': BUDGET_A4}}
+           'budget': {'common': BUDGET_COMMON, 'a4': BUDGET_A4, 'merc': BUDGET_MERC}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(b['items']) for b in BRANCHES)
 
@@ -403,24 +390,17 @@ popups are always the base values <i>v</i>.</div>
       e.v.forEach(function(v){ var li=el('li'), sb=el('b'); sb.style.display='inline'; math(v[0], sb); li.appendChild(sb); rich(li, ' \u2014 '+v[1]); ul.appendChild(li); });
       blk.appendChild(ul);
     }
-    blk.appendChild(el('div','max','Maximum: '+e.mx));
     return blk;
   }
   function openBudget(br){
     var B=DATA.budget;
     moretitle.textContent=br.n+' research budget'; morebody.textContent='';
-    morebody.appendChild(el('p',null,B.intro));
-    morebody.appendChild(el('div','sect','Every facility'));
-    B.common.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
-    morebody.appendChild(el('div','sect','This facility'));
+    function ok(e){ return !e.a || ASC>=e.a; }       // some sources only exist from Ascension 4
+    B.common.filter(ok).forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
     morebody.appendChild(budgetEntry(br.bud.fac));
-    morebody.appendChild(el('div','sect','Mercenaries only'));
-    B.merc.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
+    B.a4.filter(ok).forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
+    B.merc.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });      // the Mercenary sources stay at the bottom
     morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
-    if(ASC>=4){
-      morebody.appendChild(el('div','sect','Ascension 4'));
-      B.a4.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
-    }
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
