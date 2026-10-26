@@ -108,11 +108,10 @@ def budget_for(b):
     name, a, x = FACILITY[b]
     if a:
         ent = {'n': f'{name} (research facility upgrade)',
-               'q': f'To unlock the upgrade: Reincarnation 180, the Forgotten Relic and {name} artifacts, and at least 5000 research points spent in this branch',
                'l': r'v = 500 + \left(\ln\left(1 + \sqrt{a \cdot b}\right)\right)^{3}',
                'v': [['a', f'Time spent with {a} alignment in this Reincarnation (seconds)'], ['b', f'Time spent with {x} alignment in this Reincarnation (seconds)']],}
     else:
-        ent = {'n': 'Apeiron (research facility upgrade)', 'q': 'To unlock the upgrade: Reincarnation 180, the Forgotten Relic and Apeiron artifacts',
+        ent = {'n': 'Apeiron (research facility upgrade)',
                'l': r'v = 500 + 0.75 \cdot \left(\ln\left(1 + \max_{i} \sqrt{a_{i} \cdot b_{i}}\right)\right)^{3}',
                'v': [['a_{i} \\cdot b_{i}', 'The six products of the time spent with an alignment (Good or Evil) and the time spent with an axis (Order, Chaos or Balance) in this Reincarnation (seconds); the largest counts']],}
     weights = [[FAC_NAME[f], merc_weight(b, f)] for f in sorted(FAC_NAME) if merc_weight(b, f)]
@@ -407,7 +406,7 @@ popups are always the base values <i>v</i>.</div>
     B.a4.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
     B.merc.forEach(function(e){ budgetEntry(e, grid); });      // the Mercenary sources stay at the bottom
     morebody.appendChild(grid);
-    morebody.appendChild(el('div','more','The Mercenary sources only apply while playing as a Mercenary. Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
+    morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
