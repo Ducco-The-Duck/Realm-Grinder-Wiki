@@ -225,9 +225,15 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .slots .d.base+.tx{font-weight:700}
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
-#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(640px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
+#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(760px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
 #more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
+#more .card.bud{width:min(760px,100%)}
+#more .btab{display:grid;grid-template-columns:minmax(140px,32%) 1fr;column-gap:14px;margin-top:4px}
+#more .btab>div{padding:7px 0;border-top:1px solid var(--line)}
+#more .btab>.bh{color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;border-top:0;padding:2px 0}
+#more .bsrc .more{margin-top:2px;font-size:.88rem}
+@media (max-width:560px){#more .btab{grid-template-columns:1fr}#more .btab>.bsrc{border-bottom:0;padding-bottom:0}#more .btab>.bfor{border-top:0;padding-top:2px}#more .btab>.bh{display:none}}
 #more .bonus{border-top:1px solid var(--line);padding:8px 0}
 #more .bonus p{margin:0 0 2px}
 #more .formula{padding:2px 0;overflow-wrap:anywhere}
@@ -380,26 +386,27 @@ popups are always the base values <i>v</i>.</div>
   document.getElementById('moreclose').addEventListener('click',closeMore);
   more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMore(); });
-  function budgetEntry(e){
-    var blk=el('div','bonus'), p=el('p'), b=el('b',null,e.n); b.style.display='inline'; p.appendChild(b);
-    if(e.q) p.appendChild(document.createTextNode(' \u2014 '+e.q));
-    blk.appendChild(p);
-    var f=el('div','formula'), m=el('span'); math(e.l, m); f.appendChild(m); blk.appendChild(f);
+  function budgetEntry(e, grid){
+    var src=el('div','bsrc'), b=el('b',null,e.n); b.style.display='block'; src.appendChild(b);
+    if(e.q) src.appendChild(el('div','more',e.q));
+    var fm=el('div','bfor'), f=el('div','formula'), m=el('span'); math(e.l, m); f.appendChild(m); fm.appendChild(f);
     if(e.v && e.v.length){
       var ul=el('ul','vars');
       e.v.forEach(function(v){ var li=el('li'), sb=el('b'); sb.style.display='inline'; math(v[0], sb); li.appendChild(sb); rich(li, ' \u2014 '+v[1]); ul.appendChild(li); });
-      blk.appendChild(ul);
+      fm.appendChild(ul);
     }
-    return blk;
+    grid.appendChild(src); grid.appendChild(fm);
   }
   function openBudget(br){
-    var B=DATA.budget;
-    moretitle.textContent=br.n+' research budget'; morebody.textContent='';
+    var B=DATA.budget, grid=el('div','btab');
+    moretitle.textContent=br.n+' research budget'; morebody.textContent=''; more.querySelector('.card').classList.add('bud');
+    var h1=el('div','bh','Source'), h2=el('div','bh','Formula'); grid.appendChild(h1); grid.appendChild(h2);
     function ok(e){ return !e.a || ASC>=e.a; }       // some sources only exist from Ascension 4
-    B.common.filter(ok).forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
-    morebody.appendChild(budgetEntry(br.bud.fac));
-    B.a4.filter(ok).forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
-    B.merc.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });      // the Mercenary sources stay at the bottom
+    B.common.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
+    budgetEntry(br.bud.fac, grid);
+    B.a4.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
+    B.merc.forEach(function(e){ budgetEntry(e, grid); });      // the Mercenary sources stay at the bottom
+    morebody.appendChild(grid);
     morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
