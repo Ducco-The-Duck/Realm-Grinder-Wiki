@@ -152,6 +152,7 @@ BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLD
        'aria-label="Search"><span class="qn" id="qn"></span></div>')
 
 JS = r'''
+  // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
   // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
   function embedInit(show, setAsc, cellOf){
@@ -363,7 +364,6 @@ def apply(html, placeholder, current_file=None):
     html = html.replace('<body>', '<body class="steel">', 1)
     html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
     html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
-    if 'href="effects.html"' not in html: html = html.replace('</nav>', '<a href="effects.html">Effects</a></nav>', 1)
     html = stamp(html)
     return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
                 .replace('/*SEARCH_JS*/', JS))

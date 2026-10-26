@@ -45,11 +45,6 @@ for review); only one old/new pair of builds can validate it, so build it when a
 
 **Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y \rfloor$`; every page draws those parts in the formula font (`rich()` in `tools/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
 
-# The Effects page (docs/effects.html)
-- `tools/effect_tags.py` reads every upgrade, research and challenge text and writes `data/effect_tags.json` (X, Y, mode, trigger, Ascensions per effect).
-  `tools/effect_review.py` lists what it could not place (`data/effect_tags_review.md`). Hand corrections go into `data/effect_tags_fixes.json`; each is tied to the
-  sentence it was made for, and `selfcheck.py` reports the ones an update made stale.
-- The Ascensions an object is available at come from `tools/availability.py`, which the pages and the tags both use.
-- The hover tooltips on the Effects page are the pages' own tooltips: the page of the object is loaded in a hidden frame in embed mode (`#embed`, `embedInit` in
-  `search_snippet.py`, hooked up at the end of the Research, Challenges and Upgrades page scripts) and asked to draw one object (by research code, challenge
-  faction/name or upgrade name). A new page that has objects with effects needs the same `embedInit` call, and `UPAGE` in `effect_tags.py`.
+# The Effects page (docs/effects.html): NOT IN USE
+An unfinished idea (a global search over what every upgrade, research and challenge does), potentially scrapped. It is not linked from the site and
+`update.py`, `diff_data.py` and `selfcheck.py` no longer run or check it. What belongs to it, and what was kept from it, is in `data/EFFECT_SEARCH_NOT_IN_USE.md`.

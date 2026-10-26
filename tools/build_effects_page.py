@@ -1,4 +1,6 @@
-"""Generate docs/effects.html from data/effect_tags.json: a search over what every upgrade, research and challenge does.
+"""NOT IN USE: unfinished idea (the global Effects search), potentially scrapped. It is not linked from the site and update.py does not run it. See data/EFFECT_SEARCH_NOT_IN_USE.md.
+
+Generate docs/effects.html from data/effect_tags.json: a search over what every upgrade, research and challenge does.
 
     python -I tools/build_effects_page.py
 
@@ -46,7 +48,8 @@ html = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Effects</title>
+<title>Realm Grinder Effects (unfinished)</title>
+<meta name="robots" content="noindex">
 <style>
 :root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
@@ -117,6 +120,7 @@ main{max-width:900px}      /* wider than the other pages: the icons have the siz
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html">Upgrades</a><a href="effects.html" aria-current="page">Effects</a></nav>
 <h1>Effects</h1>
+<p style="color:var(--muted)">Unfinished experiment, not part of the wiki and not kept up to date.</p>
 <div class="asc"><label for="asc">Ascension</label><select id="asc"></select>
 <span class="hint">Only what is available in the chosen Ascension is listed.</span></div>
 <div class="boxes">

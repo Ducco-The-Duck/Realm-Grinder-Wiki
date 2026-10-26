@@ -253,7 +253,7 @@ body.steel .search input{padding:0 96px 0 8px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" aria-current="page" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html" aria-current="page">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a href="effects.html">Effects</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" aria-current="page" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html" aria-current="page">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Allegiance Upgrades</h1>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
@@ -291,6 +291,7 @@ the base values <i>v</i>.</div>
   var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 
+  // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
   // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
   function embedInit(show, setAsc, cellOf){

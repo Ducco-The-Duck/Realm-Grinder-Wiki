@@ -209,7 +209,7 @@ body.steel .search input{padding:0 96px 0 8px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a href="effects.html">Effects</a></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
 <h1>Trophies</h1>
 <div class="search"><input id="q" type="search" placeholder="Search trophy names and requirements" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div id="root"></div>
@@ -227,6 +227,7 @@ body.steel .search input{padding:0 96px 0 8px}
       pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
 
+  // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
   // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
   function embedInit(show, setAsc, cellOf){

@@ -1,4 +1,6 @@
-"""Draft tagger for the global effect search.
+"""NOT IN USE: unfinished idea (the global Effects search), potentially scrapped. It is not linked from the site and update.py does not run it. See data/EFFECT_SEARCH_NOT_IN_USE.md.
+
+Draft tagger for the global effect search.
 
 Reads every upgrade, research and challenge text, splits it into effects ("Increase X (based on Y)") and writes
 data/effect_tags_draft.json: for each object a list of effects with the X tags, the Y tags, the mode (additive /

@@ -40,7 +40,7 @@ def items_upgrades(d):
 
 
 FILES = [('trophies.json', items_trophies), ('artifacts.json', items_artifacts), ('research.json', items_research),
-         ('challenges.json', items_challenges), ('upgrade_pages.json', items_upgrades), ('effect_tags.json', lambda d: d)]
+         ('challenges.json', items_challenges), ('upgrade_pages.json', items_upgrades)]
 
 
 def committed(name):

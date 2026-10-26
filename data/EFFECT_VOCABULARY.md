@@ -1,3 +1,5 @@
+> NOT IN USE: unfinished idea (the global Effects search), potentially scrapped. It is not linked from the site and update.py does not run it. See data/EFFECT_SEARCH_NOT_IN_USE.md.
+
 # Effect vocabulary (draft for review)
 
 For the global effect search. An effect is "Increase X (based on Y)". Each upgrade, research and challenge gets a list of effects, each with its own X tags and Y tags.
