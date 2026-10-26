@@ -24,7 +24,7 @@ ROOT = os.path.normpath(os.path.join(HERE, '..'))
 PY = sys.executable
 STEPS = ['parse_mo', 'build_data', 'as3js', 'eval_formulas', 'runtime_icons', 'export_icons', 'export_artifacts',
          'export_challenges', 'export_research', 'export_trophies', 'export_upgrades', 'build_archaeology_page',
-         'build_challenges_page', 'build_research_page', 'build_trophies_page', 'build_upgrades_page', 'build_index']
+         'build_challenges_page', 'build_research_page', 'build_trophies_page', 'build_upgrades_page', 'effect_tags', 'build_index']
 # derived files that sit in out/ next to the extraction (kept when the build changes)
 EXTRAS = ['text', 'stat_labels.json', 'artifact_survey.txt', 'runtime_icons_unresolved.json']
 SCRIPTS = os.path.join('script', 'scripts')

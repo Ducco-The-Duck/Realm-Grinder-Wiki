@@ -1,0 +1,4 @@
+{
+ "_about": "Hand corrections for tools/effect_tags.py. Each one is tied to the sentence it was made for: if an update changes that sentence, the correction is not applied and shows up as stale in data/effect_tags_review.md. Fields: key (object), text (the sentence), set {x, y, mode, trigger} or skip: true, n (which of several effects from that sentence), add: true (for a sentence the tagger did not see as an effect).",
+ "fixes": []
+}

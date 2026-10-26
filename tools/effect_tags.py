@@ -302,7 +302,37 @@ def collect():
     return objs
 
 
-def tag_all():
+def load_fixes():
+    try: return json.load(open(R + 'data/effect_tags_fixes.json', encoding='utf8')).get('fixes', [])
+    except FileNotFoundError: return []
+
+
+def apply_fixes(res, unsplit, fixes):
+    """Hand corrections are tied to the sentence they were made for. If an update changes the sentence (or the object is gone),
+    the correction is not applied silently; it is returned as stale so it gets looked at again."""
+    stale = []
+    for f in fixes:
+        o = res.get(f['key'])
+        ok = False
+        if o is not None:
+            hit = [e for e in o['effects'] if e['text'] == f['text']]
+            if f.get('add'):
+                if (f['key'], f['text']) in unsplit and not hit:
+                    o['effects'].append({'text': f['text'], 'verb': f['set'].get('verb', 'increase'), 'mode': f['set'].get('mode'), 'trigger': f['set'].get('trigger'),
+                                         'x': f['set'].get('x', []), 'scope': [], 'y': f['set'].get('y', []), 'seconds': f['set'].get('seconds'), 'fixed': True})
+                    ok = True
+            elif hit:
+                n = f.get('n')       # which of several effects made from the same sentence, when it is not all of them
+                for i, e in enumerate(hit):
+                    if n is not None and i != n: continue
+                    if f.get('skip'): o['effects'].remove(e)
+                    else: e.update(f['set']); e['fixed'] = True
+                ok = True
+        if not ok: stale.append(f)
+    return stale
+
+
+def tag_all(fixes=True):
     res, unsplit = {}, []
     for o in collect():
         effs = []
@@ -319,12 +349,13 @@ def tag_all():
                         effs.append({'text': q, 'verb': e['verb'], 'mode': md, 'trigger': e['trigger'], 'x': xt, 'scope': sc, 'y': yt,
                                      'seconds': int(dur.group(1)) if dur else None})
         res[o['key']] = {'src': o['src'], 'name': o['name'], 'asc': o['asc'], 'effects': effs}
-    return res, unsplit
+    stale = apply_fixes(res, set(unsplit), load_fixes()) if fixes else []
+    return res, unsplit, stale
 
 
 if __name__ == '__main__':
-    res, unsplit = tag_all()
-    json.dump(res, open(R + 'data/effect_tags_draft.json', 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    res, unsplit, stale = tag_all()
+    json.dump(res, open(R + 'data/effect_tags.json', 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     n = sum(len(v['effects']) for v in res.values())
     bad = [(k, e) for k, v in res.items() for e in v['effects'] if any(x.startswith('?') for x in e['x'] + e['y'])]
-    print('objects', len(res), 'effects', n, 'with ? tags', len(bad), 'unsplit sentences', len(unsplit))
+    print('objects', len(res), 'effects', n, 'with ? tags', len(bad), 'unsplit sentences', len(unsplit), 'stale hand corrections', len(stale))
