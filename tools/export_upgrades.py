@@ -860,7 +860,7 @@ COMBO_PARAS = {      # paragraphs the converter cannot read (value written by ha
                         r'v = \left(\sum_{k} n_{k}^{1.3}\right)^{1 + 0.3 \cdot \sum_{k} n_{k}}',
                         [('n_{k}', 'Number of your available faction spells tied to the alignment or path k (Good, Evil, Neutral, Order, Chaos or Balance); k runs over all six')])],
     'Eternal Battlefield': [('Increase the production of Evil buildings based on time spent as Good in this Reincarnation, and vice-versa.',
-                             [(r'v_{\text{Evil}} = 0.8 \cdot t_{\text{Good}}^{0.8}', [T_GOOD]), (r'v_{\text{Good}} = 0.8 \cdot t_{\text{Evil}}^{0.8}', [T_EVIL])], None),
+                             [(r'v = 0.8 \cdot t_{\text{Good}}^{0.8}', [T_GOOD], 'Evil buildings'), (r'v = 0.8 \cdot t_{\text{Evil}}^{0.8}', [T_EVIL], 'Good buildings')], None),
                             ('Does not affect Neutral buildings.', None, None)],
     'Forbidden Grove': [('Autoclicks several times per second based on Non-Unique buildings built.', r'v = 1 + 1.5 \cdot B^{0.2}',
                          [('B', 'Non-Unique buildings you have built')]),
@@ -871,8 +871,12 @@ COMBO_HOMUNCULUS_2 = ('Also increase the production of all buildings based on un
                       [('B', 'Unspent research budget, added up over the seven branches (each branch counts its budget minus the points spent in it, if positive)')])
 
 
-def _combo_formula(latex, vs):
-    return {'latex': latex, 'vars': [{'symbol': a_, 'text': b_} for a_, b_ in vs]}
+COMBO_LABELS = {'Forbidden Grove': ['Autoclicks per second', 'Production bonus from Gems'],
+                'Homunculus Lab': ['Research budget', 'Production of all buildings']}
+
+
+def _combo_formula(latex, vs, label=None):
+    return {'latex': latex, 'vars': [{'symbol': a_, 'text': b_} for a_, b_ in vs], **({'label': label} if label else {})}
 
 
 def combo_entry(r_, it_):
@@ -885,7 +889,7 @@ def combo_entry(r_, it_):
     if name in COMBO_PARAS:
         for text_, fm_, vs_ in COMBO_PARAS[name]:
             if isinstance(fm_, list):
-                paras_.append({'text': text_, 'formulas': [_combo_formula(l_, v_) for l_, v_ in fm_]})
+                paras_.append({'text': text_, 'formulas': [_combo_formula(l_, v_, lb_) for l_, v_, lb_ in fm_]})
             else:
                 paras_.append({'text': text_, 'formulas': [_combo_formula(fm_, vs_)] if fm_ else []})
     else:
@@ -895,7 +899,8 @@ def combo_entry(r_, it_):
         if name == 'Homunculus Lab':
             ps_ = ps_[:1] + [{'text': COMBO_HOMUNCULUS_2[0], 'formulas': [_combo_formula(COMBO_HOMUNCULUS_2[1], COMBO_HOMUNCULUS_2[2])]}]
         paras_ = [{'text': p_['text'], 'formulas': p_['formulas']} for p_ in ps_]
-    return {'h': name, 'nt': f'{COMBO_FACTION[a_]}/{COMBO_FACTION[b_]} legacy combo', 'ps': paras_, 'pair': (a_, b_)}
+    for lab_, f_ in zip(COMBO_LABELS.get(name, []), [f_ for p_ in paras_ for f_ in p_['formulas']]): f_['label'] = lab_      # several values: name each one
+    return {'name': name, 'icon': r_['icon'], 'note': f'{COMBO_FACTION[a_]}/{COMBO_FACTION[b_]} legacy combo', 'description': paras_, 'pair': (a_, b_)}
 
 
 if COMBO_ITEMS:
@@ -908,8 +913,7 @@ if COMBO_ITEMS:
         'sources': [], 'requirements': ['Reincarnation 220 or higher'], 'conditions': [], 'undecoded': [],
         'asc_min': 4, 'asc_max': None, 'group': None, 'tier': -1, 'building': None, 'faction': -1, 'akind': 'combo_c', 'perk': None, 'tier_no': None,
         'cost': {'coins': None, 'fc': {}, 'fc_a4': {}, 'free_start': False},
-        'more': [{'text': e_['ps'][0]['text'], 'formulas': e_['ps'][0]['formulas'], 's': None, 'h': e_['h'], 'nt': e_['nt'], 'ps': e_['ps']} for e_ in _ce],
-        'more_note': None,
+        'combos': [{k_: v_ for k_, v_ in e_.items() if k_ != 'pair'} for e_ in _ce],
     })
 # the Dragon faction (a prestige faction) becomes available at Ascension 1, and so does everything that needs it
 for items_ in by_cat.values():

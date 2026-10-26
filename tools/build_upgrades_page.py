@@ -95,10 +95,11 @@ def item(u):
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
         'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
         **({'an': u['asc_not']} if u.get('asc_not') else {}), **({'ns': 1} if u.get('asc_not_say') else {}),
-        'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']],
-               **({'h': b['h'], 'nt': b['nt'], 'ps': [{'t': q['text'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in q['formulas']]} for q in b['ps']]} if b.get('h') else {})}
+        'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        **({'cb': [dict(item({'name': c['name'], 'icon': c['icon'], 'description': [dict(q, s=q.get('s')) for q in c['description']], 'sources': [], 'requirements': [],
+                                'conditions': [], 'asc_min': None, 'asc_max': None}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
         **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
@@ -234,6 +235,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar .hint{color:var(--muted);font-size:.85rem}
 .bar .row[hidden]{display:none}
 .grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
+.grid.cols5{grid-template-columns:repeat(5,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
 .cell.gap{visibility:hidden}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
@@ -334,11 +336,10 @@ the base values <i>v</i>.</div>
   var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 /*SEARCH_JS*/
-  function sOf(it){ return it._s || (it._s = normS([it.n,it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' ')) + ' ' + innerS(it)); }
+  function sOf(it){ return it._s || (it._s = normS([it.n,it.sub||'',it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' ')) + ' ' + innerS(it)); }
   // what sits inside a Bloodline, Lineage or Artifact Sets cell: each faction's entry, and the perks of a Lineage
   function innerS(it){
-    var kids=(it.bl||it.lg||it.st||[]).filter(function(k){ return !!k; }).map(sOf);
-    if(it.m && it.m[0] && it.m[0].h) kids=kids.concat(it.m.map(function(b){ return normS([b.h,b.nt].concat(b.ps.map(function(q){ return q.t; })).join(' ')); }));
+    var kids=(it.bl||it.lg||it.st||it.cb||[]).filter(function(k){ return !!k; }).map(sOf);
     var perks=(it.lp||[]).map(function(p){ return p.it ? normS([p.it.n].concat(p.it.d.map(function(d){ return d.t; })).join(' ')) : ''; });
     return kids.concat(perks).join(' ');
   }
@@ -389,7 +390,8 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    if(it.m || it.bl || it.lg || it.lp || it.st) tip.appendChild(el('div','more','Click for more info'));
+    if(it.sub) tip.appendChild(el('div','more',it.sub));
+    if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
       var st=[];
@@ -446,7 +448,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.cb) openGroup({g:'Legacy Combos', items:it.cb, cols:5}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
@@ -491,7 +493,7 @@ the base values <i>v</i>.</div>
   var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
   function openMore(it){
     moretitle.textContent=it.n; morebody.textContent='';
-    more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power|^Legacy Combos/.test(it.n));
+    more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power/.test(it.n));
     var seen={}, scaled=false;
     var isRP=/^Reincarnation Power/.test(it.n), rtab=null, rfirst=null;
     if(isRP){
@@ -500,17 +502,6 @@ the base values <i>v</i>.</div>
       rtab=el('div','rtab'); morebody.appendChild(rtab);
     }
     it.m.forEach(function(b){
-      if(b.h){      // a list of named entries (the Legacy Combos): heading, faded note, then each paragraph with its formulas and variables
-        var cb=el('div','bonus'), hp=el('p'), hb=el('b',null,b.h); hp.appendChild(hb); cb.appendChild(hp); cb.appendChild(el('div','more',b.nt));
-        var cseen={}, cvars=[];
-        b.ps.forEach(function(q){
-          cb.appendChild(el('p',null,q.t));
-          q.f.forEach(function(f){ var d=el('div','formula'), m=el('span'); math(f.l, m); d.appendChild(m); cb.appendChild(d);
-            f.v.forEach(function(v){ var k=v.symbol+'|'+v.text; if(!cseen[k]){ cseen[k]=1; cvars.push(v); } }); });
-        });
-        if(cvars.length){ var cu=el('ul','vars'); cvars.forEach(function(v){ var li=el('li'), bb=el('b'); bb.style.display='inline'; math(v.symbol, bb); li.appendChild(bb); rich(li, ' \u2014 '+v.text); cu.appendChild(li); }); cb.appendChild(cu); }
-        morebody.appendChild(cb); return;
-      }
       var bt=b.t;
       if(isRP){ bt=bt.replace(/^From Reincarnation [0-9]+(, before Ascension [0-9])?: /,''); bt=bt.charAt(0).toUpperCase()+bt.slice(1); }
       var blk=el('div','bonus'), p=el('p',null,bt);

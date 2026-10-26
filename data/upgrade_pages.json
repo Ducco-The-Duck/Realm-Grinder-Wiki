@@ -26334,25 +26334,12 @@
 "fc_a4": {},
 "free_start": false
 },
-"more": [
+"combos": [
 {
-"text": "Increase the production of all buildings based on assistants owned.",
-"formulas": [
-{
-"latex": "v = 2 \\cdot \\left(\\ln\\left(1 + A\\right)\\right)^{2}",
-"vars": [
-{
-"symbol": "A",
-"text": "Your number of assistants"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Mystic Forest",
-"nt": "Fairy/Elf legacy combo",
-"ps": [
+"name": "Mystic Forest",
+"icon": "LegacyFairyElven",
+"note": "Fairy/Elf legacy combo",
+"description": [
 {
 "text": "Increase the production of all buildings based on assistants owned.",
 "formulas": [
@@ -26371,12 +26358,10 @@
 ]
 },
 {
-"text": "Gain a new spell (Twisting Nether) that costs 100000 mana, has a 20 seconds base duration and can be cast up to tier 99. While active, the Twisting Nether spell increases Lineage level by +2 per tier.",
-"formulas": [],
-"s": null,
-"h": "Twisting Nether",
-"nt": "Fairy/Angel legacy combo",
-"ps": [
+"name": "Twisting Nether",
+"icon": "LegacyFairyAngel",
+"note": "Fairy/Angel legacy combo",
+"description": [
 {
 "text": "Gain a new spell (Twisting Nether) that costs 100000 mana, has a 20 seconds base duration and can be cast up to tier 99. While active, the Twisting Nether spell increases Lineage level by +2 per tier.",
 "formulas": []
@@ -26384,26 +26369,10 @@
 ]
 },
 {
-"text": "Increase the production of all buildings based on Faction Coins found in this Era. Bonus is higher for lower tiers.",
-"formulas": [
-{
-"latex": "v = 3 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{0.5 \\cdot \\left(12 - T\\right)}",
-"vars": [
-{
-"symbol": "F",
-"text": "Faction Coins found in this Era"
-},
-{
-"symbol": "T",
-"text": "The building's tier (1 for the first building in the list)"
-}
-]
-}
-],
-"s": null,
-"h": "Artifact Caveau",
-"nt": "Fairy/Goblin legacy combo",
-"ps": [
+"name": "Artifact Caveau",
+"icon": "LegacyFairyGoblin",
+"note": "Fairy/Goblin legacy combo",
+"description": [
 {
 "text": "Increase the production of all buildings based on Faction Coins found in this Era. Bonus is higher for lower tiers.",
 "formulas": [
@@ -26425,27 +26394,10 @@
 ]
 },
 {
-"text": "Increase Mana Regeneration based on time spent as Good and Evil in this Reincarnation.",
-"formulas": [
-{
-"latex": "v = 0.75 \\cdot \\left(t_{1} + t_{2}\\right)^{0.75}",
-"vars": [
-{
-"symbol": "t_{1}",
-"text": "Time spent with Good alignment in this Reincarnation (seconds)"
-},
-{
-"symbol": "t_{2}",
-"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Dream Realm",
-"nt": "Fairy/Undead legacy combo",
-"ps": [
+"name": "Dream Realm",
+"icon": "LegacyFairyUndead",
+"note": "Fairy/Undead legacy combo",
+"description": [
 {
 "text": "Increase Mana Regeneration based on time spent as Good and Evil in this Reincarnation.",
 "formulas": [
@@ -26468,22 +26420,10 @@
 ]
 },
 {
-"text": "Chaotically increase assistants based on alignments of active spells you have.",
-"formulas": [
-{
-"latex": "v = \\left(\\sum_{k} n_{k}^{1.3}\\right)^{1 + 0.3 \\cdot \\sum_{k} n_{k}}",
-"vars": [
-{
-"symbol": "n_{k}",
-"text": "Number of your available faction spells tied to the alignment or path k (Good, Evil, Neutral, Order, Chaos or Balance); k runs over all six"
-}
-]
-}
-],
-"s": null,
-"h": "Brooding Abyss",
-"nt": "Fairy/Demon legacy combo",
-"ps": [
+"name": "Brooding Abyss",
+"icon": "LegacyFairyDemon",
+"note": "Fairy/Demon legacy combo",
+"description": [
 {
 "text": "Chaotically increase assistants based on alignments of active spells you have.",
 "formulas": [
@@ -26501,23 +26441,10 @@
 ]
 },
 {
-"text": "Increase the duration of all spells based on clicks made in this Era.",
-"formulas": [
-{
-"latex": "v = 2.4 \\cdot C^{0.4}",
-"vars": [
-{
-"symbol": "C",
-"text": "Clicks made in this Era"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Sacred Glade",
-"nt": "Elf/Angel legacy combo",
-"ps": [
+"name": "Sacred Glade",
+"icon": "LegacyElvenAngel",
+"note": "Elf/Angel legacy combo",
+"description": [
 {
 "text": "Increase the duration of all spells based on clicks made in this Era.",
 "formulas": [
@@ -26536,23 +26463,10 @@
 ]
 },
 {
-"text": "Multiplicatively increase Faction Coin find chance based on Tax Collection casts in this Era.",
-"formulas": [
-{
-"latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + S\\right)\\right)^{2.5}",
-"vars": [
-{
-"symbol": "S",
-"text": "Number of times you have cast Tax Collection in this Era"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Greed Factory",
-"nt": "Elf/Goblin legacy combo",
-"ps": [
+"name": "Greed Factory",
+"icon": "LegacyElvenGoblin",
+"note": "Elf/Goblin legacy combo",
+"description": [
 {
 "text": "Multiplicatively increase Faction Coin find chance based on Tax Collection casts in this Era.",
 "formulas": [
@@ -26571,23 +26485,10 @@
 ]
 },
 {
-"text": "All spells activity time counts more based on Maximum Mana.",
-"formulas": [
-{
-"latex": "v = 1.45 \\cdot \\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{1.45}",
-"vars": [
-{
-"symbol": "M_{\\max}",
-"text": "Your Maximum Mana"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Swamp of Sorrows",
-"nt": "Elf/Undead legacy combo",
-"ps": [
+"name": "Swamp of Sorrows",
+"icon": "LegacyElvenUndead",
+"note": "Elf/Undead legacy combo",
+"description": [
 {
 "text": "All spells activity time counts more based on Maximum Mana.",
 "formulas": [
@@ -26606,6 +26507,11 @@
 ]
 },
 {
+"name": "Forbidden Grove",
+"icon": "LegacyElvenDemon",
+"note": "Elf/Demon legacy combo",
+"description": [
+{
 "text": "Autoclicks several times per second based on Non-Unique buildings built.",
 "formulas": [
 {
@@ -26614,25 +26520,9 @@
 {
 "symbol": "B",
 "text": "Non-Unique buildings you have built"
-}
-]
 }
 ],
-"s": null,
-"h": "Forbidden Grove",
-"nt": "Elf/Demon legacy combo",
-"ps": [
-{
-"text": "Autoclicks several times per second based on Non-Unique buildings built.",
-"formulas": [
-{
-"latex": "v = 1 + 1.5 \\cdot B^{0.2}",
-"vars": [
-{
-"symbol": "B",
-"text": "Non-Unique buildings you have built"
-}
-]
+"label": "Autoclicks per second"
 }
 ]
 },
@@ -26646,30 +26536,18 @@
 "symbol": "C",
 "text": "Automatic clicks made in this Era"
 }
-]
+],
+"label": "Production bonus from Gems"
 }
 ]
 }
 ]
 },
 {
-"text": "Increase the production of all buildings based on Gold owned.",
-"formulas": [
-{
-"latex": "v = 0.25 \\cdot \\left(\\ln\\left(1 + Y\\right)\\right)^{2}",
-"vars": [
-{
-"symbol": "Y",
-"text": "Gold you own"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Golden Heaven",
-"nt": "Angel/Goblin legacy combo",
-"ps": [
+"name": "Golden Heaven",
+"icon": "LegacyAngelGoblin",
+"note": "Angel/Goblin legacy combo",
+"description": [
 {
 "text": "Increase the production of all buildings based on Gold owned.",
 "formulas": [
@@ -26688,23 +26566,10 @@
 ]
 },
 {
-"text": "Multiplicatively increase Maximum Mana based on time spent as Order in this Reincarnation.",
-"formulas": [
-{
-"latex": "v = 0.7 \\cdot t^{0.7}",
-"vars": [
-{
-"symbol": "t",
-"text": "Time spent with Order alignment in this Reincarnation (seconds)"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Dark Sanctum",
-"nt": "Angel/Undead legacy combo",
-"ps": [
+"name": "Dark Sanctum",
+"icon": "LegacyAngelUndead",
+"note": "Angel/Undead legacy combo",
+"description": [
 {
 "text": "Multiplicatively increase Maximum Mana based on time spent as Order in this Reincarnation.",
 "formulas": [
@@ -26723,51 +26588,32 @@
 ]
 },
 {
+"name": "Eternal Battlefield",
+"icon": "LegacyAngelDemon",
+"note": "Angel/Demon legacy combo",
+"description": [
+{
 "text": "Increase the production of Evil buildings based on time spent as Good in this Reincarnation, and vice-versa.",
 "formulas": [
 {
-"latex": "v_{\\text{Evil}} = 0.8 \\cdot t_{\\text{Good}}^{0.8}",
+"latex": "v = 0.8 \\cdot t_{\\text{Good}}^{0.8}",
 "vars": [
 {
 "symbol": "t_{\\text{Good}}",
 "text": "Time spent with Good alignment in this Reincarnation (seconds)"
-}
-]
-},
-{
-"latex": "v_{\\text{Good}} = 0.8 \\cdot t_{\\text{Evil}}^{0.8}",
-"vars": [
-{
-"symbol": "t_{\\text{Evil}}",
-"text": "Time spent with Evil alignment in this Reincarnation (seconds)"
-}
-]
 }
 ],
-"s": null,
-"h": "Eternal Battlefield",
-"nt": "Angel/Demon legacy combo",
-"ps": [
-{
-"text": "Increase the production of Evil buildings based on time spent as Good in this Reincarnation, and vice-versa.",
-"formulas": [
-{
-"latex": "v_{\\text{Evil}} = 0.8 \\cdot t_{\\text{Good}}^{0.8}",
-"vars": [
-{
-"symbol": "t_{\\text{Good}}",
-"text": "Time spent with Good alignment in this Reincarnation (seconds)"
-}
-]
+"label": "Evil buildings"
 },
 {
-"latex": "v_{\\text{Good}} = 0.8 \\cdot t_{\\text{Evil}}^{0.8}",
+"latex": "v = 0.8 \\cdot t_{\\text{Evil}}^{0.8}",
 "vars": [
 {
 "symbol": "t_{\\text{Evil}}",
 "text": "Time spent with Evil alignment in this Reincarnation (seconds)"
 }
-]
+],
+"label": "Good buildings"
 }
 ]
 },
@@ -26778,27 +26624,10 @@
 ]
 },
 {
-"text": "Increase Research Budget based on the least time spent between Order and Balance in this Reincarnation.",
-"formulas": [
-{
-"latex": "v = \\min\\left(3000, 50 + 1.15 \\cdot \\left(\\ln\\left(1 + \\min\\left(t_{1}, t_{2}\\right)\\right)\\right)^{3.15}\\right)",
-"vars": [
-{
-"symbol": "t_{1}",
-"text": "Time spent with Order alignment in this Reincarnation (seconds)"
-},
-{
-"symbol": "t_{2}",
-"text": "Time spent with Balance alignment in this Reincarnation (seconds)"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Homunculus Lab",
-"nt": "Goblin/Undead legacy combo",
-"ps": [
+"name": "Homunculus Lab",
+"icon": "LegacyGoblinUndead",
+"note": "Goblin/Undead legacy combo",
+"description": [
 {
 "text": "Increase Research Budget based on the least time spent between Order and Balance in this Reincarnation.",
 "formulas": [
@@ -26814,7 +26643,8 @@
 "text": "Time spent with Balance alignment in this Reincarnation (seconds)"
 }
 ],
-"shown": true
+"shown": true,
+"label": "Research budget"
 }
 ]
 },
@@ -26828,30 +26658,18 @@
 "symbol": "B",
 "text": "Unspent research budget, added up over the seven branches (each branch counts its budget minus the points spent in it, if positive)"
 }
-]
+],
+"label": "Production of all buildings"
 }
 ]
 }
 ]
 },
 {
-"text": "Increase triggered Tax Collections based on Trophies unlocked.",
-"formulas": [
-{
-"latex": "v = \\left\\lfloor 0.2 \\cdot N^{0.6} \\right\\rfloor",
-"vars": [
-{
-"symbol": "N",
-"text": "Number of trophies you have unlocked"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Corruption Zone",
-"nt": "Goblin/Demon legacy combo",
-"ps": [
+"name": "Corruption Zone",
+"icon": "LegacyGoblinDemon",
+"note": "Goblin/Demon legacy combo",
+"description": [
 {
 "text": "Increase triggered Tax Collections based on Trophies unlocked.",
 "formulas": [
@@ -26870,23 +26688,10 @@
 ]
 },
 {
-"text": "Increase Offline production based on time spent offline in this Reincarnation.",
-"formulas": [
-{
-"latex": "v = 0.9 \\cdot t^{0.9}",
-"vars": [
-{
-"symbol": "t",
-"text": "Time spent offline in this Reincarnation (seconds)"
-}
-],
-"shown": true
-}
-],
-"s": null,
-"h": "Frozen Wastes",
-"nt": "Undead/Demon legacy combo",
-"ps": [
+"name": "Frozen Wastes",
+"icon": "LegacyUndeadDemon",
+"note": "Undead/Demon legacy combo",
+"description": [
 {
 "text": "Increase Offline production based on time spent offline in this Reincarnation.",
 "formulas": [
@@ -26904,8 +26709,7 @@
 }
 ]
 }
-],
-"more_note": null
+]
 }
 ],
 "secret": [
