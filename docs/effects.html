@@ -41,11 +41,9 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .res .ic.real{border:0;background:none;border-radius:0}
 /* the cells of the pages (drawn there at the chosen Ascension): the same rules as on the pages; the frames come from the shared styles */
 .ic .cell{position:relative;width:56px;height:56px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;display:flex;align-items:center;justify-content:center;cursor:inherit;font:inherit;color:inherit;pointer-events:none}
-.ic .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
-.ic .cell img.ov{position:absolute;inset:0;margin:auto;width:100%;height:100%;object-fit:contain}
+.cell .pen{position:absolute;z-index:2;color:#fff;background:#a3341f;pointer-events:none}      /* the size and font come from the shared styles, as on the pages */
 .ic .cell.fac{background:var(--fc);border-color:rgba(255,255,255,.22)}
 .ic .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-.ic .cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
 .ic .cell .badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700}
 .res .ic img{max-width:100%;max-height:100%;image-rendering:pixelated}
 .res .body{min-width:0;flex:1}
