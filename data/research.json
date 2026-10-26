@@ -316,7 +316,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Elven Luck and the upgrade Elven Perk 1.",
+"mercenary_note": "Mercenaries can buy this when they have the upgrades Elven Luck and Elven Perk 1.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -636,7 +636,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Lightning Strike unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Lightning Strike.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -758,7 +758,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Brainwave unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Brainwave.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -1696,7 +1696,7 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "Increase Warrior Barracks production based on Faction Coins you found in this Era.",
+"description": "Increase Training Grounds production based on Faction Coins you found in this Era.",
 "formulas": [
 {
 "latex": "v = 3 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{3}",
@@ -1716,7 +1716,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
+"mercenary_note": "Mercenaries can buy this when they have Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2151,7 +2151,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
+"mercenary_note": "Mercenaries can buy this when they have Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2418,7 +2418,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Lightning Strike unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Lightning Strike.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3474,7 +3474,7 @@ false
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Warrior Barracks buildings you own"
+"text": "Number of Training Grounds buildings you own"
 }
 ],
 "scale": null
@@ -3490,7 +3490,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
+"mercenary_note": "Mercenaries can buy this when they have Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3647,7 +3647,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the spell God's Hand unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell God's Hand.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4185,7 +4185,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Holy Light unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Holy Light.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -6638,7 +6638,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Hellfire Blast unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Hellfire Blast.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6685,7 +6685,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the spell Fairy Chanting unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have the spell Fairy Chanting.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8236,21 +8236,21 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase the production of all other buildings by 130% per Warrior Barracks owned.",
+"description": "Increase the production of all other buildings by 130% per Training Grounds owned.",
 "formulas": [
 {
 "latex": "v = 130 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Warrior Barracks buildings you own"
+"text": "Number of Training Grounds buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2000 Warrior Barracks"
+"Reach 2000 Training Grounds"
 ],
 "hint": "Too many soldiers. More barracks!",
 "faction": 1,
@@ -8258,7 +8258,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Training Grounds.",
+"mercenary_note": "Mercenaries can buy this when they have Training Grounds.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,

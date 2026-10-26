@@ -337,8 +337,11 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
                 n = name_of_for(c)(tok)
                 if n and n[0] in ('upgrade', 'spell'): items.append(n)
             if items:
-                bits = [f'the spell {v} unlocked' if k == 'spell' else f'the upgrade {v}' for k, v in items]
-                merc_note = 'Mercenaries can also buy it once they have ' + ' and '.join(bits) + '.'
+                bits = []
+                for kind_, word_ in (('upgrade', 'upgrade'), ('spell', 'spell')):
+                    vs_ = [v for k, v in items if k == kind_]
+                    if vs_: bits.append(f'the {word_}{"s" if len(vs_) > 1 else ""} ' + ' and '.join(vs_))
+                merc_note = 'Mercenaries can buy this when they have ' + ' and '.join(bits) + '.'
             else:
                 merc_note = 'Mercenaries can also buy it.'
     # A faction research tied to the faction's unique building (the Mercenary note names the upgrade; a few also need it from everybody): the game names a
@@ -351,15 +354,18 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         pls_ = []
         for up_ in ups_:
             for b_ in BUILDINGS:
-                if (b_.get('unique_names_list') or {}).get('0') != up_: continue
-                pl, pu = b_.get('name_plural') or b_['name'], (b_.get('unique_names_plural_list') or {})['0']
-                def uniq(t, b_=b_, pl=pl, pu=pu, u1=up_):
-                    return re.sub(r'\b' + re.escape(b_['name']) + r'\b', u1, re.sub(r'\b' + re.escape(pl) + r'\b', pu, t))
-                desc = uniq(desc)
-                reqs = [uniq(q) for q in reqs]
-                for f_ in forms:
-                    for v_ in f_.get('vars') or []: v_['text'] = uniq(v_['text'])
-                pls_.append(pu)
+                # a building can have several unique names (Farm: Enchanted Field, Dragon Pasture); some have only a plural (Training Grounds)
+                for k_, pu in (b_.get('unique_names_plural_list') or {}).items():
+                    u1 = (b_.get('unique_names_list') or {}).get(k_) or pu
+                    if up_ not in (u1, pu): continue
+                    pl = b_.get('name_plural') or b_['name']
+                    def uniq(t, b_=b_, pl=pl, pu=pu, u1=u1):
+                        return re.sub(r'\b' + re.escape(b_['name']) + r'\b', u1, re.sub(r'\b' + re.escape(pl) + r'\b', pu, t))
+                    desc = uniq(desc)
+                    reqs = [uniq(q) for q in reqs]
+                    for f_ in forms:
+                        for v_ in f_.get('vars') or []: v_['text'] = uniq(v_['text'])
+                    pls_.append(pu)
         if pls_ and len(pls_) == len(ups_):
             merc_note = 'Mercenaries can buy this when they have ' + ' and '.join(pls_) + '.'
     # text that changes with the Ascension

@@ -42945,7 +42945,7 @@
   ],
   "effects": [
    {
-    "text": "Increase Warrior Barracks production based on Faction Coins you found in this Era.",
+    "text": "Increase Training Grounds production based on Faction Coins you found in this Era.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -47839,7 +47839,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 130% per Warrior Barracks owned.",
+    "text": "Increase the production of all other buildings by 130% per Training Grounds owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
