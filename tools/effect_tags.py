@@ -285,7 +285,7 @@ def paras_of(obj):
 
 
 # tags that do not name a stat but qualify one (the Effects page combines tags of different kinds with AND and tags of one kind with OR)
-QUALIFIERS = {'additive': 'mode', 'multiplicative': 'mode',
+QUALIFIERS = {'multiplicative': 'mode',
               'this era': 'period', 'this reincarnation': 'period', 'all-time': 'period', 'single era': 'period', 'previous era': 'period', 'longest era': 'period',
               'highest': 'aggregate', 'lowest': 'aggregate', 'sum': 'aggregate'}
 
@@ -356,6 +356,7 @@ def tag_all(fixes=True):
                     yt = ytags(e['y_raw']) if e['y_raw'] else []
                     dur = re.search(r'for (\d+) seconds', q)
                     for md in (['additive', 'multiplicative'] if e['mode'] == 'both' else [e['mode']]):     # 'additively and multiplicatively' is two effects
+                        md = 'multiplicative' if md in ('multiplicative', 'multiplicatively') else None      # only multiplicative is a mode: a plain effect is additive
                         effs.append({'text': q, 'verb': e['verb'], 'mode': md, 'trigger': e['trigger'], 'x': xt, 'scope': sc, 'y': yt,
                                      'seconds': int(dur.group(1)) if dur else None})
         res[o['key']] = {'src': o['src'], 'name': o['name'], 'icon': o['icon'], 'page': o['page'], 'asc': o['asc'], 'effects': effs}

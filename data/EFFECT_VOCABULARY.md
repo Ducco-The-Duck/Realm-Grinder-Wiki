@@ -53,7 +53,7 @@ Some of the tails need a decision (see the questions below), such as "how long t
 ## Stats and qualifiers (how picked tags combine on the Effects page)
 
 A tag is either a stat or a qualifier of a stat. The qualifiers are listed in `QUALIFIERS` in `tools/effect_tags.py`:
-- mode: additive, multiplicative (on X)
+- mode: multiplicative (on X); a plain effect is additive, so there is no "additive" tag
 - period: this era, this reincarnation, all-time, single era, previous era, longest era (on Y)
 - aggregate: highest, lowest, sum (on Y)
 

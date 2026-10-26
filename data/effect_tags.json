@@ -502,7 +502,7 @@
    {
     "text": "Multiplicatively increase assistants based on time spent as Chaos in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -531,7 +531,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Chaos spells cast in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -658,7 +658,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance by 100%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -981,7 +981,7 @@
    {
     "text": "Increase assistants additively and multiplicatively based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "assistants"
@@ -1092,7 +1092,7 @@
    {
     "text": "From Reincarnation 105: Multiplicatively increase Mana Regeneration based on mana produced in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -1290,7 +1290,7 @@
    {
     "text": "Also multiplicatively increase offline spell casts based on your offline Mana Regeneration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "spells cast amount",
@@ -1448,7 +1448,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on the highest amount of Holy Sites built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -1478,7 +1478,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the sum of all your spells' activity time.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -1506,7 +1506,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana, Mana Regeneration, Faction Coin find chance and assistants by 200%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -1599,7 +1599,7 @@
    {
     "text": "From Reincarnation 105: Multiplicatively increase Faction Coin find chance based on spells cast in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -1753,7 +1753,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on your current amount of Coins.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -1831,7 +1831,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Gems owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -1918,7 +1918,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on the highest amount of Slave Markets built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -1948,7 +1948,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Tax Collections cast in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -2406,7 +2406,7 @@
    {
     "text": "Multiplicatively increase assistants based on the highest amount of Flesh Workshops built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -2919,7 +2919,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the least time spent between Evil and Chaos.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -3048,7 +3048,7 @@
    {
     "text": "From Reincarnation 105: Multiplicatively increase Faction Coin find chance based on time spent in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -3129,7 +3129,7 @@
    {
     "text": "Increase Mana Regeneration additively and multiplicatively based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -3436,7 +3436,7 @@
    {
     "text": "Multiplicatively increase Royal Exchanges count based on the highest amount of Mountain Palaces built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -3497,7 +3497,7 @@
    {
     "text": "Multiplicatively increase assistants based on time spent as Order in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -3678,7 +3678,7 @@
    {
     "text": "Increase Faction Coin find chance additively and multiplicatively based on buildings built.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -3943,7 +3943,7 @@
    {
     "text": "Increase Maximum Mana additively based on time spent online in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -4091,7 +4091,7 @@
    {
     "text": "From Reincarnation 105: Multiplicatively increase assistants based on total time spent as a random faction.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -4185,7 +4185,7 @@
    {
     "text": "Multiplicatively increase assistants based on the time spent on your longest Era in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -4405,7 +4405,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the highest amount of Monasteries built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -4453,7 +4453,7 @@
    {
     "text": "Also multiplicatively increase Brainwave headstart by 100%",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "spells",
@@ -4600,7 +4600,7 @@
    {
     "text": "Balance path: Multiplicatively increase Mana Regeneration based on clicks made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -4616,7 +4616,7 @@
    {
     "text": "Chaos path: Multiplicatively increase assistants with a chaotic formula based on spells cast in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -4736,7 +4736,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Gems owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -4915,7 +4915,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on the highest amount of High Bastions you build in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -4977,7 +4977,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration and Maximum Mana based on the highest time spent as Order, Balance or Chaos.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -5093,7 +5093,7 @@
    {
     "text": "Balance path: Multiplicatively increase Maximum Mana based on Tax Collections cast in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -5337,7 +5337,7 @@
    {
     "text": "Multiplicatively increase assistants based on buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -5366,7 +5366,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Royal Exchanges purchased.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -5488,7 +5488,7 @@
    {
     "text": "Multiplicatively increase assistants based on Gems owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -5600,7 +5600,7 @@
    {
     "text": "Balance path: Multiplicatively increase Maximum Mana based on your current lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -5782,7 +5782,7 @@
    {
     "text": "Increase assistants additively and multiplicatively, and their production, based on all time spent as Dragons.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "production",
@@ -5864,7 +5864,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange Bonus and Faction Coin find Chance based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -5893,7 +5893,7 @@
    {
     "text": "Increase Maximum Mana additively and multiplicatively based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -6015,7 +6015,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration and assistants based on the highest amount of Dragon Pastures built in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -6308,7 +6308,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -6336,7 +6336,7 @@
    {
     "text": "Multiplicatively increase assistants based on your current Lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -6436,7 +6436,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the activity time of your least used spell.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -6546,7 +6546,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -6677,7 +6677,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the highest amount of Faction Coins found in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -6706,7 +6706,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Researches selected.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -6766,7 +6766,7 @@
    {
     "text": "Multiplicatively increase assistants based on time spent offline in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -6811,7 +6811,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -6902,7 +6902,7 @@
    {
     "text": "Multiplicatively increase assistants based on the highest mana produced in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -6964,7 +6964,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Royal Exchanges made.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -7092,7 +7092,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on clicks made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -7185,7 +7185,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on artifacts found.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -7213,7 +7213,7 @@
    {
     "text": "Additively increase Maximum Mana based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "additively",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -7242,7 +7242,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on their quantity.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -7301,7 +7301,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on the time spent on your longest Era in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -7365,7 +7365,7 @@
    {
     "text": "Multiplicatively increase triggered Tax Collections based on artifacts found.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "tax collection",
@@ -7424,7 +7424,7 @@
    {
     "text": "Multiplicatively increase assistants based on clicks made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -7565,7 +7565,7 @@
    {
     "text": "Increase assistants additively and multiplicatively based on spells cast in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "assistants"
@@ -7608,7 +7608,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on the combined activity time of your Evil spells in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -8097,7 +8097,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration by 10%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -8438,7 +8438,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Tax Collections cast in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -8556,7 +8556,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -8658,7 +8658,7 @@
    {
     "text": "Multiplicatively increase assistants based on times you reincarnated.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -9032,7 +9032,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Good buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -9150,7 +9150,7 @@
    {
     "text": "Increase Faction Coin find chance additively and multiplicatively based on time spent in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -9210,7 +9210,7 @@
    {
     "text": "Set Bonus 2: Multiplicatively increase production bonus from Gems based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -9283,7 +9283,7 @@
    {
     "text": "Increase Royal Exchange Bonus additively and multiplicatively based on time spent in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "royal exchange",
@@ -9436,7 +9436,7 @@
    {
     "text": "Multiplicatively increase assistants based on Royal Exchange bonus.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -9450,7 +9450,7 @@
    {
     "text": "Set Bonus 2: Multiplicatively increase Mana Regeneration based on time spent in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -9650,7 +9650,7 @@
    {
     "text": "Multiplicatively increase assistants based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -9855,7 +9855,7 @@
    {
     "text": "While Moon Blessing is active, multiplicatively increase Faction Coin find chance based on its duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While Moon Blessing is active",
     "x": [
      "faction coin find chance"
@@ -9940,7 +9940,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -10068,7 +10068,7 @@
    {
     "text": "Multiplicatively increase autoclick power based on active spells.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "autoclicks"
@@ -10097,7 +10097,7 @@
    {
     "text": "Multiplicatively increase Tax Collection worth based on Lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "tax collection",
@@ -10182,7 +10182,7 @@
    {
     "text": "While Goblin's Greed is active, multiplicatively increase your Tax Collection worth in seconds based on its duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While Goblin's Greed is active",
     "x": [
      "tax collection",
@@ -10264,7 +10264,7 @@
    {
     "text": "Multiplicatively increase assistants based on lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -10512,7 +10512,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -10575,7 +10575,7 @@
    {
     "text": "Multiplicatively increase Maximum mana based on Trophies unlocked.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -10605,7 +10605,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -11011,7 +11011,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -11039,7 +11039,7 @@
    {
     "text": "While Brainwave is active, multiplicatively increase production bonus from Gems based on its duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While Brainwave is active",
     "x": [
      "production bonus from gems",
@@ -11124,7 +11124,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -11223,7 +11223,7 @@
    {
     "text": "While Diamond Pickaxe is active, multiplicatively increase Mana Regeneration based on its duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While Diamond Pickaxe is active",
     "x": [
      "mana",
@@ -11344,7 +11344,7 @@
    {
     "text": "Multiplicatively increase Maximum mana based on your all-time maximum Combo Strike counter.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -11388,7 +11388,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -11489,7 +11489,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Royal Exchanges made.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -11656,7 +11656,7 @@
    {
     "text": "Multiplicatively increase assistants based on Dragon's Breath duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -11754,7 +11754,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -11871,7 +11871,7 @@
    {
     "text": "While using Djinn Bloodline, multiplicatively increase Maximum Mana based on Catalyst's activity time in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While using Djinn Bloodline",
     "x": [
      "mana",
@@ -12179,7 +12179,7 @@
    {
     "text": "Multiplicatively increase autoclick power based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "autoclicks"
@@ -12394,7 +12394,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Royal Exchanges purchased.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -12436,7 +12436,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the sum of all your spells durations.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -12904,7 +12904,7 @@
    {
     "text": "Dragon's Breath multiplicatively increases Faction Coin find chance based on its duration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -13199,7 +13199,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Tax Collection casts in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -13275,7 +13275,7 @@
    {
     "text": "Also multiplicatively increase production bonus from Gems based on autoclicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -13340,7 +13340,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on time spent as Order in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -13886,7 +13886,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration by 5%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -14699,7 +14699,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana by 15%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -14978,7 +14978,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration by 10%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -15006,7 +15006,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana by 25%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -15109,7 +15109,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance by 100%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -15192,7 +15192,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration by 2.5%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -15410,7 +15410,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration and Maximum Mana by 10%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -15668,7 +15668,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration by 25%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -15879,7 +15879,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance by 200%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -15993,7 +15993,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana, Mana Regeneration, or Assistants for Order, Balance, or Chaos Factions respectively.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -16187,7 +16187,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance by 500%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -16214,7 +16214,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana by 150%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -16321,7 +16321,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on time spent during your last Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -16398,7 +16398,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on time spent with the least used alignment.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -16429,7 +16429,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on time spent with the least used alignment.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -17244,7 +17244,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on active spells.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -17449,7 +17449,7 @@
    {
     "text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -17491,7 +17491,7 @@
    {
     "text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -17532,7 +17532,7 @@
    {
     "text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -17572,7 +17572,7 @@
    {
     "text": "Also multiplicatively increase Mana Regeneration based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -17615,7 +17615,7 @@
    {
     "text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production",
@@ -17660,7 +17660,7 @@
    {
     "text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production",
@@ -17704,7 +17704,7 @@
    {
     "text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production",
@@ -17747,7 +17747,7 @@
    {
     "text": "Also multiplicatively increase Non-Unique buildings production based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production",
@@ -17793,7 +17793,7 @@
    {
     "text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -17835,7 +17835,7 @@
    {
     "text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -17876,7 +17876,7 @@
    {
     "text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -17916,7 +17916,7 @@
    {
     "text": "Also multiplicatively increase Royal Exchange bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -18665,7 +18665,7 @@
    {
     "text": "Also multiplicatively increase assistants based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -18706,7 +18706,7 @@
    {
     "text": "Also multiplicatively increase assistants based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -18746,7 +18746,7 @@
    {
     "text": "Also multiplicatively increase assistants based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -18785,7 +18785,7 @@
    {
     "text": "Also multiplicatively increase assistants based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -19151,7 +19151,7 @@
    {
     "text": "Also multiplicatively increase Maximum Mana based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -19193,7 +19193,7 @@
    {
     "text": "Also multiplicatively increase Maximum Mana based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -19234,7 +19234,7 @@
    {
     "text": "Also multiplicatively increase Maximum Mana based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -19274,7 +19274,7 @@
    {
     "text": "Also multiplicatively increase Maximum Mana based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -19487,7 +19487,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -19528,7 +19528,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -19568,7 +19568,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -19607,7 +19607,7 @@
    {
     "text": "Also multiplicatively increase Faction Coin find chance based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -20075,7 +20075,7 @@
    {
     "text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -20117,7 +20117,7 @@
    {
     "text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -20158,7 +20158,7 @@
    {
     "text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -20198,7 +20198,7 @@
    {
     "text": "Also multiplicatively increase production bonus from Gems based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -20565,7 +20565,7 @@
    {
     "text": "Also multiplicatively increase offline bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "offline production"
@@ -20606,7 +20606,7 @@
    {
     "text": "Also multiplicatively increase offline bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "offline production"
@@ -20646,7 +20646,7 @@
    {
     "text": "Also multiplicatively increase offline bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "offline production"
@@ -20685,7 +20685,7 @@
    {
     "text": "Also multiplicatively increase offline bonus based on spell tier.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "offline production"
@@ -39161,7 +39161,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Reincarnations made.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -39257,7 +39257,7 @@
    {
     "text": "From Reincarnation 50: multiplicatively increase Faction Coin find chance (%).",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -39512,7 +39512,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration and Faction Coin find chance based on Reincarnations made.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -39526,7 +39526,7 @@
    {
     "text": "From Reincarnation 220: multiplicatively increase Mana Regeneration and Faction Coin find chance (the same % for both).",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -41803,7 +41803,7 @@
    {
     "text": "Also multiplicatively increase offline spells cast by 150%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "spells cast amount",
@@ -42565,7 +42565,7 @@
    {
     "text": "Multiplicatively increase mana regen by 12% per active spell.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "?mana regen"
@@ -42577,7 +42577,7 @@
    {
     "text": "Also multiplicatively increase offline spells cast amount by 1200%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "spells cast amount",
@@ -42633,7 +42633,7 @@
    {
     "text": "Increase Maximum Mana additively and multiplicatively based on the activity time of your least used spell.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -42677,7 +42677,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on assistants owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -42704,7 +42704,7 @@
    {
     "text": "Multiplicatively increase assistants based on spells cast in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -42814,7 +42814,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Trophies unlocked.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -42890,7 +42890,7 @@
    {
     "text": "Multiplicatively increase assistants based on mana produced in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -43104,7 +43104,7 @@
    {
     "text": "Multiplicatively increase the chance to find Faction Coins based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -43409,7 +43409,7 @@
    {
     "text": "Multiplicatively increase assistants based on time spent offline in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -43466,7 +43466,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Rubies you collected.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -43732,7 +43732,7 @@
    {
     "text": "Multiplicatively increase assistants based on mana produced in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -43824,7 +43824,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on clicks made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -43882,7 +43882,7 @@
    {
     "text": "Increase Faction Coin find chance additively and multiplicatively based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -43950,7 +43950,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on the lowest Lineage level.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -43977,7 +43977,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Excavation depth.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -44056,7 +44056,7 @@
    {
     "text": "Multiplicatively increase autoclick power by 100%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "autoclicks"
@@ -44115,7 +44115,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on active spells.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -44445,7 +44445,7 @@
    {
     "text": "Also multiplicatively increase autoclick power by 10%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "autoclicks"
@@ -44533,7 +44533,7 @@
    {
     "text": "Multiplicatively increase assistants based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -44616,7 +44616,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Maximum Mana.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -44698,7 +44698,7 @@
    {
     "text": "Multiplicatively increase assistants based on Halls of Legends owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -44912,7 +44912,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on Mana Regeneration.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -45058,7 +45058,7 @@
    {
     "text": "Increase assistants additively and multiplicatively based on your Offline production.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "assistants"
@@ -45129,7 +45129,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Royal Exchanges purchased in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -45347,7 +45347,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on the highest amount of Mana Regeneration you had in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -45993,7 +45993,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Gems owned.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -46259,7 +46259,7 @@
    {
     "text": "Increase Royal Exchange bonus additively and multiplicatively based on Tax Collections cast in this Era.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "royal exchange",
@@ -46330,7 +46330,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on the sum of your faction spell activity time in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -46456,7 +46456,7 @@
    {
     "text": "Multiplicatively increase assistants based on Gems you have.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -46507,7 +46507,7 @@
    {
     "text": "While both Lightning Strike and Gem Grinder are active, multiplicatively increase production bonus from Gems based on the duration of your longest spell.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While both Lightning Strike and Gem Grinder are active",
     "x": [
      "production bonus from gems",
@@ -47023,7 +47023,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on mana produced in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -47135,7 +47135,7 @@
    {
     "text": "Multiplicatively increase assistants based on mana produced in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -47267,7 +47267,7 @@
    {
     "text": "Multiplicatively increase Maximum mana based on Research points.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -47385,7 +47385,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Unique buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -47551,7 +47551,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on Factions Coins found in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -47578,7 +47578,7 @@
    {
     "text": "Multiplicatively increase mana regeneration based on time spent with the faction opposite to your current one, in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -47655,7 +47655,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Faction coins found in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -47713,7 +47713,7 @@
    {
     "text": "While both Diamond Pickaxe and God's Hand are active, multiplicatively increase Mana Regeneration and Faction Coin find chance based on Excavations and Excavation resets made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While both Diamond Pickaxe and God's Hand are active",
     "x": [
      "faction coin find chance"
@@ -48059,7 +48059,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on Research Points.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -48140,7 +48140,7 @@
    {
     "text": "Multiplicatively increase assistants by 10% and gain additional assistants based on trophies you unlocked.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -48398,7 +48398,7 @@
    {
     "text": "Multiplicatively increase assistants based on Combo Strike activity time in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -48460,7 +48460,7 @@
    {
     "text": "Multiplicatively increase assistants based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -48587,7 +48587,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -48727,7 +48727,7 @@
    {
     "text": "Multiplicatively increase assistants based on Trophies unlocked.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -49239,7 +49239,7 @@
    {
     "text": "Multiplicatively increase assistants based on different Factions in your Legacies.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -49397,7 +49397,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on Farms, Inns and Blacksmiths built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -49496,7 +49496,7 @@
    {
     "text": "Multiplicatively increase Mana Regeneration based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -49527,7 +49527,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on clicks made in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -49557,7 +49557,7 @@
    {
     "text": "Multiplicatively increase Mana regeneration by 50% while God's Hand is active.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -49644,7 +49644,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana by 30%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -49733,7 +49733,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Tax Collection casts this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -49765,7 +49765,7 @@
    {
     "text": "Multiplicatively increase your triggered Tax Collections by 25%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "tax collection",
@@ -49882,7 +49882,7 @@
    {
     "text": "Multiplicatively increase assistants and Offline production by 10%.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "offline production"
@@ -50109,7 +50109,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Faction Coins found in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -50140,7 +50140,7 @@
    {
     "text": "Multiplicatively increase Royal Exchange bonus based on Halls of Legends built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "royal exchange",
@@ -50234,7 +50234,7 @@
    {
     "text": "Multiplicatively increase Mana regeneration by 1% for every 1000 buildings built.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",
@@ -50380,7 +50380,7 @@
    {
     "text": "Multiplicatively increase assistants based on Royal Exchange bonus.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -50788,7 +50788,7 @@
    {
     "text": "Multiplicatively increase your triggered Tax Collections based on Royal Exchange bonus.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "tax collection",
@@ -50827,7 +50827,7 @@
    {
     "text": "Evil: Multiplicatively increase Tax Collection worth.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "tax collection",
@@ -50840,7 +50840,7 @@
    {
     "text": "Neutral: Multiplicatively increase Faction Coin find chance.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -50982,7 +50982,7 @@
    {
     "text": "Multiplicatively increase Faction Coin find chance based on Lightning Strike activity time in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "faction coin find chance"
@@ -51164,7 +51164,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems over time based on Artifacts found and time spent in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -51207,7 +51207,7 @@
    {
     "text": "Increase Mana Regeneration additively and multiplicatively based on Order buildings built.",
     "verb": "increase",
-    "mode": "additive",
+    "mode": null,
     "trigger": null,
     "x": [
      "mana",
@@ -51264,7 +51264,7 @@
    {
     "text": "Multiplicatively increase assistants based on Offline production.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -51431,7 +51431,7 @@
    {
     "text": "While Maelstrom is active, multiplicatively increase assistants temporarily based on the lowest tier targeted.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": "While Maelstrom is active",
     "x": [
      "assistants"
@@ -51557,7 +51557,7 @@
    {
     "text": "Multiplicatively increase Assistants, production bonus from Gems and Maximum Mana by 88%, 88% and 888%, targets chosen randomly and change every 88 seconds.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -51673,7 +51673,7 @@
    {
     "text": "Multiplicatively increase assistants based on Elven Luck triggered in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "assistants"
@@ -51712,7 +51712,7 @@
    {
     "text": "Multiplicatively increase production bonus from Gems based on Tax Collections cast in this Era.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "production bonus from gems",
@@ -51778,7 +51778,7 @@
    {
     "text": "Multiplicatively increase Maximum Mana based on Faction Coins found and mana produced in this Era; spells cast and clicks made in this Reincarnation.",
     "verb": "increase",
-    "mode": "multiplicatively",
+    "mode": "multiplicative",
     "trigger": null,
     "x": [
      "mana",

@@ -130,7 +130,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
   var BL = DATA.buildings.join(' '), BLSET = {};
   DATA.buildings.forEach(function(b){ BLSET[b]=1; });
   function T(t){ return t.charAt(0)==='?' ? t.slice(1) : t; }
-  var MODE = {additive:'additive additively', multiplicative:'multiplicative multiplicatively'};
+  var MODE = {multiplicative:'multiplicative multiplicatively'};
   // what each box looks at in an effect (lower case, no accents); built once
   DATA.objs.forEach(function(o){
     o.nm = normS(o.n);
@@ -223,7 +223,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
     });
   }
   function hasX(e, t){
-    if(t==='additive' || t==='multiplicative') return e.m===t;
+    if(t==='multiplicative') return e.m===t;
     if(e.x.indexOf(t)>=0) return true;
     var m=t.match(/^(.*?)( base)? production$/);      // an effect on all buildings is also on each building
     return !!(e.all && m && BLSET[m[1]]);
