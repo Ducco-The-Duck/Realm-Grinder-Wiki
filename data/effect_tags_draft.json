@@ -46520,9 +46520,6 @@
   "src": "challenge",
   "name": "Warcry",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46532,9 +46529,6 @@
   "src": "challenge",
   "name": "Unlimited Knowledge",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46544,9 +46538,6 @@
   "src": "challenge",
   "name": "The Source of Magic",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46571,9 +46562,6 @@
   "src": "challenge",
   "name": "Men of the World",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46583,9 +46571,6 @@
   "src": "challenge",
   "name": "Return of the King",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46595,9 +46580,6 @@
   "src": "challenge",
   "name": "The Art of War",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -46627,7 +46609,6 @@
   "src": "challenge",
   "name": "Prismatic Breath",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46639,7 +46620,6 @@
   "src": "challenge",
   "name": "Sky Monarch",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46668,7 +46648,6 @@
   "src": "challenge",
   "name": "Barkscales",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46718,7 +46697,6 @@
   "src": "challenge",
   "name": "Serpent Queller",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46743,7 +46721,6 @@
   "src": "challenge",
   "name": "Draconstellation",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46788,7 +46765,6 @@
   "src": "challenge",
   "name": "Ancient Incantation",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46816,7 +46792,6 @@
   "src": "challenge",
   "name": "Dracomet Vault",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -46847,8 +46822,6 @@
   "src": "challenge",
   "name": "Omniscience",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -46859,8 +46832,6 @@
   "src": "challenge",
   "name": "God's Plan",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -46902,8 +46873,6 @@
   "src": "challenge",
   "name": "An Untimely Death",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -46929,8 +46898,6 @@
   "src": "challenge",
   "name": "Titanomachy",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -46983,8 +46950,6 @@
   "src": "challenge",
   "name": "Time Merge",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47033,8 +46998,6 @@
   "src": "challenge",
   "name": "Power Overwhelming",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47045,8 +47008,6 @@
   "src": "challenge",
   "name": "Full Wish",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47057,8 +47018,6 @@
   "src": "challenge",
   "name": "Miniature Lamps",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47098,8 +47057,6 @@
   "src": "challenge",
   "name": "Ifrit Ignition",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47126,8 +47083,6 @@
   "src": "challenge",
   "name": "Identity Shaper",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47169,8 +47124,6 @@
   "src": "challenge",
   "name": "Worldly Desires",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47195,8 +47148,6 @@
   "src": "challenge",
   "name": "Altar of Wishes",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47207,8 +47158,6 @@
   "src": "challenge",
   "name": "Gaia's Cradle",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47219,8 +47168,6 @@
   "src": "challenge",
   "name": "Seed of Life",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47272,8 +47219,6 @@
   "src": "challenge",
   "name": "Artificial Currency",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47301,8 +47246,6 @@
   "src": "challenge",
   "name": "Pillars of Creation",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47313,8 +47256,6 @@
   "src": "challenge",
   "name": "Stoneheart",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -47338,8 +47279,6 @@
   "src": "challenge",
   "name": "Greatest Invention",
   "asc": [
-   0,
-   1,
    2,
    3,
    4

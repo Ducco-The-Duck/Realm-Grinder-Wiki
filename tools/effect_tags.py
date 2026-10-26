@@ -273,8 +273,9 @@ def collect():
     for x in json.load(open(R + 'data/research.json', encoding='utf8')):
         objs.append({'src': 'research', 'key': x['code'], 'name': x['name'], 'asc': availability.research_asc(x), 'texts': [x['description']]})
     for f in json.load(open(R + 'data/challenges.json', encoding='utf8')):
+        floor = availability.faction_floor(f['items'])
         for it in f['items']:
-            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'asc': availability.challenge_asc(it), 'texts': list(it['rewards'])})
+            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'asc': availability.challenge_asc(it, floor), 'texts': list(it['rewards'])})
     return objs
 
 
