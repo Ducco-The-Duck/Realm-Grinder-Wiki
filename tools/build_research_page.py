@@ -292,7 +292,7 @@ popups are always the base values <i>v</i>.</div>
   }
   // the highest research number a branch can reach: the research facility level is capped by the Reincarnations you can have (triangular number up to 39 / 99
   // Reincarnations before Ascension 1 / 2: 780 and 4950; numbers from 5000 on also need Reincarnation 180, so not before Ascension 3; 7000 at Ascension 3; 14000 at Ascension 4)
-  var MAXNUM=[780,4950,4999,7000,14000];
+  var MAXNUM=__MAXNUM__;
   function unavailable(it){ return (it.u!==null && it.u!==undefined && ASC>=it.u) || (it.nm!==undefined && it.nm>MAXNUM[ASC]); }
   function textFor(it){
     var cur={d:it.d,q:it.q}, ks=Object.keys(it.a||{}).map(Number).sort(function(a,b){return a-b;});
@@ -465,8 +465,8 @@ popups are always the base values <i>v</i>.</div>
 </body>
 </html>
 '''
-import search_snippet
-html = html.replace('__DATA__', data).replace('__TOTAL__', str(total)).replace('__BRANCHES__', str(len(BRANCHES)))
+import search_snippet, availability
+html = html.replace('__MAXNUM__', json.dumps(availability.MAXNUM)).replace('__DATA__', data).replace('__TOTAL__', str(total)).replace('__BRANCHES__', str(len(BRANCHES)))
 html = search_snippet.apply(html, 'Search research names, hints and descriptions')
 open(os.path.join(ROOT, 'docs', 'research.html'), 'w', encoding='utf8').write(html)
 print('docs/research.html', len(html) // 1024, 'KB;', [(b['name'], len(b['items'])) for b in BRANCHES],

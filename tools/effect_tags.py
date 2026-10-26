@@ -8,6 +8,8 @@ The tags of an effect are whole paths (general stat first), so a search for a ge
 import json, re, sys, collections
 sys.stdout.reconfigure(encoding='utf8')
 R = __file__.replace('\\', '/').rsplit('/tools/', 1)[0] + '/'
+sys.path.insert(0, R + 'tools')
+import availability
 
 BUILD = json.load(open(R + 'data/buildings.json', encoding='utf8'))
 SPELLS = json.load(open(R + 'data/spells.json', encoding='utf8'))
@@ -125,8 +127,8 @@ def xtags(raw):
         add('research', 'research budget' if 'budget' in s else 'research slots')
     elif 'tax collection' in s:
         add('tax collection', 'tax collection worth' if 'worth' in s else 'triggered tax collections')
-    elif s.startswith('count of '): add('stat counts', s[9:])
-    elif s == 'autoclicks': add('autoclicks', 'clicking reward')
+    elif s.startswith('count of '): add(s[9:] + ' count')
+    elif s == 'autoclicks': add('autoclicks')
     elif 'gem power' in s or 'ruby power' in s: add('gem power' if 'gem' in s else 'ruby power')
     elif re.search(r'assistants?', s): add('assistants')
     elif 'set power' in s: add('set power')
@@ -265,14 +267,14 @@ def collect():
     for page, v in d.items():
         for u in v:
             ps = list(u['description']) + list(u.get('more') or [])
-            objs.append({'src': 'upgrade', 'key': page + '/' + u['name'], 'name': u['name'], 'texts': [p['text'] for p in ps]})
+            objs.append({'src': 'upgrade', 'key': page + '/' + u['name'], 'name': u['name'], 'asc': availability.upgrade_asc(u), 'texts': [p['text'] for p in ps]})
             for c in u.get('combos') or []:
-                objs.append({'src': 'upgrade', 'key': page + '/' + u['name'] + '/' + c['name'], 'name': c['name'], 'texts': [p['text'] for p in c['description']]})
+                objs.append({'src': 'upgrade', 'key': page + '/' + u['name'] + '/' + c['name'], 'name': c['name'], 'asc': availability.upgrade_asc(c), 'texts': [p['text'] for p in c['description']]})
     for x in json.load(open(R + 'data/research.json', encoding='utf8')):
-        objs.append({'src': 'research', 'key': x['code'], 'name': x['name'], 'texts': [x['description']]})
+        objs.append({'src': 'research', 'key': x['code'], 'name': x['name'], 'asc': availability.research_asc(x), 'texts': [x['description']]})
     for f in json.load(open(R + 'data/challenges.json', encoding='utf8')):
         for it in f['items']:
-            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'texts': list(it['rewards'])})
+            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'asc': availability.challenge_asc(it), 'texts': list(it['rewards'])})
     return objs
 
 
@@ -292,7 +294,7 @@ def tag_all():
                     for md in (['additive', 'multiplicative'] if e['mode'] == 'both' else [e['mode']]):     # 'additively and multiplicatively' is two effects
                         effs.append({'text': q, 'verb': e['verb'], 'mode': md, 'trigger': e['trigger'], 'x': xt, 'scope': sc, 'y': yt,
                                      'seconds': int(dur.group(1)) if dur else None})
-        res[o['key']] = {'src': o['src'], 'name': o['name'], 'effects': effs}
+        res[o['key']] = {'src': o['src'], 'name': o['name'], 'asc': o['asc'], 'effects': effs}
     return res, unsplit
 
 

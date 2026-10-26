@@ -431,7 +431,7 @@ popups are always the base values <i>v</i>.</div>
   }
   // the highest research number a branch can reach: the research facility level is capped by the Reincarnations you can have (triangular number up to 39 / 99
   // Reincarnations before Ascension 1 / 2: 780 and 4950; numbers from 5000 on also need Reincarnation 180, so not before Ascension 3; 7000 at Ascension 3; 14000 at Ascension 4)
-  var MAXNUM=[780,4950,4999,7000,14000];
+  var MAXNUM=[780, 4950, 4999, 7000, 14000];
   function unavailable(it){ return (it.u!==null && it.u!==undefined && ASC>=it.u) || (it.nm!==undefined && it.nm>MAXNUM[ASC]); }
   function textFor(it){
     var cur={d:it.d,q:it.q}, ks=Object.keys(it.a||{}).map(Number).sort(function(a,b){return a-b;});
