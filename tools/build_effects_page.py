@@ -145,8 +145,8 @@ h1{margin:0 0 4px;font-size:1.7rem}
   function all(h, T){ return T.every(function(t){ return h.indexOf(t)>=0; }); }
   function chips(parent, e){
     var d=el('div','tags');
-    e.x.forEach(function(t){ d.appendChild(el('span','chip x',T(t))); });
-    e.y.forEach(function(t){ d.appendChild(el('span','chip y',T(t))); });
+    e.x.forEach(function(t){ d.appendChild(el('span','chip '+(kindOf(t)==='stat'?'x':'m'),T(t))); });      // qualifiers have no colour
+    e.y.forEach(function(t){ d.appendChild(el('span','chip '+(kindOf(t)==='stat'?'y':'m'),T(t))); });
     if(e.m) d.appendChild(el('span','chip m',e.m));
     parent.appendChild(d);
   }
@@ -259,7 +259,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
     [[PX,'x'],[PY,'y']].forEach(function(p){
       var box=document.getElementById('sel'+p[1]); box.textContent='';
       p[0].forEach(function(t,i){
-        var c=el('span','chip '+p[1]), b=el('button',null,'×'); b.type='button'; b.setAttribute('aria-label','Remove '+t);
+        var c=el('span','chip '+(kindOf(t)==='stat'?p[1]:'m')), b=el('button',null,'×'); b.type='button'; b.setAttribute('aria-label','Remove '+t);
         c.appendChild(document.createTextNode(t)); c.appendChild(b);
         b.addEventListener('click',function(){ p[0].splice(i,1); drawSel(); render(); });
         box.appendChild(c);
