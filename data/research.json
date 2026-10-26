@@ -9,7 +9,7 @@
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
 "pen": null,
-"description": "Increase the production of Farms based on mana produced in this Era.",
+"description": "Increase the production of Enchanted Fields based on mana produced in this Era.",
 "formulas": [
 {
 "latex": "v = 1.2 \\cdot W^{0.8}",
@@ -29,7 +29,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
+"mercenary_note": "Mercenaries can buy this when they have Enchanted Fields.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -46,21 +46,21 @@
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
 "pen": null,
-"description": "Increase the production of all other buildings by 160% per Heaven's Gate owned.",
+"description": "Increase the production of all other buildings by 160% per Heaven's Domain owned.",
 "formulas": [
 {
 "latex": "v = 160 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Heaven's Gate buildings you own"
+"text": "Number of Heaven's Domain buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2000 Heaven's Gates"
+"Reach 2000 Heaven's Domains"
 ],
 "hint": "Open the Gates of Heaven.",
 "faction": 2,
@@ -68,7 +68,7 @@
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
+"mercenary_note": "Mercenaries can buy this when they have Heaven's Domains.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -143,7 +143,7 @@
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Witch Conclave buildings you own"
+"text": "Number of Goblin Bank buildings you own"
 }
 ],
 "scale": null
@@ -159,7 +159,7 @@
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
+"mercenary_note": "Mercenaries can buy this when they have Goblin Banks.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -455,14 +455,14 @@
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
 "pen": null,
-"description": "Increase the production of assistants based on Necropolises owned.",
+"description": "Increase the production of assistants based on Undercities owned.",
 "formulas": [
 {
 "latex": "v = 5 \\cdot N^{0.75}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Necropolis buildings you own"
+"text": "Number of Undercity buildings you own"
 }
 ],
 "scale": 1
@@ -477,7 +477,7 @@
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
+"mercenary_note": "Mercenaries can buy this when they have Undercities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -572,7 +572,7 @@
 "icon": "ResearchSpellcraft",
 "icon_name": "ResearchSpellcraft",
 "pen": null,
-"description": "Increase the production of Labyrinths based on time spent as factions different than the Faceless.",
+"description": "Increase the production of Sunken Cities based on time spent as factions different than the Faceless.",
 "formulas": [
 {
 "latex": "v = 80 + 0.8 \\cdot \\left(t_{1} - t_{2}\\right)^{0.8}",
@@ -596,7 +596,7 @@
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Sunken City.",
+"mercenary_note": "Mercenaries can buy this when they have Sunken Cities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -1733,21 +1733,21 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "Increase the production of Inns and Blacksmiths by 70% per Farm owned.",
+"description": "Increase the production of Inns and Blacksmiths by 70% per Enchanted Field owned.",
 "formulas": [
 {
 "latex": "v = 70 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Farm buildings you own"
+"text": "Number of Enchanted Field buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2500 Farms"
+"Reach 2500 Enchanted Fields"
 ],
 "hint": "More farms, more crops!",
 "faction": 0,
@@ -1755,7 +1755,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
+"mercenary_note": "Mercenaries can buy this when they have Enchanted Fields.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -1811,7 +1811,7 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "Increase the production of Hell Portals based on Demon Coins you found in this Era.",
+"description": "Increase the production of Infernal Realms based on Demon Coins you found in this Era.",
 "formulas": [
 {
 "latex": "v = 0.3 \\cdot \\left(\\ln\\left(1 + F\\right)\\right)^{3}",
@@ -1834,7 +1834,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
+"mercenary_note": "Mercenaries can buy this when they have Infernal Realms.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2207,7 +2207,7 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "Increase the production of Halls of Legends based on buildings built.",
+"description": "Increase the production of Olympian Halls based on buildings built.",
 "formulas": [
 {
 "latex": "v = 80 \\cdot B^{0.8}",
@@ -2227,7 +2227,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
+"mercenary_note": "Mercenaries can buy this when they have Olympian Halls.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2244,7 +2244,7 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "While Grand Balance targets Stone Pillars, increase its production by 2000%. Also increase the production of every Grand Balance target based on Maximum Mana.",
+"description": "While Grand Balance targets Stonehenge, increase its production by 2000%. Also increase the production of every Grand Balance target based on Maximum Mana.",
 "formulas": [
 {
 "latex": "v = 25 \\cdot \\left(\\left(\\ln\\left(1 + M_{\\max}\\right)\\right)^{2.5}\\right)^{j}",
@@ -2271,7 +2271,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge and the spell Grand Balance unlocked.",
+"mercenary_note": "Mercenaries can buy this when they have Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -2565,16 +2565,14 @@ false
 "scale": 1
 }
 ],
-"requirements": [
-"Dwarven Forge upgrade purchased"
-],
+"requirements": [],
 "hint": "",
 "faction": 9,
 "faction_name": "Dwarf",
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Dwarven Forges.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -3354,7 +3352,7 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Increase the production of Heaven's Gates based on time spent with at least one active spell in this Reincarnation.",
+"description": "Increase the production of Heaven's Domains based on time spent with at least one active spell in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 80 + 8 \\cdot t^{0.8}",
@@ -3374,7 +3372,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
+"mercenary_note": "Mercenaries can buy this when they have Heaven's Domains.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3391,21 +3389,21 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Increase the production of all other buildings by 160% per Hell Portal owned.",
+"description": "Increase the production of all other buildings by 160% per Infernal Realm owned.",
 "formulas": [
 {
 "latex": "v = 160 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Hell Portal buildings you own"
+"text": "Number of Infernal Realm buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2000 Hell Portals"
+"Reach 2000 Infernal Realms"
 ],
 "hint": "Build a highway to hell.",
 "faction": 5,
@@ -3413,7 +3411,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
+"mercenary_note": "Mercenaries can buy this when they have Infernal Realms.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3734,7 +3732,7 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Increase the production of Farms based on Maximum Mana.",
+"description": "Increase the production of Enchanted Fields based on Maximum Mana.",
 "formulas": [
 {
 "latex": "v = 2.5 \\cdot \\left(M_{\\max}\\right)^{0.8}",
@@ -3756,7 +3754,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 0,
 "unlock_faction_name": "Fairy",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
+"mercenary_note": "Mercenaries can buy this when they have Enchanted Fields.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -3903,21 +3901,21 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Increase the production of all other buildings by 160% per Labyrinth owned.",
+"description": "Increase the production of all other buildings by 160% per Sunken City owned.",
 "formulas": [
 {
 "latex": "v = 160 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Labyrinth buildings you own"
+"text": "Number of Sunken City buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 3000 Labyrinths"
+"Reach 3000 Sunken Cities"
 ],
 "hint": "Lost in the maze? Build your path.",
 "faction": 8,
@@ -3925,7 +3923,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 8,
 "unlock_faction_name": "Faceless",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Sunken City.",
+"mercenary_note": "Mercenaries can buy this when they have Sunken Cities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4048,14 +4046,14 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Multiplicatively increase assistants based on Halls of Legends owned.",
+"description": "Multiplicatively increase assistants based on Olympian Halls owned.",
 "formulas": [
 {
 "latex": "v = 0.2 \\cdot N^{0.8}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Hall of Legends buildings you own"
+"text": "Number of Olympian Hall buildings you own"
 }
 ],
 "scale": null
@@ -4070,7 +4068,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
+"mercenary_note": "Mercenaries can buy this when they have Olympian Halls.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4336,16 +4334,14 @@ false
 "scale": 2
 }
 ],
-"requirements": [
-"Wyrm's Den upgrade purchased"
-],
+"requirements": [],
 "hint": "",
 "faction": 12,
 "faction_name": "Dragon",
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Wyrm's Dens.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -4956,7 +4952,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase the production of Witch Conclaves based on buildings built.",
+"description": "Increase the production of Goblin Banks based on buildings built.",
 "formulas": [
 {
 "latex": "v = 2 \\cdot B^{0.8}",
@@ -4976,7 +4972,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
+"mercenary_note": "Mercenaries can buy this when they have Goblin Banks.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -4993,21 +4989,21 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase the production of all other buildings by 140% per Necropolis owned.",
+"description": "Increase the production of all other buildings by 140% per Undercity owned.",
 "formulas": [
 {
 "latex": "v = 140 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Necropolis buildings you own"
+"text": "Number of Undercity buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2000 Necropolises"
+"Reach 2000 Undercities"
 ],
 "hint": "Nation of the dead.",
 "faction": 4,
@@ -5015,7 +5011,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
+"mercenary_note": "Mercenaries can buy this when they have Undercities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5134,7 +5130,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Enchanted Field.",
+"mercenary_note": "Mercenaries can buy this when they have Enchanted Fields.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5330,14 +5326,14 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase the production of Evil Buildings based on Witch Conclaves owned.",
+"description": "Increase the production of Evil Buildings based on Goblin Banks owned.",
 "formulas": [
 {
 "latex": "v = 1.5 \\cdot N^{0.85}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Witch Conclave buildings you own"
+"text": "Number of Goblin Bank buildings you own"
 }
 ],
 "scale": 1
@@ -5352,7 +5348,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
+"mercenary_note": "Mercenaries can buy this when they have Goblin Banks.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5475,21 +5471,21 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase the production of all other buildings by 200% per Stone Pillars owned.",
+"description": "Increase the production of all other buildings by 200% per Stonehenge owned.",
 "formulas": [
 {
 "latex": "v = 200 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Stone Pillars buildings you own"
+"text": "Number of Stonehenge buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 3000 Stone Pillars"
+"Reach 3000 Stonehenge"
 ],
 "hint": "A lot of men-hirs.",
 "faction": 7,
@@ -5497,7 +5493,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
+"mercenary_note": "Mercenaries can buy this when they have Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -5801,8 +5797,7 @@ false
 }
 ],
 "requirements": [
-"Reach 5000 Dwarven Forges",
-"Dwarven Forge upgrade purchased"
+"Reach 5000 Dwarven Forges"
 ],
 "hint": "A Blacksmith army.",
 "faction": 9,
@@ -5810,7 +5805,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Dwarven Forges.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -5842,8 +5837,7 @@ false
 ],
 "requirements": [
 "Have Dwarf as prestige faction",
-"Reach 12000 Unique Buildings",
-"Spider Sanctuary upgrade purchased"
+"Reach 12000 Unique Buildings"
 ],
 "hint": "Special architecture.",
 "faction": 10,
@@ -5851,7 +5845,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Spider Sanctuaries.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -6557,7 +6551,7 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase the production of Necropolises based on assistants owned.",
+"description": "Increase the production of Undercities based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 200 \\cdot A^{0.9}",
@@ -6577,7 +6571,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
+"mercenary_note": "Mercenaries can buy this when they have Undercities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6594,21 +6588,21 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase the production of all other buildings by 90% per Witch Conclave owned.",
+"description": "Increase the production of all other buildings by 90% per Goblin Bank owned.",
 "formulas": [
 {
 "latex": "v = 90 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Witch Conclave buildings you own"
+"text": "Number of Goblin Bank buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 2250 Witch Conclaves"
+"Reach 2250 Goblin Banks"
 ],
 "hint": "Too many witches, not enough houses!",
 "faction": 3,
@@ -6616,7 +6610,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 3,
 "unlock_faction_name": "Goblin",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Goblin Bank.",
+"mercenary_note": "Mercenaries can buy this when they have Goblin Banks.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -6708,7 +6702,7 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase Heaven's Gates production when your Mana Regeneration is higher than Maximum Mana.",
+"description": "Increase Heaven's Domains production when your Mana Regeneration is higher than Maximum Mana.",
 "formulas": [
 {
 "latex": "v = \\begin{cases} 90 \\cdot \\left(\\frac{M}{M_{\\max}}\\right)^{0.9} & \\text{if } M > M_{\\max} \\\\ 0 & \\text{otherwise} \\end{cases}",
@@ -6735,7 +6729,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 4,
 "unlock_faction_name": "Undead",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
+"mercenary_note": "Mercenaries can buy this when they have Heaven's Domains.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -7104,7 +7098,7 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase the production of Stone Pillars based on mana produced in this Reincarnation.",
+"description": "Increase the production of Stonehenge based on mana produced in this Reincarnation.",
 "formulas": [
 {
 "latex": "v = 0.75 \\cdot W^{0.75}",
@@ -7124,7 +7118,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
+"mercenary_note": "Mercenaries can buy this when they have Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -7384,8 +7378,7 @@ false
 }
 ],
 "requirements": [
-"Reach 4000 Spider Sanctuaries",
-"Spider Sanctuary upgrade purchased"
+"Reach 4000 Spider Sanctuaries"
 ],
 "hint": "Evil Churches.",
 "faction": 10,
@@ -7393,7 +7386,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Spider Sanctuaries.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -7543,8 +7536,7 @@ false
 }
 ],
 "requirements": [
-"Reach 5000 Wyrm's Dens",
-"Wyrm's Den upgrade purchased"
+"Reach 5000 Wyrm's Dens"
 ],
 "hint": "Steel Stronghold.",
 "faction": 12,
@@ -7552,7 +7544,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Wyrm's Dens.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -8207,7 +8199,7 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase the production of Hell Portals based on Hellfire Blasts cast in this Era.",
+"description": "Increase the production of Infernal Realms based on Hellfire Blasts cast in this Era.",
 "formulas": [
 {
 "latex": "v = 160 + 80 \\cdot S^{0.8}",
@@ -8227,7 +8219,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Infernal Realm.",
+"mercenary_note": "Mercenaries can buy this when they have Infernal Realms.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8322,14 +8314,14 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase Faction Coin find chance based on Necropolises owned.",
+"description": "Increase Faction Coin find chance based on Undercities owned.",
 "formulas": [
 {
 "latex": "v = 2 \\cdot N^{1.2}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Necropolis buildings you own"
+"text": "Number of Undercity buildings you own"
 }
 ],
 "scale": null
@@ -8345,7 +8337,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 5,
 "unlock_faction_name": "Demon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Undercity.",
+"mercenary_note": "Mercenaries can buy this when they have Undercities.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8627,7 +8619,7 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Holy Light empowers Heaven's Gates based on Holy Light activity time in this reincarnation.",
+"description": "Holy Light empowers Heaven's Domains based on Holy Light activity time in this reincarnation.",
 "formulas": [
 {
 "latex": "v = 5 \\cdot t^{0.65}",
@@ -8649,7 +8641,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 2,
 "unlock_faction_name": "Angel",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Heaven's Domain.",
+"mercenary_note": "Mercenaries can buy this when they have Heaven's Domains.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8744,21 +8736,21 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase the production of all other buildings by 200% per Hall of Legends owned.",
+"description": "Increase the production of all other buildings by 200% per Olympian Hall owned.",
 "formulas": [
 {
 "latex": "v = 200 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Hall of Legends buildings you own"
+"text": "Number of Olympian Hall buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 3000 Halls of Legends"
+"Reach 3000 Olympian Halls"
 ],
 "hint": "Too many legends! Need more room!",
 "faction": 6,
@@ -8766,7 +8758,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 6,
 "unlock_faction_name": "Titan",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Olympian Hall.",
+"mercenary_note": "Mercenaries can buy this when they have Olympian Halls.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8900,14 +8892,14 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase the production of all other buildings based on the production of your Stone Pillars.",
+"description": "Increase the production of all other buildings based on the production of your Stonehenge.",
 "formulas": [
 {
 "latex": "v = 8 \\cdot \\left(\\ln\\left(1 + Y\\right)\\right)^{1.8}",
 "vars": [
 {
 "symbol": "Y",
-"text": "Production of your Stone Pillars buildings (per second)"
+"text": "Production of your Stonehenge buildings (per second)"
 }
 ],
 "scale": 1
@@ -8922,7 +8914,7 @@ false
 "faction_kind": "base",
 "unlock_faction": 7,
 "unlock_faction_name": "Druid",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Stonehenge.",
+"mercenary_note": "Mercenaries can buy this when they have Stonehenge.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,
@@ -8980,16 +8972,14 @@ false
 "scale": 2
 }
 ],
-"requirements": [
-"Spider Sanctuary upgrade purchased"
-],
+"requirements": [],
 "hint": "",
 "faction": 10,
 "faction_name": "Drow",
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it.",
+"mercenary_note": "Mercenaries can buy this when they have Spider Sanctuaries.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,

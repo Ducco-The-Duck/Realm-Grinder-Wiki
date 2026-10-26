@@ -41709,7 +41709,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Farms based on mana produced in this Era.",
+    "text": "Increase the production of Enchanted Fields based on mana produced in this Era.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -41741,7 +41741,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 160% per Heaven's Gate owned.",
+    "text": "Increase the production of all other buildings by 160% per Heaven's Domain owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -42053,7 +42053,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of assistants based on Necropolises owned.",
+    "text": "Increase the production of assistants based on Undercities owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -42144,7 +42144,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Labyrinths based on time spent as factions different than the Faceless.",
+    "text": "Increase the production of Sunken Cities based on time spent as factions different than the Faceless.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -42977,7 +42977,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Inns and Blacksmiths by 70% per Farm owned.",
+    "text": "Increase the production of Inns and Blacksmiths by 70% per Enchanted Field owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -43037,7 +43037,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Hell Portals based on Demon Coins you found in this Era.",
+    "text": "Increase the production of Infernal Realms based on Demon Coins you found in this Era.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -43332,7 +43332,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Halls of Legends based on buildings built.",
+    "text": "Increase the production of Olympian Halls based on buildings built.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -43363,10 +43363,10 @@
   ],
   "effects": [
    {
-    "text": "While Grand Balance targets Stone Pillars, increase its production by 2000%.",
+    "text": "While Grand Balance targets Stonehenge, increase its production by 2000%.",
     "verb": "increase",
     "mode": null,
-    "trigger": "While Grand Balance targets Stone Pillars",
+    "trigger": "While Grand Balance targets Stonehenge",
     "x": [
      "production",
      "building production",
@@ -44169,7 +44169,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Heaven's Gates based on time spent with at least one active spell in this Reincarnation.",
+    "text": "Increase the production of Heaven's Domains based on time spent with at least one active spell in this Reincarnation.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -44202,7 +44202,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 160% per Hell Portal owned.",
+    "text": "Increase the production of all other buildings by 160% per Infernal Realm owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -44468,7 +44468,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Farms based on Maximum Mana.",
+    "text": "Increase the production of Enchanted Fields based on Maximum Mana.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -44585,7 +44585,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 160% per Labyrinth owned.",
+    "text": "Increase the production of all other buildings by 160% per Sunken City owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -44696,7 +44696,7 @@
   ],
   "effects": [
    {
-    "text": "Multiplicatively increase assistants based on Halls of Legends owned.",
+    "text": "Multiplicatively increase assistants based on Olympian Halls owned.",
     "verb": "increase",
     "mode": "multiplicative",
     "trigger": null,
@@ -45375,7 +45375,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Witch Conclaves based on buildings built.",
+    "text": "Increase the production of Goblin Banks based on buildings built.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -45406,7 +45406,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 140% per Necropolis owned.",
+    "text": "Increase the production of all other buildings by 140% per Undercity owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -45660,7 +45660,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Evil Buildings based on Witch Conclaves owned.",
+    "text": "Increase the production of Evil Buildings based on Goblin Banks owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -45774,7 +45774,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 200% per Stone Pillars owned.",
+    "text": "Increase the production of all other buildings by 200% per Stonehenge owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46567,7 +46567,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Necropolises based on assistants owned.",
+    "text": "Increase the production of Undercities based on assistants owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46598,7 +46598,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 90% per Witch Conclave owned.",
+    "text": "Increase the production of all other buildings by 90% per Goblin Bank owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46694,7 +46694,7 @@
   ],
   "effects": [
    {
-    "text": "Increase Heaven's Gates production when your Mana Regeneration is higher than Maximum Mana.",
+    "text": "Increase Heaven's Domains production when your Mana Regeneration is higher than Maximum Mana.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46989,7 +46989,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Stone Pillars based on mana produced in this Reincarnation.",
+    "text": "Increase the production of Stonehenge based on mana produced in this Reincarnation.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -47807,7 +47807,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Hell Portals based on Hellfire Blasts cast in this Era.",
+    "text": "Increase the production of Infernal Realms based on Hellfire Blasts cast in this Era.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -47900,7 +47900,7 @@
   ],
   "effects": [
    {
-    "text": "Increase Faction Coin find chance based on Necropolises owned.",
+    "text": "Increase Faction Coin find chance based on Undercities owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -48196,7 +48196,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 200% per Hall of Legends owned.",
+    "text": "Increase the production of all other buildings by 200% per Olympian Hall owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -48320,7 +48320,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings based on the production of your Stone Pillars.",
+    "text": "Increase the production of all other buildings based on the production of your Stonehenge.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
