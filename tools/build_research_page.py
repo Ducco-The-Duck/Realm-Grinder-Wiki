@@ -136,7 +136,7 @@ for b in range(7):
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
             'd': tight(r['description']), 'q': r['requirements'], 'h': r['hint'],
-            'u': r['unavailable_from'], 'm': r['mercenary_exception'],
+            'u': r['unavailable_from'], 'm': r['mercenary_exception'], 'nm': r['number'],
             'nt': NOTES.get(r['code']),
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
@@ -290,7 +290,10 @@ popups are always the base values <i>v</i>.</div>
     if(it.ps && ASC>=it.ps[0] && !(it.ps[1] && ASC>=4)) k=Math.max(k, ASC-it.ps[0]+1);
     return k;
   }
-  function unavailable(it){ return it.u!==null && it.u!==undefined && ASC>=it.u; }
+  // the highest research number a branch can reach: the research facility level is capped by the Reincarnations you can have (triangular number up to 39 / 99
+  // Reincarnations before Ascension 1 / 2: 780 and 4950; numbers from 5000 on also need Reincarnation 180, so not before Ascension 3; 7000 at Ascension 3; 14000 at Ascension 4)
+  var MAXNUM=[780,4950,4999,7000,14000];
+  function unavailable(it){ return (it.u!==null && it.u!==undefined && ASC>=it.u) || (it.nm!==undefined && it.nm>MAXNUM[ASC]); }
   function textFor(it){
     var cur={d:it.d,q:it.q}, ks=Object.keys(it.a||{}).map(Number).sort(function(a,b){return a-b;});
     ks.forEach(function(k){ if(k<=ASC) cur=it.a[k]; });
