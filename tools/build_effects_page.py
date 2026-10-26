@@ -26,7 +26,7 @@ def icon_file(n):
 
 
 def clean_tags(lst):
-    return [t.lstrip('?') for t in lst]
+    return list(lst)        # tags the tagger could not place keep their "?" (the page shows them without it and does not suggest them)
 
 
 objs = []
@@ -66,6 +66,16 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .boxes input{width:100%;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
 .types{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 12px;font-size:.9rem}
 .count{color:var(--muted);font-size:.9rem;margin:0 0 10px}
+.boxes .wrap{position:relative}
+.sug{position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);margin-top:2px;display:none;overflow:hidden}
+.sug div{padding:5px 10px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.sug div.on,.sug div:hover{background:var(--cellhi)}
+.sug small{color:var(--muted);white-space:nowrap}
+.sel{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.sel:empty{display:none}
+.sel .chip{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;padding:1px 3px 1px 9px}
+.sel .chip button{border:0;background:none;color:inherit;cursor:pointer;font:inherit;padding:0 5px;line-height:1}
+.sel .chip button:hover{color:var(--fg)}
 .res{display:flex;gap:10px;padding:9px 10px;margin:0 0 6px;border:1px solid var(--line);border-radius:8px;background:var(--card);cursor:pointer;color:inherit;text-decoration:none}
 .res:hover,.res:focus-visible{background:var(--cellhi);outline:none}
 .res .ic{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--cell);display:flex;align-items:center;justify-content:center}
@@ -100,9 +110,10 @@ h1{margin:0 0 4px;font-size:1.7rem}
 <span class="hint">Only what is available in the chosen Ascension is listed.</span></div>
 <div class="boxes">
   <div class="full"><label for="qa">Search everything</label><input id="qa" type="search" placeholder="Any word of an effect, its stat, what it is based on, or its name" autocomplete="off"></div>
-  <div><label for="qx">Changes (X)</label><input id="qx" type="search" placeholder="e.g. faction coin find chance" autocomplete="off"></div>
-  <div><label for="qy">Based on (Y)</label><input id="qy" type="search" placeholder="e.g. assistants owned" autocomplete="off"></div>
+  <div class="wrap"><label for="qx">Changes (X)</label><input id="qx" type="search" placeholder="e.g. faction coin find chance" autocomplete="off"><div class="sug" id="sx"></div></div>
+  <div class="wrap"><label for="qy">Based on (Y)</label><input id="qy" type="search" placeholder="e.g. assistants owned" autocomplete="off"><div class="sug" id="sy"></div></div>
 </div>
+<div class="sel" id="sel"></div>
 <div class="types"><label><input type="checkbox" id="tu" checked> Upgrades</label><label><input type="checkbox" id="tr" checked> Research</label><label><input type="checkbox" id="tc" checked> Challenges</label></div>
 <div class="count" id="count"></div>
 <div id="root"></div>
@@ -116,24 +127,26 @@ h1{margin:0 0 4px;font-size:1.7rem}
   var ASC = 0, LIMIT = 150;
 /*SEARCH_JS*/
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  var BL = DATA.buildings.join(' ');
+  var BL = DATA.buildings.join(' '), BLSET = {};
+  DATA.buildings.forEach(function(b){ BLSET[b]=1; });
+  function T(t){ return t.charAt(0)==='?' ? t.slice(1) : t; }
   var MODE = {additive:'additive additively', multiplicative:'multiplicative multiplicatively'};
   // what each box looks at in an effect (lower case, no accents); built once
   DATA.objs.forEach(function(o){
     o.nm = normS(o.n);
     o.e.forEach(function(e){
-      var hasAll = (e.sc||[]).some(function(s){ return s==='all' || s==='other'; });
-      e.hx = normS(e.x.join(' ') + ' ' + (MODE[e.m]||'') + ' ' + (e.v==='reduce'?'reduce':'increase') + (hasAll ? ' ' + BL : ''));     // an effect on all buildings is also found by one building's name
-      e.hy = normS(e.y.join(' '));
-      e.ha = normS(o.n + ' ' + e.t + ' ' + e.x.join(' ') + ' ' + e.y.join(' ') + ' ' + (e.g||'') + ' ' + (MODE[e.m]||''));
+      var hasAll = e.all = (e.sc||[]).some(function(s){ return s==='all' || s==='other'; });
+      e.hx = normS(e.x.map(T).join(' ') + ' ' + (MODE[e.m]||'') + ' ' + (e.v==='reduce'?'reduce':'increase') + (hasAll ? ' ' + BL : ''));     // an effect on all buildings is also found by one building's name
+      e.hy = normS(e.y.map(T).join(' '));
+      e.ha = normS(o.n + ' ' + e.t + ' ' + e.x.map(T).join(' ') + ' ' + e.y.map(T).join(' ') + ' ' + (e.g||'') + ' ' + (MODE[e.m]||''));
     });
   });
   function terms(s){ return normS(s).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; }); }
   function all(h, T){ return T.every(function(t){ return h.indexOf(t)>=0; }); }
   function chips(parent, e){
     var d=el('div','tags');
-    e.x.forEach(function(t){ d.appendChild(el('span','chip x',t)); });
-    e.y.forEach(function(t){ d.appendChild(el('span','chip y',t)); });
+    e.x.forEach(function(t){ d.appendChild(el('span','chip x',T(t))); });
+    e.y.forEach(function(t){ d.appendChild(el('span','chip y',T(t))); });
     if(e.m) d.appendChild(el('span','chip m',e.m));
     parent.appendChild(d);
   }
@@ -195,6 +208,14 @@ h1{margin:0 0 4px;font-size:1.7rem}
   function hideTip(){ cur=null; hideAll(); }
   var qa=document.getElementById('qa'), qx=document.getElementById('qx'), qy=document.getElementById('qy');
   var tu=document.getElementById('tu'), tr=document.getElementById('tr'), tc=document.getElementById('tc');
+  // tags picked from the suggestions: the effect must have every one of them (a general tag is also on the effects of its specific ones)
+  var PX=[], PY=[];
+  function hasX(e, t){
+    if(t==='additive' || t==='multiplicative') return e.m===t;
+    if(e.x.indexOf(t)>=0) return true;
+    var m=t.match(/^(.*?)( base)? production$/);      // an effect on all buildings is also on each building
+    return !!(e.all && m && BLSET[m[1]]);
+  }
   function render(){
     var A=terms(qa.value), X=terms(qx.value), Y=terms(qy.value);
     root.textContent=''; hideTip();
@@ -202,10 +223,11 @@ h1{margin:0 0 4px;font-size:1.7rem}
     var found=[];
     DATA.objs.forEach(function(o){
       if(!types[o.s] || !(o.a>>ASC&1)) return;
-      var hits=o.e.filter(function(e){ return (!A.length || all(e.ha,A)) && (!X.length || all(e.hx,X)) && (!Y.length || (e.y.length && all(e.hy,Y))); });
+      var hits=o.e.filter(function(e){ return (!A.length || all(e.ha,A)) && (!X.length || all(e.hx,X)) && (!Y.length || (e.y.length && all(e.hy,Y)))
+        && PX.every(function(t){ return hasX(e,t); }) && PY.every(function(t){ return e.y.indexOf(t)>=0; }); });
       if(hits.length) found.push([o,hits]);
     });
-    if(!A.length && !X.length && !Y.length){ count.textContent = found.length+' upgrades, researches and challenges with an effect in Ascension '+ASC+'. Type in a box above to narrow them down.'; }
+    if(!A.length && !X.length && !Y.length && !PX.length && !PY.length){ count.textContent = found.length+' upgrades, researches and challenges with an effect in Ascension '+ASC+'. Type in a box above to narrow them down.'; }
     else count.textContent = found.length + (found.length===1?' result':' results') + (found.length>LIMIT?' (the first '+LIMIT+' are shown)':'');
     found.slice(0,LIMIT).forEach(function(f){
       var o=f[0], hits=f[1];
@@ -221,6 +243,62 @@ h1{margin:0 0 4px;font-size:1.7rem}
       root.appendChild(a);
     });
   }
+  function drawSel(){
+    var box=document.getElementById('sel'); box.textContent='';
+    [[PX,'x'],[PY,'y']].forEach(function(p){
+      p[0].forEach(function(t,i){
+        var c=el('span','chip '+p[1]), b=el('button',null,'\u00d7'); b.type='button'; b.setAttribute('aria-label','Remove '+t);
+        c.appendChild(document.createTextNode((p[1]==='x'?'Changes: ':'Based on: ')+t)); c.appendChild(b);
+        b.addEventListener('click',function(){ p[0].splice(i,1); drawSel(); render(); });
+        box.appendChild(c);
+      });
+    });
+  }
+  // the tags that exist (with how many effects have them in the chosen Ascension), for the suggestions of one box
+  function tagCounts(side){
+    var types={Upgrade:tu.checked, Research:tr.checked, Challenge:tc.checked}, n={};
+    DATA.objs.forEach(function(o){
+      if(!types[o.s] || !(o.a>>ASC&1)) return;
+      o.e.forEach(function(e){
+        e[side].forEach(function(t){ if(t.charAt(0)!=='?') n[t]=(n[t]||0)+1; });
+        if(side==='x' && e.m) n[e.m]=(n[e.m]||0)+1;
+      });
+    });
+    return n;
+  }
+  function suggest(side, input, list, picked){
+    var q=terms(input.value), n=tagCounts(side), cand=Object.keys(n).filter(function(t){ return picked.indexOf(t)<0 && all(normS(t),q); });
+    cand.sort(function(a,b){
+      var sa=q.length && normS(a).indexOf(q[0])===0 ? 0 : 1, sb=q.length && normS(b).indexOf(q[0])===0 ? 0 : 1;
+      return sa-sb || n[b]-n[a] || (a<b?-1:1);
+    });
+    list.textContent=''; list._on=-1;
+    cand.slice(0,8).forEach(function(t){
+      var d=el('div'); d.appendChild(el('span',null,t)); d.appendChild(el('small',null,String(n[t])));
+      d.addEventListener('mousedown',function(e){ e.preventDefault(); pick(side,input,list,picked,t); });
+      list.appendChild(d);
+    });
+    list.style.display=list.firstChild ? 'block' : 'none';
+  }
+  function pick(side, input, list, picked, t){
+    picked.push(t); input.value=''; list.style.display='none'; drawSel(); render();
+  }
+  [['x',qx,document.getElementById('sx'),PX],['y',qy,document.getElementById('sy'),PY]].forEach(function(b){
+    var side=b[0], input=b[1], list=b[2], picked=b[3];
+    input.addEventListener('input',function(){ suggest(side,input,list,picked); });
+    input.addEventListener('focus',function(){ suggest(side,input,list,picked); });
+    input.addEventListener('blur',function(){ list.style.display='none'; });
+    input.addEventListener('keydown',function(e){
+      var rows=list.children;
+      if(e.key==='ArrowDown' || e.key==='ArrowUp'){
+        if(!rows.length) return; e.preventDefault();
+        if(list._on>=0) rows[list._on].classList.remove('on');
+        list._on=(list._on+(e.key==='ArrowDown'?1:-1)+rows.length)%rows.length; rows[list._on].classList.add('on');
+      } else if(e.key==='Enter' && list._on>=0){
+        e.preventDefault(); pick(side,input,list,picked,rows[list._on].firstChild.textContent);
+      } else if(e.key==='Escape'){ list.style.display='none'; }
+    });
+  });
   for(var i=0;i<=4;i++){ var op=el('option',null,String(i)); op.value=String(i); sel.appendChild(op); }
   try{ var saved=parseInt(localStorage.getItem('rg-ascension'),10); if(saved>=0 && saved<=4) ASC=saved; }catch(e){}
   sel.value=String(ASC);

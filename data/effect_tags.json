@@ -9616,7 +9616,6 @@
   "icon": "FairyPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -9630,7 +9629,6 @@
   "icon": "FairyPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -9644,8 +9642,6 @@
   "icon": "FairyPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -9673,8 +9669,6 @@
   "icon": "FairyPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -9687,9 +9681,6 @@
   "icon": "FairyPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -9714,9 +9705,6 @@
   "icon": "FairyPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -9773,7 +9761,6 @@
   "icon": "ElvenPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -9820,7 +9807,6 @@
   "icon": "ElvenPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -9834,8 +9820,6 @@
   "icon": "ElvenPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -9863,8 +9847,6 @@
   "icon": "ElvenPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -9892,9 +9874,6 @@
   "icon": "ElvenPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -9919,9 +9898,6 @@
   "icon": "ElvenPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -9984,7 +9960,6 @@
   "icon": "AngelPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10025,7 +10000,6 @@
   "icon": "AngelPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10039,8 +10013,6 @@
   "icon": "AngelPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10053,8 +10025,6 @@
   "icon": "AngelPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10067,9 +10037,6 @@
   "icon": "AngelPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10094,9 +10061,6 @@
   "icon": "AngelPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10153,7 +10117,6 @@
   "icon": "GoblinPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10167,7 +10130,6 @@
   "icon": "GoblinPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10181,8 +10143,6 @@
   "icon": "GoblinPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10214,8 +10174,6 @@
   "icon": "GoblinPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10244,9 +10202,6 @@
   "icon": "GoblinPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10271,9 +10226,6 @@
   "icon": "GoblinPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10331,7 +10283,6 @@
   "icon": "UndeadPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10374,7 +10325,6 @@
   "icon": "UndeadPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10388,8 +10338,6 @@
   "icon": "UndeadPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10418,8 +10366,6 @@
   "icon": "UndeadPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10449,9 +10395,6 @@
   "icon": "UndeadPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10463,9 +10406,6 @@
   "icon": "UndeadPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10525,7 +10465,6 @@
   "icon": "DemonPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10552,7 +10491,6 @@
   "icon": "DemonPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10566,8 +10504,6 @@
   "icon": "DemonPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10596,8 +10532,6 @@
   "icon": "DemonPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10610,9 +10544,6 @@
   "icon": "DemonPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10637,9 +10568,6 @@
   "icon": "DemonPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10697,7 +10625,6 @@
   "icon": "TitanPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10744,7 +10671,6 @@
   "icon": "TitanPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10758,8 +10684,6 @@
   "icon": "TitanPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10788,8 +10712,6 @@
   "icon": "TitanPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10802,9 +10724,6 @@
   "icon": "TitanPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10830,9 +10749,6 @@
   "icon": "TitanPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10874,7 +10790,6 @@
   "icon": "DruidPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10909,7 +10824,6 @@
   "icon": "DruidPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -10923,8 +10837,6 @@
   "icon": "DruidPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10937,8 +10849,6 @@
   "icon": "DruidPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -10969,9 +10879,6 @@
   "icon": "DruidPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -10996,9 +10903,6 @@
   "icon": "DruidPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11057,7 +10961,6 @@
   "icon": "FacelessPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11087,7 +10990,6 @@
   "icon": "FacelessPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11101,8 +11003,6 @@
   "icon": "FacelessPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11131,8 +11031,6 @@
   "icon": "FacelessPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11161,9 +11059,6 @@
   "icon": "FacelessPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11188,9 +11083,6 @@
   "icon": "FacelessPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11251,7 +11143,6 @@
   "icon": "DwarvenPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11284,7 +11175,6 @@
   "icon": "DwarvenPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11298,8 +11188,6 @@
   "icon": "DwarvenPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11327,8 +11215,6 @@
   "icon": "DwarvenPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11357,9 +11243,6 @@
   "icon": "DwarvenPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11384,9 +11267,6 @@
   "icon": "DwarvenPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11443,7 +11323,6 @@
   "icon": "DrowPerk1",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11488,7 +11367,6 @@
   "icon": "DrowPerk2",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
    1,
    2,
    3,
@@ -11502,8 +11380,6 @@
   "icon": "DrowPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11531,8 +11407,6 @@
   "icon": "DrowPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
    2,
    3,
    4
@@ -11583,9 +11457,6 @@
   "icon": "DrowPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11611,9 +11482,6 @@
   "icon": "DrowPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   0,
-   1,
-   2,
    3,
    4
   ],
@@ -11718,7 +11586,6 @@
   "icon": "DragonPerk3",
   "page": "upgrades-allegiance.html",
   "asc": [
-   1,
    2,
    3,
    4
@@ -11746,7 +11613,6 @@
   "icon": "DragonPerk4",
   "page": "upgrades-allegiance.html",
   "asc": [
-   1,
    2,
    3,
    4
@@ -11759,8 +11625,6 @@
   "icon": "DragonPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   1,
-   2,
    3,
    4
   ],
@@ -11785,8 +11649,6 @@
   "icon": "DragonPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   1,
-   2,
    3,
    4
   ],
@@ -11924,7 +11786,6 @@
   "icon": "ArchonPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],
@@ -11949,7 +11810,6 @@
   "icon": "ArchonPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],
@@ -12069,7 +11929,6 @@
   "icon": "DjinnPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],
@@ -12095,7 +11954,6 @@
   "icon": "DjinnPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],
@@ -12210,7 +12068,6 @@
   "icon": "MakersPerk5",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],
@@ -12235,7 +12092,6 @@
   "icon": "MakersPerk6",
   "page": "upgrades-allegiance.html",
   "asc": [
-   2,
    3,
    4
   ],

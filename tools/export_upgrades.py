@@ -1177,6 +1177,16 @@ for items in by_cat.values():
     for u in items:
         for p in u['description']: p['formulas'] = [f for f in p['formulas'] if 'latex' in f]
 
+# a Lineage perk exists from the Ascension at which its unlock Reincarnation can be reached (the Reincarnation is in the Lineage's perk list)
+import availability
+_lin = {u['faction']: u for u in by_cat['allegiances'] if u.get('akind') == 'lineage'}
+for u in by_cat['allegiances']:
+    if u.get('akind') != 'lineage_perk' or u['faction'] not in _lin: continue
+    _n = int(u['name'].rsplit(' ', 1)[1])
+    for p in _lin[u['faction']].get('perks') or []:
+        if p['n'] == _n and str(p['reinc']).isdigit():
+            u['asc_min'] = max(u.get('asc_min') or 0, availability.asc_for_reincarnation(int(p['reinc'])))
+
 json.dump(by_cat, open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print('ambiguous trophy names:', amb)
 print('data/upgrade_pages.json:', {k: len(v) for k, v in by_cat.items()},
