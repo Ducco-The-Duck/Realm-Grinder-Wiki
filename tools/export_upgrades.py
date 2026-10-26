@@ -699,6 +699,7 @@ def alleg_kind(r):
     if n == 'Lineage': return 'lineage_c'
     if r['f'] != -1 and n.endswith(' Lineage'): return 'lineage'
     if r['f'] != -1 and re.fullmatch(r'.+ Perk \d+', n): return 'lineage_perk'
+    if r.get('tg') == 'LegacyComboUpgrade': return 'combo'
     return None
 
 
@@ -709,6 +710,7 @@ def wanted(r):
     return True
 by_cat = {name: [] for name in CATS.values()}
 problems = []
+COMBO_ITEMS = []
 todo = [(idx, r) for idx, r in enumerate(rows) if r['n'] not in SKIP_NAMES and r['q'].split('.')[-1] != SPELL_TIER_CLASS
         and wanted(r)]
 avail = availability([r['i'] for _, r in todo if r['cat'] not in (0, 4)])
@@ -760,7 +762,7 @@ for idx, r in todo:
         cond.append('starting from Ascension 1, at Reincarnation 40+')
     if r['f'] != -1 and r['cat'] not in (0, 4):
         cond.insert(0, f"playing as {FACTION.get(r['f'], r['f'])}")
-    if alleg_kind(r) in ('set', 'set_c'): bad = []
+    if alleg_kind(r) in ('set', 'set_c', 'combo'): bad = []
     if bad: problems.append((r['n'], bad))
     item = {
         'name': r['n'], 'icon': r['icon'] if r['icon'] in sprites else None, 'order': r['i'], 'id': r['id'],
@@ -842,8 +844,73 @@ for idx, r in todo:
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}
                         for t, fs, sp in mo['more']]
         item['more_note'] = mo.get('note')
+    if r['cat'] == 0 and item.get('akind') == 'combo':
+        COMBO_ITEMS.append((r, item)); continue      # folded into the Legacy Combos entry below
     by_cat[CATS[r['cat']]].append(item)
 
+# ---- Legacy Combos: the 15 combo upgrades become one entry whose pop-up lists them (Ascension 4 only; the game shows each combo as its own upgrade)
+COMBO_FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon'}
+T_GOOD = ('t_{\\text{Good}}', 'Time spent with Good alignment in this Reincarnation (seconds)')
+T_EVIL = ('t_{\\text{Evil}}', 'Time spent with Evil alignment in this Reincarnation (seconds)')
+COMBO_PARAS = {      # paragraphs the converter cannot read (value written by hand from the game code); (text, formula latex, variables)
+    'Artifact Caveau': [('Increase the production of all buildings based on Faction Coins found in this Era. Bonus is higher for lower tiers.',
+                         r'v = 3 \cdot \left(\ln\left(1 + F\right)\right)^{0.5 \cdot \left(12 - T\right)}',
+                         [('F', 'Faction Coins found in this Era'), ('T', "The building's tier (1 for the first building in the list)")])],
+    'Brooding Abyss': [('Chaotically increase assistants based on alignments of active spells you have.',
+                        r'v = \left(\sum_{k} n_{k}^{1.3}\right)^{1 + 0.3 \cdot \sum_{k} n_{k}}',
+                        [('n_{k}', 'Number of your available faction spells tied to the alignment or path k (Good, Evil, Neutral, Order, Chaos or Balance); k runs over all six')])],
+    'Eternal Battlefield': [('Increase the production of Evil buildings based on time spent as Good in this Reincarnation, and vice-versa.',
+                             [(r'v_{\text{Evil}} = 0.8 \cdot t_{\text{Good}}^{0.8}', [T_GOOD]), (r'v_{\text{Good}} = 0.8 \cdot t_{\text{Evil}}^{0.8}', [T_EVIL])], None),
+                            ('Does not affect Neutral buildings.', None, None)],
+    'Forbidden Grove': [('Autoclicks several times per second based on Non-Unique buildings built.', r'v = 1 + 1.5 \cdot B^{0.2}',
+                         [('B', 'Non-Unique buildings you have built')]),
+                        ('Also multiplicatively increase production bonus from Gems based on autoclicks made in this Era.',
+                         r'v = 2 \cdot \left(\ln\left(1 + C\right)\right)^{2}', [('C', 'Automatic clicks made in this Era')])],
+}
+COMBO_HOMUNCULUS_2 = ('Also increase the production of all buildings based on unspent research budget.', r'v = 1.3 \cdot B^{0.7}',
+                      [('B', 'Unspent research budget, added up over the seven branches (each branch counts its budget minus the points spent in it, if positive)')])
+
+
+def _combo_formula(latex, vs):
+    return {'latex': latex, 'vars': [{'symbol': a_, 'text': b_} for a_, b_ in vs]}
+
+
+def combo_entry(r_, it_):
+    name = r_['n']
+    _fs = ['Fairy', 'Elven', 'Angel', 'Goblin', 'Undead', 'Demon']      # the icon name is Legacy + the two factions, in this order
+    _hit = [i_ for i_, f_ in enumerate(_fs) if f_ in r_['icon']]
+    assert len(_hit) == 2, r_['icon']
+    a_, b_ = sorted(_hit, key=lambda i_: r_['icon'].index(_fs[i_]))
+    paras_ = []
+    if name in COMBO_PARAS:
+        for text_, fm_, vs_ in COMBO_PARAS[name]:
+            if isinstance(fm_, list):
+                paras_.append({'text': text_, 'formulas': [_combo_formula(l_, v_) for l_, v_ in fm_]})
+            else:
+                paras_.append({'text': text_, 'formulas': [_combo_formula(fm_, vs_)] if fm_ else []})
+    else:
+        ps_ = [dict(p_) for p_ in it_['description'] if not p_['text'].startswith('You can purchase only one Legacy Combo')]
+        for p_ in ps_:
+            p_['formulas'] = [dict(f_, vars=list(f_['vars'])) for f_ in p_['formulas'] if f_.get('latex')]
+        if name == 'Homunculus Lab':
+            ps_ = ps_[:1] + [{'text': COMBO_HOMUNCULUS_2[0], 'formulas': [_combo_formula(COMBO_HOMUNCULUS_2[1], COMBO_HOMUNCULUS_2[2])]}]
+        paras_ = [{'text': p_['text'], 'formulas': p_['formulas']} for p_ in ps_]
+    return {'h': name, 'nt': f'{COMBO_FACTION[a_]}/{COMBO_FACTION[b_]} legacy combo', 'ps': paras_, 'pair': (a_, b_)}
+
+
+if COMBO_ITEMS:
+    _ce = sorted((combo_entry(r_, it_) for r_, it_ in COMBO_ITEMS), key=lambda e_: e_['pair'])
+    assert len(_ce) == 15, len(_ce)
+    by_cat['allegiances'].append({
+        'name': 'Legacy Combos', 'icon': 'LegacyContainer', 'order': 10 ** 6, 'id': 10 ** 6,
+        'description': [{'text': 'Pick a legacy combo, if you have legacies from the two associated vanilla factions. Legacy combos reset upon abdication.',
+                         'formulas': [], 's': None}],
+        'sources': [], 'requirements': ['Reincarnation 220 or higher'], 'conditions': [], 'undecoded': [],
+        'asc_min': 4, 'asc_max': None, 'group': None, 'tier': -1, 'building': None, 'faction': -1, 'akind': 'combo_c', 'perk': None, 'tier_no': None,
+        'cost': {'coins': None, 'fc': {}, 'fc_a4': {}, 'free_start': False},
+        'more': [{'text': e_['ps'][0]['text'], 'formulas': e_['ps'][0]['formulas'], 's': None, 'h': e_['h'], 'nt': e_['nt'], 'ps': e_['ps']} for e_ in _ce],
+        'more_note': None,
+    })
 # the Dragon faction (a prestige faction) becomes available at Ascension 1, and so does everything that needs it
 for items_ in by_cat.values():
     for u in items_:

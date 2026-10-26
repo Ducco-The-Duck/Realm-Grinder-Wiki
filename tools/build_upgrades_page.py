@@ -71,7 +71,7 @@ UNION_ICON = {9: 'DwarvenUnion', 10: 'DrowUnion', 12: 'DragonUnion'}     # their
 
 PROOF_OF = {'Proof of Good Deed': {'al': 1}, 'Proof of Evil Deed': {'al': 2}, 'Proof of Neutrality': {'al': 3},
             'Proof of Order': {'ax': 4}, 'Proof of Chaos': {'ax': 5}, 'Proof of Balance': {'ax': 6}}
-KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'set': 9, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
+KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'combo_c': 1.35, 'set': 9, 'lineage': 9, 'lineage_perk': 9, 'quest': 1.5, 'bloodline': 9, 'tier': 2, 'perk': 3, 'heritage': 4, 'spell': 6, 'unique': 7}
 
 
 # notes shown (faded) right under the sentence of the description that matches the pattern: name -> (note, pattern)
@@ -95,7 +95,8 @@ def item(u):
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
         'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
         **({'an': u['asc_not']} if u.get('asc_not') else {}), **({'ns': 1} if u.get('asc_not_say') else {}),
-        'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
+        'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']],
+               **({'h': b['h'], 'nt': b['nt'], 'ps': [{'t': q['text'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in q['formulas']]} for q in b['ps']]} if b.get('h') else {})}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
         **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
@@ -337,6 +338,7 @@ the base values <i>v</i>.</div>
   // what sits inside a Bloodline, Lineage or Artifact Sets cell: each faction's entry, and the perks of a Lineage
   function innerS(it){
     var kids=(it.bl||it.lg||it.st||[]).filter(function(k){ return !!k; }).map(sOf);
+    if(it.m && it.m[0] && it.m[0].h) kids=kids.concat(it.m.map(function(b){ return normS([b.h,b.nt].concat(b.ps.map(function(q){ return q.t; })).join(' ')); }));
     var perks=(it.lp||[]).map(function(p){ return p.it ? normS([p.it.n].concat(p.it.d.map(function(d){ return d.t; })).join(' ')) : ''; });
     return kids.concat(perks).join(' ');
   }
@@ -489,7 +491,7 @@ the base values <i>v</i>.</div>
   var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
   function openMore(it){
     moretitle.textContent=it.n; morebody.textContent='';
-    more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power/.test(it.n));
+    more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power|^Legacy Combos/.test(it.n));
     var seen={}, scaled=false;
     var isRP=/^Reincarnation Power/.test(it.n), rtab=null, rfirst=null;
     if(isRP){
@@ -498,6 +500,17 @@ the base values <i>v</i>.</div>
       rtab=el('div','rtab'); morebody.appendChild(rtab);
     }
     it.m.forEach(function(b){
+      if(b.h){      // a list of named entries (the Legacy Combos): heading, faded note, then each paragraph with its formulas and variables
+        var cb=el('div','bonus'), hp=el('p'), hb=el('b',null,b.h); hp.appendChild(hb); cb.appendChild(hp); cb.appendChild(el('div','more',b.nt));
+        var cseen={}, cvars=[];
+        b.ps.forEach(function(q){
+          cb.appendChild(el('p',null,q.t));
+          q.f.forEach(function(f){ var d=el('div','formula'), m=el('span'); math(f.l, m); d.appendChild(m); cb.appendChild(d);
+            f.v.forEach(function(v){ var k=v.symbol+'|'+v.text; if(!cseen[k]){ cseen[k]=1; cvars.push(v); } }); });
+        });
+        if(cvars.length){ var cu=el('ul','vars'); cvars.forEach(function(v){ var li=el('li'), bb=el('b'); bb.style.display='inline'; math(v.symbol, bb); li.appendChild(bb); rich(li, ' \u2014 '+v.text); cu.appendChild(li); }); cb.appendChild(cu); }
+        morebody.appendChild(cb); return;
+      }
       var bt=b.t;
       if(isRP){ bt=bt.replace(/^From Reincarnation [0-9]+(, before Ascension [0-9])?: /,''); bt=bt.charAt(0).toUpperCase()+bt.slice(1); }
       var blk=el('div','bonus'), p=el('p',null,bt);
