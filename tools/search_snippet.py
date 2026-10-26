@@ -6,6 +6,9 @@ text, description) on every cell it wants searchable, then calls `searchInit(roo
 """
 
 CSS = r'''
+html.embed,html.embed body{background:transparent!important}
+html.embed main,html.embed nav,html.embed #more,html.embed .gv,html.embed #bgfx{display:none!important}
+html.embed body::before,html.embed body::after{display:none!important}
 /* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
 /*FRAMES*/
 .cell img,.cell img.ov{position:absolute;inset:auto;margin:0;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% + 4px);height:calc(100% + 4px);
@@ -149,6 +152,25 @@ BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLD
        'aria-label="Search"><span class="qn" id="qn"></span></div>')
 
 JS = r'''
+  // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
+  // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
+  function embedInit(show, setAsc){
+    if(location.hash!=='#embed') return;
+    document.documentElement.classList.add('embed');
+    var t=document.getElementById('tip'), anchor=document.createElement('div');
+    anchor.style.cssText='position:fixed;left:12px;top:12px;width:1px;height:1px'; document.body.appendChild(anchor);
+    function say(o){ o.rg='tipsize'; parent.postMessage(o, location.origin); }
+    window.addEventListener('message', function(ev){
+      var m=ev.data; if(!m || m.rg!=='tip') return;
+      if(m.hide){ t.style.display='none'; return; }
+      var ok=false;
+      try{ if(m.asc!=null) setAsc(m.asc); ok=show(m, anchor); }catch(e){ ok=false; }
+      if(!ok){ say({id:m.id, ok:false}); return; }
+      t.style.left='10px'; t.style.top='10px';
+      var r=t.getBoundingClientRect(); say({id:m.id, ok:true, w:Math.ceil(r.width)+20, h:Math.ceil(r.height)+20});
+    });
+    window.addEventListener('load', function(){ parent.postMessage({rg:'tipready'}, location.origin); });
+  }
   var QT = [];
   // community faction codes: a code typed as a whole word searches for the faction name
   var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',

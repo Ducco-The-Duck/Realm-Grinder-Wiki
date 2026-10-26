@@ -85,6 +85,9 @@ body.searching .cell.group[data-un]{display:none}
 #tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 
 
+html.embed,html.embed body{background:transparent!important}
+html.embed main,html.embed nav,html.embed #more,html.embed .gv,html.embed #bgfx{display:none!important}
+html.embed body::before,html.embed body::after{display:none!important}
 /* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
 .cell{position:relative;padding:0;border:5px solid transparent;border-radius:0;background:none;--q1:calc(5px + (100% - 10px) * 0.1);--q2:calc(5px + (100% - 10px) * 0.2);--q3:calc(5px + (100% - 10px) * 0.3);--q4:calc(5px + (100% - 10px) * 0.4);--q5:calc(5px + (100% - 10px) * 0.5);--q6:calc(5px + (100% - 10px) * 0.6);--q7:calc(5px + (100% - 10px) * 0.7);--q8:calc(5px + (100% - 10px) * 0.8);--q9:calc(5px + (100% - 10px) * 0.9);--q10:calc(5px + (100% - 10px) * 1)}
 .cell::before{content:"";position:absolute;inset:-5px;box-sizing:border-box;pointer-events:none;border:1px solid transparent;border-top-color:var(--fxt);border-bottom-color:var(--fxb);background-color:var(--fxc);background-image:var(--fxl),var(--fxr);background-position:left top,right top;background-size:1px 100%,1px 100%;background-repeat:no-repeat;background-origin:border-box;background-clip:border-box;box-shadow:var(--fxs)}
@@ -283,6 +286,25 @@ the base values <i>v</i>.</div>
   var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 
+  // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
+  // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
+  function embedInit(show, setAsc){
+    if(location.hash!=='#embed') return;
+    document.documentElement.classList.add('embed');
+    var t=document.getElementById('tip'), anchor=document.createElement('div');
+    anchor.style.cssText='position:fixed;left:12px;top:12px;width:1px;height:1px'; document.body.appendChild(anchor);
+    function say(o){ o.rg='tipsize'; parent.postMessage(o, location.origin); }
+    window.addEventListener('message', function(ev){
+      var m=ev.data; if(!m || m.rg!=='tip') return;
+      if(m.hide){ t.style.display='none'; return; }
+      var ok=false;
+      try{ if(m.asc!=null) setAsc(m.asc); ok=show(m, anchor); }catch(e){ ok=false; }
+      if(!ok){ say({id:m.id, ok:false}); return; }
+      t.style.left='10px'; t.style.top='10px';
+      var r=t.getBoundingClientRect(); say({id:m.id, ok:true, w:Math.ceil(r.width)+20, h:Math.ceil(r.height)+20});
+    });
+    window.addEventListener('load', function(){ parent.postMessage({rg:'tipready'}, location.origin); });
+  }
   var QT = [];
   // community faction codes: a code typed as a whole word searches for the faction name
   var FCODES = {fr:'fairy',el:'elven',an:'angel',gb:'goblin',ud:'undead',dm:'demon',tt:'titan',dd:'druid',fc:'faceless',
@@ -796,6 +818,18 @@ the base values <i>v</i>.</div>
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
   runSearch=searchInit(root, function(){ document.body.classList.toggle('searching', QT.length>0); });
+  var REG={};      // every object by name, also the ones inside the Bloodline, Lineage, Artifact Set and Legacy Combo popups
+  function reg(it){
+    if(!it) return;
+    (REG[it.n]=REG[it.n]||[]).push(it);
+    ['bl','lg','st','cb'].forEach(function(k){ (it[k]||[]).forEach(reg); });
+    (it.lp||[]).forEach(function(p){ reg(p.it); });
+  }
+  DATA.sections.forEach(function(s){ s.entries.forEach(function(e){ e.items.forEach(reg); }); });
+  embedInit(function(m, anchor){
+    var l=REG[m.name]; if(!l) return false;
+    showTip(l[0],anchor); return true;
+  }, function(a){ ASC=a; apply(); });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });

@@ -35,7 +35,7 @@ for key, o in tags.items():
     mask = sum(1 << a for a in o['asc'])
     effs = [{'t': e['text'], 'x': clean_tags(e['x']), 'y': clean_tags(e['y']), 'm': e['mode'], 'g': e['trigger'], 'v': e['verb'],
              **({'sc': e['scope']} if e['scope'] else {}), **({'s': e['seconds']} if e['seconds'] else {})} for e in o['effects']]
-    objs.append({'n': o['name'], 's': SRC[o['src']], 'i': icon_file(o['icon']), 'p': o['page'], 'a': mask, 'e': effs})
+    objs.append({'k': key, 'n': o['name'], 's': SRC[o['src']], 'i': icon_file(o['icon']), 'p': o['page'], 'a': mask, 'e': effs})
 bnames = sorted({(b.get('name_plural') or b['name']).lower() for b in BUILD})
 data = json.dumps({'objs': objs, 'buildings': bnames}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
@@ -137,6 +137,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
     if(e.m) d.appendChild(el('span','chip m',e.m));
     parent.appendChild(d);
   }
+  // the simple tooltip: used while the page's own tooltip is not ready (see below)
   function showTip(o, hits, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',o.n)); tip.appendChild(el('span','kind',o.s + ' · ' + o.p.replace('.html','').replace('upgrades-','upgrades: ')));
@@ -151,7 +152,47 @@ h1{margin:0 0 4px;font-size:1.7rem}
     var y=r.bottom+6; if(y+t.height>window.innerHeight-8) y=Math.max(8,r.top-t.height-6);
     tip.style.left=x+'px'; tip.style.top=y+'px';
   }
-  function hideTip(){ tip.style.display='none'; }
+  // the page's own tooltip: the page of the object is loaded in a hidden frame (in its embed mode, see embedInit in search_snippet.py) and asked
+  // to draw the tooltip of that object; the frame is then shown next to the result. The frames load when first needed.
+  var FR={}, cur=null, seq=0;
+  function frameFor(page){
+    if(FR[page]) return FR[page];
+    var f=document.createElement('iframe'); f.src=page+'#embed'; f.setAttribute('aria-hidden','true'); f.tabIndex=-1; f.title='';
+    f.style.cssText='position:fixed;left:-9999px;top:0;width:520px;height:1100px;border:0;background:transparent;pointer-events:none;z-index:60';
+    document.body.appendChild(f);
+    return FR[page]={f:f, ready:false};
+  }
+  function hideAll(){
+    tip.style.display='none';
+    Object.keys(FR).forEach(function(k){ FR[k].f.style.left='-9999px'; if(FR[k].ready) FR[k].f.contentWindow.postMessage({rg:'tip', hide:true}, location.origin); });
+  }
+  function ask(){
+    var c=cur, fr=FR[c.o.p];
+    fr.f.contentWindow.postMessage({rg:'tip', id:c.id, key:c.o.k, name:c.o.n, asc:ASC}, location.origin);
+  }
+  window.addEventListener('message', function(ev){
+    var m=ev.data; if(!m) return;
+    if(m.rg==='tipready'){
+      Object.keys(FR).forEach(function(k){ if(FR[k].f.contentWindow===ev.source) FR[k].ready=true; });
+      if(cur && FR[cur.o.p].ready && !cur.shown) ask();
+    } else if(m.rg==='tipsize' && cur && m.id===cur.id){
+      var fr=FR[cur.o.p];
+      if(!m.ok){ showTip(cur.o, cur.hits, cur.a); return; }
+      tip.style.display='none';
+      fr.f.style.width=m.w+'px'; fr.f.style.height=m.h+'px';
+      var r=cur.a.getBoundingClientRect();
+      var x=Math.min(Math.max(0,r.left+20), window.innerWidth-m.w);
+      var y=r.bottom-2; if(y+m.h>window.innerHeight) y=Math.max(0,r.top-m.h+2);
+      fr.f.style.left=x+'px'; fr.f.style.top=y+'px'; cur.shown=true;
+    }
+  });
+  function hover(o, hits, a){
+    hideAll();
+    cur={o:o, hits:hits, a:a, id:++seq, shown:false};
+    var fr=frameFor(o.p);
+    if(fr.ready) ask(); else showTip(o, hits, a);      // not loaded yet: the simple tooltip meanwhile
+  }
+  function hideTip(){ cur=null; hideAll(); }
   var qa=document.getElementById('qa'), qx=document.getElementById('qx'), qy=document.getElementById('qy');
   var tu=document.getElementById('tu'), tr=document.getElementById('tr'), tc=document.getElementById('tc');
   function render(){
@@ -175,8 +216,8 @@ h1{margin:0 0 4px;font-size:1.7rem}
       hits.slice(0,3).forEach(function(e){ var d=el('div','fx'); d.appendChild(el('div',null,e.t)); chips(d,e); b.appendChild(d); });
       if(hits.length>3) b.appendChild(el('div','more','and '+(hits.length-3)+' more matching effects'));
       a.appendChild(b);
-      a.addEventListener('mouseenter',function(){ showTip(o,hits,a); }); a.addEventListener('mouseleave',hideTip);
-      a.addEventListener('focus',function(){ showTip(o,hits,a); }); a.addEventListener('blur',hideTip);
+      a.addEventListener('mouseenter',function(){ hover(o,hits,a); }); a.addEventListener('mouseleave',hideTip);
+      a.addEventListener('focus',function(){ hover(o,hits,a); }); a.addEventListener('blur',hideTip);
       root.appendChild(a);
     });
   }

@@ -191,6 +191,12 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     sec.appendChild(g); root.appendChild(sec);
   });
   searchInit(root);
+  embedInit(function(m, anchor){
+    var p=m.key.split('/'), sec=null, it=null;
+    SECTIONS.forEach(function(s){ if(s.name===p[0]) s.items.forEach(function(i){ if(i.n===m.name){ sec=s; it=i; } }); });
+    if(!it) return false;
+    showTip(sec,it,anchor); return true;
+  }, function(){});
 })();
 </script>
 </body>

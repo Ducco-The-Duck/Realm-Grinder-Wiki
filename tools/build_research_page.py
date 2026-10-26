@@ -457,6 +457,11 @@ popups are always the base values <i>v</i>.</div>
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
+  embedInit(function(m, anchor){
+    var hit=null; cells.forEach(function(p){ if(p[1].k.indexOf(m.key+' ')===0) hit=p[1]; });
+    if(!hit) return false;
+    showTip(hit,anchor); return true;
+  }, function(a){ ASC=a; apply(); });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });

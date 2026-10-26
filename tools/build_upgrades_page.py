@@ -720,6 +720,18 @@ the base values <i>v</i>.</div>
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   apply();
   runSearch=searchInit(root, function(){ document.body.classList.toggle('searching', QT.length>0); });
+  var REG={};      // every object by name, also the ones inside the Bloodline, Lineage, Artifact Set and Legacy Combo popups
+  function reg(it){
+    if(!it) return;
+    (REG[it.n]=REG[it.n]||[]).push(it);
+    ['bl','lg','st','cb'].forEach(function(k){ (it[k]||[]).forEach(reg); });
+    (it.lp||[]).forEach(function(p){ reg(p.it); });
+  }
+  DATA.sections.forEach(function(s){ s.entries.forEach(function(e){ e.items.forEach(reg); }); });
+  embedInit(function(m, anchor){
+    var l=REG[m.name]; if(!l) return false;
+    showTip(l[0],anchor); return true;
+  }, function(a){ ASC=a; apply(); });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });
