@@ -235,7 +235,6 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .bar .hint{color:var(--muted);font-size:.85rem}
 .bar .row[hidden]{display:none}
 .grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
-.grid.cols5{grid-template-columns:repeat(5,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
 .cell.gap{visibility:hidden}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
@@ -448,7 +447,7 @@ the base values <i>v</i>.</div>
     if(!plain){
       b.addEventListener('mouseenter',function(){ showTip(it,b); });
       b.addEventListener('focus',function(){ showTip(it,b); });
-      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.cb) openGroup({g:'Legacy Combos', items:it.cb, cols:5}); else if(it.lp) openPerks(it); else showTip(it,b); });
+      b.addEventListener('click',function(e){ e.stopPropagation(); if(it.m) openMore(it); else if(it.bl) openGroup({g:'Bloodlines', items:it.bl, cols:3}); else if(it.lg) openGroup({g:'Lineages', items:it.lg, cols:3}); else if(it.st) openGroup({g:'Artifact Sets', items:it.st, cols:3}); else if(it.cb) openGroup({g:'Legacy Combos', items:it.cb, cols:3}); else if(it.lp) openPerks(it); else showTip(it,b); });
     }
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('blur',hideTip);
