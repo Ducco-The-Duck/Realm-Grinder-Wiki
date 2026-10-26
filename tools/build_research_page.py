@@ -52,6 +52,87 @@ def slot_sources(b):
     return rows
 
 
+# ---- research budget (Ascension 3 and 4): the slots are replaced by a budget per branch ----------------------------------
+BUDGET_INTRO = ('From Ascension 3 the research slots are gone. Each branch (facility) has a research budget instead: a research can be bought '
+                'while the points already spent in its branch plus its own point value do not exceed the branch budget. The budget starts at 0 '
+                'and the sources below add to it. Every source adds its value to each branch unless it says otherwise. "Maximum" is the cap the '
+                'game puts on that one source.')
+NO_MAX = 'No maximum in the code'
+BUDGET_COMMON = [
+    {'n': 'Reincarnation Power 4', 'q': 'From Reincarnation 170',
+     'l': r'v = 150 \cdot A + 3.5 \cdot \left(R - 159\right)',
+     'v': [['A', 'Your Ascension number'],
+           ['R', 'Reincarnations made, counting the effects that make Reincarnations count more (for example Prismatic Breath from the Dragon Challenge)']],
+     'mx': NO_MAX + ' (it grows with the Reincarnations)'},
+    {'n': 'Archon Bloodline', 'q': 'While using the Archon Bloodline',
+     'l': r'v = \left(\ln\left(1 + t\right)\right)^{3}', 'v': [['t', 'Time played in this Era (seconds)']], 'mx': NO_MAX},
+    {'n': 'Faceless Set, Set Bonus 2', 'q': 'Faceless Set, with The Blackest Ink found',
+     'l': r'v = \min\left(3000,\; m \cdot \left(\ln\left(1 + F\right)\right)^{1.5}\right)',
+     'v': [['F', 'Faction Coins found in this Era'],
+           ['m', 'The Makers Bloodline bonus (while you use it) and the Prophecy bonus (when Faceless is your base, prestige or astral faction) multiply the value; 1 without them']],
+     'mx': '3000'},
+    {'n': 'Homunculus Lab (a Legacy upgrade)', 'q': 'Homunculus Lab bought',
+     'l': r'v = \min\left(3000,\; 50 + 1.15 \cdot \left(\ln\left(1 + \min\left(T_{O}, T_{B}\right)\right)\right)^{3.15}\right)',
+     'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],
+     'mx': '3000'},
+    {'n': 'Goblin Perk 6', 'q': 'Goblin Perk 6 (Goblin Lineage)',
+     'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]], 'mx': '3000'},
+    {'n': 'Dwarven Perk 6', 'q': 'Dwarven Perk 6 (Dwarven Lineage)',
+     'l': r'v = \min\left(3000,\; 0.6 \cdot D^{0.6}\right)', 'v': [['D', 'Excavation depth']], 'mx': '3000'},
+]
+BUDGET_MERC = [
+    {'n': 'Mercenary First Contract', 'q': 'Mercenaries', 'l': r'v = 500', 'v': [], 'mx': 'Fixed, 500'},
+    {'n': 'Mercenary Fourth Contract', 'q': 'Mercenaries, Mercenary Fourth Contract bought', 'l': r'v = 1000', 'v': [], 'mx': 'Fixed, 1000'},
+    {'n': 'Mercenary Magic Contract and Sorcery Contract', 'q': 'Mercenaries, a contract tied to a spell of your choice',
+     'l': r'v = w \cdot \min\left(5000,\; 1000 + 5 \cdot \sqrt{t}\right)',
+     'v': [['t', 'Activity time of the spell you tied the contract to'], ['w', 'The weight of that spell\'s faction in this branch (listed below)']],
+     'mx': '5000 for each contract, before the weight'},
+    {'n': 'Mercenary Union Contracts', 'q': 'Mercenaries, a contract tied to a faction of your choice',
+     'l': r'v = w \cdot 400 \cdot n', 'v': [['n', 'Upgrades you have bought from that faction'], ['w', 'The weight of that faction in this branch (listed below)']],
+     'mx': NO_MAX},
+]
+BUDGET_A4 = [
+    {'n': 'Trade Treaties and Unions', 'q': 'Ascension 4, for each one you have bought',
+     'l': r'v = 5000 \cdot n',
+     'v': [['n', 'Number of Trade Treaties and Unions of the nine base factions you have bought (Friendship Pacts and Alliances do not count)']],
+     'mx': '5000 for each of the 18 (9 Trade Treaties and 9 Unions); the Treaty and Union of the faction you play give 10000'},
+]
+# the research facility upgrade of each branch: name, alignment, axis (stat indexes 2/3 = Good/Evil time, 48/36/14 = Order/Chaos/Balance time)
+FACILITY = {0: ('Mana Loom', 'Good', 'Chaos'), 1: ('Factory', 'Good', 'Balance'), 2: ('Mythos', 'Good', 'Order'),
+            3: ('Vault', 'Evil', 'Balance'), 4: ('Athanor', 'Evil', 'Order'), 5: ('Battlefield', 'Evil', 'Chaos'), 6: ('Apeiron', None, None)}
+FAC_NAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless', 9: 'Dwarf', 10: 'Drow',
+            12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
+
+
+def merc_weight(branch, fac):
+    """how much of a Mercenary contract's value a faction's branch gets (the game's weighting function, in its own order)"""
+    if fac == 12 and branch != 6: return 0.15
+    if branch == 6: return 0.2
+    if fac == branch and fac <= 5: return 1
+    for f, bs, w in ((6, (2, 3), .5), (7, (1, 5), .5), (8, (0, 4), .5), (9, (0, 1, 2), .35), (10, (3, 4, 5), .35),
+                     (13, (2, 4), .5), (14, (0, 5), .5), (15, (1, 3), .5)):
+        if fac == f and branch in bs: return w
+    return 0
+
+
+def budget_for(b):
+    name, a, x = FACILITY[b]
+    if a:
+        ent = {'n': f'{name} (research facility upgrade)',
+               'q': f'From Reincarnation 180: the Forgotten Relic and {name} artifacts, and at least 5000 research points spent in this branch',
+               'l': r'v = 500 + \left(\ln\left(1 + \sqrt{a \cdot b}\right)\right)^{3}',
+               'v': [['a', f'Time spent with {a} alignment in this Reincarnation (seconds)'], ['b', f'Time spent with {x} alignment in this Reincarnation (seconds)']],
+               'mx': NO_MAX + '. This branch only'}
+    else:
+        ent = {'n': 'Apeiron (research facility upgrade)', 'q': 'From Reincarnation 180: the Forgotten Relic and Apeiron artifacts',
+               'l': r'v = 500 + 0.75 \cdot \left(\ln\left(1 + \max_{i} \sqrt{a_{i} \cdot b_{i}}\right)\right)^{3}',
+               'v': [['a_{i} \\cdot b_{i}', 'The six products of the time spent with an alignment (Good or Evil) and the time spent with an axis (Order, Chaos or Balance) in this Reincarnation (seconds); the largest counts']],
+               'mx': NO_MAX + '. This branch only'}
+    weights = [[FAC_NAME[f], merc_weight(b, f)] for f in sorted(FAC_NAME) if merc_weight(b, f)]
+    if len({w for _, w in weights}) == 1 and len(weights) > 3: weights = [['Every faction', weights[0][1]]]      # the Forbidden branch weighs them all the same
+    return {'fac': ent, 'w': weights}
+
+
 BRANCHES = []
 for b in range(7):
     its = sorted((r for r in research if r['branch'] == b), key=lambda r: (r['number'], r['index']))
@@ -79,10 +160,11 @@ for b in range(7):
             'ps': r.get('pen'),
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
-    BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None})
+    BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None, 'bud': budget_for(b)})
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
-payload = {'max': meta['max_ascension'], 'branches': BRANCHES}
+payload = {'max': meta['max_ascension'], 'branches': BRANCHES,
+           'budget': {'intro': BUDGET_INTRO, 'common': BUDGET_COMMON, 'merc': BUDGET_MERC, 'a4': BUDGET_A4}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(b['items']) for b in BRANCHES)
 
@@ -154,6 +236,19 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .slots .d.neg{color:#ef9b8c}
 #tip .slots .tx{color:var(--fg)}
 #tip .slots .d.base+.tx{font-weight:700}
+#more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#more.open{display:flex}
+#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(640px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
+#more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
+#more h3{margin:0;font-size:1.1rem}
+#more .bonus{border-top:1px solid var(--line);padding:8px 0}
+#more .bonus p{margin:0 0 2px}
+#more .formula{padding:2px 0;overflow-wrap:anywhere}
+#more ul.vars{list-style:none;padding-left:0;margin:2px 0}
+#more ul.vars li{margin:2px 0}
+#more .more{color:var(--muted)}
+#more .max{margin-top:2px}
+#more .sect{margin:12px 0 2px;color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -175,6 +270,10 @@ popups are always the base values <i>v</i>.</div>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
+<div id="more" role="dialog" aria-modal="true" aria-labelledby="moretitle"><div class="card">
+  <header><h3 id="moretitle"></h3><button class="x" type="button" id="moreclose">Close</button></header>
+  <div id="morebody"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
@@ -201,8 +300,8 @@ popups are always the base values <i>v</i>.</div>
   }
   function showTip(it, anchor){
     tip.textContent='';
-    if(it.sl){
-      if(ASC>=3){ hideTip(); return; }
+    if(it.sl || (it.bud && ASC>=3)){
+      if(ASC>=3){ tip.appendChild(el('b','t',it.n+' research budget')); tip.appendChild(el('div','more','Click for info about research budget')); place(anchor); return; }
       tip.appendChild(el('b','t',it.n+' research slots'));
       var tbl=el('div','slots');
       function row(d, txt, cls){
@@ -289,6 +388,41 @@ popups are always the base values <i>v</i>.</div>
   function hideTip(){ tip.style.display='none'; }
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
+  var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
+  function closeMore(){ more.classList.remove('open'); }
+  document.getElementById('moreclose').addEventListener('click',closeMore);
+  more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMore(); });
+  function budgetEntry(e){
+    var blk=el('div','bonus'), p=el('p'), b=el('b',null,e.n); b.style.display='inline'; p.appendChild(b);
+    if(e.q) p.appendChild(document.createTextNode(' \u2014 '+e.q));
+    blk.appendChild(p);
+    var f=el('div','formula'), m=el('span'); math(e.l, m); f.appendChild(m); blk.appendChild(f);
+    if(e.v && e.v.length){
+      var ul=el('ul','vars');
+      e.v.forEach(function(v){ var li=el('li'), sb=el('b'); sb.style.display='inline'; math(v[0], sb); li.appendChild(sb); rich(li, ' \u2014 '+v[1]); ul.appendChild(li); });
+      blk.appendChild(ul);
+    }
+    blk.appendChild(el('div','max','Maximum: '+e.mx));
+    return blk;
+  }
+  function openBudget(br){
+    var B=DATA.budget;
+    moretitle.textContent=br.n+' research budget'; morebody.textContent='';
+    morebody.appendChild(el('p',null,B.intro));
+    morebody.appendChild(el('div','sect','Every facility'));
+    B.common.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
+    morebody.appendChild(el('div','sect','This facility'));
+    morebody.appendChild(budgetEntry(br.bud.fac));
+    morebody.appendChild(el('div','sect','Mercenaries only'));
+    B.merc.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
+    morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
+    if(ASC>=4){
+      morebody.appendChild(el('div','sect','Ascension 4'));
+      B.a4.forEach(function(e){ morebody.appendChild(budgetEntry(e)); });
+    }
+    hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
+  }
   function cell(it, cls){
     var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
     if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
@@ -302,13 +436,13 @@ popups are always the base values <i>v</i>.</div>
     b.addEventListener('mouseleave',hideTip);
     b.addEventListener('focus',show);
     b.addEventListener('blur',hideTip);
-    b.addEventListener('click',function(e){ e.stopPropagation(); show(); });
+    b.addEventListener('click',function(e){ e.stopPropagation(); if(it.bud && ASC>=3) openBudget(it); else show(); });
     return b;
   }
   BRANCHES.forEach(function(br){
     var sec=el('section'); var h=el('h2',null,br.name); h.appendChild(el('small',null,br.items.length+' researches')); sec.appendChild(h);
     var g=el('div','grid');
-    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl},'buy'));
+    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl, bud:br.bud},'buy'));
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
     var inner=el('div'); inner.appendChild(g); foldable(sec, h, inner, br.name);
     root.appendChild(sec);
