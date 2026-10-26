@@ -25,9 +25,9 @@ FACTIONS = ['fairy', 'fairies', 'elf', 'elves', 'elven', 'angel', 'goblin', 'und
             'dwarven', 'drow', 'dragon', 'archon', 'djinn', 'makers', 'mercenar']
 
 SKIP = re.compile(r'^(Gain (?:a new spell|the \w+ faction spell)|Requirements?:|Requires|Enable|Unlock|Allows|Upgrade|Affiliating|Choosing|Only available|Hey|Khaire|Hello|We |Our |You |The (?:Good|Evil|Neutral))', re.I)
-PREFIX = re.compile(r'^(?:Set Bonus \d+:|[A-Z][a-z]+ path:|From Reincarnation \d+(?: up to \d+)?[:,]?|Also,?)\s*')
+PREFIX = re.compile(r'^(?:Set Bonus \d+:|\d+[AP]M-\d+[AP]M:|(?:Good|Neutral|Evil):|[A-Z][a-z]+ path:|From Reincarnation \d+(?: up to \d+)?[:,]?|Also,?)\s*')
 TRIG = re.compile(r'^(While|Whenever|When|Each time|Every time|If|Only while|During|After)\b(.*?),\s*(.*)$', re.I)
-VERB = re.compile(r'^(?:(Multiplicatively|Additively)\s+)?(increase|reduce|gain|adds?|multiply|improve|generate)\b\s*(.*)$', re.I)
+VERB = re.compile(r'^(?:(Multiplicatively|Additively)\s+)?(increases?|reduces?|gain|adds?|multiply|improve|generate)\b\s*(.*)$', re.I)
 
 
 def mode_of(s):
@@ -215,12 +215,24 @@ def special(s, trigger):
     m = re.match(r'^(?:also )?makes?\s+(.+?)\s+counts? more(?:\s+based on\s+(.*?))?(?:\s+when .*)?$', s, re.I)
     if m:
         return [{'verb': 'count', 'x_raw': 'count of ' + m.group(1), 'y_raw': m.group(2) or 'spell tier', 'mode': None, 'trigger': trigger}]
+    m = re.match(r'^(?:also )?(.+?)\s+counts?\s+(?:\d+%\s+)?more(?:\s+(?:based on|when)\s+(.+?))?(?:\s+for every level)?$', s, re.I)
+    if m and not s.lower().startswith('makes'):
+        return [{'verb': 'count', 'x_raw': 'count of ' + m.group(1), 'y_raw': m.group(2), 'mode': None, 'trigger': trigger}]
+    m = re.match(r"^([A-Z][\w' ]+?)\s+(?:(multiplicatively|additively)\s+)?(increases|reduces)\s+(.+?)(?:\s+(?:based on|progressively over)\s+(.+?))?$", s)
+    if m and not re.match(r'^(?:The |Our |Your )?(?:production|mana)', m.group(1)) and re.search(r'\b[A-Z]', m.group(1)):
+        y = m.group(5)
+        if y and re.match(r'^its ', y): y = m.group(1) + ' ' + y[4:]
+        return [{'verb': 'increase' if m.group(3) == 'increases' else 'reduce', 'x_raw': m.group(4), 'y_raw': y, 'mode': (m.group(2) or '').lower() or None, 'trigger': trigger}]
     m = re.match(r'^(.+?)\s+counts?\s+\d+%\s+more$', s, re.I)
     if m: return [{'verb': 'count', 'x_raw': 'count of ' + m.group(1), 'y_raw': None, 'mode': None, 'trigger': trigger}]
     m = re.match(r'^(.+?)\s+is added to\s+(.+)$', s, re.I)
     if m: return [{'verb': 'increase', 'x_raw': m.group(2), 'y_raw': re.sub(r'^\d+%\s+of\s+', '', m.group(1)), 'mode': None, 'trigger': trigger}]
-    m = re.match(r'^(?:also )?autoclick\b(?:.*?based on\s+(.*?))?[.]?$', s, re.I)
-    if m: return [{'verb': 'increase', 'x_raw': 'autoclicks', 'y_raw': m.group(1), 'mode': None, 'trigger': trigger}]
+    m = re.match(r'^(?:also,? )?(?:while ([^,]+), )?autoclicks?\b(?:.*?based on\s+(.*?))?[.]?$', s, re.I)
+    if m: return [{'verb': 'increase', 'x_raw': 'autoclicks', 'y_raw': m.group(2), 'mode': None, 'trigger': trigger or (m.group(1) and 'While ' + m.group(1))}]
+    m = re.match(r'^(.*?)\s*(?:is|are) worth more seconds based on\s+(.+?)$', s, re.I)
+    if m: return [{'verb': 'increase', 'x_raw': 'tax collection worth', 'y_raw': m.group(2), 'mode': None, 'trigger': trigger}]
+    m = re.match(r'^lower\s+(.+?)\s+based on\s+(.+?)$', s, re.I)
+    if m: return [{'verb': 'reduce', 'x_raw': m.group(1), 'y_raw': m.group(2), 'mode': None, 'trigger': trigger}]
     return None
 
 

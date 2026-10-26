@@ -780,7 +780,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Clicks count more based on Faction Coins found in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "clicks count"
+    ],
+    "scope": [],
+    "y": [
+     "faction coins found",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Elven Luck": {
   "src": "upgrade",
@@ -1537,7 +1553,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Tax Collection is worth more seconds based on buildings built.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "tax collection",
+     "tax collection worth"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Fool's Gold": {
   "src": "upgrade",
@@ -1709,6 +1741,18 @@
      "production",
      "sum"
     ],
+    "seconds": null
+   },
+   {
+    "text": "Value increases over time spent in this Reincarnation.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?over time spent in this reincarnation"
+    ],
+    "scope": [],
+    "y": [],
     "seconds": null
    }
   ]
@@ -2314,7 +2358,24 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Trophies count more based on time spent offline in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "trophies count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent offline",
+     "this reincarnation"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Torture Chambers": {
   "src": "upgrade",
@@ -5225,6 +5286,19 @@
      "production"
     ],
     "seconds": null
+   },
+   {
+    "text": "Also reduces spell tier cost scaling for Dragon's Breath higher tiers.",
+    "verb": "reduces",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "cost multiplier",
+     "spell cost"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -5250,6 +5324,21 @@
     "scope": [],
     "y": [
      "buildings built"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "Also increases assistants multiplicatively while White Breath is active based on time spent as Dragons.",
+    "verb": "increases",
+    "mode": "multiplicative",
+    "trigger": null,
+    "x": [
+     "assistants"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as dragon"
     ],
     "seconds": null
    }
@@ -5628,7 +5717,21 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Temporal Flux also increases Maximum Mana.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "maximum mana"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Star Trading": {
   "src": "upgrade",
@@ -5670,6 +5773,23 @@
    4
   ],
   "effects": [
+   {
+    "text": "Multiplicatively increases Maximum Mana based on time spent as Order in this Reincarnation.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "maximum mana"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as order",
+     "this reincarnation"
+    ],
+    "seconds": null
+   },
    {
     "text": "Also increase Precognition base, scaling, and changes its starting duration to 1 minutes.",
     "verb": "increase",
@@ -6340,7 +6460,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Tax Collections are worth more seconds based on Trophies unlocked.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "tax collection",
+     "tax collection worth"
+    ],
+    "scope": [],
+    "y": [
+     "trophies unlocked"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Pavilion": {
   "src": "upgrade",
@@ -7782,6 +7918,19 @@
      "this era"
     ],
     "seconds": null
+   },
+   {
+    "text": "If your alignment is Good, Holy Light bonus increases over its duration.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": "If your alignment is Good",
+    "x": [
+     "spells",
+     "spell duration"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -7848,7 +7997,35 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Spells cast count more based on the maximum amount of Hell Portals you had in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spells cast count"
+    ],
+    "scope": [],
+    "y": [
+     "this reincarnation",
+     "highest"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "If your alignment is Evil, Blood Frenzy bonus increases based on time spent as Evil across all Reincarnations.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": "If your alignment is Evil",
+    "x": [
+     "?based on time spent as evil across all reincarnations"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Titan Bloodline": {
   "src": "upgrade",
@@ -7936,6 +8113,20 @@
      "this era"
     ],
     "seconds": null
+   },
+   {
+    "text": "If your alignment is Neutral, Gem Grinder bonus increases chaotically based on assistants.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": "If your alignment is Neutral",
+    "x": [
+     "?chaotically"
+    ],
+    "scope": [],
+    "y": [
+     "assistants owned"
+    ],
+    "seconds": null
    }
   ]
  },
@@ -7966,6 +8157,18 @@
     "y": [
      "excavation depth"
     ],
+    "seconds": null
+   },
+   {
+    "text": "Bonus increases with building tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?with building tier"
+    ],
+    "scope": [],
+    "y": [],
     "seconds": null
    }
   ]
@@ -8132,6 +8335,22 @@
      "buildings built"
     ],
     "seconds": null
+   },
+   {
+    "text": "Set Bonus 2: Farms, Blacksmiths and Inns count more based on time spent with Fairies in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "farms, blacksmiths and inns count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as fairie",
+     "this reincarnation"
+    ],
+    "seconds": null
    }
   ]
  },
@@ -8143,7 +8362,24 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Set Bonus 2: Clicks count more based on autoclicks made in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "clicks count"
+    ],
+    "scope": [],
+    "y": [
+     "clicks made",
+     "autoclicks",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Angel Set": {
   "src": "upgrade",
@@ -8283,6 +8519,21 @@
   ],
   "effects": [
    {
+    "text": "Trophies count more based on the three highest tier buildings built.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "trophies count"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built",
+     "highest"
+    ],
+    "seconds": null
+   },
+   {
     "text": "Set Bonus 2: Increase production bonus from Gems based on Evil spells cast in this Reincarnation.",
     "verb": "increase",
     "mode": null,
@@ -8386,6 +8637,21 @@
      "this era"
     ],
     "seconds": null
+   },
+   {
+    "text": "Set Bonus 2: Lineage levels count more based on spells cast in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "lineage levels count"
+    ],
+    "scope": [],
+    "y": [
+     "spells cast",
+     "this era"
+    ],
+    "seconds": null
    }
   ]
  },
@@ -8484,6 +8750,22 @@
   ],
   "effects": [
    {
+    "text": "Spells cast count more based on time spent as Evil in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spells cast count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as evil",
+     "this reincarnation"
+    ],
+    "seconds": null
+   },
+   {
     "text": "Set Bonus 2: Increase the Ascension multiplier for Royal Market bonus by 0.7.",
     "verb": "increase",
     "mode": null,
@@ -8565,7 +8847,20 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Farms, Inns and Blacksmiths count 18% more for every level.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "farms, inns and blacksmiths count"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Fairy Perk 1": {
   "src": "upgrade",
@@ -9893,7 +10188,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Faceless Bloodline counts all mana produced in this Reincarnation and increases Mana Regeneration based on assistants owned.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "mana regeneration"
+    ],
+    "scope": [],
+    "y": [
+     "assistants owned"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Faceless Perk 2": {
   "src": "upgrade",
@@ -10100,7 +10411,22 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Excavations count more based on Unique buildings built.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "excavations count"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Dwarven Perk 4": {
   "src": "upgrade",
@@ -10476,7 +10802,22 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Reincarnations count more based on Unique buildings built.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "reincarnations count"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Dragon Perk 4": {
   "src": "upgrade",
@@ -10548,7 +10889,21 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Multiplicatively increases Maximum Mana by 15% for every level.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "maximum mana"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Archon Perk 1": {
   "src": "upgrade",
@@ -11112,6 +11467,22 @@
   ],
   "effects": [
    {
+    "text": "Assistants count more based on time spent offline in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "assistants count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent offline",
+     "this reincarnation"
+    ],
+    "seconds": null
+   },
+   {
     "text": "When using their respective lineage, Advanced Heritages powers are multiplied based on the level of the lineage.",
     "verb": "increase",
     "mode": null,
@@ -11654,7 +12025,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Dragon's Breath multiplicatively increases Faction Coin find chance based on its duration.",
+    "verb": "increase",
+    "mode": "multiplicatively",
+    "trigger": null,
+    "x": [
+     "faction coin find chance"
+    ],
+    "scope": [],
+    "y": [
+     "spell duration",
+     "dragon's breath"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Chrono Loading": {
   "src": "upgrade",
@@ -11700,7 +12087,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Infinite Spiral also reduces Excavation cost multiplier based on assistants owned.",
+    "verb": "reduce",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "cost multiplier",
+     "excavation cost multiplier"
+    ],
+    "scope": [],
+    "y": [
+     "assistants owned"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Sturdy Bearded Man's Quest": {
   "src": "upgrade",
@@ -11921,7 +12324,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "All spells activity time counts more based on Maximum Mana.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "all spells activity time count"
+    ],
+    "scope": [],
+    "y": [
+     "maximum mana",
+     "highest"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Legacy Combos/Forbidden Grove": {
   "src": "upgrade",
@@ -11934,6 +12353,20 @@
    4
   ],
   "effects": [
+   {
+    "text": "Autoclicks several times per second based on Non-Unique buildings built.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "autoclicks"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   },
    {
     "text": "Also multiplicatively increase production bonus from Gems based on autoclicks made in this Era.",
     "verb": "increase",
@@ -14063,7 +14496,70 @@
    2,
    3
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "12AM-6AM: Gain additional assistants based on Gems owned.",
+    "verb": "gain",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "assistants"
+    ],
+    "scope": [],
+    "y": [
+     "gems owned"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "6AM-12PM: Increase Mana Regeneration based on assistants owned.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "mana regeneration"
+    ],
+    "scope": [],
+    "y": [
+     "assistants owned"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "12PM-6PM: Increase the production of all buildings based on Faction Coins you collected in this Era.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "production",
+     "building production",
+     "all buildings production"
+    ],
+    "scope": [
+     "all"
+    ],
+    "y": [
+     "faction coins found",
+     "this era"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "6PM-12AM: Increase Offline production based on buildings built.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "offline production"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "secret/Ancient Heirloom": {
   "src": "upgrade",
@@ -14321,7 +14817,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Lower Lineage cost multiplier based on Reincarnations made.",
+    "verb": "reduce",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "cost multiplier",
+     "lineage upgrade cost"
+    ],
+    "scope": [],
+    "y": [
+     "reincarnations made"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "secret/Holy Frenzy": {
   "src": "upgrade",
@@ -14402,6 +14914,22 @@
     "scope": [],
     "y": [],
     "seconds": null
+   },
+   {
+    "text": "Also increases Non-Unique Buildings production for all factions by 10000%",
+    "verb": "increases",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "production",
+     "building production",
+     "non-unique buildings production"
+    ],
+    "scope": [
+     "non-unique"
+    ],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -14443,6 +14971,18 @@
      "mana regeneration"
     ],
     "seconds": null
+   },
+   {
+    "text": "Bonus increases while playing as an Order faction.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?while playing as an order faction"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -14475,6 +15015,18 @@
      "highest"
     ],
     "seconds": null
+   },
+   {
+    "text": "Bonus increases while playing as a Chaos faction.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?while playing as a chaos faction"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -14506,6 +15058,18 @@
      "faction coins found",
      "faction coin find chance"
     ],
+    "seconds": null
+   },
+   {
+    "text": "Bonus increases while playing as a Balance faction.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?while playing as a balance faction"
+    ],
+    "scope": [],
+    "y": [],
     "seconds": null
    }
   ]
@@ -36058,6 +36622,20 @@
     "seconds": null
    },
    {
+    "text": "Autoclicks based on Reincarnations made.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "autoclicks"
+    ],
+    "scope": [],
+    "y": [
+     "reincarnations made"
+    ],
+    "seconds": null
+   },
+   {
     "text": "Gain assistants per Reincarnation.",
     "verb": "gain",
     "mode": null,
@@ -38914,7 +39492,24 @@
    1,
    2
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Artifacts and Trophies count more based on the highest amount of spells cast in a single Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "artifacts and trophies count"
+    ],
+    "scope": [],
+    "y": [
+     "spells cast",
+     "single era",
+     "highest"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "S425": {
   "src": "research",
@@ -39358,7 +39953,23 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Spells cast count more based on mana produced in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spells cast count"
+    ],
+    "scope": [],
+    "y": [
+     "mana produced",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "S11375": {
   "src": "research",
@@ -39439,7 +40050,24 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Reincarnations count more based on time spent as Undead in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "reincarnations count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as undead",
+     "this reincarnation"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "S13125": {
   "src": "research",
@@ -40060,7 +40688,23 @@
    2,
    3
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Multiplicatively increases production bonus from Gems based on time spent with alignments different than your current.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "production bonus from gems",
+     "gems"
+    ],
+    "scope": [],
+    "y": [
+     "time spent"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "C475": {
   "src": "research",
@@ -40397,7 +41041,22 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Trophies and Artifacts count more based on Excavation depth.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "trophies and artifacts count"
+    ],
+    "scope": [],
+    "y": [
+     "excavation depth"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "C5875": {
   "src": "research",
@@ -40481,7 +41140,22 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Trophies count more based on buildings built.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "trophies count"
+    ],
+    "scope": [],
+    "y": [
+     "buildings built"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "C11625": {
   "src": "research",
@@ -40518,7 +41192,23 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Brainwave increases Faction Coin find chance progressively over its duration.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "faction coin find chance"
+    ],
+    "scope": [],
+    "y": [
+     "spell duration",
+     "brainwave"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "C13125": {
   "src": "research",
@@ -40942,7 +41632,21 @@
    1,
    2
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Each artifact you discover increases Maximum Mana additively and multiplicatively.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "mana",
+     "maximum mana"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "D290": {
   "src": "research",
@@ -40994,6 +41698,18 @@
      "maximum mana",
      "highest"
     ],
+    "seconds": null
+   },
+   {
+    "text": "Also increases offline spells cast amount multiplicatively by 300%.",
+    "verb": "increases",
+    "mode": "multiplicative",
+    "trigger": null,
+    "x": [
+     "?offline spells cast amount"
+    ],
+    "scope": [],
+    "y": [],
     "seconds": null
    }
   ]
@@ -41514,7 +42230,22 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Lineage levels count more based on Artifacts found.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "lineage levels count"
+    ],
+    "scope": [],
+    "y": [
+     "artifacts found"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "D11375": {
   "src": "research",
@@ -41952,7 +42683,24 @@
    1,
    2
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Trophies count more based on time spent as Evil in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "trophies count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent as evil",
+     "this reincarnation"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "E250": {
   "src": "research",
@@ -42160,7 +42908,23 @@
    1,
    2
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Research points count more based on clicks made in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "research points count"
+    ],
+    "scope": [],
+    "y": [
+     "clicks made",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "E425": {
   "src": "research",
@@ -42487,7 +43251,23 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Tax Collection is worth more seconds based on Gold owned.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "tax collection",
+     "tax collection worth"
+    ],
+    "scope": [],
+    "y": [
+     "gold owned"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "E5875": {
   "src": "research",
@@ -43683,7 +44463,22 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Clicks count more based on active spells.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "clicks count"
+    ],
+    "scope": [],
+    "y": [
+     "active spells"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "A11375": {
   "src": "research",
@@ -43792,7 +44587,25 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "All spells activity time counts more based on Tax Collection casts in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "all spells activity time count"
+    ],
+    "scope": [],
+    "y": [
+     "tax collections cast",
+     "spells cast",
+     "tax collection",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "A13500": {
   "src": "research",
@@ -44861,7 +45674,25 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Buildings count more based on the maximum amount of Grand Balance targets you had in this Reincarnation.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "buildings count"
+    ],
+    "scope": [],
+    "y": [
+     "grand balance targets",
+     "grand balance",
+     "this reincarnation",
+     "highest"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "W12250": {
   "src": "research",
@@ -44947,6 +45778,24 @@
      "time spent as chaos",
      "production",
      "sum"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "Also increases the production of Good and Order buildings based on Evil and Chaos in the same way.",
+    "verb": "increases",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "production",
+     "building production",
+     "all buildings production"
+    ],
+    "scope": [
+     "all"
+    ],
+    "y": [
+     "?evil and chaos in the same way"
     ],
     "seconds": null
    }
@@ -45045,7 +45894,23 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Active spells count more based on the sum of your faction spells activity time.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "active spells count"
+    ],
+    "scope": [],
+    "y": [
+     "spell activity time",
+     "sum"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "F11250": {
   "src": "research",
@@ -45053,7 +45918,25 @@
   "asc": [
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Excavations count more based on time spent offline in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "excavations count"
+    ],
+    "scope": [],
+    "y": [
+     "time spent",
+     "time spent offline",
+     "time spent this era",
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "F11500": {
   "src": "research",
@@ -45284,7 +46167,35 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Reduces Elven Exchange cost multiplier.",
+    "verb": "reduces",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "cost multiplier",
+     "?elven exchange cost multiplier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
+    "text": "Clicks count more based on Elven Luck triggered in this Era.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "clicks count"
+    ],
+    "scope": [],
+    "y": [
+     "this era"
+    ],
+    "seconds": null
+   }
+  ]
  },
  "Elven/Light Collector": {
   "src": "challenge",
@@ -46523,7 +47434,46 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Evil: Multiplicatively increase Tax Collection worth.",
+    "verb": "increase",
+    "mode": "multiplicatively",
+    "trigger": null,
+    "x": [
+     "tax collection",
+     "tax collection worth"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
+    "text": "Neutral: Multiplicatively increase Faction Coin find chance.",
+    "verb": "increase",
+    "mode": "multiplicatively",
+    "trigger": null,
+    "x": [
+     "faction coin find chance"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
+    "text": "Balance: Multiplicatively increase Royal Exchange bonus and make them count more.",
+    "verb": "count",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "royal exchange",
+     "royal exchange bonus"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "Mercenary/Unlimited Knowledge": {
   "src": "challenge",
@@ -46866,6 +47816,20 @@
      "buildings built"
     ],
     "seconds": null
+   },
+   {
+    "text": "Precognition also increases Seraphim Wings and God's Hand bonus by 3 times its value.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spells",
+     "god's hand",
+     "seraphim wings and god's hand bonus by 3 times its value"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -46890,6 +47854,18 @@
     "y": [
      "production"
     ],
+    "seconds": null
+   },
+   {
+    "text": "Temporal Flux also increases Offline production and gains 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "offline production"
+    ],
+    "scope": [],
+    "y": [],
     "seconds": null
    }
   ]
@@ -47103,6 +48079,20 @@
     "seconds": null
    },
    {
+    "text": "Also increases Catalyst casts stat by 100 per cast.",
+    "verb": "increases",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spells",
+     "catalyst",
+     "catalyst casts stat"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
     "text": "Increase the minimum value for Limited Wish, based on Research Budget spent.",
     "verb": "increase",
     "mode": null,
@@ -47152,7 +48142,59 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Multiplicatively increases one of your assets based on alignments tied to your faction spells.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?one of your assets"
+    ],
+    "scope": [],
+    "y": [
+     "?alignments tied to your faction spells"
+    ],
+    "seconds": null
+   },
+   {
+    "text": "Good: Increase Assistants.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "assistants"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
+    "text": "Evil: Increase trophy count.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "?trophy count"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
+    "text": "Neutral: Increase production bonus from Gems.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "production bonus from gems",
+     "gems"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "Makers/Gaia's Cradle": {
   "src": "challenge",
