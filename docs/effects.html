@@ -10,7 +10,7 @@
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:760px;margin:0 auto;padding:16px 16px 80px}
+main{max-width:900px;margin:0 auto;padding:16px 16px 80px}
 nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 18px;font-size:.95rem}
 nav a{color:var(--muted);text-decoration:none}
 nav a[aria-current]{color:var(--fg);font-weight:600;border-bottom:2px solid var(--accent)}
@@ -37,15 +37,17 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .sel .chip button:hover{color:var(--fg)}
 .res{display:flex;gap:10px;padding:9px 10px;margin:0 0 6px;border:1px solid var(--line);border-radius:8px;background:var(--card);cursor:pointer;color:inherit;text-decoration:none}
 .res:hover,.res:focus-visible{background:var(--cellhi);outline:none}
-.res .ic{flex:none;width:56px;height:56px;border:1px solid var(--line);border-radius:8px;background:var(--cell);display:flex;align-items:center;justify-content:center}
+.res .ic{flex:none;width:var(--cs,89px);height:var(--cs,89px);border:1px solid var(--line);border-radius:8px;background:var(--cell);display:flex;align-items:center;justify-content:center}
 .res .ic.real{border:0;background:none;border-radius:0}
-/* the cells of the pages (drawn there at the chosen Ascension): the same rules as on the pages; the frames come from the shared styles */
-.ic .cell{position:relative;width:56px;height:56px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;display:flex;align-items:center;justify-content:center;cursor:inherit;font:inherit;color:inherit;pointer-events:none}
-.cell .pen{position:absolute;z-index:2;color:#fff;background:#a3341f;pointer-events:none}      /* the size and font come from the shared styles, as on the pages */
-.ic .cell.fac{background:var(--fc);border-color:rgba(255,255,255,.22)}
-.ic .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-.ic .cell .badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700}
-.res .ic img{max-width:100%;max-height:100%;image-rendering:pixelated}
+.res .ic:not(.real)>img{max-width:100%;max-height:100%;image-rendering:pixelated}
+/* the cells of the pages (drawn there at the chosen Ascension) with the same rules as on the pages, at the size they have there:
+   89px on the Upgrades and Challenges pages, 61px on the Research page; the frames, marks and numbers come from the shared styles */
+.cell{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit;pointer-events:none}
+.ic .cell{width:var(--cs,89px);height:var(--cs,89px)}
+.cell.fac{background:var(--fc);border-color:rgba(255,255,255,.22)}
+.cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cell .pen{position:absolute;z-index:2;color:#fff;background:#a3341f;pointer-events:none}
+.cell .badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700}
 .res .body{min-width:0;flex:1}
 .res .nm{font-weight:600}
 .res .src{color:var(--muted);font-size:.8rem;margin-left:8px;font-weight:400}
@@ -230,6 +232,7 @@ body.steel .search input{padding:0 96px 0 8px}
 .search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
 .sx{display:none!important}
 
+main{max-width:900px}      /* wider than the other pages: the icons have the size they have there */
 .gv{margin-top:36px;text-align:center;font-size:18px;color:var(--muted);opacity:.7}</style>
 </head>
 <body class="steel">
@@ -553,6 +556,7 @@ body.steel .search input{padding:0 96px 0 8px}
       var o=f[0], hits=f[1];
       var a=el('a','res'); a.href=o.p+'#q='+encodeURIComponent(o.n);
       var ic=el('div','ic'); if(o.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(o.i); img.alt=''; img.loading='lazy'; ic.appendChild(img); }
+      ic.style.setProperty('--cs', o.s==='Research' ? '61px' : '89px');
       a._o=o; a._ic=ic; shown.push(o); paintIcon(a);
       a.appendChild(ic);
       var b=el('div','body'), nm=el('div','nm',o.n); nm.appendChild(el('span','src',o.s)); b.appendChild(nm);
