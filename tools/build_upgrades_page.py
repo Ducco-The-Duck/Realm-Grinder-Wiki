@@ -99,7 +99,7 @@ def item(u):
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
         **({'cb': [dict(item({'name': c['name'], 'icon': c['icon'], 'description': [dict(q, s=q.get('s')) for q in c['description']], 'sources': [], 'requirements': [],
-                                'conditions': [], 'asc_min': None, 'asc_max': None}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
+                                'conditions': [], 'asc_min': 4, 'asc_max': None}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
         **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
