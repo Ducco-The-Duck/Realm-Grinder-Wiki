@@ -51,7 +51,7 @@ Only these need checking; remove an item when it is settled.
      - Iron Flight counts spell *effects* on Iron Strongholds (a spell with two effects counts twice): confirmed by the user's tooltip.
      - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
      - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of Druid Perk 4 is open, see item 1).
-     - Mercenary Upgrades 1-16, Remnants and the Mercenary contracts' extras are still not covered (Legacies: see their own item). Each individual faction upgrade is still to be checked.
+     - Mercenary Upgrades 1-16, Remnants and the Mercenary contracts' extras are still not covered. Each individual faction upgrade is still to be checked.
 3. **Research slot sources** (hover popup of each branch's large icon on the Research page): built from the game's slot
    function, unchecked. Base 4 slots, 1 from Ascension 2; before Ascension 2 the extras are the six slot upgrades (granted
    automatically with their Secret trophy, never shown in the game), Reincarnation Power 2 (R75 as Mercenary by alignment,
