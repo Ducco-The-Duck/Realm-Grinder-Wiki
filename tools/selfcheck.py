@@ -117,5 +117,16 @@ try:
 except OSError:
     pass
 
+# 5. hand corrections of the effect tags that no longer fit their sentence
+try:
+    sys.path.insert(0, os.path.join(ROOT, 'tools'))
+    import effect_tags
+    _r, _u, stale = effect_tags.tag_all()
+    print(f'5. effect tag corrections that no longer fit: {len(stale)}')
+    if stale:
+        problems.append(f'{len(stale)} effect tag correction(s) are stale (see data/effect_tags_review.md)')
+except Exception as e:
+    print('5. effect tags not checked:', e)
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
