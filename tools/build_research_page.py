@@ -64,9 +64,6 @@ BUDGET_COMMON = [
      'l': r'v = \min\left(3000,\; m \cdot \left(\ln\left(1 + F\right)\right)^{1.5}\right)',
      'v': [['F', 'Faction Coins found in this Era'],
            ['m', 'The Makers Bloodline bonus (while you use it) and the Prophecy bonus (when Faceless is your base, prestige or astral faction) multiply the value; 1 without them']],},
-    {'n': 'Homunculus Lab (a Legacy upgrade)', 'q': 'Homunculus Lab bought', 'a': 4,
-     'l': r'v = \min\left(3000,\; 50 + 1.15 \cdot \left(\ln\left(1 + \min\left(T_{O}, T_{B}\right)\right)\right)^{3.15}\right)',
-     'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],},
     {'n': 'Goblin Perk 6',
      'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]],},
     {'n': 'Dwarven Perk 6',
@@ -82,9 +79,11 @@ BUDGET_MERC = [
      'l': r'v = w \cdot 400 \cdot n', 'v': [['n', 'Upgrades you have bought from that faction'], ['w', 'The weight of that faction in this branch (listed below)']],},
 ]
 BUDGET_A4 = [
-    {'n': 'Trade Treaties and Unions', 'q': 'For each one you have bought', 'a': 4,
-     'l': r'v = 5000 \cdot n',
-     'v': [['n', 'Number of Trade Treaties and Unions of the nine base factions you have bought (Friendship Pacts and Alliances do not count)']],},
+    {'n': 'Homunculus Lab', 'q': 'Goblin/Undead legacy combo', 'a': 4,
+     'l': r'v = \min\left(3000,\; 50 + 1.15 \cdot \left(\ln\left(1 + \min\left(T_{O}, T_{B}\right)\right)\right)^{3.15}\right)',
+     'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],},
+    {'n': 'Trade Treaty', 'l': r'v = 5000', 'v': [], 'a': 4},
+    {'n': 'Union', 'l': r'v = 5000', 'v': [], 'a': 4},
 ]
 # the research facility upgrade of each branch: name, alignment, axis (stat indexes 2/3 = Good/Evil time, 48/36/14 = Order/Chaos/Balance time)
 FACILITY = {0: ('Mana Loom', 'Good', 'Chaos'), 1: ('Factory', 'Good', 'Balance'), 2: ('Mythos', 'Good', 'Order'),
@@ -228,6 +227,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
 #more .card.bud{width:min(760px,100%)}
+#more .card.bud.bud4{width:min(980px,100%)}
 #more .btab{display:grid;grid-template-columns:minmax(140px,32%) 1fr;column-gap:14px;margin-top:4px}
 #more .btab>div{padding:7px 0;border-top:1px solid var(--line)}
 #more .btab>.bh{color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;border-top:0;padding:2px 0}
@@ -398,15 +398,15 @@ popups are always the base values <i>v</i>.</div>
   }
   function openBudget(br){
     var B=DATA.budget, grid=el('div','btab');
-    moretitle.textContent=br.n+' research budget'; morebody.textContent=''; more.querySelector('.card').classList.add('bud');
+    moretitle.textContent=br.n+' research budget'; morebody.textContent=''; more.querySelector('.card').classList.add('bud'); more.querySelector('.card').classList.toggle('bud4', ASC>=4);
     var h1=el('div','bh','Source'), h2=el('div','bh','Formula'); grid.appendChild(h1); grid.appendChild(h2);
     function ok(e){ return !e.a || ASC>=e.a; }       // some sources only exist from Ascension 4
     B.common.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
     budgetEntry(br.bud.fac, grid);
     B.a4.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
-    B.merc.forEach(function(e){ budgetEntry(e, grid); });      // the Mercenary sources stay at the bottom
+    if(ASC<4) B.merc.forEach(function(e){ budgetEntry(e, grid); });      // the Mercenary sources stay at the bottom (nobody plays a Mercenary at Ascension 4)
     morebody.appendChild(grid);
-    morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
+    if(ASC<4) morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
