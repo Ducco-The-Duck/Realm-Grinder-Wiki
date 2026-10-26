@@ -665,8 +665,6 @@ COST_AMOUNTS = {
     'Blackmail': [('Reduce the cost multiplier of Royal Exchanges.', 'Reduce the cost multiplier of Royal Exchanges. (-0.02)')],
     'Goblin Bloodline': [('Reduce all building cost multipliers.', 'Reduce all building cost multipliers. (-0.01 each)')],
     'Titan Perk 1': [('building cost multiplier and increase', 'building cost multiplier (-0.02 each) and increase')],
-    'Reality Crater': [('based on assistants owned.', 'based on assistants owned. (-v)')],
-    'Ancestral Hourglass': [('based on Reincarnations made.', 'based on Reincarnations made. (-v)')],
 }      # name -> text replacements: the amount each cost multiplier is lowered by (read from the production code)
 MERC_PERKS = {'Trade Lords', 'Holy Crusaders', 'Heresiarchs'}      # the Mercenary faction upgrades (one per alignment)
 ALEG_NAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless',

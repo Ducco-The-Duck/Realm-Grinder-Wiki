@@ -183,7 +183,8 @@ COST_AMOUNTS = {'Bartering': [('Reduce Enchanted Fields cost multiplier.', 'Redu
                 'Surveyorship': [('Reduce Excavation cost multiplier.', 'Reduce Excavation cost multiplier. (-0.02)')],
                 'Intimidation': [('Reduce Royal Exchange cost multiplier.', 'Reduce Royal Exchange cost multiplier. (-0.025)')],
                 'Gray Friday': [('Reduce building cost multiplier, and', 'Reduce building cost multiplier (-0.02), and')],
-                'Discount': [('Reduce Royal Exchange, Excavation and Building cost multipliers.', 'Reduce Royal Exchange, Excavation and Building cost multipliers. (-0.02 each)')]}
+                'Discount': [('Reduce Royal Exchange, Excavation and Building cost multipliers.', 'Reduce Royal Exchange, Excavation and Building cost multipliers. (-0.02 each)')],
+                'Asceticism': [('gain a fraction of that time spent with all factions.', 'gain a fraction of that time spent with all factions. (10%)')]}
 # production effects the Ascension penalty hits that the description does not show: name -> (first Ascension, no penalty at Ascension 4)
 PEN_FIX = {'Journeymen': (1, False), 'Hierarchy': (1, False), 'Solemnity': (2, False),
            'Upheaval': (2, False), 'Decentralization': (4, False)}
@@ -214,7 +215,6 @@ MANUAL_FORMULAS = {
     'Scriptures': [_F(r'v = 0.3 \cdot t^{0.7}',
                       ('t', "Time spent with the spell's requirement (its faction or alignment) in this Reincarnation (seconds)"),
                       label='Duration of each spell (%)')],
-    'Asceticism': [_F(r'v = 10', label='Share of the time you spend with a faction that you also gain with every other faction (%)')],
     'Decentralization': [_F(r'v = \left(3 - 0.25 \cdot T\right)^{4} \cdot B^{0.6}', _T, ('B', 'Buildings you have built'),
                             label='Production of each building (%)')],
     'Reduction': [_F(r'v = \max\left(10, \min\left(90, \left(\ln\left(1 + \frac{D}{D_{0}}\right)\right)^{2}\right)\right)',

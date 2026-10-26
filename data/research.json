@@ -4883,15 +4883,8 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Neutral Buildings also count as both Good and Evil buildings. Non-Unique buildings also count as Unique buildings.\n\nWhen you spend time with a faction, you also gain a fraction of that time spent with all factions.",
-"formulas": [
-{
-"latex": "v = 10",
-"vars": [],
-"scale": null,
-"label": "Share of the time you spend with a faction that you also gain with every other faction (%)"
-}
-],
+"description": "Neutral Buildings also count as both Good and Evil buildings. Non-Unique buildings also count as Unique buildings.\n\nWhen you spend time with a faction, you also gain a fraction of that time spent with all factions. (10%)",
+"formulas": [],
 "requirements": [
 "Reach 5 Active Dragon's Breath Colors",
 "Reincarnation 180 or higher, and the artifact Forgotten Relic"

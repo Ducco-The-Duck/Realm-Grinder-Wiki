@@ -26031,7 +26031,7 @@
 "id": 1521,
 "description": [
 {
-"text": "Infinite Spiral also reduces Excavation cost multiplier based on assistants owned. (-v)",
+"text": "Infinite Spiral also reduces Excavation cost multiplier based on assistants owned.",
 "formulas": [
 {
 "latex": "v = 0.0005 \\cdot \\ln\\left(1 + A\\right)",
@@ -29307,7 +29307,7 @@
 "id": 1593,
 "description": [
 {
-"text": "Lower Lineage cost multiplier based on Reincarnations made. (-v)",
+"text": "Lower Lineage cost multiplier based on Reincarnations made.",
 "formulas": [
 {
 "latex": "v = \\frac{0.002 \\cdot R}{A}",
