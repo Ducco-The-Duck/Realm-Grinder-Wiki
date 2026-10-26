@@ -206,7 +206,7 @@ body.steel .search input{padding:0 96px 0 8px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html" aria-current="page">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a href="effects.html">Effects</a></nav>
 <h1>Trophies</h1>
 <div class="search"><input id="q" type="search" placeholder="Search trophy names and requirements" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div id="root"></div>
@@ -334,6 +334,7 @@ body.steel .search input{padding:0 96px 0 8px}
   function searchInit(root, after){
     enhanceSelects();
     var box=document.getElementById('q'), note=document.getElementById('qn');
+    var hq=location.hash.match(/^#q=(.*)$/); if(hq){ try{ box.value=decodeURIComponent(hq[1]); }catch(e){} }      // a link from the Effects page
     function run(){
       QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
       var shown=0;

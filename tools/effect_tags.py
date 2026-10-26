@@ -284,21 +284,25 @@ def paras_of(obj):
     return obj
 
 
+UPAGE = {'allegiances': 'upgrades-allegiance.html', 'magic': 'upgrades-magic.html', 'secret': 'upgrades-secret.html', 'misc': 'upgrades-misc.html',
+         'buildings': 'upgrades-misc.html'}      # the page each kind of upgrade is shown on (see build_upgrades_page.py)
+
+
 def collect():
     objs = []
     d = json.load(open(R + 'data/upgrade_pages.json', encoding='utf8'))
     for page, v in d.items():
         for u in v:
             ps = list(u['description']) + list(u.get('more') or [])
-            objs.append({'src': 'upgrade', 'key': page + '/' + u['name'], 'name': u['name'], 'asc': availability.upgrade_asc(u), 'texts': [p['text'] for p in ps]})
+            objs.append({'src': 'upgrade', 'key': page + '/' + u['name'], 'name': u['name'], 'icon': u.get('icon'), 'page': UPAGE.get(page), 'asc': availability.upgrade_asc(u), 'texts': [p['text'] for p in ps]})
             for c in u.get('combos') or []:
-                objs.append({'src': 'upgrade', 'key': page + '/' + u['name'] + '/' + c['name'], 'name': c['name'], 'asc': availability.upgrade_asc(c), 'texts': [p['text'] for p in c['description']]})
+                objs.append({'src': 'upgrade', 'key': page + '/' + u['name'] + '/' + c['name'], 'name': c['name'], 'icon': c.get('icon'), 'page': UPAGE.get(page), 'asc': availability.upgrade_asc(c), 'texts': [p['text'] for p in c['description']]})
     for x in json.load(open(R + 'data/research.json', encoding='utf8')):
-        objs.append({'src': 'research', 'key': x['code'], 'name': x['name'], 'asc': availability.research_asc(x), 'texts': [x['description']]})
+        objs.append({'src': 'research', 'key': x['code'], 'name': x['name'], 'icon': x.get('icon'), 'page': 'research.html', 'asc': availability.research_asc(x), 'texts': [x['description']]})
     for f in json.load(open(R + 'data/challenges.json', encoding='utf8')):
         floor = availability.faction_floor(f['items'])
         for it in f['items']:
-            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'asc': availability.challenge_asc(it, floor), 'texts': list(it['rewards'])})
+            objs.append({'src': 'challenge', 'key': f['name'] + '/' + it['name'], 'name': it['name'], 'icon': it.get('icon'), 'page': 'challenges.html', 'asc': availability.challenge_asc(it, floor), 'texts': list(it['rewards'])})
     return objs
 
 
@@ -348,7 +352,7 @@ def tag_all(fixes=True):
                     for md in (['additive', 'multiplicative'] if e['mode'] == 'both' else [e['mode']]):     # 'additively and multiplicatively' is two effects
                         effs.append({'text': q, 'verb': e['verb'], 'mode': md, 'trigger': e['trigger'], 'x': xt, 'scope': sc, 'y': yt,
                                      'seconds': int(dur.group(1)) if dur else None})
-        res[o['key']] = {'src': o['src'], 'name': o['name'], 'asc': o['asc'], 'effects': effs}
+        res[o['key']] = {'src': o['src'], 'name': o['name'], 'icon': o['icon'], 'page': o['page'], 'asc': o['asc'], 'effects': effs}
     stale = apply_fixes(res, set(unsplit), load_fixes()) if fixes else []
     return res, unsplit, stale
 

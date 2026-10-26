@@ -258,7 +258,7 @@ body.steel .search input{padding:0 96px 0 8px}
 </head>
 <body class="steel">
 <main>
-<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span></nav>
+<nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html" aria-current="page">Research</a><a href="challenges.html">Challenges</a><span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer" onclick="this.parentNode.classList.toggle('open')">Upgrades</a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a href="effects.html">Effects</a></nav>
 <h1>Research</h1>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces most percentage effects. If a research's formula
 gives <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
@@ -395,6 +395,7 @@ popups are always the base values <i>v</i>.</div>
   function searchInit(root, after){
     enhanceSelects();
     var box=document.getElementById('q'), note=document.getElementById('qn');
+    var hq=location.hash.match(/^#q=(.*)$/); if(hq){ try{ box.value=decodeURIComponent(hq[1]); }catch(e){} }      // a link from the Effects page
     function run(){
       QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
       var shown=0;

@@ -259,6 +259,7 @@ JS = r'''
   function searchInit(root, after){
     enhanceSelects();
     var box=document.getElementById('q'), note=document.getElementById('qn');
+    var hq=location.hash.match(/^#q=(.*)$/); if(hq){ try{ box.value=decodeURIComponent(hq[1]); }catch(e){} }      // a link from the Effects page
     function run(){
       QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
       var shown=0;
@@ -332,6 +333,7 @@ def apply(html, placeholder, current_file=None):
     html = html.replace('<body>', '<body class="steel">', 1)
     html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
     html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
+    if 'href="effects.html"' not in html: html = html.replace('</nav>', '<a href="effects.html">Effects</a></nav>', 1)
     html = stamp(html)
     return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
                 .replace('/*SEARCH_JS*/', JS))
