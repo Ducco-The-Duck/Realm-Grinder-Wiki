@@ -5125,7 +5125,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce Enchanted Fields cost multiplier.",
+"description": "Reduce Enchanted Fields cost multiplier. (-0.02)",
 "formulas": [],
 "requirements": [
 "Play as Goblin",
@@ -5193,7 +5193,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce the cost multiplier for Unique Buildings.",
+"description": "Reduce the cost multiplier for Unique Buildings. (-0.01)",
 "formulas": [],
 "requirements": [
 "Play as Goblin",
@@ -5450,7 +5450,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce Excavation cost multiplier.",
+"description": "Reduce Excavation cost multiplier. (-0.02)",
 "formulas": [],
 "requirements": [
 "Reach 7 Artifacts"
@@ -5937,7 +5937,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce Royal Exchange cost multiplier.",
+"description": "Reduce Royal Exchange cost multiplier. (-0.025)",
 "formulas": [],
 "requirements": [
 "Reach 18000 Unique Buildings"
@@ -6300,7 +6300,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce building cost multiplier, and increase production of all buildings based on Royal Exchange bonus.",
+"description": "Reduce building cost multiplier (-0.02), and increase production of all buildings based on Royal Exchange bonus.",
 "formulas": [
 {
 "latex": "v = 1.2 \\cdot X^{0.8}",
@@ -6500,7 +6500,7 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Reduce Royal Exchange, Excavation and Building cost multipliers.",
+"description": "Reduce Royal Exchange, Excavation and Building cost multipliers. (-0.02 each)",
 "formulas": [],
 "requirements": [
 "Reach 200 Tax Collection cost reduction",

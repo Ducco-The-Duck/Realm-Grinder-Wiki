@@ -2380,7 +2380,7 @@
 ],
 "challenge": "Have a Royal Exchange bonus of at least 1e7% within 5 minutes of a new Era.",
 "rewards": [
-"Reduce Royal Exchange cost multiplier by -0.02 and multiplicatively increase Royal Exchange bonus by 100%.",
+"Reduce Royal Exchange cost multiplier (-0.02) and multiplicatively increase Royal Exchange bonus by 100%.",
 "Increase Royal Exchange bonus based on Royal Exchanges purchased.",
 "Also removes all Ascension Penalties from Oversized Legends."
 ],

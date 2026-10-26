@@ -178,6 +178,12 @@ _cap_q = resolve(_base, '§#"3§', cl) if _base else None
 CAP_ARTIFACT = (named.get(_cap_q) or [None, None])[1] if _cap_q else None
 print('research cap artifact:', CAP_ARTIFACT)
 KEEP_TEXT_VARIANTS = {'Estates'}
+COST_AMOUNTS = {'Bartering': [('Reduce Enchanted Fields cost multiplier.', 'Reduce Enchanted Fields cost multiplier. (-0.02)')],
+                'Bribing': [('Reduce the cost multiplier for Unique Buildings.', 'Reduce the cost multiplier for Unique Buildings. (-0.01)')],
+                'Surveyorship': [('Reduce Excavation cost multiplier.', 'Reduce Excavation cost multiplier. (-0.02)')],
+                'Intimidation': [('Reduce Royal Exchange cost multiplier.', 'Reduce Royal Exchange cost multiplier. (-0.025)')],
+                'Gray Friday': [('Reduce building cost multiplier, and', 'Reduce building cost multiplier (-0.02), and')],
+                'Discount': [('Reduce Royal Exchange, Excavation and Building cost multipliers.', 'Reduce Royal Exchange, Excavation and Building cost multipliers. (-0.02 each)')]}
 # production effects the Ascension penalty hits that the description does not show: name -> (first Ascension, no penalty at Ascension 4)
 PEN_FIX = {'Journeymen': (1, False), 'Hierarchy': (1, False), 'Solemnity': (2, False),
            'Upheaval': (2, False), 'Decentralization': (4, False)}
@@ -270,6 +276,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
     desc = clean_desc(texts) if not r['desc'].startswith('ERR') else ''
     if not desc and r['n'] == 'Paradox':   # its description reads a set bonus that needs a live game state
         desc = 'Gain the Primary Set bonus of the base faction of your opposite alignments.'
+    for old_, new_ in COST_AMOUNTS.get(r['n'], []): desc = desc.replace(old_, new_)      # how much the cost multiplier is lowered
     if r['n'] == 'Patience': desc = re.sub(r' \([A-Z][a-z]+\)', '', desc)      # a live readout: the faction that is least used right now
     fs, dm = formulas_for(c, r['q']) if c else ([], None)
     forms = []

@@ -449,7 +449,8 @@ FORM_LABELS = {
 DROP_FORMULAS = {'Recruitment', 'Legendary Antics', 'Balanced Current', 'Eldritch Architecture', 'Dragon Challenge'}      # the text says everything
 TEXT_FIX = {}
 # wording replaced in the reward text (the game's own text has a live value there, or names an upgrade only by its number)
-TEXT_SUBS = [('Autoclick v₄ times per second and increase', 'Autoclick several times per second and increase'),
+TEXT_SUBS = [('Reduce Royal Exchange cost multiplier by -0.02 and', 'Reduce Royal Exchange cost multiplier (-0.02) and'),
+             ('Autoclick v₄ times per second and increase', 'Autoclick several times per second and increase'),
              ('Goblin Upgrade 6', 'Hobgoblin Gladiators')]
 BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
 EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'

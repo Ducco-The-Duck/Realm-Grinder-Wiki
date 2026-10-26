@@ -70,8 +70,9 @@ Only these need checking; remove an item when it is settled.
    - **Research facility upgrades** (Mana Loom, Factory, Mythos, Vault, Athanor, Battlefield, Apeiron; their budget bonus is on the research page, the unlock belongs here): to be bought they need Reincarnation 180, the Forgotten Relic artifact, the facility's own artifact and at least 5000 research points already spent in that branch (Apeiron: Reincarnation 180, the Forgotten Relic and Apeiron artifacts). The code prices each at 1e45 of its branch's faction coins (Fairy, Elf, Angel, Goblin, Undead, Demon for the first six; Apeiron 1e50 Dwarven and Drow coins). Once owned, the budget bonus applies. Read from the code, not checked in game.
 6. **Notes that point to pages that do not exist yet.** Faded notes in the tooltips send the reader to pages that have not been made, and we may not make one page per note, so they have to be edited when the page plan is settled (`NOTES` in `tools/build_upgrades_page.py`, `NOTES` in `tools/build_research_page.py`):
    - "Spells page, tier cost scaling": Sequence (S1275), Angel Perk 1, Iron Flight, Dragon Set.
-   - "Buildings page, building cost multiplier": Biased Architecture (Dwarven challenge 2), Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Discount (E13125).
+   - "Buildings page, building cost multiplier": Biased Architecture (Dwarven challenge 2), Goblin Bloodline, Titan Perk 1, Bartering (E50), Bribing (E135), Gray Friday (E11125), Discount (E13125).
    - "Excavations page, excavation cost multiplier": Surveyorship (E270), Discount (E13125).
+   - "Royal Exchanges page, Ascension multiplier": Hoarding (E1225), Wyrm's Rest, Drow Set (Set Bonus 2), Makers Perk 6.
    - "Royal Exchanges page, Royal Exchange cost multiplier": Advanced Civilization (Elven challenge 1), Titanomachy (Archon challenge 3), Intimidation (E1325), Discount (E13125).
 7. **Verify the research page** (researches, formulas, requirements; built from code, checked so far only as listed under
    Resolved).

@@ -655,6 +655,19 @@ ALLEG_TAGS = {f'{n}Faction' for n in ('Angel', 'Demon', 'Drow', 'Druid', 'Dwarve
 TIER_NO = [('Trade Treaty', 1), ('First Contract', 1), ('Friendship Pact', 2), ('Second Contract', 2), ('Alliance', 3),
            ('Third Contract', 3), ('Union', 4), ('Fourth Contract', 4)]
 AXIS = {4: 'Order', 5: 'Chaos', 6: 'Balance'}
+COST_AMOUNTS = {
+    'Pixie Dust Fertilizer': [('reduce their building cost multiplier.', 'reduce their building cost multiplier (-0.02).')],
+    'Lousy Architecture': [('Non-Unique Buildings cost multiplier, and', 'Non-Unique Buildings cost multiplier (-0.01), and')],
+    'Heavy Coins': [('reduces their cost multiplier by 0.01.', 'reduces their cost multiplier. (-0.01)')],
+    'Oversized Legends': [('building cost multiplier, and increase', 'building cost multiplier (-0.01), and increase')],
+    'Expert Masonry': [('Reduce all building cost multipliers.', 'Reduce all building cost multipliers. (-0.01 each)')],
+    'Magic Resistance': [('Reduce Excavation cost multiplier.', 'Reduce Excavation cost multiplier. (-0.02)')],
+    'Blackmail': [('Reduce the cost multiplier of Royal Exchanges.', 'Reduce the cost multiplier of Royal Exchanges. (-0.02)')],
+    'Goblin Bloodline': [('Reduce all building cost multipliers.', 'Reduce all building cost multipliers. (-0.01 each)')],
+    'Titan Perk 1': [('building cost multiplier and increase', 'building cost multiplier (-0.02 each) and increase')],
+    'Reality Crater': [('based on assistants owned.', 'based on assistants owned. (-v)')],
+    'Ancestral Hourglass': [('based on Reincarnations made.', 'based on Reincarnations made. (-v)')],
+}      # name -> text replacements: the amount each cost multiplier is lowered by (read from the production code)
 MERC_PERKS = {'Trade Lords', 'Holy Crusaders', 'Heresiarchs'}      # the Mercenary faction upgrades (one per alignment)
 ALEG_NAME = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid', 8: 'Faceless',
              9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
@@ -839,6 +852,8 @@ for idx, r in todo:
                         'fc': {ALEG_NAME[int(k)]: v for k, v in lo.items()},
                         'fc_a4': {ALEG_NAME[int(k)]: v for k, v in hi.items()},
                         'free_start': bool(lo) and not free}
+    for old_, new_ in COST_AMOUNTS.get(r['n'], []):      # how much the cost multiplier is lowered (from the production code)
+        for p_ in item['description']: p_['text'] = p_['text'].replace(old_, new_)
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}

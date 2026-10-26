@@ -129,8 +129,9 @@ for b in range(7):
     BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
     EXCAVATION_COST = 'See the Excavations page for more on the excavation cost multiplier.'
     EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'
+    EXCHANGE_ASC = 'See the Royal Exchanges page for more on the Ascension multiplier.'
     NOTES = {'S1275': [TIER_COST_NOTE], 'E50': [BUILDING_COST], 'E135': [BUILDING_COST], 'E270': [EXCAVATION_COST], 'E1325': [EXCHANGE_COST],
-             'E13125': [EXCHANGE_COST, EXCAVATION_COST, BUILDING_COST]}      # faded notes pointing to the pages that explain the cost multipliers
+             'E13125': [EXCHANGE_COST, EXCAVATION_COST, BUILDING_COST], 'E11125': [BUILDING_COST], 'E1225': [EXCHANGE_ASC]}      # faded notes pointing to the pages that explain the cost multipliers
     for r in its:
         items.append({
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
