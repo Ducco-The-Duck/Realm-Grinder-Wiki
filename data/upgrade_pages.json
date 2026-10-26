@@ -499,18 +499,7 @@
 "description": [
 {
 "text": "Increase the base production of Farms, Inns and Blacksmiths by +600 and reduce their building cost multiplier (-0.02).",
-"formulas": [
-{
-"latex": "v = 0.02",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the cost multiplier of those buildings"
-}
-],
-"label": "Cost multiplier"
-}
-],
+"formulas": [],
 "s": null
 }
 ],
@@ -3875,7 +3864,7 @@
 "text": "Reduce Non-Unique Buildings cost multiplier (-0.01), and increase their production based on their quantity.",
 "formulas": [
 {
-"latex": "v_{1} = 2 \\cdot N^{0.75}",
+"latex": "v = 2 \\cdot N^{0.75}",
 "vars": [
 {
 "symbol": "N",
@@ -3883,16 +3872,6 @@
 }
 ],
 "label": "Production of each Non-Unique building (%)"
-},
-{
-"latex": "v_{2} = 0.01",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the cost multiplier of Non-Unique buildings"
-}
-],
-"label": "Cost multiplier"
 }
 ],
 "s": 3,
@@ -9008,18 +8987,7 @@
 "description": [
 {
 "text": "Reduce all building cost multipliers. (-0.01 each)",
-"formulas": [
-{
-"latex": "v = 0.01",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the cost multiplier of all buildings"
-}
-],
-"label": "Cost multiplier"
-}
-],
+"formulas": [],
 "s": null
 }
 ],
@@ -9318,18 +9286,7 @@
 "description": [
 {
 "text": "Reduce Excavation cost multiplier. (-0.02)",
-"formulas": [
-{
-"latex": "v = 0.02",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the Excavation cost multiplier"
-}
-],
-"label": "Cost multiplier"
-}
-],
+"formulas": [],
 "s": null
 }
 ],
@@ -10177,18 +10134,7 @@
 "description": [
 {
 "text": "Reduce the cost multiplier of Royal Exchanges. (-0.02)",
-"formulas": [
-{
-"latex": "v = 0.02",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the cost multiplier of Royal Exchanges"
-}
-],
-"label": "Cost multiplier"
-}
-],
+"formulas": [],
 "s": null
 }
 ],
@@ -17519,18 +17465,7 @@
 "description": [
 {
 "text": "Reduce all building cost multipliers. (-0.01 each)",
-"formulas": [
-{
-"latex": "v = 0.01",
-"vars": [
-{
-"symbol": "v",
-"text": "Amount taken off the cost multiplier of all buildings"
-}
-],
-"label": "Cost multiplier"
-}
-],
+"formulas": [],
 "s": null
 }
 ],

@@ -854,6 +854,11 @@ for idx, r in todo:
                         'free_start': bool(lo) and not free}
     for old_, new_ in COST_AMOUNTS.get(r['n'], []):      # how much the cost multiplier is lowered (from the production code)
         for p_ in item['description']: p_['text'] = p_['text'].replace(old_, new_)
+    if r['n'] in COST_AMOUNTS:      # a formula that only gives the constant (v = 0.02) is dropped: the amount is in the text now
+        for p_ in item['description']:
+            p_['formulas'] = [f_ for f_ in p_['formulas'] if not re.fullmatch(r'v(?:_\{\d+\})? = -?[\d.]+', f_.get('latex', '').strip())]
+        _left = [f_ for p_ in item['description'] for f_ in p_['formulas']]
+        if len(_left) == 1: _left[0]['latex'] = re.sub(r'^v_\{\d+\} = ', 'v = ', _left[0]['latex'])
     if r['n'] in MM.MORE:       # a bigger popup opened by clicking: every bonus with its formula
         mo = MM.MORE[r['n']]
         item['more'] = [{'text': t, 'formulas': [dict(f, vars=list(f['vars'])) for f in fs], 's': sp}

@@ -77,11 +77,16 @@ KIND_ORDER = {'proof': 0, 'bloodline_c': 1, 'lineage_c': 1.2, 'set_c': 1.3, 'com
 # notes shown (faded) right under the sentence of the description that matches the pattern: name -> (note, pattern)
 TIER_COST = ('See the Spells page for more on tier cost scaling.', 'cost scaling')      # the upgrades that lower spell tier cost scaling
 ASC_MULT = ('See the Royal Exchanges page for more on the Ascension multiplier.', 'Ascension multiplier')
+BUILD_MULT = ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier')
+EXCAV_MULT = ('See the Excavations page for more on the excavation cost multiplier.', 'cost multiplier')
+EXCH_MULT = ('See the Royal Exchanges page for more on the Royal Exchange cost multiplier.', 'cost multiplier')
 NOTES = {'Iron Flight': TIER_COST, 'Dragon Set': TIER_COST, 'Angel Perk 1': TIER_COST,
          'Goblin Bloodline': ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier'),
          'Elven Perk 1': ('Elven Luck is affected by Ascension penalties.', 'Faction Coins based on'),
          'Titan Perk 1': ('See the Buildings page for more on the building cost multiplier.', 'cost multiplier'),
-         "Wyrm's Rest": ASC_MULT, 'Drow Set': ASC_MULT, 'Makers Perk 6': ASC_MULT}
+         "Wyrm's Rest": ASC_MULT, 'Drow Set': ASC_MULT, 'Makers Perk 6': ASC_MULT,
+         'Pixie Dust Fertilizer': BUILD_MULT, 'Lousy Architecture': BUILD_MULT, 'Oversized Legends': BUILD_MULT, 'Expert Masonry': BUILD_MULT,
+         'Magic Resistance': EXCAV_MULT, 'Reality Crater': EXCAV_MULT, 'Heavy Coins': EXCH_MULT, 'Blackmail': EXCH_MULT}
 
 
 def item(u):
