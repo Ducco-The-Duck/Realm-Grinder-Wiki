@@ -37,7 +37,8 @@ for key, o in tags.items():
              **({'sc': e['scope']} if e['scope'] else {}), **({'s': e['seconds']} if e['seconds'] else {})} for e in o['effects']]
     objs.append({'k': key, 'n': o['name'], 's': SRC[o['src']], 'i': icon_file(o['icon']), 'p': o['page'], 'a': mask, 'e': effs})
 bnames = sorted({(b.get('name_plural') or b['name']).lower() for b in BUILD})
-data = json.dumps({'objs': objs, 'buildings': bnames}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+import effect_tags
+data = json.dumps({'objs': objs, 'buildings': bnames, 'kinds': effect_tags.QUALIFIERS}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 html = r'''<!doctype html>
 <html lang="en">
@@ -208,7 +209,19 @@ h1{margin:0 0 4px;font-size:1.7rem}
   var qa=document.getElementById('qa'), qx=document.getElementById('qx'), qy=document.getElementById('qy');
   var tu=document.getElementById('tu'), tr=document.getElementById('tr'), tc=document.getElementById('tc');
   // tags picked from the suggestions: the effect must have every one of them (a general tag is also on the effects of its specific ones)
-  var PX=[], PY=[];
+  var PX=[], PY=[], KINDS=DATA.kinds;
+  function kindOf(t){ return KINDS[t] || 'stat'; }
+  // tags of one kind (a stat, a period, ...) in one box are alternatives (OR); the kinds, and the two boxes, all have to hold (AND).
+  // skipSide/skipKind leave one such group out (for counting the suggestions of that group).
+  function chipsOk(e, skipSide, skipKind){
+    return [['x',PX],['y',PY]].every(function(p){
+      var kinds={}; p[1].forEach(function(t){ (kinds[kindOf(t)]=kinds[kindOf(t)]||[]).push(t); });
+      return Object.keys(kinds).every(function(k){
+        if(p[0]===skipSide && k===skipKind) return true;
+        return kinds[k].some(function(t){ return p[0]==='x' ? hasX(e,t) : e.y.indexOf(t)>=0; });
+      });
+    });
+  }
   function hasX(e, t){
     if(t==='additive' || t==='multiplicative') return e.m===t;
     if(e.x.indexOf(t)>=0) return true;
@@ -223,7 +236,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
     DATA.objs.forEach(function(o){
       if(!types[o.s] || !(o.a>>ASC&1)) return;
       var hits=o.e.filter(function(e){ return (!A.length || all(e.ha,A)) && (!X.length || all(e.hx,X)) && (!Y.length || (e.y.length && all(e.hy,Y)))
-        && PX.every(function(t){ return hasX(e,t); }) && PY.every(function(t){ return e.y.indexOf(t)>=0; }); });
+        && chipsOk(e); });
       if(hits.length) found.push([o,hits]);
     });
     if(!A.length && !X.length && !Y.length && !PX.length && !PY.length){ count.textContent = found.length+' upgrades, researches and challenges with an effect in Ascension '+ASC+'. Type in a box above to narrow them down.'; }
@@ -259,9 +272,10 @@ h1{margin:0 0 4px;font-size:1.7rem}
     DATA.objs.forEach(function(o){
       if(!types[o.s] || !(o.a>>ASC&1)) return;
       o.e.forEach(function(e){
-        if(!PX.every(function(t){ return hasX(e,t); }) || !PY.every(function(t){ return e.y.indexOf(t)>=0; })) return;      // tags that clash with the picked ones are not offered
-        e[side].forEach(function(t){ if(t.charAt(0)!=='?') n[t]=(n[t]||0)+1; });
-        if(side==='x' && e.m) n[e.m]=(n[e.m]||0)+1;
+        // the tags of a kind are counted over the effects that fit the picked tags of the other kinds, so a tag is offered if it would find something
+        var tg=e[side].filter(function(t){ return t.charAt(0)!=='?'; });
+        if(side==='x' && e.m) tg=tg.concat([e.m]);
+        tg.forEach(function(t){ if(chipsOk(e, side, kindOf(t))) n[t]=(n[t]||0)+1; });
       });
     });
     return n;

@@ -49,3 +49,13 @@ Some of the tails need a decision (see the questions below), such as "how long t
 4. The unique Y values (beard length, time of the day, mysterious events, "your past choices") are standalone stats with no hierarchy.
 5. Additive / multiplicative is a tag on the effect, searchable in the overall box and in the X box (not in the Y box).
 6. Triggers ("While X is active", "When you cast X", "Each time ...") are part of the effect and searchable in the overall box only. About 80 of the 2,503 sentences have one.
+
+## Stats and qualifiers (how picked tags combine on the Effects page)
+
+A tag is either a stat or a qualifier of a stat. The qualifiers are listed in `QUALIFIERS` in `tools/effect_tags.py`:
+- mode: additive, multiplicative (on X)
+- period: this era, this reincarnation, all-time, single era, previous era, longest era (on Y)
+- aggregate: highest, lowest, sum (on Y)
+
+Picked tags of the same kind in one box are alternatives (OR); different kinds, and the two boxes, all have to hold (AND). So "spells cast" + "assistants owned" finds effects
+based on either, and adding "this era" keeps those based on it in this era. The suggestions count only the effects that fit the picked tags of the other kinds.

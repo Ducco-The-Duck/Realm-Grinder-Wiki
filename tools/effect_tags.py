@@ -284,6 +284,12 @@ def paras_of(obj):
     return obj
 
 
+# tags that do not name a stat but qualify one (the Effects page combines tags of different kinds with AND and tags of one kind with OR)
+QUALIFIERS = {'additive': 'mode', 'multiplicative': 'mode',
+              'this era': 'period', 'this reincarnation': 'period', 'all-time': 'period', 'single era': 'period', 'previous era': 'period', 'longest era': 'period',
+              'highest': 'aggregate', 'lowest': 'aggregate', 'sum': 'aggregate'}
+
+
 UPAGE = {'allegiances': 'upgrades-allegiance.html', 'magic': 'upgrades-magic.html', 'secret': 'upgrades-secret.html', 'misc': 'upgrades-misc.html',
          'buildings': 'upgrades-misc.html'}      # the page each kind of upgrade is shown on (see build_upgrades_page.py)
 
