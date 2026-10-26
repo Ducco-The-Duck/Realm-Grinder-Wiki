@@ -411,9 +411,7 @@ body.steel .search input{padding:0 96px 0 8px}
   DATA.objs.forEach(function(o){
     o.nm = normS(o.n);
     o.e.forEach(function(e){
-      var hasAll = e.all = (e.sc||[]).some(function(s){ return s==='all' || s==='other'; });
-      e.hx = normS(e.x.map(T).join(' ') + ' ' + (MODE[e.m]||'') + ' ' + (e.v==='reduce'?'reduce':'increase') + (hasAll ? ' ' + BL : ''));     // an effect on all buildings is also found by one building's name
-      e.hy = normS(e.y.map(T).join(' '));
+      e.all = (e.sc||[]).some(function(s){ return s==='all' || s==='other'; });
       e.ha = normS(o.n + ' ' + e.t + ' ' + e.x.map(T).join(' ') + ' ' + e.y.map(T).join(' ') + ' ' + (e.g||'') + ' ' + (MODE[e.m]||''));
     });
   });
@@ -505,17 +503,16 @@ body.steel .search input{padding:0 96px 0 8px}
     return !!(e.all && m && BLSET[m[1]]);
   }
   function render(){
-    var A=terms(qa.value), X=terms(qx.value), Y=terms(qy.value);
+    var A=terms(qa.value);      // the Changes and Based on boxes only look for tags to pick (see suggest); the picked tags filter
     root.textContent=''; hideTip();
     var types={Upgrade:tu.checked, Research:tr.checked, Challenge:tc.checked};
     var found=[];
     DATA.objs.forEach(function(o){
       if(!types[o.s] || !(o.a>>ASC&1)) return;
-      var hits=o.e.filter(function(e){ return (!A.length || all(e.ha,A)) && (!X.length || all(e.hx,X)) && (!Y.length || (e.y.length && all(e.hy,Y)))
-        && chipsOk(e); });
+      var hits=o.e.filter(function(e){ return (!A.length || all(e.ha,A)) && chipsOk(e); });
       if(hits.length) found.push([o,hits]);
     });
-    if(!A.length && !X.length && !Y.length && !PX.length && !PY.length){ count.textContent = found.length+' upgrades, researches and challenges with an effect in Ascension '+ASC+'. Type in a box above to narrow them down.'; }
+    if(!A.length && !PX.length && !PY.length){ count.textContent = found.length+' upgrades, researches and challenges with an effect in Ascension '+ASC+'. Search above, or pick tags, to narrow them down.'; }
     else count.textContent = found.length + (found.length===1?' result':' results') + (found.length>LIMIT?' (the first '+LIMIT+' are shown)':'');
     found.slice(0,LIMIT).forEach(function(f){
       var o=f[0], hits=f[1];
