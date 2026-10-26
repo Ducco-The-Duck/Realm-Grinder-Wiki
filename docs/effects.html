@@ -19,7 +19,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .asc label{font-weight:600}
 .asc select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
 .asc .hint{color:var(--muted);font-size:.85rem}
-.boxes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 6px}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 6px;align-items:start}
 .boxes .full{grid-column:1/-1}
 .boxes label{display:block;font-size:.78rem;color:var(--muted);margin:0 0 2px}
 .boxes input{width:100%;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
@@ -30,7 +30,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .sug div{padding:5px 10px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
 .sug div.on,.sug div:hover{background:var(--cellhi)}
 .sug small{color:var(--muted);white-space:nowrap}
-.sel{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.sel{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 0}
 .sel:empty{display:none}
 .sel .chip{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;padding:1px 3px 1px 9px}
 .sel .chip button{border:0;background:none;color:inherit;cursor:pointer;font:inherit;padding:0 5px;line-height:1}
@@ -233,10 +233,9 @@ body.steel .search input{padding:0 96px 0 8px}
 <span class="hint">Only what is available in the chosen Ascension is listed.</span></div>
 <div class="boxes">
   <div class="full"><label for="qa">Search everything</label><input id="qa" type="search" placeholder="Any word of an effect, its stat, what it is based on, or its name" autocomplete="off"></div>
-  <div class="wrap"><label for="qx">Changes (X)</label><input id="qx" type="search" placeholder="e.g. faction coin find chance" autocomplete="off"><div class="sug" id="sx"></div></div>
-  <div class="wrap"><label for="qy">Based on (Y)</label><input id="qy" type="search" placeholder="e.g. assistants owned" autocomplete="off"><div class="sug" id="sy"></div></div>
+  <div class="wrap"><label for="qx">Changes</label><input id="qx" type="search" placeholder="e.g. faction coin find chance" autocomplete="off"><div class="sug" id="sx"></div><div class="sel" id="selx"></div></div>
+  <div class="wrap"><label for="qy">Based on</label><input id="qy" type="search" placeholder="e.g. assistants owned" autocomplete="off"><div class="sug" id="sy"></div><div class="sel" id="sely"></div></div>
 </div>
-<div class="sel" id="sel"></div>
 <div class="types"><label><input type="checkbox" id="tu" checked> Upgrades</label><label><input type="checkbox" id="tr" checked> Research</label><label><input type="checkbox" id="tc" checked> Challenges</label></div>
 <div class="count" id="count"></div>
 <div id="root"></div>
@@ -521,11 +520,11 @@ body.steel .search input{padding:0 96px 0 8px}
     });
   }
   function drawSel(){
-    var box=document.getElementById('sel'); box.textContent='';
     [[PX,'x'],[PY,'y']].forEach(function(p){
+      var box=document.getElementById('sel'+p[1]); box.textContent='';
       p[0].forEach(function(t,i){
-        var c=el('span','chip '+p[1]), b=el('button',null,'\u00d7'); b.type='button'; b.setAttribute('aria-label','Remove '+t);
-        c.appendChild(document.createTextNode((p[1]==='x'?'Changes: ':'Based on: ')+t)); c.appendChild(b);
+        var c=el('span','chip '+p[1]), b=el('button',null,'×'); b.type='button'; b.setAttribute('aria-label','Remove '+t);
+        c.appendChild(document.createTextNode(t)); c.appendChild(b);
         b.addEventListener('click',function(){ p[0].splice(i,1); drawSel(); render(); });
         box.appendChild(c);
       });
@@ -537,6 +536,7 @@ body.steel .search input{padding:0 96px 0 8px}
     DATA.objs.forEach(function(o){
       if(!types[o.s] || !(o.a>>ASC&1)) return;
       o.e.forEach(function(e){
+        if(!PX.every(function(t){ return hasX(e,t); }) || !PY.every(function(t){ return e.y.indexOf(t)>=0; })) return;      // tags that clash with the picked ones are not offered
         e[side].forEach(function(t){ if(t.charAt(0)!=='?') n[t]=(n[t]||0)+1; });
         if(side==='x' && e.m) n[e.m]=(n[e.m]||0)+1;
       });
@@ -576,6 +576,7 @@ body.steel .search input{padding:0 96px 0 8px}
       } else if(e.key==='Escape'){ list.style.display='none'; }
     });
   });
+  document.addEventListener('click',function(e){ document.querySelectorAll('.sug').forEach(function(l){ if(!l.parentNode.contains(e.target)) l.style.display='none'; }); });
   for(var i=0;i<=4;i++){ var op=el('option',null,String(i)); op.value=String(i); sel.appendChild(op); }
   try{ var saved=parseInt(localStorage.getItem('rg-ascension'),10); if(saved>=0 && saved<=4) ASC=saved; }catch(e){}
   sel.value=String(ASC);
