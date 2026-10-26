@@ -2552,27 +2552,29 @@ false
 "icon": "ResearchCraftsmanship",
 "icon_name": "ResearchCraftsmanship",
 "pen": null,
-"description": "Increase the production of Blacksmiths based on Blacksmiths owned.",
+"description": "Increase the production of Dwarven Forges based on Dwarven Forges owned.",
 "formulas": [
 {
 "latex": "v = 60 \\cdot N^{0.8}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Blacksmith buildings you own"
+"text": "Number of Dwarven Forge buildings you own"
 }
 ],
 "scale": 1
 }
 ],
-"requirements": [],
+"requirements": [
+"Dwarven Forge upgrade purchased"
+],
 "hint": "",
 "faction": 9,
 "faction_name": "Dwarf",
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Dwarven Forge.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -4321,7 +4323,7 @@ false
 "icon": "ResearchDivine",
 "icon_name": "ResearchDivine",
 "pen": null,
-"description": "Increase the production of Iron Strongholds based on Faction Coin find chance.",
+"description": "Increase the production of Wyrm's Dens based on Faction Coin find chance.",
 "formulas": [
 {
 "latex": "v = 1.6 \\cdot Q^{0.6}",
@@ -4334,14 +4336,16 @@ false
 "scale": 2
 }
 ],
-"requirements": [],
+"requirements": [
+"Wyrm's Den upgrade purchased"
+],
 "hint": "",
 "faction": 12,
 "faction_name": "Dragon",
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Wyrm's Den.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -5783,21 +5787,22 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase the production of all other buildings by 25% per Blacksmith owned.",
+"description": "Increase the production of all other buildings by 25% per Dwarven Forge owned.",
 "formulas": [
 {
 "latex": "v = 25 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Blacksmith buildings you own"
+"text": "Number of Dwarven Forge buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 5000 Blacksmiths"
+"Reach 5000 Dwarven Forges",
+"Dwarven Forge upgrade purchased"
 ],
 "hint": "A Blacksmith army.",
 "faction": 9,
@@ -5805,7 +5810,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Dwarven Forge.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -5822,14 +5827,14 @@ false
 "icon": "ResearchEconomics",
 "icon_name": "ResearchEconomics",
 "pen": null,
-"description": "Increase production bonus from Gems based on Dark Temples owned.",
+"description": "Increase production bonus from Gems based on Spider Sanctuaries owned.",
 "formulas": [
 {
 "latex": "v = 4 \\cdot N^{0.8}",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Dark Temple buildings you own"
+"text": "Number of Spider Sanctuary buildings you own"
 }
 ],
 "scale": null
@@ -5837,7 +5842,8 @@ false
 ],
 "requirements": [
 "Have Dwarf as prestige faction",
-"Reach 12000 Unique Buildings"
+"Reach 12000 Unique Buildings",
+"Spider Sanctuary upgrade purchased"
 ],
 "hint": "Special architecture.",
 "faction": 10,
@@ -5845,7 +5851,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 9,
 "unlock_faction_name": "Dwarf",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -7364,21 +7370,22 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase the production of all other buildings by 120% per Dark Temple owned.",
+"description": "Increase the production of all other buildings by 120% per Spider Sanctuary owned.",
 "formulas": [
 {
 "latex": "v = 120 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Dark Temple buildings you own"
+"text": "Number of Spider Sanctuary buildings you own"
 }
 ],
 "scale": 1
 }
 ],
 "requirements": [
-"Reach 4000 Dark Temples"
+"Reach 4000 Spider Sanctuaries",
+"Spider Sanctuary upgrade purchased"
 ],
 "hint": "Evil Churches.",
 "faction": 10,
@@ -7386,7 +7393,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -7522,21 +7529,22 @@ false
 "icon": "ResearchAlchemy",
 "icon_name": "ResearchAlchemy",
 "pen": null,
-"description": "Increase the production of all other buildings by 135% per Iron Stronghold owned.",
+"description": "Increase the production of all other buildings by 135% per Wyrm's Den owned.",
 "formulas": [
 {
 "latex": "v = 135 \\cdot N",
 "vars": [
 {
 "symbol": "N",
-"text": "Number of Iron Stronghold buildings you own"
+"text": "Number of Wyrm's Den buildings you own"
 }
 ],
 "scale": 2
 }
 ],
 "requirements": [
-"Reach 5000 Iron Strongholds"
+"Reach 5000 Wyrm's Dens",
+"Wyrm's Den upgrade purchased"
 ],
 "hint": "Steel Stronghold.",
 "faction": 12,
@@ -7544,7 +7552,7 @@ false
 "faction_kind": "prestige",
 "unlock_faction": 12,
 "unlock_faction_name": "Dragon",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Wyrm's Den.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,
@@ -8959,7 +8967,7 @@ false
 "icon": "ResearchWarfare",
 "icon_name": "ResearchWarfare",
 "pen": null,
-"description": "Increase the production of Dark Temples based on Offline production.",
+"description": "Increase the production of Spider Sanctuaries based on Offline production.",
 "formulas": [
 {
 "latex": "v = 3.5 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{3.5}",
@@ -8972,14 +8980,16 @@ false
 "scale": 2
 }
 ],
-"requirements": [],
+"requirements": [
+"Spider Sanctuary upgrade purchased"
+],
 "hint": "",
 "faction": 10,
 "faction_name": "Drow",
 "faction_kind": "prestige",
 "unlock_faction": 10,
 "unlock_faction_name": "Drow",
-"mercenary_note": "Mercenaries can also buy it once they have the upgrade Spider Sanctuary.",
+"mercenary_note": "Mercenaries can also buy it.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 4,

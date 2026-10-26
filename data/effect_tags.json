@@ -43603,7 +43603,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Blacksmiths based on Blacksmiths owned.",
+    "text": "Increase the production of Dwarven Forges based on Dwarven Forges owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -44938,7 +44938,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Iron Strongholds based on Faction Coin find chance.",
+    "text": "Increase the production of Wyrm's Dens based on Faction Coin find chance.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46020,7 +46020,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 25% per Blacksmith owned.",
+    "text": "Increase the production of all other buildings by 25% per Dwarven Forge owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -46050,7 +46050,7 @@
   ],
   "effects": [
    {
-    "text": "Increase production bonus from Gems based on Dark Temples owned.",
+    "text": "Increase production bonus from Gems based on Spider Sanctuaries owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -47202,7 +47202,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 120% per Dark Temple owned.",
+    "text": "Increase the production of all other buildings by 120% per Spider Sanctuary owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -47326,7 +47326,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of all other buildings by 135% per Iron Stronghold owned.",
+    "text": "Increase the production of all other buildings by 135% per Wyrm's Den owned.",
     "verb": "increase",
     "mode": null,
     "trigger": null,
@@ -48364,7 +48364,7 @@
   ],
   "effects": [
    {
-    "text": "Increase the production of Dark Temples based on Offline production.",
+    "text": "Increase the production of Spider Sanctuaries based on Offline production.",
     "verb": "increase",
     "mode": null,
     "trigger": null,

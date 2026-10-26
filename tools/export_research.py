@@ -16,6 +16,7 @@ ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
+BUILDINGS = json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))
 from as3parse import parse_all, resolve
 from chance_latex import convert, FACTION
 
@@ -340,6 +341,25 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
                 merc_note = 'Mercenaries can also buy it once they have ' + ' and '.join(bits) + '.'
             else:
                 merc_note = 'Mercenaries can also buy it.'
+    # A few researches need an upgrade from everybody, not only from Mercenaries: `(super.9!% || mercenary) && owns(upgrade)`. The upgrade is the unique
+    # building of the faction (Spider Sanctuary for Dark Temples, Dwarven Forge for Blacksmiths, Wyrm's Den for Iron Strongholds), so the game also
+    # names the building that way in the research's text (the name of a building follows the unique building upgrade you own).
+    m_ = re.search(r'return \(super\.§9!%§ \|\| [^;]*?\) && §&c§\.§`!i§\((§[^§]*§)\.id\)', avail.body) if avail is not None else None
+    n_ = name_of_for(c)(m_.group(1)) if m_ else None
+    if n_ and n_[0] == 'upgrade':
+        up_ = n_[1].replace("\\'", "'")
+        reqs = reqs + [f'{up_} upgrade purchased']
+        merc_note = 'Mercenaries can also buy it.'
+        for b_ in BUILDINGS:
+            u1 = (b_.get('unique_names_list') or {}).get('0')
+            if u1 == up_:
+                pl, pu = b_.get('name_plural') or b_['name'], (b_.get('unique_names_plural_list') or {})['0']
+                def uniq(t, b_=b_, pl=pl, pu=pu, u1=u1):
+                    return re.sub(r'\b' + re.escape(b_['name']) + r'\b', u1, re.sub(r'\b' + re.escape(pl) + r'\b', pu, t))
+                desc = uniq(desc)
+                reqs = [uniq(q) if q != reqs[-1] else q for q in reqs]
+                for f_ in forms:
+                    for v_ in f_.get('vars') or []: v_['text'] = uniq(v_['text'])
     # text that changes with the Ascension
     by_asc, prev = {}, (desc, reqs)
     for A in range(1, MAX_ASC + 1):
