@@ -54,31 +54,31 @@ def slot_sources(b):
 
 # ---- research budget (Ascension 3 and 4): the slots are replaced by a budget per branch ----------------------------------
 BUDGET_COMMON = [
-    {'n': 'Reincarnation Power 4', 'q': 'From Reincarnation 170',
+    {'n': 'Reincarnation Power', 'q': 'From Reincarnation 170',
      'l': r'v = 150 \cdot A + 3.5 \cdot \left(R - 159\right)',
      'v': [['A', 'Your Ascension number'],
            ['R', 'Reincarnations made, counting the effects that make Reincarnations count more (for example Prismatic Breath from the Dragon Challenge)']],},
-    {'n': 'Archon Bloodline', 'q': 'While using the Archon Bloodline',
+    {'n': 'Archon Bloodline',
      'l': r'v = \left(\ln\left(1 + t\right)\right)^{3}', 'v': [['t', 'Time played in this Era (seconds)']],},
-    {'n': 'Faceless Set, Set Bonus 2', 'q': 'Faceless Set, with The Blackest Ink found',
+    {'n': 'Faceless Set, Set Bonus 2',
      'l': r'v = \min\left(3000,\; m \cdot \left(\ln\left(1 + F\right)\right)^{1.5}\right)',
      'v': [['F', 'Faction Coins found in this Era'],
            ['m', 'The Makers Bloodline bonus (while you use it) and the Prophecy bonus (when Faceless is your base, prestige or astral faction) multiply the value; 1 without them']],},
     {'n': 'Homunculus Lab (a Legacy upgrade)', 'q': 'Homunculus Lab bought', 'a': 4,
      'l': r'v = \min\left(3000,\; 50 + 1.15 \cdot \left(\ln\left(1 + \min\left(T_{O}, T_{B}\right)\right)\right)^{3.15}\right)',
      'v': [['T_{O}', 'Time spent with Order alignment in this Reincarnation (seconds)'], ['T_{B}', 'Time spent with Balance alignment in this Reincarnation (seconds)']],},
-    {'n': 'Goblin Perk 6', 'q': 'Goblin Perk 6 (Goblin Lineage)',
+    {'n': 'Goblin Perk 6',
      'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]],},
-    {'n': 'Dwarven Perk 6', 'q': 'Dwarven Perk 6 (Dwarven Lineage)',
+    {'n': 'Dwarven Perk 6',
      'l': r'v = \min\left(3000,\; 0.6 \cdot D^{0.6}\right)', 'v': [['D', 'Excavation depth']],},
 ]
 BUDGET_MERC = [
-    {'n': 'Mercenary First Contract', 'q': 'Requires playing as a Mercenary', 'l': r'v = 500', 'v': [],},
-    {'n': 'Mercenary Fourth Contract', 'q': 'Requires playing as a Mercenary, with the Mercenary Fourth Contract bought', 'l': r'v = 1000', 'v': [],},
-    {'n': 'Mercenary Magic Contract and Sorcery Contract', 'q': 'Requires playing as a Mercenary, with a contract tied to a spell of your choice',
+    {'n': 'Mercenary First Contract', 'l': r'v = 500', 'v': [],},
+    {'n': 'Mercenary Fourth Contract', 'l': r'v = 1000', 'v': [],},
+    {'n': 'Mercenary Magic Contract and Sorcery Contract',
      'l': r'v = w \cdot \min\left(5000,\; 1000 + 5 \cdot \sqrt{t}\right)',
      'v': [['t', 'Activity time of the spell you tied the contract to'], ['w', 'The weight of that spell\'s faction in this branch (listed below)']],},
-    {'n': 'Mercenary Union Contracts', 'q': 'Requires playing as a Mercenary, with a contract tied to a faction of your choice',
+    {'n': 'Mercenary Union Contracts',
      'l': r'v = w \cdot 400 \cdot n', 'v': [['n', 'Upgrades you have bought from that faction'], ['w', 'The weight of that faction in this branch (listed below)']],},
 ]
 BUDGET_A4 = [
@@ -108,11 +108,11 @@ def budget_for(b):
     name, a, x = FACILITY[b]
     if a:
         ent = {'n': f'{name} (research facility upgrade)',
-               'q': f'From Reincarnation 180: the Forgotten Relic and {name} artifacts, and at least 5000 research points spent in this branch',
+               'q': f'To unlock the upgrade: Reincarnation 180, the Forgotten Relic and {name} artifacts, and at least 5000 research points spent in this branch',
                'l': r'v = 500 + \left(\ln\left(1 + \sqrt{a \cdot b}\right)\right)^{3}',
                'v': [['a', f'Time spent with {a} alignment in this Reincarnation (seconds)'], ['b', f'Time spent with {x} alignment in this Reincarnation (seconds)']],}
     else:
-        ent = {'n': 'Apeiron (research facility upgrade)', 'q': 'From Reincarnation 180: the Forgotten Relic and Apeiron artifacts',
+        ent = {'n': 'Apeiron (research facility upgrade)', 'q': 'To unlock the upgrade: Reincarnation 180, the Forgotten Relic and Apeiron artifacts',
                'l': r'v = 500 + 0.75 \cdot \left(\ln\left(1 + \max_{i} \sqrt{a_{i} \cdot b_{i}}\right)\right)^{3}',
                'v': [['a_{i} \\cdot b_{i}', 'The six products of the time spent with an alignment (Good or Evil) and the time spent with an axis (Order, Chaos or Balance) in this Reincarnation (seconds); the largest counts']],}
     weights = [[FAC_NAME[f], merc_weight(b, f)] for f in sorted(FAC_NAME) if merc_weight(b, f)]
@@ -407,7 +407,7 @@ popups are always the base values <i>v</i>.</div>
     B.a4.filter(ok).forEach(function(e){ budgetEntry(e, grid); });
     B.merc.forEach(function(e){ budgetEntry(e, grid); });      // the Mercenary sources stay at the bottom
     morebody.appendChild(grid);
-    morebody.appendChild(el('div','more','Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
+    morebody.appendChild(el('div','more','The Mercenary sources only apply while playing as a Mercenary. Weight w of each faction for this branch: '+br.bud.w.map(function(x){ return x[0]+' '+x[1]; }).join(', ')+'. Factions not listed give 0.'));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
