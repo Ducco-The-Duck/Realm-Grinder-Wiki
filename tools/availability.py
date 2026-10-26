@@ -19,12 +19,14 @@ def research_asc(r):
     return [a for a in ASCENSIONS if not ((uf is not None and a >= uf) or r['number'] > MAXNUM[a])]
 
 
-# the most Reincarnations you can have before Ascending: Ascension 0 up to 39, Ascension 1 up to 99, Ascension 2 up to 159, Ascension 3 up to 219
-REINC_CAP = [39, 99, 159, 219, 10 ** 9]
+# the Reincarnation each Ascension starts at: the save loader clamps the Ascension level by the Reincarnation count (>= 220 for 4, >= 160 for 3,
+# >= 100 for 2, >= 40 for 1; out/script/scripts/§8G§.as), and the Ascension button shows from Reincarnation 39 on while at Ascension 0
+ASC_START_REINC = [0, 40, 100, 160, 220]
 
 
 def asc_for_reincarnation(n):
-    return next(a for a in ASCENSIONS if n <= REINC_CAP[a])
+    """the first Ascension at which Reincarnation n can be reached"""
+    return next(a for a in ASCENSIONS if a == 4 or n < ASC_START_REINC[a + 1])
 
 
 def challenge_reinc(c):
@@ -34,10 +36,10 @@ def challenge_reinc(c):
 def challenge_asc(c, faction_floor=0):
     """a challenge needs the Reincarnation of its unlock requirement, which only exists from a certain Ascension on
     (Dragon challenges: Reincarnation 53, from Ascension 1; Astral: from 2; Mercenary: from 3). The faction's first challenge
-    has no requirement of its own, so it follows the lowest one of its faction."""
+    has no requirement of its own and is given by the faction's last challenge, so it follows the highest one of its faction."""
     lo = max(asc_for_reincarnation(challenge_reinc(c)), faction_floor)
     return [a for a in ASCENSIONS if a >= lo]
 
 
 def faction_floor(items):
-    return min(asc_for_reincarnation(challenge_reinc(i)) for i in items if challenge_reinc(i)) if any(challenge_reinc(i) for i in items) else 0
+    return max(asc_for_reincarnation(challenge_reinc(i)) for i in items)
