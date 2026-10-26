@@ -196,7 +196,13 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     SECTIONS.forEach(function(s){ if(s.name===p[0]) s.items.forEach(function(i){ if(i.n===m.name){ sec=s; it=i; } }); });
     if(!it) return false;
     showTip(sec,it,anchor); return true;
-  }, function(){});
+  }, function(){}, function(m){
+    var p=m.key.split('/'), hit=null;
+    root.querySelectorAll('section').forEach(function(sec){
+      if(sec.querySelector('h2').firstChild.textContent===p[0]) sec.querySelectorAll('.cell').forEach(function(c){ if(c.getAttribute('aria-label')===m.name) hit=c; });
+    });
+    return hit;
+  });
 })();
 </script>
 </body>

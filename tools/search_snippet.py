@@ -154,14 +154,22 @@ BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLD
 JS = r'''
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
   // page's own tooltip. show(message, anchor) draws it (and says whether the object was found); setAsc(n) switches the Ascension.
-  function embedInit(show, setAsc){
+  function embedInit(show, setAsc, cellOf){
     if(location.hash!=='#embed') return;
     document.documentElement.classList.add('embed');
     var t=document.getElementById('tip'), anchor=document.createElement('div');
     anchor.style.cssText='position:fixed;left:12px;top:12px;width:1px;height:1px'; document.body.appendChild(anchor);
     function say(o){ o.rg='tipsize'; parent.postMessage(o, location.origin); }
     window.addEventListener('message', function(ev){
-      var m=ev.data; if(!m || m.rg!=='tip') return;
+      var m=ev.data;
+      if(m && m.rg==='cells'){      // the cells (icons) of several objects, as drawn on this page at that Ascension
+        var out={};
+        try{ setAsc(m.asc); }catch(e){}
+        m.items.forEach(function(i){ try{ var c=cellOf && cellOf(i); out[i.key]=c ? c.outerHTML : ''; }catch(e){ out[i.key]=''; } });
+        parent.postMessage({rg:'cellsout', asc:m.asc, cells:out}, location.origin);
+        return;
+      }
+      if(!m || m.rg!=='tip') return;
       if(m.hide){ t.style.display='none'; return; }
       var ok=false;
       try{ if(m.asc!=null) setAsc(m.asc); ok=show(m, anchor); }catch(e){ ok=false; }

@@ -461,7 +461,10 @@ popups are always the base values <i>v</i>.</div>
     var hit=null; cells.forEach(function(p){ if(p[1].k.indexOf(m.key+' ')===0) hit=p[1]; });
     if(!hit) return false;
     showTip(hit,anchor); return true;
-  }, function(a){ ASC=a; apply(); });
+  }, function(a){ ASC=a; apply(); }, function(m){
+    var hit=null; cells.forEach(function(p){ if(p[1].k.indexOf(m.key+' ')===0) hit=p[0]; });
+    return hit;
+  });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });

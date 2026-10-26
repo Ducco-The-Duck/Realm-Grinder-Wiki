@@ -79,7 +79,16 @@ h1{margin:0 0 4px;font-size:1.7rem}
 .sel .chip button:hover{color:var(--fg)}
 .res{display:flex;gap:10px;padding:9px 10px;margin:0 0 6px;border:1px solid var(--line);border-radius:8px;background:var(--card);cursor:pointer;color:inherit;text-decoration:none}
 .res:hover,.res:focus-visible{background:var(--cellhi);outline:none}
-.res .ic{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--cell);display:flex;align-items:center;justify-content:center}
+.res .ic{flex:none;width:56px;height:56px;border:1px solid var(--line);border-radius:8px;background:var(--cell);display:flex;align-items:center;justify-content:center}
+.res .ic.real{border:0;background:none;border-radius:0}
+/* the cells of the pages (drawn there at the chosen Ascension): the same rules as on the pages; the frames come from the shared styles */
+.ic .cell{position:relative;width:56px;height:56px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;display:flex;align-items:center;justify-content:center;cursor:inherit;font:inherit;color:inherit;pointer-events:none}
+.ic .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
+.ic .cell img.ov{position:absolute;inset:0;margin:auto;width:100%;height:100%;object-fit:contain}
+.ic .cell.fac{background:var(--fc);border-color:rgba(255,255,255,.22)}
+.ic .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.ic .cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
+.ic .cell .badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700}
 .res .ic img{max-width:100%;max-height:100%;image-rendering:pixelated}
 .res .body{min-width:0;flex:1}
 .res .nm{font-weight:600}
@@ -184,8 +193,11 @@ h1{margin:0 0 4px;font-size:1.7rem}
   window.addEventListener('message', function(ev){
     var m=ev.data; if(!m) return;
     if(m.rg==='tipready'){
-      Object.keys(FR).forEach(function(k){ if(FR[k].f.contentWindow===ev.source) FR[k].ready=true; });
+      Object.keys(FR).forEach(function(k){ if(FR[k].f.contentWindow===ev.source){ FR[k].ready=true; flushCells(FR[k]); } });
       if(cur && FR[cur.o.p].ready && !cur.shown) ask();
+    } else if(m.rg==='cellsout'){
+      Object.keys(m.cells).forEach(function(k){ CELLS[k+'|'+m.asc]=m.cells[k]; });
+      if(m.asc===ASC) root.querySelectorAll('.res').forEach(function(a){ if(a._o) paintIcon(a); });
     } else if(m.rg==='tipsize' && cur && m.id===cur.id){
       var fr=FR[cur.o.p];
       if(!m.ok){ showTip(cur.o, cur.hits, cur.a); return; }
@@ -197,6 +209,23 @@ h1{margin:0 0 4px;font-size:1.7rem}
       fr.f.style.left=x+'px'; fr.f.style.top=y+'px'; cur.shown=true;
     }
   });
+  // the icons: each page draws the cell of its objects (faction colours, Ascension marks, research numbers) at the chosen Ascension; they come in
+  // after the frames of the pages have loaded, and show the plain icon until then
+  var CELLS={};
+  function paintIcon(a){
+    var h=CELLS[a._o.k+'|'+ASC];
+    if(h){ a._ic.className='ic real'; a._ic.innerHTML=h; }
+  }
+  function flushCells(fr){
+    if(!fr.ready || !fr.q || !fr.q.length) return;
+    var items=fr.q.splice(0);
+    fr.f.contentWindow.postMessage({rg:'cells', asc:ASC, items:items.map(function(o){ return {key:o.k, name:o.n}; })}, location.origin);
+  }
+  function wantCells(list){
+    var by={}, seen={};
+    list.forEach(function(o){ if(CELLS[o.k+'|'+ASC]!==undefined || seen[o.k]) return; seen[o.k]=1; (by[o.p]=by[o.p]||[]).push(o); });
+    Object.keys(by).forEach(function(p){ var fr=frameFor(p); fr.q=(fr.q||[]).concat(by[p]); flushCells(fr); });
+  }
   function hover(o, hits, a){
     hideAll();
     cur={o:o, hits:hits, a:a, id:++seq, shown:false};
@@ -228,7 +257,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
   }
   function render(){
     var A=terms(qa.value);      // the Changes and Based on boxes only look for tags to pick (see suggest); the picked tags filter
-    root.textContent=''; hideTip();
+    root.textContent=''; hideTip(); var shown=[];
     var types={Upgrade:tu.checked, Research:tr.checked, Challenge:tc.checked};
     var found=[];
     DATA.objs.forEach(function(o){
@@ -242,6 +271,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
       var o=f[0], hits=f[1];
       var a=el('a','res'); a.href=o.p+'#q='+encodeURIComponent(o.n);
       var ic=el('div','ic'); if(o.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(o.i); img.alt=''; img.loading='lazy'; ic.appendChild(img); }
+      a._o=o; a._ic=ic; shown.push(o); paintIcon(a);
       a.appendChild(ic);
       var b=el('div','body'), nm=el('div','nm',o.n); nm.appendChild(el('span','src',o.s)); b.appendChild(nm);
       hits.slice(0,3).forEach(function(e){ var d=el('div','fx'); d.appendChild(el('div',null,e.t)); chips(d,e); b.appendChild(d); });
@@ -251,6 +281,7 @@ h1{margin:0 0 4px;font-size:1.7rem}
       a.addEventListener('focus',function(){ hover(o,hits,a); }); a.addEventListener('blur',hideTip);
       root.appendChild(a);
     });
+    wantCells(shown);
   }
   function drawSel(){
     [[PX,'x'],[PY,'y']].forEach(function(p){
