@@ -1127,7 +1127,7 @@
      "alignment-tier"
     ],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    },
@@ -1142,7 +1142,7 @@
     ],
     "scope": [],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -1191,7 +1191,8 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline spell casts"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [
@@ -1832,7 +1833,7 @@
     ],
     "scope": [],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    },
@@ -1847,7 +1848,7 @@
     ],
     "scope": [],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -3602,7 +3603,7 @@
      "all"
     ],
     "y": [
-     "?buildings of the same type"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -3706,7 +3707,7 @@
      "all"
     ],
     "y": [
-     "?tier"
+     "building tier"
     ],
     "seconds": null
    }
@@ -5947,7 +5948,7 @@
      "unique"
     ],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -6040,7 +6041,20 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "All faction spells gain 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spell tier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Essence Extractor": {
   "src": "upgrade",
@@ -6698,7 +6712,7 @@
     ],
     "scope": [],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -6842,7 +6856,7 @@
      "all"
     ],
     "y": [
-     "?tier"
+     "building tier"
     ],
     "seconds": null
    }
@@ -8801,6 +8815,18 @@
     "scope": [],
     "y": [],
     "seconds": null
+   },
+   {
+    "text": "Set Bonus 2: All alignment spells gain 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spell tier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
    }
   ]
  },
@@ -9319,7 +9345,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?autoclick power"
+     "autoclicks"
     ],
     "scope": [],
     "y": [
@@ -9406,7 +9432,7 @@
      "unique"
     ],
     "y": [
-     "?amount"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -9711,7 +9737,20 @@
    3,
    4
   ],
-  "effects": []
+  "effects": [
+   {
+    "text": "Base Faction spells gain 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spell tier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   }
+  ]
  },
  "allegiances/Demon Perk 2": {
   "src": "upgrade",
@@ -10776,7 +10815,7 @@
      "unique"
     ],
     "y": [
-     "?buildings of the same type"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -11326,7 +11365,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11351,7 +11390,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?autoclick power"
+     "autoclicks"
     ],
     "scope": [],
     "y": [
@@ -11366,7 +11405,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11407,7 +11446,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11447,7 +11486,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11488,7 +11527,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11531,7 +11570,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11571,7 +11610,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11611,7 +11650,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11650,7 +11689,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11693,7 +11732,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11740,7 +11779,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -11780,7 +11819,7 @@
     "mode": null,
     "trigger": "When using their respective lineage",
     "x": [
-     "?advanced heritages powers"
+     "advanced heritage power"
     ],
     "scope": [],
     "y": [
@@ -13208,7 +13247,7 @@
      "all"
     ],
     "y": [
-     "?tier"
+     "building tier"
     ],
     "seconds": null
    }
@@ -14307,7 +14346,7 @@
      "all"
     ],
     "y": [
-     "?tier"
+     "building tier"
     ],
     "seconds": null
    }
@@ -14778,7 +14817,7 @@
      "all"
     ],
     "y": [
-     "?tier"
+     "building tier"
     ],
     "seconds": null
    }
@@ -15919,7 +15958,7 @@
     "mode": null,
     "trigger": "Only while offline",
     "x": [
-     "?spells cast amount"
+     "spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -15944,7 +15983,7 @@
     "mode": null,
     "trigger": "Only while offline",
     "x": [
-     "?spells cast amount"
+     "spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -18035,7 +18074,9 @@
     "mode": null,
     "trigger": null,
     "x": [
-     "?headstart time"
+     "spells",
+     "brainwave",
+     "headstart time"
     ],
     "scope": [],
     "y": [
@@ -18074,7 +18115,9 @@
     "mode": null,
     "trigger": null,
     "x": [
-     "?headstart time"
+     "spells",
+     "brainwave",
+     "headstart time"
     ],
     "scope": [],
     "y": [
@@ -18112,7 +18155,9 @@
     "mode": null,
     "trigger": null,
     "x": [
-     "?headstart time"
+     "spells",
+     "brainwave",
+     "headstart time"
     ],
     "scope": [],
     "y": [
@@ -18149,7 +18194,9 @@
     "mode": null,
     "trigger": null,
     "x": [
-     "?headstart time"
+     "spells",
+     "brainwave",
+     "headstart time"
     ],
     "scope": [],
     "y": [
@@ -19203,7 +19250,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline bonus"
+     "offline production"
     ],
     "scope": [],
     "y": [
@@ -19242,7 +19289,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline bonus"
+     "offline production"
     ],
     "scope": [],
     "y": [
@@ -19280,7 +19327,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline bonus"
+     "offline production"
     ],
     "scope": [],
     "y": [
@@ -19317,7 +19364,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline bonus"
+     "offline production"
     ],
     "scope": [],
     "y": [
@@ -39071,7 +39118,8 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline spells cast"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -39792,7 +39840,8 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?offline spells cast amount"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -41128,7 +41177,7 @@
      "all"
     ],
     "y": [
-     "?quantity"
+     "building quantity"
     ],
     "seconds": null
    }
@@ -41170,7 +41219,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?autoclick power"
+     "autoclicks"
     ],
     "scope": [],
     "y": [],
@@ -41531,7 +41580,7 @@
     "mode": "multiplicatively",
     "trigger": null,
     "x": [
-     "?autoclick power"
+     "autoclicks"
     ],
     "scope": [],
     "y": [],
@@ -41706,7 +41755,8 @@
     "mode": "multiplicative",
     "trigger": null,
     "x": [
-     "?offline spells cast amount"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -44615,6 +44665,18 @@
   ],
   "effects": [
    {
+    "text": "All Balance spells gain 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spell tier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
+   {
     "text": "Increase Offline production based on the maximum amount of time spent as Balance in this Reincarnation.",
     "verb": "increase",
     "mode": null,
@@ -44921,7 +44983,8 @@
     "mode": "multiplicative",
     "trigger": null,
     "x": [
-     "?offline spells cast amount"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [],
@@ -46284,7 +46347,8 @@
     "mode": "multiplicative",
     "trigger": null,
     "x": [
-     "?offline spells cast amount"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [
@@ -46702,7 +46766,7 @@
     ],
     "scope": [],
     "y": [
-     "?building tiers hit"
+     "building tier"
     ],
     "seconds": null
    }
@@ -47273,7 +47337,8 @@
     "mode": "multiplicative",
     "trigger": null,
     "x": [
-     "?offline spells cast amount"
+     "spells cast amount",
+     "offline spells cast amount"
     ],
     "scope": [],
     "y": [
@@ -47435,6 +47500,18 @@
    4
   ],
   "effects": [
+   {
+    "text": "Good: Call to Arms gains 1 tier.",
+    "verb": "increase",
+    "mode": null,
+    "trigger": null,
+    "x": [
+     "spell tier"
+    ],
+    "scope": [],
+    "y": [],
+    "seconds": null
+   },
    {
     "text": "Evil: Multiplicatively increase Tax Collection worth.",
     "verb": "increase",

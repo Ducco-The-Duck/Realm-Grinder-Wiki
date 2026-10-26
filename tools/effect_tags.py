@@ -128,7 +128,14 @@ def xtags(raw):
     elif 'tax collection' in s:
         add('tax collection', 'tax collection worth' if 'worth' in s else 'triggered tax collections')
     elif s.startswith('count of '): add(s[9:] + ' count')
-    elif s == 'autoclicks': add('autoclicks')
+    elif s in ('autoclicks', 'autoclick power'): add('autoclicks')
+    elif s == 'offline bonus': add('offline production')
+    elif s in ('assistant production', 'assistants production'): add('production', 'assistants production')
+    elif s == 'advanced heritages powers': add('advanced heritage power')
+    elif s == 'headstart time': add('spells', 'brainwave', 'headstart time')
+    elif s in ('offline spells cast amount', 'offline spell casts', 'offline spells cast'): add('spells cast amount', 'offline spells cast amount')
+    elif s in ('spells cast amount', 'spells cast'): add('spells cast amount')
+    elif re.search(r'\btiers?$', s) and ('spell' in s or 'gain' in s): add('spell tier')
     elif 'gem power' in s or 'ruby power' in s: add('gem power' if 'gem' in s else 'ruby power')
     elif re.search(r'assistants?', s): add('assistants')
     elif 'set power' in s: add('set power')
@@ -165,6 +172,8 @@ def ytags(raw):
     if R_(r'maximum mana|max mana'): add('maximum mana')
     if R_(r'mana regeneration'): add('mana regeneration')
     if R_(r'spell tier'): add('spell tier')
+    elif R_(r'^(?:their |its )?tier$|building tiers? hit'): add('building tier')
+    if R_(r'^(?:their |its )?(?:quantity|amount)$|buildings of the same type'): add('building quantity')
     if R_(r'assistants'): add('assistants owned')
     if R_(r'faction coin|coins found|(?:fairy|elven|angel|goblin|undead|demon|titan|druid|faceless|dwarven|drow|dragon|archon|djinn|makers) coins'):
         add('faction coins found')
@@ -231,6 +240,8 @@ def special(s, trigger):
     if m: return [{'verb': 'increase', 'x_raw': 'autoclicks', 'y_raw': m.group(2), 'mode': None, 'trigger': trigger or (m.group(1) and 'While ' + m.group(1))}]
     m = re.match(r'^(.*?)\s*(?:is|are) worth more seconds based on\s+(.+?)$', s, re.I)
     if m: return [{'verb': 'increase', 'x_raw': 'tax collection worth', 'y_raw': m.group(2), 'mode': None, 'trigger': trigger}]
+    m = re.match(r'^(.+?\bspells?|call to arms|[\w\' ]+?)\s+gains?\s+\d+\s+tiers?(?:\s+per .*)?$', s, re.I)
+    if m: return [{'verb': 'increase', 'x_raw': 'spell tier', 'y_raw': None, 'mode': None, 'trigger': trigger}]
     m = re.match(r'^lower\s+(.+?)\s+based on\s+(.+?)$', s, re.I)
     if m: return [{'verb': 'reduce', 'x_raw': m.group(1), 'y_raw': m.group(2), 'mode': None, 'trigger': trigger}]
     return None
