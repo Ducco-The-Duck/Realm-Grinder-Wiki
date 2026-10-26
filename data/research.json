@@ -316,7 +316,7 @@
 "faction_kind": "base",
 "unlock_faction": 1,
 "unlock_faction_name": "Elf",
-"mercenary_note": "Mercenaries can buy this when they have the upgrades Elven Luck and Elven Perk 1.",
+"mercenary_note": "Mercenaries can buy this when they can trigger Elven Luck.",
 "alignment_lock": null,
 "alignment_not": null,
 "unavailable_from": 3,

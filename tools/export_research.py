@@ -187,6 +187,7 @@ COST_AMOUNTS = {'Bartering': [('Reduce Enchanted Fields cost multiplier.', 'Redu
                 'Discount': [('Reduce Royal Exchange, Excavation and Building cost multipliers.', 'Reduce Royal Exchange, Excavation and Building cost multipliers. (-0.02 each)')],
                 'Asceticism': [('gain a fraction of that time spent with all factions.', 'gain a fraction of that time spent with all factions. (10%)')]}
 # production effects the Ascension penalty hits that the description does not show: name -> (first Ascension, no penalty at Ascension 4)
+MERC_NOTE_FIX = {'Empowered Luck': 'Mercenaries can buy this when they can trigger Elven Luck.'}      # worded by hand: it needs the Elven Luck upgrade and Elven Perk 1
 PEN_FIX = {'Journeymen': (1, False), 'Hierarchy': (1, False), 'Solemnity': (2, False),
            'Upheaval': (2, False), 'Decentralization': (4, False)}
 # Weighting's first value is 2000^tier (%), the targeted building's own bonus; the user judged it self-evident from the text
@@ -368,6 +369,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
                     pls_.append(pu)
         if pls_ and len(pls_) == len(ups_):
             merc_note = 'Mercenaries can buy this when they have ' + ' and '.join(pls_) + '.'
+    merc_note = MERC_NOTE_FIX.get(r['n'], merc_note)
     # text that changes with the Ascension
     by_asc, prev = {}, (desc, reqs)
     for A in range(1, MAX_ASC + 1):
