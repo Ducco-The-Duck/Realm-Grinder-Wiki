@@ -20,8 +20,8 @@ nav.tabs .tab::before{content:"";position:absolute;left:0;top:0;width:100%;heigh
 nav.tabs .tab[aria-current]::before{border-image-source:url(assets/ui/trim/Gold.png)}
 nav.tabs .tab:hover::before{border-image-source:url(assets/ui/trim/Gold_Hover.png)}
 nav.tabs .tab::after{content:"";position:absolute;z-index:2;left:0;top:calc(44px*var(--s));width:100%;height:calc(34px*var(--s));
-  background:url(assets/ui/nav/redRibbon.png) 0 0/100% 100% no-repeat;image-rendering:pixelated}
-nav.tabs .tab[aria-current]::after{background-image:url(assets/ui/nav/redRibbon_Selected.png)}
+  box-sizing:border-box;border:solid transparent;border-width:0 calc(14px*var(--s));border-image:url(assets/ui/nav/redRibbon.png) 0 14 fill / 0 calc(14px*var(--s)) / 0 stretch;image-rendering:pixelated}
+nav.tabs .tab[aria-current]::after{border-image-source:url(assets/ui/nav/redRibbon_Selected.png)}
 nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
 nav.tabs .tab span.n{position:absolute;z-index:3;left:0;right:0;top:calc(48px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
   font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(14px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
