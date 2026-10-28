@@ -336,6 +336,8 @@ nav.tabs .tab[aria-current]::before{border-image-source:url(assets/ui/trim/Gold.
 nav.tabs .tab:hover::before{border-image-source:url(assets/ui/trim/Gold_Hover.png)}
 nav.tabs .tab::after{content:"";position:absolute;z-index:2;left:0;top:calc(44px*var(--s));width:100%;height:calc(34px*var(--s));
   box-sizing:border-box;border:solid transparent;border-width:0 calc(14px*var(--s));border-image:url(assets/ui/nav/redRibbon.png) 0 14 fill / 0 calc(14px*var(--s)) / 0 stretch;image-rendering:pixelated}
+nav.tabs .tab.long::after{left:calc(-9px*var(--s));width:calc(100% + 18px*var(--s))}
+nav.tabs .tab.long span.n{left:calc(-9px*var(--s));right:calc(-9px*var(--s))}
 nav.tabs .tab[aria-current]::after{border-image-source:url(assets/ui/nav/redRibbon_Selected.png)}
 nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
 nav.tabs .tab span.n{position:absolute;z-index:3;left:0;right:0;top:calc(48px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
@@ -357,14 +359,15 @@ def game_nav(current=None, current_file=None):
     out = []
     for href, label, ic, y in TABS:
         cur = ' aria-current="page"' if href == current else ''
+        lg = ' long' if len(label) > 10 else ''      # a longer name gets a ribbon a little wider than the frame
         inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}"><span class="n">{label}</span>'
         if href == 'upgrades.html':
             links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
             q = "'"
-            out.append(f'<span class="dd-nav"><a class="tab" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
+            out.append(f'<span class="dd-nav"><a class="tab{lg}" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
                        f'<span class="dd-menu">{links}</span></span>')
         else:
-            out.append(f'<a class="tab" href="{href}"{cur}>{inner}</a>')
+            out.append(f'<a class="tab{lg}" href="{href}"{cur}>{inner}</a>')
     return '<nav class="tabs">' + ''.join(out) + '</nav>'
 
 
