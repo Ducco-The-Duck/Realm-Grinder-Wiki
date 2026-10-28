@@ -249,21 +249,20 @@ body.steel .search input{padding:0 96px 0 8px}
 .search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
 .sx{display:none!important}
 /*NAVCSS*/
-nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0 6px;margin:0 0 12px;--s:1.25;border:0;padding:0;
-  position:relative;left:50%;width:min(1000px,100vw - 24px);transform:translateX(-50%)}
-nav.tabs .tab{position:relative;display:block;width:calc(126px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
+nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1.15;border:0;padding:0}
+nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
   cursor:pointer;image-rendering:pixelated;font-weight:400;-webkit-tap-highlight-color:transparent}
 /* the frame (the wiki's steel trim; gold for the open page), then the icon, then the ribbon with the name */
-nav.tabs .tab::before{content:"";position:absolute;left:calc(17px*var(--s));top:0;width:calc(92px*var(--s));height:calc(76px*var(--s));box-sizing:border-box;
+nav.tabs .tab::before{content:"";position:absolute;left:0;top:0;width:100%;height:calc(76px*var(--s));box-sizing:border-box;
   border:calc(8px*var(--s)) solid transparent;border-image:url(assets/ui/trim/Steel.png) 8 fill / calc(8px*var(--s)) / 0 stretch;image-rendering:pixelated}
 nav.tabs .tab[aria-current]::before{border-image-source:url(assets/ui/trim/Gold.png)}
 nav.tabs .tab:hover::before{border-image-source:url(assets/ui/trim/Gold_Hover.png)}
 nav.tabs .tab::after{content:"";position:absolute;z-index:2;left:0;top:calc(44px*var(--s));width:100%;height:calc(34px*var(--s));
   background:url(assets/ui/nav/redRibbon.png) 0 0/100% 100% no-repeat;image-rendering:pixelated}
 nav.tabs .tab[aria-current]::after{background-image:url(assets/ui/nav/redRibbon_Selected.png)}
-nav.tabs .tab img{position:absolute;z-index:1;left:calc(31px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
+nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
 nav.tabs .tab span.n{position:absolute;z-index:3;left:0;right:0;top:calc(48px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
-  font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(17px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
+  font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(14px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
 nav.tabs .tab:hover img,nav.tabs .tab:focus-visible img{filter:brightness(1.25)}
 nav.tabs .tab:hover::after{filter:brightness(1.2)}
 nav.tabs .dd-nav{display:block;position:relative}
