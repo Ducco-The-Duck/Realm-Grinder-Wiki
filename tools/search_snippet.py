@@ -321,11 +321,55 @@ UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.ht
                  ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
 
 
-def upgrades_nav(current_file=None, parent_current=False):
-    """the nav entry "Upgrades" with its drop-down of the four upgrade pages"""
-    links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
-    return ('<span class="dd-nav"><a role="button" tabindex="0" style="cursor:pointer"' + (' aria-current="page"' if parent_current else '') +
-            " onclick=\"this.parentNode.classList.toggle('open')\">Upgrades</a><span class=\"dd-menu\">" + links + '</span></span>')
+# the nav is the game's tab column laid out in a row: 72x62 button with the icon, the red ribbon (126x34) with the name on it
+TABS = [('index.html', 'Home', 'UiBuildings', 0), ('upgrades.html', 'Upgrades', 'UiUpgrades', 0), ('trophies.html', 'Trophies', 'UiTrophies', -6),
+        ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3)]
+
+NAV_CSS = r'''/*NAVCSS*/
+nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0 6px;margin:0 0 12px;--s:.8;border:0;padding:0}
+nav.tabs .tab{position:relative;display:block;width:calc(126px*var(--s));height:calc(74px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
+  cursor:pointer;image-rendering:pixelated;font-weight:400;-webkit-tap-highlight-color:transparent}
+nav.tabs .tab::before{content:"";position:absolute;left:0;top:calc(40px*var(--s));width:100%;height:calc(34px*var(--s));
+  background:url(assets/ui/nav/redRibbon.png) 0 0/100% 100% no-repeat;image-rendering:pixelated}
+nav.tabs .tab[aria-current]::before{background-image:url(assets/ui/nav/redRibbon_Selected.png)}
+nav.tabs .tab img{position:absolute;left:calc(31px*var(--s));top:calc(var(--y)*var(--s));width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
+nav.tabs .tab span.n{position:absolute;left:0;right:0;top:calc(44px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
+  font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(15px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
+nav.tabs .tab:hover img,nav.tabs .tab:focus-visible img{filter:brightness(1.25)}
+nav.tabs .tab:hover::before{filter:brightness(1.2)}
+nav.tabs .dd-nav{display:block;position:relative}
+nav.tabs .dd-menu{display:none;position:absolute;z-index:70;flex-direction:column}
+nav.tabs .dd-nav:hover .dd-menu,nav.tabs .dd-nav:focus-within .dd-menu,nav.tabs .dd-nav.open .dd-menu{display:flex}
+nav.tabs .dd-nav .dd-menu{top:calc(74px*var(--s));left:50%;transform:translateX(-50%);min-width:0;border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 4px;gap:0;color:#ece6d8;--cell:#2b261f;--cellhi:#3a3328;--fg:#ece6d8}
+nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none}
+@media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.8;gap:0}}
+/*ENDNAVCSS*/'''
+
+
+def game_nav(current=None, current_file=None):
+    """the nav: `current` is the href of the open page (an upgrade page counts as upgrades.html), `current_file` the upgrade page"""
+    out = []
+    for href, label, ic, y in TABS:
+        cur = ' aria-current="page"' if href == current else ''
+        inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}"><span class="n">{label}</span>'
+        if href == 'upgrades.html':
+            links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
+            q = "'"
+            out.append(f'<span class="dd-nav"><a class="tab" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
+                       f'<span class="dd-menu">{links}</span></span>')
+        else:
+            out.append(f'<a class="tab" href="{href}"{cur}>{inner}</a>')
+    return '<nav class="tabs">' + ''.join(out) + '</nav>'
+
+
+def put_nav(html, current_file=None):
+    """replace the page's `<nav>` by the game-style one (the open page is read from the old nav)"""
+    import re as _re
+    old = html[html.find('<nav'):html.find('</nav>')] if '<nav' in html else ''
+    m = _re.search(r'<a (?:class="tab" )?href="([^"]+)"[^>]*aria-current="page"', old) or _re.search(r'<a [^>]*role="button"[^>]*(aria-current)', old)
+    cur = (m.group(1) if m.group(1) != 'aria-current' else 'upgrades.html') if m else None
+    return _re.sub(r'<nav[^>]*>.*?</nav>', lambda _: game_nav(cur, current_file), html, count=1, flags=_re.S)
 
 
 GV_CSS = '.gv{margin-top:36px;text-align:center;font-size:18px;color:var(--muted);opacity:.7}'
@@ -362,8 +406,7 @@ def apply(html, placeholder, current_file=None):
                    % {'a': m.group(1)}, html)
     html = _re.sub(r'<p class="sub">.*?</p>\n?', '', html, flags=_re.S)      # no explanation under the page header
     html = html.replace('<body>', '<body class="steel">', 1)
-    html = html.replace('<a href="upgrades.html" aria-current="page">Upgrades</a>', upgrades_nav(current_file, True))
-    html = html.replace('<a href="upgrades.html">Upgrades</a>', upgrades_nav(current_file, False))
+    html = put_nav(html, current_file)
     html = stamp(html)
-    return (html.replace('/*SEARCH_CSS*/', CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
+    return (html.replace('/*SEARCH_CSS*/', CSS + NAV_CSS).replace('<!--SEARCH_BAR-->', BAR.replace('__PLACEHOLDER__', placeholder))
                 .replace('/*SEARCH_JS*/', JS))

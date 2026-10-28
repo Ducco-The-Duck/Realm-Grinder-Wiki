@@ -13,7 +13,7 @@ added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
 2. `python -I tools/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
-3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts, then the `build_*_page.py` scripts and `build_index.py` (stamps the game version on the home page)
+3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts (`export_nav.py` copies the sprites of the nav's tab buttons), then the `build_*_page.py` scripts and `build_index.py` (stamps the game version and the tab nav on the home page)
    (the commands are in `data/GLOSSARY.md`).
 4. `python -I tools/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
    overrides (formulas, notes, fixes in the exporters) whose item changed. Review that list, nothing else.
