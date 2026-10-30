@@ -10,7 +10,7 @@
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:680px;margin:0 auto;padding:16px 16px 80px}
+main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .asc{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 -16px 18px;padding:8px 16px;
   background:var(--bg);border-bottom:1px solid var(--line)}
 .asc label{font-weight:600}
@@ -77,7 +77,7 @@ section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
 @font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
 html{font-size:30px}
 body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.12;letter-spacing:.01em}
-main{max-width:680px}
+main{max-width:780px}
 #tip{width:min(620px,calc(100vw - 16px))}
 #tip b.t,#tip>b:first-child{display:block;font-size:1.3em;line-height:1.1;margin-bottom:2px}
 #pop h3,#more h3{font-size:1.25em}
@@ -187,7 +187,7 @@ body.steel .search input{padding:0 96px 0 8px}
 .search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
 .sx{display:none!important}
 /*NAVCSS*/
-nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1;border:0;padding:0}
+nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1.15;border:0;padding:0}
 nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
   cursor:pointer;image-rendering:pixelated;font-weight:400;-webkit-tap-highlight-color:transparent}
 /* the frame (the wiki's steel trim; gold for the open page), then the icon, then the ribbon with the name */
