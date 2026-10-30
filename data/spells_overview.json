@@ -38,7 +38,11 @@
   },
   "Fairy Chanting": {
    "description": "Increase the production of Farms, Inns and Blacksmiths based on the amounts built.",
-   "tags": []
+   "tags": [
+    "Good",
+    "Chaos",
+    "Faction"
+   ]
   },
   "Gem Grinder": {
    "description": "Multiplicatively increase the production bonus from Gems.",
@@ -57,7 +61,11 @@
   },
   "God's Hand": {
    "description": "Increase the production of all buildings based on your Mana Regeneration. The duration increases with time spent as Good in this Reincarnation.",
-   "tags": []
+   "tags": [
+    "Good",
+    "Order",
+    "Faction"
+   ]
   },
   "Grand Balance": {
    "description": "Increase the production of your least productive buildings based on the three most built ones.",
@@ -92,7 +100,11 @@
   },
   "Moon Blessing": {
    "description": "Increase the production of all buildings based on clicks made in this Reincarnation. Autoclick 15 times per second.",
-   "tags": []
+   "tags": [
+    "Good",
+    "Balance",
+    "Faction"
+   ]
   },
   "Night Time": {
    "description": "The production of assistants is increased based on Necropolises owned.",
