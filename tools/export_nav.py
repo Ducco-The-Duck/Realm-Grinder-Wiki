@@ -8,8 +8,10 @@ import os, shutil
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SRC = os.path.join(ROOT, 'assets', 'sprites', 'realmgrinderui_new')
 DST = os.path.join(ROOT, 'docs', 'assets', 'ui', 'nav')
-NAMES = ['UiBuildings', 'UiUpgrades', 'UiTrophies', 'UiExcavation', 'UiResearch', 'UiChallenges', 'redRibbon', 'redRibbon_Selected']
+NAMES = ['UiBuildings', 'UiUpgrades', 'UiTrophies', 'UiExcavation', 'UiResearch', 'UiChallenges', 'redRibbon', 'redRibbon_Selected', 'UICrystalBall']
 os.makedirs(DST, exist_ok=True)
 for n in NAMES:
-    shutil.copyfile(os.path.join(SRC, n + '.png'), os.path.join(DST, n + '.png'))
+    src = os.path.join(SRC, n + '.png')
+    if not os.path.exists(src): src = os.path.join(os.path.dirname(SRC), 'realmgrinderui2_new', n + '.png')
+    shutil.copyfile(src, os.path.join(DST, n + '.png'))
 print('nav sprites:', len(NAMES))
