@@ -244,6 +244,7 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
   try{ var saved=parseInt(localStorage.getItem('rg-ascension'),10); if(saved>=0 && saved<=MAXA) ASC=saved; }catch(e){}
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
+  enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
 
   // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)

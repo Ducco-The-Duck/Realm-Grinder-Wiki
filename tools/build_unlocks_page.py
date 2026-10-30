@@ -64,6 +64,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   try{ var saved=parseInt(localStorage.getItem('rg-ascension'),10); if(saved>=0 && saved<=MAXA) ASC=saved; }catch(e){}
   sel.value=String(ASC);
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
+  enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
 /*SEARCH_JS*/
 })();
