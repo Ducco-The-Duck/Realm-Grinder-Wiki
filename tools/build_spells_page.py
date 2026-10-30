@@ -37,18 +37,18 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .tags{display:flex;gap:4px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
 .chip{font-size:.72em;height:1.5em;line-height:1.5em;box-sizing:border-box;white-space:nowrap;padding:0 .5em;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
 .chip{border-color:transparent}
-.chip.tax-collection{background:#c9a227;color:#2a1f00}
-.chip.common{background:#8b5a2b;color:#fff}
-.chip.pseudo-faction{background:repeating-linear-gradient(45deg,#7a35b0 0 6px,#141414 6px 12px);color:#fff;text-shadow:0 0 2px #000,0 0 2px #000}
-.chip.alignment{background:#141414;color:#eee;border-color:#555}
-.chip.good{background:#8fd0ff;color:#0a2a40}
-.chip.evil{background:#c0392b;color:#fff}
-.chip.neutral{background:#9a9a9a;color:#111}
-.chip.order{background:#f4f4f4;color:#222}
-.chip.chaos{background:#8ee68e;color:#0d3a0d}
-.chip.balance{background:#fff3a0;color:#4a3f00}
-.chip.faction{background:#8e44ad;color:#fff}
-.chip.seasonal{background:#ff9ec7;color:#5a0a2e}
+.chip.c-tax-collection{background:#c9a227;color:#2a1f00}
+.chip.c-common{background:#8b5a2b;color:#fff}
+.chip.c-pseudo-faction{background:repeating-linear-gradient(45deg,#7a35b0 0 6px,#141414 6px 12px);color:#fff;text-shadow:0 0 2px #000,0 0 2px #000}
+.chip.c-alignment{background:#141414;color:#eee;border-color:#555}
+.chip.c-good{background:#8fd0ff;color:#0a2a40}
+.chip.c-evil{background:#c0392b;color:#fff}
+.chip.c-neutral{background:#9a9a9a;color:#111}
+.chip.c-order{background:#f4f4f4;color:#222}
+.chip.c-chaos{background:#8ee68e;color:#0d3a0d}
+.chip.c-balance{background:#fff3a0;color:#4a3f00}
+.chip.c-faction{background:#8e44ad;color:#fff}
+.chip.c-seasonal{background:#ff9ec7;color:#5a0a2e}
 #detail .chip{font-size:.8em}
 #detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:6px 0 0}
 #detail h3{margin:16px 0 0;color:var(--accent)}
@@ -76,7 +76,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function chips(s){
     var d=el('div','tags');
-    (s.tags||s).forEach(function(t){ d.appendChild(el('span','chip '+t.replace(/\*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-'),t)); });
+    (s.tags||s).forEach(function(t){ d.appendChild(el('span','chip c-'+t.replace(/\*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-'),t)); });
     return d;
   }
   function dur(ticks){      // durations are stored in ticks, 30 per second
