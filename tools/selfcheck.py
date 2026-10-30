@@ -117,5 +117,16 @@ try:
 except OSError:
     pass
 
+# 5. the hand-written unlocks page data
+try:
+    uk = json.load(open(os.path.join(ROOT, 'data', 'unlocks.json'), encoding='utf8'))
+    bad = [m.get('name', '?') for m in uk['mechanics'] if not isinstance(m.get('asc'), int) or not 0 <= m['asc'] <= uk['max_ascension'] or not m.get('name')]
+    print(f"5. unlocks page: {len(uk['mechanics'])} mechanics" + (f"; bad entries: {bad}" if bad else ''))
+    if bad:
+        problems.append('data/unlocks.json has entries without a name or a valid Ascension')
+except (OSError, ValueError, KeyError) as e:
+    print('5. data/unlocks.json unreadable:', e)
+    problems.append('data/unlocks.json unreadable')
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
