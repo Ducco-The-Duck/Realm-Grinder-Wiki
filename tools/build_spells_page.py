@@ -35,7 +35,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #tip b{display:block;font-size:1rem}
 #tip p{margin:4px 0 0}
 .tags{display:flex;gap:4px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
-.chip{font-size:12px;line-height:18px;white-space:nowrap;padding:0 7px;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
+.chip{font-size:.72em;height:1.5em;line-height:1.5em;box-sizing:border-box;white-space:nowrap;padding:0 .5em;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
 .chip{border-color:transparent}
 .chip.tax-collection{background:#c9a227;color:#2a1f00}
 .chip.common{background:#8b5a2b;color:#fff}
@@ -49,6 +49,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .chip.balance{background:#fff3a0;color:#4a3f00}
 .chip.faction{background:#8e44ad;color:#fff}
 .chip.seasonal{background:#ff9ec7;color:#5a0a2e}
+#detail .chip{font-size:.8em}
 #detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:6px 0 0}
 #detail h3{margin:16px 0 0;color:var(--accent)}
 #tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
