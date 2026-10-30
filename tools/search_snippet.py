@@ -319,11 +319,13 @@ JS = r'''
 
 UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),
                  ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
+MECH_PAGES = [(f'mechanics-a{a}.html', f'A{a}') for a in range(5)]      # one page per Ascension, in the Mechanics tab's drop-down
+DROPDOWNS = {'upgrades.html': UPGRADE_PAGES, 'mechanics.html': MECH_PAGES}      # tab key -> its pages
 
 
 # the nav is the game's tab column laid out in a row: 72x62 button with the icon, the red ribbon (126x34) with the name on it
 TABS = [('index.html', 'Home', 'UiBuildings', 0), ('upgrades.html', 'Upgrades', 'UiUpgrades', 0), ('trophies.html', 'Trophies', 'UiTrophies', -6),
-        ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('unlocks.html', 'Unlocks', 'UICrystalBall', 0)]
+        ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('mechanics.html', 'Mechanics', 'UICrystalBall', 0)]
 
 SMALL = ('UiUpgrades', 'UICrystalBall')
 
@@ -364,8 +366,8 @@ def game_nav(current=None, current_file=None):
         lg = ' long' if len(label) > 10 else ''      # a longer name gets a ribbon a little wider than the frame
         z = ';--z:.84' if ic in SMALL else ''      # sprites that fill their whole square are drawn a little smaller so they stay inside the frame
         inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}{z}"><span class="n">{label}</span>'
-        if href == 'upgrades.html':
-            links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
+        if href in DROPDOWNS:
+            links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in DROPDOWNS[href])
             q = "'"
             out.append(f'<span class="dd-nav"><a class="tab{lg}" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
                        f'<span class="dd-menu">{links}</span></span>')
@@ -380,6 +382,7 @@ def put_nav(html, current_file=None):
     old = html[html.find('<nav'):html.find('</nav>')] if '<nav' in html else ''
     m = _re.search(r'<a (?:class="tab" )?href="([^"]+)"[^>]*aria-current="page"', old) or _re.search(r'<a [^>]*role="button"[^>]*(aria-current)', old)
     cur = (m.group(1) if m.group(1) != 'aria-current' else 'upgrades.html') if m else None
+    if cur and cur.startswith('mechanics-a'): cur, current_file = 'mechanics.html', cur
     return _re.sub(r'<nav[^>]*>.*?</nav>', lambda _: game_nav(cur, current_file), html, count=1, flags=_re.S)
 
 

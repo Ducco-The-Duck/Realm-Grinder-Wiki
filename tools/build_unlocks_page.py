@@ -1,4 +1,4 @@
-"""Generate docs/unlocks.html from data/unlocks.json (hand-written): the game's mechanics, shown at the Ascension they are unlocked at.
+"""Generate docs/mechanics-a0.html ... mechanics-a4.html from data/unlocks.json (hand-written): the game's mechanics, one page per Ascension they are unlocked at.
 
     python -I tools/build_unlocks_page.py
 """
@@ -6,7 +6,7 @@ import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 d = json.load(open(os.path.join(ROOT, 'data', 'unlocks.json'), encoding='utf8'))
-data = json.dumps({'max': d['max_ascension'], 'mechanics': d['mechanics']}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+MAXA = d['max_ascension']
 
 html = r'''<!doctype html>
 <html lang="en">
@@ -14,7 +14,7 @@ html = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Unlocks</title>
+<title>Realm Grinder Mechanics A__ASC__</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
@@ -23,11 +23,7 @@ html = r'''<!doctype html>
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
-.asc{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 -16px 18px;padding:8px 16px;
-  background:var(--bg);border-bottom:1px solid var(--line)}
-.asc label{font-weight:600}
-.asc select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
-.asc .hint{color:var(--muted);font-size:.85rem}
+.sub{color:var(--muted);margin:0 0 18px}
 .mech{margin:0 0 26px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
@@ -55,18 +51,17 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="unlocks.html" aria-current="page">Unlocks</a></nav>
-<h1>Unlocks</h1>
-<div class="asc"><label for="asc">Ascension</label><select id="asc"></select>
-<span class="hint">The mechanics that are unlocked at the chosen Ascension.</span></div>
+<nav><a href="index.html">Home</a><a href="mechanics-a__ASC__.html" aria-current="page">Mechanics</a></nav>
+<h1>Mechanics A__ASC__</h1>
+<p class="sub">The mechanics that are unlocked at Ascension __ASC__.</p>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
-  var DATA = JSON.parse(document.getElementById('data').textContent), MAXA = DATA.max;
-  var root=document.getElementById('root'), sel=document.getElementById('asc'), ASC=0;
+  var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__;
+  var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
@@ -115,11 +110,6 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
       foldable(s, h, inner, m.name);
     });
   }
-  for(var a=0;a<=MAXA;a++){ var o=el('option',null,String(a)); o.value=String(a); sel.appendChild(o); }
-  try{ var saved=parseInt(localStorage.getItem('rg-unlocks-ascension'),10); if(saved>=0 && saved<=MAXA) ASC=saved; }catch(e){}
-  sel.value=String(ASC);
-  sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-unlocks-ascension',String(ASC)); }catch(e){} apply(); });
-  enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
   window.addEventListener('load', apply);
 /*SEARCH_JS*/
@@ -129,6 +119,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 </html>
 '''
 import search_snippet
-html = search_snippet.apply(html.replace('__DATA__', data), '')
-open(os.path.join(ROOT, 'docs', 'unlocks.html'), 'w', encoding='utf8').write(html)
-print('docs/unlocks.html', len(html) // 1024, 'KB;', len(d['mechanics']), 'mechanics')
+for a in range(MAXA + 1):
+    data = json.dumps({'mechanics': [m for m in d['mechanics'] if m['asc'] == a]}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+    page = search_snippet.apply(html.replace('__DATA__', data).replace('__ASC__', str(a)), '', f'mechanics-a{a}.html')
+    open(os.path.join(ROOT, 'docs', f'mechanics-a{a}.html'), 'w', encoding='utf8').write(page)
+print(f'docs/mechanics-a0..a{MAXA}.html;', len(d['mechanics']), 'mechanics')
