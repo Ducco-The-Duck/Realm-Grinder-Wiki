@@ -1,4 +1,5 @@
-"""Generate docs/mechanics-a0.html ... mechanics-a4.html from data/unlocks.json (hand-written): the game's mechanics, one page per Ascension they are unlocked at.
+"""Generate docs/mechanics.html (every mechanic, one section each) and docs/unlocks-a0.html ... unlocks-a4.html (what is unlocked at each Ascension)
+from data/unlocks.json (hand-written).
 
     python -I tools/build_unlocks_page.py
 """
@@ -14,7 +15,7 @@ html = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Mechanics (Ascension __ASC__)</title>
+<title>__TITLE__</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
@@ -27,7 +28,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech{margin:0 0 26px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
-.mech a{color:var(--accent)}
+.mech a,ul.items a{color:var(--accent)}
 .mech h3{margin:10px 0 2px;color:var(--accent)}
 .cell{position:relative;float:right;width:89px;height:89px;margin:0 0 8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
@@ -52,16 +53,16 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 </head>
 <body>
 <main>
-<nav><a href="index.html">Home</a><a href="mechanics-a__ASC__.html" aria-current="page">Mechanics</a></nav>
-<h1>Mechanics (Ascension __ASC__)</h1>
-<p class="sub">The mechanics that are unlocked at Ascension __ASC__.</p>
+<nav><a href="index.html">Home</a><a href="__FILE__" aria-current="page">Codex</a></nav>
+<h1>__TITLE__</h1>
+<p class="sub">__SUB__</p>
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
-  var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__;
+  var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__, MODE = '__MODE__';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -82,10 +83,19 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
     root.textContent='';
-    var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
-    if(!list.length){ root.appendChild(el('p','empty','No mechanics have been added for Ascension '+ASC+' yet.')); return; }
+    if(MODE==='unlocks'){
+      var ul0=el('ul','items');
+      DATA.mechanics.filter(function(m){ return m.asc===ASC; }).forEach(function(m){
+        var li=el('li'), a=el('a',null,m.name); a.href=m.href; li.appendChild(a);
+        if(m.unlock && m.unlock.length) li.appendChild(document.createTextNode(' — '+m.unlock[0]));
+        ul0.appendChild(li);
+      });
+      if(!ul0.children.length) root.appendChild(el('p','empty','No mechanics have been added for Ascension '+ASC+' yet.')); else root.appendChild(ul0);
+      return;
+    }
+    var list=DATA.mechanics;
     list.forEach(function(m){
-      var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div');
+      var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div'); s.id=m.id;
       s.appendChild(h);
       if(m.card){
         var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+m.card.icon; im.alt=m.card.name; c.appendChild(im);
@@ -111,6 +121,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
       s.appendChild(inner); root.appendChild(s);
       foldable(s, h, inner, m.name);
     });
+    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));      // a link to a mechanic opens its section
+    if(tgt){ if(!tgt.classList.contains('open')) tgt.querySelector('h2').click(); tgt.scrollIntoView(); }
   }
   apply();
   window.addEventListener('load', apply);
@@ -121,8 +133,20 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 </html>
 '''
 import search_snippet
+hrefs = dict(search_snippet.mechanics_list())
+for m in d['mechanics']:
+    m['id'] = search_snippet.mech_slug(m['name'])
+    m['href'] = hrefs[m['name']]
+
+
+def write(fn, title, sub, mode, asc, mechs):
+    data = json.dumps({'mechanics': mechs}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+    page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
+    page = search_snippet.apply(page, '', fn).replace('<title>' + title + '</title>', '<title>Realm Grinder ' + title + '</title>')
+    open(os.path.join(ROOT, 'docs', fn), 'w', encoding='utf8').write(page)
+
+
+write('mechanics.html', 'Mechanics', 'How the game mechanics work. Under each name is when it becomes available.', 'mechanics', 0, d['mechanics'])
 for a in range(MAXA + 1):
-    data = json.dumps({'mechanics': [m for m in d['mechanics'] if m['asc'] == a]}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
-    page = search_snippet.apply(html.replace('__DATA__', data).replace('__ASC__', str(a)), '', f'mechanics-a{a}.html')
-    open(os.path.join(ROOT, 'docs', f'mechanics-a{a}.html'), 'w', encoding='utf8').write(page)
-print(f'docs/mechanics-a0..a{MAXA}.html;', len(d['mechanics']), 'mechanics')
+    write(f'unlocks-a{a}.html', f'Unlocks (Ascension {a})', f'What is unlocked at Ascension {a}.', 'unlocks', a, d['mechanics'])
+print(f'docs/mechanics.html, docs/unlocks-a0..a{MAXA}.html;', len(d['mechanics']), 'mechanics')

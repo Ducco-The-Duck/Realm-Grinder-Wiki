@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Mechanics (Ascension 1)</title>
+<title>Realm Grinder Mechanics</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
@@ -17,7 +17,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech{margin:0 0 26px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
-.mech a{color:var(--accent)}
+.mech a,ul.items a{color:var(--accent)}
 .mech h3{margin:10px 0 2px;color:var(--accent)}
 .cell{position:relative;float:right;width:89px;height:89px;margin:0 0 8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
@@ -225,6 +225,11 @@ nav.tabs .dd-menu{display:none;position:absolute;z-index:70;flex-direction:colum
 nav.tabs .dd-nav:hover .dd-menu,nav.tabs .dd-nav:focus-within .dd-menu,nav.tabs .dd-nav.open .dd-menu{display:flex}
 nav.tabs .dd-nav .dd-menu{top:calc(78px*var(--s));left:50%;transform:translateX(-50%);min-width:0;border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 4px;gap:0;color:#ece6d8;--cell:#2b261f;--cellhi:#3a3328;--fg:#ece6d8}
+nav.tabs .dd-item{position:relative;display:block}
+nav.tabs .dd-item>a::after{content:"";float:right;margin:.45em 0 0 14px;border:5px solid transparent;border-left-color:currentColor;border-right-width:0;opacity:.7}
+nav.tabs .dd-sub{display:none;position:absolute;left:100%;top:-10px;flex-direction:column;margin-left:2px;padding:0 4px;border:8px solid transparent;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated}
+nav.tabs .dd-item:hover .dd-sub,nav.tabs .dd-item:focus-within .dd-sub{display:flex}
 nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none}
 @media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.85;gap:0}}
 /*ENDNAVCSS*/
@@ -232,15 +237,15 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
 </head>
 <body class="steel">
 <main>
-<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Mechanics</span></a><span class="dd-menu"><a href="mechanics-a0.html">Ascension 0</a><a href="mechanics-a1.html" aria-current="page">Ascension 1</a><a href="mechanics-a2.html">Ascension 2</a><a href="mechanics-a3.html">Ascension 3</a><a href="mechanics-a4.html">Ascension 4</a></span></span></nav>
-<h1>Mechanics (Ascension 1)</h1>
+<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span></a><span class="dd-menu"><span class="dd-item"><a href="mechanics.html" aria-current="page">Mechanics</a><span class="dd-sub"><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a></span></span><a href="unlocks-a0.html">Unlocks (Ascension 0)</a><a href="unlocks-a1.html">Unlocks (Ascension 1)</a><a href="unlocks-a2.html">Unlocks (Ascension 2)</a><a href="unlocks-a3.html">Unlocks (Ascension 3)</a><a href="unlocks-a4.html">Unlocks (Ascension 4)</a></span></span></nav>
+<h1>Mechanics</h1>
 <div id="root"></div>
 <div class="gv">Game version 4.3.15</div></main>
 <div id="tip" role="tooltip"></div>
-<script id="data" type="application/json">{"mechanics":[]}</script>
+<script id="data" type="application/json">{"mechanics":[{"name":"Royal Exchanges","asc":0,"unlock":["Available from the start (Reincarnation 0): the Royal Market opens as soon as you have chosen a faction."],"card":{"icon":"RoyalExchange.png","name":"Royal Market","text":"Opens the Royal Market in the game, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type."},"sections":[{"title":"What they are","text":"Royal Exchanges are bought in the Royal Market with Faction Coins, one coin type per faction. Every exchange you buy adds to a bonus that multiplies all of your production. An exchange can be bought any number of times, and the price rises with every one you buy of the same coin type."},{"title":"Bonus per exchange","text":"The base bonus is 10% per exchange. This is the Individual Bonus shown in the Royal Market. Various things in the game affect it.","formulas":[{"latex":"b = \\left(10 + \\sum a_i\\right)\\cdot\\prod_j\\left(1+\\frac{m_j}{100}\\right)","vars":[["b","the bonus per exchange, in %"],["a_i","additive increases to the Royal Exchange bonus"],["m_j","multiplicative increases to the Royal Exchange bonus, in %"]]}],"after":"For example, Diplomacy (E30) and the Titan Set add to it, and Equivalence (A5875) and the Titan Lineage multiply it."},{"title":"Overall bonus","text":"The overall bonus multiplies your total production. With no exchanges bought it is 1. At Ascension 0 every exchange adds b% of your production: 100 exchanges at 10% give a multiplier of 11. From Ascension 1 the Ascension penalty below applies.","formulas":[{"latex":"M = \\left(1+\\frac{b\\cdot N}{100}\\right)^{p}\\qquad N = n\\cdot\\prod_k\\left(1+\\frac{c_k}{100}\\right)","vars":[["M","the overall bonus, a multiplier on production"],["n","exchanges bought (Exchanges Made in the stats), all coin types together"],["N","the number of exchanges counted"],["c_k","extra exchanges counted, in %"],["p","1 at Ascension 0, see the Ascension penalty below"]]}],"after":"For example, the Archon Heritage makes every exchange count for 10% more."},{"title":"Ascension penalty","text":"From Ascension 1 the overall bonus is raised to a power p that is below 1 instead of being used as it is. This is not the penalty of the researches (the A marks): the exchanges have their own formula, which weakens with every Ascension. The Individual Bonus shown in the Royal Market is not reduced, only the overall bonus is.","formulas":[{"latex":"p = \\frac{0.7\\,E^{0.7}}{1+2.5\\,\\ln A}\\qquad E = 0.1 + \\sum e_i","vars":[["A","your Ascension (at least 1 here)"],["E","the Ascension multiplier, 0.1 by default"],["e_i","increases to the Ascension multiplier from items"]]}],"after":"For example, Hoarding (E1225) raises the Ascension multiplier."},{"title":"Cost","text":"The first exchange of a coin type costs 20 Faction Coins of that type. Each one you buy of that coin type makes the next one g times as expensive, so the price of the next one is about 20 · g to the power of the number already bought. Every coin type has its own count. The first formula gives the total price of buying k more when n are already bought; g is called the cost multiplier and starts at 1.1.","formulas":[{"latex":"C(n,k) = \\left\\lfloor\\frac{20\\,(g^{n+k}-1)}{g-1}\\right\\rfloor - \\left\\lfloor\\frac{20\\,(g^{n}-1)}{g-1}\\right\\rfloor","vars":[["n","exchanges of this coin type already bought"],["k","how many more you buy"],["g","the cost multiplier"]]},{"latex":"g = \\max\\left(0,\\ 1.1-\\sum r_i\\right)","vars":[["r_i","cost reduction multiplier values"]]}],"after":"For example, Intimidation (E1325) lowers the cost multiplier."}],"id":"royal-exchanges","href":"mechanics.html#royal-exchanges"},{"name":"Spells","asc":0,"unlock":["Available from the start (Reincarnation 0)."],"sections":[{"title":"What they are","text":"Spells are powers you cast with mana. Each spell has a mana cost, which is taken from your mana when you cast it, and most last for a limited time, during which their effect is active. A spell that is still active can't be cast again until it ends.","link":{"href":"spells.html","text":"All spells and their details"}}],"page":"spells.html","id":"spells","href":"spells.html"}]}</script>
 <script>
 (function(){
-  var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 1;
+  var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 0, MODE = 'mechanics';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -261,10 +266,19 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
     root.textContent='';
-    var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
-    if(!list.length){ root.appendChild(el('p','empty','No mechanics have been added for Ascension '+ASC+' yet.')); return; }
+    if(MODE==='unlocks'){
+      var ul0=el('ul','items');
+      DATA.mechanics.filter(function(m){ return m.asc===ASC; }).forEach(function(m){
+        var li=el('li'), a=el('a',null,m.name); a.href=m.href; li.appendChild(a);
+        if(m.unlock && m.unlock.length) li.appendChild(document.createTextNode(' — '+m.unlock[0]));
+        ul0.appendChild(li);
+      });
+      if(!ul0.children.length) root.appendChild(el('p','empty','No mechanics have been added for Ascension '+ASC+' yet.')); else root.appendChild(ul0);
+      return;
+    }
+    var list=DATA.mechanics;
     list.forEach(function(m){
-      var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div');
+      var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div'); s.id=m.id;
       s.appendChild(h);
       if(m.card){
         var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+m.card.icon; im.alt=m.card.name; c.appendChild(im);
@@ -290,6 +304,8 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
       s.appendChild(inner); root.appendChild(s);
       foldable(s, h, inner, m.name);
     });
+    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));      // a link to a mechanic opens its section
+    if(tgt){ if(!tgt.classList.contains('open')) tgt.querySelector('h2').click(); tgt.scrollIntoView(); }
   }
   apply();
   window.addEventListener('load', apply);

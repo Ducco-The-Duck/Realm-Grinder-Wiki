@@ -319,13 +319,26 @@ JS = r'''
 
 UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),
                  ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
-MECH_PAGES = [(f'mechanics-a{a}.html', f'Ascension {a}') for a in range(5)]      # one page per Ascension, in the Mechanics tab's drop-down
-DROPDOWNS = {'upgrades.html': UPGRADE_PAGES, 'mechanics.html': MECH_PAGES}      # tab key -> its pages
+CODEX = 'codex.html'      # key of the Codex tab (it has no page of its own)
+CODEX_PAGES = [('mechanics.html', 'Mechanics')] + [(f'unlocks-a{a}.html', f'Unlocks (Ascension {a})') for a in range(5)]
+DROPDOWNS = {'upgrades.html': UPGRADE_PAGES, CODEX: CODEX_PAGES}      # tab key -> its pages
+
+
+def mech_slug(name):
+    import re as _re
+    return _re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+
+
+def mechanics_list():
+    """the mechanics of data/unlocks.json as (name, href): a mechanic with its own page ("page") links there, the others to their section of the Mechanics page"""
+    import json, os
+    d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'unlocks.json'), encoding='utf8'))
+    return [(m['name'], m.get('page') or 'mechanics.html#' + mech_slug(m['name'])) for m in d['mechanics']]
 
 
 # the nav is the game's tab column laid out in a row: 72x62 button with the icon, the red ribbon (126x34) with the name on it
 TABS = [('index.html', 'Home', 'UiBuildings', 0), ('upgrades.html', 'Upgrades', 'UiUpgrades', 0), ('trophies.html', 'Trophies', 'UiTrophies', -6),
-        ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('mechanics.html', 'Mechanics', 'UICrystalBall', 0)]
+        ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('codex.html', 'Codex', 'UICrystalBall', 0)]
 
 SMALL = ('UiUpgrades', 'UICrystalBall')
 
@@ -353,6 +366,11 @@ nav.tabs .dd-menu{display:none;position:absolute;z-index:70;flex-direction:colum
 nav.tabs .dd-nav:hover .dd-menu,nav.tabs .dd-nav:focus-within .dd-menu,nav.tabs .dd-nav.open .dd-menu{display:flex}
 nav.tabs .dd-nav .dd-menu{top:calc(78px*var(--s));left:50%;transform:translateX(-50%);min-width:0;border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 4px;gap:0;color:#ece6d8;--cell:#2b261f;--cellhi:#3a3328;--fg:#ece6d8}
+nav.tabs .dd-item{position:relative;display:block}
+nav.tabs .dd-item>a::after{content:"";float:right;margin:.45em 0 0 14px;border:5px solid transparent;border-left-color:currentColor;border-right-width:0;opacity:.7}
+nav.tabs .dd-sub{display:none;position:absolute;left:100%;top:-10px;flex-direction:column;margin-left:2px;padding:0 4px;border:8px solid transparent;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated}
+nav.tabs .dd-item:hover .dd-sub,nav.tabs .dd-item:focus-within .dd-sub{display:flex}
 nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none}
 @media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.85;gap:0}}
 /*ENDNAVCSS*/'''
@@ -367,7 +385,17 @@ def game_nav(current=None, current_file=None):
         z = ';--z:.84' if ic in SMALL else ''      # sprites that fill their whole square are drawn a little smaller so they stay inside the frame
         inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}{z}"><span class="n">{label}</span>'
         if href in DROPDOWNS:
-            links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in DROPDOWNS[href])
+            def link(f, n):
+                own = {h for _, h in mechanics_list() if '#' not in h}      # the pages of mechanics that have their own
+                cur_ = f == current_file or (f == 'mechanics.html' and current_file in own)
+                return f'<a href="{f}"' + (' aria-current="page"' if cur_ else '') + f'>{n}</a>'
+            links = ''
+            for f, n in DROPDOWNS[href]:
+                if f == 'mechanics.html':      # hovering Mechanics opens the list of the mechanics
+                    sub = ''.join(f'<a href="{h}">{mn}</a>' for mn, h in mechanics_list())
+                    links += f'<span class="dd-item">{link(f, n)}<span class="dd-sub">{sub}</span></span>'
+                else:
+                    links += link(f, n)
             q = "'"
             out.append(f'<span class="dd-nav"><a class="tab{lg}" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
                        f'<span class="dd-menu">{links}</span></span>')
@@ -382,8 +410,7 @@ def put_nav(html, current_file=None):
     old = html[html.find('<nav'):html.find('</nav>')] if '<nav' in html else ''
     m = _re.search(r'<a (?:class="tab" )?href="([^"]+)"[^>]*aria-current="page"', old) or _re.search(r'<a [^>]*role="button"[^>]*(aria-current)', old)
     cur = (m.group(1) if m.group(1) != 'aria-current' else 'upgrades.html') if m else None
-    if cur and cur.startswith('mechanics-a'): cur, current_file = 'mechanics.html', current_file or cur
-    if cur == 'spells.html': cur = 'mechanics.html'      # the Spells page belongs to the Mechanics tab (no Ascension page highlighted)
+    if cur and (cur in [f for f, _ in CODEX_PAGES] or cur in [h for _, h in mechanics_list()]): cur, current_file = CODEX, current_file or cur      # the Codex pages
     return _re.sub(r'<nav[^>]*>.*?</nav>', lambda _: game_nav(cur, current_file), html, count=1, flags=_re.S)
 
 
