@@ -8,7 +8,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
 ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
 data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
-                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags']} for s in spells],
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'detail': ov[s['name']].get('detail', {})} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -36,6 +36,21 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #tip p{margin:4px 0 0}
 .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px}
 .chip{font-size:.72rem;padding:0 6px;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
+.chip{border-color:transparent}
+.chip.tax-collection{background:#c9a227;color:#2a1f00}
+.chip.common{background:#8b5a2b;color:#fff}
+.chip.pseudo-faction{background:repeating-linear-gradient(45deg,#7a35b0 0 6px,#141414 6px 12px);color:#fff;text-shadow:0 0 2px #000,0 0 2px #000}
+.chip.alignment{background:#141414;color:#eee;border-color:#555}
+.chip.good{background:#8fd0ff;color:#0a2a40}
+.chip.evil{background:#c0392b;color:#fff}
+.chip.neutral{background:#9a9a9a;color:#111}
+.chip.order{background:#f4f4f4;color:#222}
+.chip.chaos{background:#8ee68e;color:#0d3a0d}
+.chip.balance{background:#fff3a0;color:#4a3f00}
+.chip.faction{background:#8e44ad;color:#fff}
+.chip.seasonal{background:#ff9ec7;color:#5a0a2e}
+#detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:6px 0 0}
+#detail h3{margin:16px 0 0;color:var(--accent)}
 #tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
@@ -47,6 +62,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <main>
 <nav><a href="index.html">Home</a><a href="spells.html" aria-current="page">Spells</a></nav>
 <h1>Spells</h1>
+<p>Pseudo-Faction spells count as Faction spells for stats, but are not affected by effects that affect Faction spells.</p>
 <p class="sub">Hover a spell for an overview, click it for the details.</p>
 <div class="grid" id="root"></div>
 <section id="detail" hidden></section>
@@ -57,7 +73,11 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 (function(){
   var SPELLS = JSON.parse(document.getElementById('data').textContent), root=document.getElementById('root'), tip=document.getElementById('tip');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  function chips(s){ var d=el('div','tags'); s.tags.forEach(function(t){ d.appendChild(el('span','chip',t)); }); return d; }
+  function chips(s){
+    var d=el('div','tags');
+    (s.tags||s).forEach(function(t){ d.appendChild(el('span','chip '+t.replace(/\*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-'),t)); });
+    return d;
+  }
   function dur(ticks){      // durations are stored in ticks, 30 per second
     var s=Math.round(ticks/30), m=Math.floor(s/60), r=s%60, out=[];
     function u(n,w){ return n+' '+w+(n===1?'':'s'); }
@@ -69,7 +89,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   function showDetail(s){
     detail.hidden=false; detail.textContent=''; detail.appendChild(el('h2',null,s.name));
     if(s.tags.length) detail.appendChild(chips(s));
-    detail.appendChild(el('p','empty','No detailed information has been written yet.'));
+    var dd=s.detail||{};
+    if(dd.note) detail.appendChild(el('p','note',dd.note));
+    (dd.sections||[]).forEach(function(c){ detail.appendChild(el('h3',null,c.title)); if(c.tags) detail.appendChild(chips(c.tags)); });
+    if(!dd.sections) detail.appendChild(el('p','empty','No detailed information has been written yet.'));
     detail.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
   function hideTip(){ tip.style.display='none'; }
