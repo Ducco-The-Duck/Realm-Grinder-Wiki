@@ -32,11 +32,15 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
 .mech h3{margin:10px 0 2px;color:var(--accent)}
-.tcard{float:right;width:min(270px,100%);margin:0 0 8px 14px;border:8px solid transparent;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:2px 6px;color:#ece6d8}
-.tcard .top{display:flex;align-items:center;gap:8px}
-.tcard img{width:50px;height:50px;image-rendering:pixelated}
-.tcard p{margin:4px 0 0}
-@media (max-width:700px){.tcard{float:none;margin:0 0 8px;width:100%}}
+.cell{position:relative;float:right;width:89px;height:89px;margin:0 0 8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
+  display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
+.cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
+.cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
+@media (max-width:700px){.cell{float:none;margin:0 0 8px}}
+#tip{position:fixed;z-index:50;width:min(400px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
+#tip b{display:block;font-size:1rem}
+#tip p{margin:2px 0 0;white-space:pre-line}
 .mech p{margin:0 0 6px;white-space:pre-line}
 .mech ul.items{margin:0 0 6px;padding-left:0}
 .mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
@@ -57,6 +61,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <span class="hint">The mechanics that are unlocked at the chosen Ascension.</span></div>
 <div id="root"></div>
 </main>
+<div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
@@ -67,6 +72,18 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
   }
+  var tip=document.getElementById('tip');
+  function hideTip(){ tip.style.display='none'; }
+  function showTip(card, anchor){
+    tip.textContent=''; tip.appendChild(el('b',null,card.name)); tip.appendChild(el('p',null,card.text));
+    tip.style.display='block';
+    var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2),innerWidth-t.width-8);
+    var up=a.top-t.height-8>=8, y=up?a.top-t.height-8:a.bottom+8;
+    tip.className=up?'above':'below'; tip.style.setProperty('--ax',Math.min(Math.max(a.left+a.width/2-x,24),t.width-24)+'px');
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
     root.textContent='';
     var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
@@ -75,8 +92,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
       var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div');
       s.appendChild(h);
       if(m.card){
-        var c=el('div','tcard'), top=el('div','top'), im=el('img'); im.src='assets/icons/'+m.card.icon; im.alt='';
-        top.appendChild(im); top.appendChild(el('b',null,m.card.name)); c.appendChild(top); c.appendChild(el('p',null,m.card.text)); inner.appendChild(c);
+        var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+m.card.icon; im.alt=m.card.name; c.appendChild(im);
+        c.addEventListener('mouseenter',function(){ showTip(m.card,c); }); c.addEventListener('focus',function(){ showTip(m.card,c); });
+        c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
+        inner.appendChild(c);
       }
       (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });
       (m.sections||[]).forEach(function(c){
