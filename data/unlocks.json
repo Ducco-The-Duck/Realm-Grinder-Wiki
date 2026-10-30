@@ -132,6 +132,23 @@
      "after": "For example, Intimidation (E1325) lowers the cost multiplier."
     }
    ]
+  },
+  {
+   "name": "Spells",
+   "asc": 0,
+   "unlock": [
+    "Available from the start (Reincarnation 0)."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Spells are powers you cast with mana. Each spell has a mana cost, which is taken from your mana when you cast it, and most last for a limited time, during which their effect is active. A spell that is still active can't be cast again until it ends.",
+     "link": {
+      "href": "spells.html",
+      "text": "All spells and their details"
+     }
+    }
+   ]
   }
  ]
 }

@@ -319,7 +319,7 @@ JS = r'''
 
 UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),
                  ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
-MECH_PAGES = [(f'mechanics-a{a}.html', f'A{a}') for a in range(5)]      # one page per Ascension, in the Mechanics tab's drop-down
+MECH_PAGES = [(f'mechanics-a{a}.html', f'Ascension {a}') for a in range(5)]      # one page per Ascension, in the Mechanics tab's drop-down
 DROPDOWNS = {'upgrades.html': UPGRADE_PAGES, 'mechanics.html': MECH_PAGES}      # tab key -> its pages
 
 
@@ -382,7 +382,8 @@ def put_nav(html, current_file=None):
     old = html[html.find('<nav'):html.find('</nav>')] if '<nav' in html else ''
     m = _re.search(r'<a (?:class="tab" )?href="([^"]+)"[^>]*aria-current="page"', old) or _re.search(r'<a [^>]*role="button"[^>]*(aria-current)', old)
     cur = (m.group(1) if m.group(1) != 'aria-current' else 'upgrades.html') if m else None
-    if cur and cur.startswith('mechanics-a'): cur, current_file = 'mechanics.html', cur
+    if cur and cur.startswith('mechanics-a'): cur, current_file = 'mechanics.html', current_file or cur
+    if cur == 'spells.html': cur = 'mechanics.html'      # the Spells page belongs to the Mechanics tab (no Ascension page highlighted)
     return _re.sub(r'<nav[^>]*>.*?</nav>', lambda _: game_nav(cur, current_file), html, count=1, flags=_re.S)
 
 

@@ -14,7 +14,7 @@ html = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
-<title>Realm Grinder Mechanics A__ASC__</title>
+<title>Realm Grinder Mechanics (Ascension __ASC__)</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
@@ -27,6 +27,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech{margin:0 0 26px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
+.mech a{color:var(--accent)}
 .mech h3{margin:10px 0 2px;color:var(--accent)}
 .cell{position:relative;float:right;width:89px;height:89px;margin:0 0 8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
@@ -52,7 +53,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <body>
 <main>
 <nav><a href="index.html">Home</a><a href="mechanics-a__ASC__.html" aria-current="page">Mechanics</a></nav>
-<h1>Mechanics A__ASC__</h1>
+<h1>Mechanics (Ascension __ASC__)</h1>
 <p class="sub">The mechanics that are unlocked at Ascension __ASC__.</p>
 <div id="root"></div>
 </main>
@@ -100,6 +101,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
           var d=el('div','formula'); math(f.latex,d); inner.appendChild(d);
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
         });
+        if(c.link){ var lp=el('p'), la=el('a',null,c.link.text); la.href=c.link.href; lp.appendChild(la); inner.appendChild(lp); }
         if(c.after) inner.appendChild(el('p',null,c.after));
         (c.lists||[]).forEach(function(l){
           if(l.title) inner.appendChild(el('p',null,l.title));
