@@ -128,5 +128,17 @@ except (OSError, ValueError, KeyError) as e:
     print('5. data/unlocks.json unreadable:', e)
     problems.append('data/unlocks.json unreadable')
 
+# 6. the hand-written spell overview covers every spell
+try:
+    ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
+    names = {x['name'] for x in json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))}
+    miss = sorted(names - set(ov)); extra = sorted(set(ov) - names)
+    print(f"6. spell overview: {len(ov)} spells" + (f"; missing: {miss}; unknown: {extra}" if miss or extra else ''))
+    if miss or extra:
+        problems.append('data/spells_overview.json does not match the spells')
+except (OSError, ValueError, KeyError) as e:
+    print('6. data/spells_overview.json unreadable:', e)
+    problems.append('data/spells_overview.json unreadable')
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

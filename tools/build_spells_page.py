@@ -1,4 +1,4 @@
-"""Generate docs/spells.html from data/spells.json: every spell as an icon with a hover tooltip.
+"""Generate docs/spells.html from data/spells.json and data/spells_overview.json (descriptions, tags): every spell as an icon with a hover tooltip.
 
     python -I tools/build_spells_page.py
 """
@@ -6,7 +6,9 @@ import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
-data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost')} for s in spells],
+ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
+data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags']} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -28,10 +30,16 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
 .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
-#tip{position:fixed;z-index:50;width:min(300px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+#tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #tip b{display:block;font-size:1rem}
-#tip p{margin:2px 0 0}
+#tip p{margin:4px 0 0}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px}
+.chip{font-size:.72rem;padding:0 6px;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
+#tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
+#detail{margin-top:22px;scroll-margin-top:12px}
+#detail h2{margin:0 0 4px;color:var(--accent)}
+#detail .empty{color:var(--muted)}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -39,8 +47,9 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <main>
 <nav><a href="index.html">Home</a><a href="spells.html" aria-current="page">Spells</a></nav>
 <h1>Spells</h1>
-<p class="sub">Hover a spell for its details.</p>
+<p class="sub">Hover a spell for an overview, click it for the details.</p>
 <div class="grid" id="root"></div>
+<section id="detail" hidden></section>
 </main>
 <div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">__DATA__</script>
@@ -48,10 +57,29 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 (function(){
   var SPELLS = JSON.parse(document.getElementById('data').textContent), root=document.getElementById('root'), tip=document.getElementById('tip');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function chips(s){ var d=el('div','tags'); s.tags.forEach(function(t){ d.appendChild(el('span','chip',t)); }); return d; }
+  function dur(ticks){      // durations are stored in ticks, 30 per second
+    var s=Math.round(ticks/30), m=Math.floor(s/60), r=s%60, out=[];
+    function u(n,w){ return n+' '+w+(n===1?'':'s'); }
+    if(m) out.push(u(m,'minute'));
+    if(r||!m) out.push(u(r,'second'));
+    return out.join(' ');
+  }
+  var detail=document.getElementById('detail');
+  function showDetail(s){
+    detail.hidden=false; detail.textContent=''; detail.appendChild(el('h2',null,s.name));
+    if(s.tags.length) detail.appendChild(chips(s));
+    detail.appendChild(el('p','empty','No detailed information has been written yet.'));
+    detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
   function hideTip(){ tip.style.display='none'; }
   function showTip(s, anchor){
     tip.textContent=''; tip.appendChild(el('b',null,s.name));
+    if(s.tags.length) tip.appendChild(chips(s));
+    tip.appendChild(el('p',null,s.desc));
     if(s.cost!=null) tip.appendChild(el('p',null,'Base mana cost: '+s.cost.toLocaleString('en-US')));
+    if(s.ticks!=null) tip.appendChild(el('p',null,'Base duration: '+dur(s.ticks)));
+    tip.appendChild(el('p','hint','Click the spell icon to show detailed information.'));
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
     var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2),innerWidth-t.width-8);
@@ -62,6 +90,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   SPELLS.forEach(function(s){
     var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
     c.addEventListener('mouseenter',function(){ showTip(s,c); }); c.addEventListener('focus',function(){ showTip(s,c); });
+    c.addEventListener('click',function(){ hideTip(); showDetail(s); });
     c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
     root.appendChild(c);
   });
