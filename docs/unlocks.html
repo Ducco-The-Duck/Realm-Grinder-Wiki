@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
 <title>Realm Grinder Unlocks</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
 :root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
@@ -21,6 +23,13 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
 .mech h3{margin:10px 0 2px}
 .mech p{margin:0 0 6px;white-space:pre-line}
+.mech ul.items{margin:0 0 6px;padding-left:0}
+.mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
+.mech ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+.mech .formula{padding:2px 0;overflow-wrap:anywhere}
+.mech ul.vars{margin:2px 0 6px}
+.mech ul.vars li{margin:0}
+.mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
 .empty{color:var(--muted)}
 
 html.embed,html.embed body{background:transparent!important}
@@ -223,12 +232,16 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
 <span class="hint">The mechanics that are unlocked at the chosen Ascension.</span></div>
 <div id="root"></div>
 <div class="gv">Game version 4.3.15</div></main>
-<script id="data" type="application/json">{"max":4,"mechanics":[]}</script>
+<script id="data" type="application/json">{"max":4,"mechanics":[{"name":"Royal Exchanges","asc":0,"unlock":["Available from the start (Reincarnation 0): the Royal Market opens as soon as you have chosen a faction."],"sections":[{"title":"What they are","text":"Royal Exchanges are bought in the Royal Market with Faction Coins, one coin type per faction. Every exchange you buy adds to a bonus that multiplies all of your production. An exchange can be bought any number of times, and the price rises with every one you buy of the same coin type."},{"title":"Bonus per exchange","text":"By default every exchange is worth 10%. This is the Individual Bonus shown in the Royal Market. It does not depend on how many exchanges you have bought or on your Ascension; only upgrades, researches and similar items change it. Some add a flat amount, some add an amount that grows with a stat of yours, and some multiply the result.","formulas":[{"latex":"b = \\left(10 + \\sum a_i\\right)\\cdot\\prod_j\\left(1+\\frac{m_j}{100}\\right)","vars":[["b","the bonus per exchange, in %"],["a_i","the amounts added by items (first list)"],["m_j","the percentages multiplied in by items (second list)"]]}],"lists":[{"title":"Items that add to the bonus per exchange:","items":["Heavy Coins (+100)","Titan Heritage (+15)","Exchange Master (+5)","Exchange Lord (+5)","Exchange High Lord (+1000)","Because I Like to Grind (+1)","Reincarnation Power 1 (from Reincarnation 25)","Diplomacy (E30)","Inflation (E425)","Whipround (E5375)","Rigmarole (E10875)","Ruby Power","Organized Crime","Titanomachy","Spider Clerics","Titan Set","Cosmic Resonance","Elven Efficiency"]},{"title":"Items that multiply the bonus per exchange:","items":["Titanomachy (+100%)","Exchange High Lord (+10%)","Crusade (W200)","Dispelling (D700)","Equivalence (A5875)","Whipround (E5375)","Storm of Wealth","Art of Commerce","Titan Lineage","Titan Set","Sharp Claws","Gem Grinder","Mercenary Challenge"]}]},{"title":"Overall bonus","text":"The overall bonus multiplies your total production. With no exchanges bought it is 1. At Ascension 0 every exchange adds b% of your production: 100 exchanges at 10% give a multiplier of 11. From Ascension 1 the Ascension penalty below applies.","formulas":[{"latex":"M = \\left(1+\\frac{b\\cdot N}{100}\\right)^{p}\\qquad N = n\\cdot\\prod_k\\left(1+\\frac{c_k}{100}\\right)","vars":[["M","the overall bonus, a multiplier on production"],["n","exchanges bought (Exchanges Made in the stats), all coin types together"],["c_k","the percentages that count extra exchanges (list below)"],["p","1 at Ascension 0, see the Ascension penalty below"]]}],"lists":[{"title":"Items that make each exchange count for more:","items":["Archon Heritage (+10%)","Titan Perk 5 (+500%)","Giant Market","Precognition","Mercenary Challenge"]}]},{"title":"Ascension penalty","text":"From Ascension 1 the overall bonus is raised to a power p that is below 1 instead of being used as it is. This is not the penalty of the researches (the A marks): the exchanges have their own formula, which weakens with every Ascension. The Individual Bonus shown in the Royal Market is not reduced, only the overall bonus is.","formulas":[{"latex":"p = \\frac{0.7\\,E^{0.7}}{1+2.5\\,\\ln A}\\qquad E = 0.1 + \\sum e_i","vars":[["A","your Ascension (at least 1 here)"],["E","the Ascension multiplier, 0.1 by default"],["e_i","0.7 for each item in the list below"]]}],"lists":[{"title":"Items that raise the Ascension multiplier E (+0.7 each):","items":["Hoarding (E1225)","Wyrm's Rest","Makers Perk 6","Drow Set (needs Stiletto Heel)"]},{"title":"With only the default E = 0.1 the power p is about:","items":["Ascension 1: 0.140","Ascension 2: 0.051","Ascension 3: 0.037","Ascension 4: 0.031","So 100 exchanges at 10% give a multiplier of 11 at Ascension 0 but only about 1.40 at Ascension 1."]}]},{"title":"Cost","text":"The first exchange of a coin type costs 20 Faction Coins of that type. Each one you buy of that coin type makes the next one g times as expensive, so the price of the next one is about 20 · g to the power of the number already bought. Every coin type has its own count. The formula gives the total price of buying k more when n are already bought; g is called the cost multiplier and starts at 1.1.","formulas":[{"latex":"C(n,k) = \\left\\lfloor\\frac{20\\,(g^{\\,n+k}-1)}{g-1}\\right\\rfloor - \\left\\lfloor\\frac{20\\,(g^{\\,n}-1)}{g-1}\\right\\rfloor\\qquad g = \\max\\left(0,\\ 1.1-\\sum r_i\\right)","vars":[["n","exchanges of this coin type already bought"],["k","how many more you buy"],["g","the cost multiplier"],["r_i","the reductions in the list below"]]}],"lists":[{"title":"Items that reduce the cost multiplier:","items":["Blackmail (-0.02)","Intimidation (E1325) (-0.025)","Discount (E13125) (-0.02)","Titanomachy (-0.02)","Heavy Coins (-0.01)","Advanced Civilization (-0.025, Elven exchange only)","Perfect Snowflake (-0.01, during seasonal events only)"]}]}]}]}</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), MAXA = DATA.max;
   var root=document.getElementById('root'), sel=document.getElementById('asc'), ASC=0;
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function math(tex, node){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
+    node.textContent=tex;
+  }
   function apply(){
     root.textContent='';
     var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
@@ -236,7 +249,18 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
     list.forEach(function(m){
       var s=el('section','mech'); s.appendChild(el('h2',null,m.name));
       (m.unlock||[]).forEach(function(u){ s.appendChild(el('p','unl',u)); });
-      (m.sections||[]).forEach(function(c){ if(c.title) s.appendChild(el('h3',null,c.title)); s.appendChild(el('p',null,c.text)); });
+      (m.sections||[]).forEach(function(c){
+        if(c.title) s.appendChild(el('h3',null,c.title));
+        if(c.text) s.appendChild(el('p',null,c.text));
+        (c.formulas||[]).forEach(function(f){
+          var d=el('div','formula'); math(f.latex,d); s.appendChild(d);
+          if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); s.appendChild(ul); }
+        });
+        (c.lists||[]).forEach(function(l){
+          if(l.title) s.appendChild(el('p',null,l.title));
+          var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); s.appendChild(ul);
+        });
+      });
       root.appendChild(s);
     });
   }
@@ -246,6 +270,7 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
+  window.addEventListener('load', apply);
 
   // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this

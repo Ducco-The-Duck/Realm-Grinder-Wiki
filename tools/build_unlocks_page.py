@@ -15,6 +15,8 @@ html = r'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
 <title>Realm Grinder Unlocks</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
 :root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
@@ -31,6 +33,13 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
 .mech h3{margin:10px 0 2px}
 .mech p{margin:0 0 6px;white-space:pre-line}
+.mech ul.items{margin:0 0 6px;padding-left:0}
+.mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
+.mech ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+.mech .formula{padding:2px 0;overflow-wrap:anywhere}
+.mech ul.vars{margin:2px 0 6px}
+.mech ul.vars li{margin:0}
+.mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
 .empty{color:var(--muted)}
 /*SEARCH_CSS*/
 </style>
@@ -49,6 +58,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   var DATA = JSON.parse(document.getElementById('data').textContent), MAXA = DATA.max;
   var root=document.getElementById('root'), sel=document.getElementById('asc'), ASC=0;
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function math(tex, node){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
+    node.textContent=tex;
+  }
   function apply(){
     root.textContent='';
     var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
@@ -56,7 +69,18 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     list.forEach(function(m){
       var s=el('section','mech'); s.appendChild(el('h2',null,m.name));
       (m.unlock||[]).forEach(function(u){ s.appendChild(el('p','unl',u)); });
-      (m.sections||[]).forEach(function(c){ if(c.title) s.appendChild(el('h3',null,c.title)); s.appendChild(el('p',null,c.text)); });
+      (m.sections||[]).forEach(function(c){
+        if(c.title) s.appendChild(el('h3',null,c.title));
+        if(c.text) s.appendChild(el('p',null,c.text));
+        (c.formulas||[]).forEach(function(f){
+          var d=el('div','formula'); math(f.latex,d); s.appendChild(d);
+          if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); s.appendChild(ul); }
+        });
+        (c.lists||[]).forEach(function(l){
+          if(l.title) s.appendChild(el('p',null,l.title));
+          var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); s.appendChild(ul);
+        });
+      });
       root.appendChild(s);
     });
   }
@@ -66,6 +90,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
   enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
+  window.addEventListener('load', apply);
 /*SEARCH_JS*/
 })();
 </script>
