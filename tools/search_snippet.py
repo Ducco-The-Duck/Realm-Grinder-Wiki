@@ -325,6 +325,8 @@ UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.ht
 TABS = [('index.html', 'Home', 'UiBuildings', 0), ('upgrades.html', 'Upgrades', 'UiUpgrades', 0), ('trophies.html', 'Trophies', 'UiTrophies', -6),
         ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('unlocks.html', 'Unlocks', 'UICrystalBall', 0)]
 
+SMALL = ('UiUpgrades', 'UICrystalBall')
+
 NAV_CSS = r'''/*NAVCSS*/
 nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1;border:0;padding:0}
 nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
@@ -339,7 +341,7 @@ nav.tabs .tab::after{content:"";position:absolute;z-index:2;left:0;top:calc(44px
 nav.tabs .tab.long::after{left:calc(-9px*var(--s));width:calc(100% + 18px*var(--s))}
 nav.tabs .tab.long span.n{left:calc(-9px*var(--s));right:calc(-9px*var(--s))}
 nav.tabs .tab[aria-current]::after{border-image-source:url(assets/ui/nav/redRibbon_Selected.png)}
-nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated}
+nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated;transform:scale(var(--z,1))}
 nav.tabs .tab span.n{position:absolute;z-index:3;left:0;right:0;top:calc(48px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
   font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(14px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
 nav.tabs .tab:hover img,nav.tabs .tab:focus-visible img{filter:brightness(1.25)}
@@ -360,7 +362,8 @@ def game_nav(current=None, current_file=None):
     for href, label, ic, y in TABS:
         cur = ' aria-current="page"' if href == current else ''
         lg = ' long' if len(label) > 10 else ''      # a longer name gets a ribbon a little wider than the frame
-        inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}"><span class="n">{label}</span>'
+        z = ';--z:.84' if ic in SMALL else ''      # sprites that fill their whole square are drawn a little smaller so they stay inside the frame
+        inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}{z}"><span class="n">{label}</span>'
         if href == 'upgrades.html':
             links = ''.join(f'<a href="{f}"' + (' aria-current="page"' if f == current_file else '') + f'>{n}</a>' for f, n in UPGRADE_PAGES)
             q = "'"
