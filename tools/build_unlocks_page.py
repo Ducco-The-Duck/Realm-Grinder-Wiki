@@ -31,7 +31,12 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech{margin:0 0 26px}
 .mech h2{margin:0 0 4px}
 .mech .unl{color:var(--muted);margin:0 0 6px}
-.mech h3{margin:10px 0 2px}
+.mech h3{margin:10px 0 2px;color:var(--accent)}
+.tcard{float:right;width:min(270px,100%);margin:0 0 8px 14px;border:8px solid transparent;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:2px 6px;color:#ece6d8}
+.tcard .top{display:flex;align-items:center;gap:8px}
+.tcard img{width:50px;height:50px;image-rendering:pixelated}
+.tcard p{margin:4px 0 0}
+@media (max-width:700px){.tcard{float:none;margin:0 0 8px;width:100%}}
 .mech p{margin:0 0 6px;white-space:pre-line}
 .mech ul.items{margin:0 0 6px;padding-left:0}
 .mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
@@ -67,27 +72,34 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     var list=DATA.mechanics.filter(function(m){ return m.asc===ASC; });
     if(!list.length){ root.appendChild(el('p','empty','No mechanics have been added for Ascension '+ASC+' yet.')); return; }
     list.forEach(function(m){
-      var s=el('section','mech'); s.appendChild(el('h2',null,m.name));
-      (m.unlock||[]).forEach(function(u){ s.appendChild(el('p','unl',u)); });
+      var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div');
+      s.appendChild(h);
+      if(m.card){
+        var c=el('div','tcard'), top=el('div','top'), im=el('img'); im.src='assets/icons/'+m.card.icon; im.alt='';
+        top.appendChild(im); top.appendChild(el('b',null,m.card.name)); c.appendChild(top); c.appendChild(el('p',null,m.card.text)); inner.appendChild(c);
+      }
+      (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });
       (m.sections||[]).forEach(function(c){
-        if(c.title) s.appendChild(el('h3',null,c.title));
-        if(c.text) s.appendChild(el('p',null,c.text));
+        if(c.title) inner.appendChild(el('h3',null,c.title));
+        if(c.text) inner.appendChild(el('p',null,c.text));
         (c.formulas||[]).forEach(function(f){
-          var d=el('div','formula'); math(f.latex,d); s.appendChild(d);
-          if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); s.appendChild(ul); }
+          var d=el('div','formula'); math(f.latex,d); inner.appendChild(d);
+          if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
         });
+        if(c.after) inner.appendChild(el('p',null,c.after));
         (c.lists||[]).forEach(function(l){
-          if(l.title) s.appendChild(el('p',null,l.title));
-          var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); s.appendChild(ul);
+          if(l.title) inner.appendChild(el('p',null,l.title));
+          var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); inner.appendChild(ul);
         });
       });
-      root.appendChild(s);
+      s.appendChild(inner); root.appendChild(s);
+      foldable(s, h, inner, m.name);
     });
   }
   for(var a=0;a<=MAXA;a++){ var o=el('option',null,String(a)); o.value=String(a); sel.appendChild(o); }
-  try{ var saved=parseInt(localStorage.getItem('rg-ascension'),10); if(saved>=0 && saved<=MAXA) ASC=saved; }catch(e){}
+  try{ var saved=parseInt(localStorage.getItem('rg-unlocks-ascension'),10); if(saved>=0 && saved<=MAXA) ASC=saved; }catch(e){}
   sel.value=String(ASC);
-  sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} apply(); });
+  sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-unlocks-ascension',String(ASC)); }catch(e){} apply(); });
   enhanceSelects();      // the game-font drop-down of the shared snippet
   apply();
   window.addEventListener('load', apply);
