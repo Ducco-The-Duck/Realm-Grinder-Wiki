@@ -148,5 +148,5 @@ def write(fn, title, sub, mode, asc, mechs):
 
 write('mechanics.html', 'Mechanics', 'How the game mechanics work. Under each name is when it becomes available.', 'mechanics', 0, d['mechanics'])
 for a in range(MAXA + 1):
-    write(f'unlocks-a{a}.html', f'Unlocks (Ascension {a})', f'What is unlocked at Ascension {a}.', 'unlocks', a, d['mechanics'])
+    write(f'unlocks-a{a}.html', f'Unlocks (Ascension {a})', f'What is unlocked at Ascension {a}.', 'unlocks', a, [m for m in d['mechanics'] if m.get('unlockable')])      # only what needs unlocking ("unlockable": true)
 print(f'docs/mechanics.html, docs/unlocks-a0..a{MAXA}.html;', len(d['mechanics']), 'mechanics')
