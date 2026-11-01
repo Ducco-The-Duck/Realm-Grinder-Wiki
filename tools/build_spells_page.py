@@ -18,7 +18,7 @@ SHARED = {
         {'latex': r'p = \dfrac{0.1}{A} \quad (A \ge 1,\ \text{no tier unlocked})'},
         {'latex': r'p = \dfrac{0.5}{A} \cdot 0.5^{\,w\,(A - T + 1)} \quad (A \ge 1,\ \text{tiers unlocked})',
          'vars': [['A', 'your Ascension number'], ['T', 'the tier the spell is cast at (1 for a spell cast once)'],
-                  ['w', '1 if T - 1 is not above A, otherwise 1/2']]}],
+                  ['w', '$1$ if T - 1 is not above A, otherwise $1/2$']]}],
 }
 
 import re as _re
