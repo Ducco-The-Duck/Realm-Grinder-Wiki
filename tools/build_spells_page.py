@@ -139,7 +139,7 @@ def spell_detail(name):
 
 
 data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
-                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'kind': ov[s['name']]['kind'], 'detail': spell_detail(s['name'])} for s in spells],
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'kind': ov[s['name']]['kind'], 'order': ov[s['name']].get('order', 99), 'detail': spell_detail(s['name'])} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -335,6 +335,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,3+i,1)); });
   SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,3+i)); });
   board.appendChild(chipLabel('Faction',1,1)); board.appendChild(chipLabel('Alignment',2,1)); board.appendChild(chipLabel('Prestige/Astral',6,6));
+  ['common','event','others'].forEach(function(k){ by[k].sort(function(a,b){ return a.order-b.order; }); });
   if(by.common.length) root.appendChild(group('Common','common',by.common));
   root.appendChild(board);
   if(by.others.length) root.appendChild(group('Others','others',by.others));
