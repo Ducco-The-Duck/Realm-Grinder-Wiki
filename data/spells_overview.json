@@ -660,7 +660,75 @@
     "Neutral",
     "Balance",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of your least productive buildings, based on the amounts of the three buildings you built the most.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of an affected building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 1 + \\operatorname{round} \\left( 25 \\cdot \\left( \\frac{a \\cdot b \\cdot c}{D^{3}} \\right)^{0.9} \\right)",
+        "vars": [
+         [
+          "a, b, c",
+          "the amounts of your three most built buildings"
+         ],
+         [
+          "D",
+          "$(A + 3)^{2}$, with $A$ your Ascension number"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier also multiplies your Maximum Mana. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "B = 5 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B",
+          "the Maximum Mana bonus, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Hellfire Blast": {
    "description": "Increase the production of Evil Fortresses based on your amount of trophies.",
@@ -1094,10 +1162,87 @@
    "detail": {
     "sections": [
      {
+      "title": "What it does",
+      "text": "Instantly gives you coins as if your buildings and assistants had produced for a number of seconds. It has no duration and no tiers.",
+      "formulas": [
+       {
+        "latex": "C = P \\cdot N",
+        "vars": [
+         [
+          "C",
+          "the coins gained"
+         ],
+         [
+          "P",
+          "your coin production per second from buildings and assistants"
+         ],
+         [
+          "N",
+          "the seconds worth, 30 by default, changed by various effects"
+         ]
+        ]
+       }
+      ]
+     },
+     {
       "title": "Share Benefits",
       "tags": [
        "Tax Collection",
        "Pseudo-Faction"
+      ],
+      "text": "Turns Tax Collection into a spell with a duration and its own tiers, which do not need to be unlocked. Casting it again while it is active raises its tier by one, up to tier 36, or tier 99 from Ascension 3. Its production bonus is 100 times higher below Ascension 3. It also produces Tax Collection casts every second.",
+      "formulas": [
+       {
+        "latex": "B = k \\cdot (80 + 1.6 \\cdot \\ln(1 + N)^{1.6})^{(0.5 (T - 1) + 1)^{0.9}}",
+        "vars": [
+         [
+          "B",
+          "the production bonus of all buildings, in %"
+         ],
+         [
+          "k",
+          "100 below Ascension 3, 1 from Ascension 3"
+         ],
+         [
+          "N",
+          "the seconds worth of a Tax Collection"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       },
+       {
+        "latex": "F = 100 \\cdot (3 + 0.1 \\cdot \\ln(1 + c))^{T}",
+        "vars": [
+         [
+          "F",
+          "the Faction Coin find chance bonus, in %"
+         ],
+         [
+          "c",
+          "the Tax Collections triggered per cast"
+         ]
+        ]
+       },
+       {
+        "latex": "C = c_0 \\cdot m^{T + \\max(0,\\, T - 40)}",
+        "vars": [
+         [
+          "C",
+          "the mana cost of casting it again"
+         ],
+         [
+          "c_0",
+          "the mana cost after all reductions"
+         ],
+         [
+          "m",
+          "3 by default, lowered by various effects, e.g. Sequence (S1275)"
+         ]
+        ]
+       }
       ]
      },
      {
@@ -1105,6 +1250,26 @@
       "tags": [
        "Tax Collection",
        "Pseudo-Faction"
+      ],
+      "text": "Makes every cast of the spell worth more seconds of production, the more times you cast it. It has no duration and no tiers.",
+      "formulas": [
+       {
+        "latex": "N = N_0 \\cdot \\ln(1 + c)^{4}",
+        "vars": [
+         [
+          "N",
+          "the seconds worth of the cast"
+         ],
+         [
+          "N_0",
+          "the seconds worth without this upgrade"
+         ],
+         [
+          "c",
+          "the casts of Reap Interests"
+         ]
+        ]
+       }
       ]
      },
      {
@@ -1112,6 +1277,30 @@
       "tags": [
        "Tax Collection",
        "Pseudo-Faction"
+      ],
+      "text": "Makes every cast of the spell also generate Faction Coins, more the higher your Faction Coin find chance. It has no duration and no tiers.",
+      "formulas": [
+       {
+        "latex": "F = k \\cdot N \\cdot f^{1.25}",
+        "vars": [
+         [
+          "F",
+          "the Faction Coins generated by the cast"
+         ],
+         [
+          "k",
+          "a multiplier from your Tax Collection bonuses"
+         ],
+         [
+          "N",
+          "the seconds worth of the cast"
+         ],
+         [
+          "f",
+          "your Faction Coin find chance"
+         ]
+        ]
+       }
       ]
      }
     ]
@@ -1122,39 +1311,275 @@
    "tags": [
     "Event",
     "Pseudo-Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the time you have had Hailstorm active. The bonus grows progressively over the duration of each cast.",
+      "formulas": [
+       {
+        "latex": "B = 0.1 \\cdot (1 + a)^{0.6} \\cdot (1 + k)^{1.1}",
+        "vars": [
+         [
+          "B",
+          "the production bonus of every building, in %"
+         ],
+         [
+          "a",
+          "your Hailstorm activity time, in seconds"
+         ],
+         [
+          "k",
+          "the ticks this cast has been active, 30 per second"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Heatwave": {
    "description": "Increase the production of all buildings based on spells cast in this Era.",
    "tags": [
     "Event",
     "Pseudo-Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the spells you cast in this Era. It also grants Faction Coins based on the Flame Orbs collected in this event.",
+      "formulas": [
+       {
+        "latex": "B = 5 \\cdot c^{0.85}",
+        "vars": [
+         [
+          "B",
+          "the production bonus of every building, in %"
+         ],
+         [
+          "c",
+          "the spells you cast in this Era"
+         ]
+        ]
+       },
+       {
+        "latex": "F = f \\cdot o^{1.1}",
+        "vars": [
+         [
+          "F",
+          "the Faction Coins granted"
+         ],
+         [
+          "f",
+          "your Faction Coin find chance"
+         ],
+         [
+          "o",
+          "the Flame Orbs collected in this event"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Dragon's Breath": {
    "description": "Activates one of six effects at random: Red, Green, Blue, White, Black or Yellow.",
    "tags": [
     "Neutral",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Activates one of six effects at random for its duration. Each effect has its own colour.",
+      "formulas": [
+       {
+        "latex": "B_{\\text{red}} = 1.75 \\cdot \\ln(1 + f)^{1.75}",
+        "vars": [
+         [
+          "B_{\\text{red}}",
+          "the production bonus of Unique Buildings, in %"
+         ],
+         [
+          "f",
+          "the Faction Coins found in this Era"
+         ]
+        ]
+       },
+       {
+        "latex": "B_{\\text{green}} = 10^{-6} \\cdot \\ln(1 + c)^{6} \\cdot (11 - i)^{5}",
+        "vars": [
+         [
+          "B_{\\text{green}}",
+          "the production bonus of a building of tier i, in %, higher for lower tiers"
+         ],
+         [
+          "c",
+          "the spells you cast in this Era"
+         ],
+         [
+          "i",
+          "the tier of the building, counted from 0"
+         ]
+        ]
+       },
+       {
+        "latex": "B_{\\text{blue}} = 200",
+        "vars": [
+         [
+          "B_{\\text{blue}}",
+          "the Mana Regeneration bonus, in %"
+         ]
+        ]
+       },
+       {
+        "latex": "A_{\\text{white}} = 30 \\cdot n^{0.7}",
+        "vars": [
+         [
+          "A_{\\text{white}}",
+          "the assistants added for the duration"
+         ],
+         [
+          "n",
+          "the time you spent as Neutral in this Reincarnation"
+         ]
+        ]
+       },
+       {
+        "latex": "B_{\\text{black}} = 30 + 0.85 \\cdot a^{0.85}",
+        "vars": [
+         [
+          "B_{\\text{black}}",
+          "the production bonus of all buildings, in %"
+         ],
+         [
+          "a",
+          "your Dragon's Breath activity time in this Era"
+         ]
+        ]
+       },
+       {
+        "latex": "B_{\\text{yellow}} = 1.75 \\cdot \\ln(1 + s)^{1.75}",
+        "vars": [
+         [
+          "B_{\\text{yellow}}",
+          "the bonus to the production bonus from Gems, in %"
+         ],
+         [
+          "s",
+          "your assistants owned"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Cannibalize": {
    "description": "Increase Faction Coin find chance based on the total amount of Bones collected and Reincarnations made.",
    "tags": [
     "Event"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases your Faction Coin find chance based on the Bones you collected and the Reincarnations you made.",
+      "formulas": [
+       {
+        "latex": "F = \\lceil 0.75 \\cdot (R + 1) \\cdot b^{0.75} \\rceil",
+        "vars": [
+         [
+          "F",
+          "the Faction Coin find chance added, in %"
+         ],
+         [
+          "R",
+          "your number of Reincarnations; some effects make them count more"
+         ],
+         [
+          "b",
+          "your total Bones collected"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Shadow Embrace": {
    "description": "Increase the size of your assistant army based on Reincarnations made. Increases progressively as you continue casting this spell.",
    "tags": [
     "Event"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the size of your assistant army based on the Reincarnations you made. The bonus grows as you keep casting the spell.",
+      "formulas": [
+       {
+        "latex": "A = \\lceil (R + 1) \\cdot q^{0.5} \\rceil",
+        "vars": [
+         [
+          "A",
+          "the assistants added"
+         ],
+         [
+          "R",
+          "your number of Reincarnations; some effects make them count more"
+         ],
+         [
+          "q",
+          "the number of times you have cast the spell in a row"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Wail of the Banshee": {
    "description": "Increase the production of all buildings based on mana produced in this Era and Reincarnations made.",
    "tags": [
     "Event"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the mana produced in this Era and the Reincarnations you made.",
+      "formulas": [
+       {
+        "latex": "B = 0.2 \\cdot (R + 1) \\cdot m^{0.45}",
+        "vars": [
+         [
+          "B",
+          "the production bonus of every building, in %"
+         ],
+         [
+          "R",
+          "your number of Reincarnations; some effects make them count more"
+         ],
+         [
+          "m",
+          "the mana produced in this Era"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Temporal Flux": {
    "description": "Increase the production of Unique Buildings based on time spent in this Era.",
@@ -1665,13 +2090,31 @@
    "description": "Activates two random Vanilla or base alignment spells.",
    "tags": [
     "Chaos"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Activates two random Vanilla or base alignment spells at a set tier for its duration.",
+      "formulas": []
+     }
+    ]
+   }
   },
   "Chaos Madness": {
    "description": "Grants the effect of a random lineage, with the level of your highest lineage.",
    "tags": [
     "Chaos"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Grants the effect of a random lineage, at the level of your highest lineage, for its duration.",
+      "formulas": []
+     }
+    ]
+   }
   },
   "Twisting Nether": {
    "description": "Lineage levels count more for its duration.",
@@ -1680,6 +2123,56 @@
     "Pseudo-Faction*"
    ],
    "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Makes your lineage levels count more for its duration. It has its own tiers, up to 99, which do not need to be unlocked.",
+      "formulas": [
+       {
+        "latex": "L = 2 \\cdot T",
+        "vars": [
+         [
+          "L",
+          "the levels added to every lineage"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it again while it is active raises its tier by one, up to tier 99. It costs more each time:",
+      "formulas": [
+       {
+        "latex": "C = c \\cdot m^{T}",
+        "vars": [
+         [
+          "C",
+          "the mana cost of the cast"
+         ],
+         [
+          "c",
+          "the mana cost after all reductions"
+         ],
+         [
+          "m",
+          "3 by default, lowered by various effects, e.g. Sequence (S1275)"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ],
     "note": "* Only a Pseudo-Faction spell if obtained from the Fairy/Angel legacy combo."
    }
   }
