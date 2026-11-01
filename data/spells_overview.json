@@ -11,18 +11,18 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Multiplies the production of all Evil buildings while it is active.",
+      "text": "Increases the production of all Evil buildings while it is active.",
       "formulas": [
        {
-        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "latex": "B = 100 \\left( \\left(1 + \\frac{X}{100} \\right)^{p} - 1 \\right)",
         "vars": [
          [
-          "M",
-          "the production multiplier of each Evil building"
+          "B",
+          "the production bonus of each Evil building, in %"
          ],
          [
           "X",
-          "the bonus in %, 1500 by default; other things change it, for example Demon Bloodline"
+          "the base bonus in %, 1500 by default; other things change it, for example Demon Bloodline"
          ],
          [
           "p",
@@ -34,7 +34,7 @@
      },
      {
       "title": "Ascension penalty",
-      "text": "The Evil building bonus is reduced by the Ascension penalty. The bonus of higher tiers is not.",
+      "text": "The Evil building bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
       "formulas": [
        "@penalty"
       ]
@@ -43,11 +43,15 @@
     "tier_sections": [
      {
       "title": "Bonus at higher tiers",
-      "text": "Casting it at a higher tier also multiplies the production of all Non-Unique buildings, whatever their alignment. The Ascension penalty does not apply to this bonus.",
+      "text": "Casting it at a higher tier also increases the production of all Non-Unique buildings, whatever their alignment. The Ascension penalty does not apply to this bonus.",
       "formulas": [
        {
-        "latex": "M_{\\text{tier}} = 1 + 5 \\cdot (T - 1)",
+        "latex": "B_{\\text{tier}} = 500 \\cdot (T - 1)",
         "vars": [
+         [
+          "B_{\\text{tier}}",
+          "the production bonus of each Non-Unique building, in %"
+         ],
          [
           "T",
           "the tier the spell is cast at (1 for a spell cast once)"
@@ -144,18 +148,18 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Multiplies the reward of every click while it is active.",
+      "text": "Increases the reward of every click while it is active.",
       "formulas": [
        {
-        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "latex": "B = 100 \\left( \\left(1 + \\frac{X}{100} \\right)^{p} - 1 \\right)",
         "vars": [
          [
-          "M",
-          "the click reward multiplier"
+          "B",
+          "the click reward bonus, in %"
          ],
          [
           "X",
-          "the bonus in %, 1750 by default; other things change it, for example Angel Bloodline, which raises it the longer the spell has been active"
+          "the base bonus in %, 1750 by default; other things change it, for example Angel Bloodline, which raises it the longer the spell has been active"
          ],
          [
           "p",
@@ -167,7 +171,7 @@
      },
      {
       "title": "Ascension penalty",
-      "text": "The click reward bonus is reduced by the Ascension penalty. The bonus of higher tiers is not.",
+      "text": "The click reward bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
       "formulas": [
        "@penalty"
       ]
@@ -176,11 +180,15 @@
     "tier_sections": [
      {
       "title": "Bonus at higher tiers",
-      "text": "Casting it at a higher tier also multiplies your Mana Regeneration. The Ascension penalty does not apply to this bonus.",
+      "text": "Casting it at a higher tier also increases your Mana Regeneration. The Ascension penalty does not apply to this bonus.",
       "formulas": [
        {
-        "latex": "M_{\\text{tier}} = 1 + 0.1 \\cdot (T - 1)",
+        "latex": "B_{\\text{tier}} = 10 \\cdot (T - 1)",
         "vars": [
+         [
+          "B_{\\text{tier}}",
+          "the Mana Regeneration bonus, in %"
+         ],
          [
           "T",
           "the tier the spell is cast at (1 for a spell cast once)"

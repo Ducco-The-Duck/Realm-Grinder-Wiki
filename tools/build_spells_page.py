@@ -13,49 +13,98 @@ for u in json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encodi
 
 # formulas shared by all spells ("@name" in data/spells_overview.json)
 SHARED = {
-    'penalty': {'latex': r'p = \begin{cases} 1 & A = 0 \ \dfrac{0.1}{A} & A \ge 1,\ \text{no tier unlocked} \ \dfrac{0.5}{A} \cdot 0.5^{\,w\,(A - \tau)} & A \ge 1,\ \text{tiers unlocked} \end{cases}',
-                'vars': [['A', 'your Ascension number'], [r'\tau', 'the tier index the spell is cast at: 0 for a spell cast once, 1 for the second tier, and so on'],
-                         ['w', '1 if the tier index is not above the Ascension number, otherwise 1/2'],
-                         ['p', 'the exponent the bonus is raised to, as in the formula above']]},
+    'penalty': [
+        {'latex': r'p = 1 \quad (A = 0)'},
+        {'latex': r'p = \dfrac{0.1}{A} \quad (A \ge 1,\ \text{no tier unlocked})'},
+        {'latex': r'p = \dfrac{0.5}{A} \cdot 0.5^{\,w\,(A - T + 1)} \quad (A \ge 1,\ \text{tiers unlocked})',
+         'vars': [['A', 'your Ascension number'], ['T', 'the tier the spell is cast at (1 for a spell cast once)'],
+                  ['w', '1 if T - 1 is not above A, otherwise 1/2']]}],
 }
 
+import re as _re
 
-def tier_requirements(u):
-    """the unlock text of a tier upgrade as a list of requirements (one entry per part; a part that depends on the Ascension names each value)"""
-    parts = {}
-    for a, t in sorted(u['unlock_by_asc'].items()):
-        t = t.removeprefix('To unlock, you need to have at least ').rstrip('.')
-        parts[a] = t.split(' and have at least ')
-    n = max(len(v) for v in parts.values())
+
+def _num(t):
+    """'2h cumulative evil spells activity ...' -> (7200, 'cumulative evil spells activity ...', True): the amount (seconds for a time), the label, whether it is a time"""
+    m = _re.match(r'^(\d+)\s*(h|m|s)?\s+(?:of\s+)?(.*)$', t)
+    if not m: return None
+    v, u, lab = int(m.group(1)), m.group(2), m.group(3)
+    lab = lab.replace(' in this Reincarnation', ' (this Reincarnation)')
+    return v * {'h': 3600, 'm': 60, 's': 1}.get(u, 1), lab[0].upper() + lab[1:], bool(u)
+
+
+def _fit(vals):
+    """vals: {tier: amount}; the amount as a formula in n: k(n-1) or a + bn, else None"""
+    ns = sorted(vals)
+    k = vals[ns[0]] / (ns[0] - 1)
+    if all(abs(vals[n] - k * (n - 1)) < 1e-9 for n in ns): return ('prop', k)
+    b = (vals[ns[1]] - vals[ns[0]]) / (ns[1] - ns[0]); a = vals[ns[0]] - b * ns[0]
+    if all(abs(vals[n] - (a + b * n)) < 1e-9 for n in ns): return ('lin', a, b)
+    return None
+
+
+def _g(x): return f'{x:g}' if x == int(x) else f'{x}'
+
+
+def tier_requirement_formulas(ups):
+    """the unlock requirements of the tier upgrades as formulas in the tier n"""
     out = []
-    for i in range(n):
-        vals = {a: v[i] for a, v in parts.items() if i < len(v)}
-        if len(set(vals.values())) == 1:
-            t = next(iter(vals.values()))
-            out.append(t[0].upper() + t[1:])
-        else:
-            out.append('; '.join(f'Ascension {a}: {t}' for a, t in vals.items()))
+    if all(u['asc_min'] == u['spell_tier'] - 1 for u in ups): out.append({'latex': r'\text{Ascension} \ge n - 1'})
+    else: out.append({'latex': r'\text{Ascension} \ge 1'})
+    parts = {}      # part index -> tier -> Ascension -> text
+    for u in ups:
+        for a, t in u['unlock_by_asc'].items():
+            ps = t.removeprefix('To unlock, you need to have at least ').rstrip('.').split(' and have at least ')
+            for i, x in enumerate(ps): parts.setdefault(i, {}).setdefault(u['spell_tier'], {})[a] = x
+    for i in sorted(parts):
+        tiers = parts[i]
+        asc = sorted(next(iter(tiers.values())))
+        parsed = {n: {a: _num(x) for a, x in v.items()} for n, v in tiers.items()}
+        if any(q is None for v in parsed.values() for q in v.values()):
+            out.append({'latex': r'\text{' + '; '.join(next(iter(tiers.values())).values()) + '}'}); continue
+        lab = next(iter(next(iter(parsed.values())).values()))[1]
+        unit = r'\ \text{s}' if next(iter(next(iter(parsed.values())).values()))[2] else ''
+        same = all(len({parsed[n][a][0] for a in asc}) == 1 for n in parsed)
+        if same:
+            f = _fit({n: parsed[n][asc[0]][0] for n in parsed})
+            if f is None: out.append({'latex': r'\text{' + lab + '}'}); continue
+            rhs = f'{_g(f[1])}\,(n - 1)' if f[0] == 'prop' else f'{_g(f[2])}\,n + {_g(f[1])}'
+            out.append({'latex': r'\text{' + lab + r'} \ge ' + rhs + unit})
+        else:      # the amount depends on the Ascension: k(n - 1) with a k per Ascension
+            ks = {}
+            for a in asc:
+                f = _fit({n: parsed[n][a][0] for n in parsed})
+                if f is None or f[0] != 'prop': ks = None; break
+                ks[a] = f[1]
+            if ks is None: out.append({'latex': r'\text{' + lab + '}'}); continue
+            out.append({'latex': r'\text{' + lab + r'} \ge k\,(n - 1)' + unit,
+                        'vars': [['k', ', '.join(f'{_g(v)} at Ascension {a}' for a, v in ks.items())]]})
     return out
 
 
 def tier_sections(name, hand):
-    """the generated sections of a spell with tiers: the tiers with their requirements, the cost of higher tiers, the bonus at higher tiers"""
+    """the generated sections of a spell with tiers: the tier requirements, the cost of higher tiers, the bonus at higher tiers and the offline bonus"""
     ups = sorted(tier_up.get(name, []), key=lambda u: u['spell_tier'])
     if not ups: return []
-    lists = [{'title': f"Tier {u['spell_tier']}", 'items': [f"Ascension {u['asc_min']} or higher"] + tier_requirements(u)} for u in ups]
     out = [{'title': 'Spell tiers',
-            'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Each tier is unlocked by its own upgrade, which needs both the Ascension and the following in the current Reincarnation:',
-            'lists': lists},
+            'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Tier n (n = 2 to 5) is unlocked by an upgrade that needs all of the following (the activity times are counted in the current Reincarnation):',
+            'formulas': tier_requirement_formulas(ups)},
            {'title': 'Cost of higher tiers',
             'text': 'The first cast costs the normal mana cost. Casting again at a higher tier costs more:',
-            'formulas': [{'latex': r'C = c^{\,1 + 0.6\,T}', 'vars': [['C', 'the mana cost of the cast'], ['c', 'the spell\'s mana cost after all reductions'], ['T', 'the spell\'s current tier (1 after the first cast)']]}],
-            'after': 'The 0.6 is lowered by some things, for example Sequence (S1275).'}]
+            'formulas': [{'latex': r'C = c^{\,1 + (0.6 - R)\,T}',
+                          'vars': [['C', 'the mana cost of the cast'], ['c', "the spell's mana cost after all reductions"],
+                                   ['R', 'the reduction of the tier cost scaling, for example 0.1 from Sequence (S1275)'],
+                                   ['T', "the spell's current tier (1 after the first cast)"]]}]}]
     bonus = [dict(b) for b in hand]
-    for t in ups[0]['description']:      # the offline production bonus every tier adds
-        if 'Offline' in t['text'] and t['formulas']:
-            bonus.append({'title': 'Offline production', 'text': 'Each tier also increases offline production, based on your mana:',
-                          'formulas': [{'latex': g['latex'], 'vars': [[v['symbol'], v['text']] for v in g['vars']]} for g in t['formulas']]})
-            break
+    if any('Offline' in t['text'] for t in ups[0]['description']):      # the offline production bonus every tier adds
+        bonus.append({'title': 'Offline production',
+                      'text': 'Each unlocked tier also increases offline production:',
+                      'formulas': [{'latex': r'v = \left( x^{\frac{2}{\max(3,\,A)}} + y^{\frac{2}{\max(3,\,A)}} \right)^{0.4}',
+                                    'vars': [['v', 'the offline production bonus of a tier, in %'], ['x', 'your mana regeneration per second'],
+                                             ['y', 'your Maximum Mana'], ['A', 'your Ascension number']]},
+                                   {'latex': r'B = 100 \left( \left(1 + \frac{v}{100}\right)^{q} - 1 \right), \quad q = \begin{cases} 0.1^{\,A - N + 1} & A \ge N \ 1 & A < N \end{cases}',
+                                    'vars': [['B', 'the offline production bonus of the tier, in %'], ['N', 'the tier number'],
+                                             ['q', 'the Ascension penalty exponent of this bonus']]}]})
     return out + bonus
 
 
@@ -64,7 +113,11 @@ def spell_detail(name):
     secs = []
     for sec in dt.get('sections', []):
         sec = dict(sec)
-        if 'formulas' in sec: sec['formulas'] = [SHARED[f[1:]] if isinstance(f, str) else f for f in sec['formulas']]
+        if 'formulas' in sec:
+            fs = []
+            for f in sec['formulas']:
+                fs += SHARED[f[1:]] if isinstance(f, str) else [f]
+            sec['formulas'] = fs
         secs.append(sec)
     secs += tier_sections(name, dt.get('tier_sections', []))
     out = {'sections': secs}
@@ -132,7 +185,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #detail ul.items{margin:2px 0 6px;padding-left:0;list-style:none}
 #detail ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 #detail ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
-#detail .formula{padding:2px 0;overflow-wrap:anywhere}
+#detail .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 #detail ul.vars{margin:2px 0 6px;padding-left:20px}
 #detail ul.vars li{margin:0}
 #detail ul.vars b{display:inline;font-family:inherit;font-size:inherit}
