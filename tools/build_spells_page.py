@@ -163,7 +163,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs)) var(--lw);gap:var(--gap);align-items:center;justify-items:center;width:max-content;max-width:100%;margin:6px auto 18px}      /* a label column on each side keeps the icons centred */
 .board .lab{grid-column:auto;font-size:.85rem}
 .board .cell,.row .cell{width:var(--cs);height:var(--cs)}
-.grp{border:1px solid var(--line);border-radius:10px;padding:8px 10px 10px;margin:0 0 18px}
+.grp{margin:0 0 18px}
 .grp .cap{margin:0 0 6px;text-align:center}
 .row{display:flex;flex-wrap:wrap;gap:var(--gap);justify-content:center}
 .lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
