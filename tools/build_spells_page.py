@@ -289,8 +289,6 @@ hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
     tip.textContent=''; tip.appendChild(el('b',null,s.name));
     if(s.tags.length) tip.appendChild(chips(s));
     tip.appendChild(el('p',null,s.desc));
-    if(s.cost!=null) tip.appendChild(el('p',null,'Base mana cost: '+s.cost.toLocaleString('en-US')));
-    if(s.ticks!=null) tip.appendChild(el('p',null,'Base duration: '+dur(s.ticks)));
     tip.appendChild(el('p','hint','Click the spell icon to show detailed information.'));
     tip.style.display='block';
     var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
