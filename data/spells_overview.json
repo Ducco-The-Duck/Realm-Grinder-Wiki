@@ -69,13 +69,131 @@
     "Neutral",
     "Chaos",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings by an amount that grows every second the spell is active.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of every building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = c \\cdot s",
+        "vars": [
+         [
+          "c",
+          "the bonus per second, $20\\%$ by default, changed by various effects"
+         ],
+         [
+          "s",
+          "the seconds the spell has been active"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The other effects of the spell are not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier increases the headstart time you get.",
+      "formulas": []
+     }
+    ]
+   }
   },
   "Call to Arms": {
    "description": "Increase the production of all buildings based on buildings built.",
    "tags": [
     "Common"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the buildings you have built.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of every building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 25 + (0.3 \\cdot B)^{0.975}",
+        "vars": [
+         [
+          "B",
+          "your buildings built; some effects make them count more"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier makes your buildings count more for the production bonus. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "B_{\\text{tier}} = 5 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B_{@text{tier}}",
+          "the extra count of your buildings, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Combo Strike": {
    "description": "Increase the production of all buildings by a progressively higher value as you continue casting this spell. The duration of the spell cannot be modified.",
@@ -224,7 +342,75 @@
     "Good",
     "Chaos",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of Farms, Inns and Blacksmiths based on the amounts built.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of Farms, Inns and Blacksmiths"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = V^{1 + 0.02 \\cdot n^{0.2}}",
+        "vars": [
+         [
+          "V",
+          "the base value, 20000 by default, changed by various effects"
+         ],
+         [
+          "n",
+          "your Farms, Inns and Blacksmiths owned together"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier also makes the spell last longer. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "B = 10 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B",
+          "the extra duration, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Gem Grinder": {
    "description": "Multiplicatively increase the production bonus from Gems.",
@@ -385,7 +571,88 @@
     "Good",
     "Order",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on your Mana Regeneration. The duration grows with the time you spent as Good in this Reincarnation.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of every building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 10 \\cdot \\ln(1 + r)^{4}",
+        "vars": [
+         [
+          "r",
+          "your Mana Regeneration per second"
+         ]
+        ]
+       },
+       {
+        "latex": "D = \\lfloor (0.5 + c) \\cdot g^{0.5 + c} \\rfloor",
+        "vars": [
+         [
+          "D",
+          "the seconds added to the duration"
+         ],
+         [
+          "g",
+          "the time you spent as Good in this Reincarnation, in seconds"
+         ],
+         [
+          "c",
+          "the bonus coefficient, 0 at tier 1"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The duration is not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier raises the coefficient of the duration bonus. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "c = 0.05 \\cdot (T - 1)",
+        "vars": [
+         [
+          "c",
+          "the coefficient in the formula above"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Grand Balance": {
    "description": "Increase the production of your least productive buildings based on the three most built ones.",
@@ -610,7 +877,71 @@
     "Good",
     "Balance",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the clicks you made in this Reincarnation, and clicks automatically 15 times per second.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of every building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 1.3 \\cdot k^{0.7}",
+        "vars": [
+         [
+          "k",
+          "the clicks you made in this Reincarnation"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The automatic clicks are not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier adds automatic clicks. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "a = 15 + 2 \\cdot (T - 1)",
+        "vars": [
+         [
+          "a",
+          "the automatic clicks per second"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Night Time": {
    "description": "The production of assistants is increased based on Necropolises owned.",
@@ -688,7 +1019,71 @@
    "description": "Increase the production of all buildings based on Reincarnations made.",
    "tags": [
     "Common"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Increases the production of all buildings based on the Reincarnations you made.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier of every building"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 2500 \\cdot R^{0.9}",
+        "vars": [
+         [
+          "R",
+          "your number of Reincarnations; some effects make them count more"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The bonus of higher tiers is not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier makes your Reincarnations count more. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "B = 5 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B",
+          "the extra count of your Reincarnations, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Tax Collection": {
    "description": "Instantly gain some seconds' worth of coin production from buildings and assistants.",
@@ -1026,21 +1421,245 @@
    "tags": [
     "Balance",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Temporarily increases your assistants based on your Maximum Mana, increases your Maximum Mana based on your Faction Coin find chance, and increases your Faction Coin find chance based on your Excavation depth. All three grow with the tier it is cast at.",
+      "formulas": [
+       {
+        "latex": "A = 10 \\cdot \\ln(1 + M)^{1.25} \\cdot T",
+        "vars": [
+         [
+          "A",
+          "the extra assistants, in %"
+         ],
+         [
+          "M",
+          "your Maximum Mana"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       },
+       {
+        "latex": "S = 1.5 \\cdot \\ln(1 + f)^{1.5} \\cdot T",
+        "vars": [
+         [
+          "S",
+          "the Maximum Mana bonus, in %"
+         ],
+         [
+          "f",
+          "your Faction Coin find chance"
+         ]
+        ]
+       },
+       {
+        "latex": "F = (10 + 0.1 \\cdot D^{0.75}) \\cdot T",
+        "vars": [
+         [
+          "F",
+          "the Faction Coin find chance bonus, in %"
+         ],
+         [
+          "D",
+          "your Excavation depth"
+         ]
+        ]
+       }
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier also increases your offline bonus.",
+      "formulas": [
+       {
+        "latex": "B = 10 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B",
+          "the offline bonus, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Limited Wish": {
    "description": "Provide a random effect based on your chosen alignment. The duration of the spell cannot be modified, but its cost decreases by 1% per minute up to 1 hour, then it resets. Its power increases as you continue casting this spell.",
    "tags": [
     "Chaos",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Provides a random effect based on your chosen alignment. The duration cannot be modified. The mana cost goes down by 1% per minute, up to 1 hour, then resets. The more times you cast it, the stronger it gets.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
+        "vars": [
+         [
+          "M",
+          "the production multiplier"
+         ],
+         [
+          "X",
+          "the production bonus in %"
+         ],
+         [
+          "p",
+          "the Ascension penalty exponent, 1 at Ascension 0"
+         ]
+        ]
+       },
+       {
+        "latex": "X = 50 + 5 \\cdot \\ln(1 + n)^{1.75} \\cdot w",
+        "vars": [
+         [
+          "n",
+          "the number of times you cast the spell"
+         ],
+         [
+          "w",
+          "the power you gained from earlier casts"
+         ]
+        ]
+       },
+       {
+        "latex": "Y = 25 + 2.5 \\cdot \\ln(1 + n)^{1.75} \\cdot \\sqrt{w} \\cdot T",
+        "vars": [
+         [
+          "Y",
+          "the bonus of the effects that are not production, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       },
+       {
+        "latex": "c = 100 - \\frac{t_h}{60}",
+        "vars": [
+         [
+          "c",
+          "the mana cost, in % of the normal cost"
+         ],
+         [
+          "t_h",
+          "the seconds since the last full hour of your Reincarnation"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The other effects are not.",
+      "formulas": [
+       "@penalty"
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier makes your casts of it count more.",
+      "formulas": [
+       {
+        "latex": "B = 10 \\cdot (T - 1)^{2}",
+        "vars": [
+         [
+          "B",
+          "the extra count of your casts of it, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Precognition": {
    "description": "Buildings, Assistants, Royal Exchanges, Spells cast and Clicks count more, based on mana produced in this Era.",
    "tags": [
     "Order",
     "Faction"
-   ]
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Makes your buildings, assistants, Royal Exchanges, spells cast and clicks count more, based on the mana produced in this Era.",
+      "formulas": [
+       {
+        "latex": "X = a \\cdot \\ln(1 + m)^{b} \\cdot T",
+        "vars": [
+         [
+          "X",
+          "the extra count of each of them, in %"
+         ],
+         [
+          "m",
+          "the mana produced in this Era"
+         ],
+         [
+          "a",
+          "$0.65$ by default, changed by various effects"
+         ],
+         [
+          "b",
+          "$1.15$ by default, changed by various effects"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ],
+    "tier_sections": [
+     {
+      "title": "Bonus at higher tiers",
+      "text": "Casting it at a higher tier also makes your Research points count more.",
+      "formulas": [
+       {
+        "latex": "B = 10 \\cdot (T - 1)",
+        "vars": [
+         [
+          "B",
+          "the extra count of your Research points, in %"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "Catalyst": {
    "description": "Activates two random Vanilla or base alignment spells.",
