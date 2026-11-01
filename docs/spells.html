@@ -45,6 +45,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
 #detail .empty{color:var(--muted)}
+#detail p.mana,#detail p.dur{margin:4px 0 0;font-weight:600}
+#detail p.mana{color:#1f6fbf}
+#detail p.dur{color:#4a4438}
+@media (prefers-color-scheme:dark){#detail p.mana{color:#6cb4ff}#detail p.dur{color:#ece6d8}}
 #detail p{margin:4px 0}
 #detail .ltitle{margin:8px 0 0;font-weight:600}
 #detail ul.items{margin:2px 0 6px;padding-left:0;list-style:none}
@@ -283,6 +287,8 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
   function showDetail(s){
     detail.hidden=false; detail.textContent=''; detail.appendChild(el('h2',null,s.name));
     if(s.tags.length) detail.appendChild(chips(s));
+    if(s.cost!=null) detail.appendChild(el('p','mana','Base Mana Cost: '+s.cost.toLocaleString('en-US')));
+    if(s.ticks!=null) detail.appendChild(el('p','dur','Base Duration: '+dur(s.ticks)));
     var dd=s.detail||{};
     if(dd.note) detail.appendChild(el('p','note',dd.note));
     (dd.sections||[]).forEach(function(c){
