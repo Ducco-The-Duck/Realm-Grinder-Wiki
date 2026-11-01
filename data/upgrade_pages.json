@@ -11819,7 +11819,22 @@
 "description": [
 {
 "text": "Temporal Flux also increases Maximum Mana.",
-"formulas": [],
+"formulas": [
+{
+"latex": "v = 0.375 \\cdot \\left( \\frac{t}{60} \\right)^{0.825} \\cdot T",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent in this Era (seconds)"
+},
+{
+"symbol": "T",
+"text": "Tier Temporal Flux is cast at (1 for a spell cast once)"
+}
+],
+"label": "Maximum Mana bonus from Temporal Flux (%)"
+}
+],
 "s": null
 }
 ],

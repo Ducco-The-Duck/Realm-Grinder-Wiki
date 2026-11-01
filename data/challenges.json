@@ -2349,15 +2349,30 @@
 ],
 "formulas": [
 {
-"latex": "v = 2.5 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{2.5}",
+"latex": "v_{1} = 2.5 \\cdot \\left(\\ln\\left(1 + O\\right)\\right)^{2.5}",
 "vars": [
 {
 "symbol": "O",
 "text": "Your Offline production bonus"
 }
 ],
-"label": null,
+"label": "Assistants (%)",
 "shown": true
+},
+{
+"latex": "v_{2} = 100 \\cdot \\left( \\left(1 + \\frac{t^{0.825}}{100}\\right)^{p} - 1 \\right)",
+"vars": [
+{
+"symbol": "t",
+"text": "Time spent in this Era (seconds)"
+},
+{
+"symbol": "p",
+"text": "Ascension penalty exponent of Temporal Flux's Unique Building bonus (1 at Ascension 0)"
+}
+],
+"label": "Offline production from Temporal Flux (%)",
+"shown": false
 }
 ],
 "applies_to": "Evil Archon",

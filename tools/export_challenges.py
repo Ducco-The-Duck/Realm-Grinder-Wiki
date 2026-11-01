@@ -261,7 +261,16 @@ def _extra_serpent(paras, c):
     for f in paras[0]['formulas'][-2:]: f['shown'] = False
 
 
-EXTRA = {'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
+def _extra_untimely(paras, c):
+    # Temporal Flux's offline production bonus (the game text gives no number for it): the Unique Building bonus of the spell
+    paras[1]['formulas'].append(_m(
+        r'v = 100 \cdot \left( \left(1 + \frac{t^{0.825}}{100}\right)^{p} - 1 \right)',
+        ('t', 'Time spent in this Era (seconds)'),
+        ('p', "Ascension penalty exponent of Temporal Flux's Unique Building bonus (1 at Ascension 0)")))
+    paras[1]['formulas'][-1]['shown'] = False
+
+
+EXTRA = {'An Untimely Death': [_extra_untimely], 'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
          'Altar of Wishes': [_extra_altar]}
 
 
@@ -442,6 +451,7 @@ FORM_LABELS = {
     'Ifrit Ignition': ['Maximum Mana', 'Additional casts per Evil or Chaos spell'],
     'Artificial Currency': ['Increase of triggered Tax Collections', 'Production bonus from Gems'],
     'Drow Challenge': ['Combo Strike counter', 'Offline spells cast amount (%)'],
+    'An Untimely Death': ['Assistants (%)', 'Offline production from Temporal Flux (%)'],
     'Seed of Life': ['Elven Luck stat gained while offline', 'Assistants'],
     'Serpent Queller': ['Evolutive Mutation with this challenge: Faction Coin find chance (%)',
                         'Deep Memory with this challenge: assistants (%)'],

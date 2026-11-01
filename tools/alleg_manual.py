@@ -93,6 +93,10 @@ FORMULAS = {
     'Fang Food': [(0, F(r'v = 0.6 \cdot N^{0.6}', ('N', most('Dragon Pasture'))))],
     'Star Trading': [(0, F(r'v = 0.9 \cdot X', ('X', 'Most Royal Exchanges you have made at once in this Reincarnation')))],
     'Energy Recharge': [(0, F(r'v = 0.25 \cdot t^{0.5}', ('t', 'Time spent with Order alignment in this Reincarnation (seconds)')))],
+    'Archon Union': [(0, F(r'v = 0.375 \cdot \left( \frac{t}{60} \right)^{0.825} \cdot T',
+                           ('t', 'Time spent in this Era (seconds)'),
+                           ('T', 'Tier Temporal Flux is cast at (1 for a spell cast once)'),
+                           label='Maximum Mana bonus from Temporal Flux (%)'))],
     'Archon Pride': [
         (0, F(r'v_{1} = L', ('L', 'Your current Lineage level'), label='Assistants (%)')),
         (1, F(r'v_{2} = 1.15 \cdot L^{1.15}', ('L', 'Your current Lineage level'), label='Mana produced while offline (%)'))],

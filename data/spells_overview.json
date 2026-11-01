@@ -1645,7 +1645,7 @@
    }
   },
   "Temporal Flux": {
-   "description": "Increase the production of Unique Buildings based on time spent in this Era. Multiplicatively increase Mana Regeneration based on time spent in this Era.\nMultiplicatively increase Maximum Mana based on time spent in this Era.\nIncrease Offline production based on time spent in this Era.",
+   "description": "Increase the production of Unique Buildings based on time spent in this Era. Multiplicatively increase Mana Regeneration based on time spent in this Era.",
    "tags": [
     "Alignment",
     "Order"
@@ -1654,7 +1654,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all Unique Buildings and multiplies your Mana Regeneration, based on the time spent in this Era; the Mana Regeneration bonus is larger the higher the tier it is cast at. With Archon Union it also increases Maximum Mana, and with An Untimely Death (Archon Challenge 2 reward) it also increases your offline production.",
+      "text": "Increases the production of all Unique Buildings and multiplies your Mana Regeneration, based on the time spent in this Era; the Mana Regeneration bonus is larger the higher the tier it is cast at.",
       "formulas": [
        {
         "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
@@ -1694,34 +1694,12 @@
           "the tier the spell is cast at (1 for a spell cast once)"
          ]
         ]
-       },
-       {
-        "latex": "S = 0.375 \\cdot \\left( \\frac{t}{60} \\right)^{0.825} \\cdot T",
-        "vars": [
-         [
-          "S",
-          "the Maximum Mana bonus, in %"
-         ]
-        ]
-       },
-       {
-        "latex": "O = 100 \\cdot (M - 1)",
-        "vars": [
-         [
-          "O",
-          "the offline production bonus, in % (only with An Untimely Death)"
-         ],
-         [
-          "M",
-          "the production multiplier of each Unique Building, from above"
-         ]
-        ]
        }
       ]
      },
      {
       "title": "Ascension penalty",
-      "text": "The Unique Building production bonus and the offline production bonus are reduced by the Ascension penalty, which lowers the exponent p above. The Mana Regeneration and Maximum Mana bonuses are not.",
+      "text": "The Unique Building production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The Mana Regeneration bonus is not.",
       "formulas": [
        "@penalty"
       ]
