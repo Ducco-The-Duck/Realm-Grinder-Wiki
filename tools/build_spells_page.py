@@ -139,7 +139,7 @@ def spell_detail(name):
 
 
 data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
-                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'detail': spell_detail(s['name'])} for s in spells],
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'kind': ov[s['name']]['kind'], 'detail': spell_detail(s['name'])} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -164,8 +164,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .board .lab{grid-column:auto;font-size:.85rem}
 .board .cell,.row .cell{width:var(--cs);height:var(--cs)}
 .grp{border:1px solid var(--line);border-radius:10px;padding:8px 10px 10px;margin:0 0 18px}
-.grp .cap{margin:0 0 6px}
-.row{display:flex;flex-wrap:wrap;gap:var(--gap)}
+.grp .cap{margin:0 0 6px;text-align:center}
+.row{display:flex;flex-wrap:wrap;gap:var(--gap);justify-content:center}
 .lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
 .cell{width:89px;height:89px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
@@ -305,17 +305,16 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
     return c;
   }
-  // where a spell goes, from its tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),
+  // where a spell goes, from its kind and tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),
   // the Faction spells in the grid (both alignments) or on the right (first alignment only) or at the bottom (second alignment only), the rest in Others
   var FIRST=['Good','Neutral','Evil'], SECOND=['Order','Balance','Chaos'];
   function place(s){
-    var tg=s.tags.map(function(x){ return x.replace(/\*$/,''); });
-    function has(x){ return tg.indexOf(x)>=0; }
-    if(has('Common')) return {k:'common'};
-    if(has('Event')) return {k:'event'};
+    function has(x){ return s.tags.indexOf(x)>=0; }
+    if(s.kind==='common') return {k:'common'};
+    if(s.kind==='event') return {k:'event'};
     var f=-1,g=-1; FIRST.forEach(function(x,i){ if(has(x)) f=i; }); SECOND.forEach(function(x,i){ if(has(x)) g=i; });
-    if(has('Alignment')){ if(f>=0) return {k:'cell',r:3+f,c:2}; if(g>=0) return {k:'cell',r:2,c:3+g}; }
-    if(has('Faction')){ if(f>=0&&g>=0) return {k:'cell',r:3+f,c:3+g}; if(f>=0) return {k:'cell',r:3+f,c:6}; if(g>=0) return {k:'cell',r:6,c:3+g}; }
+    if(s.kind==='alignment'){ if(f>=0) return {k:'cell',r:3+f,c:2}; if(g>=0) return {k:'cell',r:2,c:3+g}; }
+    if(s.kind==='faction'){ if(f>=0&&g>=0) return {k:'cell',r:3+f,c:3+g}; if(f>=0) return {k:'cell',r:3+f,c:6}; if(g>=0) return {k:'cell',r:6,c:3+g}; }
     return {k:'others'};
   }
   function chipLabel(text, r, c, cs, span){
