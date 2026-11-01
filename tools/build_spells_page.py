@@ -102,7 +102,8 @@ def tier_sections(name, hand):
                       'text': 'Each unlocked tier also increases offline production:',
                       'formulas': [{'latex': r'v = \left( x^{\frac{2}{\max(3,\,A)}} + y^{\frac{2}{\max(3,\,A)}} \right)^{0.4}',
                                     'vars': [['v', 'the offline production bonus of a tier, in %'], ['x', 'your mana regeneration per second'],
-                                             ['y', 'your Maximum Mana'], ['A', 'your Ascension number']]}]})
+                                             ['y', 'your Maximum Mana'], ['A', 'your Ascension number']]}],
+                      'after': 'This bonus is affected by the regular Ascension penalty, which starts at Ascension $N$ for tier $N$.'})
     return out + bonus
 
 
