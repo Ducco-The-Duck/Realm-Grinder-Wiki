@@ -184,6 +184,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #detail ul.items{margin:2px 0 6px;padding-left:0;list-style:none}
 #detail ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 #detail ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+#detail hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 #detail .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 #detail ul.vars{margin:2px 0 6px;padding-left:20px}
 #detail ul.vars li{margin:0}
@@ -236,9 +237,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
         if(l.title) detail.appendChild(richText('p','ltitle',l.title));
         var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(richText('li',null,t)); }); detail.appendChild(ul);
       });
-      (c.formulas||[]).forEach(function(f){
+      (c.formulas||[]).forEach(function(f,fi,fa){
         var d=el('div','formula'); math(f.latex,d); detail.appendChild(d);
         if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — ')); li.appendChild(richText('span',null,v[1])); ul.appendChild(li); }); detail.appendChild(ul); }
+        if(f.vars && fi<fa.length-1) detail.appendChild(el('hr','fsep'));      // a line between formulas that each come with their variables
       });
       if(c.after) detail.appendChild(richText('p',null,c.after));
     });
