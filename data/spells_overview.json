@@ -1645,7 +1645,7 @@
    }
   },
   "Temporal Flux": {
-   "description": "Increase the production of Unique Buildings based on time spent in this Era.",
+   "description": "Increase the production of Unique Buildings based on time spent in this Era. Multiplicatively increase Mana Regeneration based on time spent in this Era.",
    "tags": [
     "Alignment",
     "Order"
@@ -1654,7 +1654,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all Unique Buildings, and your offline production, based on the time spent in this Era. It also increases Mana Regeneration and Maximum Mana, more so the higher the tier it is cast at.",
+      "text": "Increases the production of all Unique Buildings and multiplies your Mana Regeneration, based on the time spent in this Era; the Mana Regeneration bonus is larger the higher the tier it is cast at. With Archon Union it also increases Maximum Mana, and with An Untimely Death (Archon Challenge 2 reward) it also increases your offline production.",
       "formulas": [
        {
         "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
