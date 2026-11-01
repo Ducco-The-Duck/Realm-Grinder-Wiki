@@ -17,8 +17,8 @@ SHARED = {
         {'latex': r'p = 1 \quad (A = 0)'},
         {'latex': r'p = \dfrac{0.1}{A} \quad (A \ge 1,\ \text{no tier unlocked})'},
         {'latex': r'p = \dfrac{0.5}{A} \cdot 0.5^{\,w\,(A - T + 1)} \quad (A \ge 1,\ \text{tiers unlocked})',
-         'vars': [['A', 'your Ascension number'], ['T', 'the tier the spell is cast at ($1$ for a spell cast once)'],
-                  ['w', '$1$ if $T - 1$ is not above $A$, otherwise $1/2$']]}],
+         'vars': [['A', 'your Ascension number'], ['T', 'the tier the spell is cast at (1 for a spell cast once)'],
+                  ['w', '1 if T - 1 is not above A, otherwise 1/2']]}],
 }
 
 import re as _re
@@ -94,8 +94,8 @@ def tier_sections(name, hand):
             'text': 'The first cast costs the normal mana cost. Casting again at a higher tier costs more:',
             'formulas': [{'latex': r'C = c^{\,1 + (0.6 - R)\,T}',
                           'vars': [['C', 'the mana cost of the cast'], ['c', "the spell's mana cost after all reductions"],
-                                   ['R', 'the reduction of the tier cost scaling, for example $0.1$ from Sequence (S1275)'],
-                                   ['T', "the spell's current tier ($1$ after the first cast)"]]}]}]
+                                   ['R', 'the reduction of the tier cost scaling, for example 0.1 from Sequence (S1275)'],
+                                   ['T', "the spell's current tier (1 after the first cast)"]]}]}]
     bonus = [dict(b) for b in hand]
     if any('Offline' in t['text'] for t in ups[0]['description']):      # the offline production bonus every tier adds
         bonus.append({'title': 'Offline production',
