@@ -7,8 +7,73 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
 ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
+tier_up = {}      # spell -> its tier upgrades (Magic upgrades), from the upgrade pages' data
+for u in json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))['magic']:
+    if u.get('spell'): tier_up.setdefault(u['spell'], []).append(u)
+
+# formulas shared by all spells ("@name" in data/spells_overview.json)
+SHARED = {
+    'penalty': {'latex': r'p = \begin{cases} 1 & A = 0 \ \dfrac{0.1}{A} & A \ge 1,\ \text{no tier unlocked} \ \dfrac{0.5}{A} \cdot 0.5^{\,w\,(A - \tau)} & A \ge 1,\ \text{tiers unlocked} \end{cases}',
+                'vars': [['A', 'your Ascension number'], [r'\tau', 'the tier index the spell is cast at: 0 for a spell cast once, 1 for the second tier, and so on'],
+                         ['w', '1 if the tier index is not above the Ascension number, otherwise 1/2'],
+                         ['p', 'the exponent the bonus is raised to, as in the formula above']]},
+}
+
+
+def tier_requirements(u):
+    """the unlock text of a tier upgrade as a list of requirements (one entry per part; a part that depends on the Ascension names each value)"""
+    parts = {}
+    for a, t in sorted(u['unlock_by_asc'].items()):
+        t = t.removeprefix('To unlock, you need to have at least ').rstrip('.')
+        parts[a] = t.split(' and have at least ')
+    n = max(len(v) for v in parts.values())
+    out = []
+    for i in range(n):
+        vals = {a: v[i] for a, v in parts.items() if i < len(v)}
+        if len(set(vals.values())) == 1:
+            t = next(iter(vals.values()))
+            out.append(t[0].upper() + t[1:])
+        else:
+            out.append('; '.join(f'Ascension {a}: {t}' for a, t in vals.items()))
+    return out
+
+
+def tier_sections(name, hand):
+    """the generated sections of a spell with tiers: the tiers with their requirements, the cost of higher tiers, the bonus at higher tiers"""
+    ups = sorted(tier_up.get(name, []), key=lambda u: u['spell_tier'])
+    if not ups: return []
+    lists = [{'title': f"Tier {u['spell_tier']}", 'items': [f"Ascension {u['asc_min']} or higher"] + tier_requirements(u)} for u in ups]
+    out = [{'title': 'Spell tiers',
+            'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Each tier is unlocked by its own upgrade, which needs both the Ascension and the following in the current Reincarnation:',
+            'lists': lists},
+           {'title': 'Cost of higher tiers',
+            'text': 'The first cast costs the normal mana cost. Casting again at a higher tier costs more:',
+            'formulas': [{'latex': r'C = c^{\,1 + 0.6\,T}', 'vars': [['C', 'the mana cost of the cast'], ['c', 'the spell\'s mana cost after all reductions'], ['T', 'the spell\'s current tier (1 after the first cast)']]}],
+            'after': 'The 0.6 is lowered by some things, for example Sequence (S1275).'}]
+    bonus = [dict(b) for b in hand]
+    for t in ups[0]['description']:      # the offline production bonus every tier adds
+        if 'Offline' in t['text'] and t['formulas']:
+            bonus.append({'title': 'Offline production', 'text': 'Each tier also increases offline production, based on your mana:',
+                          'formulas': [{'latex': g['latex'], 'vars': [[v['symbol'], v['text']] for v in g['vars']]} for g in t['formulas']]})
+            break
+    return out + bonus
+
+
+def spell_detail(name):
+    dt = dict(ov[name].get('detail', {}))
+    secs = []
+    for sec in dt.get('sections', []):
+        sec = dict(sec)
+        if 'formulas' in sec: sec['formulas'] = [SHARED[f[1:]] if isinstance(f, str) else f for f in sec['formulas']]
+        secs.append(sec)
+    secs += tier_sections(name, dt.get('tier_sections', []))
+    out = {'sections': secs}
+    if 'note' in dt: out['note'] = dt['note']
+    return out
+
+
 data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
-                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'detail': ov[s['name']].get('detail', {})} for s in spells],
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'detail': spell_detail(s['name'])} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -18,6 +83,8 @@ html = r'''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
 <title>Realm Grinder Spells</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
 :root{--bg:#fbfaf7;--fg:#1f1c17;--muted:#6b655a;--line:#ddd6c8;--card:#fff;--cell:#f0eadc;--cellhi:#e4d8bd;--accent:#8a5a14;--shadow:0 6px 24px rgba(0,0,0,.18)}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#ece6d8;--muted:#a39b8a;--line:#383229;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;--accent:#e0a64a;--shadow:0 6px 24px rgba(0,0,0,.6)}}
@@ -56,6 +123,15 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
 #detail .empty{color:var(--muted)}
+#detail p{margin:4px 0}
+#detail .ltitle{margin:8px 0 0;font-weight:600}
+#detail ul.items{margin:2px 0 6px;padding-left:0;list-style:none}
+#detail ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
+#detail ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+#detail .formula{padding:2px 0;overflow-wrap:anywhere}
+#detail ul.vars{margin:2px 0 6px;padding-left:20px}
+#detail ul.vars li{margin:0}
+#detail ul.vars b{display:inline;font-family:inherit;font-size:inherit}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -92,9 +168,26 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     if(s.tags.length) detail.appendChild(chips(s));
     var dd=s.detail||{};
     if(dd.note) detail.appendChild(el('p','note',dd.note));
-    (dd.sections||[]).forEach(function(c){ detail.appendChild(el('h3',null,c.title)); if(c.tags) detail.appendChild(chips(c.tags)); });
-    if(!dd.sections) detail.appendChild(el('p','empty','No detailed information has been written yet.'));
+    (dd.sections||[]).forEach(function(c){
+      detail.appendChild(el('h3',null,c.title));
+      if(c.tags) detail.appendChild(chips(c.tags));
+      if(c.text) detail.appendChild(el('p',null,c.text));
+      (c.lists||[]).forEach(function(l){
+        if(l.title) detail.appendChild(el('p','ltitle',l.title));
+        var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); detail.appendChild(ul);
+      });
+      (c.formulas||[]).forEach(function(f){
+        var d=el('div','formula'); math(f.latex,d); detail.appendChild(d);
+        if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); detail.appendChild(ul); }
+      });
+      if(c.after) detail.appendChild(el('p',null,c.after));
+    });
+    if(!(dd.sections||[]).length) detail.appendChild(el('p','empty','No detailed information has been written yet.'));
     detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function math(tex, node){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
+    node.textContent=tex;
   }
   function hideTip(){ tip.style.display='none'; }
   function showTip(s, anchor){
