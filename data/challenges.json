@@ -2360,15 +2360,11 @@
 "shown": true
 },
 {
-"latex": "v_{2} = 100 \\cdot \\left( \\left(1 + \\frac{t^{0.825}}{100}\\right)^{p} - 1 \\right)",
+"latex": "v_{2} = 100 \\cdot (M - 1)",
 "vars": [
 {
-"symbol": "t",
-"text": "Time spent in this Era (seconds)"
-},
-{
-"symbol": "p",
-"text": "Ascension penalty exponent of Temporal Flux's Unique Building bonus (1 at Ascension 0)"
+"symbol": "M",
+"text": "Temporal Flux unique building production multiplier (not %)"
 }
 ],
 "label": "Offline production from Temporal Flux (%)",

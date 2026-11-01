@@ -262,11 +262,10 @@ def _extra_serpent(paras, c):
 
 
 def _extra_untimely(paras, c):
-    # Temporal Flux's offline production bonus (the game text gives no number for it): the Unique Building bonus of the spell
+    # Temporal Flux's offline production bonus (the game text gives no number for it): the spell's Unique Building production multiplier
     paras[1]['formulas'].append(_m(
-        r'v = 100 \cdot \left( \left(1 + \frac{t^{0.825}}{100}\right)^{p} - 1 \right)',
-        ('t', 'Time spent in this Era (seconds)'),
-        ('p', "Ascension penalty exponent of Temporal Flux's Unique Building bonus (1 at Ascension 0)")))
+        r'v = 100 \cdot (M - 1)',
+        ('M', 'Temporal Flux unique building production multiplier (not %)')))
     paras[1]['formulas'][-1]['shown'] = False
 
 
