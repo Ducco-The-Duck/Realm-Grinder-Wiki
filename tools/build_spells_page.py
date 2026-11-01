@@ -30,7 +30,8 @@ def _num(t):
     if not m: return None
     v, u, lab = int(m.group(1)), m.group(2), m.group(3)
     lab = lab.replace(' in this Reincarnation', ' (this Reincarnation)')
-    return v * {'h': 3600, 'm': 60, 's': 1}.get(u, 1), lab[0].upper() + lab[1:], bool(u)
+    if 'activity' in lab and 'activity time' not in lab: lab = lab.replace('activity', 'activity time', 1)
+    return v * {'h': 3600, 'm': 60, 's': 1}.get(u, 1), lab, bool(u)
 
 
 def _fit(vals):
@@ -46,11 +47,10 @@ def _fit(vals):
 def _g(x): return f'{x:g}' if x == int(x) else f'{x}'
 
 
-def tier_requirement_formulas(ups):
-    """the unlock requirements of the tier upgrades as formulas in the tier n"""
-    out = []
-    if all(u['asc_min'] == u['spell_tier'] - 1 for u in ups): out.append({'latex': r'\text{Ascension} \ge n - 1'})
-    else: out.append({'latex': r'\text{Ascension} \ge 1'})
+def tier_requirement_list(ups):
+    """the unlock requirements of the tier upgrades as lines in the tier n ($...$ is set as a formula), and a note naming amounts that depend on the Ascension"""
+    out, note = [], ''
+    out.append('Ascension $n - 1$' if all(u['asc_min'] == u['spell_tier'] - 1 for u in ups) else 'Ascension $1$')
     parts = {}      # part index -> tier -> Ascension -> text
     for u in ups:
         for a, t in u['unlock_by_asc'].items():
@@ -60,35 +60,36 @@ def tier_requirement_formulas(ups):
         tiers = parts[i]
         asc = sorted(next(iter(tiers.values())))
         parsed = {n: {a: _num(x) for a, x in v.items()} for n, v in tiers.items()}
+        first = next(iter(next(iter(parsed.values())).values()))
         if any(q is None for v in parsed.values() for q in v.values()):
-            out.append({'latex': r'\text{' + '; '.join(next(iter(tiers.values())).values()) + '}'}); continue
-        lab = next(iter(next(iter(parsed.values())).values()))[1]
-        unit = r'\ \text{s}' if next(iter(next(iter(parsed.values())).values()))[2] else ''
+            out.append(next(iter(tiers.values()))[asc[0]]); continue
+        lab = (' seconds ' if first[2] else ' ') + first[1]
         same = all(len({parsed[n][a][0] for a in asc}) == 1 for n in parsed)
         if same:
             f = _fit({n: parsed[n][asc[0]][0] for n in parsed})
-            if f is None: out.append({'latex': r'\text{' + lab + '}'}); continue
-            rhs = f'{_g(f[1])}\,(n - 1)' if f[0] == 'prop' else f'{_g(f[2])}\,n + {_g(f[1])}'
-            out.append({'latex': r'\text{' + lab + r'} \ge ' + rhs + unit})
-        else:      # the amount depends on the Ascension: k(n - 1) with a k per Ascension
+            if f is None: out.append(first[1]); continue
+            rhs = _g(f[1]) + r'\,(n - 1)' if f[0] == 'prop' else _g(f[2]) + r'\,n + ' + _g(f[1])
+            out.append('$' + rhs + '$' + lab)
+        else:      # the amount depends on the Ascension: k (n - 1) with a k per Ascension
             ks = {}
             for a in asc:
                 f = _fit({n: parsed[n][a][0] for n in parsed})
                 if f is None or f[0] != 'prop': ks = None; break
                 ks[a] = f[1]
-            if ks is None: out.append({'latex': r'\text{' + lab + '}'}); continue
-            out.append({'latex': r'\text{' + lab + r'} \ge k\,(n - 1)' + unit,
-                        'vars': [['k', ', '.join(f'{_g(v)} at Ascension {a}' for a, v in ks.items())]]})
-    return out
+            if ks is None: out.append(first[1]); continue
+            out.append(r'$k\,(n - 1)$' + lab)
+            note = '$k$ is ' + ', '.join(f'{_g(v)} at Ascension {a}' for a, v in ks.items()) + '.'
+    return out, note
 
 
 def tier_sections(name, hand):
     """the generated sections of a spell with tiers: the tier requirements, the cost of higher tiers, the bonus at higher tiers and the offline bonus"""
     ups = sorted(tier_up.get(name, []), key=lambda u: u['spell_tier'])
     if not ups: return []
+    req = tier_requirement_list(ups)
     out = [{'title': 'Spell tiers',
-            'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Tier n (n = 2 to 5) is unlocked by an upgrade that needs all of the following (the activity times are counted in the current Reincarnation):',
-            'formulas': tier_requirement_formulas(ups)},
+            'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Higher tiers are unlocked by a magic upgrade with the following requirements:',
+            'lists': [{'title': 'Tier $n$:', 'items': req[0]}], 'after': req[1]},
            {'title': 'Cost of higher tiers',
             'text': 'The first cast costs the normal mana cost. Casting again at a higher tier costs more:',
             'formulas': [{'latex': r'C = c^{\,1 + (0.6 - R)\,T}',
@@ -101,10 +102,7 @@ def tier_sections(name, hand):
                       'text': 'Each unlocked tier also increases offline production:',
                       'formulas': [{'latex': r'v = \left( x^{\frac{2}{\max(3,\,A)}} + y^{\frac{2}{\max(3,\,A)}} \right)^{0.4}',
                                     'vars': [['v', 'the offline production bonus of a tier, in %'], ['x', 'your mana regeneration per second'],
-                                             ['y', 'your Maximum Mana'], ['A', 'your Ascension number']]},
-                                   {'latex': r'B = 100 \left( \left(1 + \frac{v}{100}\right)^{q} - 1 \right), \quad q = \begin{cases} 0.1^{\,A - N + 1} & A \ge N \ 1 & A < N \end{cases}',
-                                    'vars': [['B', 'the offline production bonus of the tier, in %'], ['N', 'the tier number'],
-                                             ['q', 'the Ascension penalty exponent of this bonus']]}]})
+                                             ['y', 'your Maximum Mana'], ['A', 'your Ascension number']]}]})
     return out + bonus
 
 
@@ -232,16 +230,16 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     (dd.sections||[]).forEach(function(c){
       detail.appendChild(el('h3',null,c.title));
       if(c.tags) detail.appendChild(chips(c.tags));
-      if(c.text) detail.appendChild(el('p',null,c.text));
+      if(c.text) detail.appendChild(richText('p',null,c.text));
       (c.lists||[]).forEach(function(l){
-        if(l.title) detail.appendChild(el('p','ltitle',l.title));
-        var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); detail.appendChild(ul);
+        if(l.title) detail.appendChild(richText('p','ltitle',l.title));
+        var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(richText('li',null,t)); }); detail.appendChild(ul);
       });
       (c.formulas||[]).forEach(function(f){
         var d=el('div','formula'); math(f.latex,d); detail.appendChild(d);
-        if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); detail.appendChild(ul); }
+        if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — ')); li.appendChild(richText('span',null,v[1])); ul.appendChild(li); }); detail.appendChild(ul); }
       });
-      if(c.after) detail.appendChild(el('p',null,c.after));
+      if(c.after) detail.appendChild(richText('p',null,c.after));
     });
     if(!(dd.sections||[]).length) detail.appendChild(el('p','empty','No detailed information has been written yet.'));
     detail.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -249,6 +247,16 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
+  }
+  function richText(tag, cls, text){      // text with $formula$ parts set as formulas
+    var e=el(tag,cls);
+    text.split('$').forEach(function(part,i){
+      if(i%2===0){ if(part) e.appendChild(document.createTextNode(part)); return; }
+      var m=el('span'); e.appendChild(m);
+      if(window.katex){ try{ katex.render(part,m,{throwOnError:false}); return; }catch(x){} }
+      m.textContent=part;
+    });
+    return e;
   }
   function hideTip(){ tip.style.display='none'; }
   function showTip(s, anchor){

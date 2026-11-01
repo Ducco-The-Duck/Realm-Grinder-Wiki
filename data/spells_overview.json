@@ -14,15 +14,15 @@
       "text": "Increases the production of all Evil buildings while it is active.",
       "formulas": [
        {
-        "latex": "B = 100 \\left( \\left(1 + \\frac{X}{100} \\right)^{p} - 1 \\right)",
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
         "vars": [
          [
-          "B",
-          "the production bonus of each Evil building, in %"
+          "M",
+          "the production multiplier of each Evil building"
          ],
          [
           "X",
-          "the base bonus in %, 1500 by default; other things change it, for example Demon Bloodline"
+          "the base bonus, $1500\\%$ by default, changed by various effects, e.g. Demon Bloodline"
          ],
          [
           "p",
@@ -151,15 +151,15 @@
       "text": "Increases the reward of every click while it is active.",
       "formulas": [
        {
-        "latex": "B = 100 \\left( \\left(1 + \\frac{X}{100} \\right)^{p} - 1 \\right)",
+        "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
         "vars": [
          [
-          "B",
-          "the click reward bonus, in %"
+          "M",
+          "the click reward multiplier"
          ],
          [
           "X",
-          "the base bonus in %, 1750 by default; other things change it, for example Angel Bloodline, which raises it the longer the spell has been active"
+          "the base bonus, $1750\\%$ by default, changed by various effects, e.g. Angel Bloodline"
          ],
          [
           "p",
