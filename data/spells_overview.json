@@ -94,8 +94,12 @@
         ]
        },
        {
-        "latex": "X = c \\cdot s",
+        "latex": "X = c \\cdot \\lceil s + H \\rceil",
         "vars": [
+         [
+          "X",
+          "the production bonus in %"
+         ],
          [
           "c",
           "the bonus per second, $20\\%$ by default, changed by various effects"
@@ -103,6 +107,10 @@
          [
           "s",
           "the seconds the spell has been active"
+         ],
+         [
+          "H",
+          "the headstart, in seconds"
          ]
         ]
        }
@@ -119,14 +127,22 @@
     "tier_sections": [
      {
       "title": "Bonus at higher tiers",
-      "text": "Casting it at a higher tier increases the headstart time you get. The Ascension penalty does not apply to this.",
+      "text": "Casting it at a higher tier increases the headstart you get, which counts as extra seconds of activity. The Ascension penalty does not apply to this.",
       "formulas": [
        {
-        "latex": "H = 10 \\cdot (T - 1)",
+        "latex": "H = m \\cdot (H_0 + 600 \\cdot (T - 1))",
         "vars": [
          [
           "H",
-          "the headstart time, in minutes"
+          "the headstart, in seconds"
+         ],
+         [
+          "m",
+          "the headstart multiplier, $1$ by default, changed by various effects"
+         ],
+         [
+          "H_0",
+          "the headstart from other effects, $0$ by default"
          ],
          [
           "T",
@@ -195,7 +211,7 @@
         "latex": "B_{\\text{tier}} = 5 \\cdot (T - 1)",
         "vars": [
          [
-          "B_{@text{tier}}",
+          "B_{\\text{tier}}",
           "the extra count of your buildings, in %"
          ],
          [

@@ -49,7 +49,7 @@ def _fit(vals):
 def _g(x):
     """a number for a formula: digits, or a power of ten when it is a large one"""
     import math
-    if x < 1e9: return str(int(x)) if x == int(x) else f'{x:g}'
+    if x < 1e6 or (x < 1e9 and x != 10 ** round(math.log10(x))): return str(int(x)) if x == int(x) else f'{x:g}'
     e = round(math.log10(x))
     if abs(x - 10 ** e) < 1e-6 * x: return f'10^{{{e}}}'
     e = math.floor(math.log10(x))
@@ -58,7 +58,7 @@ def _g(x):
 
 def tier_requirement_list(ups, name=''):
     """the unlock requirements of the tier upgrades as lines in the tier n ($...$ is set as a formula), and a note naming amounts that depend on the Ascension"""
-    out, note = [], ''
+    out, note, extra = [], '', []
     out.append('Ascension $n - 1$' if all(u['asc_min'] == u['spell_tier'] - 1 for u in ups) else 'Ascension $1$')
     parts = {}      # part index -> tier -> Ascension -> text
     for u in ups:
@@ -84,17 +84,13 @@ def tier_requirement_list(ups, name=''):
                 ea, er = round(math.log10(f[1]), 2), round(math.log10(f[2]), 2)
                 rhs = f'10^{{{_g(er)}\,n}}' if ea == er else f'10^{{{_g(ea)}}} \cdot 10^{{{_g(er)}\,(n - 1)}}'
             out.append('$' + rhs + (r'\%' if first[3] else '') + '$' + lab)
-        else:      # the amount depends on the Ascension: k (n - 1) with a k per Ascension
-            ks = {}
-            for a in asc:
-                f = _fit({n: parsed[n][a][0] for n in parsed})
-                if f is None or f[0] != 'prop': ks = None; break
-                ks[a] = f[1]
-            if ks is None: out.append(first[1]); continue
-            out.append(r'$k\,(n - 1)$' + lab)
-            note = '$k$ is ' + ', '.join(f'{_g(v)} at Ascension {a}' for a, v in ks.items()) + '.'
-            if name == 'Call to Arms': note = '$k$ is $60000 / A$ below Ascension 4 and $10000 / A$ from Ascension 4, with $A$ your Ascension number.'
-    return out, note
+        else:      # the amount depends on the Ascension: each tier on its own, with its value at each Ascension
+            lines = []
+            for n in sorted(parsed):
+                vals = ', '.join(f'${_g(parsed[n][a][0])}$ at Ascension {a}' for a in asc if int(a) >= n - 1)
+                lines.append(f'Tier ${n}$: ' + vals)
+            extra.append({'title': first[1][0].upper() + first[1][1:] + ' needed per tier and Ascension:', 'items': lines})
+    return out, note, extra
 
 
 def tier_sections(name, hand):
@@ -104,7 +100,7 @@ def tier_sections(name, hand):
     req = tier_requirement_list(ups, name)
     out = [{'title': 'Spell tiers',
             'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Higher tiers are unlocked by a magic upgrade with the following requirements:',
-            'lists': [{'title': 'Tier $n$:', 'items': req[0]}], 'after': req[1]},
+            'lists': [{'title': 'Tier $n$:', 'items': req[0]}] + req[2], 'after': req[1]},
            {'title': 'Cost of higher tiers',
             'text': 'The first cast costs the normal mana cost. Casting again at a higher tier costs more:',
             'formulas': [{'latex': r'C = c^{\,1 + (0.6 - R)\,T}',
