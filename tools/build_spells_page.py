@@ -84,6 +84,9 @@ def tier_requirement_list(ups, name=''):
                 ea, er = round(math.log10(f[1]), 2), round(math.log10(f[2]), 2)
                 rhs = f'10^{{{_g(er)}\,n}}' if ea == er else f'10^{{{_g(ea)}}} \cdot 10^{{{_g(er)}\,(n - 1)}}'
             out.append('$' + rhs + (r'\%' if first[3] else '') + '$' + lab)
+        elif name == 'Call to Arms':      # k (n - 1) / A, k read from the game's own formula
+            out.append(r'$k\,(n - 1) / A$' + lab)
+            note = '$k$ is $10000$ at Ascension 4, $60000$ otherwise, and $A$ is your Ascension number.'
         else:      # the amount depends on the Ascension: each tier on its own, with its value at each Ascension
             lines = []
             for n in sorted(parsed):

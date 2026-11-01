@@ -130,19 +130,11 @@
       "text": "Casting it at a higher tier increases the headstart you get, which counts as extra seconds of activity. The Ascension penalty does not apply to this.",
       "formulas": [
        {
-        "latex": "H = m \\cdot (H_0 + 600 \\cdot (T - 1))",
+        "latex": "H = 600 \\cdot (T - 1)",
         "vars": [
          [
           "H",
           "the headstart, in seconds"
-         ],
-         [
-          "m",
-          "the headstart multiplier, $1$ by default, changed by various effects"
-         ],
-         [
-          "H_0",
-          "the headstart from other effects, $0$ by default"
          ],
          [
           "T",
