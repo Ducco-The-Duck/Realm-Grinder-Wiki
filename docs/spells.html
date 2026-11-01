@@ -19,7 +19,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs)) var(--lw);gap:var(--gap);align-items:center;justify-items:center;width:max-content;max-width:100%;margin:6px auto 18px}      /* a label column on each side keeps the icons centred */
 .board .lab{grid-column:auto;font-size:.85rem}
 .board .cell,.row .cell{width:var(--cs);height:var(--cs)}
-.grp{margin:0 0 18px}
+.grp{margin:0}
+hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
 .grp .cap{margin:0 0 6px;text-align:center}
 .row{display:flex;flex-wrap:wrap;gap:var(--gap);justify-content:center}
 .lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
@@ -386,10 +387,12 @@ nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2
   FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,3+i,1)); });
   SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,3+i)); });
   ['common','event','others'].forEach(function(k){ by[k].sort(function(a,b){ return a.order-b.order; }); });
-  if(by.common.length) root.appendChild(group('Common','common',by.common));
-  root.appendChild(board);
-  if(by.others.length) root.appendChild(group('Others','others',by.others));
-  if(by.event.length) root.appendChild(group('Event','event',by.event));
+  var parts=[];
+  if(by.common.length) parts.push(group('Common','common',by.common));
+  parts.push(board);
+  if(by.others.length) parts.push(group('Others','others',by.others));
+  if(by.event.length) parts.push(group('Event','event',by.event));
+  parts.forEach(function(p,i){ if(i) root.appendChild(el('hr','gsep')); root.appendChild(p); });      // a line between the four categories
 
   // (only used by the unfinished Effects page, see data/EFFECT_SEARCH_NOT_IN_USE.md)
   // embed mode (#embed): the Effects page loads this page in a hidden frame and asks for the tooltip of one object, so that it shows this
