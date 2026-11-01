@@ -26,7 +26,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        }
@@ -54,7 +54,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -89,7 +89,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -149,7 +149,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -186,7 +186,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -220,7 +220,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -281,7 +281,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -307,7 +307,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -335,7 +335,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -370,7 +370,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -379,7 +379,7 @@
         "vars": [
          [
           "V",
-          "the base value, 20000 by default, changed by various effects"
+          "the base value, $20000$ by default, changed by various effects"
          ],
          [
           "n",
@@ -411,7 +411,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -458,7 +458,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -479,7 +479,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -527,7 +527,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -564,7 +564,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -599,7 +599,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -629,7 +629,7 @@
          ],
          [
           "c",
-          "the bonus coefficient, 0 at tier 1"
+          "the bonus coefficient, $0$ at tier 1"
          ]
         ]
        }
@@ -657,7 +657,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -692,7 +692,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -733,7 +733,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -768,7 +768,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -809,7 +809,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -843,7 +843,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        }
@@ -871,7 +871,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -906,7 +906,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -923,7 +923,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        },
@@ -985,7 +985,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1022,7 +1022,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1057,7 +1057,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1098,7 +1098,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1131,7 +1131,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1168,7 +1168,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1202,7 +1202,7 @@
          ],
          [
           "N",
-          "the seconds worth, 30 by default, changed by various effects"
+          "the seconds worth, $30$ by default, changed by various effects"
          ]
         ]
        }
@@ -1225,7 +1225,7 @@
          ],
          [
           "k",
-          "100 below Ascension 3, 1 from Ascension 3"
+          "$100$ below Ascension 3, $1$ from Ascension 3"
          ],
          [
           "N",
@@ -1233,7 +1233,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        },
@@ -1263,7 +1263,7 @@
          ],
          [
           "m",
-          "3 by default, lowered by various effects, e.g. Sequence (S1275)"
+          "$3$ by default, lowered by various effects, e.g. Sequence (S1275)"
          ]
         ]
        }
@@ -1355,7 +1355,7 @@
          ],
          [
           "k",
-          "the ticks this cast has been active, 30 per second"
+          "the ticks this cast has been active, $30$ per second"
          ]
         ]
        }
@@ -1449,7 +1449,7 @@
          ],
          [
           "i",
-          "the tier of the building, counted from 0"
+          "the tier of the building, counted from $0$"
          ]
         ]
        },
@@ -1630,7 +1630,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1652,7 +1652,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        },
@@ -1689,7 +1689,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1723,7 +1723,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1745,7 +1745,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1773,7 +1773,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1807,7 +1807,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -1832,7 +1832,7 @@
          ],
          [
           "k",
-          "the exponent multiplier, 1 by default, changed by various effects"
+          "the exponent multiplier, $1$ by default, changed by various effects"
          ]
         ]
        }
@@ -1860,7 +1860,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1898,7 +1898,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        },
@@ -1953,7 +1953,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -1987,7 +1987,7 @@
          ],
          [
           "p",
-          "the Ascension penalty exponent, 1 at Ascension 0"
+          "the Ascension penalty exponent, $1$ at Ascension 0"
          ]
         ]
        },
@@ -2013,7 +2013,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        },
@@ -2054,7 +2054,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -2096,7 +2096,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -2117,7 +2117,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -2177,7 +2177,7 @@
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
@@ -2202,11 +2202,11 @@
          ],
          [
           "m",
-          "3 by default, lowered by various effects, e.g. Sequence (S1275)"
+          "$3$ by default, lowered by various effects, e.g. Sequence (S1275)"
          ],
          [
           "T",
-          "the tier the spell is cast at (1 for a spell cast once)"
+          "the tier the spell is cast at ($1$ for a spell cast once)"
          ]
         ]
        }
