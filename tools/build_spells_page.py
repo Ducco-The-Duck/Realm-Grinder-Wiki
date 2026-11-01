@@ -139,7 +139,7 @@ def spell_detail(name):
 
 
 data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get('cost'), 'ticks': s.get('duration'),
-                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'kind': ov[s['name']]['kind'], 'order': ov[s['name']].get('order', 99), 'detail': spell_detail(s['name'])} for s in spells],
+                    'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags'], 'order': ov[s['name']].get('order', 99), 'detail': spell_detail(s['name'])} for s in spells],
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = r'''<!doctype html>
@@ -305,16 +305,17 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
     return c;
   }
-  // where a spell goes, from its kind and tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),
+  // where a spell goes, from its tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),
   // the Faction spells in the grid (both alignments) or on the right (first alignment only) or at the bottom (second alignment only), the rest in Others
   var FIRST=['Good','Neutral','Evil'], SECOND=['Order','Balance','Chaos'];
   function place(s){
-    function has(x){ return s.tags.indexOf(x)>=0; }
-    if(s.kind==='common') return {k:'common'};
-    if(s.kind==='event') return {k:'event'};
+    var tg=s.tags.map(function(x){ return x.replace(/\*$/,''); });
+    function has(x){ return tg.indexOf(x)>=0; }
+    if(has('Common')) return {k:'common'};
+    if(has('Event')) return {k:'event'};
     var f=-1,g=-1; FIRST.forEach(function(x,i){ if(has(x)) f=i; }); SECOND.forEach(function(x,i){ if(has(x)) g=i; });
-    if(s.kind==='alignment'){ if(f>=0) return {k:'cell',r:3+f,c:2}; if(g>=0) return {k:'cell',r:2,c:3+g}; }
-    if(s.kind==='faction'){ if(f>=0&&g>=0) return {k:'cell',r:3+f,c:3+g}; if(f>=0) return {k:'cell',r:3+f,c:6}; if(g>=0) return {k:'cell',r:6,c:3+g}; }
+    if(has('Alignment')){ if(f>=0) return {k:'cell',r:3+f,c:2}; if(g>=0) return {k:'cell',r:2,c:3+g}; }
+    if(has('Faction')){ if(f>=0&&g>=0) return {k:'cell',r:3+f,c:3+g}; if(f>=0) return {k:'cell',r:3+f,c:6}; if(g>=0) return {k:'cell',r:6,c:3+g}; }
     return {k:'others'};
   }
   function chipLabel(text, r, c, cs, span){
@@ -322,8 +323,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     d.appendChild(el('span','chip c-'+text.toLowerCase().replace(/[^a-z0-9]+/g,'-'),text)); return d;
   }
   function group(title, cls, spells){
-    var g=el('section','grp'), cap=el('div','cap'), row=el('div','row');
-    cap.appendChild(el('span','chip c-'+cls,title)); g.appendChild(cap);
+    var g=el('section','grp'), row=el('div','row');
     spells.forEach(function(s){ row.appendChild(cellFor(s)); }); g.appendChild(row); return g;
   }
   var by={common:[],event:[],others:[]}, board=el('div','board');
@@ -334,7 +334,6 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
   });
   FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,3+i,1)); });
   SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,3+i)); });
-  board.appendChild(chipLabel('Faction',1,1)); board.appendChild(chipLabel('Alignment',2,1)); board.appendChild(chipLabel('Prestige/Astral',6,6));
   ['common','event','others'].forEach(function(k){ by[k].sort(function(a,b){ return a.order-b.order; }); });
   if(by.common.length) root.appendChild(group('Common','common',by.common));
   root.appendChild(board);
