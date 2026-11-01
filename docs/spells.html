@@ -244,8 +244,9 @@ nav.tabs .dd-nav .dd-menu{top:calc(78px*var(--s));left:50%;transform:translateX(
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 4px;gap:0;color:#ece6d8;--cell:#2b261f;--cellhi:#3a3328;--fg:#ece6d8}
 nav.tabs .dd-item{position:relative;display:block}
 nav.tabs .dd-item>a::after{content:"";float:right;margin:.45em 0 0 14px;border:5px solid transparent;border-left-color:currentColor;border-right-width:0;opacity:.7}
-nav.tabs .dd-sub{display:none;position:absolute;left:100%;top:-10px;flex-direction:column;margin-left:2px;padding:0 4px;border:8px solid transparent;
+nav.tabs .dd-sub{display:none;position:absolute;left:calc(100% + 12px);top:-10px;flex-direction:column;padding:0 4px;border:8px solid transparent;
   border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated}
+nav.tabs .dd-sub::before{content:"";position:absolute;left:-26px;top:-8px;bottom:-8px;width:26px}      /* keeps the hover while the pointer crosses the menu's frame */
 nav.tabs .dd-item:hover .dd-sub,nav.tabs .dd-item:focus-within .dd-sub{display:flex}
 nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none}
 @media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.85;gap:0}}
