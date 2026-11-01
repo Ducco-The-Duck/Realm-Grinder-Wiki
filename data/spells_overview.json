@@ -265,14 +265,14 @@
   "Hailstorm": {
    "description": "Increase the production of all buildings based on Hailstorm activity time. The bonus increases progressively over the duration of the spell.",
    "tags": [
-    "Seasonal",
+    "Event",
     "Pseudo-Faction"
    ]
   },
   "Heatwave": {
    "description": "Increase the production of all buildings based on spells cast in this Era.",
    "tags": [
-    "Seasonal",
+    "Event",
     "Pseudo-Faction"
    ]
   },
@@ -286,19 +286,19 @@
   "Cannibalize": {
    "description": "Increase Faction Coin find chance based on the total amount of Bones collected and Reincarnations made.",
    "tags": [
-    "Seasonal"
+    "Event"
    ]
   },
   "Shadow Embrace": {
    "description": "Increase the size of your assistant army based on Reincarnations made. Increases progressively as you continue casting this spell.",
    "tags": [
-    "Seasonal"
+    "Event"
    ]
   },
   "Wail of the Banshee": {
    "description": "Increase the production of all buildings based on mana produced in this Era and Reincarnations made.",
    "tags": [
-    "Seasonal"
+    "Event"
    ]
   },
   "Temporal Flux": {

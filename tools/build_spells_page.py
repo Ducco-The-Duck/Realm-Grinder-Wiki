@@ -167,7 +167,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .chip.c-chaos{background:#8ee68e;color:#0d3a0d}
 .chip.c-balance{background:#fff3a0;color:#4a3f00}
 .chip.c-faction{background:#8e44ad;color:#fff}
-.chip.c-seasonal{background:#ff9ec7;color:#5a0a2e}
+.chip.c-event{background:#ff9ec7;color:#5a0a2e}
 #detail .chip{font-size:.8em}
 #detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:6px 0 0}
 #detail h3{margin:16px 0 0;color:var(--accent)}
