@@ -119,8 +119,22 @@
     "tier_sections": [
      {
       "title": "Bonus at higher tiers",
-      "text": "Casting it at a higher tier increases the headstart time you get.",
-      "formulas": []
+      "text": "Casting it at a higher tier increases the headstart time you get. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "H = 10 \\cdot (T - 1)",
+        "vars": [
+         [
+          "H",
+          "the headstart time, in minutes"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
      }
     ]
    }
@@ -233,7 +247,7 @@
          ],
          [
           "c",
-          "the number of casts in the current combo"
+          "your Combo Strike counter"
          ]
         ]
        }
@@ -250,8 +264,22 @@
     "tier_sections": [
      {
       "title": "Bonus at higher tiers",
-      "text": "Casting it at a higher tier makes each cast count more towards the combo.",
-      "formulas": []
+      "text": "Casting it again while it is active adds more to the Combo Strike counter the higher the tier it is cast at. The Ascension penalty does not apply to this.",
+      "formulas": [
+       {
+        "latex": "S = \\begin{cases} 1 & T = 1 \\\\ 1 + \\max(1, (T - 1)^{2} - 1) & T \\ge 2 \\end{cases}",
+        "vars": [
+         [
+          "S",
+          "the Combo Strike counter increase of the cast"
+         ],
+         [
+          "T",
+          "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       }
+      ]
      }
     ]
    }

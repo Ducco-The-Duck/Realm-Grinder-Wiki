@@ -26,12 +26,12 @@ import re as _re
 
 def _num(t):
     """'2h cumulative evil spells activity ...' -> (7200, 'cumulative evil spells activity ...', True): the amount (seconds for a time), the label, whether it is a time"""
-    m = _re.match(r'^(\d+)\s*(h|m|s)?\s+(?:of\s+)?(.*)$', t)
+    m = _re.match(r'^(\d+(?:\.\d+)?(?:e\+?\d+)?)(%)?\s*(h|m|s)?\s+(?:of\s+)?(.*)$', t)
     if not m: return None
-    v, u, lab = int(m.group(1)), m.group(2), m.group(3)
+    v, pct, u, lab = float(m.group(1)), bool(m.group(2)), m.group(3), m.group(4)
     lab = lab.replace(' in this Reincarnation', ' (this Reincarnation)')
     if 'activity' in lab and 'activity time' not in lab: lab = lab.replace('activity', 'activity time', 1)
-    return v * {'h': 3600, 'm': 60, 's': 1}.get(u, 1), lab, bool(u)
+    return v * {'h': 3600, 'm': 60, 's': 1}.get(u, 1), lab, bool(u), pct
 
 
 def _fit(vals):
@@ -41,13 +41,22 @@ def _fit(vals):
     if all(abs(vals[n] - k * (n - 1)) < 1e-9 for n in ns): return ('prop', k)
     b = (vals[ns[1]] - vals[ns[0]]) / (ns[1] - ns[0]); a = vals[ns[0]] - b * ns[0]
     if all(abs(vals[n] - (a + b * n)) < 1e-9 for n in ns): return ('lin', a, b)
+    r = vals[ns[1]] / vals[ns[0]]      # a geometric series: a r^(n-1)
+    if all(abs(vals[n] / vals[ns[0]] / r ** (n - ns[0]) - 1) < 1e-3 for n in ns): return ('geo', vals[ns[0]] / r ** (ns[0] - 1), r)
     return None
 
 
-def _g(x): return f'{x:g}' if x == int(x) else f'{x}'
+def _g(x):
+    """a number for a formula: digits, or a power of ten when it is a large one"""
+    import math
+    if x < 1e9: return str(int(x)) if x == int(x) else f'{x:g}'
+    e = round(math.log10(x))
+    if abs(x - 10 ** e) < 1e-6 * x: return f'10^{{{e}}}'
+    e = math.floor(math.log10(x))
+    return f'{x / 10 ** e:g} \cdot 10^{{{e}}}'
 
 
-def tier_requirement_list(ups):
+def tier_requirement_list(ups, name=''):
     """the unlock requirements of the tier upgrades as lines in the tier n ($...$ is set as a formula), and a note naming amounts that depend on the Ascension"""
     out, note = [], ''
     out.append('Ascension $n - 1$' if all(u['asc_min'] == u['spell_tier'] - 1 for u in ups) else 'Ascension $1$')
@@ -68,8 +77,13 @@ def tier_requirement_list(ups):
         if same:
             f = _fit({n: parsed[n][asc[0]][0] for n in parsed})
             if f is None: out.append(first[1]); continue
-            rhs = _g(f[1]) + r'\,(n - 1)' if f[0] == 'prop' else _g(f[2]) + r'\,n + ' + _g(f[1])
-            out.append('$' + rhs + '$' + lab)
+            if f[0] == 'prop': rhs = _g(f[1]) + r'\,(n - 1)'
+            elif f[0] == 'lin': rhs = _g(f[2]) + r'\,n + ' + _g(f[1])
+            else:
+                import math
+                ea, er = round(math.log10(f[1]), 2), round(math.log10(f[2]), 2)
+                rhs = f'10^{{{_g(er)}\,n}}' if ea == er else f'10^{{{_g(ea)}}} \cdot 10^{{{_g(er)}\,(n - 1)}}'
+            out.append('$' + rhs + (r'\%' if first[3] else '') + '$' + lab)
         else:      # the amount depends on the Ascension: k (n - 1) with a k per Ascension
             ks = {}
             for a in asc:
@@ -79,6 +93,7 @@ def tier_requirement_list(ups):
             if ks is None: out.append(first[1]); continue
             out.append(r'$k\,(n - 1)$' + lab)
             note = '$k$ is ' + ', '.join(f'{_g(v)} at Ascension {a}' for a, v in ks.items()) + '.'
+            if name == 'Call to Arms': note = '$k$ is $60000 / A$ below Ascension 4 and $10000 / A$ from Ascension 4, with $A$ your Ascension number.'
     return out, note
 
 
@@ -86,7 +101,7 @@ def tier_sections(name, hand):
     """the generated sections of a spell with tiers: the tier requirements, the cost of higher tiers, the bonus at higher tiers and the offline bonus"""
     ups = sorted(tier_up.get(name, []), key=lambda u: u['spell_tier'])
     if not ups: return []
-    req = tier_requirement_list(ups)
+    req = tier_requirement_list(ups, name)
     out = [{'title': 'Spell tiers',
             'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Higher tiers are unlocked by a magic upgrade with the following requirements:',
             'lists': [{'title': 'Tier $n$:', 'items': req[0]}], 'after': req[1]},
