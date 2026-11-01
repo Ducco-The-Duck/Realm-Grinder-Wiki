@@ -159,8 +159,8 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-appl
 main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .sub{color:var(--muted);margin:0 0 18px}
 #root{--cs:89px;--lw:84px;--gap:10px}
-@media (max-width:640px){#root{--cs:calc((100vw - 32px - var(--lw) - 5 * var(--gap)) / 5);--lw:60px;--gap:6px}}
-.board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs));gap:var(--gap);align-items:center;justify-items:center;margin:6px 0 18px}
+@media (max-width:640px){#root{--cs:calc((100vw - 32px - 2 * var(--lw) - 6 * var(--gap)) / 5);--lw:60px;--gap:6px}}
+.board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs)) var(--lw);gap:var(--gap);align-items:center;justify-items:center;width:max-content;max-width:100%;margin:6px auto 18px}      /* a label column on each side keeps the icons centred */
 .board .lab{grid-column:auto;font-size:.85rem}
 .board .cell,.row .cell{width:var(--cs);height:var(--cs)}
 .grp{border:1px solid var(--line);border-radius:10px;padding:8px 10px 10px;margin:0 0 18px}
