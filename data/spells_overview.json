@@ -1645,7 +1645,7 @@
    }
   },
   "Temporal Flux": {
-   "description": "Increase the production of Unique Buildings based on time spent in this Era. Multiplicatively increase Mana Regeneration based on time spent in this Era.",
+   "description": "Increase the production of Unique Buildings based on time spent in this Era. Multiplicatively increase Mana Regeneration based on time spent in this Era.\nMultiplicatively increase Maximum Mana based on time spent in this Era.\nIncrease Offline production based on time spent in this Era.",
    "tags": [
     "Alignment",
     "Order"
@@ -1701,6 +1701,19 @@
          [
           "S",
           "the Maximum Mana bonus, in %"
+         ]
+        ]
+       },
+       {
+        "latex": "O = 100 \\cdot (M - 1)",
+        "vars": [
+         [
+          "O",
+          "the offline production bonus, in % (only with An Untimely Death)"
+         ],
+         [
+          "M",
+          "the production multiplier of each Unique Building, from above"
          ]
         ]
        }

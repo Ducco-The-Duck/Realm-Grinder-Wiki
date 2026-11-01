@@ -175,7 +175,7 @@ hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
 #tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #tip b{display:block;font-size:1rem}
-#tip p{margin:4px 0 0}
+#tip p{margin:4px 0 0;white-space:pre-line}
 .tags{display:flex;gap:4px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
 .chip{font-size:.72em;height:1.2em;line-height:1em;box-sizing:border-box;white-space:nowrap;padding:0 .5em;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
 .chip{border-color:transparent}
