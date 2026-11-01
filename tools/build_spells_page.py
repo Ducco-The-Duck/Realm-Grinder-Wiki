@@ -158,7 +158,15 @@ html = r'''<!doctype html>
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .sub{color:var(--muted);margin:0 0 18px}
-.grid{display:flex;flex-wrap:wrap;gap:10px}
+#root{--cs:89px;--lw:84px;--gap:10px}
+@media (max-width:640px){#root{--cs:calc((100vw - 32px - var(--lw) - 5 * var(--gap)) / 5);--lw:60px;--gap:6px}}
+.board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs));gap:var(--gap);align-items:center;justify-items:center;margin:6px 0 18px}
+.board .lab{grid-column:auto;font-size:.85rem}
+.board .cell,.row .cell{width:var(--cs);height:var(--cs)}
+.grp{border:1px solid var(--line);border-radius:10px;padding:8px 10px 10px;margin:0 0 18px}
+.grp .cap{margin:0 0 6px}
+.row{display:flex;flex-wrap:wrap;gap:var(--gap)}
+.lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
 .cell{width:89px;height:89px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
@@ -212,7 +220,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <h1>Spells</h1>
 <p>Pseudo-Faction spells count as Faction spells for stats, but are not affected by effects that affect Faction spells.</p>
 <p class="sub">Hover a spell for an overview, click it for the details.</p>
-<div class="grid" id="root"></div>
+<div id="root"></div>
 <section id="detail" hidden></section>
 </main>
 <div id="tip" role="tooltip"></div>
@@ -290,13 +298,48 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
     tip.style.left=x+'px'; tip.style.top=(up?a.top-t.height-8:a.bottom+8)+'px';
   }
   window.addEventListener('scroll',hideTip,{passive:true});
-  SPELLS.forEach(function(s){
+  function cellFor(s){
     var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
     c.addEventListener('mouseenter',function(){ showTip(s,c); }); c.addEventListener('focus',function(){ showTip(s,c); });
     c.addEventListener('click',function(){ hideTip(); showDetail(s); });
     c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
-    root.appendChild(c);
+    return c;
+  }
+  // where a spell goes, from its tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),
+  // the Faction spells in the grid (both alignments) or on the right (first alignment only) or at the bottom (second alignment only), the rest in Others
+  var FIRST=['Good','Neutral','Evil'], SECOND=['Order','Balance','Chaos'];
+  function place(s){
+    var tg=s.tags.map(function(x){ return x.replace(/\*$/,''); });
+    function has(x){ return tg.indexOf(x)>=0; }
+    if(has('Common')) return {k:'common'};
+    if(has('Event')) return {k:'event'};
+    var f=-1,g=-1; FIRST.forEach(function(x,i){ if(has(x)) f=i; }); SECOND.forEach(function(x,i){ if(has(x)) g=i; });
+    if(has('Alignment')){ if(f>=0) return {k:'cell',r:3+f,c:2}; if(g>=0) return {k:'cell',r:2,c:3+g}; }
+    if(has('Faction')){ if(f>=0&&g>=0) return {k:'cell',r:3+f,c:3+g}; if(f>=0) return {k:'cell',r:3+f,c:6}; if(g>=0) return {k:'cell',r:6,c:3+g}; }
+    return {k:'others'};
+  }
+  function chipLabel(text, r, c, cs, span){
+    var d=el('div','lab'); d.style.gridRow=String(r); d.style.gridColumn=span?c+' / span '+span:String(c);
+    d.appendChild(el('span','chip c-'+text.toLowerCase().replace(/[^a-z0-9]+/g,'-'),text)); return d;
+  }
+  function group(title, cls, spells){
+    var g=el('section','grp'), cap=el('div','cap'), row=el('div','row');
+    cap.appendChild(el('span','chip c-'+cls,title)); g.appendChild(cap);
+    spells.forEach(function(s){ row.appendChild(cellFor(s)); }); g.appendChild(row); return g;
+  }
+  var by={common:[],event:[],others:[]}, board=el('div','board');
+  SPELLS.forEach(function(s){
+    var p=place(s);
+    if(p.k==='cell'){ var c=cellFor(s); c.style.gridRow=String(p.r); c.style.gridColumn=String(p.c); board.appendChild(c); }
+    else by[p.k].push(s);
   });
+  FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,3+i,1)); });
+  SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,3+i)); });
+  board.appendChild(chipLabel('Faction',1,1)); board.appendChild(chipLabel('Alignment',2,1)); board.appendChild(chipLabel('Prestige/Astral',6,6));
+  if(by.common.length) root.appendChild(group('Common','common',by.common));
+  root.appendChild(board);
+  if(by.others.length) root.appendChild(group('Others','others',by.others));
+  if(by.event.length) root.appendChild(group('Event','event',by.event));
 /*SEARCH_JS*/
 })();
 </script>
