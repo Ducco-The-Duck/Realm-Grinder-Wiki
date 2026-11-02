@@ -40,7 +40,7 @@ docs/*.html                               the site (committed)
 - **`out/`**: the build the tools and pages are made from. An older build can be extracted next to it
   (`sh tools/extract.sh 4.3.14 out_4.3.14`) to compare versions.
 - **`data/`**: JSON files plus the notes: `GLOSSARY.md` (what each file is and the rebuild commands), `INFERENCES.md`
-  (what the decompiled names mean, how sure we are, and the open items) and `FORMULA_MISMATCHES.md` (every place the
+  (what the decompiled names mean and how sure we are), `STATUS.md` (the open items) and `FORMULA_MISMATCHES.md` (every place the
   code differs from the last documented version).
 - **`tools/`**: the exporters, the page builders, the shared look (`search_snippet.py`, `frame_css.py`), and two guards:
   `selfcheck.py` (did the game's scrambled internal names move?) and `diff_data.py` (what changed after a rebuild, and

@@ -3,7 +3,7 @@
 Every place where the formula in the game code (4.3.14, what the wiki shows) differs from the last documented version
 (the user's 4.3.11 patch-notes doc or the old wiki). Add a row whenever a new mismatch is found; when it is checked in game (or settled some
 other way), move its row to `FORMULA_MISMATCHES_RESOLVED.md` with the status "Resolved: ...", because the older sources stay
-different even when the code turns out to be right. The open ones are also listed in the Status section of `INFERENCES.md` (item 1).
+different even when the code turns out to be right. The open ones are also listed in `STATUS.md` (item 1).
 
 | Object | Where on the wiki | Last documented version | Code (shown on the wiki) | Status |
 |---|---|---|---|---|
