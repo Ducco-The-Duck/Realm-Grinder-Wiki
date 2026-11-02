@@ -1,10 +1,10 @@
 """Copy the sprites referenced by entity and trophy `icon` fields into docs/assets/icons/ (committed,
 served by GitHub Pages).
 
-    python -I tools/export_icons.py      # needs assets/sprites/ from slice_atlases.py
+    python -I tools/export/export_icons.py      # needs assets/sprites/ from slice_atlases.py
 """
 import json, os, shutil
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 idx = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
 out = os.path.join(ROOT, 'docs', 'assets', 'icons')
 shutil.rmtree(out, ignore_errors=True); os.makedirs(out)

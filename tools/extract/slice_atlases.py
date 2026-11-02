@@ -1,13 +1,13 @@
 """Slice the game's Starling/TexturePacker atlases into individual PNGs.
 
-    python -I tools/slice_atlases.py [game_dir]
+    python -I tools/extract/slice_atlases.py [game_dir]
 
 Reads <game_dir>/images/*.xml (default: the Steam install), writes
 assets/sprites/<atlas>/<name>.png (git-ignored) and data/sprites.json (index).
 Trimmed sprites are restored to their original frame size, rotated ones are un-rotated.
 """
 import glob, json, os, sys, xml.etree.ElementTree as ET
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 from PIL import Image

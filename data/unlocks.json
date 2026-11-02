@@ -1,5 +1,5 @@
 {
- "_about": "Hand-written content of docs/unlocks.html (built by tools/build_unlocks_page.py). One entry per game mechanic, shown at the Ascension it is unlocked at. Fields: name, asc (0-4), unlock (list of lines: how it is unlocked), sections (list of {title, text}; text may use blank lines for paragraphs).",
+ "_about": "Hand-written content of docs/unlocks.html (built by tools/pages/build_unlocks_page.py). One entry per game mechanic, shown at the Ascension it is unlocked at. Fields: name, asc (0-4), unlock (list of lines: how it is unlocked), sections (list of {title, text}; text may use blank lines for paragraphs).",
  "max_ascension": 4,
  "mechanics": [
   {

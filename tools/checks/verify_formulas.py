@@ -1,6 +1,6 @@
 """Check the hand-written spell formulas against the game code.
 
-    python -I tools/verify_formulas.py [spell name ...]
+    python -I tools/checks/verify_formulas.py [spell name ...]
 
 Every number in a spell's detail text (data/spells_overview.json: formulas, variable descriptions and the explaining
 sentences) must be found in the game code the spell was read from: the spell's own class and the classes that import
@@ -9,7 +9,7 @@ itself or scaled by one of the unit factors the game uses (percent, ticks per se
 cannot be found is listed; it was typed from something other than the code, or the game changed since.
 """
 import json, os, re, sys
-ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..'))
 SCRIPTS = os.path.join(ROOT, 'out', 'script', 'scripts')
 ENC = {'?': '%3F', '<': '%3C', '>': '%3E', ':': '%3A', '"': '%22', '|': '%7C', '*': '%2A'}
 

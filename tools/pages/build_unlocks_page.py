@@ -1,11 +1,11 @@
 """Generate docs/mechanics.html (every mechanic, one section each) and docs/unlocks-a0.html ... unlocks-a4.html (what is unlocked at each Ascension)
 from data/unlocks.json (hand-written).
 
-    python -I tools/build_unlocks_page.py
+    python -I tools/pages/build_unlocks_page.py
 """
 import json, os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 d = json.load(open(os.path.join(ROOT, 'data', 'unlocks.json'), encoding='utf8'))
 MAXA = d['max_ascension']
 

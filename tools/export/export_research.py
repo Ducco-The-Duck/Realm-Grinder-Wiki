@@ -8,12 +8,12 @@ the research marked as owned, which makes it print the plain target instead of "
 Descriptions are the game's own text evaluated at a fresh game state; the "(+x%)" style readouts of the
 current value are dropped.  Formulas come from the getters that the description reads.
 
-    python -I tools/export_research.py
+    python -I tools/export/export_research.py
 """
 import json, os, re, sys
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
-sys.path.insert(0, HERE)
+sys.path[:0] = [os.path.join(HERE, d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 BUILDINGS = json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))

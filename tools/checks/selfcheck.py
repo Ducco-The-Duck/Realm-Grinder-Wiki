@@ -1,7 +1,7 @@
 """Quick sanity check of the extracted game code before (re)building the data.
 
-    python -I tools/selfcheck.py            # check
-    python -I tools/selfcheck.py --update   # also store the item-id baseline (data/item_ids.json)
+    python -I tools/checks/selfcheck.py            # check
+    python -I tools/checks/selfcheck.py --update   # also store the item-id baseline (data/item_ids.json)
 
 Answers one question: did the game's obfuscated names move? It reports
   1. how many of the obfuscated names the exporters rely on still exist in the code,
@@ -11,7 +11,7 @@ Exit code 0 = fine, 1 = something to look at.
 """
 import json, os, re, sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
 SCRIPTS = os.environ.get('RG_SCRIPTS') or os.path.join(ROOT, 'out', 'script', 'scripts')
 BASELINE = os.path.join(ROOT, 'data', 'item_ids.json')
@@ -37,9 +37,11 @@ print(f'{len(texts)} script files, {len(blob) // 1024} KB')
 # 1. obfuscated names the exporters use
 NAME = re.compile(r'''^[A-Za-z0-9!"#$%&'+,\-;<=>?@\[\]^_` ]{1,3}$''')    # what a real name looks like (1-3 chars)
 used = set()
-for fn in os.listdir(HERE):
-    if fn.endswith('.py') and fn != 'selfcheck.py':
-        src = open(os.path.join(HERE, fn), encoding='utf8', errors='replace').read()
+TOOL_FILES = [os.path.join(dp, fn) for dp, _, fns in os.walk(HERE) if os.sep + 'pylib' not in dp and os.sep + 'ffdec' not in dp
+              for fn in fns if fn.endswith('.py') and fn != 'selfcheck.py']
+for tool in TOOL_FILES:
+    if True:
+        src = open(tool, encoding='utf8', errors='replace').read()
         for t in re.findall(r'§([^§\n]{1,16})§', src):
             t = re.sub(r'\\(.)', r'\1', t)              # names written inside regexes are escaped
             if NAME.match(t):
@@ -140,13 +142,13 @@ except (OSError, ValueError, KeyError) as e:
     print('6. data/spells_overview.json unreadable:', e)
     problems.append('data/spells_overview.json unreadable')
 
-# 7. every number in the hand-written spell details still appears in the game code the spell was read from (tools/verify_formulas.py)
+# 7. every number in the hand-written spell details still appears in the game code the spell was read from (tools/checks/verify_formulas.py)
 if os.environ.get('RG_SCRIPTS'):      # checking a new build before it replaces out/: the data files still belong to the old build, so 7 and 8 run after the rebuild
     print('7, 8. formula numbers: skipped here, they run in the selfcheck after the rebuild')
 else:
   try:
       import io, contextlib
-      sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+      sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
       import verify_formulas
       buf = io.StringIO()
       with contextlib.redirect_stdout(buf): n_bad = verify_formulas.main(set())
@@ -156,12 +158,12 @@ else:
       print(f"8. upgrade and challenge formula numbers: {buf2.getvalue().strip().splitlines()[-1]}")
       if n_bad2:
           print(buf2.getvalue())
-          problems.append(f"{n_bad2} number(s) in upgrade or challenge formulas are not found in the game code (run tools/verify_formulas.py --items)")
+          problems.append(f"{n_bad2} number(s) in upgrade or challenge formulas are not found in the game code (run tools/checks/verify_formulas.py --items)")
       if n_bad:
           print(buf.getvalue())
-          problems.append(f"{n_bad} number(s) in data/spells_overview.json are not found in the game code (run tools/verify_formulas.py)")
+          problems.append(f"{n_bad} number(s) in data/spells_overview.json are not found in the game code (run tools/checks/verify_formulas.py)")
   except Exception as e:
-      problems.append(f"tools/verify_formulas.py failed: {e}")
+      problems.append(f"tools/checks/verify_formulas.py failed: {e}")
 
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

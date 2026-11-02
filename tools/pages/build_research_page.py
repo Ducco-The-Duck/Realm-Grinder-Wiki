@@ -1,10 +1,10 @@
 """Generate docs/research.html from data/research.json (+ data/research_meta.json).
 
-    python -I tools/build_research_page.py
+    python -I tools/pages/build_research_page.py
 """
 import json, os, re, shutil, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 research = json.load(open(os.path.join(ROOT, 'data', 'research.json'), encoding='utf8'))
 meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json')))
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))

@@ -4,12 +4,12 @@ Texts are the game's own: each challenge object's description is evaluated in th
 challenge marked as completed (which makes it print its reward), live-value readouts are dropped by
 comparing three game states, and the formulas are converted from the static getters the description reads.
 
-    python -I tools/export_challenges.py
+    python -I tools/export/export_challenges.py
 """
 import json, os, re, sys
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
-sys.path.insert(0, HERE)
+sys.path[:0] = [os.path.join(HERE, d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve

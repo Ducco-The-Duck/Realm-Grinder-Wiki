@@ -1,10 +1,10 @@
 """Generate the four upgrade pages (Allegiance, Magic, Secret, Miscellaneous) from data/upgrade_pages.json.
 
-    python -I tools/build_upgrades_page.py
+    python -I tools/pages/build_upgrades_page.py
 """
 import json, os, re, shutil, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 pages = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
 meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))

@@ -1,11 +1,11 @@
 """Copy the sprites of the game's tab buttons (the left-hand Upgrades / Trophies / ... column) for the wiki's nav.
 
-    python -I tools/export_nav.py
+    python -I tools/export/export_nav.py
 
 Reads assets/sprites/realmgrinderui_new (made by slice_atlases.py), writes docs/assets/ui/nav/.
 """
 import os, shutil, sys
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 SRC = os.path.join(ROOT, 'assets', 'sprites', 'realmgrinderui_new')
 DST = os.path.join(ROOT, 'docs', 'assets', 'ui', 'nav')
 NAMES = ['UiBuildings', 'UiUpgrades', 'UiTrophies', 'UiExcavation', 'UiResearch', 'UiChallenges', 'redRibbon', 'redRibbon_Selected', 'UICrystalBall']
@@ -15,7 +15,7 @@ for n in NAMES:
     if not os.path.exists(src): src = os.path.join(os.path.dirname(SRC), 'realmgrinderui2_new', n + '.png')
     if n == 'UICrystalBall':
         # the sprite has the word "SCRY" under the ball: keep the ball only (rows above the text, found as the first row wider than the ball's bottom), in a square
-        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pylib'))
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pylib'))
         from PIL import Image
         im = Image.open(src).convert('RGBA')
         rows = [sum(1 for x in range(im.width) if im.getpixel((x, y))[3] > 0) for y in range(im.height)]

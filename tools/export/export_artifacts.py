@@ -4,12 +4,12 @@ For each artifact: name, flavor text, icon, kind (quest/lore), the game's hint t
 artifacts, and the unlock condition decoded from the game's code into plain language.  Clauses that
 cannot be decoded are listed under `undecoded` (never guessed).
 
-    python -I tools/export_artifacts.py
+    python -I tools/export/export_artifacts.py
 """
 import json, os, re, sys
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
-sys.path.insert(0, HERE)
+sys.path[:0] = [os.path.join(HERE, d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve

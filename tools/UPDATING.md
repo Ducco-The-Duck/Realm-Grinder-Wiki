@@ -9,19 +9,19 @@ added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
 
 1. Put the new `RealmGrinderDesktop.swf` in `raw/<version>/` (one folder per version) and extract it: `sh tools/extract.sh <version> out_<version>` first,
    compare it with `out/` (same file names = the scrambled names did not move), then make it current (rename `out` to `out_<old version>`, the new folder to `out`)
-   and run `python -I tools/parse_mo.py`. `sh tools/extract.sh <version>` with no destination writes straight to `out/`. `out/VERSION` says which build `out/` is.
-2. `python -I tools/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
+   and run `python -I tools/extract/parse_mo.py`. `sh tools/extract.sh <version>` with no destination writes straight to `out/`. `out/VERSION` says which build `out/` is.
+2. `python -I tools/checks/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
 3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts (`export_nav.py` copies the sprites of the nav's tab buttons), then the `build_*_page.py` scripts (`build_spells_page.py` builds the Spells page from `data/spells.json`; `build_unlocks_page.py` builds the Mechanics page and the Unlocks pages (`unlocks-a0.html` to `unlocks-a4.html`) from the hand-written `data/unlocks.json`) and `build_index.py` (stamps the game version and the tab nav on the home page)
    (the commands are in `data/docs/GLOSSARY.md`).
-4. `python -I tools/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
+4. `python -I tools/checks/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
    overrides (formulas, notes, fixes in the exporters) whose item changed. Review that list, nothing else.
-5. `python -I tools/selfcheck.py --update` once the new ids are accepted, then commit.
+5. `python -I tools/checks/selfcheck.py --update` once the new ids are accepted, then commit.
 
 # If the obfuscated names change (design note, not built)
 
-`tools/selfcheck.py` says "names ... gone from the code" or "fields are now ...". Then the table of what each obfuscated
+`tools/checks/selfcheck.py` says "names ... gone from the code" or "fields are now ...". Then the table of what each obfuscated
 name means (`helper_calls.py`, `chance_latex.py`, `export_*.py`) points at names that no longer exist. Idea: re-derive
 the mapping by matching the old build to the new one by *shape*, the way BinDiff / Diaphora match functions between two
 versions of a program. Needs both builds side by side (keep the old `out/script` when updating).
@@ -43,10 +43,10 @@ versions of a program. Needs both builds side by side (keep the old `out/script`
 Limits: a method whose body changed a lot in the update will not match (that is exactly what `diff_data.py` then flags
 for review); only one old/new pair of builds can validate it, so build it when a second version exists.
 
-**Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y \rfloor$`; every page draws those parts in the formula font (`rich()` in `tools/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
+**Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y \rfloor$`; every page draws those parts in the formula font (`rich()` in `tools/pages/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
 
 # Formula numbers after a rebuild
-The selfcheck that `update.py` runs after the rebuild (checks 7 and 8, `tools/verify_formulas.py`) lists every number in a hand-written
+The selfcheck that `update.py` runs after the rebuild (checks 7 and 8, `tools/checks/verify_formulas.py`) lists every number in a hand-written
 spell detail, upgrade formula or challenge formula that is no longer in the game code it was read from. Read each one in the new code,
 fix the formula in `data/spells_overview.json` or the manual table it comes from, and log a changed value in
 `data/docs/FORMULA_MISMATCHES.md`. The check cannot see structure (which constant is an exponent), so the in-game check still matters.

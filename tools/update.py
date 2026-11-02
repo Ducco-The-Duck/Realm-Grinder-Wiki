@@ -33,6 +33,13 @@ SCRIPTS = os.path.join('script', 'scripts')
 def say(msg=''): print(msg, flush=True)
 
 
+def step_path(name):
+    """tools/<stage>/<name>.py for a step of STEPS"""
+    for d in ('extract', 'export', 'pages'):
+        if os.path.exists(os.path.join(HERE, d, name + '.py')): return f'tools/{d}/{name}.py'
+    die(f'no script for step {name}')
+
+
 def die(msg, code=1):
     say('\nSTOPPED: ' + msg)
     sys.exit(code)
@@ -143,7 +150,7 @@ def main():
         if cur: compare_builds('out', new)
         say('\nselfcheck on the new build:')
         env = dict(os.environ, RG_SCRIPTS=os.path.join(ROOT, new, SCRIPTS))
-        r = run([PY, '-I', 'tools/selfcheck.py'], env=env)
+        r = run([PY, '-I', 'tools/checks/selfcheck.py'], env=env)
         if r.returncode != 0:
             die('selfcheck says LOOK AT: the names or structure the tools rely on moved. Nothing was swapped; see '
                 'tools/UPDATING.md ("If the obfuscated names change")')
@@ -165,7 +172,7 @@ def main():
 
     say('\nrebuilding ...')
     for s in STEPS:
-        r = run([PY, '-I', f'tools/{s}.py'], quiet=True)
+        r = run([PY, '-I', step_path(s)], quiet=True)
         last = [l for l in (r.stdout or '').strip().split('\n') if l][-1:] or ['']
         say(f'  {s}: {"ok" if r.returncode == 0 else "FAILED"}  {last[0][:110]}')
         if r.returncode != 0:
@@ -173,9 +180,9 @@ def main():
             die(f'step {s} failed. Undo the rebuild with `git checkout -- data docs` (the tree was clean before)')
 
     say('\nselfcheck:')
-    run([PY, '-I', 'tools/selfcheck.py'])
+    run([PY, '-I', 'tools/checks/selfcheck.py'])
     say('\nwhat changed in the data (diff_data.py, against the last commit):')
-    run([PY, '-I', 'tools/diff_data.py'])
+    run([PY, '-I', 'tools/checks/diff_data.py'])
     say(f'\nThis report is saved in {os.path.relpath(REPORT, ROOT)} (not tracked by git; the next update overwrites it).')
     say('\nNext: read the lists above, check the "undecoded conditions" numbers, preview the pages, then commit.'
         '\nNothing was committed or pushed. To undo the rebuild: git checkout -- data docs')

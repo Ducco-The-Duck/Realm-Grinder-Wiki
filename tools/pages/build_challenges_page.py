@@ -1,10 +1,10 @@
 """Generate docs/challenges.html from data/challenges.json.
 
-    python -I tools/build_challenges_page.py
+    python -I tools/pages/build_challenges_page.py
 """
 import json, os, shutil, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 factions = json.load(open(os.path.join(ROOT, 'data', 'challenges.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))

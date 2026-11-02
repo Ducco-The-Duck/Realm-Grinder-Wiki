@@ -1,11 +1,11 @@
 """Build data/*.json from the deobfuscated scripts in out/script and data/strings.json.
 
-Run:  python -I tools/build_data.py
+Run:  python -I tools/export/build_data.py
 Field meanings are inferred (see FIELD_LABELS); unmapped fields are kept under "raw" with
 their mangled names so nothing is lost.
 """
 import json, os, re, sys, collections
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 from as3parse import parse_all, resolve, ROOT
 from as3calls import find_msg_calls
 
@@ -94,7 +94,7 @@ def main():
             return f'[{short_name.get(q, m.group(1))}]'
         return re.sub(r'(§[^§]*§)\.id\b', sub, expr)
 
-    rt_path = os.path.join(DATA, 'runtime_icons.json')  # from tools/runtime_icons.py (needs engine.js)
+    rt_path = os.path.join(DATA, 'runtime_icons.json')  # from tools/extract/runtime_icons.py (needs engine.js)
     runtime_icons = json.load(open(rt_path, encoding='utf8')) if os.path.exists(rt_path) else {}
     out = collections.defaultdict(list)
     for q, (kind, c, _f) in sorted(ents.items(), key=lambda kv: kv[0]):

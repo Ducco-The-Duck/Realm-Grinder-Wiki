@@ -4,7 +4,7 @@ The suffix table is read from the game's number formatter, so every suffix it ca
 """
 import os, re
 
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 _src = open(os.path.join(ROOT, 'out', 'script', 'scripts', '§-D§.as'), encoding='utf8').read()
 _suffixes = [x.strip() for x in re.findall(r'"( [A-Za-z]+)"', re.search(r'§1X§:Array = \[(.*?)\];', _src).group(1))]
 SUFFIX_EXP = {sfx: 6 + 3 * i for i, sfx in enumerate(_suffixes)}

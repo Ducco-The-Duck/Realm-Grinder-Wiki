@@ -1,11 +1,11 @@
 """Stamp docs/index.html (written by hand) with the game version and give it the same tab nav as the generated pages.
 
-    python -I tools/build_index.py
+    python -I tools/pages/build_index.py
 """
 import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 import search_snippet
-p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'index.html')
+p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'docs', 'index.html')
 html = open(p, encoding='utf8').read()
 import re
 html = search_snippet.put_nav(html)

@@ -1,10 +1,10 @@
 """Generate docs/spells.html from data/spells.json and data/spells_overview.json (descriptions, tags): every spell as an icon with a hover tooltip.
 
-    python -I tools/build_spells_page.py
+    python -I tools/pages/build_spells_page.py
 """
 import json, os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
 ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
 tier_up = {}      # spell -> its tier upgrades (Magic upgrades), from the upgrade pages' data

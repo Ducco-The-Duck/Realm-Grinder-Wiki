@@ -301,7 +301,7 @@ def mech_slug(name):
 def mechanics_list():
     """the mechanics of data/unlocks.json as (name, href): a mechanic with its own page ("page") links there, the others to their section of the Mechanics page"""
     import json, os
-    d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'unlocks.json'), encoding='utf8'))
+    d = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'data', 'unlocks.json'), encoding='utf8'))
     return [(m['name'], m.get('page') or 'mechanics.html#' + mech_slug(m['name'])) for m in d['mechanics']]
 
 
@@ -404,7 +404,7 @@ def game_version():
     """the game build the pages were made from (out/VERSION, written by tools/extract.sh)"""
     import os
     try:
-        return open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'out', 'VERSION')).read().strip()
+        return open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'out', 'VERSION')).read().strip()
     except OSError:
         return ''
 

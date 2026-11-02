@@ -1,10 +1,10 @@
 """Resolve entity icon names that the game builds at runtime, by reading `icon` off the
 registered instances after __boot().  Writes data/runtime_icons.json {class: icon_name}.
 
-    python -I tools/runtime_icons.py
+    python -I tools/extract/runtime_icons.py
 """
 import json, os, sys
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs

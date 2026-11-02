@@ -6,7 +6,7 @@ statics {name: raw_value}, ctor [(field, index|None, raw_value)], methods [Metho
 """
 import os, re, glob
 
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 SRC = os.path.join(ROOT, 'out', 'script', 'scripts')
 
 class Method:

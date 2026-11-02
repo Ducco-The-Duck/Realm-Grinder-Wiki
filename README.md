@@ -31,7 +31,7 @@ raw/<version>/RealmGrinderDesktop.swf     the game file (not in git)
         |   tools/extract.sh <version>    decompile with FFDec
         v
 out/                                      decompiled code, strings, images (not in git; out/VERSION says which build)
-        |   tools/build_data.py, as3js.py, eval_formulas.py, export_*.py
+        |   tools/export/build_data.py, as3js.py, eval_formulas.py, export_*.py
         v
 data/*.json                               the facts the pages show (committed)
         |   tools/build_*_page.py
@@ -45,11 +45,13 @@ docs/*.html                               the site (committed)
 - **`data/`**: JSON files. The notes are in `data/docs/`: `GLOSSARY.md` (what each file is and the rebuild commands), `INFERENCES.md`
   (what the decompiled names mean and how sure we are), `STATUS.md` (the open items) and `FORMULA_MISMATCHES.md` (every place the
   code differs from the last documented version).
-- **`tools/`**: the exporters, the page builders, the shared look (`search_snippet.py`, `frame_css.py`), and two guards:
-  `selfcheck.py` (did the game's scrambled internal names move?) and `diff_data.py` (what changed after a rebuild, and
-  which hand-written fixes sit on a changed item). `tools/UPDATING.md` has the steps for a game update.
+- **`tools/`**: `update.py` (the one command for a game update), `extract.sh` and the preview server at the top, and the rest grouped by stage:
+  `extract/` (decompile, texts, images, the formula engine), `export/` (the exporters that turn the decompiled game into `data/*.json`),
+  `manual/` (the hand-written correction tables the exporters use), `pages/` (the page builders and the shared look:
+  `search_snippet.py`, `frame_css.py`) and `checks/` (`selfcheck.py`: did the game's scrambled names or numbers move?; `diff_data.py`: what
+  changed after a rebuild; `verify_formulas.py`). `tools/UPDATING.md` has the steps for a game update.
 - **`unused/`**: things that were dropped (the Effects search page and its tools and data); kept for reference, not built or checked.
-- **Engine**: `as3js.py` turns the game's formulas into JavaScript (`data/engine.js`), which is run with `quickjs` to
+- **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/engine.js`), which is run with `quickjs` to
   evaluate formulas and to test what an upgrade does at each Ascension.
 
 ## Rebuilding

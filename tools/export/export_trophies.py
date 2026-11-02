@@ -3,12 +3,12 @@
 The game's "normal" trophy count (903) is the set with none of the four special flags set;
 the remaining entries are grouped by which flag they carry.
 
-    python -I tools/export_trophies.py
+    python -I tools/export/export_trophies.py
 """
 import json, os, sys
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
-sys.path.insert(0, HERE)
+sys.path[:0] = [os.path.join(HERE, d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from numtext import pow10_text

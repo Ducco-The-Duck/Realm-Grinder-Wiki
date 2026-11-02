@@ -8,10 +8,10 @@ rings of the sprite as inset shadows, then the fill.
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 from pngpix import pixels
 
-TRIM = os.path.join(os.path.dirname(__file__), '..', 'docs', 'assets', 'ui', 'trim')
+TRIM = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'docs', 'assets', 'ui', 'trim')
 THEMES = [('', 'Gold', 'Gold_Hover')] + [(n, n + 'Trim', n + 'Trim_Hover') for n in (
     'Fairy', 'Elven', 'Angel', 'Goblin', 'Undead', 'Demon', 'Titan', 'Druid', 'Faceless', 'Dwarven', 'Drow', 'Mercenary',
     'Dragon', 'Archon', 'Djinn', 'Makers', 'Good', 'Evil', 'Order', 'Chaos', 'Balance')] + [('Silver', 'Silver', 'Silver')]

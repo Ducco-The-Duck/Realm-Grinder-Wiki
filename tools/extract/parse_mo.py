@@ -1,6 +1,6 @@
 """Decompress + parse the gettext .mo catalogs embedded in the SWF into JSON (msgid -> {lang: msgstr})."""
 import glob, json, re, struct, sys, zlib, os
-root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+root = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 out = {}
 for f in sorted(glob.glob(os.path.join(root, 'out/binaryData/*_mo*.bin'))):
     lang = re.search(r'realmgrinder_([a-zA-Z_]+)_mo', os.path.basename(f)).group(1)

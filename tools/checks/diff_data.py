@@ -1,8 +1,8 @@
 """What did a rebuild change? Compares the working-copy data files with the last committed ones.
 
-    python -I tools/diff_data.py            # added / removed / changed items, per file
-    python -I tools/diff_data.py -v         # also the old and new value of each changed field
-    python -I tools/diff_data.py --ref v4.3.14   # compare with another commit / tag instead of HEAD
+    python -I tools/checks/diff_data.py            # added / removed / changed items, per file
+    python -I tools/checks/diff_data.py -v         # also the old and new value of each changed field
+    python -I tools/checks/diff_data.py --ref v4.3.14   # compare with another commit / tag instead of HEAD
 
 Items are matched by a stable key (trophy id, artifact name, research code, challenge faction + name, upgrade id).
 Hand-written overrides in the exporters (formulas, notes, corrections) are checked too: an override whose item
@@ -10,7 +10,7 @@ changed or vanished is listed, since its hand-written text may be stale. Read-on
 """
 import ast, json, os, subprocess, sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.normpath(os.path.join(HERE, '..'))
 VERBOSE = '-v' in sys.argv
 REF = sys.argv[sys.argv.index('--ref') + 1] if '--ref' in sys.argv else 'HEAD'
@@ -74,7 +74,7 @@ def override_names():
     found = {}
     for fn in ('export_upgrades.py', 'export_challenges.py', 'export_research.py', 'export_artifacts.py', 'export_trophies.py',
                'misc_manual.py', 'alleg_manual.py', 'alleg_manual_family.py'):
-        p = os.path.join(HERE, fn)
+        p = next((os.path.join(HERE, d, fn) for d in ('export', 'manual') if os.path.exists(os.path.join(HERE, d, fn))), os.path.join(HERE, fn))
         if not os.path.exists(p):
             continue
         tree = ast.parse(open(p, encoding='utf8').read())

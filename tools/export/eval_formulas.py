@@ -1,10 +1,10 @@
 """Evaluate every entity's static formulas and description methods in the transpiled engine
 (fresh-game state) and write data/formula_values.json.
 
-    python -I tools/eval_formulas.py
+    python -I tools/export/eval_formulas.py
 """
 import json, os, re, sys, collections
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs

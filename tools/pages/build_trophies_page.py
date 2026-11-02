@@ -3,11 +3,11 @@
 Layout mirrors the in-game trophy screen: sections by category, 7-column icon grid, tiers of the
 same trophy type collapsed into one cell (click for a popup of every tier), tooltips on hover.
 
-    python -I tools/build_trophies_page.py
+    python -I tools/pages/build_trophies_page.py
 """
 import json, os, re, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-ROOT =os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
+ROOT =os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 trophies = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding='utf8'))
 icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
 
