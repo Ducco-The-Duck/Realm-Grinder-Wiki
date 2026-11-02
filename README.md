@@ -50,8 +50,8 @@ docs/*.html                               the site (committed)
   `STATUS.md` for the open items, `FORMULA_MISMATCHES.md` for every place the code differs from the last documented version).
 - **`tools/`**: `update.py` (the one command for a game update), `extract.sh` and the preview server at the top, and the rest grouped by stage:
   `extract/` (decompile, texts, images, the formula engine), `export/` (the exporters that turn the decompiled game into `data/*.json`),
-  `manual/` (the hand-written correction tables the exporters use), `pages/` (the page builders and the shared look:
-  `search_snippet.py`, `frame_css.py`) and `checks/` (`selfcheck.py`: did the game's scrambled names or numbers move?; `diff_data.py`: what
+  `manual/` (the hand-written correction tables the exporters use), `pages/` (the page builders and the shared look; each page's HTML, CSS and JS is a file in
+  `pages/templates/`, with the colours every page shares in `theme.css`) and `checks/` (`selfcheck.py`: did the game's scrambled names or numbers move?; `diff_data.py`: what
   changed after a rebuild; `verify_formulas.py`). `tools/UPDATING.md` has the steps for a game update.
 - **`unused/`**: things that were dropped (the Effects search page and its tools and data); kept for reference, not built or checked.
 - **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/derived/engine.js`), which is run with `quickjs` to
