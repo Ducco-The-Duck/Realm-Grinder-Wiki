@@ -140,5 +140,19 @@ except (OSError, ValueError, KeyError) as e:
     print('6. data/spells_overview.json unreadable:', e)
     problems.append('data/spells_overview.json unreadable')
 
+# 7. every number in the hand-written spell details still appears in the game code the spell was read from (tools/verify_formulas.py)
+try:
+    import io, contextlib
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import verify_formulas
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf): n_bad = verify_formulas.main(set())
+    print(f"7. spell detail numbers: {buf.getvalue().strip().splitlines()[-1]}")
+    if n_bad:
+        print(buf.getvalue())
+        problems.append(f"{n_bad} number(s) in data/spells_overview.json are not found in the game code (run tools/verify_formulas.py)")
+except Exception as e:
+    problems.append(f"tools/verify_formulas.py failed: {e}")
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
