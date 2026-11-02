@@ -44,3 +44,9 @@ Limits: a method whose body changed a lot in the update will not match (that is 
 for review); only one old/new pair of builds can validate it, so build it when a second version exists.
 
 **Variable explanations** (the text after a variable's symbol under a formula) may contain formulas between dollar signs, e.g. `Decimal digits of $x$` or `$\lfloor 1.25 \cdot y \rfloor$`; every page draws those parts in the formula font (`rich()` in `tools/search_snippet.py`). Use it whenever an explanation mentions another variable or an expression, and keep using it for new pages.
+
+# Formula numbers after a rebuild
+The selfcheck that `update.py` runs after the rebuild (checks 7 and 8, `tools/verify_formulas.py`) lists every number in a hand-written
+spell detail, upgrade formula or challenge formula that is no longer in the game code it was read from. Read each one in the new code,
+fix the formula in `data/spells_overview.json` or the manual table it comes from, and log a changed value in
+`data/docs/FORMULA_MISMATCHES.md`. The check cannot see structure (which constant is an exponent), so the in-game check still matters.
