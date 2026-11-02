@@ -305,6 +305,7 @@ body.searching .cell.group[data-un]{display:none}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html">Challenges</a><a href="upgrades.html" aria-current="page">Upgrades</a></nav>
 <h1>__H1__</h1>
+__BUGS__
 <p class="sub">Hover an upgrade for what it does and what unlocks it. Click a section header to fold it. __SUB__</p>
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
 value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
@@ -759,13 +760,17 @@ SPLIT = [
      'The Misc upgrades (the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series) and '
      'the Building upgrades.'),
 ]
+# known bugs in the game's own texts, shown at the top of the page (all of them are listed in data/KNOWN_BUGS.md)
+BUGS = {'upgrades-secret.html': '<div class="bugs"><p><b>Known bug, Art of the Crow:</b> the first paragraph of the upgrade&#39;s text says that for Evil '
+         'Faction and Set the amount is based on the production bonus from Gems, but the line for Evil below it, and the game itself, use the mana produced in '
+         'this Reincarnation. This page shows the latter.</p></div>'}
 total = 0
 for fname, title, ids, sub in SPLIT:
     secs = [x for x in sections if x['id'] in ids]
     secs.sort(key=lambda x: ids.index(x['id']))
     pdata = json.dumps({'max': meta['max_ascension'], 'sections': secs, 'factions': FACTIONS}, ensure_ascii=False,
                        separators=(',', ':')).replace('</', '<\\/')
-    h = html.replace('__DATA__', pdata).replace('__TITLE__', 'Realm Grinder ' + title).replace('__H1__', title).replace('__SUB__', sub)
+    h = html.replace('__BUGS__', BUGS.get(fname, '')).replace('__DATA__', pdata).replace('__TITLE__', 'Realm Grinder ' + title).replace('__H1__', title).replace('__SUB__', sub)
     if 'allegiances' not in ids:      # no faction picker on the other pages
         h = _re.sub(r'  <div class="row" id="alleg-row">.*?</div>\n', '', h, flags=_re.S)
     if fname == 'upgrades-allegiance.html': h = h.replace('<body>', '<body class="steel">', 1)      # the game's tooltip borders, tried on one page
