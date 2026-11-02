@@ -7,7 +7,6 @@ Ascension starts: A1 = Reincarnation 40, A2 = 100, A3 = 160, A4 = 220.
 |---|---|---|
 | 0 | Excavations, Neutral factions, Prestige factions | no Reincarnation test for any of them: Excavations need the "Archeology" upgrade (appears at 1e9 Gems, costs 1e29 coins); Neutral factions need one of the 1e30 upgrades (Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine); the underworld (Prestige) ones need Passage to the Underworld |
 | 1 | Reincarnation Power 1 upgrade | game text at Reincarnation 1: buy the Reincarnation Power upgrade |
-| 1 (listed) | Excavations | **Not Reincarnation 1.** The Excavation tab shows once the "Archeology" upgrade is owned: it appears at 1e9 Gems and costs 1e29 coins, no Reincarnation condition found |
 | 2 | Challenges | confirmed (tab needs Reincarnation 2; game text at 2) |
 | 3 | Mercenaries | confirmed (Mercenary Tribute upgrade available from 3; game text at 3). At 3 (or owning Underworld Diplomacy) the underworld coins, exchanges and heritages are also unlocked |
 | 7 | Bloodlines | confirmed (Bloodline upgrade needs 7; game text at 7) |
@@ -28,4 +27,3 @@ Ascension starts: A1 = Reincarnation 40, A2 = 100, A3 = 160, A4 = 220.
 | 112 | second unique buildings of the prestige factions | confirmed (High Bastion, Brothel, Dragon Pasture) |
 | 115 | Prestige faction Unions | confirmed (Dwarven, Drow, Dragon Union) |
 | 125 | Astral factions | confirmed for the Trade Treaties and the three Iron Fragment artifacts; their first unique buildings need 130 |
-| R0 list | Neutral and Prestige factions | no Reincarnation test: Neutral factions need one of the 1e30 upgrades (Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine), the underworld ones Passage to the Underworld |
