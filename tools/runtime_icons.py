@@ -37,7 +37,7 @@ out = {}; stat = {'checked': 0, 'resolved': 0, 'unresolved': []}
 for kind in ['upgrade', 'achievement', 'spell', 'building', 'research']:
     for r in json.load(open(os.path.join(ROOT, 'data', f'{kind}s.json'), encoding='utf8')):
         ic = r.get('icon')
-        if ic and ic in sprites: continue
+        if ic and ic in sprites and not r.get('icon_runtime'): continue      # (an icon this step filled in on the last build stays in the file)
         rt = res.get(r['class'])
         if ic is None and rt is None: continue
         stat['checked'] += 1
