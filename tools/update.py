@@ -122,6 +122,7 @@ def main():
     flags = {a for a in sys.argv[1:] if a.startswith('--')}
     if len(args) != 1: die(__doc__.split('\n\n')[0].strip(), 2)
     ver = args[0]
+    sys.stdout.reconfigure(errors='replace')      # the obfuscated names contain characters a Windows console cannot print
     sys.stdout = Tee(sys.stdout, open(REPORT, 'w', encoding='utf8'))      # everything printed from here on is kept in update_report.txt
     swf = os.path.join(ROOT, 'raw', ver, 'RealmGrinderDesktop.swf')
     if not os.path.exists(swf): die(f'missing raw/{ver}/RealmGrinderDesktop.swf')
