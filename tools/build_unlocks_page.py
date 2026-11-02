@@ -55,6 +55,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 <main>
 <nav><a href="index.html">Home</a><a href="__FILE__" aria-current="page">Codex</a></nav>
 <h1>__TITLE__</h1>
+__UC__
 <p class="sub">__SUB__</p>
 <div id="root"></div>
 </main>
@@ -141,7 +142,7 @@ for m in d['mechanics']:
 
 def write(fn, title, sub, mode, asc, mechs):
     data = json.dumps({'mechanics': mechs}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
-    page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
+    page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__UC__', search_snippet.UNDER_CONSTRUCTION).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
     page = search_snippet.apply(page, '', fn).replace('<title>' + title + '</title>', '<title>Realm Grinder ' + title + '</title>')
     open(os.path.join(ROOT, 'docs', fn), 'w', encoding='utf8').write(page)
 

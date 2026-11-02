@@ -219,6 +219,7 @@ hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
 <main>
 <nav><a href="index.html">Home</a><a href="spells.html" aria-current="page">Spells</a></nav>
 <h1>Spells</h1>
+__UC__
 <p>Pseudo-Faction spells count as Faction spells for stats, but are not affected by effects that affect Faction spells.</p>
 <p class="sub">Hover a spell for an overview, click it for the details.</p>
 <div id="root"></div>
@@ -347,6 +348,6 @@ hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
 </html>
 '''
 import search_snippet
-page = search_snippet.apply(html.replace('__DATA__', data), '', 'spells.html')
+page = search_snippet.apply(html.replace('__DATA__', data).replace('__UC__', search_snippet.UNDER_CONSTRUCTION), '', 'spells.html')
 open(os.path.join(ROOT, 'docs', 'spells.html'), 'w', encoding='utf8').write(page)
 print('docs/spells.html', len(page) // 1024, 'KB;', len(spells), 'spells')

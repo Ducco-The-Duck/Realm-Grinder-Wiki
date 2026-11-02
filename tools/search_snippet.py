@@ -336,6 +336,10 @@ def mechanics_list():
     return [(m['name'], m.get('page') or 'mechanics.html#' + mech_slug(m['name'])) for m in d['mechanics']]
 
 
+HAT = '''<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>'''      # the Under construction icon (a hard hat)
+UNDER_CONSTRUCTION = '<div class="bugs"><p><b>Under construction:</b> this page is still being written and is not finished yet.</p></div>'
+
+
 # the nav is the game's tab column laid out in a row: 72x62 button with the icon, the red ribbon (126x34) with the name on it
 TABS = [('index.html', 'Home', 'UiBuildings', 0), ('upgrades.html', 'Upgrades', 'UiUpgrades', 0), ('trophies.html', 'Trophies', 'UiTrophies', -6),
         ('archaeology.html', 'Archaeology', 'UiExcavation', -6), ('research.html', 'Research', 'UiResearch', -3), ('challenges.html', 'Challenges', 'UiChallenges', -3), ('codex.html', 'Codex', 'UICrystalBall', 0)]
@@ -375,6 +379,11 @@ nav.tabs .dd-sub::before{content:"";position:absolute;left:-26px;top:-8px;bottom
 nav.tabs .dd-item:hover .dd-sub,nav.tabs .dd-item:focus-within .dd-sub{display:flex}
 nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none;white-space:nowrap}
 @media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.85;gap:0}}
+nav.tabs .tab .uc{position:absolute;z-index:4;right:calc(2px*var(--s));top:calc(2px*var(--s));width:calc(24px*var(--s));height:calc(24px*var(--s));pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.7))}
+nav.tabs .tab .uc svg{display:block;width:100%;height:100%}
+nav.tabs .dd-menu .uc-note{display:flex;align-items:center;gap:8px;padding:2px 12px 4px;margin-bottom:2px;border-bottom:1px solid rgba(236,230,216,.25);color:#f2b705;font-size:.8rem;white-space:nowrap}
+nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
+.bugs p{margin:0 0 20px;padding:8px 12px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;background:var(--card);font-size:.92rem}
 /*ENDNAVCSS*/'''
 
 
@@ -386,6 +395,8 @@ def game_nav(current=None, current_file=None):
         lg = ' long' if len(label) > 10 else ''      # a longer name gets a ribbon a little wider than the frame
         z = ';--z:.84' if ic in SMALL else ''      # sprites that fill their whole square are drawn a little smaller so they stay inside the frame
         inner = f'<img src="assets/ui/nav/{ic}.png" alt="" style="--y:{4 + y}{z}"><span class="n">{label}</span>'
+        if href == CODEX:      # the Codex is still being written
+            inner += '<span class="uc">'+HAT+'</span>'
         if href in DROPDOWNS:
             def link(f, n):
                 own = {h for _, h in mechanics_list() if '#' not in h}      # the pages of mechanics that have their own
@@ -399,6 +410,7 @@ def game_nav(current=None, current_file=None):
                 else:
                     links += link(f, n)
             q = "'"
+            if href == CODEX: links = '<span class="uc-note">'+HAT+'Under construction</span>' + links
             out.append(f'<span class="dd-nav"><a class="tab{lg}" role="button" tabindex="0"{cur} onclick="this.parentNode.classList.toggle({q}open{q})">{inner}</a>'
                        f'<span class="dd-menu">{links}</span></span>')
         else:
