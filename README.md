@@ -31,7 +31,7 @@ raw/<version>/RealmGrinderDesktop.swf     the game file (not in git)
         |   tools/extract.sh <version>    decompile with FFDec
         v
 out/                                      decompiled code, strings, images (not in git; out/VERSION says which build)
-        |   tools/export/build_data.py, as3js.py, eval_formulas.py, export_*.py
+        |   tools/export/build_data.py, as3js.py, export_*.py
         v
 data/*.json                               the facts the pages show (committed)
         |   tools/build_*_page.py
