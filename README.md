@@ -31,10 +31,10 @@ raw/<version>/RealmGrinderDesktop.swf     the game file (not in git)
         |   tools/extract.sh <version>    decompile with FFDec
         v
 out/                                      decompiled code, strings, images (not in git; out/VERSION says which build)
-        |   tools/export/build_data.py, as3js.py, export_*.py
+        |   tools/extract/as3js.py, tools/export/build_data.py, tools/export/export_*.py
         v
-data/*.json                               the facts the pages show (committed)
-        |   tools/build_*_page.py
+data/generated/*.json                    the facts the pages show (committed)
+        |   tools/pages/build_*_page.py   (with data/handwritten/*.json for the Codex)
         v
 docs/*.html                               the site (committed)
 ```
@@ -53,7 +53,7 @@ docs/*.html                               the site (committed)
   `manual/` (the hand-written correction tables the exporters use), `pages/` (the page builders and the shared look; each page's HTML, CSS and JS is a file in
   `pages/templates/`, with the colours every page shares in `theme.css`) and `checks/` (`selfcheck.py`: did the game's scrambled names or numbers move?; `diff_data.py`: what
   changed after a rebuild; `verify_formulas.py`). `tools/UPDATING.md` has the steps for a game update.
-- **`unused/`**: things that were dropped (the Effects search page and its tools and data); kept for reference, not built or checked.
+- **`unused/`**: things that were dropped (the Effects search page and its tools and data, and the `eval_formulas.py` step); kept for reference, not built or checked.
 - **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/derived/engine.js`), which is run with `quickjs` to
   evaluate formulas and to test what an upgrade does at each Ascension.
 
@@ -61,11 +61,13 @@ docs/*.html                               the site (committed)
 
 For a new game version: copy the swf to `raw/<version>/` and run `python -I tools/update.py <version>` (details in
 `tools/UPDATING.md`). It extracts, checks the new build, rebuilds the data and every page, and prints what changed;
-you then read the summary and commit. The individual commands are in `data/docs/GLOSSARY.md`. To preview locally, serve
+you then read the summary and commit. The summary is also saved in `update_report.txt` (not in git). The individual commands are in `data/docs/GLOSSARY.md`. To preview locally, serve
 `docs/` (for example `python -m http.server 8123 --directory docs`).
 
 ## Conventions
 
-- Facts come from the code. A meaning we guessed is recorded in `INFERENCES.md` until it is confirmed in game.
+- Facts come from the code: no constant, number or formula is meant to originate from us. Where a formula has to be written by hand (the spell details, a few upgrade and challenge tables), `tools/checks/verify_formulas.py` (run by `selfcheck.py`) checks that every number in it still appears in the game code it was read from.
+- A meaning we guessed is recorded in `INFERENCES.md` until it is confirmed in game; `STATUS.md` lists what is still open.
+- Something is a bug only when the maintainer has confirmed it; confirmed ones are in `KNOWN_BUGS.md` and shown as a note on the page.
 - Values that differ from older documentation are logged in `FORMULA_MISMATCHES.md` (open) and `FORMULA_MISMATCHES_RESOLVED.md` (resolved), even when the code turns out to be right.
 - Ascension penalty marks follow the game's own tooltip text, checked against the code (see the notes in `INFERENCES.md`).
