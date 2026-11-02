@@ -729,15 +729,6 @@ the base values <i>v</i>.</div>
     (it.lp||[]).forEach(function(p){ reg(p.it); });
   }
   DATA.sections.forEach(function(s){ s.entries.forEach(function(e){ e.items.forEach(reg); }); });
-  embedInit(function(m, anchor){
-    var l=REG[m.name]; if(!l) return false;
-    showTip(l[0],anchor); return true;
-  }, function(a){ ASC=a; apply(); }, function(m){
-    var l=REG[m.name]; if(!l) return null;
-    var hit=null; cells.forEach(function(p){ if(p[1]===l[0]) hit=p[0]; });
-    if(!hit){ hit=itemCell(l[0], true); decorate(hit, l[0]); }      // inside a popup: drawn the way the popup draws it
-    return hit;
-  });
   document.addEventListener('DOMContentLoaded',function(){
     math('\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%', document.getElementById('pen-formula'));
   });
