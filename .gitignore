@@ -25,3 +25,4 @@ tools/_*.py
 tools/_*.json
 data/_*.json
 out_*/
+things_to_do.txt
