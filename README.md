@@ -42,9 +42,12 @@ docs/*.html                               the site (committed)
 - **`raw/`**: one folder per game version, for example `raw/4.3.14` and `raw/4.3.15`.
 - **`out/`**: the build the tools and pages are made from. An older build can be extracted next to it
   (`sh tools/extract.sh 4.3.14 out_4.3.14`) to compare versions.
-- **`data/`**: JSON files. The notes are in `data/docs/`: `GLOSSARY.md` (what each file is and the rebuild commands), `INFERENCES.md`
-  (what the decompiled names mean and how sure we are), `STATUS.md` (the open items) and `FORMULA_MISMATCHES.md` (every place the
-  code differs from the last documented version).
+- **`data/`**, in four folders by what may be edited:
+  `generated/` (the facts the pages show, written by the exporters and committed: do not edit, a rebuild overwrites them),
+  `derived/` (intermediate files rebuilt from the game, not in git: the engine, strings, sprites, class data),
+  `handwritten/` (written by hand from the code: `spells_overview.json`, `unlocks.json`; edit these) and
+  `docs/` (the notes: `GLOSSARY.md` with the rebuild commands, `INFERENCES.md` for what the decompiled names mean and how sure we are,
+  `STATUS.md` for the open items, `FORMULA_MISMATCHES.md` for every place the code differs from the last documented version).
 - **`tools/`**: `update.py` (the one command for a game update), `extract.sh` and the preview server at the top, and the rest grouped by stage:
   `extract/` (decompile, texts, images, the formula engine), `export/` (the exporters that turn the decompiled game into `data/*.json`),
   `manual/` (the hand-written correction tables the exporters use), `pages/` (the page builders and the shared look:
