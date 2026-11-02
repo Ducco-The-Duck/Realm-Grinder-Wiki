@@ -58,5 +58,5 @@ you then read the summary and commit. The individual commands are in `data/GLOSS
 ## Conventions
 
 - Facts come from the code. A meaning we guessed is recorded in `INFERENCES.md` until it is confirmed in game.
-- Values that differ from older documentation are logged in `FORMULA_MISMATCHES.md`, even when the code turns out to be right.
+- Values that differ from older documentation are logged in `FORMULA_MISMATCHES.md` (open) and `FORMULA_MISMATCHES_RESOLVED.md` (resolved), even when the code turns out to be right.
 - Ascension penalty marks follow the game's own tooltip text, checked against the code (see the notes in `INFERENCES.md`).
