@@ -23,4 +23,5 @@ data/buildings.json
 
 tools/_*.py
 tools/_*.json
+data/_*.json
 out_*/
