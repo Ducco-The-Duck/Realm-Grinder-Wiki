@@ -15,7 +15,7 @@ python -I tools/extract/as3js.py           # out/script -> data/derived/engine.j
 ```
 
 `tools/pylib/` (git-ignored) holds `quickjs` + `esprima`, installed with
-`pip install --target tools/pylib quickjs esprima`. They are only needed for `as3js.py` and `runtime_icons.py`.
+`pip install --target tools/pylib quickjs esprima pillow`. `quickjs` and `esprima` are needed for `as3js.py` and `runtime_icons.py`, `pillow` for the sprite tools.
 
 ## Files
 

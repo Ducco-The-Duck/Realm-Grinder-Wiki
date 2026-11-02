@@ -57,6 +57,19 @@ docs/*.html                               the site (committed)
 - **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/derived/engine.js`), which is run with `quickjs` to
   evaluate formulas and to test what an upgrade does at each Ascension.
 
+## Setup (to rebuild from a game file)
+
+Only needed to regenerate the data; the committed `docs/` needs nothing but a browser. Everything here was set up and tested on Windows
+with Python 3.10.
+
+- **The game file:** your own copy of `RealmGrinderDesktop.swf` from the game folder, placed in `raw/<version>/`. The game itself is not in the repo.
+- **FFDec** (JPEXS Free Flash Decompiler, command-line version): unpacked into `tools/ffdec/` so that `tools/ffdec/ffdec-cli.exe` exists. `extract.sh` calls it.
+- **`sh`:** Git for Windows provides it (`update.py` looks for it).
+- **Python packages**, installed next to the tools so nothing is installed system-wide:
+  `pip install --target tools/pylib quickjs esprima pillow` (`tools/pylib/` is ignored by git). `quickjs` runs the formula engine, `esprima` parses
+  the game's code and `pillow` slices the sprites.
+- Then `python -I tools/update.py <version>` (see Rebuilding).
+
 ## Rebuilding
 
 For a new game version: copy the swf to `raw/<version>/` and run `python -I tools/update.py <version>` (details in
