@@ -1,0 +1,136 @@
+
+/* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
+/*FRAMES*/
+.cell img,.cell img.ov{position:absolute;inset:auto;margin:0;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% + 4px);height:calc(100% + 4px);
+  max-width:none;max-height:none;object-fit:contain;image-rendering:pixelated}
+.cell:hover,.cell:focus-visible,.cell.fac:hover{background:none;outline:none;box-shadow:none;filter:brightness(1.15)}
+.cell.fac{background:none;border-color:transparent}
+.cell.na{opacity:.35;filter:grayscale(1)}
+.cell.na:hover{filter:grayscale(1) brightness(1.2)}
+.badge{z-index:3}
+
+/* section headers are dropdowns */
+section.dd h2{display:flex;align-items:baseline;gap:8px;cursor:pointer;user-select:none}
+section.dd h2:hover{color:var(--accent)}
+section.dd h2 .chev{margin-left:auto;align-self:center;width:9px;height:9px;margin-right:6px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-3px) rotate(45deg);transition:transform .3s ease}
+section.dd.open h2 .chev{transform:translateY(2px) rotate(-135deg)}
+.dd-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s ease,opacity .3s ease}
+.dd.open .dd-body,body.searching .dd .dd-body{grid-template-rows:1fr;opacity:1}
+.dd-in{overflow:hidden;min-height:0}
+@keyframes ddcell{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}      /* no slide: the folded body clips whatever leaves its box, which cut off the top frames */
+.dd-in.casc .cell{animation:ddcell .34s ease both;animation-delay:calc(var(--i,0) * 9ms)}
+/* the game's own fonts: Liony Bold for headings, names and labels, Liony Regular for everything else */
+@font-face{font-family:"Liony";src:url(assets/fonts/Liony-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Liony";src:url(assets/fonts/Liony-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
+html{font-size:30px}
+body{font-family:"Liony",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.12;letter-spacing:.01em}
+main{max-width:780px}
+#tip{width:min(620px,calc(100vw - 16px))}
+#tip b.t,#tip>b:first-child{display:block;font-size:1.3em;line-height:1.1;margin-bottom:2px}
+#pop h3,#more h3{font-size:1.25em}
+#pop .card{width:min(620px,100%)}
+#more .card{width:min(640px,100%)}
+h1,h2,h3,b,strong,#tip b.t,#tip .lbl,#more .lbl,#tip .flabel,#more .flabel,#pop h3,#more h3,.subh,.bar b,nav a[aria-current],.mark{font-family:"Liony",system-ui,sans-serif;font-weight:700}
+input,select,button,textarea,option,optgroup{font-family:"Liony",system-ui,sans-serif;font-size:1rem}
+select option{font-family:"Liony",system-ui,sans-serif}
+/* tighter tooltips and popups */
+.katex{font-size:.9em}
+#tip{padding:7px 12px;line-height:1.2}
+#tip .lbl{margin-top:5px}
+#tip p{margin:2px 0 0}
+#tip ul{margin:1px 0 0}
+#tip .faction{margin-top:3px}
+#tip .formula{padding:1px 0}
+#tip ul.vars{margin:2px 0}
+#tip ul.vars li{margin:0}
+#tip ul.vars b{display:inline;font-family:inherit;font-size:inherit}
+#tip>span:not(.lbl){display:block;line-height:1.05}
+#tip em{margin-top:1px;line-height:1.05}
+#tip>b:first-child{margin-bottom:0}
+#tip .flabel{margin-top:3px}
+#tip .fsep{margin:4px 0 1px}
+#tip .cost{margin-top:0}
+#more .bonus{padding:5px 0}
+#more .bonus p{margin:0 0 1px}
+#more .formula{padding:0}
+#more ul.vars{margin:1px 0}
+#pop .card,#more .card{padding:10px 12px}
+/* the Upgrades entry of the nav drops down to the four upgrade pages */
+.dd-nav{position:relative;display:flex}
+.dd-nav>a{display:block}
+#tip>b+.more{margin-top:0;margin-bottom:2px}
+/* dark scrollbars (the default one flashes white on hover) */
+*{scrollbar-width:thin;scrollbar-color:#4a443a transparent}
+::-webkit-scrollbar{width:10px;height:10px;background:transparent}
+::-webkit-scrollbar-thumb{background:#4a443a;border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:#6a6150}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
+.dd-nav .dd-menu{display:none;position:absolute;top:100%;left:-10px;z-index:70;min-width:210px;padding:6px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);flex-direction:column;gap:2px}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu,.dd-nav.open .dd-menu{display:flex}
+.dd-nav .dd-menu a{padding:5px 10px;border:0;border-radius:6px;white-space:nowrap}
+.dd-nav .dd-menu a:hover{background:var(--cell);color:var(--fg)}
+.dd-nav .dd-menu a[aria-current]{background:var(--cellhi);border:0}
+/* the game's tooltip border (black_SteelTrim, 9-slice 8 px) instead of rounded corners; used on one page so far */
+body.steel #tip,body.steel #pop .card,body.steel #more .card{border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 6px;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:#ece6d8}
+sup{font-size:.62em;line-height:0;vertical-align:.5em;font-family:inherit}
+body.steel .pen-note,body.steel .search input{border:8px solid transparent;border-radius:0;background:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a}
+body.steel .search input{padding:0 8px}
+body.steel #tip{overflow:visible;line-height:1.15}
+body.steel #more header{background:transparent;margin-top:0}
+/* popups close by clicking outside them or with Escape: no Close button */
+#pop button.x,#more button.x{display:none}
+#pop .card.narrow{width:auto;max-width:min(330px,100%);margin:0 auto}
+body.steel #pop .card.narrow{padding:0 12px 18px}
+#pop .card.narrow header{margin-bottom:12px}
+body.steel #tip .lbl{margin-top:3px}
+body.steel #tip p{margin:1px 0 0}
+body.steel .cs>button,body.steel .cs ul{border:8px solid transparent;border-radius:0;background:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;color:#ece6d8;
+  --fg:#ece6d8;--muted:#a39b8a;--cellhi:#3a3328}
+body.steel .cs>button{padding:0 30px 0 6px}
+body.steel .cs ul{box-shadow:none}
+/* no bullets anywhere; the A marks on icons are small and in the game's font */
+ul{list-style:none;padding-left:0}
+li::marker{content:""}
+.cell .pen{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.58rem;line-height:1;padding:1px 4px;border-radius:3px;letter-spacing:0;top:auto;bottom:3px;right:3px}
+/* less vertical air everywhere */
+main{padding-top:10px;padding-bottom:40px}
+nav{margin:0 0 6px}
+h1{margin:0 0 2px}
+.sub{margin:0 0 6px;line-height:1.12}
+.pen-note{margin:0 0 6px;padding:3px 8px;line-height:1.12}
+.search{margin:0 0 6px}
+.bar{padding:2px 16px;gap:0;margin-bottom:6px}
+.bar .row{gap:2px 14px}
+section{margin:0 0 10px}
+h2{margin:0 0 3px;padding-bottom:2px}
+.subh{margin:6px 0 3px}
+.grid{gap:4px}
+/* drop-downs drawn by the page, so that they use the game's font (the browser's own list does not) */
+.cs{position:relative;display:inline-block}
+.cs>button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 28px 1px 10px;
+  cursor:pointer;text-align:left;position:relative;min-width:3ch;line-height:1.2}
+.cs>button::after{content:"";position:absolute;right:10px;top:50%;width:7px;height:7px;border-right:2px solid var(--muted);
+  border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg)}
+.cs ul{position:absolute;z-index:80;left:0;top:100%;margin:2px 0 0;padding:4px;list-style:none;background:var(--card);
+  border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);max-height:55vh;overflow:auto;min-width:100%;display:none}
+.cs.open ul{display:block}
+.cs li{padding:1px 10px;border-radius:5px;cursor:pointer;white-space:nowrap;line-height:1.25}
+.cs li:hover,.cs li.sel{background:var(--cellhi)}
+.cs.dis>button{opacity:.5;cursor:default}
+.search{margin:0 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search input{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.search .qn{color:var(--muted);font-size:.9rem}
+/* the search box is as wide as the notes box; the result count sits inside it */
+.search{position:relative;display:block}
+.search input{display:block;width:100%;box-sizing:border-box;padding-right:96px}
+body.steel .search input{padding:0 96px 0 8px}
+.search .qn{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none}
+.sx{display:none!important}

@@ -1,0 +1,39 @@
+/*NAVCSS*/
+nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1.15;border:0;padding:0}
+nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
+  cursor:pointer;image-rendering:pixelated;font-weight:400;-webkit-tap-highlight-color:transparent}
+/* the frame (the wiki's steel trim; gold for the open page), then the icon, then the ribbon with the name */
+nav.tabs .tab::before{content:"";position:absolute;left:0;top:0;width:100%;height:calc(76px*var(--s));box-sizing:border-box;
+  border:calc(8px*var(--s)) solid transparent;border-image:url(assets/ui/trim/Steel.png) 8 fill / calc(8px*var(--s)) / 0 stretch;image-rendering:pixelated}
+nav.tabs .tab[aria-current]::before{border-image-source:url(assets/ui/trim/Gold.png)}
+nav.tabs .tab:hover::before{border-image-source:url(assets/ui/trim/Gold_Hover.png)}
+nav.tabs .tab::after{content:"";position:absolute;z-index:2;left:0;top:calc(44px*var(--s));width:100%;height:calc(34px*var(--s));
+  box-sizing:border-box;border:solid transparent;border-width:0 calc(14px*var(--s));border-image:url(assets/ui/nav/redRibbon.png) 0 14 fill / 0 calc(14px*var(--s)) / 0 stretch;image-rendering:pixelated}
+nav.tabs .tab.long::after{left:calc(-9px*var(--s));width:calc(100% + 18px*var(--s))}
+nav.tabs .tab.long span.n{left:calc(-9px*var(--s));right:calc(-9px*var(--s))}
+nav.tabs .tab[aria-current]::after{border-image-source:url(assets/ui/nav/redRibbon_Selected.png)}
+nav.tabs .tab img{position:absolute;z-index:1;left:calc(14px*var(--s));top:calc((var(--y) + 2)*var(--s)*1px);width:calc(64px*var(--s));height:calc(64px*var(--s));image-rendering:pixelated;transform:scale(var(--z,1))}
+nav.tabs .tab span.n{position:absolute;z-index:3;left:0;right:0;top:calc(48px*var(--s));height:calc(24px*var(--s));display:flex;align-items:center;justify-content:center;
+  font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:calc(14px*var(--s));line-height:1;text-shadow:1px 1px 0 #3a1a14;white-space:nowrap}
+nav.tabs .tab:hover img,nav.tabs .tab:focus-visible img{filter:brightness(1.25)}
+nav.tabs .tab:hover::after{filter:brightness(1.2)}
+nav.tabs .dd-nav{display:block;position:relative}
+nav.tabs .dd-menu{display:none;position:absolute;z-index:70;flex-direction:column}
+nav.tabs .dd-nav:hover .dd-menu,nav.tabs .dd-nav:focus-within .dd-menu,nav.tabs .dd-nav.open .dd-menu{display:flex}
+nav.tabs .dd-nav .dd-menu{top:calc(78px*var(--s));left:50%;transform:translateX(-50%);min-width:0;border:8px solid transparent;border-radius:0;background:none;box-shadow:none;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 4px;gap:0;color:#ece6d8;--cell:#2b261f;--cellhi:#3a3328;--fg:#ece6d8}
+nav.tabs .dd-item{position:relative;display:block}
+nav.tabs .dd-nav .dd-menu .dd-item>a{display:flex;align-items:center;justify-content:space-between}
+nav.tabs .dd-item>a::after{content:"";flex:none;margin-left:14px;border:5px solid transparent;border-left-color:currentColor;border-right-width:0;opacity:.7}
+nav.tabs .dd-sub{display:none;position:absolute;left:calc(100% + 12px);top:-10px;flex-direction:column;padding:0 4px;border:8px solid transparent;
+  border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated}
+nav.tabs .dd-sub::before{content:"";position:absolute;left:-26px;top:-8px;bottom:-8px;width:26px}      /* keeps the hover while the pointer crosses the menu's frame */
+nav.tabs .dd-item:hover .dd-sub,nav.tabs .dd-item:focus-within .dd-sub{display:flex}
+nav.tabs .dd-nav .dd-menu a{display:block;color:#ece6d8;font-size:1rem;padding:2px 12px;border-radius:4px;text-decoration:none;white-space:nowrap}
+@media (max-width:700px){nav.tabs{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;--s:.85;gap:0}}
+nav.tabs .tab .uc{position:absolute;z-index:4;right:calc(2px*var(--s));top:calc(2px*var(--s));width:calc(24px*var(--s));height:calc(24px*var(--s));pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.7))}
+nav.tabs .tab .uc svg{display:block;width:100%;height:100%}
+nav.tabs .dd-menu .uc-note{display:flex;align-items:center;gap:8px;padding:2px 12px 4px;margin-bottom:2px;border-bottom:1px solid rgba(236,230,216,.25);color:#f2b705;font-size:.8rem;white-space:nowrap}
+nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
+.bugs p{margin:0 0 20px;padding:8px 12px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;background:var(--card);font-size:.92rem}
+/*ENDNAVCSS*/
