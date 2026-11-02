@@ -14,8 +14,8 @@ What it does, in order (it stops at the first problem):
   5. rebuilds the data and every page (the order is in STEPS), then runs selfcheck.py again and diff_data.py
 
 It never commits or pushes, never deletes a build, and never edits the hand-written tables in the tools. What it cannot do
-for you: decode a new kind of item or condition, write formulas and notes, or confirm anything in game. Read the summary,
-look at the "undecoded" counters and the diff_data list, then commit.
+for you: decode a new kind of item or condition, write formulas and notes, or confirm anything in game. Read the summary
+(also saved in update_report.txt), look at the "undecoded" counters and the diff_data list, then commit.
 """
 import difflib, os, shutil, subprocess, sys
 
@@ -39,8 +39,25 @@ def die(msg, code=1):
 
 
 def run(args, env=None, quiet=False):
-    r = subprocess.run(args, cwd=ROOT, env=env, capture_output=quiet, text=True, encoding='utf8', errors='replace')
-    return r
+    if quiet:
+        return subprocess.run(args, cwd=ROOT, env=env, capture_output=True, text=True, encoding='utf8', errors='replace')
+    # shown live and also written to the report (it goes through print, which is teed to the report file)
+    p = subprocess.Popen(args, cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf8', errors='replace')
+    for line in p.stdout: print(line, end='', flush=True)
+    p.wait()
+    return subprocess.CompletedProcess(args, p.returncode)
+
+
+REPORT = os.path.join(ROOT, 'update_report.txt')
+
+
+class Tee:
+    """print to the terminal and to the report file at once"""
+    def __init__(self, *streams): self.streams = streams
+    def write(self, s):
+        for t in self.streams: t.write(s)
+    def flush(self):
+        for t in self.streams: t.flush()
 
 
 def git_clean():
@@ -105,6 +122,7 @@ def main():
     flags = {a for a in sys.argv[1:] if a.startswith('--')}
     if len(args) != 1: die(__doc__.split('\n\n')[0].strip(), 2)
     ver = args[0]
+    sys.stdout = Tee(sys.stdout, open(REPORT, 'w', encoding='utf8'))      # everything printed from here on is kept in update_report.txt
     swf = os.path.join(ROOT, 'raw', ver, 'RealmGrinderDesktop.swf')
     if not os.path.exists(swf): die(f'missing raw/{ver}/RealmGrinderDesktop.swf')
     if '--force' not in flags and not git_clean():
@@ -157,6 +175,7 @@ def main():
     run([PY, '-I', 'tools/selfcheck.py'])
     say('\nwhat changed in the data (diff_data.py, against the last commit):')
     run([PY, '-I', 'tools/diff_data.py'])
+    say(f'\nThis report is saved in {os.path.relpath(REPORT, ROOT)} (not tracked by git; the next update overwrites it).')
     say('\nNext: read the lists above, check the "undecoded conditions" numbers, preview the pages, then commit.'
         '\nNothing was committed or pushed. To undo the rebuild: git checkout -- data docs')
 
