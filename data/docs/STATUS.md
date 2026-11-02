@@ -3,7 +3,7 @@
 What is still open, and what has been resolved. (`INFERENCES.md` keeps the notation, the stat arrays, the helper tables and the other decoding notes.)
 Only these need checking; remove an item from the open list when it is settled.
 
-1. **Formula disagreements** (open ones: `data/FORMULA_MISMATCHES.md`, resolved ones: `data/FORMULA_MISMATCHES_RESOLVED.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
+1. **Formula disagreements** (open ones: `data/docs/FORMULA_MISMATCHES.md`, resolved ones: `data/docs/FORMULA_MISMATCHES_RESOLVED.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
    in-game tooltip value). Object, then where it is on the wiki:
    - **Second Crystal** (4x), **Third Crystal** (66x), **Second Stone** (2x): fragment factors that differ between the code and
      the old patch-notes doc (4.3.11). Archaeology page (artifact chances). The in-game "Chance: X%" tooltip is visible only

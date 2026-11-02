@@ -9,7 +9,7 @@ Confidence: **high** = confirmed by the game's own UI text or consistent in seve
 
 ## Status
 
-The open items and the resolved ones are in `data/STATUS.md`.
+The open items and the resolved ones are in `data/docs/STATUS.md`.
 
 ## Corrected so far
 

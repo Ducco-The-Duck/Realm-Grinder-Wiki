@@ -14,7 +14,7 @@ added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
 3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts (`export_nav.py` copies the sprites of the nav's tab buttons), then the `build_*_page.py` scripts (`build_spells_page.py` builds the Spells page from `data/spells.json`; `build_unlocks_page.py` builds the Mechanics page and the Unlocks pages (`unlocks-a0.html` to `unlocks-a4.html`) from the hand-written `data/unlocks.json`) and `build_index.py` (stamps the game version and the tab nav on the home page)
-   (the commands are in `data/GLOSSARY.md`).
+   (the commands are in `data/docs/GLOSSARY.md`).
 4. `python -I tools/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
    overrides (formulas, notes, fixes in the exporters) whose item changed. Review that list, nothing else.
 5. `python -I tools/selfcheck.py --update` once the new ids are accepted, then commit.

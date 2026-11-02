@@ -11,7 +11,7 @@ from as3calls import find_msg_calls
 
 DATA = os.path.join(ROOT, 'data')
 
-# ---- constants inferred from the code (evidence: see data/GLOSSARY.md) --------------------
+# ---- constants inferred from the code (evidence: see data/docs/GLOSSARY.md) --------------------
 FACTIONS = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan',
             7: 'Druid', 8: 'Faceless', 9: 'Dwarf', 10: 'Drow', 11: 'Mercenary'}
 ALIGNMENTS = {0: 'None', 1: 'Good', 2: 'Evil', 3: 'Neutral'}

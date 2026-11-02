@@ -2,7 +2,7 @@
 One place for the rules, so the pages and the global effect search cannot disagree."""
 import json, re
 
-# the highest research number a branch can reach, per Ascension (see data/INFERENCES.md, "Highest research number you can reach")
+# the highest research number a branch can reach, per Ascension (see data/docs/INFERENCES.md, "Highest research number you can reach")
 MAXNUM = [780, 4950, 4999, 7000, 14000]
 ASCENSIONS = range(5)
 

@@ -751,7 +751,7 @@ SPLIT = [
      'The Misc upgrades (the Gem, Reincarnation, Ruby and Challenge powers and the clicking, offline and assistant series) and '
      'the Building upgrades.'),
 ]
-# known bugs in the game's own texts, shown at the top of the page (all of them are listed in data/KNOWN_BUGS.md)
+# known bugs in the game's own texts, shown at the top of the page (all of them are listed in data/docs/KNOWN_BUGS.md)
 BUGS = {'upgrades-secret.html': '<div class="bugs"><p><b>Known bug, Art of the Crow:</b> the first paragraph of the upgrade&#39;s text says that for Evil '
          'Faction and Set the amount is based on the production bonus from Gems, but the line for Evil below it, and the game itself, use the mana produced in '
          'this Reincarnation. This page shows the latter.</p></div>'}

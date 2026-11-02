@@ -3,7 +3,7 @@ array reads into named inputs for formulas.  Used by chance_latex.convert for re
 
 Each handler returns (symbol, description) or None when the call (or its parameter combination) is not
 understood, in which case the whole formula is left unconverted rather than guessed.  Meanings and their
-confidence are recorded in data/INFERENCES.md.
+confidence are recorded in data/docs/INFERENCES.md.
 """
 import re
 

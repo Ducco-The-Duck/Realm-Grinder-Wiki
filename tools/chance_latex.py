@@ -3,7 +3,7 @@ of named variables.  Only inputs listed in VARS / ENTITY_VARS are understood; an
 `convert` return None so the caller can fall back to generic wording.
 
 The chance is a percentage rolled once per excavation.  The meaning of each input is documented
-(with confidence) in data/INFERENCES.md.
+(with confidence) in data/docs/INFERENCES.md.
 """
 import ast, re
 from helper_calls import subst_helpers, subst_stats, to_py_ternary
