@@ -7,7 +7,7 @@ __pycache__/
 tools/pylib/
 assets/sprites/
 
-# Derived from game code/text; regenerate locally with the tools (see data/GLOSSARY.md)
+# Derived from game code/text; regenerate locally with the tools (see data/docs/GLOSSARY.md)
 data/engine.js
 data/engine_names.json
 data/engine_report.json
