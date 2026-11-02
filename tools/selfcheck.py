@@ -148,6 +148,12 @@ try:
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf): n_bad = verify_formulas.main(set())
     print(f"7. spell detail numbers: {buf.getvalue().strip().splitlines()[-1]}")
+    buf2 = io.StringIO()
+    with contextlib.redirect_stdout(buf2): n_bad2 = verify_formulas.main_items()
+    print(f"8. upgrade and challenge formula numbers: {buf2.getvalue().strip().splitlines()[-1]}")
+    if n_bad2:
+        print(buf2.getvalue())
+        problems.append(f"{n_bad2} number(s) in upgrade or challenge formulas are not found in the game code (run tools/verify_formulas.py --items)")
     if n_bad:
         print(buf.getvalue())
         problems.append(f"{n_bad} number(s) in data/spells_overview.json are not found in the game code (run tools/verify_formulas.py)")

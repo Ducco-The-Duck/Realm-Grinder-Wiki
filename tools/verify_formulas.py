@@ -27,18 +27,24 @@ def read(p):
 
 
 _importers = None
+_users = None
 def importers(cls):
-    """the files that import the class (the callers that see it by name)"""
-    global _importers
+    """the files that use the class: the ones that import it, and the ones that name it (a class in the same package, or in the
+    unnamed package, is used without an import). The obfuscator reuses names, so this can include files that mean another class."""
+    global _importers, _users
     if _importers is None:
-        _importers = {}
+        _importers, _users = {}, {}
         pat = re.compile(r'^\s*import ([^;]+);', re.M)
+        tok = re.compile(r'§[^§\n]*§')
         for dp, _, fs in os.walk(SCRIPTS):
             for f in fs:
                 if not f.endswith('.as'): continue
                 p = os.path.join(dp, f)
-                for m in pat.finditer(read(p)): _importers.setdefault(m.group(1), []).append(p)
-    return _importers.get(cls, [])
+                t = read(p)
+                for m in pat.finditer(t): _importers.setdefault(m.group(1), []).append(p)
+                for sym in set(tok.findall(t)): _users.setdefault(sym, set()).add(p)
+    sym = cls.rsplit('.', 1)[-1]
+    return sorted(set(_importers.get(cls, [])) | _users.get(sym, set()))
 
 
 NUM = re.compile(r'(?<![\w§.])-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?')
@@ -113,5 +119,57 @@ def main(only):
     print(f'\n{total} numbers checked, {bad} not found in the spell\'s code')
 
 
+def item_formulas(it):
+    """the formula texts (formulas, variable descriptions) of an upgrade or challenge item"""
+    out = []
+    fl = list(it.get('formulas') or [])
+    for p in it.get('description') or []: fl += p.get('formulas') or []
+    for f in fl:
+        if not isinstance(f, dict) or 'latex' not in f: continue
+        out.append(f['latex'])
+        for v in f.get('vars') or []:
+            out.append(v.get('text', '') if isinstance(v, dict) else str(v[1]))
+    return out
+
+
+def main_items(only=()):
+    """the same check for the upgrades and the challenge rewards that carry formulas (the generated ones pass by construction;
+    the hand-written tables in the tools are what it is there for)"""
+    ups = json.load(open(os.path.join(ROOT, 'data', 'upgrades.json'), encoding='utf8'))
+    cls_of = {u['name']: u['class'] for u in ups if u.get('name') and u.get('class')}
+    for u in ups:
+        if u.get('game_name') and u.get('class'): cls_of.setdefault(u['game_name'], u['class'])
+    pages = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
+    chal = json.load(open(os.path.join(ROOT, 'data', 'challenges.json'), encoding='utf8'))
+    items = [(k, it) for k, lst in pages.items() if isinstance(lst, list) for it in lst if isinstance(it, dict)]
+    items += [('challenge', it) for f in chal for it in f['items']]
+    total = bad = skipped = 0
+    for kind, it in items:
+        texts = item_formulas(it)
+        if not texts: continue
+        name = it.get('game_name') or it['name']
+        cls = cls_of.get(name) or cls_of.get(it['name'])
+        if not cls:
+            skipped += 1; continue
+        if only and name not in only and it['name'] not in only: continue
+        files = [path_of(cls)] + importers(cls)
+        nums = set()
+        for p in files:
+            if os.path.exists(p): nums |= code_numbers(read(p))
+        miss = []
+        for t in texts:
+            for x in latex_numbers(t):
+                if x in TRIVIAL: continue
+                total += 1
+                if not found(x, nums): miss.append(x)
+        if miss:
+            bad += len(miss)
+            print(f'{kind}: {it["name"]}: not found: ' + ', '.join(f'{x:g}' for x in miss))
+    print(f'\n{total} numbers checked in upgrade and challenge formulas, {bad} not found ({skipped} items with formulas have no class to check against)')
+    return bad
+
+
 if __name__ == '__main__':
-    main(set(sys.argv[1:]))
+    args = set(sys.argv[1:])
+    if '--items' in args: main_items(args - {'--items'})
+    else: main(args)
