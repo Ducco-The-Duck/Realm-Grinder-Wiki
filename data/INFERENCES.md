@@ -215,6 +215,16 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 | `§&c§.§`!=§()` | Total Lineage level | medium | Genealogist text |
 | `§@W§.§'!b§()` | Combo Strike's current production bonus (%) | medium | Combo Strike tooltip "Current: %1%" |
 | `Brainwave.§"!P§()` | Brainwave headstart (s): 600 per tier + bonuses | medium | tooltip "Increase headstart time based on spell tier", "Headstart: %0" |
+| `§&c§.§"!B§(i, false, true)` | Stat `i` of this Era (with i = 1: time spent in this Era, seconds); the other parameters' meanings are guessed from the call sites | medium | Temporal Flux uses `§"!B§(1,false,true)` as "time spent in this Era" (text and the Era-time stat 1) |
+| `§2<§` (class) | the Tax Collection spell (`ids = ["s:TaxCollection"]`) | **high** | id string; its upgrades (Share Benefits `§=!i§`, Reap Interests, Appraisal Vantage `§;!j§`, the game calls it "Secret Exchange" internally) are named by their texts |
+| `§2<§.§,!G§(30)` | Tax Collection's seconds worth for a base of 30 seconds: the base plus every additive bonus, then the multipliers | medium | the Appraisal Vantage formula multiplies it with assistants and find chance; read from the function body, not the UI |
+| `§;!j§.§,!G§()` | Appraisal Vantage: Faction Coins per cast = assistants (`§&c§.§!-§()`) × Tax Collection worth (`§2<§.§,!G§(30)`) × find chance^1.25 | medium | agrees with the 4.3.11 patch-notes line (x * y * z^1.25) |
+| `§9!n§` (class) | the Temporal Flux spell | **high** | class sets its name to "Temporal Flux"; helpers: `§&s§()` = (time this Era)^0.825 (the production bonus before the penalty), `§"!&§()` Mana Regeneration bonus (%), `§?!<§()` Maximum Mana bonus (%), `§,!G§()` = 10 × tier (bonus to the mana produced count) |
+| `§6!z§` (upgrade) | Archon Union: "Temporal Flux also increases Maximum Mana" (the Maximum Mana line of the tooltip is shown only with it) | **high** | its own description text and the condition in `§9!n§.§7#§()` |
+| `§^"-§` (challenge reward) | An Untimely Death: Temporal Flux also increases Offline production and gains 1 tier | **high** | its own text; `§8!6§` adds `§^"-§.§,!G§()` to Temporal Flux's tiers |
+| `§#!!§.§8!6§(spellId)` | Number of tiers a spell currently has available, including extra tiers from rewards | medium | used as the "unlocked tiers" input of the Ascension penalty function |
+| `§#!!§.§!l§(mult, spellId, ...)` | The Ascension penalty applied to a spell effect multiplier: exponent 0.1/A with no tier, else (0.5/A)·0.5^(w·(A−T)); the fifth parameter is not used | medium | read from the function body; matches the patch-notes penalty formulas |
+| `§8G§.§#N§(spellId)` | The spell object of that id (so `.§`r§` is its active tier) | medium | used wherever a spell's tier is read |
 | `§8G§.§%Z§(building)` | Buildings of that type owned, counting bonuses that make them count as more (Dwarf Challenge 5, Underground Foundations, ...); with `true`, the raw owned count | **high** | user: such "counts as more" bonuses apply to count-based artifacts unless stated otherwise |
 
 **Name collisions:** the obfuscator reuses member names in different classes, so `§#!!§.§!-§` and
