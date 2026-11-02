@@ -3,7 +3,7 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 ctx = quickjs.Context()
-src = open(os.path.join(HERE, '..', 'data', 'engine.js'), encoding='utf8').read()
+src = open(os.path.join(HERE, '..', 'data', 'derived/engine.js'), encoding='utf8').read()
 try:
     ctx.eval(src)
 except Exception as e:

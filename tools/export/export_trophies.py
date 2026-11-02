@@ -13,10 +13,10 @@ sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from numtext import pow10_text
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 ctx = quickjs.Context()
-ctx.eval(open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read())
+ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read())
 ctx.eval('__boot()')
 J = lambda tok: names[tok]
 src = f"""JSON.stringify({J('§8G§')}.{J('§0Q§')}.map(function (o, i) {{
@@ -39,7 +39,7 @@ for r in rows:
         'listed': flag is None, 'group': flag or 'trophy',
         **({'requirement_error': r['error']} if r['error'] else {}),
     })
-json.dump(out, open(os.path.join(ROOT, 'data', 'trophies.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(ROOT, 'data', 'generated/trophies.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 listed = [t for t in out if t['listed']]
 print(len(out), 'entries;', len(listed), 'listed trophies;',
       'without requirement text:', sum(1 for t in listed if not t['requirement']),

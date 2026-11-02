@@ -1,5 +1,5 @@
 """Resolve entity icon names that the game builds at runtime, by reading `icon` off the
-registered instances after __boot().  Writes data/runtime_icons.json {class: icon_name}.
+registered instances after __boot().  Writes data/derived/runtime_icons.json {class: icon_name}.
 
     python -I tools/extract/runtime_icons.py
 """
@@ -9,10 +9,10 @@ ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 ctx = quickjs.Context()
-ctx.eval(open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read())
+ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read())
 ctx.eval('__boot()')
 g, icon = names['§8G§'], names['§^!#§']
 regs = [names[t] for t in ('§-!4§', '§0Q§', '§0!A§', '§%<§')]
@@ -35,7 +35,7 @@ function __icons(g, regs, icon) {
 res = json.loads(ctx.eval(f'__icons({json.dumps(g)}, {json.dumps(regs)}, {json.dumps(icon)})'))
 out = {}; stat = {'checked': 0, 'resolved': 0, 'unresolved': []}
 for kind in ['upgrade', 'achievement', 'spell', 'building', 'research']:
-    for r in json.load(open(os.path.join(ROOT, 'data', f'{kind}s.json'), encoding='utf8')):
+    for r in json.load(open(os.path.join(ROOT, 'data', f'derived/{kind}s.json'), encoding='utf8')):
         ic = r.get('icon')
         if ic and ic in sprites and not r.get('icon_runtime'): continue      # (an icon this step filled in on the last build stays in the file)
         rt = res.get(r['class'])
@@ -45,7 +45,7 @@ for kind in ['upgrade', 'achievement', 'spell', 'building', 'research']:
             out[r['class']] = rt; stat['resolved'] += 1
         else:
             stat['unresolved'].append([r.get('name'), ic, rt])
-json.dump(out, open(os.path.join(ROOT, 'data', 'runtime_icons.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(ROOT, 'data', 'derived/runtime_icons.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print(stat['checked'], 'checked,', stat['resolved'], 'resolved,', len(stat['unresolved']), 'unresolved')
 for u in stat['unresolved'][:12]: print('  ', u)
 import collections

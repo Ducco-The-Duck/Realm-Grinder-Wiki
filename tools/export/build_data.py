@@ -60,7 +60,7 @@ def kind_of(c, cl):
 
 def main():
     cl = parse_all()
-    strings = json.load(open(os.path.join(DATA, 'strings.json'), encoding='utf8'))
+    strings = json.load(open(os.path.join(DATA, 'derived/strings.json'), encoding='utf8'))
 
     # ---- pick entities -----------------------------------------------------------------
     ents = {}
@@ -94,7 +94,7 @@ def main():
             return f'[{short_name.get(q, m.group(1))}]'
         return re.sub(r'(§[^§]*§)\.id\b', sub, expr)
 
-    rt_path = os.path.join(DATA, 'runtime_icons.json')  # from tools/extract/runtime_icons.py (needs engine.js)
+    rt_path = os.path.join(DATA, 'derived/runtime_icons.json')  # from tools/extract/runtime_icons.py (needs engine.js)
     runtime_icons = json.load(open(rt_path, encoding='utf8')) if os.path.exists(rt_path) else {}
     out = collections.defaultdict(list)
     for q, (kind, c, _f) in sorted(ents.items(), key=lambda kv: kv[0]):
@@ -160,10 +160,10 @@ def main():
     summary = {}
     for kind, recs in out.items():
         recs.sort(key=lambda r: (r.get('num_id') if isinstance(r.get('num_id'), int) else 10**9, r['class']))
-        json.dump(recs, open(os.path.join(DATA, f'{kind}s.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+        json.dump(recs, open(os.path.join(DATA, f'derived/{kind}s.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
         summary[kind] = len(recs)
     json.dump({'factions': FACTIONS, 'alignments': ALIGNMENTS},
-              open(os.path.join(DATA, 'enums.json'), 'w', encoding='utf8'), indent=1)
+              open(os.path.join(DATA, 'generated/enums.json'), 'w', encoding='utf8'), indent=1)
     print(summary)
 
 

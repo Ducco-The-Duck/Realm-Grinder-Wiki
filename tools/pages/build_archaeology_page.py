@@ -5,12 +5,12 @@
 import json, os, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-artifacts = json.load(open(os.path.join(ROOT, 'data', 'artifacts.json'), encoding='utf8'))
-icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
+artifacts = json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))
+icons = json.load(open(os.path.join(ROOT, 'data', 'generated/icons.json')))
 
 # artifact icons are not referenced by entity data, so make sure they are exported
 import shutil
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 icon_dir = os.path.join(ROOT, 'docs', 'assets', 'icons')
 os.makedirs(icon_dir, exist_ok=True)
 
@@ -40,7 +40,7 @@ for kind, label in (('quest', 'Quest Artifacts'), ('lore', 'Lore Artifacts')):
     its = sorted((a for a in artifacts if a['kind'] == kind), key=lambda a: a['order'])
     sections.append({'title': label, 'n': len(its), 'items': [item(a) for a in its]})
 
-json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
+json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(s['items']) for s in sections)
 

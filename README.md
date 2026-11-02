@@ -3,7 +3,7 @@
 A wiki for Realm Grinder whose pages are generated from the game's own code and text. Nothing on the pages is typed in
 by hand: the numbers, requirements and formulas are read out of the decompiled game, and the few hand-written
 corrections live in named tables inside the tools so they can be found and reviewed. The Codex (Mechanics, Unlocks and Spells
-pages) is the exception: its explanations are written by hand from the code, in `data/unlocks.json` and `data/spells_overview.json`.
+pages) is the exception: its explanations are written by hand from the code, in `data/handwritten/unlocks.json` and `data/handwritten/spells_overview.json`.
 
 The site is served by GitHub Pages from `docs/`.
 
@@ -51,7 +51,7 @@ docs/*.html                               the site (committed)
   `search_snippet.py`, `frame_css.py`) and `checks/` (`selfcheck.py`: did the game's scrambled names or numbers move?; `diff_data.py`: what
   changed after a rebuild; `verify_formulas.py`). `tools/UPDATING.md` has the steps for a game update.
 - **`unused/`**: things that were dropped (the Effects search page and its tools and data); kept for reference, not built or checked.
-- **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/engine.js`), which is run with `quickjs` to
+- **Engine**: `tools/extract/as3js.py` turns the game's formulas into JavaScript (`data/derived/engine.js`), which is run with `quickjs` to
   evaluate formulas and to test what an upgrade does at each Ascension.
 
 ## Rebuilding

@@ -39,8 +39,8 @@ def items_upgrades(d):
     return out
 
 
-FILES = [('trophies.json', items_trophies), ('artifacts.json', items_artifacts), ('research.json', items_research),
-         ('challenges.json', items_challenges), ('upgrade_pages.json', items_upgrades)]
+FILES = [('generated/trophies.json', items_trophies), ('generated/artifacts.json', items_artifacts), ('generated/research.json', items_research),
+         ('generated/challenges.json', items_challenges), ('generated/upgrade_pages.json', items_upgrades)]
 
 
 def committed(name):

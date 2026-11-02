@@ -9,10 +9,10 @@ ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
 # the JSON stores token -> js name for classes ('K..') and members ('_..')
 ctx = quickjs.Context()
-ctx.eval(open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read())
+ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read())
 ctx.eval('__boot()')
 ctx.eval('''
 function __call(q, kind, name, argsJson) {
@@ -38,7 +38,7 @@ out = {}
 stats = collections.Counter()
 errs = collections.Counter()
 for kind in ['upgrade', 'achievement', 'spell', 'building', 'research']:
-    for r in json.load(open(os.path.join(ROOT, 'data', f'{kind}s.json'), encoding='utf8')):
+    for r in json.load(open(os.path.join(ROOT, 'data', f'derived/{kind}s.json'), encoding='utf8')):
         q = r['class']
         rec = {}
         for fn, f in r.get('formulas', {}).items():
@@ -57,6 +57,6 @@ for kind in ['upgrade', 'achievement', 'spell', 'building', 'research']:
             if 'err' in res: stats['text_err'] += 1; errs[res['err'][:70]] += 1
             else: stats['text_ok'] += 1; rec.setdefault('rendered', {})[n] = res['v']
         if rec: out[q] = rec
-json.dump(out, open(os.path.join(ROOT, 'data', 'formula_values.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(ROOT, 'data', 'derived/formula_values.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print(dict(stats))
 for k, v in errs.most_common(10): print(v, k)

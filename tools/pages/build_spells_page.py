@@ -1,17 +1,17 @@
-"""Generate docs/spells.html from data/spells.json and data/spells_overview.json (descriptions, tags): every spell as an icon with a hover tooltip.
+"""Generate docs/spells.html from data/derived/spells.json and data/handwritten/spells_overview.json (descriptions, tags): every spell as an icon with a hover tooltip.
 
     python -I tools/pages/build_spells_page.py
 """
 import json, os, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
-ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
+spells = json.load(open(os.path.join(ROOT, 'data', 'derived/spells.json'), encoding='utf8'))
+ov = json.load(open(os.path.join(ROOT, 'data', 'handwritten/spells_overview.json'), encoding='utf8'))['spells']
 tier_up = {}      # spell -> its tier upgrades (Magic upgrades), from the upgrade pages' data
-for u in json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))['magic']:
+for u in json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))['magic']:
     if u.get('spell'): tier_up.setdefault(u['spell'], []).append(u)
 
-# formulas shared by all spells ("@name" in data/spells_overview.json)
+# formulas shared by all spells ("@name" in data/handwritten/spells_overview.json)
 SHARED = {
     'penalty': [
         {'latex': r'p = 1 \quad (A = 0)'},

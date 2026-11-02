@@ -15,5 +15,5 @@ for f in sorted(glob.glob(os.path.join(root, 'out/binaryData/*_mo*.bin'))):
         out.setdefault(k, {})[lang] = v
     print(lang, n, file=sys.stderr)
 os.makedirs(os.path.join(root, 'data'), exist_ok=True)
-json.dump(out, open(os.path.join(root, 'data/strings.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(root, 'data/derived/strings.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print(len(out), 'msgids')

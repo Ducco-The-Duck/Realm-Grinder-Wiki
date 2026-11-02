@@ -8,8 +8,8 @@ same trophy type collapsed into one cell (click for a popup of every tier), tool
 import json, os, re, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 ROOT =os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-trophies = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding='utf8'))
-icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
+trophies = json.load(open(os.path.join(ROOT, 'data', 'generated/trophies.json'), encoding='utf8'))
+icons = json.load(open(os.path.join(ROOT, 'data', 'generated/icons.json')))
 
 CATEGORIES = {0: 'Allegiances', 1: 'Miscellaneous', 2: 'Magic', 3: 'Building', 4: 'Secret'}
 # 'special' entries (56) are internal: 53 have no icon and mirror upgrades, so they are not shown. Event trophies
@@ -22,7 +22,7 @@ def pretty(t):
 
 
 _BLD = {re.sub(r"[^a-z]", '', b['name'].lower()): b.get('name_plural') or b['name']
-        for b in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))}
+        for b in json.load(open(os.path.join(ROOT, 'data', 'derived/buildings.json'), encoding='utf8'))}
 STACK_TITLES = {'Gain Coin': 'Coins', 'Gain Coin Clicking': 'Coins from Clicks', 'Click Treasure': 'Clicks',
                 'Find Faction Coin': 'Faction Coins', 'Have Assistants': 'Assistants', 'Find Artifact': 'Artifacts',
                 'Gain Gem': 'Gems', 'Gain Ruby': 'Rubies', 'Purchase Upgrade': 'Upgrades', 'Gain Reincarnate': 'Reincarnations',

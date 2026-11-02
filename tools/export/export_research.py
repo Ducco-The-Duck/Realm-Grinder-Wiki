@@ -16,15 +16,15 @@ ROOT = os.path.join(HERE, '..')
 sys.path[:0] = [os.path.join(HERE, d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
-BUILDINGS = json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))
+BUILDINGS = json.load(open(os.path.join(ROOT, 'data', 'derived/buildings.json'), encoding='utf8'))
 from as3parse import parse_all, resolve
 from chance_latex import convert, FACTION
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
-ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
+ENGINE = open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()
 
 
 def boot():
@@ -405,9 +405,9 @@ ALIGN_COLORS = {}
 for nm in ('Good', 'Evil', 'Order', 'Chaos', 'Balance'):
     im = Image.open(os.path.join(ROOT, sprites[nm + 'Trim'][0]['file'])).convert('RGBA')
     ALIGN_COLORS[nm] = '#%02x%02x%02x' % im.getpixel((im.width // 2, im.height // 2))[:3]
-json.dump({'max_ascension': MAX_ASC, 'faction_colors': FACTION_COLORS, 'alignment_colors': ALIGN_COLORS}, open(os.path.join(ROOT, 'data', 'research_meta.json'), 'w'))
+json.dump({'max_ascension': MAX_ASC, 'faction_colors': FACTION_COLORS, 'alignment_colors': ALIGN_COLORS}, open(os.path.join(ROOT, 'data', 'generated/research_meta.json'), 'w'))
 out.sort(key=lambda x: (x['branch'], x['number'], x['index']))
-json.dump(out, open(os.path.join(ROOT, 'data', 'research.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(ROOT, 'data', 'generated/research.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 json.dump({f'{k[0]}::{k[1]}': v for k, v in unconv.items()},
           open(os.path.join(HERE, '_res_unconv.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print(len(out), 'researches |', sum(1 for x in out if x['formulas']), 'with formulas |', len(unconv), 'formulas not converted |',

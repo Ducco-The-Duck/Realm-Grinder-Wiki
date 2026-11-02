@@ -13,7 +13,7 @@ added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
 2. `python -I tools/checks/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
-3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts (`export_nav.py` copies the sprites of the nav's tab buttons), then the `build_*_page.py` scripts (`build_spells_page.py` builds the Spells page from `data/spells.json`; `build_unlocks_page.py` builds the Mechanics page and the Unlocks pages (`unlocks-a0.html` to `unlocks-a4.html`) from the hand-written `data/unlocks.json`) and `build_index.py` (stamps the game version and the tab nav on the home page)
+3. Rebuild: `build_data.py`, `as3js.py`, `eval_formulas.py`, the `export_*.py` scripts (`export_nav.py` copies the sprites of the nav's tab buttons), then the `build_*_page.py` scripts (`build_spells_page.py` builds the Spells page from `data/derived/spells.json`; `build_unlocks_page.py` builds the Mechanics page and the Unlocks pages (`unlocks-a0.html` to `unlocks-a4.html`) from the hand-written `data/handwritten/unlocks.json`) and `build_index.py` (stamps the game version and the tab nav on the home page)
    (the commands are in `data/docs/GLOSSARY.md`).
 4. `python -I tools/checks/diff_data.py` (`-v` for old and new values): added, removed and changed items, plus hand-written
    overrides (formulas, notes, fixes in the exporters) whose item changed. Review that list, nothing else.
@@ -48,5 +48,5 @@ for review); only one old/new pair of builds can validate it, so build it when a
 # Formula numbers after a rebuild
 The selfcheck that `update.py` runs after the rebuild (checks 7 and 8, `tools/checks/verify_formulas.py`) lists every number in a hand-written
 spell detail, upgrade formula or challenge formula that is no longer in the game code it was read from. Read each one in the new code,
-fix the formula in `data/spells_overview.json` or the manual table it comes from, and log a changed value in
+fix the formula in `data/handwritten/spells_overview.json` or the manual table it comes from, and log a changed value in
 `data/docs/FORMULA_MISMATCHES.md`. The check cannot see structure (which constant is an exponent), so the in-game check still matters.

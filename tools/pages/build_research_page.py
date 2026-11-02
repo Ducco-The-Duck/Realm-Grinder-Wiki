@@ -1,14 +1,14 @@
-"""Generate docs/research.html from data/research.json (+ data/research_meta.json).
+"""Generate docs/research.html from data/generated/research.json (+ data/generated/research_meta.json).
 
     python -I tools/pages/build_research_page.py
 """
 import json, os, re, shutil, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-research = json.load(open(os.path.join(ROOT, 'data', 'research.json'), encoding='utf8'))
-meta = json.load(open(os.path.join(ROOT, 'data', 'research_meta.json')))
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
-icons = json.load(open(os.path.join(ROOT, 'data', 'icons.json')))
+research = json.load(open(os.path.join(ROOT, 'data', 'generated/research.json'), encoding='utf8'))
+meta = json.load(open(os.path.join(ROOT, 'data', 'generated/research_meta.json')))
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
+icons = json.load(open(os.path.join(ROOT, 'data', 'generated/icons.json')))
 icon_dir = os.path.join(ROOT, 'docs', 'assets', 'icons')
 os.makedirs(icon_dir, exist_ok=True)
 
@@ -147,7 +147,7 @@ for b in range(7):
         })
     BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None, 'bud': budget_for(b)})
 
-json.dump(icons, open(os.path.join(ROOT, 'data', 'icons.json'), 'w'), indent=0, sort_keys=True)
+json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
 payload = {'max': meta['max_ascension'], 'branches': BRANCHES,
            'budget': {'common': BUDGET_COMMON, 'a4': BUDGET_A4, 'merc': BUDGET_MERC}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')

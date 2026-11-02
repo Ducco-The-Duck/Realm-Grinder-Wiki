@@ -2,7 +2,7 @@
 
     python -I tools/checks/verify_formulas.py [spell name ...]
 
-Every number in a spell's detail text (data/spells_overview.json: formulas, variable descriptions and the explaining
+Every number in a spell's detail text (data/handwritten/spells_overview.json: formulas, variable descriptions and the explaining
 sentences) must be found in the game code the spell was read from: the spell's own class and the classes that import
 it (the production code, the upgrades and the challenges that use the spell). A number may appear in the code as
 itself or scaled by one of the unit factors the game uses (percent, ticks per second, minutes, hours). A number that
@@ -94,8 +94,8 @@ def strings_of(detail):
 
 
 def main(only):
-    spells = json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))
-    ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
+    spells = json.load(open(os.path.join(ROOT, 'data', 'derived/spells.json'), encoding='utf8'))
+    ov = json.load(open(os.path.join(ROOT, 'data', 'handwritten/spells_overview.json'), encoding='utf8'))['spells']
     total = bad = 0
     for sp in spells:
         name = sp['name']
@@ -135,12 +135,12 @@ def item_formulas(it):
 def main_items(only=()):
     """the same check for the upgrades and the challenge rewards that carry formulas (the generated ones pass by construction;
     the hand-written tables in the tools are what it is there for)"""
-    ups = json.load(open(os.path.join(ROOT, 'data', 'upgrades.json'), encoding='utf8'))
+    ups = json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8'))
     cls_of = {u['name']: u['class'] for u in ups if u.get('name') and u.get('class')}
     for u in ups:
         if u.get('game_name') and u.get('class'): cls_of.setdefault(u['game_name'], u['class'])
-    pages = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
-    chal = json.load(open(os.path.join(ROOT, 'data', 'challenges.json'), encoding='utf8'))
+    pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
+    chal = json.load(open(os.path.join(ROOT, 'data', 'generated/challenges.json'), encoding='utf8'))
     items = [(k, it) for k, lst in pages.items() if isinstance(lst, list) for it in lst if isinstance(it, dict)]
     items += [('challenge', it) for f in chal for it in f['items']]
     total = bad = skipped = 0

@@ -20,11 +20,11 @@ import alleg_manual_family as AMF  # (also adds the family formulas to AM.FORMUL
 from numtext import pow10_text
 from chance_latex import convert
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
-ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
+ENGINE = open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()
 CATS = {0: 'allegiances', 4: 'secret', 2: 'magic', 3: 'buildings', 1: 'misc'}      # the game's category indexes of the upgrade sections
 
 MUT = f"""
@@ -124,8 +124,8 @@ FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon
            9: 'Dwarf', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon', 13: 'Archon', 14: 'Djinn', 15: 'Makers'}
 ALIGN = {1: 'Good', 2: 'Evil', 3: 'Neutral'}
 
-tro = json.load(open(os.path.join(ROOT, 'data', 'trophies.json'), encoding='utf8'))
-art = json.load(open(os.path.join(ROOT, 'data', 'artifacts.json'), encoding='utf8'))
+tro = json.load(open(os.path.join(ROOT, 'data', 'generated/trophies.json'), encoding='utf8'))
+art = json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))
 TROPHY = collections.defaultdict(list)
 for t in tro: TROPHY[t['name']].append(t)
 ARTIFACT = {a['name']: a for a in art}
@@ -164,7 +164,7 @@ def asc_text(lo, hi):
 
 
 _SUP = str.maketrans('0123456789-', '⁰¹²³⁴⁵⁶⁷⁸⁹⁻')
-BLD = {b['name']: b for b in json.load(open(os.path.join(ROOT, 'data', 'buildings.json'), encoding='utf8'))}
+BLD = {b['name']: b for b in json.load(open(os.path.join(ROOT, 'data', 'derived/buildings.json'), encoding='utf8'))}
 
 
 def num_text(n):
@@ -1187,9 +1187,9 @@ for u in by_cat['allegiances']:
         if p['n'] == _n and str(p['reinc']).isdigit():
             u['asc_min'] = max(u.get('asc_min') or 0, availability.asc_for_reincarnation(int(p['reinc'])))
 
-json.dump(by_cat, open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(by_cat, open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 print('ambiguous trophy names:', amb)
-print('data/upgrade_pages.json:', {k: len(v) for k, v in by_cat.items()},
+print('data/generated/upgrade_pages.json:', {k: len(v) for k, v in by_cat.items()},
       '| undecoded conditions:', len(problems))
 for n, b in problems: print('  ', n, b)
 

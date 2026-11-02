@@ -17,11 +17,11 @@ from chance_latex import convert, FACTION
 
 FACTION = dict(FACTION)
 FACTION.update({1: 'Elven', 9: 'Dwarven', 14: 'Djinn', 15: 'Makers'})   # the game's own challenge-header names
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 J = lambda t: names[t]
 g = J('§8G§')
-ENGINE = open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read()
+ENGINE = open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()
 PRESTIGE = {9, 10, 12}
 THIRD = {13, 14, 15}      # Astral factions (joined through a Trade Treaty)
 
@@ -578,6 +578,6 @@ for f in result:
     su = next((i for i in f['items'] if i['spell_upgrade']), None)
     assert su and su['count'] == n, (f['name'], n, su and su['count'])
     assert [i['number'] for i in f['items'] if not i['spell_upgrade']] == list(range(1, n + 1)), f['name']
-json.dump(result, open(os.path.join(ROOT, 'data', 'challenges.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
-print('data/challenges.json:', [(f['name'], len(f['items']) - 1) for f in result])
+json.dump(result, open(os.path.join(ROOT, 'data', 'generated/challenges.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+print('data/generated/challenges.json:', [(f['name'], len(f['items']) - 1) for f in result])
 

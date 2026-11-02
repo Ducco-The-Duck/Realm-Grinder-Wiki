@@ -3,7 +3,7 @@
     python -I tools/extract/slice_atlases.py [game_dir]
 
 Reads <game_dir>/images/*.xml (default: the Steam install), writes
-assets/sprites/<atlas>/<name>.png (git-ignored) and data/sprites.json (index).
+assets/sprites/<atlas>/<name>.png (git-ignored) and data/derived/sprites.json (index).
 Trimmed sprites are restored to their original frame size, rotated ones are un-rotated.
 """
 import glob, json, os, sys, xml.etree.ElementTree as ET
@@ -47,5 +47,5 @@ for xml_path in sorted(glob.glob(os.path.join(img_dir, '*.xml'))):
         n += 1
     print(atlas, 'ok')
 
-json.dump(index, open(os.path.join(ROOT, 'data', 'sprites.json'), 'w', encoding='utf8'), indent=0, sort_keys=True)
+json.dump(index, open(os.path.join(ROOT, 'data', 'derived/sprites.json'), 'w', encoding='utf8'), indent=0, sort_keys=True)
 print(n, 'sprites,', len(index), 'unique names,', len(set(dups)), 'names appear in several atlases')

@@ -1,4 +1,4 @@
-"""Transpile the game's ActionScript classes to a single JavaScript module (data/engine.js).
+"""Transpile the game's ActionScript classes to a single JavaScript module (data/derived/engine.js).
 
 Scope: entity classes (upgrades, spells, buildings, ...), their ancestors, and the closure of helper
 classes/members they reference.  Library packages (starling, feathers, flash, playfab...) are left
@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(HERE, 'pylib'))
 from as3parse import parse_all, resolve, ROOT
 from build_data import kind_of
 
-OUT = os.path.join(ROOT, 'data', 'engine.js')
+OUT = os.path.join(ROOT, 'data', 'derived/engine.js')
 
 TOKEN = re.compile(r'''
     (?P<ws>\s+)
@@ -436,9 +436,9 @@ def main():
     out.append('}')
     with open(OUT, 'w', encoding='utf8') as f:
         f.write('\n'.join(out) + '\n')
-    json.dump({'names': {v: k for k, v in names.items()}}, open(os.path.join(ROOT, 'data', 'engine_names.json'), 'w', encoding='utf8'),
+    json.dump({'names': {v: k for k, v in names.items()}}, open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), 'w', encoding='utf8'),
               ensure_ascii=False, indent=0)
-    json.dump(report, open(os.path.join(ROOT, 'data', 'engine_report.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    json.dump(report, open(os.path.join(ROOT, 'data', 'derived/engine_report.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print('classes', report['classes'], 'members ok', report['members_ok'], 'failed', len(report['members_failed']),
           'static init failed', len(report['static_init_failed']))
 

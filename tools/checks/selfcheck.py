@@ -1,7 +1,7 @@
 """Quick sanity check of the extracted game code before (re)building the data.
 
     python -I tools/checks/selfcheck.py            # check
-    python -I tools/checks/selfcheck.py --update   # also store the item-id baseline (data/item_ids.json)
+    python -I tools/checks/selfcheck.py --update   # also store the item-id baseline (data/generated/item_ids.json)
 
 Answers one question: did the game's obfuscated names move? It reports
   1. how many of the obfuscated names the exporters rely on still exist in the code,
@@ -14,7 +14,7 @@ import json, os, re, sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(HERE, '..')
 SCRIPTS = os.environ.get('RG_SCRIPTS') or os.path.join(ROOT, 'out', 'script', 'scripts')
-BASELINE = os.path.join(ROOT, 'data', 'item_ids.json')
+BASELINE = os.path.join(ROOT, 'data', 'generated/item_ids.json')
 TOKEN = re.compile(r'§[^§\n]{1,12}§')
 problems = []
 
@@ -105,13 +105,13 @@ else:
     print('   no baseline yet (run with --update to store one)')
 if '--update' in sys.argv:
     json.dump(rows, open(BASELINE, 'w', encoding='utf8'), ensure_ascii=False, indent=0)
-    print('   baseline written to data/item_ids.json')
+    print('   baseline written to data/generated/item_ids.json')
 
 # 4. translators that gave up in the last data build (counts of undecoded pieces)
 try:
-    d = json.load(open(os.path.join(ROOT, 'data', 'upgrade_pages.json'), encoding='utf8'))
+    d = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
     und = sum(1 for s in d.values() for u in s if u['undecoded'])
-    a = json.load(open(os.path.join(ROOT, 'data', 'artifacts.json'), encoding='utf8'))
+    a = json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))
     und_a = sum(1 for x in a if x['undecoded_conditions'])
     print(f'4. undecoded conditions in the current data: upgrades {und}, artifacts {und_a}')
     if und or und_a:
@@ -121,26 +121,26 @@ except OSError:
 
 # 5. the hand-written unlocks page data
 try:
-    uk = json.load(open(os.path.join(ROOT, 'data', 'unlocks.json'), encoding='utf8'))
+    uk = json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))
     bad = [m.get('name', '?') for m in uk['mechanics'] if not isinstance(m.get('asc'), int) or not 0 <= m['asc'] <= uk['max_ascension'] or not m.get('name')]
     print(f"5. unlocks page: {len(uk['mechanics'])} mechanics" + (f"; bad entries: {bad}" if bad else ''))
     if bad:
-        problems.append('data/unlocks.json has entries without a name or a valid Ascension')
+        problems.append('data/handwritten/unlocks.json has entries without a name or a valid Ascension')
 except (OSError, ValueError, KeyError) as e:
-    print('5. data/unlocks.json unreadable:', e)
-    problems.append('data/unlocks.json unreadable')
+    print('5. data/handwritten/unlocks.json unreadable:', e)
+    problems.append('data/handwritten/unlocks.json unreadable')
 
 # 6. the hand-written spell overview covers every spell
 try:
-    ov = json.load(open(os.path.join(ROOT, 'data', 'spells_overview.json'), encoding='utf8'))['spells']
-    names = {x['name'] for x in json.load(open(os.path.join(ROOT, 'data', 'spells.json'), encoding='utf8'))}
+    ov = json.load(open(os.path.join(ROOT, 'data', 'handwritten/spells_overview.json'), encoding='utf8'))['spells']
+    names = {x['name'] for x in json.load(open(os.path.join(ROOT, 'data', 'derived/spells.json'), encoding='utf8'))}
     miss = sorted(names - set(ov)); extra = sorted(set(ov) - names)
     print(f"6. spell overview: {len(ov)} spells" + (f"; missing: {miss}; unknown: {extra}" if miss or extra else ''))
     if miss or extra:
-        problems.append('data/spells_overview.json does not match the spells')
+        problems.append('data/handwritten/spells_overview.json does not match the spells')
 except (OSError, ValueError, KeyError) as e:
-    print('6. data/spells_overview.json unreadable:', e)
-    problems.append('data/spells_overview.json unreadable')
+    print('6. data/handwritten/spells_overview.json unreadable:', e)
+    problems.append('data/handwritten/spells_overview.json unreadable')
 
 # 7. every number in the hand-written spell details still appears in the game code the spell was read from (tools/checks/verify_formulas.py)
 if os.environ.get('RG_SCRIPTS'):      # checking a new build before it replaces out/: the data files still belong to the old build, so 7 and 8 run after the rebuild
@@ -161,7 +161,7 @@ else:
           problems.append(f"{n_bad2} number(s) in upgrade or challenge formulas are not found in the game code (run tools/checks/verify_formulas.py --items)")
       if n_bad:
           print(buf.getvalue())
-          problems.append(f"{n_bad} number(s) in data/spells_overview.json are not found in the game code (run tools/checks/verify_formulas.py)")
+          problems.append(f"{n_bad} number(s) in data/handwritten/spells_overview.json are not found in the game code (run tools/checks/verify_formulas.py)")
   except Exception as e:
       problems.append(f"tools/checks/verify_formulas.py failed: {e}")
 

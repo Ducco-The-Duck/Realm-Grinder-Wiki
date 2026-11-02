@@ -15,8 +15,8 @@ import quickjs
 from as3parse import parse_all, resolve
 from chance_latex import convert, STAT_ALL, BRANCH
 
-names = json.load(open(os.path.join(ROOT, 'data', 'engine_names.json'), encoding='utf8'))['names']
-sprites = json.load(open(os.path.join(ROOT, 'data', 'sprites.json')))
+names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
 J = lambda t: names[t]
 
 FACTION = {0: 'Fairy', 1: 'Elf', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon', 6: 'Titan', 7: 'Druid',
@@ -25,7 +25,7 @@ ALIGN = {1: 'Good', 2: 'Evil', 3: 'Neutral'}
 PATH = {4: 'Order', 5: 'Chaos', 6: 'Balance'}  # second alignment axis (game's alignment-name table)
 
 ctx = quickjs.Context()
-ctx.eval(open(os.path.join(ROOT, 'data', 'engine.js'), encoding='utf8').read())
+ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read())
 ctx.eval('__boot()')
 g = J('§8G§')
 src = f"""JSON.stringify((function () {{
@@ -271,7 +271,7 @@ for a in res['arts']:
         'hint': hint, 'chance': chance_info(c), 'requirements': reqs, 'undecoded_conditions': len(undec),
         'undecoded': undec,
     })
-json.dump(out, open(os.path.join(ROOT, 'data', 'artifacts.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
+json.dump(out, open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0)
 q = [x for x in out if x['kind'] == 'quest']; l = [x for x in out if x['kind'] == 'lore']
 print(len(out), 'artifacts:', len(q), 'quest,', len(l), 'lore')
 print('no icon:', sum(1 for x in out if not x['icon']), '| with hint:', sum(1 for x in out if x['hint']),

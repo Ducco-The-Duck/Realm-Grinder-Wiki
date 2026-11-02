@@ -1,6 +1,6 @@
 # Working notes for the Unlocks page: when each mechanic unlocks (read from the code, build 4.3.15)
 
-Source of the list: the user's own list of mechanics and Reincarnations, checked against the code. This is a work file; the page content is in `data/unlocks.json`.
+Source of the list: the user's own list of mechanics and Reincarnations, checked against the code. This is a work file; the page content is in `data/handwritten/unlocks.json`.
 Ascension starts: A1 = Reincarnation 40, A2 = 100, A3 = 160, A4 = 220.
 
 | Reincarnation | Mechanic | Result of the check |
