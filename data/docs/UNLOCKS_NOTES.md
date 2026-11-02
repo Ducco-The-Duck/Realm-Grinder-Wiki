@@ -5,6 +5,7 @@ Ascension starts: A1 = Reincarnation 40, A2 = 100, A3 = 160, A4 = 220.
 
 | Reincarnation | Mechanic | Result of the check |
 |---|---|---|
+| 0 | Excavations, Neutral factions, Prestige factions | no Reincarnation test for any of them: Excavations need the "Archeology" upgrade (appears at 1e9 Gems, costs 1e29 coins); Neutral factions need one of the 1e30 upgrades (Fragment of a Titan Statue, Druidic Runestone, Octopus Shaped Spine); the underworld (Prestige) ones need Passage to the Underworld |
 | 1 | Reincarnation Power 1 upgrade | game text at Reincarnation 1: buy the Reincarnation Power upgrade |
 | 1 (listed) | Excavations | **Not Reincarnation 1.** The Excavation tab shows once the "Archeology" upgrade is owned: it appears at 1e9 Gems and costs 1e29 coins, no Reincarnation condition found |
 | 2 | Challenges | confirmed (tab needs Reincarnation 2; game text at 2) |
