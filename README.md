@@ -2,7 +2,8 @@
 
 A wiki for Realm Grinder whose pages are generated from the game's own code and text. Nothing on the pages is typed in
 by hand: the numbers, requirements and formulas are read out of the decompiled game, and the few hand-written
-corrections live in named tables inside the tools so they can be found and reviewed.
+corrections live in named tables inside the tools so they can be found and reviewed. The Codex (Mechanics, Unlocks and Spells
+pages) is the exception: its explanations are written by hand from the code, in `data/unlocks.json` and `data/spells_overview.json`.
 
 The site is served by GitHub Pages from `docs/`.
 
@@ -18,6 +19,8 @@ The site is served by GitHub Pages from `docs/`.
 | `challenges.html` | Faction challenges and their rewards |
 | `archaeology.html` | Quest and lore artifacts, with find-chance formulas |
 | `trophies.html` | Trophies and their requirements |
+| `mechanics.html`, `unlocks-a0.html` to `unlocks-a4.html` | Codex: the mechanics, and what has to be unlocked at each Ascension (under construction) |
+| `spells.html` | Codex: every spell with its overview, formulas, tiers and Ascension penalty (under construction) |
 
 Each page is one self-contained HTML file with its data embedded.
 
@@ -39,12 +42,13 @@ docs/*.html                               the site (committed)
 - **`raw/`**: one folder per game version, for example `raw/4.3.14` and `raw/4.3.15`.
 - **`out/`**: the build the tools and pages are made from. An older build can be extracted next to it
   (`sh tools/extract.sh 4.3.14 out_4.3.14`) to compare versions.
-- **`data/`**: JSON files plus the notes: `GLOSSARY.md` (what each file is and the rebuild commands), `INFERENCES.md`
+- **`data/`**: JSON files. The notes are in `data/docs/`: `GLOSSARY.md` (what each file is and the rebuild commands), `INFERENCES.md`
   (what the decompiled names mean and how sure we are), `STATUS.md` (the open items) and `FORMULA_MISMATCHES.md` (every place the
   code differs from the last documented version).
 - **`tools/`**: the exporters, the page builders, the shared look (`search_snippet.py`, `frame_css.py`), and two guards:
   `selfcheck.py` (did the game's scrambled internal names move?) and `diff_data.py` (what changed after a rebuild, and
   which hand-written fixes sit on a changed item). `tools/UPDATING.md` has the steps for a game update.
+- **`unused/`**: things that were dropped (the Effects search page and its tools and data); kept for reference, not built or checked.
 - **Engine**: `as3js.py` turns the game's formulas into JavaScript (`data/engine.js`), which is run with `quickjs` to
   evaluate formulas and to test what an upgrade does at each Ascension.
 
