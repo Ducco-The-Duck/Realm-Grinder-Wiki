@@ -126,12 +126,15 @@ the base values <i>v</i>.</div>
   var PICK = {b:-1, p:-1, a:-1}, allegBox = null, allegItems = {}, runSearch = null;
   var root=document.getElementById('root'), tip=document.getElementById('tip'), filter=document.getElementById('filter'), sel=document.getElementById('asc');
 /*SEARCH_JS*/
-  function sOf(it){ return it._s || (it._s = normS([it.n,it.sub||'',it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' ')) + ' ' + innerS(it)); }
-  // what sits inside a Bloodline, Lineage or Artifact Sets cell: each faction's entry, and the perks of a Lineage
-  function innerS(it){
-    var kids=(it.bl||it.lg||it.st||it.cb||[]).filter(function(k){ return !!k; }).map(sOf);
-    var perks=(it.lp||[]).map(function(p){ return p.it ? normS([p.it.n].concat(p.it.d.map(function(d){ return d.t; })).join(' ')) : ''; });
-    return kids.concat(perks).join(' ');
+  function sOf(it){ return it._s || (it._s = normS([it.n,it.sub||'',it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
+  function perkS(it, p){ return normS([it.n, it.fn||'', p.it ? p.it.n : 'Perk '+p.n].concat(p.it ? p.it.d.map(function(d){ return d.t; }) : []).join(' ')); }
+  // an object matches when its own text matches all the search words, or one entry inside it does (each faction's entry of a
+  // Bloodline, Lineage, Artifact Set or Legacy Combo, each perk of a Lineage); words are never spread over different entries
+  function hit(it, pre){
+    if(!it) return false;
+    if(qmatch((pre ? pre+' ' : '')+sOf(it))) return true;
+    if((it.bl||it.lg||it.st||it.cb||[]).some(function(k){ return hit(k); })) return true;
+    return (it.lp||[]).some(function(p){ return qmatch(perkS(it, p)); });
   }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, host){
@@ -271,7 +274,7 @@ the base values <i>v</i>.</div>
     pop.querySelector('.card').classList.toggle('narrow', !!en.cols);
     en.items.forEach(function(it){
       if(!it){ if(en.cols && !QT.length){ var gp=el('div','cell gap'); popgrid.appendChild(gp); } return; }       // an empty slot of the game's grid (not while searching)
-      if(!qmatch(sOf(it))) return;
+      if(!hit(it)) return;
       var b=itemCell(it); decorate(b,it); popgrid.appendChild(b); });
     hideTip(); pop.classList.add('open'); document.getElementById('popclose').focus();
   }
@@ -323,7 +326,7 @@ the base values <i>v</i>.</div>
   function openPerks(it){
     moretitle.textContent=it.n+' perks'; morebody.textContent='';
     // while searching, only the perks that match (the lineage's own name counts for every perk of it)
-    it.lp.filter(function(p){ return qmatch(normS([it.n, it.fn||'', p.it ? p.it.n : 'Perk '+p.n].concat(p.it ? p.it.d.map(function(d){ return d.t; }) : []).join(' '))); }).forEach(function(p){
+    it.lp.filter(function(p){ return qmatch(perkS(it, p)); }).forEach(function(p){
       var blk=el('div','bonus'), head=el('p'), pi=p.it;
       var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
       if(pi){
@@ -357,7 +360,7 @@ the base values <i>v</i>.</div>
     s.entries.forEach(function(en){
       if(en.items.length===1){
         var it=en.items[0], b=itemCell(it);
-        b._s=sOf(it); g.appendChild(b); cells.push([b,it]);
+        b._m=function(){ return hit(it); }; g.appendChild(b); cells.push([b,it]);
       } else {
         var gb=itemCell(en.items[0],true);
         gb.classList.add('group');
@@ -367,7 +370,7 @@ the base values <i>v</i>.</div>
         gb.addEventListener('mouseenter',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('focus',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('click',function(e){ e.stopPropagation(); openGroup(en); });
-        gb._s=normS(en.g)+' '+en.items.map(sOf).join(' ');
+        gb._m=function(){ return en.items.some(function(x){ return hit(x, normS(en.g)); }); };
         g.appendChild(gb); gcells.push([gb,en]);
       }
     });
@@ -442,7 +445,7 @@ the base values <i>v</i>.</div>
     var picked = PICK.b<0 ? null : [PICK.b].concat(PICK.p>=0?[PICK.p]:[], PICK.a>=0?[PICK.a]:[]);
     var g=el('div','grid');
     if(!picked){
-      (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
+      (allegItems[-1]||[]).forEach(function(it){ var b=itemCell(it); b._m=function(){ return hit(it); }; g.appendChild(b); allegCells.push([b,it]); });
       FACS.forEach(function(f){
         var its=allegItems[f.i]||[]; if(!its.length) return;
         var en={g:f.n, items:its}, al=its.filter(function(x){ return f.role==='merc' ? x.n===MERC_ICON[bgKind()] : /(Alliance|Third Contract)$/.test(x.n); })[0], gb=itemCell(al||its[0],true);
@@ -454,11 +457,11 @@ the base values <i>v</i>.</div>
         gb.addEventListener('mouseenter',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('focus',function(){ showGroupTip(summary, gb); });
         gb.addEventListener('click',function(e){ e.stopPropagation(); openGroup(en); });
-        gb._s=normS(en.g)+' '+its.map(sOf).join(' ');
+        gb._m=function(){ return its.some(function(x){ return hit(x, normS(en.g)); }); };
         g.appendChild(gb); allegGroups.push([gb,en]);
       });
       FACS.forEach(function(f){
-        (allegItems[f.i]||[]).forEach(function(it){ var b=itemCell(it); b.classList.add('ung'); b._s=sOf(it); g.appendChild(b); allegCells.push([b,it]); });
+        (allegItems[f.i]||[]).forEach(function(it){ var b=itemCell(it); b.classList.add('ung'); b._m=function(){ return hit(it); }; g.appendChild(b); allegCells.push([b,it]); });
       });
       allegBox.appendChild(g);
     } else {
@@ -468,7 +471,7 @@ the base values <i>v</i>.</div>
         if(!its.length) return;
         allegBox.appendChild(el('div','subh',fi<0 ? 'General ('+its.length+' upgrades)' : f.n+' ('+ROLE_TXT[f.role]+', '+its.length+' upgrades)'));
         var gg=el('div','grid');
-        its.forEach(function(it){ var b=itemCell(it); b._s=sOf(it); gg.appendChild(b); allegCells.push([b,it]); });
+        its.forEach(function(it){ var b=itemCell(it); b._m=function(){ return hit(it); }; gg.appendChild(b); allegCells.push([b,it]); });
         allegBox.appendChild(gg);
       });
     }

@@ -114,7 +114,7 @@
       QT = normS(box.value).split(/\s+/).filter(Boolean).map(function(t){ return FCODES.hasOwnProperty(t) ? FCODES[t] : t; });
       var shown=0;
       root.querySelectorAll('.cell').forEach(function(c){
-        var ok = qmatch(c._s||'');
+        var ok = c._m ? c._m() : qmatch(c._s||'');
         c.classList.toggle('sx', !ok); if(ok && !(QT.length && c.hasAttribute('data-un'))) shown++;
       });
       root.querySelectorAll('.grid').forEach(function(g){
