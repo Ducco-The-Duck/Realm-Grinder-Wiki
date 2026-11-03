@@ -12,14 +12,6 @@ Only these need checking; remove an item from the open list when it is settled.
      penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus, 0.5 * floor(Time played this
      Era), unit and size unconfirmed. Archaeology page; the perk is on the Allegiance upgrades page (Drow Perk 4). Check the
      tooltip with and without the perk.
-   - **Lantern of Guidance (artifact):** patch notes have ln(1 + x), the code has ln(x) for x = mana regeneration per second
-     (no +1). Archaeology page. Check the chance tooltip.
-   - **Lantern of Guidance (secret upgrade)** and **Oil Lamp (secret upgrade):** the code reads (4 * M^0.2)^p for Lantern (Mana
-     Regeneration) and (9 * Mmax^0.2)^p for Oil Lamp (Maximum Mana), with p = 1.5 for an Order / Chaos faction, which is
-     8 * M^0.3 and 27 * Mmax^0.3. The patch notes give 27 * x^0.3 for Lantern and 8 * x^0.3 for Oil Lamp, so the two constants
-     are swapped between the code and the notes (4.3.11 notes: Lantern 9 * x^0.2 -> 27 * x^0.3, Oil Lamp 4 * x^0.2 -> 8 * x^0.3).
-     Spark of Life (Faction Coin find chance^0.3) agrees. The installed game is 4.3.14 and its embedded changelog does not
-     touch these upgrades after 4.3.2. Secret upgrades page. Needs the in-game tooltip value (at Ascension 1-2, no penalty).
    - **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
      2 * (ln(1 + A))^2 with A = assistants. Allegiance upgrades page (Druid lineage perks). Not mentioned in any more recent
      document. Needs the in-game tooltip value once the perk is reached.
@@ -71,10 +63,11 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 
 ### Resolved (confirmed by the user; do not re-open)
 
+- Lantern of Guidance (artifact and secret upgrade) and Oil Lamp: checked in game; the code is right (artifact: the chance at 2 mana/s reads 1.4 x 10^-6, matching the code's 1.42 x 10^-6 and not ln(1 + x) with 5.65 x 10^-6; Lantern upgrade: 2 mana/s with an Order faction gives 9%, coefficient 4; Oil Lamp: 1000 Maximum Mana without a Chaos faction gives 35%, coefficient 9). The patch notes had the two constants swapped.
 - Misc upgrades as built so far (Reincarnation Powers 1-5 with every effect, range and formula, Gem Power and the Gem upgrades,
   Challenge Power, Ruby Power and its tiers, the clicking, offline and assistant series): confirmed by the user.
-- Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; only the 5
-  earmarked items stay open (Lantern of Guidance, the three Fragment factors, Poison Vial's Drow Perk 4 term).
+- Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; only the
+  earmarked items stay open (the three Fragment factors, Poison Vial's Drow Perk 4 term).
 - Wall Fragment, Wall Chunk, Mathematician (building tier multipliers, tier counted from 1): Wall Fragment checked in game against four
   buildings (1 + 5 * (2 * (11 - T))^2.5, not the old wiki 3 * (2 * (11 - T))^3 %); Wall Chunk and Mathematician agree with the old wiki.
 - Reverse Autocasting (from R40 = Ascension 1) and Tiered Autocasting (from R42) availability; the Mana Regeneration

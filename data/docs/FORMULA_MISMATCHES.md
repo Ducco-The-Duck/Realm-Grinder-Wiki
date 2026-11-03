@@ -11,9 +11,6 @@ different even when the code turns out to be right. The open ones are also liste
 | Third Crystal Fragment | Archaeology page | x / 66x10^6, x = Evil spells cast this Reincarnation | 66 * T / 66x10^6 = T / 10^6 (66x) | Open, same check |
 | Second Stone Fragment | Archaeology page | x / 10^7, x = buildings built | 2 * B / 10^7 (2x) | Open, same check |
 | Poison Vial | Archaeology page; perk on the Allegiance upgrades page (Drow Perk 4) | 100 * x^0.9 | (100 + P) * x^0.9, P = Drow lineage perk 4 bonus | Open: check the tooltip with and without the perk |
-| Lantern of Guidance (artifact) | Archaeology page | ln(1 + x), x = mana regeneration per second | ln(x) | Open: check the chance tooltip |
-| Lantern of Guidance (secret upgrade) | Secret upgrades page | 27 * x^0.3 (Mana Regeneration) | 8 * M^0.3 (constants swapped with Oil Lamp) | Open: needs the tooltip value at Ascension 1-2 |
-| Oil Lamp (secret upgrade) | Secret upgrades page | 8 * x^0.3 (Maximum Mana) | 27 * Mmax^0.3 | Open, same check |
 | Druid Perk 4, first value | Allegiance upgrades page (Druid lineage perks) | 3 * (ln(1 + x))^3, x = assistants owned | 2 * (ln(1 + A))^2 | Open: needs the tooltip value once the perk is reached |
 | Artificial Currency (Makers challenge 2), Tax Collection increase | Challenges page | log10 | ln (the code uses the natural logarithm) | Open: code checked, not confirmed in game |
 
