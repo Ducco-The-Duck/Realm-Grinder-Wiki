@@ -5,7 +5,7 @@ Only these need checking; remove an item from the open list when it is settled.
 
 1. **Formula disagreements** (open ones: `data/docs/FORMULA_MISMATCHES.md`, resolved ones: `data/docs/FORMULA_MISMATCHES_RESOLVED.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
    in-game tooltip value). Object, then where it is on the wiki:
-   - **Second Crystal** (4x), **Third Crystal** (66x), **Second Stone** (2x): fragment factors that differ between the code and
+   - **Third Crystal** (66x), **Second Stone** (2x): fragment factors that differ between the code and
      the old patch-notes doc (4.3.11). Archaeology page (artifact chances). The in-game "Chance: X%" tooltip is visible only
      before you own the artifact.
    - **Poison Vial:** the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter, K before the Ascension
@@ -63,11 +63,12 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 
 ### Resolved (confirmed by the user; do not re-open)
 
+- Second Crystal Fragment (4x factor): checked in game; 6x10^34 Faction Coins found give 0.041% and 10^35 give 0.042%, matching the code (the old formula would give about 0.010%).
 - Lantern of Guidance (artifact and secret upgrade) and Oil Lamp: checked in game; the code is right (artifact: the chance at 2 mana/s reads 1.4 x 10^-6, matching the code's 1.42 x 10^-6 and not ln(1 + x) with 5.65 x 10^-6; Lantern upgrade: 2 mana/s with an Order faction gives 9%, coefficient 4; Oil Lamp: 1000 Maximum Mana without a Chaos faction gives 35%, coefficient 9). The patch notes had the two constants swapped.
 - Misc upgrades as built so far (Reincarnation Powers 1-5 with every effect, range and formula, Gem Power and the Gem upgrades,
   Challenge Power, Ruby Power and its tiers, the clicking, offline and assistant series): confirmed by the user.
 - Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; only the
-  earmarked items stay open (the three Fragment factors, Poison Vial's Drow Perk 4 term).
+  earmarked items stay open (the Third Crystal and Second Stone Fragment factors, Poison Vial's Drow Perk 4 term).
 - Wall Fragment, Wall Chunk, Mathematician (building tier multipliers, tier counted from 1): Wall Fragment checked in game against four
   buildings (1 + 5 * (2 * (11 - T))^2.5, not the old wiki 3 * (2 * (11 - T))^3 %); Wall Chunk and Mathematician agree with the old wiki.
 - Reverse Autocasting (from R40 = Ascension 1) and Tiered Autocasting (from R42) availability; the Mana Regeneration

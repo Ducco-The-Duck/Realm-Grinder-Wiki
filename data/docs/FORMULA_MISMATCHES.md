@@ -7,7 +7,6 @@ different even when the code turns out to be right. The open ones are also liste
 
 | Object | Where on the wiki | Last documented version | Code (shown on the wiki) | Status |
 |---|---|---|---|---|
-| Second Crystal Fragment | Archaeology page | (ln(1+x))^3 / 5x10^7, x = Faction Coins found this Era | 4 * (ln(1+F))^3 / 5x10^7 (4x) | Open: needs the in-game "Chance: X%" tooltip (Ascension 2, Reincarnation 125+) |
 | Third Crystal Fragment | Archaeology page | x / 66x10^6, x = Evil spells cast this Reincarnation | 66 * T / 66x10^6 = T / 10^6 (66x) | Open, same check |
 | Second Stone Fragment | Archaeology page | x / 10^7, x = buildings built | 2 * B / 10^7 (2x) | Open, same check |
 | Poison Vial | Archaeology page; perk on the Allegiance upgrades page (Drow Perk 4) | 100 * x^0.9 | (100 + P) * x^0.9, P = Drow lineage perk 4 bonus | Open: check the tooltip with and without the perk |
