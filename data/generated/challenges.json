@@ -2726,7 +2726,19 @@
 "rewards": [
 "All Infinite Spiral effects scale 12% faster."
 ],
-"formulas": [],
+"formulas": [
+{
+"latex": "k = 1 + 0.01 \\cdot 12",
+"vars": [
+{
+"symbol": "k",
+"text": "The factor by which the exponents in Infinite Spiral are multiplied"
+}
+],
+"label": null,
+"shown": false
+}
+],
 "applies_to": null,
 "game_name": "Makers Challenge",
 "note": null,

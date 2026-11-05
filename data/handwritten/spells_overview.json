@@ -1912,7 +1912,7 @@
       "text": "Temporarily increases your assistants based on your Maximum Mana, increases your Maximum Mana based on your Faction Coin find chance, and increases your Faction Coin find chance based on your Excavation depth. All three grow with the tier it is cast at.",
       "formulas": [
        {
-        "latex": "A = 10 \\cdot \\ln(1 + M)^{e_1} \\cdot T",
+        "latex": "A = 10 \\cdot \\ln(1 + M)^{1.25k} \\cdot T",
         "vars": [
          [
           "A",
@@ -1923,8 +1923,8 @@
           "your Maximum Mana"
          ],
          [
-          "e_1",
-          "the exponent, $1.25$ by default, changed by various effects"
+          "k",
+          "the exponent multiplier, $1$ by default, changed by various effects"
          ],
          [
           "T",
@@ -1933,7 +1933,7 @@
         ]
        },
        {
-        "latex": "S = 1.5 \\cdot \\ln(1 + f)^{e_2} \\cdot T",
+        "latex": "S = 1.5 \\cdot \\ln(1 + f)^{1.5k} \\cdot T",
         "vars": [
          [
           "S",
@@ -1942,15 +1942,11 @@
          [
           "f",
           "your Faction Coin find chance"
-         ],
-         [
-          "e_2",
-          "the exponent, $1.5$ by default, changed by various effects"
          ]
         ]
        },
        {
-        "latex": "F = (10 + 0.1 \\cdot D^{e_3}) \\cdot T",
+        "latex": "F = (10 + 0.1 \\cdot D^{0.75k}) \\cdot T",
         "vars": [
          [
           "F",
@@ -1959,10 +1955,6 @@
          [
           "D",
           "your Excavation depth"
-         ],
-         [
-          "e_3",
-          "the exponent, $0.75$ by default, changed by various effects"
          ]
         ]
        }

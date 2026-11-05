@@ -269,7 +269,15 @@ def _extra_untimely(paras, c):
     paras[1]['formulas'][-1]['shown'] = False
 
 
-EXTRA = {'An Untimely Death': [_extra_untimely], 'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
+def _extra_gaia(paras, c):
+    # the factor Infinite Spiral multiplies its exponents by (1 + 0.01 * 12 in the spell's code; the game text says 12% faster)
+    paras[0]['formulas'].append(_m(
+        r'k = 1 + 0.01 \cdot 12',
+        ('k', 'The factor by which the exponents in Infinite Spiral are multiplied')))
+    paras[0]['formulas'][-1]['shown'] = False
+
+
+EXTRA = {'Makers Challenge': [_extra_gaia], 'An Untimely Death': [_extra_untimely], 'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
          'Altar of Wishes': [_extra_altar]}
 
 
