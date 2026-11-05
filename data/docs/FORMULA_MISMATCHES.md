@@ -7,7 +7,6 @@ different even when the code turns out to be right. The open ones are also liste
 
 | Object | Where on the wiki | Last documented version | Code (shown on the wiki) | Status |
 |---|---|---|---|---|
-| Second Stone Fragment | Archaeology page | x / 10^7, x = buildings built | 2 * B / 10^7 (2x) | Open, same check |
 | Poison Vial | Archaeology page; perk on the Allegiance upgrades page (Drow Perk 4) | 100 * x^0.9 | (100 + P) * x^0.9, P = Drow lineage perk 4 bonus | Open: check the tooltip with and without the perk |
 | Druid Perk 4, first value | Allegiance upgrades page (Druid lineage perks) | 3 * (ln(1 + x))^3, x = assistants owned | 2 * (ln(1 + A))^2 | Open: needs the tooltip value once the perk is reached |
 | Artificial Currency (Makers challenge 2), Tax Collection increase | Challenges page | log10 | ln (the code uses the natural logarithm) | Open: code checked, not confirmed in game |
