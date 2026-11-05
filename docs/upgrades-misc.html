@@ -491,6 +491,7 @@ the base values <i>v</i>.</div>
     list.forEach(function(f,i){
       if(i>0) parent.appendChild(el('div','fsep'));
       var vs=many?'v_{'+(i+1)+'}':'v';
+      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l); if(own) vs=own[1];      // a formula for a named value (a, b, ...) keeps its own symbol
       if(f.lb){
         var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
         var suf='', badge=null;

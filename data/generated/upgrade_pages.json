@@ -11936,7 +11936,7 @@
 "text": "Multiplicatively increases Maximum Mana based on time spent as Order in this Reincarnation.",
 "formulas": [
 {
-"latex": "v = 0.25 \\cdot t^{0.5}",
+"latex": "v_{1} = 0.25 \\cdot t^{0.5}",
 "vars": [
 {
 "symbol": "t",
@@ -11944,6 +11944,26 @@
 }
 ],
 "label": null
+},
+{
+"latex": "a = 1.3",
+"vars": [
+{
+"symbol": "a",
+"text": "New multiplying coefficient for Precognition changed (base improvement)"
+}
+],
+"label": "Precognition, base"
+},
+{
+"latex": "b = 1.25",
+"vars": [
+{
+"symbol": "b",
+"text": "New exponential coefficient for Precognition (scaling improvement)"
+}
+],
+"label": "Precognition, scaling"
 }
 ],
 "s": null

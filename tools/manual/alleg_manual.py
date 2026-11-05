@@ -92,7 +92,10 @@ FORMULAS = {
     'Chromatic Scales': [(0, F(r'v = 250 \cdot j^{2}', ('j', "Tier Dragon's Breath is cast at (1 is the base tier); 0 bonus while the spell is unavailable")))],
     'Fang Food': [(0, F(r'v = 0.6 \cdot N^{0.6}', ('N', most('Dragon Pasture'))))],
     'Star Trading': [(0, F(r'v = 0.9 \cdot X', ('X', 'Most Royal Exchanges you have made at once in this Reincarnation')))],
-    'Energy Recharge': [(0, F(r'v = 0.25 \cdot t^{0.5}', ('t', 'Time spent with Order alignment in this Reincarnation (seconds)')))],
+    'Energy Recharge': [
+        (0, F(r'v = 0.25 \cdot t^{0.5}', ('t', 'Time spent with Order alignment in this Reincarnation (seconds)'))),
+        (0, F(r'a = 1.3', ('a', 'New multiplying coefficient for Precognition changed (base improvement)'), label='Precognition, base')),
+        (0, F(r'b = 1.25', ('b', 'New exponential coefficient for Precognition (scaling improvement)'), label='Precognition, scaling'))],
     'Djinn Union': [(0, F(r'k = 1.1', ('k', 'The factor by which the exponents of Maelstrom are multiplied')))],
     'Archon Union': [(0, F(r'v = 0.375 \cdot \left( \frac{t}{60} \right)^{0.825} \cdot T',
                            ('t', 'Time spent in this Era (seconds)'),
