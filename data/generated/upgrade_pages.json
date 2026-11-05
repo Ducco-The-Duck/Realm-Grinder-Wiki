@@ -12744,7 +12744,18 @@
 "description": [
 {
 "text": "Maelstrom bonuses scale faster.",
-"formulas": [],
+"formulas": [
+{
+"latex": "k = 1.1",
+"vars": [
+{
+"symbol": "k",
+"text": "The factor by which the exponents of Maelstrom are multiplied"
+}
+],
+"label": null
+}
+],
 "s": null
 }
 ],

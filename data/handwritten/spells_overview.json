@@ -1862,7 +1862,7 @@
          ],
          [
           "k",
-          "the exponent multiplier, $1$ by default, changed by various effects"
+          "the factor by which the exponents are multiplied: $1.1$ with Djinn Union, otherwise $1$"
          ]
         ]
        }
