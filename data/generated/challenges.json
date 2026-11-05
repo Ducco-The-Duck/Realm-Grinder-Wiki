@@ -2887,7 +2887,7 @@
 },
 {
 "symbol": "r",
-"text": "Your Mana Regeneration per second, without the bonus of Djinn Perk 5"
+"text": "Your Mana Regeneration per second (without bonuses that make Mana Regeneration count more)"
 }
 ],
 "label": null,

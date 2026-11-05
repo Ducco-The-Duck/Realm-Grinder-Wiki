@@ -283,7 +283,7 @@ def _extra_pillars(paras, c):
         r'M = M_{\max} \cdot r',
         ('M', "The Maximum Mana term of Infinite Spiral's assistants formula, which this replaces"),
         (r'M_{\max}', 'Your Maximum Mana'),
-        ('r', 'Your Mana Regeneration per second, without the bonus of Djinn Perk 5')))
+        ('r', 'Your Mana Regeneration per second (without bonuses that make Mana Regeneration count more)')))
     paras[0]['formulas'][-1]['shown'] = False
 
 
