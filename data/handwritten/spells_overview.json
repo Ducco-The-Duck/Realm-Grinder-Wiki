@@ -1762,7 +1762,7 @@
         "vars": [
          [
           "r",
-          "your Mana Regeneration per second (some upgrades use the highest Mana Regeneration of this Reincarnation instead)"
+          "your Mana Regeneration per second"
          ]
         ]
        },
