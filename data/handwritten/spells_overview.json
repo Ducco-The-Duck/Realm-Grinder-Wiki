@@ -2018,7 +2018,7 @@
         "vars": [
          [
           "t",
-          "the activity time of the spell in this Era, in seconds, with the bonuses that make activity time count more"
+          "the activity time of the spell in this Era, in seconds"
          ],
          [
           "P",
@@ -2031,7 +2031,7 @@
         "vars": [
          [
           "Y",
-          "the bonus of each of the other effects, in % (not production, not durations)"
+          "the bonus of each of the other effects, in %"
          ],
          [
           "T",
@@ -2064,25 +2064,12 @@
           "the number of times you cast the spell in this Era, with the bonus of higher tiers"
          ]
         ]
-       },
-       {
-        "latex": "c = 100 - \\frac{t_h}{60}",
-        "vars": [
-         [
-          "c",
-          "the mana cost, in % of the normal cost"
-         ],
-         [
-          "t_h",
-          "the seconds of your playtime in this Era since its last full hour"
-         ]
-        ]
        }
       ]
      },
      {
       "title": "Possible effects",
-      "text": "Each cast picks one of these. All of them multiply their value. Good: Production of all buildings, Assistants, Mana Regeneration, the duration of all spells. Evil: Production of all buildings, Trophy count and Offline production, Mana Regeneration, Faction Coin find chance. Neutral: Production of all buildings, Maximum Mana, the duration of all spells, Faction Coin find chance. Production of all buildings and the duration of all spells use X, the others use Y.",
+      "text": "Each cast picks one of these. All of them multiply their value.\nGood: Production of all buildings, Assistants, Mana Regeneration, the duration of all spells.\nEvil: Production of all buildings, Trophy count and Offline production, Mana Regeneration, Faction Coin find chance.\nNeutral: Production of all buildings, Maximum Mana, the duration of all spells, Faction Coin find chance.\nProduction of all buildings and the duration of all spells use X, the others use Y.",
       "formulas": []
      },
      {
