@@ -2728,7 +2728,7 @@
 ],
 "formulas": [
 {
-"latex": "k = 1 + 0.01 \\cdot 12",
+"latex": "k = 1.12",
 "vars": [
 {
 "symbol": "k",
@@ -2873,7 +2873,27 @@
 "Assistants effect from Infinite Spiral are also increased by Mana Regeneration.",
 "Lineage levels count 50% more for your base lineage effect and increase the bonus of all Advanced Heritage by 50%."
 ],
-"formulas": [],
+"formulas": [
+{
+"latex": "M = M_{\\max} \\cdot r",
+"vars": [
+{
+"symbol": "M",
+"text": "The Maximum Mana term of Infinite Spiral's assistants formula, which this replaces"
+},
+{
+"symbol": "M_{\\max}",
+"text": "Your Maximum Mana"
+},
+{
+"symbol": "r",
+"text": "Your Mana Regeneration per second, without the bonus of Djinn Perk 5"
+}
+],
+"label": null,
+"shown": false
+}
+],
 "applies_to": "Neutral Makers",
 "game_name": "Pillars of Creation",
 "note": null,

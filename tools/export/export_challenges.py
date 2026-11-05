@@ -270,14 +270,24 @@ def _extra_untimely(paras, c):
 
 
 def _extra_gaia(paras, c):
-    # the factor Infinite Spiral multiplies its exponents by (1 + 0.01 * 12 in the spell's code; the game text says 12% faster)
+    # the factor Infinite Spiral multiplies its exponents by (1 + 0.01 * 12 in the spell's code, which the game text calls 12% faster)
     paras[0]['formulas'].append(_m(
-        r'k = 1 + 0.01 \cdot 12',
+        r'k = 1.12',
         ('k', 'The factor by which the exponents in Infinite Spiral are multiplied')))
     paras[0]['formulas'][-1]['shown'] = False
 
 
-EXTRA = {'Makers Challenge': [_extra_gaia], 'An Untimely Death': [_extra_untimely], 'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
+def _extra_pillars(paras, c):
+    # Infinite Spiral's assistants formula takes this where it takes the Maximum Mana (the value is the base Mana Regeneration per second)
+    paras[0]['formulas'].append(_m(
+        r'M = M_{\max} \cdot r',
+        ('M', "The Maximum Mana term of Infinite Spiral's assistants formula, which this replaces"),
+        (r'M_{\max}', 'Your Maximum Mana'),
+        ('r', 'Your Mana Regeneration per second, without the bonus of Djinn Perk 5')))
+    paras[0]['formulas'][-1]['shown'] = False
+
+
+EXTRA = {'Pillars of Creation': [_extra_pillars], 'Makers Challenge': [_extra_gaia], 'An Untimely Death': [_extra_untimely], 'Seed of Life': [_extra_seed], 'Serpent Queller': [_extra_serpent], 'Overflowing Magic': [_extra_overflowing], 'The Art of War': [_extra_art_of_war],
          'Altar of Wishes': [_extra_altar]}
 
 

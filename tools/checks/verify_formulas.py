@@ -60,6 +60,7 @@ SCALES = [1, 100, 0.01, 30, 1 / 30, 60, 1 / 60, 3600, 1 / 3600]
 def found(x, nums):
     for c in nums:
         if x == c + 1 and x == int(x): return True      # a tier is stored from 0 and shown from 1
+        if abs((x - 1) * 100 - c) <= 1e-9 * max(1.0, abs(c)): return True      # a factor the code writes as 1 + 0.01 * c (12 for 1.12)
         for k in SCALES:
             v = c * k
             if v and abs(v - x) <= 1e-9 * max(1.0, abs(x)): return True
