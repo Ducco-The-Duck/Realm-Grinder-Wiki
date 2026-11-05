@@ -72,7 +72,8 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     list.forEach(function(f,i){
       if(i>0) parent.appendChild(el('div','fsep'));
       var isy=!/^v/.test(f.l);
-      var vs=isy?'y':many?'v_{'+(++vk)+'}':'v';
+      var own=/^([A-Za-z](?:_\{[^}]*\})?) = /.exec(f.l);      // a formula for a named value (y, X_{0}, ...) keeps its own symbol
+      var vs=isy?(own?own[1]:'y'):many?'v_{'+(++vk)+'}':'v';
       if(f.lb){
         var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
         lab.appendChild(document.createTextNode(' — '+f.lb)); parent.appendChild(lab);

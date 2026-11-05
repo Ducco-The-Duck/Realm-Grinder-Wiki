@@ -17464,14 +17464,18 @@
 "text": "Also provides the ability to cast Holy Light regardless of alignment. If your alignment is Good, Holy Light bonus increases over its duration.",
 "formulas": [
 {
-"latex": "v_{2} = 1 + 0.5 \\cdot t^{0.5}",
+"latex": "X = 1750 \\cdot \\left(1 + 0.5 \\cdot t^{0.5}\\right)",
 "vars": [
+{
+"symbol": "X",
+"text": "Holy Light's base bonus (%)"
+},
 {
 "symbol": "t",
 "text": "Seconds since Holy Light was cast (rounded)"
 }
 ],
-"label": "Holy Light bonus multiplier (Good alignment)"
+"label": "Holy Light base bonus (Good alignment)"
 }
 ],
 "s": null
@@ -17616,14 +17620,19 @@
 "text": "Also provides the ability to cast Blood Frenzy regardless of alignment. If your alignment is Evil, Blood Frenzy bonus increases based on time spent as Evil across all Reincarnations.",
 "formulas": [
 {
-"latex": "v_{2} = t^{0.5}",
+"latex": "X = 1500 \\cdot \\left(1 + 0.01 \\cdot t^{0.5}\\right)",
 "vars": [
+{
+"symbol": "X",
+"text": "Blood Frenzy's base bonus (%)"
+},
 {
 "symbol": "t",
 "text": "Time spent with Evil alignment all-time (seconds)"
 }
 ],
-"shown": true
+"shown": true,
+"label": "Blood Frenzy base bonus (Evil alignment)"
 }
 ],
 "s": null
@@ -17779,14 +17788,19 @@
 "text": "Also provides the ability to cast Gem Grinder regardless of alignment. If your alignment is Neutral, Gem Grinder bonus increases chaotically based on assistants.",
 "formulas": [
 {
-"latex": "v_{2} = 20 \\cdot \\left(\\frac{\\ln\\left(1 + A\\right)}{\\ln\\left(A \\bmod 10 + 2\\right)}\\right)^{2}",
+"latex": "X_{0} = 2500 \\cdot \\left(1 + 0.01 \\cdot 20 \\cdot \\left(\\frac{\\ln\\left(1 + A\\right)}{\\ln\\left(A \\bmod 10 + 2\\right)}\\right)^{2}\\right)",
 "vars": [
+{
+"symbol": "X_{0}",
+"text": "Gem Grinder's base bonus (%)"
+},
 {
 "symbol": "A",
 "text": "Your number of assistants"
 }
 ],
-"shown": true
+"shown": true,
+"label": "Gem Grinder base bonus (Neutral alignment)"
 }
 ],
 "s": null
@@ -22923,14 +22937,18 @@
 "text": "Increase Combo Strike's combo bonus based on time spent in this Era.",
 "formulas": [
 {
-"latex": "v_{1} = 0.5 \\cdot \\left\\lfloor t \\right\\rfloor",
+"latex": "X_{0} = 100 + 0.5 \\cdot \\left\\lfloor t \\right\\rfloor",
 "vars": [
+{
+"symbol": "X_{0}",
+"text": "Combo Strike's base bonus (%)"
+},
 {
 "symbol": "t",
 "text": "Time played in this Era (seconds)"
 }
 ],
-"label": "Combo Strike combo bonus (%)"
+"label": "Combo Strike's base bonus (%)"
 }
 ],
 "s": null
@@ -25577,8 +25595,12 @@
 "text": "Increase Night Time bonus to assistants production based on its activity time in this Reincarnation.",
 "formulas": [
 {
-"latex": "v = 0.4 \\cdot t^{0.6}",
+"latex": "X_{0} = 50 \\cdot \\left(1 + 0.01 \\cdot 0.4 \\cdot t^{0.6}\\right)",
 "vars": [
+{
+"symbol": "X_{0}",
+"text": "Night Time's bonus per Necropolis (%)"
+},
 {
 "symbol": "t",
 "text": "Activity time of Night Time in this Reincarnation (seconds)"
@@ -25681,7 +25703,17 @@
 "description": [
 {
 "text": "Increase Lightning Strike multiplier by 50%.",
-"formulas": [],
+"formulas": [
+{
+"latex": "X_{0} = 900 \\cdot 1.5",
+"vars": [
+{
+"symbol": "X_{0}",
+"text": "Lightning Strike's base bonus per Iron Stronghold (%)"
+}
+]
+}
+],
 "s": null
 }
 ],
@@ -25816,7 +25848,17 @@
 "description": [
 {
 "text": "Increase Diamond Pickaxe bonus to Faction Coin find chance by 100%.",
-"formulas": [],
+"formulas": [
+{
+"latex": "F_{0} = 200 + 100",
+"vars": [
+{
+"symbol": "F_{0}",
+"text": "Diamond Pickaxe's base value of the Faction Coin find chance (%)"
+}
+]
+}
+],
 "s": null
 }
 ],

@@ -17,6 +17,7 @@ import desc_tools as D
 import misc_manual as MM
 import alleg_manual as AM
 import alleg_manual_family as AMF  # (also adds the family formulas to AM.FORMULAS)
+import spell_effects as SE
 from numtext import pow10_text
 from chance_latex import convert
 
@@ -814,6 +815,8 @@ for idx, r in todo:
                 if pi not in _done:
                     ps[pi]['formulas'] = []; _done.add(pi)
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
+        _se = SE.UPGRADES.get(r['n'])      # an effect that changes the default value of a spell: the formula with the spell's variable
+        if _se: SE.apply(item['description'][_se['para']]['formulas'], _se)
         for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
             item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])] if f_ else [], 's': None})
         # a tier lookup names the building of the PLAYER's alignment (the upgrade can be used through a Legacy or as a

@@ -84,3 +84,4 @@ you then read the summary and commit. The summary is also saved in `update_repor
 - Something is a bug only when the maintainer has confirmed it; confirmed ones are in `KNOWN_BUGS.md` and shown as a note on the page.
 - Values that differ from older documentation are logged in `FORMULA_MISMATCHES.md` (open) and `FORMULA_MISMATCHES_RESOLVED.md` (resolved), even when the code turns out to be right.
 - Ascension penalty marks follow the game's own tooltip text, checked against the code (see the notes in `INFERENCES.md`).
+- A spell's default values say only "by default, changed by various effects". The effect that changes one (a bloodline, a research, a challenge, an upgrade) carries the change as a formula in the spell's own variable (`tools/manual/spell_effects.py`).

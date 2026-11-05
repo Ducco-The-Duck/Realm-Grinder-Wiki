@@ -19,6 +19,7 @@ import quickjs
 BUILDINGS = json.load(open(os.path.join(ROOT, 'data', 'derived/buildings.json'), encoding='utf8'))
 from as3parse import parse_all, resolve
 from chance_latex import convert, FACTION
+import spell_effects as SE
 
 names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
 sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
@@ -303,6 +304,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         lab = FORMULA_LABELS.get(r['n'])
         assert lab and len(lab) == len(forms), f"label the values of {r['n']} ({len(forms)} formulas)"
         for f, t in zip(forms, lab): f['label'] = t
+    if r['n'] in SE.RESEARCH: SE.apply(forms, SE.RESEARCH[r['n']])      # the formula with the variable of the spell whose default it changes
     branch = BR[r['b']] if 0 <= r['b'] < len(BR) else '?'
     def make_reqs(game_text):
         reqs = []

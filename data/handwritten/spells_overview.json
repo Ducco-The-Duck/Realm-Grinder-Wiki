@@ -22,7 +22,7 @@
          ],
          [
           "X",
-          "the base bonus, $1500\\%$ by default, changed by various effects, e.g. Demon Bloodline"
+          "the base bonus, $1500\\%$ by default, changed by various effects"
          ],
          [
           "p",
@@ -487,7 +487,7 @@
         "vars": [
          [
           "X_0",
-          "the base bonus, $2500\\%$ by default, changed by various effects, e.g. Faceless Bloodline"
+          "the base bonus, $2500\\%$ by default, changed by various effects"
          ],
          [
           "R",
@@ -876,7 +876,7 @@
          ],
          [
           "X",
-          "the base bonus, $1750\\%$ by default, changed by various effects, e.g. Angel Bloodline"
+          "the base bonus, $1750\\%$ by default, changed by various effects"
          ],
          [
           "p",
