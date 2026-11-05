@@ -17624,7 +17624,7 @@
 }
 ],
 "shown": true,
-"label": "Blood Frenzy bonus multiplier"
+"label": "Blood Frenzy bonus multiplier (Evil alignment)"
 }
 ],
 "s": null
@@ -17788,7 +17788,7 @@
 }
 ],
 "shown": true,
-"label": "Gem Grinder bonus multiplier"
+"label": "Gem Grinder bonus multiplier (Neutral alignment)"
 }
 ],
 "s": null

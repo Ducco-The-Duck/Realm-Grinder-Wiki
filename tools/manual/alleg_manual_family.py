@@ -165,4 +165,4 @@ FORMULAS.update({
 })
 
 # names for formulas the converter made (the position among the formulas of the upgrade -> label)
-LABELS = {'Demon Bloodline': {1: 'Blood Frenzy bonus multiplier'}, 'Faceless Bloodline': {1: 'Gem Grinder bonus multiplier'}}
+LABELS = {'Demon Bloodline': {1: 'Blood Frenzy bonus multiplier (Evil alignment)'}, 'Faceless Bloodline': {1: 'Gem Grinder bonus multiplier (Neutral alignment)'}}
