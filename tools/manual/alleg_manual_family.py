@@ -163,3 +163,6 @@ FORMULAS.update({
     'Djinn Perk 4': [(0, F(r'v = 888 \cdot n', ('n', 'Limited Wish casts'), label='Automatic clicks added'))],
     'Makers Perk 1': [(1, F(r'v = 0.75 \cdot t^{0.75}', ('t', 'Time spent offline in this Reincarnation (seconds)')))],
 })
+
+# names for formulas the converter made (the position among the formulas of the upgrade -> label)
+LABELS = {'Demon Bloodline': {1: 'Blood Frenzy bonus multiplier'}, 'Faceless Bloodline': {1: 'Gem Grinder bonus multiplier'}}

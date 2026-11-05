@@ -17623,7 +17623,8 @@
 "text": "Time spent with Evil alignment all-time (seconds)"
 }
 ],
-"shown": true
+"shown": true,
+"label": "Blood Frenzy bonus multiplier"
 }
 ],
 "s": null
@@ -17786,7 +17787,8 @@
 "text": "Your number of assistants"
 }
 ],
-"shown": true
+"shown": true,
+"label": "Gem Grinder bonus multiplier"
 }
 ],
 "s": null

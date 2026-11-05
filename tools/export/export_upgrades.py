@@ -814,6 +814,8 @@ for idx, r in todo:
                 if pi not in _done:
                     ps[pi]['formulas'] = []; _done.add(pi)
                 ps[pi]['formulas'].append(dict(f_, vars=[dict(v) for v in f_['vars']]))
+        _all = [f_ for p_ in item['description'] for f_ in p_['formulas']]
+        for i_, lab_ in AMF.LABELS.get(r['n'], {}).items(): _all[i_]['label'] = lab_
         for tx_, f_ in AMF.EXTRA_PARAS.get(r['n'], []):
             item['description'].append({'text': tx_, 'formulas': [dict(f_, vars=[dict(v) for v in f_['vars']])] if f_ else [], 's': None})
         # a tier lookup names the building of the PLAYER's alignment (the upgrade can be used through a Legacy or as a
