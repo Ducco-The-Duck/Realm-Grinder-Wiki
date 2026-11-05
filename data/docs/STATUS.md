@@ -5,7 +5,7 @@ Only these need checking; remove an item from the open list when it is settled.
 
 1. **Formula disagreements** (open ones: `data/docs/FORMULA_MISMATCHES.md`, resolved ones: `data/docs/FORMULA_MISMATCHES_RESOLVED.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
    in-game tooltip value). Object, then where it is on the wiki:
-   - **Second Stone** (2x): fragment factor that differ between the code and
+   - **Second Stone** (2x): fragment factor that differs between the code and
      the old patch-notes doc (4.3.11). Archaeology page (artifact chances). The in-game "Chance: X%" tooltip is visible only
      before you own the artifact.
    - **Poison Vial:** the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter, K before the Ascension
