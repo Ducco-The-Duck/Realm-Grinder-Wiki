@@ -1994,7 +1994,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Provides a random effect based on your chosen alignment. The duration cannot be modified. The mana cost goes down by 1% per minute, up to 1 hour, then resets. The more times you cast it, the stronger it gets.",
+      "text": "Casts one effect at random, each equally likely, from the list below, which depends on your alignment. The duration cannot be modified. The mana cost goes down by 1% per minute, up to 1 hour, then resets. The effect grows with the time the spell has been active in this Era and with how many times you cast it.",
       "formulas": [
        {
         "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
@@ -2014,28 +2014,54 @@
         ]
        },
        {
-        "latex": "X = 50 + 5 \\cdot \\ln(1 + n)^{1.75} \\cdot w",
+        "latex": "X = 50 + 5 \\cdot \\ln(1 + t)^{1.75} \\cdot P",
         "vars": [
          [
-          "n",
-          "the number of times you cast the spell"
+          "t",
+          "the activity time of the spell in this Era, in seconds, with the bonuses that make activity time count more"
          ],
          [
-          "w",
-          "the power you gained from earlier casts"
+          "P",
+          "the power of the spell, rolled at each cast"
          ]
         ]
        },
        {
-        "latex": "Y = 25 + 2.5 \\cdot \\ln(1 + n)^{1.75} \\cdot \\sqrt{w} \\cdot T",
+        "latex": "Y = 25 + 2.5 \\cdot \\ln(1 + t)^{1.75} \\cdot \\sqrt{P} \\cdot T",
         "vars": [
          [
           "Y",
-          "the bonus of the effects that are not production, in %"
+          "the bonus of each of the other effects, in % (not production, not durations)"
          ],
          [
           "T",
           "the tier the spell is cast at (1 for a spell cast once)"
+         ]
+        ]
+       },
+       {
+        "latex": "D = 1 + \\frac{X}{100}",
+        "vars": [
+         [
+          "D",
+          "the multiplier of the duration of every spell"
+         ]
+        ]
+       },
+       {
+        "latex": "P = m + u \\cdot N",
+        "vars": [
+         [
+          "m",
+          "the lowest power, $1$ by default, changed by various effects"
+         ],
+         [
+          "u",
+          "a random number between 0 and 1, rolled at each cast"
+         ],
+         [
+          "N",
+          "the number of times you cast the spell in this Era, with the bonus of higher tiers"
          ]
         ]
        },
@@ -2048,15 +2074,20 @@
          ],
          [
           "t_h",
-          "the seconds since the last full hour of your Reincarnation"
+          "the seconds of your playtime in this Era since its last full hour"
          ]
         ]
        }
       ]
      },
      {
+      "title": "Possible effects",
+      "text": "Each cast picks one of these. All of them multiply their value. Good: Production of all buildings, Assistants, Mana Regeneration, the duration of all spells. Evil: Production of all buildings, Trophy count and Offline production, Mana Regeneration, Faction Coin find chance. Neutral: Production of all buildings, Maximum Mana, the duration of all spells, Faction Coin find chance. Production of all buildings and the duration of all spells use X, the others use Y.",
+      "formulas": []
+     },
+     {
       "title": "Ascension penalty",
-      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The other effects are not.",
+      "text": "The production bonus is reduced by the Ascension penalty, which lowers the exponent p above. The other effects, the duration one included, are not.",
       "formulas": [
        "@penalty"
       ]
