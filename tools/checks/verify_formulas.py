@@ -123,8 +123,7 @@ def item_formulas(it):
     """the formula texts (formulas, variable descriptions) of an upgrade or challenge item"""
     out = []
     fl = list(it.get('formulas') or [])
-    for p in it.get('description') or []:
-        if isinstance(p, dict): fl += p.get('formulas') or []
+    for p in it.get('description') or []: fl += p.get('formulas') or []
     for f in fl:
         if not isinstance(f, dict) or 'latex' not in f: continue
         out.append(f['latex'])
@@ -134,7 +133,7 @@ def item_formulas(it):
 
 
 def main_items(only=()):
-    """the same check for the upgrades, the researches and the challenge rewards that carry formulas (the generated ones pass by construction;
+    """the same check for the upgrades and the challenge rewards that carry formulas (the generated ones pass by construction;
     the hand-written tables in the tools are what it is there for)"""
     ups = json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8'))
     cls_of = {u['name']: u['class'] for u in ups if u.get('name') and u.get('class')}
@@ -144,16 +143,6 @@ def main_items(only=()):
     chal = json.load(open(os.path.join(ROOT, 'data', 'generated/challenges.json'), encoding='utf8'))
     items = [(k, it) for k, lst in pages.items() if isinstance(lst, list) for it in lst if isinstance(it, dict)]
     items += [('challenge', it) for f in chal for it in f['items']]
-    for r in json.load(open(os.path.join(ROOT, 'data', 'derived/researchs.json'), encoding='utf8')):
-        if r.get('name') and r.get('class'): cls_of.setdefault(r['name'], r['class'])
-    def research_items(x):
-        if isinstance(x, dict):
-            if 'code' in x and 'formulas' in x: yield x
-            else:
-                for v in x.values(): yield from research_items(v)
-        elif isinstance(x, list):
-            for v in x: yield from research_items(v)
-    items += [('research', it) for it in research_items(json.load(open(os.path.join(ROOT, 'data', 'generated/research.json'), encoding='utf8')))]
     total = bad = skipped = 0
     for kind, it in items:
         texts = item_formulas(it)
@@ -176,7 +165,7 @@ def main_items(only=()):
         if miss:
             bad += len(miss)
             print(f'{kind}: {it["name"]}: not found: ' + ', '.join(f'{x:g}' for x in miss))
-    print(f'\n{total} numbers checked in upgrade, research and challenge formulas, {bad} not found ({skipped} items with formulas have no class to check against)')
+    print(f'\n{total} numbers checked in upgrade and challenge formulas, {bad} not found ({skipped} items with formulas have no class to check against)')
     return bad
 
 

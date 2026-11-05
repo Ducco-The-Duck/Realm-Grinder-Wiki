@@ -154,13 +154,13 @@ the base values <i>v</i>.</div>
   }
   function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
   function formulas(parent, list){
-    var many=list.length>1, seen={}, nv=list.filter(function(f){ return /^v/.test(f.l); }).length, vk=0;
+    var many=list.length>1, seen={};
     parent.appendChild(el('span','lbl',many?'Formulas':'Formula'));
     var anyScaled=many && list.some(function(f){ return f.s; });
     list.forEach(function(f,i){
       if(i>0) parent.appendChild(el('div','fsep'));
-      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l);      // a formula for a named value (a, b, X_{0}, ...) keeps its own symbol; the others are numbered
-      var vs=own ? own[1] : nv>1 ? 'v_{'+(++vk)+'}' : 'v';
+      var vs=many?'v_{'+(i+1)+'}':'v';
+      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l); if(own) vs=own[1];      // a formula for a named value (a, b, ...) keeps its own symbol
       if(f.lb){
         var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
         var suf='', badge=null;

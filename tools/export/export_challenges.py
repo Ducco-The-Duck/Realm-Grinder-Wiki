@@ -14,7 +14,6 @@ sys.path.insert(0, os.path.join(HERE, 'pylib'))
 import quickjs
 from as3parse import parse_all, resolve
 from chance_latex import convert, FACTION
-import spell_effects as SE
 
 FACTION = dict(FACTION)
 FACTION.update({1: 'Elven', 9: 'Dwarven', 14: 'Djinn', 15: 'Makers'})   # the game's own challenge-header names
@@ -566,7 +565,6 @@ for e in entries:
         assert all(i is not None for i, _ in notes), e['game_name']
         item['rnotes'] = notes
     if e['game_name'] == 'Mercenary Challenge': item['formulas'] = merc_formulas(item['formulas'])
-    if item['name'] in SE.CHALLENGES: SE.apply(item['formulas'], SE.CHALLENGES[item['name']])      # the variable of the spell whose default it changes
     if e['spell_upgrade']:
         item['count'] = e['count']
         item['unlock'] = [{'kind': k, 'name': n} for k, n in e['unlock']]

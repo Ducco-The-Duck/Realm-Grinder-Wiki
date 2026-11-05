@@ -5961,12 +5961,8 @@ false
 "description": "Increase Gem Grinder bonus based on Artifacts found.",
 "formulas": [
 {
-"latex": "X_{0} = 2500 \\cdot \\left(1 + 0.01 \\cdot 1.25 \\cdot N^{1.25}\\right)",
+"latex": "v = 1.25 \\cdot N^{1.25}",
 "vars": [
-{
-"symbol": "X_{0}",
-"text": "Gem Grinder's base bonus (%)"
-},
 {
 "symbol": "N",
 "text": "Number of artifacts you have found"
@@ -6632,17 +6628,7 @@ false
 "icon_name": "ResearchAlchemy",
 "pen": null,
 "description": "Set Hellfire Blast duration to 4 seconds, and it will not be modified by other effects. Also reduce its mana cost by 400 and increase its effect by 1600%.",
-"formulas": [
-{
-"latex": "X_{0} = 120 \\cdot \\left(1 + 0.01 \\cdot 1600\\right)",
-"vars": [
-{
-"symbol": "X_{0}",
-"text": "Hellfire Blast's base bonus (%)"
-}
-]
-}
-],
+"formulas": [],
 "requirements": [
 "Reach 1h, 51m, 6s Hellfire Blast Activity Time"
 ],
@@ -6687,22 +6673,7 @@ false
 "text": "Number of Blacksmith buildings you own"
 }
 ],
-"scale": null,
-"label": "Fairy Chanting duration"
-},
-{
-"latex": "V = 20000 + \\left\\lfloor 1000 \\cdot t^{1.5} \\right\\rfloor",
-"vars": [
-{
-"symbol": "V",
-"text": "Fairy Chanting's base value"
-},
-{
-"symbol": "t",
-"text": "Seconds since Fairy Chanting was cast (rounded up)"
-}
-],
-"label": "Fairy Chanting's base value"
+"scale": null
 }
 ],
 "requirements": [

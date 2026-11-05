@@ -543,12 +543,8 @@
 ],
 "formulas": [
 {
-"latex": "X_{0} = 50 \\cdot \\left(1 + 0.01 \\cdot 0.25 \\cdot t^{0.75}\\right)",
+"latex": "v = 0.25 \\cdot t^{0.75}",
 "vars": [
-{
-"symbol": "X_{0}",
-"text": "Night Time's bonus per Necropolis (%)"
-},
 {
 "symbol": "t",
 "text": "Time played in this Reincarnation (seconds)"
@@ -2326,20 +2322,6 @@
 ],
 "label": "Mana Regeneration, multiplicative (%)",
 "shown": true
-},
-{
-"latex": "X_{0} = 10 \\cdot \\left(1 + 0.01 \\cdot 3 \\cdot P\\right)",
-"vars": [
-{
-"symbol": "X_{0}",
-"text": "God's Hand's base bonus (%)"
-},
-{
-"symbol": "P",
-"text": "The extra count Precognition gives (its X, in %), only while Precognition is active"
-}
-],
-"label": "God's Hand's base bonus (%)"
 }
 ],
 "applies_to": "Good Archon",
