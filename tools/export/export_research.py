@@ -231,8 +231,15 @@ TRIM = {0: 'Fairy', 1: 'Elven', 2: 'Angel', 3: 'Goblin', 4: 'Undead', 5: 'Demon'
         9: 'Dwarven', 10: 'Drow', 11: 'Mercenary', 12: 'Dragon'}
 # What each value of a two-value research is, in the order the game's text lists them (its readout lines
 # "Max Mana: +%0." / "(Additive: +%0, Multiplicative: %1%)" or the order of its %n placeholders).
+# a value the research's readout does not show, added after the ones it does (read from the spell code that applies it)
+EXTRA_FORMULAS = {
+    'Delayed Reaction': [_F(r'v = \left\lfloor 1000 \cdot t^{1.5} \right\rfloor',
+                            ('t', 'Seconds since Fairy Chanting was cast (rounded up)'))],      # added to the base value of Fairy Chanting
+}
+
 FORMULA_LABELS = {
     'Diplomacy': ['Faction Coin find chance (%)', 'Royal Exchange bonus (%)'],
+    'Delayed Reaction': ['Duration bonus', "Bonus to the base value of Fairy Chanting"],
     'Vacuumancy': ['Maximum Mana', 'Mana Regeneration'],
     'Heirlooms': ['Maximum Mana', 'Mana Regeneration'],
     'Transubstantiation': ['Maximum Mana, additive', 'Maximum Mana, multiplicative (%)'],
@@ -299,6 +306,7 @@ for idx, (r, a, b) in enumerate(zip(rows, mut[0], mut[1])):
         forms = [dict(f, vars=list(f['vars'])) for f in MANUAL_FORMULAS[r['n']]]
     if r['n'] in DROP_FORMULAS:
         forms = [f for i, f in enumerate(forms) if i not in DROP_FORMULAS[r['n']]]
+    forms += [dict(f, vars=list(f['vars'])) for f in EXTRA_FORMULAS.get(r['n'], [])]
     if len(forms) > 1:
         lab = FORMULA_LABELS.get(r['n'])
         assert lab and len(lab) == len(forms), f"label the values of {r['n']} ({len(forms)} formulas)"

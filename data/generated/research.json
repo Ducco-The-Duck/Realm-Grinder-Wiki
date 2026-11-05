@@ -6673,7 +6673,19 @@ false
 "text": "Number of Blacksmith buildings you own"
 }
 ],
-"scale": null
+"scale": null,
+"label": "Duration bonus"
+},
+{
+"latex": "v = \\left\\lfloor 1000 \\cdot t^{1.5} \\right\\rfloor",
+"vars": [
+{
+"symbol": "t",
+"text": "Seconds since Fairy Chanting was cast (rounded up)"
+}
+],
+"scale": null,
+"label": "Bonus to the base value of Fairy Chanting"
 }
 ],
 "requirements": [
