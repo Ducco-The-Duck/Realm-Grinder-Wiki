@@ -2278,17 +2278,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Activates two different random spells for its duration. They are picked from the spells below that you cannot cast yourself, and they run at tier $A$, your Ascension number. It is available from Ascension $2$, with Djinn Bloodline or the Djinn challenge Identity Shaper.",
-      "lists": [
-       {
-        "title": "Spells it can activate:",
-        "items": [
-         "Good: God's Hand, Fairy Chanting, Moon Blessing, Holy Light",
-         "Evil: Blood Frenzy, Goblin's Greed, Night Time, Hellfire Blast",
-         "Neutral: Gem Grinder"
-        ]
-       }
-      ],
+      "text": "Activates two different random spells for its duration. They are picked from the vanilla faction spells and the base alignment spells that you cannot cast yourself, and they run at tier $A$, your Ascension number. It is available from Ascension $2$, with Djinn Bloodline or the Djinn challenge Identity Shaper.",
       "formulas": []
      },
      {
