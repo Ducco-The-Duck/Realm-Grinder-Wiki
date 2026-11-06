@@ -2179,8 +2179,25 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Activates two random Vanilla or base alignment spells at a set tier for its duration.",
+      "text": "Activates two different random spells for its duration. They are picked from the spells below that you cannot cast yourself, and they run at tier $A$, your Ascension number. It is available from Ascension $2$, with Djinn Bloodline or the Djinn challenge Identity Shaper.",
+      "lists": [
+       {
+        "title": "Spells it can activate:",
+        "items": [
+         "Good: God's Hand, Fairy Chanting, Moon Blessing, Holy Light",
+         "Evil: Blood Frenzy, Goblin's Greed, Night Time, Hellfire Blast",
+         "Neutral: Gem Grinder"
+        ]
+       }
+      ],
       "formulas": []
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The spells it activates are reduced by the regular Ascension penalty, as if they were cast at tier $A$ with all tiers up to it unlocked:",
+      "formulas": [
+       "@penalty_tiers"
+      ]
      }
     ]
    }
@@ -2230,7 +2247,7 @@
     ],
     "tier_sections": [
      {
-      "title": "Bonus at higher tiers",
+      "title": "Cost of higher tiers",
       "text": "Casting it again while it is active raises its tier by one, up to tier 99. It costs more each time:",
       "formulas": [
        {
@@ -2246,7 +2263,7 @@
          ],
          [
           "m",
-          "$3$ by default, lowered by various effects, e.g. Sequence (S1275)"
+          "$3$ by default, lowered by various effects"
          ],
          [
           "T",

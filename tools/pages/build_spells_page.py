@@ -22,6 +22,8 @@ SHARED = {
                   ['w', '$1$ if T - 1 is not above A, otherwise $1/2$']]}],
 }
 
+SHARED['penalty_tiers'] = SHARED['penalty'][2:]      # only the case of a spell with tiers unlocked
+
 import re as _re
 
 
@@ -100,7 +102,7 @@ def tier_requirement_list(ups, name=''):
 def tier_sections(name, hand):
     """the generated sections of a spell with tiers: the tier requirements, the cost of higher tiers, the bonus at higher tiers and the offline bonus"""
     ups = sorted(tier_up.get(name, []), key=lambda u: u['spell_tier'])
-    if not ups: return []
+    if not ups: return [dict(b) for b in hand]      # a spell without tier upgrades: only its hand-written sections (e.g. Twisting Nether's cost)
     req = tier_requirement_list(ups, name)
     out = [{'title': 'Spell tiers',
             'text': 'Casting the spell again while it is active raises its tier by one, up to the highest tier you have unlocked. Higher tiers are unlocked by a magic upgrade with the following requirements:',
