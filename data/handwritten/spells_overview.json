@@ -734,15 +734,15 @@
         ]
        },
        {
-        "latex": "X = 1 + \\operatorname{round} \\left( 25 \\cdot \\left( \\frac{a \\cdot b \\cdot c}{D^{3}} \\right)^{0.9} \\right)",
+        "latex": "X = 1 + \\operatorname{round} \\left( 25 \\cdot \\left( \\frac{a \\cdot b \\cdot c}{(A + 3)^{6}} \\right)^{0.9} \\right)",
         "vars": [
          [
           "a, b, c",
           "the amounts of your three most built buildings"
          ],
          [
-          "D",
-          "$(A + 3)^{2}$, with $A$ your Ascension number"
+          "A",
+          "your Ascension number"
          ]
         ]
        }
@@ -997,7 +997,7 @@
    }
   },
   "Moon Blessing": {
-   "description": "Increase the production of all buildings based on clicks made in this Reincarnation. Autoclick 15 times per second.",
+   "description": "Increase the production of all buildings based on clicks made in this Reincarnation.",
    "tags": [
     "Good",
     "Balance",
@@ -1007,7 +1007,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all buildings based on the clicks you made in this Reincarnation, and clicks automatically 15 times per second.",
+      "text": "Increases the production of all buildings based on the clicks you made in this Reincarnation.",
       "formulas": [
        {
         "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
@@ -1051,11 +1051,11 @@
       "text": "Casting it at a higher tier adds automatic clicks. The Ascension penalty does not apply to this.",
       "formulas": [
        {
-        "latex": "a = 15 + 2 \\cdot (T - 1)",
+        "latex": "a = 2 \\cdot (T - 1)",
         "vars": [
          [
           "a",
-          "the automatic clicks per second"
+          "the additional automatic clicks per second"
          ],
          [
           "T",
