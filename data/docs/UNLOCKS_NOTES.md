@@ -27,3 +27,4 @@ Ascension starts: A1 = Reincarnation 40, A2 = 100, A3 = 160, A4 = 220.
 | 112 | second unique buildings of the prestige factions | confirmed (High Bastion, Brothel, Dragon Pasture) |
 | 115 | Prestige faction Unions | confirmed (Dwarven, Drow, Dragon Union) |
 | 125 | Astral factions | confirmed for the Trade Treaties and the three Iron Fragment artifacts; their first unique buildings need 130 |
+| 130 | Astral unique buildings, unions, bloodlines and lineages | from the user; the code has several Reincarnation 130 tests in the astral places (the first unique buildings, the astral Unions, the astral faction selection), the Bloodline and Lineage tests were not traced individually |
