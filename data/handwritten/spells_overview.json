@@ -965,7 +965,7 @@
         ]
        },
        {
-        "latex": "F = 50 + 2 \\cdot \\ln(1 + g)^{1.5}",
+        "latex": "F = 50 + 2 \\cdot \\ln(1 + g)^{1.5} \\cdot k",
         "vars": [
          [
           "F",
@@ -974,6 +974,10 @@
          [
           "g",
           "your Gems owned"
+         ],
+         [
+          "k",
+          "the Faction Coin find chance multiplier, $1$ by default, changed by various effects"
          ]
         ]
        }
