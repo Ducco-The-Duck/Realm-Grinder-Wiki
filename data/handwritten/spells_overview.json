@@ -1252,7 +1252,7 @@
      },
      {
       "title": "Share Benefits",
-      "text": "Turns Tax Collection into a spell with a duration and its own tiers, which do not need to be unlocked. Casting it again while it is active raises its tier by one, up to tier 36, or tier 99 from Ascension 3. Its production bonus is 100 times higher below Ascension 3. It also produces Tax Collection casts every second.",
+      "text": "Turns Tax Collection into a spell with a duration and its own tiers, which do not need to be unlocked. Casting it again while it is active raises its tier by one, up to tier 36, or tier 99 from Ascension 3. Its production bonus is 100 times higher below Ascension 3. Every second it is active it also adds Tax Collection casts and mana produced.",
       "formulas": [
        {
         "latex": "B = k \\cdot (80 + 1.6 \\cdot \\ln(1 + N)^{1.6})^{(0.5 (T - 1) + 1)^{0.9}}",
@@ -1285,6 +1285,36 @@
          [
           "c",
           "the Tax Collections triggered per cast"
+         ]
+        ]
+       },
+       {
+        "latex": "R = 10^{-5} \\cdot c \\cdot \\sqrt{N} \\cdot M \\cdot T",
+        "vars": [
+         [
+          "R",
+          "the Tax Collection casts it adds every second it is active"
+         ],
+         [
+          "M",
+          "your Maximum Mana"
+         ]
+        ]
+       },
+       {
+        "latex": "m = \\min(P, r)",
+        "vars": [
+         [
+          "m",
+          "the mana it adds to your mana produced in this Era every second it is active"
+         ],
+         [
+          "P",
+          "your current mana"
+         ],
+         [
+          "r",
+          "your Mana Regeneration per second (without bonuses that make Mana Regeneration count more)"
          ]
         ]
        },
