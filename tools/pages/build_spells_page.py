@@ -147,6 +147,6 @@ data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get
 
 html = tmpl.load('spells.html')
 import search_snippet
-page = search_snippet.apply(html.replace('__DATA__', data).replace('__UC__', search_snippet.UNDER_CONSTRUCTION), '', 'spells.html')
+page = search_snippet.apply(html.replace('__DATA__', data).replace('__UC__', ''), '', 'spells.html')
 open(os.path.join(ROOT, 'docs', 'spells.html'), 'w', encoding='utf8').write(page)
 print('docs/spells.html', len(page) // 1024, 'KB;', len(spells), 'spells')
