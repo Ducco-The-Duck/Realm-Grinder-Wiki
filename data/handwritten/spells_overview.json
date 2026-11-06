@@ -1433,6 +1433,29 @@
         ]
        }
       ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty from Ascension $1$ on. Below that, the multiplier is $1 + B / 100$.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\dfrac{B}{100}\\right)^{\\,0.1^{A}} \\quad (A \\ge 1)",
+        "vars": [
+         [
+          "M",
+          "the production multiplier it gives after the penalty"
+         ],
+         [
+          "B",
+          "the production bonus above, in %"
+         ],
+         [
+          "A",
+          "your Ascension number"
+         ]
+        ]
+       }
+      ]
      }
     ]
    }
@@ -1476,6 +1499,29 @@
          [
           "o",
           "the Flame Orbs collected in this event"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty from Ascension $1$ on. Below that, the multiplier is $1 + B / 100$.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\dfrac{B}{100}\\right)^{\\,0.1^{A}} \\quad (A \\ge 1)",
+        "vars": [
+         [
+          "M",
+          "the production multiplier it gives after the penalty"
+         ],
+         [
+          "B",
+          "the production bonus above, in %"
+         ],
+         [
+          "A",
+          "your Ascension number"
          ]
         ]
        }
@@ -1670,6 +1716,29 @@
          [
           "m",
           "the mana produced in this Era"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Ascension penalty",
+      "text": "The production bonus is reduced by the Ascension penalty from Ascension $1$ on. Below that, the multiplier is $1 + B / 100$.",
+      "formulas": [
+       {
+        "latex": "M = \\left(1 + \\dfrac{B}{100}\\right)^{\\,0.1^{A}} \\quad (A \\ge 1)",
+        "vars": [
+         [
+          "M",
+          "the production multiplier it gives after the penalty"
+         ],
+         [
+          "B",
+          "the production bonus above, in %"
+         ],
+         [
+          "A",
+          "your Ascension number"
          ]
         ]
        }
