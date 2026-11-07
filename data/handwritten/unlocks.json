@@ -234,8 +234,27 @@
      ]
     },
     {
+     "title": "Rubies",
+     "text": "You receive one Ruby each time you reach one of the depths below for the first time.",
+     "formulas": [
+      {
+       "latex": "D_k = 25\\,k\\,(k + 1)",
+       "vars": [
+        [
+         "D_k",
+         "the excavation depth that gives the k-th Ruby"
+        ],
+        [
+         "k",
+         "1, 2, 3 and so on, so the depths are 50, 150, 300, 500 and so on"
+        ]
+       ]
+      }
+     ]
+    },
+    {
      "title": "Excavation Resets",
-     "text": "A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, and you receive one Ruby each time you reach one of the depths below for the first time. From Ascension 1 you can also make a free reset. It costs neither Rubies nor coins: you only need to have at least the coins given below. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).",
+     "text": "A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, while free resets (from Ascension 1) cost nothing, but require you to meet a coin threshold based on your Reincarnation. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).",
      "formulas": [
       {
        "latex": "R_c = 1 + \\left\\lfloor \\frac{d}{3000} \\right\\rfloor",
@@ -251,20 +270,7 @@
        ]
       },
       {
-       "latex": "D_k = 25\\,k\\,(k + 1)",
-       "vars": [
-        [
-         "D_k",
-         "the excavation depth that gives the k-th Ruby"
-        ],
-        [
-         "k",
-         "1, 2, 3 and so on, so the depths are 50, 150, 300, 500 and so on"
-        ]
-       ]
-      },
-      {
-       "latex": "Q = \\operatorname{round}\\left( \\frac{X\\,(X + 1)}{2} \\cdot 10^{\\,3f - m} \\right)",
+       "latex": "Q = \\operatorname{round}\\left( \\frac{X\\,(X + 1)}{2} \\cdot 10^{\\,3f} \\right)",
        "vars": [
         [
          "Q",
@@ -272,28 +278,11 @@
         ],
         [
          "X",
-         "the amount below"
+         "the gems needed for your next Reincarnation"
         ],
         [
          "f",
          "the free resets you have made in this Reincarnation"
-        ],
-        [
-         "m",
-         "3 with Makers Perk 1, otherwise 0"
-        ]
-       ]
-      },
-      {
-       "latex": "X = 10^{27} \\cdot 100^{\\,R - 40 - 60\\,(A - 1)}",
-       "vars": [
-        [
-         "R",
-         "the Reincarnations you have made"
-        ],
-        [
-         "A",
-         "your Ascension number"
         ]
        ]
       }
