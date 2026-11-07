@@ -480,8 +480,11 @@ TEXT_SUBS = [('Reduce Royal Exchange cost multiplier by -0.02 and', 'Reduce Roya
              ('Autoclick v₄ times per second and increase', 'Autoclick several times per second and increase'),
              ('Goblin Upgrade 6', 'Hobgoblin Gladiators')]
 BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
+EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'
 # faded notes under one reward line: game name -> [(start of the line, note)]
-PARA_NOTES = {'Biased Architecture': [('Reduce Farms, Inns and Blacksmiths cost', BUILDING_COST)]}
+PARA_NOTES = {'Advanced Civilization': [('Reduces Elven Exchange', EXCHANGE_COST)],
+              'Biased Architecture': [('Reduce Farms, Inns and Blacksmiths cost', BUILDING_COST)],
+              'Titanomachy': [('Reduce Royal Exchange cost', EXCHANGE_COST)]}
 # the last N requirement lines of the game text belong to the challenge itself
 CHALLENGE_LINES = {'Barkscales': 2}
 # formulas of a reward that are not shown (by position in the reward)

@@ -91,7 +91,7 @@ __UC__
         c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
         inner.appendChild(c);
       }
-      (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });
+      if(MODE!=='mechanics') (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });      // the Mechanics page does not say when a mechanic becomes available
       (m.sections||[]).forEach(function(c){
         if(c.title) inner.appendChild(el('h3',null,c.title));
         if(c.text) inner.appendChild(el('p',null,c.text));

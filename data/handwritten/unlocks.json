@@ -154,7 +154,9 @@
   {
    "name": "Excavations",
    "asc": 0,
-   "unlock": [],
+   "unlock": [
+    "Available from the start (Reincarnation 0): buy the Archeology upgrade, which appears at 1e9 Gems and costs 1e29 coins. Then Excavation can be bought."
+   ],
    "sections": [
     {
      "title": "What they are",
