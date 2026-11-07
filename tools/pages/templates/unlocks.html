@@ -31,6 +31,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 .mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 .mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
+.mech p.after{margin-top:14px}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
@@ -101,7 +102,7 @@ __UC__
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
         });
         if(c.link){ var lp=el('p'), la=el('a',null,c.link.text); la.href=c.link.href; lp.appendChild(la); inner.appendChild(lp); }
-        if(c.after) inner.appendChild(el('p',null,c.after));
+        if(c.after) inner.appendChild(el('p','after',c.after));
         (c.lists||[]).forEach(function(l){
           if(l.title) inner.appendChild(el('p',null,l.title));
           var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); inner.appendChild(ul);

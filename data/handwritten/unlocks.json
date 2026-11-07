@@ -243,10 +243,6 @@
         [
          "D_k",
          "the excavation depth that gives the k-th Ruby"
-        ],
-        [
-         "k",
-         "1, 2, 3 and so on, so the depths are 50, 150, 300, 500 and so on"
         ]
        ]
       }
