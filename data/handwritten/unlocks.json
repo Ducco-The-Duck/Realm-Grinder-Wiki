@@ -205,6 +205,9 @@
        ]
       },
       {
+       "latex": "r = r_0 \\quad (A = 0) \\qquad r = 1 + \\frac{r_0 - 1}{5A} \\quad (A \\ge 1)"
+      },
+      {
        "latex": "r_0 = 1.2 - \\sum r_i",
        "vars": [
         [
@@ -216,9 +219,6 @@
          "the reductions of the excavation cost multiplier, below"
         ]
        ]
-      },
-      {
-       "latex": "r = r_0 \\quad (A = 0) \\qquad r = 1 + \\frac{r_0 - 1}{5A} \\quad (A \\ge 1)"
       }
      ],
      "lists": [
@@ -228,7 +228,7 @@
         "Surveyorship (E270): 0.02",
         "Discount (E13125): 0.02",
         "Magic Resistance: 0.02",
-        "Reality Crater: 0.0005 · ln(1 + assistants you own), only while Infinite Spiral is active"
+        "Reality Crater, while Infinite Spiral is active"
        ]
       }
      ]
