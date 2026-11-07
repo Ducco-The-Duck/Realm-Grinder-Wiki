@@ -154,9 +154,7 @@
   {
    "name": "Excavations",
    "asc": 0,
-   "unlock": [
-    "Available from the start (Reincarnation 0): buy the Archeology upgrade, which appears at 1e9 Gems and costs 1e29 coins. Then Excavation can be bought."
-   ],
+   "unlock": [],
    "sections": [
     {
      "title": "What they are",
@@ -235,7 +233,7 @@
     },
     {
      "title": "Excavation Resets",
-     "text": "A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, which you also receive for reaching certain excavation depths for the first time. From Ascension 1 you can also make a free reset. It costs neither Rubies nor coins: you only need to have at least the coins given below. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).",
+     "text": "A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, and you receive one Ruby each time you reach one of the depths below for the first time. From Ascension 1 you can also make a free reset. It costs neither Rubies nor coins: you only need to have at least the coins given below. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).",
      "formulas": [
       {
        "latex": "R_c = 1 + \\left\\lfloor \\frac{d}{3000} \\right\\rfloor",
@@ -247,6 +245,19 @@
         [
          "d",
          "the excavations made since your last reset"
+        ]
+       ]
+      },
+      {
+       "latex": "D_k = 25\\,k\\,(k + 1)",
+       "vars": [
+        [
+         "D_k",
+         "the excavation depth that gives the k-th Ruby"
+        ],
+        [
+         "k",
+         "1, 2, 3 and so on, so the depths are 50, 150, 300, 500 and so on"
         ]
        ]
       },
@@ -291,86 +302,34 @@
      "text": "Every excavation finds Faction Coins. The amount is worked out for each excavation on its own, with d the excavations made since your last reset before this one, so it grows as you dig deeper and starts again after a reset.",
      "formulas": [
       {
-       "latex": "F = \\left( S \\cdot \\left(1 + \\frac{D}{100}\\right) \\cdot \\left(1 + \\frac{G}{100}\\right) \\cdot \\left(1 + \\frac{W}{100}\\right) \\right)^{1 + 0.35\\,A}",
+       "latex": "F = \\left( b + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor \\right)^{1 + 0.35\\,A}",
        "vars": [
         [
          "F",
          "the Faction Coins one excavation finds"
         ],
         [
-         "S",
-         "the base amount, below"
+         "b",
+         "250, plus another 250 with the upgrade That Excavated Quickly"
         ],
         [
-         "D",
-         "the bonus of the Dwarven challenge Iron Grip, in %; 0 until you complete it"
-        ],
-        [
-         "G",
-         "the bonus of the Dragon challenge Draconstellation, in %; 0 until you complete it"
-        ],
-        [
-         "W",
-         "the bonus of the upgrade The Architect, in %; 0 until you have it"
+         "d",
+         "the excavations made since your last reset, before this one"
         ],
         [
          "A",
          "your Ascension number"
         ]
        ]
-      },
-      {
-       "latex": "S = b + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor",
-       "vars": [
-        [
-         "d",
-         "the excavations made since your last reset, before this one"
-        ],
-        [
-         "b",
-         "250, plus another 250 with the upgrade That Excavated Quickly"
-        ]
-       ]
-      },
-      {
-       "latex": "D = F_0 \\cdot T",
-       "vars": [
-        [
-         "F_0",
-         "the Faction Coin find chance of Diamond Pickaxe at tier 1, in %: 200, plus 100 with the upgrade Minedwarf"
-        ],
-        [
-         "T",
-         "the tier Diamond Pickaxe is cast at, 1 while it is not active; if you cannot cast it, your Ascension number plus 1"
-        ]
-       ]
-      },
-      {
-       "latex": "G = N^{5}",
-       "vars": [
-        [
-         "N",
-         "the number of artifacts you have found"
-        ]
-       ]
-      },
-      {
-       "latex": "W = K^{0.8}",
-       "vars": [
-        [
-         "K",
-         "the total buildings you have built"
-        ]
-       ]
       }
-     ],
-     "after": "The bonus of Iron Grip counts whether or not Diamond Pickaxe is active."
+     ]
     }
    ],
    "source": [
     "§#!!§::§#!?§",
     "§#!!§::§!!V§",
     "§#!!§::§%1§",
+    "§8G§::§,k§",
     "§3?§.§[9§",
     "§3?§.§`J§",
     "§3?§.§-r§",

@@ -208,13 +208,7 @@
 "applies_to": "Elven",
 "game_name": "Advanced Civilization",
 "note": null,
-"bug": null,
-"rnotes": [
-[
-0,
-"See the Royal Exchanges page for more on the Royal Exchange cost multiplier."
-]
-]
+"bug": null
 },
 {
 "name": "Light Collector",
@@ -2411,13 +2405,7 @@
 "applies_to": "Neutral Archon",
 "game_name": "Titanomachy",
 "note": null,
-"bug": null,
-"rnotes": [
-[
-0,
-"See the Royal Exchanges page for more on the Royal Exchange cost multiplier."
-]
-]
+"bug": null
 },
 {
 "name": "Time Merge",

@@ -29,7 +29,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.items{margin:0 0 6px;padding-left:0}
 .mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 .mech ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
-.mech .formula{padding:2px 0;overflow-wrap:anywhere}
+.mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
+.mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
@@ -94,7 +95,8 @@ __UC__
       (m.sections||[]).forEach(function(c){
         if(c.title) inner.appendChild(el('h3',null,c.title));
         if(c.text) inner.appendChild(el('p',null,c.text));
-        (c.formulas||[]).forEach(function(f){
+        (c.formulas||[]).forEach(function(f,fi){
+          if(fi) inner.appendChild(el('hr','fsep'));      // a line between formulas that follow each other
           var d=el('div','formula'); math(f.latex,d); inner.appendChild(d);
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
         });
