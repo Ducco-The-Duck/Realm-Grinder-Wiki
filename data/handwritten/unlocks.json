@@ -160,7 +160,7 @@
    "sections": [
     {
      "title": "What they are",
-     "text": "Excavations are bought with coins in the Excavation panel. Every excavation finds Faction Coins, and gives each artifact that you have not found yet, but whose requirements you meet, a chance to be found. You can buy several at once. The price of the next excavation rises with every one you make, until you reset your excavations. The excavations you made are kept when you Abdicate; a reset or a Reincarnation sets them back to zero.",
+     "text": "Excavations are bought with coins in the Excavation panel. Every excavation finds Faction Coins, and may find artifacts. The price of the next excavation rises with every one you make, until you reset your excavations. The excavations you made are kept when you Abdicate; a reset or a Reincarnation sets them back to zero.",
      "link": {
       "href": "archaeology.html",
       "text": "All artifacts and their chances"
