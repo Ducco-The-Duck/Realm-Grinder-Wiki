@@ -1,6 +1,8 @@
 """Check the hand-written spell formulas against the game code.
 
     python -I tools/checks/verify_formulas.py [spell name ...]
+    python -I tools/checks/verify_formulas.py --items [name ...]       (upgrades, researches, challenges)
+    python -I tools/checks/verify_formulas.py --mechanics [name ...]   (the Mechanics page)
 
 Every number in a spell's detail text (data/handwritten/spells_overview.json: formulas, variable descriptions and the explaining
 sentences) must be found in the game code the spell was read from: the spell's own class and the classes that import
@@ -181,7 +183,60 @@ def main_items(only=()):
     return bad
 
 
+def fn_text(text, fn):
+    """the source of one function of a class file (from its line to the next member at the same indent)"""
+    lines = text.split('\n')
+    for i, l in enumerate(lines):
+        if f'function {fn}(' in l:
+            j = i + 1
+            while j < len(lines) and not re.match(r'^      (public|private|protected|override|internal|static)\b', lines[j]): j += 1
+            return '\n'.join(lines[i:j])
+    return ''
+
+
+def mechanic_strings(m):
+    """(where, text) of everything a mechanic of data/handwritten/unlocks.json states"""
+    out = [('unlock', t) for t in m.get('unlock', [])]
+    for s in m.get('sections', []):
+        t = s.get('title', '')
+        out += [(t, s.get('text', '') or ''), (t + ' (after)', s.get('after', '') or '')]
+        for l in s.get('lists', []) or []:
+            out += [(t + ' list', l.get('title', ''))] + [(t + ' list', x) for x in l.get('items', [])]
+        for f in s.get('formulas', []) or []:
+            out.append((t + ' formula', f.get('latex', '')))
+            for v in f.get('vars', []): out.append((t + ' variable ' + v[0], v[1]))
+    return out
+
+
+def main_mechanics(only=()):
+    """the same check for the mechanics of the Mechanics page that name their code ("source": class, or class::function for one function of it):
+    every number of the mechanic must be in that code"""
+    d = json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))
+    total = bad = 0
+    for m in d['mechanics']:
+        if not m.get('source') or (only and m['name'] not in only): continue
+        nums = set()
+        for src in m['source']:
+            cls, _, fn = src.partition('::')
+            p = path_of(cls)
+            if not os.path.exists(p):
+                print(f"{m['name']}: source {src} not found"); bad += 1; continue
+            nums |= code_numbers(fn_text(read(p), fn) if fn else read(p))
+        miss = []
+        for where, text in mechanic_strings(m):
+            for x in latex_numbers(text):
+                if x in TRIVIAL: continue
+                total += 1
+                if not found(x, nums): miss.append((where, x))
+        bad += len(miss)
+        print(f"{m['name']}: {len(m['source'])} code sources, {len(nums)} numbers; not found: {len(miss)}")
+        for where, x in miss: print(f'    {x:g}   {where}')
+    print(f'\n{total} numbers checked in the mechanics, {bad} not found in their code')
+    return bad
+
+
 if __name__ == '__main__':
     args = set(sys.argv[1:])
-    if '--items' in args: main_items(args - {'--items'})
+    if '--mechanics' in args: main_mechanics(args - {'--mechanics'})
+    elif '--items' in args: main_items(args - {'--items'})
     else: main(args)

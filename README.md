@@ -79,7 +79,7 @@ you then read the summary and commit. The summary is also saved in `update_repor
 
 ## Conventions
 
-- Facts come from the code: no constant, number or formula is meant to originate from us. Where a formula has to be written by hand (the spell details, a few upgrade and challenge tables), `tools/checks/verify_formulas.py` (run by `selfcheck.py`) checks that every number in it still appears in the game code it was read from.
+- Facts come from the code: no constant, number or formula is meant to originate from us. Where a formula has to be written by hand (the spell details, the Mechanics page, a few upgrade and challenge tables), `tools/checks/verify_formulas.py` (run by `selfcheck.py`) checks that every number in it still appears in the game code it was read from.
 - A meaning we guessed is recorded in `INFERENCES.md` until it is confirmed in game; `STATUS.md` lists what is still open.
 - Something is a bug only when the maintainer has confirmed it; confirmed ones are in `KNOWN_BUGS.md` and shown as a note on the page.
 - Values that differ from older documentation are logged in `FORMULA_MISMATCHES.md` (open) and `FORMULA_MISMATCHES_RESOLVED.md` (resolved), even when the code turns out to be right.

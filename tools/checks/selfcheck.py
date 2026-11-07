@@ -142,7 +142,7 @@ except (OSError, ValueError, KeyError) as e:
     print('6. data/handwritten/spells_overview.json unreadable:', e)
     problems.append('data/handwritten/spells_overview.json unreadable')
 
-# 7. every number in the hand-written spell details still appears in the game code the spell was read from (tools/checks/verify_formulas.py)
+# 7-9. every number in the hand-written spell details (and, for 9, the mechanics that name their code) still appears in the game code the spell was read from (tools/checks/verify_formulas.py)
 if os.environ.get('RG_SCRIPTS'):      # checking a new build before it replaces out/: the data files still belong to the old build, so 7 and 8 run after the rebuild
     print('7, 8. formula numbers: skipped here, they run in the selfcheck after the rebuild')
 else:
@@ -156,6 +156,12 @@ else:
       buf2 = io.StringIO()
       with contextlib.redirect_stdout(buf2): n_bad2 = verify_formulas.main_items()
       print(f"8. upgrade and challenge formula numbers: {buf2.getvalue().strip().splitlines()[-1]}")
+      buf3 = io.StringIO()
+      with contextlib.redirect_stdout(buf3): n_bad3 = verify_formulas.main_mechanics()
+      print(f"9. mechanics page numbers: {buf3.getvalue().strip().splitlines()[-1]}")
+      if n_bad3:
+          print(buf3.getvalue())
+          problems.append(f"{n_bad3} number(s) in the mechanics of data/handwritten/unlocks.json are not found in the game code (run tools/checks/verify_formulas.py --mechanics)")
       if n_bad2:
           print(buf2.getvalue())
           problems.append(f"{n_bad2} number(s) in upgrade or challenge formulas are not found in the game code (run tools/checks/verify_formulas.py --items)")

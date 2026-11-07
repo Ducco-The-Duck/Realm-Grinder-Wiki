@@ -150,6 +150,241 @@
     }
    ],
    "page": "spells.html"
+  },
+  {
+   "name": "Excavations",
+   "asc": 0,
+   "unlock": [
+    "Available from the start (Reincarnation 0): buy the Archeology upgrade, which appears at 1e9 Gems and costs 1e29 coins. Then Excavation can be bought."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Excavations are bought with coins in the Excavation panel. Every excavation finds Faction Coins, and gives each artifact that you have not found yet, but whose requirements you meet, a chance to be found. You can buy several at once. The price of the next excavation rises with every one you make, until you reset your excavations. The excavations you made are kept when you Abdicate; a reset or a Reincarnation sets them back to zero.",
+     "link": {
+      "href": "archaeology.html",
+      "text": "All artifacts and their chances"
+     }
+    },
+    {
+     "title": "Cost",
+     "text": "Buying n excavations at once, when d have been made since your last reset, costs the sum of their prices. Each price is the cost multiplier r times the one before it, starting from a. From Ascension 1 the part of the multiplier above 1 is divided by 5A, so the price rises much more slowly.",
+     "formulas": [
+      {
+       "latex": "C(n) = \\left\\lfloor \\frac{a\\,\\left(r^{\\,d+n} - 1\\right)}{r - 1} \\right\\rfloor - \\left\\lfloor \\frac{a\\,\\left(r^{\\,d} - 1\\right)}{r - 1} \\right\\rfloor",
+       "vars": [
+        [
+         "C(n)",
+         "the coins the next n excavations cost"
+        ],
+        [
+         "n",
+         "how many excavations you buy at once"
+        ],
+        [
+         "d",
+         "the excavations made since your last Excavation Reset (your excavation depth)"
+        ],
+        [
+         "a",
+         "the price of the first excavation after a reset"
+        ],
+        [
+         "r",
+         "the cost multiplier"
+        ]
+       ]
+      },
+      {
+       "latex": "a = \\left(10^{27}\\right)^{0.75^{A}}",
+       "vars": [
+        [
+         "A",
+         "your Ascension number"
+        ]
+       ]
+      },
+      {
+       "latex": "r_0 = 1.2 - \\sum r_i",
+       "vars": [
+        [
+         "r_0",
+         "the cost multiplier before the Ascension is taken into account"
+        ],
+        [
+         "r_i",
+         "the reductions of the excavation cost multiplier, below"
+        ]
+       ]
+      },
+      {
+       "latex": "r = r_0 \\quad (A = 0) \\qquad r = 1 + \\frac{r_0 - 1}{5A} \\quad (A \\ge 1)"
+      }
+     ],
+     "lists": [
+      {
+       "title": "Reductions of the cost multiplier:",
+       "items": [
+        "Surveyorship (E270): 0.02",
+        "Discount (E13125): 0.02",
+        "Magic Resistance: 0.02",
+        "Reality Crater: 0.0005 · ln(1 + assistants you own), only while Infinite Spiral is active"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Excavation Resets",
+     "text": "A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, which you also receive for reaching certain excavation depths for the first time. From Ascension 1 you can also make a free reset. It costs neither Rubies nor coins: you only need to have at least the coins given below. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).",
+     "formulas": [
+      {
+       "latex": "R_c = 1 + \\left\\lfloor \\frac{d}{3000} \\right\\rfloor",
+       "vars": [
+        [
+         "R_c",
+         "the Rubies a regular reset costs"
+        ],
+        [
+         "d",
+         "the excavations made since your last reset"
+        ]
+       ]
+      },
+      {
+       "latex": "Q = \\operatorname{round}\\left( \\frac{X\\,(X + 1)}{2} \\cdot 10^{\\,3f - m} \\right)",
+       "vars": [
+        [
+         "Q",
+         "the coins you need to have for a free reset (they are not spent)"
+        ],
+        [
+         "X",
+         "the amount below"
+        ],
+        [
+         "f",
+         "the free resets you have made in this Reincarnation"
+        ],
+        [
+         "m",
+         "3 with Makers Perk 1, otherwise 0"
+        ]
+       ]
+      },
+      {
+       "latex": "X = 10^{27} \\cdot 100^{\\,R - 40 - 60\\,(A - 1)}",
+       "vars": [
+        [
+         "R",
+         "the Reincarnations you have made"
+        ],
+        [
+         "A",
+         "your Ascension number"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Faction Coins",
+     "text": "Every excavation finds Faction Coins. The amount is worked out for each excavation on its own, with d the excavations made since your last reset before this one, so it grows as you dig deeper and starts again after a reset.",
+     "formulas": [
+      {
+       "latex": "F = \\left( S \\cdot \\left(1 + \\frac{D}{100}\\right) \\cdot \\left(1 + \\frac{G}{100}\\right) \\cdot \\left(1 + \\frac{W}{100}\\right) \\right)^{1 + 0.35\\,A}",
+       "vars": [
+        [
+         "F",
+         "the Faction Coins one excavation finds"
+        ],
+        [
+         "S",
+         "the base amount, below"
+        ],
+        [
+         "D",
+         "the bonus of the Dwarven challenge Iron Grip, in %; 0 until you complete it"
+        ],
+        [
+         "G",
+         "the bonus of the Dragon challenge Draconstellation, in %; 0 until you complete it"
+        ],
+        [
+         "W",
+         "the bonus of the upgrade The Architect, in %; 0 until you have it"
+        ],
+        [
+         "A",
+         "your Ascension number"
+        ]
+       ]
+      },
+      {
+       "latex": "S = b + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor",
+       "vars": [
+        [
+         "d",
+         "the excavations made since your last reset, before this one"
+        ],
+        [
+         "b",
+         "250, plus another 250 with the upgrade That Excavated Quickly"
+        ]
+       ]
+      },
+      {
+       "latex": "D = F_0 \\cdot T",
+       "vars": [
+        [
+         "F_0",
+         "the Faction Coin find chance of Diamond Pickaxe at tier 1, in %: 200, plus 100 with the upgrade Minedwarf"
+        ],
+        [
+         "T",
+         "the tier Diamond Pickaxe is cast at, 1 while it is not active; if you cannot cast it, your Ascension number plus 1"
+        ]
+       ]
+      },
+      {
+       "latex": "G = N^{5}",
+       "vars": [
+        [
+         "N",
+         "the number of artifacts you have found"
+        ]
+       ]
+      },
+      {
+       "latex": "W = K^{0.8}",
+       "vars": [
+        [
+         "K",
+         "the total buildings you have built"
+        ]
+       ]
+      }
+     ],
+     "after": "The bonus of Iron Grip counts whether or not Diamond Pickaxe is active."
+    }
+   ],
+   "source": [
+    "§#!!§::§#!?§",
+    "§#!!§::§!!V§",
+    "§#!!§::§%1§",
+    "§3?§.§[9§",
+    "§3?§.§`J§",
+    "§3?§.§-r§",
+    "§;!J§.§2x§",
+    "§;!J§.§%\"G§",
+    "§^!9§.§'\"?§",
+    "§ !M§.§[\"$§",
+    "§3^§.§0\"&§",
+    "§ !M§.§\"!O§",
+    "§ !M§.§&\"I§",
+    "§ !M§.§,4§",
+    "§?7§.§7!K§",
+    "§[k§.§%?§"
+   ]
   }
  ]
 }

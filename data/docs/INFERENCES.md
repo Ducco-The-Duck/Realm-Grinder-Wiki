@@ -43,6 +43,8 @@ The open items and the resolved ones are in `data/docs/STATUS.md`.
 | index 135 | Excavation Resets (Free) | high | stats panel |
 | index 104 | Excavation Resets (regular) | medium | incremented in the excavation code; no panel label |
 | index 98 | Excavation depth | medium | "Max Excavation Depth" trophy |
+| `§<!'§` (static) | Rubies: the price of a regular Excavation Reset (1 + floor(depth / 3000)) is taken from it, and the reset event reports it as the hard currency spent | medium | `§#X§` in `§8G§`; the Excavation upgrade text promises free Rubies at certain depths |
+| Free Excavation Reset needs the coins but does not spend them | the code tests `coins >= price` and never subtracts it; counted in stat 135 (this Era plus earlier Eras of the Reincarnation) | high | `§#X§` in `§8G§`, price in the Excavation Reset class |
 | index 3 / 61 | Evil time spent / Mercenary time spent | medium | trophy text |
 | index 96 | Assistants (Max) | high | stats panel |
 | index 3 | Time spent with Evil alignment (s) | medium | trophy text; Arachnid Figurine ("Embrace Evil") |
