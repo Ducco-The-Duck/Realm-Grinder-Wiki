@@ -304,15 +304,11 @@
      "text": "Every excavation finds Faction Coins. The amount is worked out for each excavation on its own, with d the excavations made since your last reset before this one, so it grows as you dig deeper and starts again after a reset.",
      "formulas": [
       {
-       "latex": "F = \\left( b + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor \\right)^{1 + 0.35\\,A}",
+       "latex": "F = \\left( 250 + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor \\right)^{1 + 0.35\\,A}",
        "vars": [
         [
          "F",
          "the Faction Coins one excavation finds"
-        ],
-        [
-         "b",
-         "250, plus another 250 with the upgrade That Excavated Quickly"
         ],
         [
          "d",
