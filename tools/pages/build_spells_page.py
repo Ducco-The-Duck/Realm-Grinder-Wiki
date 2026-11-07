@@ -146,7 +146,10 @@ data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 
 html = tmpl.load('spells.html')
+import html as _html
+_mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Spells')
+BLURB = _html.escape(next(s for s in _mech['sections'] if s['title'] == 'What they are')['text'])      # the same text as on the Mechanics page
 import search_snippet
-page = search_snippet.apply(html.replace('__DATA__', data).replace('__UC__', ''), '', 'spells.html')
+page = search_snippet.apply(html.replace('__DATA__', data).replace('__UC__', '').replace('__BLURB__', BLURB), '', 'spells.html')
 open(os.path.join(ROOT, 'docs', 'spells.html'), 'w', encoding='utf8').write(page)
 print('docs/spells.html', len(page) // 1024, 'KB;', len(spells), 'spells')
