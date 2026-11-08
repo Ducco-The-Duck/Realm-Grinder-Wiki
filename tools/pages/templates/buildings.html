@@ -25,6 +25,11 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
+#filters{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 12px}
+.seg{display:flex;gap:4px}
+.seg button{font:inherit;color:inherit;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell)}
+.seg button:hover,.seg button:focus-visible{border-color:var(--accent)}
+.seg button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 #list{display:flex;flex-direction:column;gap:6px}
 #list button{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell);line-height:1.2}
 #list button:hover,#list button:focus-visible{border-color:var(--accent)}
@@ -40,7 +45,7 @@ main .blurb{margin:4px 0 10px}
 <h1>Buildings</h1>
 <p class="blurb">__BLURB__</p>
 <div class="layout">
-<div id="info"></div>
+<div><div id="filters"></div><div id="info"></div></div>
 <div id="list" role="group" aria-label="Buildings"></div>
 </div>
 </main>
@@ -48,7 +53,8 @@ main .blurb{margin:4px 0 10px}
 <script>
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
-  var info=document.getElementById('info'), list=document.getElementById('list'), btns=[];
+  var info=document.getElementById('info'), list=document.getElementById('list'), filt=document.getElementById('filters'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
+  function nm(b){ return b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
@@ -63,9 +69,9 @@ main .blurb{margin:4px 0 10px}
     });
   }
   function show(b){
-    info.textContent='';
+    cur=b; info.textContent='';
     btns.forEach(function(x){ x.b.setAttribute('aria-pressed', x.i===b.i ? 'true' : 'false'); });
-    info.appendChild(el('h2',null,b.names.join(' / ')));
+    info.appendChild(el('h2',null,nm(b).join(' / ')));
     var p=b.i===11 ? D.hall : D.production;
     info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
     if(b.i===11) formulas(info, p.formulas);
@@ -83,10 +89,19 @@ main .blurb{margin:4px 0 10px}
   }
   D.buildings.forEach(function(b){
     var bt=el('button'); bt.type='button'; bt.setAttribute('aria-pressed','false');
-    b.names.forEach(function(n){ bt.appendChild(el('span',null,n)); });
     bt.addEventListener('click',function(){ show(b); });
-    list.appendChild(bt); btns.push({b:bt,i:b.i});
+    list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
+  function labels(){ btns.forEach(function(x){ x.b.textContent=''; nm(x.d).forEach(function(n){ x.b.appendChild(el('span',null,n)); }); }); }
+  function seg(names, def, on){
+    var box=el('div','seg'), bs=[];
+    names.forEach(function(n,k){ var bt=el('button',null,n); bt.type='button'; bt.setAttribute('aria-pressed',k===def?'true':'false');
+      bt.addEventListener('click',function(){ bs.forEach(function(x,j){ x.setAttribute('aria-pressed',j===k?'true':'false'); }); on(k); }); bs.push(bt); box.appendChild(bt); });
+    filt.appendChild(box);
+  }
+  seg(['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
+  seg(['Order','Balance','Chaos','None'],3,function(){});      // the second alignment: it does not change anything on this page yet
+  labels();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
   if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
   window.addEventListener('load',function(){ var cur=btns.filter(function(x){ return x.b.getAttribute('aria-pressed')==='true'; })[0]; if(cur) cur.b.click(); });
