@@ -420,6 +420,9 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
   }
   try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=4) ASC=sv; }catch(e){}      // the Ascension is shared with the other pages
   var secSel=null;
+  function noneLabel(){      // from Ascension 2 the second alignment shows None until one is picked; None is not in the list
+    if(secSel && ASC>=2 && AX===null){ var sb=secSel.parentNode.querySelector('button'); if(sb) sb.textContent='None'; }
+  }
   function refresh(){      // everything that follows the three filters
     if(secSel){      // the second alignment exists from Ascension 2: before it, it is locked at None; from it on it starts empty, without a "none" to go back to
       var want=ASC<2 ? 'none' : 'pick';
@@ -429,6 +432,7 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
       }
       if(ASC<2){ AX=null; secSel.disabled=true; secSel.value='0'; }
       else { secSel.disabled=false; secSel.value=AX===null ? '' : String(AX); }
+      noneLabel(); setTimeout(noneLabel,0);      // the drop-down script redraws its button after the options change
     }
     var note=document.getElementById('alnote'); note.textContent = ASC<2 ? D.notes.early : AX===null ? D.notes.pick : '';
     labels(); if(cur) show(cur);
