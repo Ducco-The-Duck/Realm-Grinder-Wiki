@@ -72,7 +72,10 @@ main .blurb{margin:4px 0 10px}
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
   }
-  function num(x){ return x>=1e15 ? x.toExponential(2).replace('e+','e') : x.toLocaleString('en-US',{maximumFractionDigits:6}); }
+  var SUP='⁰¹²³⁴⁵⁶⁷⁸⁹';
+  function sci(x){ var e=Math.floor(Math.log10(x)), m=+(x/Math.pow(10,e)).toPrecision(12); if(m>=10){ m/=10; e++; } return [m,e]; }      // 145000000 -> 1.45 and 8
+  function num(x){ if(x>=1e7){ var s=sci(x); return s[0]+' × 10'+String(s[1]).split('').map(function(c){ return SUP[+c]; }).join(''); } return x.toLocaleString('en-US',{maximumFractionDigits:6}); }
+  function tex(x){ if(x>=1e7){ var s=sci(x); return s[0]+' \\times 10^{'+s[1]+'}'; } return String(x); }      // the same for a formula
   function formulas(box, fs){
     (fs||[]).forEach(function(f,fi){
       if(fi) box.appendChild(el('hr','fsep'));
@@ -87,7 +90,7 @@ main .blurb{margin:4px 0 10px}
     var p=b.i===11 ? D.hall : D.production;
     info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
     if(b.i===11) formulas(info, p.formulas);
-    else formulas(info, [{latex:'P = '+String(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
+    else formulas(info, [{latex:'P = '+tex(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
     info.appendChild(el('p','big','Price of the first one: '+num(b.cost)+' coins'));

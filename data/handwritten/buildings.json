@@ -35,7 +35,7 @@
   "text": "The price of each building of a kind is the multiplier m times the one before it, starting from the price of the first. Buying n at once, when you own d, costs the sum of their prices.",
   "formulas": [
    {
-    "latex": "C(n) = \\left\\lfloor \\frac{c\\,\\left(m^{\\,d+n} - 1\\right)}{m - 1} \\right\\rfloor - \\left\\lfloor \\frac{c\\,\\left(m^{\\,d} - 1\\right)}{m - 1} \\right\\rfloor",
+    "latex": "C(n) = S(d + n) - S(d)",
     "vars": [
      [
       "C(n)",
@@ -50,6 +50,15 @@
       "how many of this building you own"
      ],
      [
+      "S(k)",
+      "the total price of the first k buildings, below"
+     ]
+    ]
+   },
+   {
+    "latex": "S(k) = \\left\\lfloor \\frac{c\\,(m^{k} - 1)}{m - 1} \\right\\rfloor",
+    "vars": [
+     [
       "c",
       "the price of the first building, shown above"
      ],
@@ -60,7 +69,10 @@
     ]
    },
    {
-    "latex": "m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4) \\qquad m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)",
+    "latex": "m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4)"
+   },
+   {
+    "latex": "m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)",
     "vars": [
      [
       "m_0",
