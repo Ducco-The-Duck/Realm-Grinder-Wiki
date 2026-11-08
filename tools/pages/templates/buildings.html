@@ -11,7 +11,7 @@
 /*THEME*/
 main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 234px;gap:20px;align-items:start}
+.layout{display:flow-root}      /* the info flows around the list of buildings, and uses the full width below it */
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -26,7 +26,7 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
 #filters.bar{position:static;margin:0 0 14px;padding:2px 0;border-bottom:0;background:none}
-#list{display:flex;flex-direction:column;gap:2px;align-items:flex-end}
+#list{float:right;width:224px;margin:0 0 12px 20px;display:flex;flex-direction:column;gap:2px;align-items:flex-end}
 /* a button as in the game (130 x 57, one set per alignment, drawn larger) with the building's icon inside it on the left and its name; the open building is pressed */
 #list button{display:block;padding:0;border:0;background:none;font:inherit;color:inherit;cursor:pointer}
 #list button .pl{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
@@ -47,7 +47,7 @@ main .blurb{margin:4px 0 10px}
 #list button.neu .pl{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
 #list button.neu:hover .pl{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
 #list button.neu[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
-@media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
+@media (max-width:640px){#list{float:none;margin:0 0 12px;align-items:center}}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -57,8 +57,8 @@ main .blurb{margin:4px 0 10px}
 <h1>Buildings</h1>
 <p class="blurb">__BLURB__</p>
 <div class="layout">
-<div><div id="filters" class="bar"><div class="row"></div></div><div id="info"></div></div>
 <div id="list" role="group" aria-label="Buildings"></div>
+<div><div id="filters" class="bar"><div class="row"></div></div><div id="info"></div></div>
 </div>
 </main>
 <script id="data" type="application/json">__DATA__</script>
@@ -79,7 +79,7 @@ main .blurb{margin:4px 0 10px}
   function formulas(box, fs){
     (fs||[]).forEach(function(f,fi){
       if(fi) box.appendChild(el('hr','fsep'));
-      var d=el('div','formula'); math(f.latex,d); box.appendChild(d);
+      var d=el('div','formula'+(f.wide?' wide':'')); math(f.latex,d); box.appendChild(d);
       if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); box.appendChild(ul); }
     });
   }
@@ -100,8 +100,13 @@ main .blurb{margin:4px 0 10px}
       info.appendChild(el('p',null,c.reductions_title));
       var ul=el('ul','items'); rs.forEach(function(r){ ul.appendChild(el('li',null,r.text)); }); info.appendChild(ul);
     }
+    fitWide();
     try{ history.replaceState(null,'','#'+b.id); }catch(e){}
   }
+  function fitWide(){      // a wide formula that does not fit beside the list waits until the list ends
+    info.querySelectorAll('.formula.wide').forEach(function(d){ d.style.clear=''; if(d.scrollWidth>d.clientWidth+1) d.style.clear='right'; });
+  }
+  window.addEventListener('resize',fitWide);
   D.buildings.forEach(function(b){
     var bt=el('button'); bt.type='button'; bt.setAttribute('aria-pressed','false');
     bt.addEventListener('click',function(){ show(b); });

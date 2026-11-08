@@ -69,10 +69,8 @@
     ]
    },
    {
-    "latex": "m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4)"
-   },
-   {
-    "latex": "m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)",
+    "latex": "m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4) \\qquad m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)",
+    "wide": true,
     "vars": [
      [
       "m_0",
