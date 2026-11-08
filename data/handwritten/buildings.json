@@ -59,10 +59,6 @@
     "latex": "S(k) = \\left\\lfloor \\frac{c\\,(m^{k} - 1)}{m - 1} \\right\\rfloor",
     "vars": [
      [
-      "c",
-      "the price of the first building, shown above"
-     ],
-     [
       "m",
       "the cost multiplier"
      ]
@@ -145,6 +141,7 @@
    {
     "text": "Discount (E13125): 0.02"
    }
-  ]
+  ],
+  "price_var": "the price of the first {name}, in coins"
  }
 }

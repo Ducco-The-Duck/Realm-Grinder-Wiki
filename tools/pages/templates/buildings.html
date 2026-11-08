@@ -93,8 +93,7 @@ main .blurb{margin:4px 0 10px}
     else formulas(info, [{latex:'P = '+tex(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
-    info.appendChild(el('p','big','Price of the first one: '+num(b.cost)+' coins'));
-    formulas(info, c.formulas);
+    formulas(info, [{latex:'c = '+tex(b.cost), vars:[['c', c.price_var.replace('{name}', nm(b).join(' / '))]]}].concat(c.formulas));      // the first price, then the cost formulas
     var rs=c.reductions.filter(function(r){ return !r.only || r.only.indexOf(b.i)>=0; });
     if(rs.length){
       info.appendChild(el('p',null,c.reductions_title));
