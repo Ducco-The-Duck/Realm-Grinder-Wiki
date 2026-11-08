@@ -63,29 +63,6 @@
       "the cost multiplier"
      ]
     ]
-   },
-   {
-    "latex": "m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4) \\qquad m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)",
-    "wide": true,
-    "vars": [
-     [
-      "m_0",
-      "the cost multiplier before the Ascension is taken into account"
-     ],
-     [
-      "A",
-      "your Ascension number"
-     ]
-    ]
-   },
-   {
-    "latex": "m_0 = 1.15 - \\sum r_i",
-    "vars": [
-     [
-      "r_i",
-      "the reductions of the cost multiplier that apply to this building, below"
-     ]
-    ]
    }
   ],
   "reductions_title": "Examples of cost reduction multipliers:",
@@ -142,6 +119,37 @@
     "text": "Discount (E13125): 0.02"
    }
   ],
-  "price_var": "the price of the first {name}, in coins"
+  "price_var": "the price of the first {name}, in coins",
+  "multiplier": {
+   "flat": {
+    "latex": "m = m_0",
+    "note": "In Ascension 0 and from Ascension 4 on, the Ascension does not change the cost multiplier.",
+    "vars": [
+     [
+      "m_0",
+      "the cost multiplier worked out below"
+     ]
+    ]
+   },
+   "scaled": {
+    "latex": "m = 1 + \\frac{m_0 - 1}{5 \\cdot {A}}",
+    "note": "From Ascension 1 to 3, the part of the cost multiplier above 1 is divided by 5 times your Ascension number.",
+    "vars": [
+     [
+      "m_0",
+      "the cost multiplier worked out below"
+     ]
+    ]
+   }
+  },
+  "m0": {
+   "latex": "m_0 = 1.15 - \\sum r_i",
+   "vars": [
+    [
+     "r_i",
+     "the reductions of the cost multiplier that apply to this building, with some examples below"
+    ]
+   ]
+  }
  }
 }

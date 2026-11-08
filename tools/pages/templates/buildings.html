@@ -65,7 +65,7 @@ main .blurb{margin:4px 0 10px}
 <script>
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
-  var info=document.getElementById('info'), list=document.getElementById('list'), filt=document.querySelector('#filters .row'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
+  var c0=D.cost, ASC=0, info=document.getElementById('info'), list=document.getElementById('list'), filt=document.querySelector('#filters .row'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
   function nm(b){ return b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -79,9 +79,14 @@ main .blurb{margin:4px 0 10px}
   function formulas(box, fs){
     (fs||[]).forEach(function(f,fi){
       if(fi) box.appendChild(el('hr','fsep'));
-      var d=el('div','formula'+(f.wide?' wide':'')); math(f.latex,d); box.appendChild(d);
+      if(f.note) box.appendChild(el('p',null,f.note));
+      var d=el('div','formula'); math(f.latex,d); box.appendChild(d);
       if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); box.appendChild(ul); }
     });
+  }
+  function mult(){      // the cost multiplier formula of the chosen Ascension
+    var s=ASC>=1 && ASC<=3, f=s ? c0.multiplier.scaled : c0.multiplier.flat;
+    return {latex:f.latex.replace('{A}',String(ASC)), vars:f.vars, note:f.note};
   }
   function show(b){
     cur=b; info.textContent='';
@@ -93,19 +98,14 @@ main .blurb{margin:4px 0 10px}
     else formulas(info, [{latex:'P = '+tex(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
-    formulas(info, [{latex:'c = '+tex(b.cost), vars:[['c', c.price_var.replace('{name}', nm(b).join(' / '))]]}].concat(c.formulas));      // the first price, then the cost formulas
-    var rs=c.reductions.filter(function(r){ return !r.only || r.only.indexOf(b.i)>=0; });
+    formulas(info, [{latex:'c = '+tex(b.cost), vars:[['c', c.price_var.replace('{name}', nm(b).join(' / '))]]}].concat(c.formulas, [mult(), c.m0]));      // the first price, then the cost formulas
+    var rs=c.reductions.filter(function(r){ return !r.only || r.only.indexOf(b.i)>=0; }).slice(0,2);      // just a few examples
     if(rs.length){
       info.appendChild(el('p',null,c.reductions_title));
       var ul=el('ul','items'); rs.forEach(function(r){ ul.appendChild(el('li',null,r.text)); }); info.appendChild(ul);
     }
-    fitWide();
     try{ history.replaceState(null,'','#'+b.id); }catch(e){}
   }
-  function fitWide(){      // a wide formula that does not fit beside the list waits until the list ends
-    info.querySelectorAll('.formula.wide').forEach(function(d){ d.style.clear=''; if(d.scrollWidth>d.clientWidth+1) d.style.clear='right'; });
-  }
-  window.addEventListener('resize',fitWide);
   D.buildings.forEach(function(b){
     var bt=el('button'); bt.type='button'; bt.setAttribute('aria-pressed','false');
     bt.addEventListener('click',function(){ show(b); });
@@ -122,9 +122,11 @@ main .blurb{margin:4px 0 10px}
     l.appendChild(b); l.appendChild(s); filt.appendChild(l);
     s.id='f'+filt.children.length; l.htmlFor=s.id;
   }
+  try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=4) ASC=sv; }catch(e){}      // the Ascension is shared with the other pages
+  pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} if(cur) show(cur); });
   pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
   pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){});      // it does not change anything on this page yet
-  var alSel=document.querySelector('#filters select'), alChosen=false;
+  var alSel=document.querySelectorAll('#filters select')[1], alChosen=false;
   alSel.addEventListener('change',function(){ alChosen=true; });
   function followBg(){      // the alignment of the background picture (picked at random on every load) is the starting choice
     var d=document.getElementById('bgfx'), m=/bg\/(good|evil|neutral)/.exec((d&&d.style.backgroundImage)||'');

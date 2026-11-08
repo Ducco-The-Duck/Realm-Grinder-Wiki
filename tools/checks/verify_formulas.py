@@ -245,8 +245,8 @@ def main_buildings():
         nums |= code_numbers(fn_text(read(path_of(cls)), fn) if fn else read(path_of(cls)))
     texts = [d['production']['text'], d['hall']['text'], d['cost']['text']] + [r['text'] for r in d['cost']['reductions']]
     for sec in (d['hall'], d['cost']):
-        for f in sec.get('formulas', []):
-            texts.append(f['latex']); texts += [v[1] for v in f.get('vars', [])]
+        for f in sec.get('formulas', []) + ([d['cost']['m0']] + list(d['cost']['multiplier'].values()) if sec is d['cost'] else []):
+            texts.append(f['latex']); texts += [v[1] for v in f.get('vars', [])] + ([f['note']] if f.get('note') else [])
     total = bad = 0
     for t in texts:
         for x in latex_numbers(t):
