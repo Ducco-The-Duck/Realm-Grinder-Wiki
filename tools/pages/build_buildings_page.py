@@ -26,6 +26,17 @@ for i in range(1, 12):
                   'prod': None if row[0].get('base_production') is None else round(row[0]['base_production'] * TICKS, 6)})
 assert len(slots) == 11
 
+# the game's building buttons (130 x 57; one set per alignment) for the list
+import shutil
+SRC = os.path.join(ROOT, 'assets', 'sprites', 'realmgrinderui_new')
+DST = os.path.join(ROOT, 'docs', 'assets', 'ui', 'buildings')
+os.makedirs(DST, exist_ok=True)
+for al in ('good', 'evil', 'neutral'):
+    for st in ('Up', 'Hover', 'Down'):
+        f = f'{al}Building_{st}.png'
+        if os.path.exists(os.path.join(SRC, f)): shutil.copyfile(os.path.join(SRC, f), os.path.join(DST, f))
+        elif not os.path.exists(os.path.join(DST, f)): sys.exit('missing sprite ' + f + ' (run tools/extract/slice_atlases.py)')
+
 data = json.dumps({'buildings': slots, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost']},
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 import html as _html

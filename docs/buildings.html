@@ -14,7 +14,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:20px;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:20px;align-items:start}
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -29,11 +29,21 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
 #filters.bar{position:static;margin:0 0 14px;padding:2px 0;border-bottom:0;background:none}
-#list{display:flex;flex-direction:column;gap:6px}
-#list button{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell);line-height:1.2}
-#list button:hover,#list button:focus-visible{border-color:var(--accent)}
-#list button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
-#list button span{display:block}
+#list{display:flex;flex-direction:column;gap:2px;align-items:center}
+/* the game's building buttons (130 x 57, one set per alignment), a little larger; the open building is drawn pressed */
+#list button{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
+  width:156px;height:68px;padding:8px 12px;border:0;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;text-align:center}
+#list button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+#list[data-al="good"] button{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
+#list[data-al="good"] button:hover{background-image:url(assets/ui/buildings/goodBuilding_Hover.png)}
+#list[data-al="good"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/goodBuilding_Down.png)}
+#list[data-al="evil"] button{background-image:url(assets/ui/buildings/evilBuilding_Up.png)}
+#list[data-al="evil"] button:hover{background-image:url(assets/ui/buildings/evilBuilding_Hover.png)}
+#list[data-al="evil"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/evilBuilding_Down.png)}
+#list[data-al="neutral"] button{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
+#list[data-al="neutral"] button:hover{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
+#list[data-al="neutral"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
 @media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
 /* the filter bar (Ascension and the like): a label and a drop-down per row */
 .bar{position:sticky;top:0;z-index:40;margin:0 -16px 18px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line);
@@ -300,7 +310,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     bt.addEventListener('click',function(){ show(b); });
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
-  function labels(){ btns.forEach(function(x){ x.b.textContent=''; nm(x.d).forEach(function(n){ x.b.appendChild(el('span',null,n)); }); }); }
+  function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; nm(x.d).forEach(function(n){ x.b.appendChild(el('span',null,n)); }); }); }
   function pick(label, names, def, on){
     var l=el('label'), b=el('b',null,label), s=el('select');
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
