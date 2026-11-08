@@ -13,7 +13,6 @@ main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
 .layout{display:flow-root}      /* the info flows around the list of buildings, and uses the full width below it */
 .fnote{color:var(--muted);opacity:.8;font-size:.9rem;margin:0 0 10px;min-height:1.4em}
-#filters .cs>button{min-width:6.5em}
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -49,7 +48,8 @@ main .blurb{margin:4px 0 10px}
 #list button.neu .pl{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
 #list button.neu:hover .pl{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
 #list button.neu[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
-@media (max-width:640px){#list{float:none;margin:0 0 12px;align-items:center}}
+/* a unique building takes the button of its faction (after the rules above, so that it wins over them) */
+/*FACCSS*/@media (max-width:640px){#list{float:none;margin:0 0 12px;align-items:center}}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -58,6 +58,12 @@ main .blurb{margin:4px 0 10px}
 <nav><a href="index.html">Home</a><a href="buildings.html" aria-current="page">Buildings</a></nav>
 <h1>Buildings</h1>
 <p class="blurb">__BLURB__</p>
+<div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
+value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
+marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
+(exponent 0.01), <span class="mark">AAA</span> is <i>k</i>&nbsp;=&nbsp;3 (exponent 0.001), and so on, so more As means a harsher penalty.
+The marks follow the Ascension chosen below. Most are reduced from Ascension 1, so <i>k</i> equals the Ascension number; some start later
+and have fewer As, or none, at a given Ascension. Upgrades without a mark are not reduced. The formulas shown are always the base values <i>v</i>.</div>
 <div class="layout">
 <div id="list" role="group" aria-label="Buildings"></div>
 <div><div id="filters" class="bar"><div class="row"></div><div class="row"></div></div><p class="fnote" id="alnote"></p><div id="info"></div></div>
@@ -115,8 +121,12 @@ main .blurb{margin:4px 0 10px}
     else formulas(info, [{latex:'P = '+tex(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
     var u=uniqueFor(b.i);
     if(u){      // the unique building: its faction and what its upgrade does
-      info.appendChild(el('h3',null,D.unique.title)); info.appendChild(el('p',null,D.unique.text.replace('{name}',u.n).replace('{faction}',u.fn)));
-      formulas(info, u.fm);
+      info.appendChild(el('h3',null,D.unique.title));
+      var up=el('p',null,D.unique.text.replace('{name}',u.n).replace('{faction}',u.fn)+' '+u.d);      // the faction, then the upgrade's own description
+      var k=(u.ps && ASC>=u.ps && !(u.pn && ASC>=4)) ? ASC-u.ps+1 : 0;      // the A marks of the Ascension penalty
+      if(k){ up.appendChild(document.createTextNode(' ')); up.appendChild(el('span','mark',new Array(k+1).join('A'))); }
+      info.appendChild(up);
+      formulas(info, u.fm.map(function(f,i){ return i ? f : {latex:f.latex, vars:[['v', D.unique.v_var.replace('{name}',u.n)]].concat(f.vars)}; }));
     }
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
@@ -135,7 +145,8 @@ main .blurb{margin:4px 0 10px}
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
-    var u=uniqueFor(d.i), pl=el('span','pl'), im=el('img'); im.src=u ? u.ic : d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
+    var u=uniqueFor(d.i); x.b.className=(d.names.length===1 ? 'neu' : '')+(u ? ' f-'+u.fc : '');      // the button of its faction for a unique building
+    var pl=el('span','pl'), im=el('img'); im.src=u ? u.ic : d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
     var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
   function pick(label, names, def, on, row, vals){
     var l=el('label'), b=el('b',null,label), s=el('select');
@@ -147,8 +158,13 @@ main .blurb{margin:4px 0 10px}
   try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=4) ASC=sv; }catch(e){}      // the Ascension is shared with the other pages
   var secSel=null;
   function refresh(){      // everything that follows the three filters
-    if(secSel){      // the second alignment exists from Ascension 2; it starts empty and there is no "none" to go back to
-      if(ASC<2){ AX=null; secSel.disabled=true; secSel.value=''; }
+    if(secSel){      // the second alignment exists from Ascension 2: before it, it is locked at None; from it on it starts empty, without a "none" to go back to
+      var want=ASC<2 ? 'none' : 'pick';
+      if(secSel.getAttribute('data-mode')!==want){
+        secSel.setAttribute('data-mode',want); secSel.textContent='';
+        (ASC<2 ? [['None','0']] : [['Order','4'],['Balance','6'],['Chaos','5']]).forEach(function(o){ var op=el('option',null,o[0]); op.value=o[1]; secSel.appendChild(op); });
+      }
+      if(ASC<2){ AX=null; secSel.disabled=true; secSel.value='0'; }
       else { secSel.disabled=false; secSel.value=AX===null ? '' : String(AX); }
     }
     var note=document.getElementById('alnote'); note.textContent = ASC<2 ? D.notes.early : AX===null ? D.notes.pick : '';
@@ -167,6 +183,13 @@ main .blurb{margin:4px 0 10px}
   }
   document.addEventListener('DOMContentLoaded',followBg); window.addEventListener('load',followBg);
   enhanceSelects();      // the page-drawn drop-downs (game font, steel border) from the shared script
+  function lockWidth(){      // an empty second-alignment drop-down is as wide as one showing "Balance"
+    var sb=secSel.parentNode.querySelector('button'), t0=sb.textContent; sb.style.minWidth=''; sb.textContent='Balance';
+    var w=sb.getBoundingClientRect().width; sb.textContent=t0; if(w>0) sb.style.minWidth=w+'px';
+  }
+  lockWidth(); window.addEventListener('load',lockWidth);
+  var penEl=document.getElementById('pen-formula'), PEN='\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%';
+  math(PEN, penEl); window.addEventListener('load',function(){ math(PEN, penEl); });
   refresh();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
   if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));

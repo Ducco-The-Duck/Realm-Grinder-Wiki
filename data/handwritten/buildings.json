@@ -159,7 +159,8 @@
  },
  "unique": {
   "title": "Unique Building",
-  "text": "{name} is the unique building of the {faction} faction."
+  "text": "{name} is the unique building of the {faction} faction.",
+  "v_var": "the production bonus of {name}, in %"
  },
  "notes": {
   "early": "Second alignment not available before Ascension 2",

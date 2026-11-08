@@ -50,7 +50,7 @@ for sl in slots:
     sl['icons'] = ['assets/ui/buildings/icons/' + b['internal_name'] + '.png' for b in sorted((b for b in derived if b['building_index'] == sl['i']), key=lambda b: ALIGN.index(b['alignment']) if b.get('alignment') in ALIGN else 0)]
 
 # the unique buildings: every unique building upgrade of the Upgrades data (faction, first Ascension, Ascensions without it, formula), and the slot it replaces
-from factions import FSEARCH
+from factions import FSEARCH, FNAME
 pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
 ups = {u['name']: u for lst in pages.values() if isinstance(lst, list) for u in lst if isinstance(u, dict) and u.get('akind') == 'unique' and not u['name'].endswith(' Quest')}
 import re
@@ -76,9 +76,20 @@ for nm, (sl, al) in places.items():
     elif not os.path.exists(os.path.join(UICONS, slug + '.png')): sys.exit('missing icon ' + nm)
     ucls = next(c for c, n in upname.items() if n == nm)
     ral = re.search(r'§,!Y§ = (\d);', verify_formulas.read(verify_formulas.path_of(ucls)))      # the alignment the upgrade needs (the Mercenary buildings: one per alignment)
+    main = next(p for p in u['description'] if p.get('formulas'))      # the paragraph that says what the upgrade does
     fl = [{'latex': f['latex'], 'vars': [[v['symbol'], v['text']] for v in f.get('vars', [])]} for p in u['description'] for f in p.get('formulas', [])]
     uniques.append({'n': nm, 'f': u['faction'], 'fn': FSEARCH[u['faction']], 's': sl, 'al': None if (None in al or 0 in al) else al,
-                    'ra': int(ral.group(1)) if ral and int(ral.group(1)) else None, 'a0': u.get('asc_min') or 0, 'an': u.get('asc_not') or [], 'ic': 'assets/ui/buildings/icons/' + slug + '.png', 'fm': fl})
+                    'ra': int(ral.group(1)) if ral and int(ral.group(1)) else None, 'a0': u.get('asc_min') or 0, 'an': u.get('asc_not') or [], 'ic': 'assets/ui/buildings/icons/' + slug + '.png', 'fm': fl, 'd': main['text'], 'ps': main.get('s'), 'pn': bool(main.get('np')), 'fc': FNAME[u['faction']].lower()})
+for fc in sorted({u['fc'] for u in uniques}):      # the game's building buttons of the factions (130 x 57), for the unique buildings
+    for st in ('Up', 'Hover', 'Down'):
+        f = f'{fc}Building_{st}.png'
+        if os.path.exists(os.path.join(SRC, f)): shutil.copyfile(os.path.join(SRC, f), os.path.join(DST, f))
+        elif not os.path.exists(os.path.join(DST, f)): sys.exit('missing sprite ' + f)
+FACCSS = '''#list button.f-FC .pl{background-image:url(assets/ui/buildings/FCBuilding_Up.png)}
+#list button.f-FC:hover .pl{background-image:url(assets/ui/buildings/FCBuilding_Hover.png)}
+#list button.f-FC[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/FCBuilding_Down.png)}
+'''
+faccss = ''.join(FACCSS.replace('FC', fc) for fc in sorted({u['fc'] for u in uniques}))
 uniques.sort(key=lambda u: (u['s'], u['n']))
 
 from factions import FACTIONS
@@ -88,6 +99,6 @@ data = json.dumps({'buildings': slots, 'uniques': uniques, 'factions': FACTIONS,
 import html as _html
 _mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Buildings')
 BLURB = _html.escape(next(s for s in _mech['sections'] if s['title'] == 'What they are')['text'])      # the same text as on the Mechanics page
-page = search_snippet.apply(tmpl.load('buildings.html').replace('__DATA__', data).replace('__BLURB__', BLURB), '', 'buildings.html')
+page = search_snippet.apply(tmpl.load('buildings.html').replace('__DATA__', data).replace('__BLURB__', BLURB).replace('/*FACCSS*/', faccss), '', 'buildings.html')
 open(os.path.join(ROOT, 'docs', 'buildings.html'), 'w', encoding='utf8').write(page)
 print('docs/buildings.html', len(page) // 1024, 'KB;', len(slots), 'buildings')
