@@ -126,7 +126,7 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
       var k=(u.ps && ASC>=u.ps && !(u.pn && ASC>=4)) ? ASC-u.ps+1 : 0;      // the A marks of the Ascension penalty
       if(k){ up.appendChild(document.createTextNode(' ')); up.appendChild(el('span','mark',new Array(k+1).join('A'))); }
       info.appendChild(up);
-      formulas(info, u.fm.map(function(f,i){ return i ? f : {latex:f.latex, vars:[['v', D.unique.v_var.replace('{name}',u.n)]].concat(f.vars)}; }));
+      formulas(info, u.fm);
     }
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
