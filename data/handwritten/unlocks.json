@@ -3,6 +3,88 @@
  "max_ascension": 4,
  "mechanics": [
   {
+   "name": "Progression",
+   "asc": 0,
+   "unlock": [],
+   "source": [
+    "§#!!§::§&v§",
+    "§#!!§::§9!E§",
+    "§#!!§::§,\"C§",
+    "§#!!§::§#%§",
+    "§4X§.§59§",
+    "§3?§.§`J§"
+   ],
+   "sections": [
+    {
+     "title": "Abdication",
+     "text": "Abdication is the first reset introduced in the game. Stats counted in this Era are reset when you abdicate. Abdicating also converts the coins you made into Gems:",
+     "formulas": [
+      {
+       "latex": "C = \\frac{10^{12}}{2}\\,G\\,(G + 1)",
+       "vars": [
+        [
+         "C",
+         "the coins you made in this Reincarnation, all its Eras together"
+        ],
+        [
+         "G",
+         "your total Gems after abdicating: the Gems you own plus the ones you gain"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation",
+     "text": "Reincarnation is the second reset introduced in the game. Stats counted in this Reincarnation are reset when you reincarnate. To make the next Reincarnation you need to have a number of Gems that grows with every one you make:",
+     "formulas": [
+      {
+       "latex": "G_n = 10^{27} \\cdot 1000^{\\,n - 1} \\quad (A = 0)",
+       "vars": [
+        [
+         "G_n",
+         "the Gems you need to have to make the n-th Reincarnation"
+        ],
+        [
+         "n",
+         "the number of the Reincarnation you are making"
+        ]
+       ]
+      },
+      {
+       "latex": "G_n = 10^{27} \\cdot 100^{\\,n - 1 - 40 - 60\\,(A - 1)} \\quad (1 \\le A \\le 4)",
+       "vars": [
+        [
+         "A",
+         "your Ascension number"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Ascension",
+     "text": "An Ascension is a special kind of Reincarnation that resets your economy and introduces new mechanics. Ascensions happen at Reincarnation 40, 100, 160 and 220. From Ascension 1 on, the Ascension penalty reduces the percentage bonuses of many upgrades, researches, spells and unique buildings. A bonus of v % becomes:",
+     "formulas": [
+      {
+       "latex": "\\left(\\left(1 + \\frac{v}{100}\\right)^{0.1^{k}} - 1\\right) \\cdot 100\\,\\%",
+       "vars": [
+        [
+         "v",
+         "the bonus before the penalty, in %"
+        ],
+        [
+         "k",
+         "how many times the penalty is applied: your Ascension number minus the Ascension it starts at, plus 1 (usually just your Ascension number)"
+        ]
+       ]
+      }
+     ],
+     "after": "Some effects are not reduced at all, and some are not reduced at Ascension 4. Further information about each Ascension and what it encompasses is given on its Unlocks page."
+    }
+   ]
+  },
+  {
    "name": "Royal Exchanges",
    "asc": 0,
    "unlock": [
