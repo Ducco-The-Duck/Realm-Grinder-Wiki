@@ -388,7 +388,8 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
         Array.prototype.forEach.call(sel.options,function(o){
           var li=document.createElement('li'); li.textContent=o.textContent; if(o.value===proto.get.call(sel)) li.className='sel';
           li.addEventListener('click',function(e){
-            e.stopPropagation(); proto.set.call(sel,o.value); sync(); wrap.classList.remove('open');
+            e.stopPropagation(); e.preventDefault();      // preventDefault: inside a <label>, a click on the list would otherwise be passed on to the button and open it again
+            proto.set.call(sel,o.value); sync(); wrap.classList.remove('open');
             sel.dispatchEvent(new Event('change'));
           });
           ul.appendChild(li);

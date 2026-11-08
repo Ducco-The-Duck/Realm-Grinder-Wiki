@@ -305,8 +305,6 @@ the base values <i>v</i>.</div>
   <span class="hint">The A marks and the greyed-out upgrades (not available in it) follow the chosen Ascension.</span></div>
   <div class="row" id="alleg-row"><b>Factions</b>
     <label>Base <select id="pk-b"></select></label>
-    <label>Prestige <select id="pk-p"></select></label>
-    <label>Astral <select id="pk-a"></select></label>
     <span class="hint" id="pk-h"></span></div>
 </div>
 <div id="root"></div>
@@ -388,7 +386,8 @@ the base values <i>v</i>.</div>
         Array.prototype.forEach.call(sel.options,function(o){
           var li=document.createElement('li'); li.textContent=o.textContent; if(o.value===proto.get.call(sel)) li.className='sel';
           li.addEventListener('click',function(e){
-            e.stopPropagation(); proto.set.call(sel,o.value); sync(); wrap.classList.remove('open');
+            e.stopPropagation(); e.preventDefault();      // preventDefault: inside a <label>, a click on the list would otherwise be passed on to the button and open it again
+            proto.set.call(sel,o.value); sync(); wrap.classList.remove('open');
             sel.dispatchEvent(new Event('change'));
           });
           ul.appendChild(li);
@@ -751,23 +750,13 @@ the base values <i>v</i>.</div>
     var base=facOf(PICK.b), hint='';
     var bo=[[-1,'All factions']]; FACS.forEach(function(f){ if(f.role==='base'||f.role==='merc') bo.push([f.i,f.n]); });
     fillSel(document.getElementById('pk-b'), bo, PICK.b, false);
-    // prestige: the one whose alignment matches the base faction (Mercenaries have none)
-    var po=[[-1,'None']];
-    if(base && base.role==='base') FACS.forEach(function(f){ if(f.role==='prestige' && f.al===base.al && (f.i!==12 || ASC>=1)) po.push([f.i,f.n]); });      // the Dragon exists from Ascension 1
-    else PICK.p=-1;
-    if(PICK.p>=0 && !po.some(function(o){ return o[0]===PICK.p; })) PICK.p=-1;
-    fillSel(document.getElementById('pk-p'), po, PICK.p, po.length<2);
-    // astral: from Ascension 2, needs a prestige faction, and has to follow the same path (Order / Chaos / Balance)
-    var ao=[[-1,'None']];
-    if(base && base.role==='base' && PICK.p>=0 && ASC>=2) FACS.forEach(function(f){ if(f.role==='astral' && f.ax===base.ax) ao.push([f.i,f.n]); });
-    else PICK.a=-1;
-    if(PICK.a>=0 && !ao.some(function(o){ return o[0]===PICK.a; })) PICK.a=-1;
-    fillSel(document.getElementById('pk-a'), ao, PICK.a, ao.length<2);
-    if(!base) hint='Pick a base faction to see its upgrades together with those of a prestige and an astral faction.';
+    // the prestige faction is the one whose alignment matches the base faction (Mercenaries have none; the Dragon exists from Ascension 1);
+    // the astral faction needs a prestige faction, exists from Ascension 2 and follows the same path as the base faction (Order / Chaos / Balance)
+    PICK.p=-1; PICK.a=-1;
+    if(base && base.role==='base') FACS.forEach(function(f){ if(f.role==='prestige' && f.al===base.al && (f.i!==12 || ASC>=1)) PICK.p=f.i; });
+    if(PICK.p>=0 && ASC>=2) FACS.forEach(function(f){ if(f.role==='astral' && f.ax===base.ax) PICK.a=f.i; });
+    if(!base) hint='Pick a base faction to see its upgrades together with those of its prestige and astral faction.';
     else if(base.role==='merc') hint='Mercenaries cannot take a prestige or an astral faction.';
-    else if(PICK.p<0) hint='Prestige factions need the Alliance upgrade of the base faction; the prestige faction has to match its alignment.';
-    else if(ASC<2) hint='Astral factions are available from Ascension 2.';
-    else if(PICK.a<0) hint='Astral factions need a prestige faction and follow the same path as the base faction (Order, Chaos or Balance).';
     document.getElementById('pk-h').textContent=hint;
   }
   var MERC_ICON={good:'Holy Crusaders',evil:'Heresiarchs',neutral:'Trade Lords'};
@@ -831,7 +820,7 @@ the base values <i>v</i>.</div>
   }
   function savePick(){ try{ localStorage.setItem('alleg-pick', JSON.stringify(PICK)); }catch(e){} }
   try{ var sp=JSON.parse(localStorage.getItem('alleg-pick')||'null'); if(sp && typeof sp.b==='number') PICK={b:sp.b|0, p:sp.p|0, a:sp.a|0}; }catch(e){}
-  if(HAS_PICK){ bindPick('pk-b','b'); bindPick('pk-p','p'); bindPick('pk-a','a'); }
+  if(HAS_PICK){ bindPick('pk-b','b'); }
 
   function apply(){
     cells.forEach(function(p){ decorate(p[0], p[1]); });
