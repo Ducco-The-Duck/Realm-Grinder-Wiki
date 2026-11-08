@@ -75,6 +75,7 @@ def unique_text(t):
     head, sep, rest = t.partition(', boosting')
     if not sep or not head.startswith('Upgrade ') or ' to ' not in head: return t
     new = head.rsplit(' to ', 1)[1]
+    rest = re.sub(r' and unlocking more (?:unique )?perks for the building\.', '.', rest)      # only what the bonus is based on
     if new in SINGULAR: return new + ' boosts' + rest.replace(' their ', ' its ', 1)
     return new + ' boost' + rest
 

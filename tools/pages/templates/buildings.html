@@ -171,7 +171,7 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
       else { secSel.disabled=false; secSel.value=AX===null ? '' : String(AX); }
       noneLabel(); setTimeout(noneLabel,0);      // the drop-down script redraws its button after the options change
     }
-    var note=document.getElementById('alnote'); note.textContent = ASC<2 ? D.notes.early : AX===null ? D.notes.pick : '';
+    var note=document.getElementById('alnote'); note.textContent = ASC<2 ? D.notes.early : D.notes.pick;
     labels(); if(cur) show(cur);
   }
   pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} refresh(); }, rows[0]);
