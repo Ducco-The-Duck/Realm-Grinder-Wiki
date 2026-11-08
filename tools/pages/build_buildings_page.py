@@ -28,6 +28,9 @@ assert len(slots) == 11
 
 data = json.dumps({'buildings': slots, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost']},
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-page = search_snippet.apply(tmpl.load('buildings.html').replace('__DATA__', data), '', 'buildings.html')
+import html as _html
+_mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Buildings')
+BLURB = _html.escape(next(s for s in _mech['sections'] if s['title'] == 'What they are')['text'])      # the same text as on the Mechanics page
+page = search_snippet.apply(tmpl.load('buildings.html').replace('__DATA__', data).replace('__BLURB__', BLURB), '', 'buildings.html')
 open(os.path.join(ROOT, 'docs', 'buildings.html'), 'w', encoding='utf8').write(page)
 print('docs/buildings.html', len(page) // 1024, 'KB;', len(slots), 'buildings')
