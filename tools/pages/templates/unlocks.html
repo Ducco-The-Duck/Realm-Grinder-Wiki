@@ -112,9 +112,16 @@ __UC__
       s.appendChild(inner); root.appendChild(s);
       foldable(s, h, inner, m.name);
     });
-    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));      // a link to a mechanic opens its section
-    if(tgt){ if(!tgt.classList.contains('open')) tgt.querySelector('h2').click(); tgt.scrollIntoView(); }
+    openHash();
   }
+  function openHash(){      // a link to a mechanic opens its section (also when it is followed from the Codex menu while this page is open)
+    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(tgt && tgt.querySelector('h2')){ if(!tgt.classList.contains('open')) tgt.querySelector('h2').click(); tgt.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange',openHash);
+  document.addEventListener('click',function(e){      // the same link again leaves the address unchanged, so no hashchange follows it
+    var a=e.target.closest && e.target.closest('a'); if(a && a.hash && a.pathname===location.pathname) setTimeout(openHash,0);
+  });
   apply();
   window.addEventListener('load', apply);
 /*SEARCH_JS*/
