@@ -1,3 +1,13 @@
+/* the filter bar (Ascension and the like): a label and a drop-down per row */
+.bar{position:sticky;top:0;z-index:40;margin:0 -16px 18px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.bar .row{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.bar b{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.bar label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.bar label.off{color:var(--muted);cursor:default}
+.bar select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+.bar .hint{color:var(--muted);font-size:.85rem}
+.bar .row[hidden]{display:none}
 
 /* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
 /*FRAMES*/

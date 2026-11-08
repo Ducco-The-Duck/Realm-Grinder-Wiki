@@ -28,16 +28,23 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
-#filters{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin:0 0 14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.92rem}
-#filters label{display:inline-flex;gap:6px;align-items:center}
-#filters b{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-family:"Liony",system-ui,sans-serif;font-weight:700}
-#filters select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+#filters.bar{position:static;margin:0 0 14px;padding:2px 0;border-bottom:0;background:none}
 #list{display:flex;flex-direction:column;gap:6px}
 #list button{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell);line-height:1.2}
 #list button:hover,#list button:focus-visible{border-color:var(--accent)}
 #list button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 #list button span{display:block}
 @media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
+/* the filter bar (Ascension and the like): a label and a drop-down per row */
+.bar{position:sticky;top:0;z-index:40;margin:0 -16px 18px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.bar .row{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.bar b{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.bar label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.bar label.off{color:var(--muted);cursor:default}
+.bar select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+.bar .hint{color:var(--muted);font-size:.85rem}
+.bar .row[hidden]{display:none}
 
 /* the game's icon frames, generated from the sprites by frame_css.py (plain borders and gradients, no images) */
 .cell{position:relative;padding:0;border:5px solid transparent;border-radius:0;background:none;--q1:calc(5px + (100% - 10px) * 0.1);--q2:calc(5px + (100% - 10px) * 0.2);--q3:calc(5px + (100% - 10px) * 0.3);--q4:calc(5px + (100% - 10px) * 0.4);--q5:calc(5px + (100% - 10px) * 0.5);--q6:calc(5px + (100% - 10px) * 0.6);--q7:calc(5px + (100% - 10px) * 0.7);--q8:calc(5px + (100% - 10px) * 0.8);--q9:calc(5px + (100% - 10px) * 0.9);--q10:calc(5px + (100% - 10px) * 1)}
@@ -246,7 +253,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <h1>Buildings</h1>
 <p class="blurb">Buildings are bought with coins and produce coins every second. The price of each kind rises with every one you own.</p>
 <div class="layout">
-<div><div id="filters"></div><div id="info"></div></div>
+<div><div id="filters" class="bar"><div class="row"></div></div><div id="info"></div></div>
 <div id="list" role="group" aria-label="Buildings"></div>
 </div>
 <div class="gv">Game version 4.3.15</div></main>
@@ -254,7 +261,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <script>
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
-  var info=document.getElementById('info'), list=document.getElementById('list'), filt=document.getElementById('filters'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
+  var info=document.getElementById('info'), list=document.getElementById('list'), filt=document.querySelector('#filters .row'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
   function nm(b){ return b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -299,9 +306,11 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
     s.addEventListener('change',function(){ on(+s.value); });
     l.appendChild(b); l.appendChild(s); filt.appendChild(l);
+    s.id='f'+filt.children.length; l.htmlFor=s.id;
   }
   pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
   pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){});      // it does not change anything on this page yet
+  enhanceSelects();      // the page-drawn drop-downs (game font, steel border) from the shared script
   labels();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
   if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
