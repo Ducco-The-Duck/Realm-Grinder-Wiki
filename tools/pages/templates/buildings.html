@@ -58,14 +58,14 @@ main .blurb{margin:4px 0 10px}
 <p class="blurb">__BLURB__</p>
 <div class="layout">
 <div id="list" role="group" aria-label="Buildings"></div>
-<div><div id="filters" class="bar"><div class="row"></div></div><div id="info"></div></div>
+<div><div id="filters" class="bar"><div class="row"></div><div class="row"></div></div><div id="info"></div></div>
 </div>
 </main>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
-  var c0=D.cost, ASC=0, info=document.getElementById('info'), list=document.getElementById('list'), filt=document.querySelector('#filters .row'), btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
+  var c0=D.cost, ASC=0, info=document.getElementById('info'), list=document.getElementById('list'), rows=document.querySelectorAll('#filters .row'), fid=0, btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
   function nm(b){ return b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -115,17 +115,17 @@ main .blurb{margin:4px 0 10px}
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
     var pl=el('span','pl'), im=el('img'); im.src=d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
     var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
-  function pick(label, names, def, on){
+  function pick(label, names, def, on, row){
     var l=el('label'), b=el('b',null,label), s=el('select');
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
     s.addEventListener('change',function(){ on(+s.value); });
-    l.appendChild(b); l.appendChild(s); filt.appendChild(l);
-    s.id='f'+filt.children.length; l.htmlFor=s.id;
+    l.appendChild(b); l.appendChild(s); row.appendChild(l);
+    s.id='f'+(fid++); l.htmlFor=s.id;
   }
   try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=4) ASC=sv; }catch(e){}      // the Ascension is shared with the other pages
-  pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} if(cur) show(cur); });
-  pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
-  pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){});      // it does not change anything on this page yet
+  pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} if(cur) show(cur); }, rows[0]);
+  pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); }, rows[1]);
+  pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){}, rows[1]);      // it does not change anything on this page yet
   var alSel=document.querySelectorAll('#filters select')[1], alChosen=false;
   alSel.addEventListener('change',function(){ alChosen=true; });
   function followBg(){      // the alignment of the background picture (picked at random on every load) is the starting choice
