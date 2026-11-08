@@ -14,7 +14,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:20px;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:20px;align-items:start}
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -29,21 +29,23 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
 #filters.bar{position:static;margin:0 0 14px;padding:2px 0;border-bottom:0;background:none}
-#list{display:flex;flex-direction:column;gap:2px;align-items:center}
-/* the game's building buttons (130 x 57, one set per alignment), a little larger; the open building is drawn pressed */
-#list button{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
-  width:156px;height:68px;padding:8px 12px;border:0;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;cursor:pointer;
+#list{display:flex;flex-direction:column;gap:2px;align-items:flex-end}
+/* a row as in the game: the building's icon, then its button (130 x 57, one set per alignment, a little larger); the open building is drawn pressed */
+#list button{display:flex;align-items:center;gap:4px;padding:0;border:0;background:none;font:inherit;color:inherit;cursor:pointer}
+#list button img{width:54px;height:54px;image-rendering:pixelated}
+#list button .pl{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
+  width:156px;height:68px;padding:8px 12px;box-sizing:border-box;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;
   display:flex;align-items:center;justify-content:center;text-align:center}
-#list button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-#list[data-al="good"] button{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
-#list[data-al="good"] button:hover{background-image:url(assets/ui/buildings/goodBuilding_Hover.png)}
-#list[data-al="good"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/goodBuilding_Down.png)}
-#list[data-al="evil"] button{background-image:url(assets/ui/buildings/evilBuilding_Up.png)}
-#list[data-al="evil"] button:hover{background-image:url(assets/ui/buildings/evilBuilding_Hover.png)}
-#list[data-al="evil"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/evilBuilding_Down.png)}
-#list[data-al="neutral"] button{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
-#list[data-al="neutral"] button:hover{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
-#list[data-al="neutral"] button[aria-pressed="true"]{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
+#list button:focus-visible .pl{outline:2px solid var(--accent);outline-offset:-2px}
+#list[data-al="good"] .pl{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
+#list[data-al="good"] button:hover .pl{background-image:url(assets/ui/buildings/goodBuilding_Hover.png)}
+#list[data-al="good"] button[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/goodBuilding_Down.png)}
+#list[data-al="evil"] .pl{background-image:url(assets/ui/buildings/evilBuilding_Up.png)}
+#list[data-al="evil"] button:hover .pl{background-image:url(assets/ui/buildings/evilBuilding_Hover.png)}
+#list[data-al="evil"] button[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/evilBuilding_Down.png)}
+#list[data-al="neutral"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
+#list[data-al="neutral"] button:hover .pl{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
+#list[data-al="neutral"] button[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
 @media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
 /* the filter bar (Ascension and the like): a label and a drop-down per row */
 .bar{position:sticky;top:0;z-index:40;margin:0 -16px 18px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line);
@@ -267,7 +269,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <div id="list" role="group" aria-label="Buildings"></div>
 </div>
 <div class="gv">Game version 4.3.15</div></main>
-<script id="data" type="application/json">{"buildings":[{"i":1,"id":"farm","names":["Farm"],"cost":10,"prod":2.0},{"i":2,"id":"inn","names":["Inn"],"cost":125,"prod":6.0},{"i":3,"id":"blacksmith","names":["Blacksmith"],"cost":600,"prod":20.0},{"i":4,"id":"warrior-barracks","names":["Warrior Barracks","Slave Pen","Deep Mine"],"cost":1800,"prod":65.0},{"i":5,"id":"knights-joust","names":["Knights Joust","Orcish Arena","Stone Pillars"],"cost":5600,"prod":200.0},{"i":6,"id":"wizard-tower","names":["Wizard Tower","Witch Conclave","Alchemist Lab"],"cost":38000,"prod":650.0},{"i":7,"id":"cathedral","names":["Cathedral","Dark Temple","Monastery"],"cost":442000,"prod":2000.0},{"i":8,"id":"citadel","names":["Citadel","Necropolis","Labyrinth"],"cost":7300000,"prod":8500.0},{"i":9,"id":"royal-castle","names":["Royal Castle","Evil Fortress","Iron Stronghold"],"cost":145000000,"prod":100000.0},{"i":10,"id":"heaven's-gate","names":["Heaven's Gate","Hell Portal","Ancient Pyramid"],"cost":3200000000,"prod":1200000},{"i":11,"id":"hall-of-legends","names":["Hall of Legends"],"cost":200000000000,"prod":null}],"production":{"title":"Base production","text":"Each building of this kind produces this many coins per second, before any bonus."},"hall":{"title":"Base production","text":"A Hall of Legends does not have a fixed production. Each one produces the following number of coins per second, before any other bonus:","formulas":[{"latex":"P = 250000 \\cdot T","vars":[["P","the coins per second of one Hall of Legends"],["T","the number of trophies you have unlocked"]]}]},"cost":{"title":"Cost","text":"The price of each building of a kind is the multiplier m times the one before it, starting from the price of the first. Buying n at once, when you own d, costs the sum of their prices.","formulas":[{"latex":"C(n) = \\left\\lfloor \\frac{c\\,\\left(m^{\\,d+n} - 1\\right)}{m - 1} \\right\\rfloor - \\left\\lfloor \\frac{c\\,\\left(m^{\\,d} - 1\\right)}{m - 1} \\right\\rfloor","vars":[["C(n)","the coins the next n buildings cost"],["n","how many you buy at once"],["d","how many of this building you own"],["c","the price of the first building, shown above"],["m","the cost multiplier"]]},{"latex":"m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4) \\qquad m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)","vars":[["m_0","the cost multiplier before the Ascension is taken into account"],["A","your Ascension number"]]},{"latex":"m_0 = 1.15 - \\sum r_i","vars":[["r_i","the reductions of the cost multiplier that apply to this building, below"]]}],"reductions_title":"Examples of cost reduction multipliers:","reductions":[{"text":"Pixie Dust Fertilizer: 0.02","only":[1,2,3]},{"text":"Bartering (E50): 0.02","only":[1]},{"text":"Biased Architecture: 0.01","only":[1,2,3]},{"text":"Titan Perk 1, with Titan Bloodline: 0.02","only":[1,9,11]},{"text":"Oversized Legends: 0.01","only":[11]},{"text":"Expert Masonry: 0.01"},{"text":"Goblin Bloodline: 0.01"},{"text":"Lousy Architecture: 0.01"},{"text":"Gray Friday (E11125): 0.02"},{"text":"Discount (E13125): 0.02"}]}}</script>
+<script id="data" type="application/json">{"buildings":[{"i":1,"id":"farm","names":["Farm"],"cost":10,"prod":2.0,"icons":["assets/ui/buildings/icons/Farm.png"]},{"i":2,"id":"inn","names":["Inn"],"cost":125,"prod":6.0,"icons":["assets/ui/buildings/icons/Inn.png"]},{"i":3,"id":"blacksmith","names":["Blacksmith"],"cost":600,"prod":20.0,"icons":["assets/ui/buildings/icons/Blacksmith.png"]},{"i":4,"id":"warrior-barracks","names":["Warrior Barracks","Slave Pen","Deep Mine"],"cost":1800,"prod":65.0,"icons":["assets/ui/buildings/icons/WarriorBarracks.png","assets/ui/buildings/icons/SlavePen.png","assets/ui/buildings/icons/DeepMine.png"]},{"i":5,"id":"knights-joust","names":["Knights Joust","Orcish Arena","Stone Pillars"],"cost":5600,"prod":200.0,"icons":["assets/ui/buildings/icons/KnightsJoust.png","assets/ui/buildings/icons/OrcishArena.png","assets/ui/buildings/icons/StonePillars.png"]},{"i":6,"id":"wizard-tower","names":["Wizard Tower","Witch Conclave","Alchemist Lab"],"cost":38000,"prod":650.0,"icons":["assets/ui/buildings/icons/WizardTower.png","assets/ui/buildings/icons/WitchConclave.png","assets/ui/buildings/icons/AlchemistLab.png"]},{"i":7,"id":"cathedral","names":["Cathedral","Dark Temple","Monastery"],"cost":442000,"prod":2000.0,"icons":["assets/ui/buildings/icons/Cathedral.png","assets/ui/buildings/icons/DarkTemple.png","assets/ui/buildings/icons/Monastery.png"]},{"i":8,"id":"citadel","names":["Citadel","Necropolis","Labyrinth"],"cost":7300000,"prod":8500.0,"icons":["assets/ui/buildings/icons/Citadel.png","assets/ui/buildings/icons/Necropolis.png","assets/ui/buildings/icons/Labyrinth.png"]},{"i":9,"id":"royal-castle","names":["Royal Castle","Evil Fortress","Iron Stronghold"],"cost":145000000,"prod":100000.0,"icons":["assets/ui/buildings/icons/RoyalCastle.png","assets/ui/buildings/icons/EvilFortress.png","assets/ui/buildings/icons/IronStronghold.png"]},{"i":10,"id":"heaven's-gate","names":["Heaven's Gate","Hell Portal","Ancient Pyramid"],"cost":3200000000,"prod":1200000,"icons":["assets/ui/buildings/icons/HeavensGate.png","assets/ui/buildings/icons/HellPortal.png","assets/ui/buildings/icons/AncientPyramid.png"]},{"i":11,"id":"hall-of-legends","names":["Hall of Legends"],"cost":200000000000,"prod":null,"icons":["assets/ui/buildings/icons/HallOfLegends.png"]}],"production":{"title":"Base production","text":"Each building of this kind produces this many coins per second, before any bonus."},"hall":{"title":"Base production","text":"A Hall of Legends does not have a fixed production. Each one produces the following number of coins per second, before any other bonus:","formulas":[{"latex":"P = 250000 \\cdot T","vars":[["P","the coins per second of one Hall of Legends"],["T","the number of trophies you have unlocked"]]}]},"cost":{"title":"Cost","text":"The price of each building of a kind is the multiplier m times the one before it, starting from the price of the first. Buying n at once, when you own d, costs the sum of their prices.","formulas":[{"latex":"C(n) = \\left\\lfloor \\frac{c\\,\\left(m^{\\,d+n} - 1\\right)}{m - 1} \\right\\rfloor - \\left\\lfloor \\frac{c\\,\\left(m^{\\,d} - 1\\right)}{m - 1} \\right\\rfloor","vars":[["C(n)","the coins the next n buildings cost"],["n","how many you buy at once"],["d","how many of this building you own"],["c","the price of the first building, shown above"],["m","the cost multiplier"]]},{"latex":"m = m_0 \\quad (A = 0 \\text{ or } A \\ge 4) \\qquad m = 1 + \\frac{m_0 - 1}{5A} \\quad (1 \\le A \\le 3)","vars":[["m_0","the cost multiplier before the Ascension is taken into account"],["A","your Ascension number"]]},{"latex":"m_0 = 1.15 - \\sum r_i","vars":[["r_i","the reductions of the cost multiplier that apply to this building, below"]]}],"reductions_title":"Examples of cost reduction multipliers:","reductions":[{"text":"Pixie Dust Fertilizer: 0.02","only":[1,2,3]},{"text":"Bartering (E50): 0.02","only":[1]},{"text":"Biased Architecture: 0.01","only":[1,2,3]},{"text":"Titan Perk 1, with Titan Bloodline: 0.02","only":[1,9,11]},{"text":"Oversized Legends: 0.01","only":[11]},{"text":"Expert Masonry: 0.01"},{"text":"Goblin Bloodline: 0.01"},{"text":"Lousy Architecture: 0.01"},{"text":"Gray Friday (E11125): 0.02"},{"text":"Discount (E13125): 0.02"}]}}</script>
 <script>
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
@@ -310,7 +312,9 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     bt.addEventListener('click',function(){ show(b); });
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
-  function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; nm(x.d).forEach(function(n){ x.b.appendChild(el('span',null,n)); }); }); }
+  function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
+    var im=el('img'); im.src=d.icons[k]; im.alt=''; x.b.appendChild(im);
+    var pl=el('span','pl'); nm(d).forEach(function(n){ pl.appendChild(el('span',null,n)); }); x.b.appendChild(pl); }); }
   function pick(label, names, def, on){
     var l=el('label'), b=el('b',null,label), s=el('select');
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
@@ -320,6 +324,14 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   }
   pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
   pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){});      // it does not change anything on this page yet
+  var alSel=document.querySelector('#filters select'), alChosen=false;
+  alSel.addEventListener('change',function(){ alChosen=true; });
+  function followBg(){      // the alignment of the background picture (picked at random on every load) is the starting choice
+    var d=document.getElementById('bgfx'), m=/bg\/(good|evil|neutral)/.exec((d&&d.style.backgroundImage)||'');
+    if(alChosen || !m) return;
+    align=['good','evil','neutral'].indexOf(m[1]); alSel.value=String(align); labels(); if(cur) show(cur);
+  }
+  document.addEventListener('DOMContentLoaded',followBg); window.addEventListener('load',followBg);
   enhanceSelects();      // the page-drawn drop-downs (game font, steel border) from the shared script
   labels();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];

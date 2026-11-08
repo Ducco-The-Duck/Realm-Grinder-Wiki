@@ -37,6 +37,18 @@ for al in ('good', 'evil', 'neutral'):
         if os.path.exists(os.path.join(SRC, f)): shutil.copyfile(os.path.join(SRC, f), os.path.join(DST, f))
         elif not os.path.exists(os.path.join(DST, f)): sys.exit('missing sprite ' + f + ' (run tools/extract/slice_atlases.py)')
 
+# the building icons (50 x 50), one per building
+sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json'), encoding='utf8'))
+ICONS = os.path.join(DST, 'icons')
+os.makedirs(ICONS, exist_ok=True)
+for b in derived:
+    f = b['internal_name'] + '.png'
+    src = os.path.join(ROOT, sprites['Building' + b['internal_name']][0]['file'])
+    if os.path.exists(src): shutil.copyfile(src, os.path.join(ICONS, f))
+    elif not os.path.exists(os.path.join(ICONS, f)): sys.exit('missing icon ' + f)
+for sl in slots:
+    sl['icons'] = ['assets/ui/buildings/icons/' + b['internal_name'] + '.png' for b in sorted((b for b in derived if b['building_index'] == sl['i']), key=lambda b: ALIGN.index(b['alignment']) if b.get('alignment') in ALIGN else 0)]
+
 data = json.dumps({'buildings': slots, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost']},
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 import html as _html
