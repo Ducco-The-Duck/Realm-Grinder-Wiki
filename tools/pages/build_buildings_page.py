@@ -67,6 +67,18 @@ for b in derived:      # the unique building upgrades a building class lists (re
         al.append(b.get('alignment'))
 assert set(places) == set(ups), (set(places) ^ set(ups))
 UICONS = os.path.join(DST, 'icons')
+SINGULAR = {'Stonehenge'}      # the game's only unique building name that has no plural form ("Upgrade Stone Pillars to Stonehenge")
+
+
+def unique_text(t):
+    """the game's "Upgrade A to B, boosting their production ..." as "B boost their production ..." (the unique building is the subject)"""
+    head, sep, rest = t.partition(', boosting')
+    if not sep or not head.startswith('Upgrade ') or ' to ' not in head: return t
+    new = head.rsplit(' to ', 1)[1]
+    if new in SINGULAR: return new + ' boosts' + rest.replace(' their ', ' its ', 1)
+    return new + ' boost' + rest
+
+
 uniques = []
 for nm, (sl, al) in places.items():
     u = ups[nm]
@@ -79,7 +91,7 @@ for nm, (sl, al) in places.items():
     main = next(p for p in u['description'] if p.get('formulas'))      # the paragraph that says what the upgrade does
     fl = [{'latex': f['latex'], 'vars': [[v['symbol'], v['text']] for v in f.get('vars', [])]} for p in u['description'] for f in p.get('formulas', [])]
     uniques.append({'n': nm, 'f': u['faction'], 'fn': FSEARCH[u['faction']], 's': sl, 'al': None if (None in al or 0 in al) else al,
-                    'ra': int(ral.group(1)) if ral and int(ral.group(1)) else None, 'a0': u.get('asc_min') or 0, 'an': u.get('asc_not') or [], 'ic': 'assets/ui/buildings/icons/' + slug + '.png', 'fm': fl, 'd': main['text'], 'ps': main.get('s'), 'pn': bool(main.get('np')), 'fc': FNAME[u['faction']].lower()})
+                    'ra': int(ral.group(1)) if ral and int(ral.group(1)) else None, 'a0': u.get('asc_min') or 0, 'an': u.get('asc_not') or [], 'ic': 'assets/ui/buildings/icons/' + slug + '.png', 'fm': fl, 'd': unique_text(main['text']), 'ps': main.get('s'), 'pn': bool(main.get('np')), 'fc': FNAME[u['faction']].lower()})
 for fc in sorted({u['fc'] for u in uniques}):      # the game's building buttons of the factions (130 x 57), for the unique buildings
     for st in ('Up', 'Hover', 'Down'):
         f = f'{fc}Building_{st}.png'
