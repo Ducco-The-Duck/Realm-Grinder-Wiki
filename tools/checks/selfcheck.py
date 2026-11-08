@@ -159,6 +159,12 @@ else:
       buf3 = io.StringIO()
       with contextlib.redirect_stdout(buf3): n_bad3 = verify_formulas.main_mechanics()
       print(f"9. mechanics page numbers: {buf3.getvalue().strip().splitlines()[-1]}")
+      buf4 = io.StringIO()
+      with contextlib.redirect_stdout(buf4): n_bad4 = verify_formulas.main_buildings()
+      print(f"10. buildings page numbers: {buf4.getvalue().strip().splitlines()[-1]}")
+      if n_bad4:
+          print(buf4.getvalue())
+          problems.append(f"{n_bad4} number(s) in data/handwritten/buildings.json are not found in the game code (run tools/checks/verify_formulas.py --buildings)")
       if n_bad3:
           print(buf3.getvalue())
           problems.append(f"{n_bad3} number(s) in the mechanics of data/handwritten/unlocks.json are not found in the game code (run tools/checks/verify_formulas.py --mechanics)")

@@ -3,6 +3,7 @@
     python -I tools/checks/verify_formulas.py [spell name ...]
     python -I tools/checks/verify_formulas.py --items [name ...]       (upgrades, researches, challenges)
     python -I tools/checks/verify_formulas.py --mechanics [name ...]   (the Mechanics page)
+    python -I tools/checks/verify_formulas.py --buildings              (the Buildings page)
 
 Every number in a spell's detail text (data/handwritten/spells_overview.json: formulas, variable descriptions and the explaining
 sentences) must be found in the game code the spell was read from: the spell's own class and the classes that import
@@ -235,8 +236,30 @@ def main_mechanics(only=()):
     return bad
 
 
+def main_buildings():
+    """the same check for the Buildings page: every number of data/handwritten/buildings.json must be in the code it names ("source")"""
+    d = json.load(open(os.path.join(ROOT, 'data', 'handwritten/buildings.json'), encoding='utf8'))
+    nums = set()
+    for src in d['source']:
+        cls, _, fn = src.partition('::')
+        nums |= code_numbers(fn_text(read(path_of(cls)), fn) if fn else read(path_of(cls)))
+    texts = [d['production']['text'], d['hall']['text'], d['cost']['text']] + [r['text'] for r in d['cost']['reductions']]
+    for sec in (d['hall'], d['cost']):
+        for f in sec.get('formulas', []):
+            texts.append(f['latex']); texts += [v[1] for v in f.get('vars', [])]
+    total = bad = 0
+    for t in texts:
+        for x in latex_numbers(t):
+            if x in TRIVIAL: continue
+            total += 1
+            if not found(x, nums): bad += 1; print(f'    {x:g}   {t[:70]}')
+    print(f'{total} numbers checked on the Buildings page, {bad} not found in their code')
+    return bad
+
+
 if __name__ == '__main__':
     args = set(sys.argv[1:])
+    if '--buildings' in args: main_buildings(); sys.exit(0)
     if '--mechanics' in args: main_mechanics(args - {'--mechanics'})
     elif '--items' in args: main_items(args - {'--items'})
     else: main(args)

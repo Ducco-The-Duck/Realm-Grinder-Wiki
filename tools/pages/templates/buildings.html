@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
+<title>Realm Grinder Buildings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<style>
+/*THEME*/
+main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:20px;align-items:start}
+#info h2{margin:0 0 4px}
+#info h3{margin:14px 0 2px;color:var(--accent)}
+#info p{margin:0 0 6px;white-space:pre-line}
+#info .hint{color:var(--muted)}
+#info .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
+#info hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
+#info ul.vars{margin:2px 0 6px}
+#info ul.vars li{margin:0}
+#info ul.vars b{display:inline;font-family:inherit;font-size:inherit}
+#info ul.items{margin:0 0 6px;padding-left:0}
+#info ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
+#info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+#info .big{font-size:1.15rem}
+#list{display:flex;flex-direction:column;gap:6px}
+#list button{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell);line-height:1.2}
+#list button:hover,#list button:focus-visible{border-color:var(--accent)}
+#list button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+#list button span{display:block}
+@media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
+/*SEARCH_CSS*/
+</style>
+</head>
+<body>
+<main>
+<nav><a href="index.html">Home</a><a href="buildings.html" aria-current="page">Buildings</a></nav>
+<h1>Buildings</h1>
+<div class="layout">
+<div id="info"></div>
+<div id="list" role="group" aria-label="Buildings"></div>
+</div>
+</main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var info=document.getElementById('info'), list=document.getElementById('list'), btns=[];
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function math(tex, node){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
+    node.textContent=tex;
+  }
+  function num(x){ return x>=1e15 ? x.toExponential(2).replace('e+','e') : x.toLocaleString('en-US',{maximumFractionDigits:6}); }
+  function formulas(box, fs){
+    (fs||[]).forEach(function(f,fi){
+      if(fi) box.appendChild(el('hr','fsep'));
+      var d=el('div','formula'); math(f.latex,d); box.appendChild(d);
+      if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); box.appendChild(ul); }
+    });
+  }
+  function show(b){
+    info.textContent='';
+    btns.forEach(function(x){ x.b.setAttribute('aria-pressed', x.i===b.i ? 'true' : 'false'); });
+    info.appendChild(el('h2',null,b.names.join(' / ')));
+    var p=b.i===11 ? D.hall : D.production;
+    info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
+    if(b.i===11) formulas(info, p.formulas);
+    else info.appendChild(el('p','big',num(b.prod)+' coins per second'));
+    var c=D.cost;
+    info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
+    info.appendChild(el('p','big','Price of the first one: '+num(b.cost)+' coins'));
+    formulas(info, c.formulas);
+    var rs=c.reductions.filter(function(r){ return !r.only || r.only.indexOf(b.i)>=0; });
+    if(rs.length){
+      info.appendChild(el('p',null,c.reductions_title));
+      var ul=el('ul','items'); rs.forEach(function(r){ ul.appendChild(el('li',null,r.text)); }); info.appendChild(ul);
+    }
+    try{ history.replaceState(null,'','#'+b.id); }catch(e){}
+  }
+  D.buildings.forEach(function(b){
+    var bt=el('button'); bt.type='button'; bt.setAttribute('aria-pressed','false');
+    b.names.forEach(function(n){ bt.appendChild(el('span',null,n)); });
+    bt.addEventListener('click',function(){ show(b); });
+    list.appendChild(bt); btns.push({b:bt,i:b.i});
+  });
+  var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
+  if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
+  window.addEventListener('load',function(){ var cur=btns.filter(function(x){ return x.b.getAttribute('aria-pressed')==='true'; })[0]; if(cur) cur.b.click(); });
+/*SEARCH_JS*/
+})();
+</script>
+</body>
+</html>

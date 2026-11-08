@@ -66,6 +66,7 @@ The open items and the resolved ones are in `data/docs/STATUS.md`.
 | `§8!H§` | Reincarnation count | high | "Reincarnation %0" label |
 | `§,P§` | Ascension count | medium | "Requires ascension %0 to increase further." |
 | `§1!5§` | Excavations **since the last Excavation Reset** (compared with the artifact threshold) | high | zeroed by regular and free Excavation Resets; "Max Excavation Depth" trophy tracks it |
+| `§8G§.§8t§` | Trophies unlocked (counts trophies, not feats; capped by `§4!Y§`) | medium | incremented where a trophy unlocks; the Hall of Legends production is multiplied by it |
 | `§8t§` | Trophies unlocked (not feats, quests or artifacts) | high | +1 in the trophy-unlock code |
 | `§"!0§` | Gems | high | "No Recruiting" trophy ("Reach 1 Novg Gems") compares it with 1e90 |
 | `§["&§` | Consecutive days logged in (UTC server days) | high | +1 when today = last day + 1, else reset to 1; user: patch notes say "consecutive days logged in" |

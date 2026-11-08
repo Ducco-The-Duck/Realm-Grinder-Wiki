@@ -2,8 +2,8 @@
 
 A wiki for Realm Grinder whose pages are generated from the game's own code and text. Nothing on the pages is typed in
 by hand: the numbers, requirements and formulas are read out of the decompiled game, and the few hand-written
-corrections live in named tables inside the tools so they can be found and reviewed. The Codex (Mechanics, Unlocks and Spells
-pages) is the exception: its explanations are written by hand from the code, in `data/handwritten/unlocks.json` and `data/handwritten/spells_overview.json`.
+corrections live in named tables inside the tools so they can be found and reviewed. The Codex (Mechanics, Unlocks, Spells and Buildings
+pages) is the exception: its explanations are written by hand from the code, in `data/handwritten/unlocks.json`, `data/handwritten/spells_overview.json` and `data/handwritten/buildings.json`.
 
 The site is served by GitHub Pages from `docs/`.
 
@@ -21,6 +21,7 @@ The site is served by GitHub Pages from `docs/`.
 | `trophies.html` | Trophies and their requirements |
 | `mechanics.html`, `unlocks-a0.html` to `unlocks-a4.html` | Codex: the mechanics, and what has to be unlocked at each Ascension (under construction) |
 | `spells.html` | Codex: every spell with its overview, formulas, tiers and Ascension penalty (under construction) |
+| `buildings.html` | Codex: the 11 base buildings; pick one for its base production and the cost of buying more (under construction) |
 
 Each page is one self-contained HTML file with its data embedded.
 
@@ -45,7 +46,7 @@ docs/*.html                               the site (committed)
 - **`data/`**, in four folders by what may be edited:
   `generated/` (the facts the pages show, written by the exporters and committed: do not edit, a rebuild overwrites them),
   `derived/` (intermediate files rebuilt from the game, not in git: the engine, strings, sprites, class data),
-  `handwritten/` (written by hand from the code: `spells_overview.json`, `unlocks.json`; edit these) and
+  `handwritten/` (written by hand from the code: `spells_overview.json`, `unlocks.json`, `buildings.json`; edit these) and
   `docs/` (the notes: `GLOSSARY.md` with the rebuild commands, `INFERENCES.md` for what the decompiled names mean and how sure we are,
   `STATUS.md` for the open items, `FORMULA_MISMATCHES.md` for every place the code differs from the last documented version).
 - **`tools/`**: `update.py` (the one command for a game update), `extract.sh` and the preview server at the top, and the rest grouped by stage:

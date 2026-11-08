@@ -152,6 +152,24 @@
    "page": "spells.html"
   },
   {
+   "name": "Buildings",
+   "asc": 0,
+   "unlock": [
+    "Available from the start (Reincarnation 0)."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Buildings are bought with coins and produce coins every second. The price of each kind rises with every one you own.",
+     "link": {
+      "href": "buildings.html",
+      "text": "All buildings, their production and cost"
+     }
+    }
+   ],
+   "page": "buildings.html"
+  },
+  {
    "name": "Excavations",
    "asc": 0,
    "unlock": [
