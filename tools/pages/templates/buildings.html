@@ -25,11 +25,10 @@ main .blurb{margin:4px 0 10px}
 #info ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 #info ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 #info .big{font-size:1.15rem}
-#filters{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 12px}
-.seg{display:flex;gap:4px}
-.seg button{font:inherit;color:inherit;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell)}
-.seg button:hover,.seg button:focus-visible{border-color:var(--accent)}
-.seg button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+#filters{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin:0 0 14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+#filters label{display:inline-flex;gap:6px;align-items:center}
+#filters b{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-family:"Liony",system-ui,sans-serif;font-weight:700}
+#filters select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
 #list{display:flex;flex-direction:column;gap:6px}
 #list button{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--cell);line-height:1.2}
 #list button:hover,#list button:focus-visible{border-color:var(--accent)}
@@ -93,14 +92,14 @@ main .blurb{margin:4px 0 10px}
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
   function labels(){ btns.forEach(function(x){ x.b.textContent=''; nm(x.d).forEach(function(n){ x.b.appendChild(el('span',null,n)); }); }); }
-  function seg(names, def, on){
-    var box=el('div','seg'), bs=[];
-    names.forEach(function(n,k){ var bt=el('button',null,n); bt.type='button'; bt.setAttribute('aria-pressed',k===def?'true':'false');
-      bt.addEventListener('click',function(){ bs.forEach(function(x,j){ x.setAttribute('aria-pressed',j===k?'true':'false'); }); on(k); }); bs.push(bt); box.appendChild(bt); });
-    filt.appendChild(box);
+  function pick(label, names, def, on){
+    var l=el('label'), b=el('b',null,label), s=el('select');
+    names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
+    s.addEventListener('change',function(){ on(+s.value); });
+    l.appendChild(b); l.appendChild(s); filt.appendChild(l);
   }
-  seg(['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
-  seg(['Order','Balance','Chaos','None'],3,function(){});      // the second alignment: it does not change anything on this page yet
+  pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); });
+  pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){});      // it does not change anything on this page yet
   labels();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
   if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
