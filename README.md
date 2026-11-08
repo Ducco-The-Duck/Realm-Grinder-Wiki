@@ -19,7 +19,7 @@ The site is served by GitHub Pages from `docs/`.
 | `challenges.html` | Faction challenges and their rewards |
 | `archaeology.html` | Quest and lore artifacts, with find-chance formulas |
 | `trophies.html` | Trophies and their requirements |
-| `mechanics.html`, `unlocks-a0.html` to `unlocks-a4.html` | Codex: the mechanics, and what has to be unlocked at each Ascension (under construction) |
+| `mechanics.html`, `unlocks.html`, `unlocks-a0.html` to `unlocks-a4.html` | Codex: the mechanics, what has to be unlocked (overall, then one page per Ascension) (under construction) |
 | `spells.html` | Codex: every spell with its overview, formulas, tiers and Ascension penalty (under construction) |
 | `buildings.html` | Codex: the 11 base buildings; pick one for its base production and the cost of buying more (under construction) |
 

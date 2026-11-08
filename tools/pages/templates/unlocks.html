@@ -72,6 +72,19 @@ __UC__
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
     root.textContent='';
+    if(MODE==='all'){      // every Ascension on one page (ASC holds the highest one), each heading leads to its own page
+      for(var a=0;a<=ASC;a++){
+        var h=el('h2'), la=el('a',null,'Ascension '+a); la.href='unlocks-a'+a+'.html'; h.appendChild(la); root.appendChild(h);
+        var ula=el('ul','items'), here=DATA.mechanics.filter(function(m){ return m.asc===a; });
+        here.forEach(function(m){
+          var li=el('li'), ma=el('a',null,m.name); ma.href=m.href; li.appendChild(ma);
+          if(m.unlock && m.unlock.length) li.appendChild(document.createTextNode(' — '+m.unlock[0]));
+          ula.appendChild(li);
+        });
+        if(!here.length) root.appendChild(el('p','empty','No mechanics have been added for Ascension '+a+' yet.')); else root.appendChild(ula);
+      }
+      return;
+    }
     if(MODE==='unlocks'){
       var ul0=el('ul','items');
       DATA.mechanics.filter(function(m){ return m.asc===ASC; }).forEach(function(m){

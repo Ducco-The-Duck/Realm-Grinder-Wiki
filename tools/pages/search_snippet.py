@@ -19,7 +19,8 @@ JS = tmpl.load('shared.js')
 UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),
                  ('upgrades-secret.html', 'Secret'), ('upgrades-misc.html', 'Miscellaneous')]
 CODEX = 'codex.html'      # key of the Codex tab (it has no page of its own)
-CODEX_PAGES = [('mechanics.html', 'Mechanics')] + [(f'unlocks-a{a}.html', f'Unlocks (Ascension {a})') for a in range(5)]
+UNLOCK_PAGES = [(f'unlocks-a{a}.html', f'Ascension {a}') for a in range(5)]      # what the Unlocks entry of the Codex menu opens on hover
+CODEX_PAGES = [('mechanics.html', 'Mechanics'), ('unlocks.html', 'Unlocks')]
 DROPDOWNS = {'upgrades.html': UPGRADE_PAGES, CODEX: CODEX_PAGES}      # tab key -> its pages
 
 
@@ -61,12 +62,12 @@ def game_nav(current=None, current_file=None):
         if href in DROPDOWNS:
             def link(f, n):
                 own = {h for _, h in mechanics_list() if '#' not in h}      # the pages of mechanics that have their own
-                cur_ = f == current_file or (f == 'mechanics.html' and current_file in own)
+                cur_ = f == current_file or (f == 'mechanics.html' and current_file in own) or (f == 'unlocks.html' and current_file in [u for u, _ in UNLOCK_PAGES])
                 return f'<a href="{f}"' + (' aria-current="page"' if cur_ else '') + f'>{n}</a>'
             links = ''
             for f, n in DROPDOWNS[href]:
-                if f == 'mechanics.html':      # hovering Mechanics opens the list of the mechanics
-                    sub = ''.join(f'<a href="{h}">{mn}</a>' for mn, h in mechanics_list())
+                if f in ('mechanics.html', 'unlocks.html'):      # hovering Mechanics opens the list of the mechanics, hovering Unlocks the pages of the Ascensions
+                    sub = ''.join(f'<a href="{h}">{mn}</a>' for mn, h in (mechanics_list() if f == 'mechanics.html' else [(un, uf) for uf, un in UNLOCK_PAGES]))
                     links += f'<span class="dd-item">{link(f, n)}<span class="dd-sub">{sub}</span></span>'
                 else:
                     links += link(f, n)
@@ -85,7 +86,7 @@ def put_nav(html, current_file=None):
     old = html[html.find('<nav'):html.find('</nav>')] if '<nav' in html else ''
     m = _re.search(r'<a (?:class="tab" )?href="([^"]+)"[^>]*aria-current="page"', old) or _re.search(r'<a [^>]*role="button"[^>]*(aria-current)', old)
     cur = (m.group(1) if m.group(1) != 'aria-current' else 'upgrades.html') if m else None
-    if cur and (cur in [f for f, _ in CODEX_PAGES] or cur in [h for _, h in mechanics_list()]): cur, current_file = CODEX, current_file or cur      # the Codex pages
+    if cur and (cur in [f for f, _ in CODEX_PAGES + UNLOCK_PAGES] or cur in [h for _, h in mechanics_list()]): cur, current_file = CODEX, current_file or cur      # the Codex pages
     return _re.sub(r'<nav[^>]*>.*?</nav>', lambda _: game_nav(cur, current_file), html, count=1, flags=_re.S)
 
 
