@@ -49,7 +49,41 @@ for b in derived:
 for sl in slots:
     sl['icons'] = ['assets/ui/buildings/icons/' + b['internal_name'] + '.png' for b in sorted((b for b in derived if b['building_index'] == sl['i']), key=lambda b: ALIGN.index(b['alignment']) if b.get('alignment') in ALIGN else 0)]
 
-data = json.dumps({'buildings': slots, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost']},
+# the unique buildings: every unique building upgrade of the Upgrades data (faction, first Ascension, Ascensions without it, formula), and the slot it replaces
+from factions import FSEARCH
+pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
+ups = {u['name']: u for lst in pages.values() if isinstance(lst, list) for u in lst if isinstance(u, dict) and u.get('akind') == 'unique' and not u['name'].endswith(' Quest')}
+import re
+import verify_formulas      # path_of / read: the game's class files
+upname = {u['class']: u.get('name') for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class')}
+places = {}      # unique name -> (slot, the alignments of the building lines that carry it)
+for b in derived:      # the unique building upgrades a building class lists (read from the class: `§9;§[n] = Upgrade.id`)
+    text = verify_formulas.read(verify_formulas.path_of(b['class']))
+    imports = {m.group(1).rsplit('.', 1)[-1]: m.group(1) for m in re.finditer(r'^\s*import (.+);\s*$', text, re.M)}
+    for m in re.finditer(r'§9;§\[\d\] = (§[^§]*§)\.id', text):
+        nm = upname[imports[m.group(1)]]
+        sl, al = places.setdefault(nm, (b['building_index'], []))
+        assert sl == b['building_index'], nm
+        al.append(b.get('alignment'))
+assert set(places) == set(ups), (set(places) ^ set(ups))
+UICONS = os.path.join(DST, 'icons')
+uniques = []
+for nm, (sl, al) in places.items():
+    u = ups[nm]
+    src = os.path.join(ROOT, sprites['Building' + nm][0]['file'])
+    slug = ''.join(c for c in nm if c.isalnum())
+    if os.path.exists(src): shutil.copyfile(src, os.path.join(UICONS, slug + '.png'))
+    elif not os.path.exists(os.path.join(UICONS, slug + '.png')): sys.exit('missing icon ' + nm)
+    ucls = next(c for c, n in upname.items() if n == nm)
+    ral = re.search(r'§,!Y§ = (\d);', verify_formulas.read(verify_formulas.path_of(ucls)))      # the alignment the upgrade needs (the Mercenary buildings: one per alignment)
+    fl = [{'latex': f['latex'], 'vars': [[v['symbol'], v['text']] for v in f.get('vars', [])]} for p in u['description'] for f in p.get('formulas', [])]
+    uniques.append({'n': nm, 'f': u['faction'], 'fn': FSEARCH[u['faction']], 's': sl, 'al': None if (None in al or 0 in al) else al,
+                    'ra': int(ral.group(1)) if ral and int(ral.group(1)) else None, 'a0': u.get('asc_min') or 0, 'an': u.get('asc_not') or [], 'ic': 'assets/ui/buildings/icons/' + slug + '.png', 'fm': fl})
+uniques.sort(key=lambda u: (u['s'], u['n']))
+
+from factions import FACTIONS
+data = json.dumps({'buildings': slots, 'uniques': uniques, 'factions': FACTIONS, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost'],
+                   'unique': hand['unique'], 'notes': hand['notes']},
                   ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 import html as _html
 _mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Buildings')

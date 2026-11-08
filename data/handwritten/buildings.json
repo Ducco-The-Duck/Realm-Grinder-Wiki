@@ -110,7 +110,12 @@
     "text": "Goblin Bloodline: 0.01"
    },
    {
-    "text": "Lousy Architecture: 0.01"
+    "text": "Lousy Architecture: 0.01",
+    "base_only": true
+   },
+   {
+    "text": "Bribing (E135): 0.01",
+    "unique_only": true
    },
    {
     "text": "Gray Friday (E11125): 0.02"
@@ -151,5 +156,13 @@
     ]
    ]
   }
+ },
+ "unique": {
+  "title": "Unique Building",
+  "text": "{name} is the unique building of the {faction} faction."
+ },
+ "notes": {
+  "early": "Second alignment not available before Ascension 2",
+  "pick": "Pick both alignments to see unique buildings"
  }
 }

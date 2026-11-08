@@ -12,6 +12,8 @@
 main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
 .layout{display:flow-root}      /* the info flows around the list of buildings, and uses the full width below it */
+.fnote{color:var(--muted);opacity:.8;font-size:.9rem;margin:0 0 10px;min-height:1.4em}
+#filters .cs>button{min-width:6.5em}
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -58,7 +60,7 @@ main .blurb{margin:4px 0 10px}
 <p class="blurb">__BLURB__</p>
 <div class="layout">
 <div id="list" role="group" aria-label="Buildings"></div>
-<div><div id="filters" class="bar"><div class="row"></div><div class="row"></div></div><div id="info"></div></div>
+<div><div id="filters" class="bar"><div class="row"></div><div class="row"></div></div><p class="fnote" id="alnote"></p><div id="info"></div></div>
 </div>
 </main>
 <script id="data" type="application/json">__DATA__</script>
@@ -66,7 +68,22 @@ main .blurb{margin:4px 0 10px}
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
   var c0=D.cost, ASC=0, info=document.getElementById('info'), list=document.getElementById('list'), rows=document.querySelectorAll('#filters .row'), fid=0, btns=[], cur=null, align=0;      // align: the line of buildings shown (0 Good, 1 Evil, 2 Neutral)
-  function nm(b){ return b.names.length>1 ? [b.names[align]] : b.names; }
+  var AX=null;      // the second alignment: 4 Order, 5 Chaos, 6 Balance; null while it is not picked (and before Ascension 2)
+  function candidates(){      // the factions whose unique buildings can show up with the chosen Ascension and alignments
+    if(ASC>=2 && AX===null) return null;
+    var A=align+1;
+    return D.factions.filter(function(f){
+      if(f.role==='merc') return true;      // its buildings need the Ascensions in their own data
+      if(f.role==='base') return f.al===A && (ASC<2 || f.ax===AX);
+      if(f.role==='prestige') return f.al===A;
+      return ASC>=2 && f.ax===AX;      // astral
+    }).map(function(f){ return f.i; });
+  }
+  function uniqueFor(slot){      // the unique building shown in a slot, or null
+    var fs=candidates(), A=align+1; if(!fs) return null;
+    return D.uniques.filter(function(u){ return u.s===slot && fs.indexOf(u.f)>=0 && u.a0<=ASC && u.an.indexOf(ASC)<0 && (!u.al || u.al.indexOf(A)>=0) && (!u.ra || u.ra===A); })[0] || null;
+  }
+  function nm(b){ var u=uniqueFor(b.i); return u ? [u.n] : b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
@@ -81,7 +98,7 @@ main .blurb{margin:4px 0 10px}
       if(fi) box.appendChild(el('hr','fsep'));
       if(f.note) box.appendChild(el('p',null,f.note));
       var d=el('div','formula'); math(f.latex,d); box.appendChild(d);
-      if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); box.appendChild(ul); }
+      if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — ')); rich(li, v[1]); ul.appendChild(li); }); box.appendChild(ul); }
     });
   }
   function mult(){      // the cost multiplier formula of the chosen Ascension
@@ -96,10 +113,15 @@ main .blurb{margin:4px 0 10px}
     info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
     if(b.i===11) formulas(info, p.formulas);
     else formulas(info, [{latex:'P = '+tex(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
+    var u=uniqueFor(b.i);
+    if(u){      // the unique building: its faction and what its upgrade does
+      info.appendChild(el('h3',null,D.unique.title)); info.appendChild(el('p',null,D.unique.text.replace('{name}',u.n).replace('{faction}',u.fn)));
+      formulas(info, u.fm);
+    }
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
     formulas(info, [{latex:'c = '+tex(b.cost), vars:[['c', c.price_var.replace('{name}', nm(b).join(' / '))]]}].concat(c.formulas, [mult(), c.m0]));      // the first price, then the cost formulas
-    var rs=c.reductions.filter(function(r){ return !r.only || r.only.indexOf(b.i)>=0; }).slice(0,2);      // just a few examples
+    var rs=c.reductions.filter(function(r){ return (!r.only || r.only.indexOf(b.i)>=0) && !(u ? r.base_only : r.unique_only); }).slice(0,2);      // just a few examples
     if(rs.length){
       info.appendChild(el('p',null,c.reductions_title));
       var ul=el('ul','items'); rs.forEach(function(r){ ul.appendChild(el('li',null,r.text)); }); info.appendChild(ul);
@@ -113,29 +135,39 @@ main .blurb{margin:4px 0 10px}
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
-    var pl=el('span','pl'), im=el('img'); im.src=d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
+    var u=uniqueFor(d.i), pl=el('span','pl'), im=el('img'); im.src=u ? u.ic : d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
     var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
-  function pick(label, names, def, on, row){
+  function pick(label, names, def, on, row, vals){
     var l=el('label'), b=el('b',null,label), s=el('select');
-    names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
+    names.forEach(function(n,k){ var o=el('option',null,n); o.value=vals ? vals[k] : k; if(k===def) o.selected=true; s.appendChild(o); });
     s.addEventListener('change',function(){ on(+s.value); });
     l.appendChild(b); l.appendChild(s); row.appendChild(l);
     s.id='f'+(fid++); l.htmlFor=s.id;
   }
   try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=4) ASC=sv; }catch(e){}      // the Ascension is shared with the other pages
-  pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} if(cur) show(cur); }, rows[0]);
-  pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; labels(); if(cur) show(cur); }, rows[1]);
-  pick('Second alignment',['Order','Balance','Chaos','None'],3,function(){}, rows[1]);      // it does not change anything on this page yet
+  var secSel=null;
+  function refresh(){      // everything that follows the three filters
+    if(secSel){      // the second alignment exists from Ascension 2; it starts empty and there is no "none" to go back to
+      if(ASC<2){ AX=null; secSel.disabled=true; secSel.value=''; }
+      else { secSel.disabled=false; secSel.value=AX===null ? '' : String(AX); }
+    }
+    var note=document.getElementById('alnote'); note.textContent = ASC<2 ? D.notes.early : AX===null ? D.notes.pick : '';
+    labels(); if(cur) show(cur);
+  }
+  pick('Ascension',['0','1','2','3','4'],ASC,function(k){ ASC=k; try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} refresh(); }, rows[0]);
+  pick('Alignment',['Good','Evil','Neutral'],0,function(k){ align=k; refresh(); }, rows[1]);
+  pick('Second alignment',['Order','Balance','Chaos'],-1,function(v){ AX=v; refresh(); }, rows[1], [4,6,5]);
+  secSel=document.querySelectorAll('#filters select')[2];
   var alSel=document.querySelectorAll('#filters select')[1], alChosen=false;
   alSel.addEventListener('change',function(){ alChosen=true; });
   function followBg(){      // the alignment of the background picture (picked at random on every load) is the starting choice
     var d=document.getElementById('bgfx'), m=/bg\/(good|evil|neutral)/.exec((d&&d.style.backgroundImage)||'');
     if(alChosen || !m) return;
-    align=['good','evil','neutral'].indexOf(m[1]); alSel.value=String(align); labels(); if(cur) show(cur);
+    align=['good','evil','neutral'].indexOf(m[1]); alSel.value=String(align); refresh();
   }
   document.addEventListener('DOMContentLoaded',followBg); window.addEventListener('load',followBg);
   enhanceSelects();      // the page-drawn drop-downs (game font, steel border) from the shared script
-  labels();
+  refresh();
   var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
   if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
   window.addEventListener('load',function(){ var cur=btns.filter(function(x){ return x.b.getAttribute('aria-pressed')==='true'; })[0]; if(cur) cur.b.click(); });
