@@ -11,7 +11,7 @@
 /*THEME*/
 main{max-width:860px;margin:0 auto;padding:16px 16px 80px}
 main .blurb{margin:4px 0 10px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:20px;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:20px;align-items:start}
 #info h2{margin:0 0 4px}
 #info h3{margin:14px 0 2px;color:var(--accent)}
 #info p{margin:0 0 6px;white-space:pre-line}
@@ -27,12 +27,12 @@ main .blurb{margin:4px 0 10px}
 #info .big{font-size:1.15rem}
 #filters.bar{position:static;margin:0 0 14px;padding:2px 0;border-bottom:0;background:none}
 #list{display:flex;flex-direction:column;gap:2px;align-items:flex-end}
-/* a row as in the game: the building's icon, then its button (130 x 57, one set per alignment, a little larger); the open building is drawn pressed */
-#list button{display:flex;align-items:center;gap:4px;padding:0;border:0;background:none;font:inherit;color:inherit;cursor:pointer}
-#list button img{width:54px;height:54px;image-rendering:pixelated}
+/* a button as in the game (130 x 57, one set per alignment, drawn larger) with the building's icon inside it on the left and its name; the open building is pressed */
+#list button{display:block;padding:0;border:0;background:none;font:inherit;color:inherit;cursor:pointer}
 #list button .pl{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
-  width:156px;height:68px;padding:8px 12px;box-sizing:border-box;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;
-  display:flex;align-items:center;justify-content:center;text-align:center}
+  width:176px;height:74px;padding:8px 10px 8px 12px;box-sizing:border-box;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;
+  display:flex;align-items:center;gap:6px;text-align:left}
+#list button .pl img{width:48px;height:48px;flex:none;image-rendering:pixelated}
 #list button:focus-visible .pl{outline:2px solid var(--accent);outline-offset:-2px}
 #list[data-al="good"] .pl{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
 #list[data-al="good"] button:hover .pl{background-image:url(assets/ui/buildings/goodBuilding_Hover.png)}
@@ -43,6 +43,10 @@ main .blurb{margin:4px 0 10px}
 #list[data-al="neutral"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
 #list[data-al="neutral"] button:hover .pl{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
 #list[data-al="neutral"] button[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
+/* the Farm, Inn, Blacksmith and Hall of Legends are always neutral */
+#list button.neu .pl{background-image:url(assets/ui/buildings/neutralBuilding_Up.png)}
+#list button.neu:hover .pl{background-image:url(assets/ui/buildings/neutralBuilding_Hover.png)}
+#list button.neu[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/neutralBuilding_Down.png)}
 @media (max-width:640px){.layout{grid-template-columns:minmax(0,1fr)}#list{order:-1}}
 /*SEARCH_CSS*/
 </style>
@@ -98,11 +102,12 @@ main .blurb{margin:4px 0 10px}
   D.buildings.forEach(function(b){
     var bt=el('button'); bt.type='button'; bt.setAttribute('aria-pressed','false');
     bt.addEventListener('click',function(){ show(b); });
+    if(b.names.length===1) bt.className='neu';      // one name for every alignment: always the neutral button
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
-    var im=el('img'); im.src=d.icons[k]; im.alt=''; x.b.appendChild(im);
-    var pl=el('span','pl'); nm(d).forEach(function(n){ pl.appendChild(el('span',null,n)); }); x.b.appendChild(pl); }); }
+    var pl=el('span','pl'), im=el('img'); im.src=d.icons[k]; im.alt=''; pl.appendChild(im);
+    var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
   function pick(label, names, def, on){
     var l=el('label'), b=el('b',null,label), s=el('select');
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=k; if(k===def) o.selected=true; s.appendChild(o); });
