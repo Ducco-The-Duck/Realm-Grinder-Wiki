@@ -87,7 +87,7 @@ main .blurb{margin:4px 0 10px}
     var p=b.i===11 ? D.hall : D.production;
     info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
     if(b.i===11) formulas(info, p.formulas);
-    else info.appendChild(el('p','big',num(b.prod)+' coins per second'));
+    else formulas(info, [{latex:'P = '+String(b.prod), vars:[['P', D.production.var.replace('{name}', nm(b).join(' / '))]]}]);      // a constant, in the same form as the Hall of Legends formula
     var c=D.cost;
     info.appendChild(el('h3',null,c.title)); info.appendChild(el('p',null,c.text));
     info.appendChild(el('p','big','Price of the first one: '+num(b.cost)+' coins'));

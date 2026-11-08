@@ -8,7 +8,8 @@
  ],
  "production": {
   "title": "Base production",
-  "text": "Each building of this kind produces this many coins per second, before any bonus."
+  "text": "Each building of this kind produces the following number of coins per second, before any bonus:",
+  "var": "the coins per second of one {name}"
  },
  "hall": {
   "title": "Base production",
