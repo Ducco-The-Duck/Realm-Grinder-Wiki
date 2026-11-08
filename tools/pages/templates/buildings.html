@@ -32,9 +32,7 @@ main .blurb{margin:4px 0 10px}
 #list button .pl{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
   width:176px;height:74px;padding:8px 10px 8px 12px;box-sizing:border-box;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;
   display:flex;align-items:center;gap:6px;text-align:left}
-#list button .pl .ic{flex:none;width:46px;height:46px;border:4px solid transparent;background:#000;background-clip:padding-box;
-  border-image:url(assets/ui/trim/Gold.png) 8 fill / 4px / 0 stretch;image-rendering:pixelated}      /* the golden frame and black background of the icon */
-#list button .pl .ic img{display:block;width:46px;height:46px;image-rendering:pixelated}
+#list button .pl .ic{display:block;flex:none;width:56px;height:56px;pointer-events:none}      /* a .cell: the shared golden icon frame on its black background */
 #list button:focus-visible .pl{outline:2px solid var(--accent);outline-offset:-2px}
 #list[data-al="good"] .pl{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
 #list[data-al="good"] button:hover .pl{background-image:url(assets/ui/buildings/goodBuilding_Hover.png)}
@@ -108,7 +106,7 @@ main .blurb{margin:4px 0 10px}
     list.appendChild(bt); btns.push({b:bt,i:b.i,d:b});
   });
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
-    var pl=el('span','pl'), im=el('img'); im.src=d.icons[k]; im.alt=''; var ic=el('span','ic'); ic.appendChild(im); pl.appendChild(ic);
+    var pl=el('span','pl'), im=el('img'); im.src=d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
     var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
   function pick(label, names, def, on){
     var l=el('label'), b=el('b',null,label), s=el('select');
