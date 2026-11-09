@@ -86,7 +86,7 @@ def item(u):
         'n': u['name'], 'i': icon_file(u['icon']),
         'd': [{'t': p['text'], 's': p['s'], **({'np': 1} if p.get('np') else {})} for p in u['description']], 'f': forms,
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
-        'o': u['conditions'], 'lo': u['asc_min'], 'hi': u['asc_max'],
+        'o': u['conditions'], 'lo': (max(u['asc_min'] or 0, next(a for a, x in enumerate(u['_cost']) if x is not None)) or None) if '_cost' in u else u['asc_min'], 'hi': u['asc_max'],      # an upgrade starts at the first Ascension it has a cost for
         **({'an': u['asc_not']} if u.get('asc_not') else {}), **({'ns': 1} if u.get('asc_not_say') else {}),
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
