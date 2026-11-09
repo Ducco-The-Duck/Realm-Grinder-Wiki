@@ -239,4 +239,4 @@ def lineage_check():
 def lineage_spec():
     """what the page needs for the cost section of the Lineages"""
     P = lineage_params()
-    return {'b': P['b'], 'c': P['c'], 'hg': P['hourglass'], 'hh': P['heirloom'], 'ev': LINEAGE['every'], 'hr': LINEAGE['hourglass'], 'hp': LINEAGE['heirloom']}
+    return {'b': P['b'], 'c': P['c'], 'hg': P['hourglass'], 'ev': LINEAGE['every']}

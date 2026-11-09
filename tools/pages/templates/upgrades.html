@@ -217,10 +217,9 @@ the base values <i>v</i>.</div>
     if(it.lc && !unavailable(it)){      // a Lineage: what raising it a level costs
       var L=it.lc;
       var cf=[{l:'C = \\left(b \\cdot 10^{L/A}\\right)^{1 + \\left(c + \\frac{1}{2A} - r\\right)\\left\\lfloor L/'+L.ev+' \\right\\rfloor}', lb:null, v:[
-          {symbol:'C', text:'the associated faction coins the next level costs (no other coins are needed)'}, {symbol:'L', text:'the level the Lineage has'}, {symbol:'A', text:'your Ascension number'},
-          {symbol:'b', text:'the base cost at Ascension '+ASC+': '+cnum(L.b[ASC])}, {symbol:'c', text:'the growth at Ascension '+ASC+': '+L.c[ASC]},
-          {symbol:'r', text:'0, or $'+L.hr+' \\cdot R / A$ with '+L.hg+', where $R$ is your number of Reincarnations'}]},
-        {l:'C_{2} = C^{'+L.hp+'}', lb:null, v:[{symbol:'C_{2}', text:'the cost with '+L.hh+', for a Lineage whose level is below your highest Lineage level'}]}];
+          {symbol:'C', text:'the associated faction coins the next level costs'}, {symbol:'L', text:'current lineage level'}, {symbol:'A', text:'your Ascension value'},
+          {symbol:'b', text:'base cost (changes with Ascensions, '+cnum(L.b[ASC])+' at Ascension '+ASC+')'}, {symbol:'c', text:'base growth (changes with Ascensions, '+L.c[ASC]+' at Ascension '+ASC+')'},
+          {symbol:'r', text:'growth reduction term, 0 without '+L.hg}]}];
       formulas(tip, cf, 'Cost');
     }
     var rq=it.s.slice();
