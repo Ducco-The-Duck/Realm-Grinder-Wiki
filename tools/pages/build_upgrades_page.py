@@ -75,6 +75,28 @@ NOTES = {'Iron Flight': TIER_COST, 'Dragon Set': TIER_COST, 'Angel Perk 1': TIER
          'Magic Resistance': EXCAV_MULT, 'Reality Crater': EXCAV_MULT, 'Heavy Coins': EXCH_MULT, 'Blackmail': EXCH_MULT}
 
 
+import verify_formulas as _V
+_spell_cls = {x['name']: x['class'] for x in json.load(open(os.path.join(ROOT, 'data', 'derived/spells.json'), encoding='utf8')) if x.get('class')}
+_start = {}
+
+
+def spell_start(name):
+    """the Ascension a spell can first be had at: its availability check opens with `Ascension >= n &&` (the six Order, Chaos, Balance and astral spells: 2)"""
+    if name not in _start:
+        m = re.search(r'function get §-6§\(\) : Boolean\s*\{\s*return (.*?);\s*\}', _V.read(_V.path_of(_spell_cls[name])), re.S) if name in _spell_cls else None
+        n = re.match(r'§8G§\.§,P§ >= (\d) &&', m.group(1)) if m else None
+        _start[name] = int(n.group(1)) if n else 0
+    return _start[name]
+
+
+def lo_of(u):
+    """the first Ascension an upgrade can be had at: its own (the page's data), the first Ascension it has a cost for, and the one its spell starts at"""
+    lo = u['asc_min'] or 0
+    if '_cost' in u: lo = max(lo, next(a for a, x in enumerate(u['_cost']) if x is not None))
+    if u.get('spell'): lo = max(lo, spell_start(u['spell']))
+    return lo or None
+
+
 def item(u):
     forms = []
     for p in u['description']:
@@ -86,7 +108,7 @@ def item(u):
         'n': u['name'], 'i': icon_file(u['icon']),
         'd': [{'t': p['text'], 's': p['s'], **({'np': 1} if p.get('np') else {})} for p in u['description']], 'f': forms,
         's': [f"{s['kind']}: {s['name']}" for s in u['sources']] + u['requirements'],
-        'o': u['conditions'], 'lo': (max(u['asc_min'] or 0, next(a for a, x in enumerate(u['_cost']) if x is not None)) or None) if '_cost' in u else u['asc_min'], 'hi': u['asc_max'],      # an upgrade starts at the first Ascension it has a cost for
+        'o': u['conditions'], 'lo': lo_of(u), 'hi': u['asc_max'],
         **({'an': u['asc_not']} if u.get('asc_not') else {}), **({'ns': 1} if u.get('asc_not_say') else {}),
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
