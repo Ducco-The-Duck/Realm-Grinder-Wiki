@@ -101,7 +101,7 @@ def names():
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
 
 
-def engine_costs(indexes):
+def engine_raw(indexes):
     """{index into the game's upgrade list: cost[a] for a in 0..MAXA} where cost[a] is (coins, [(faction, amount), ...]) or None below the Ascension the upgrade starts at.
     The numbers are what the game's own getters return (coins: the getter above; Faction Coins: the method of each class, rounded like the game rounds what it takes).
     Every state a cost could depend on (Reincarnations, Gems) is tried: a cost that changes with one stops the build."""
@@ -113,28 +113,46 @@ def engine_costs(indexes):
     ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
     prog = """(function () {
   var G = __G, U = G.__U, out = {}, idx = __IDX__;
-  for (var n = 0; n < idx.length; n++) { var o = U[idx[n]], row = { n: o.__NAME, rows: [], fld: [o.__A0, o.__A1, o.__A2, o.__A3, o.__A4], tier: o.__TIER };
+  for (var n = 0; n < idx.length; n++) { var o = U[idx[n]]; if (!o) continue; var row = { n: o.__NAME, rows: [], fld: [o.__A0, o.__A1, o.__A2, o.__A3, o.__A4], tier: o.__TIER };
     for (var A = 0; A <= __MAXA; A++) { var seen = [];
       [[0, 0], [1, 0], [60, 1e6], [300, 1e30]].forEach(function (st) {
         G.__ASC = A; G.__REINC = st[0]; G.__GEMS = st[1];
-        var coins = 0; try { coins = o.__COINS; } catch (e) {}
-        var f = []; for (var k = 0; k < 16; k++) { var v = 0; try { v = Math.round(o.__FACN(k)); } catch (e) {} f.push(v); }
-        seen.push(JSON.stringify([coins, f])); });
+        var coins = 0; try { coins = o.__COINS; } catch (e) { row.err = 'coins ' + e; }
+        var f = []; for (var k = 0; k < 16; k++) { var v = 0; try { v = Math.round(o.__FACN(k)); } catch (e) { row.err = 'faction ' + e; } f.push(v); }
+        seen.push(JSON.stringify([coins, f]));
+        for (var q = 0; q <= 30; q++) { var w = 0; try { w = o.__ITEMN(q); } catch (e) {} if (w) (row.other = row.other || []).push(['item', q, w]); }
+        var mana = 0; try { mana = o.__MANA(); } catch (e) {} if (mana) (row.other = row.other || []).push(['mana', 0, mana]); });
       row.rows.push(seen); }
     out[idx[n]] = row; }
   return JSON.stringify(out); })()"""
     for k, v in (('__G', g), ('__U', J('§-!4§')), ('__NAME', J('§1i§')), ('__A0', J('§>=§')), ('__A1', J('§<R§')), ('__A2', J('§#!m§')), ('__A3', J('§#"-§')),
                  ('__A4', J('§;">§')), ('__TIER', J('§!"E§')), ('__ASC', J('§,P§')), ('__REINC', J('§8!H§')), ('__GEMS', J('§"!0§')), ('__COINS', J('§9!U§')),
-                 ('__FACN', J('§75§')), ('__MAXA', str(MAXA)), ('__IDX__', json.dumps(list(indexes)))):
+                 ('__FACN', J('§75§')), ('__ITEMN', J("§'B§")), ('__MANA', J('§6U§')), ('__MAXA', str(MAXA)), ('__IDX__', json.dumps(list(indexes)))):
         prog = prog.replace(k, v)
-    res = json.loads(ctx.eval(prog))
+    return json.loads(ctx.eval(prog))
+
+
+# the two Trade Treaties that cost 20 of their faction's coins only once you own a Gem or have Reincarnated (the very first run has no cost)
+STATE_DEPENDENT = {'Fairies Trade Treaty', 'Goblins Trade Treaty'}
+
+
+def engine_costs(indexes):
+    import json
+    res = engine_raw(indexes)
     out = {}
+    varies = set()
     for k, r in res.items():
         per = []
         for a, seen in enumerate(r['rows']):
-            assert len(set(seen)) == 1, ('a cost that changes with Reincarnations or Gems', r['n'], a, seen)
-            coins, f = json.loads(seen[0]); per.append((coins, [(i, v) for i, v in enumerate(f) if v > 0]))
+            if len(set(seen)) > 1:
+                assert r['n'] in STATE_DEPENDENT, ('a cost that changes with Reincarnations or Gems', r['n'], a, seen)
+                varies.add(r['n'])
+            coins, f = json.loads(seen[-1])      # the state of someone who has played on (the last one tried)
+            if coins is None: coins = float('inf')      # beyond what a number holds (the game shows INF): an Ascension the upgrade cannot be had at
+            per.append((coins, [(i, v) for i, v in enumerate(f) if v > 0]))
+        assert 'other' not in r, ('a cost that is not coins or Faction Coins', r['n'], r['other'][:2])
+        assert 'err' not in r, ('the game could not work out a cost', r['n'], r['err'])
         fld = r['fld']
-        first = 0 if fld[0] or r['tier'] else next((a for a in range(1, MAXA + 1) if fld[a]), 0)      # no cost of Ascension 0, a later one: the upgrade starts there
+        first = 0 if fld[0] is None or fld[0] or r['tier'] else next((a for a in range(1, MAXA + 1) if fld[a]), 0)      # no cost of Ascension 0, a later one: the upgrade starts there
         out[int(k)] = (r['n'], [None if a < first else per[a] for a in range(MAXA + 1)])
     return out

@@ -210,14 +210,20 @@ def alleg_section():
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
 
-COST_PAGES = ('secret', 'magic')      # the pages that show costs so far
+COST_PAGES = ('secret', 'magic', 'misc', 'buildings', 'allegiances')      # the pages that show costs
+NO_COST_KINDS = {'bloodline', 'bloodline_c', 'set', 'set_c', 'lineage', 'lineage_c', 'lineage_perk', 'combo_c'}      # chosen, not bought: no cost line
 import costs
-_ec = costs.engine_costs([_u['order'] for _pg in COST_PAGES for _u in pages[_pg]])      # the game's own code, asked for the cost of each upgrade
-for _pg in COST_PAGES:
-    for _u in pages[_pg]:
-        _n, _c = _ec[_u['order']]
-        assert _n == _u['name'], (_n, _u['name'])
-        _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _c]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
+_todo = [_u for _pg in COST_PAGES for _u in pages[_pg] if _u.get('akind') not in NO_COST_KINDS]
+_ec = costs.engine_costs([_u['order'] for _u in _todo])      # the game's own code, asked for the cost of each upgrade
+for _u in _todo:
+    if _u['order'] not in _ec: continue      # not an upgrade of the game (the "Legacy Combos" heading)
+    _n, _c = _ec[_u['order']]
+    assert _n == _u['name'], (_n, _u['name'])
+    _inf = [a for a, x in enumerate(_c) if x is not None and x[0] == float('inf')]
+    _odd = [a for a in _inf if not (a < (_u['asc_min'] or 0) or (_u['asc_max'] is not None and a >= _u['asc_max']))]
+    assert not _odd, ('infinite cost at an Ascension the page says it can be had at', _u['name'], _odd)
+    _c = [None if (x is not None and x[0] == float('inf')) else x for x in _c]
+    _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _c]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
 COIN_NAMES = costs.names()      # the game's names: the main currency of each Ascension, the Faction Coin of each faction
 
 sections = [
