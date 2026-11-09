@@ -267,7 +267,9 @@ def main_costs():
     for pg in ('secret',):      # the pages that show costs so far
         for it in pages[pg]:
             nums = code_numbers(read(path_of(cls[it['name']])))
-            for coins, fcs in costs.upgrade_cost(cls[it['name']]):
+            for c in costs.upgrade_cost(cls[it['name']]):
+                if c is None: continue
+                coins, fcs = c
                 for x in [coins] + [v for _, v in fcs]:
                     if not x: continue
                     total += 1

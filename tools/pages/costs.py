@@ -59,7 +59,7 @@ def faction_coins(text):
 
 
 def upgrade_cost(cls):
-    """cost[a] for Ascension 0 to MAXA: (coins, [(faction, amount), ...])"""
+    """cost[a] for Ascension 0 to MAXA: (coins, [(faction, amount), ...]), or None below the Ascension the upgrade starts at"""
     text = V.read(V.path_of(cls))
     assert re.search(r'class .+? extends ' + re.escape(BASE) + r'(?!\S)', text), ('not a direct upgrade', cls)
     assert _body(text, FN_COINS) is None, ('its own coin cost', cls)
@@ -68,8 +68,29 @@ def upgrade_cost(cls):
     ctor = _body(text, name)
     assert ctor, cls
     f = {F_A0: 0.0, F_A1: 0.0, F_A2: 0.0, F_A3: 0.0, F_A4: 0.0, F_TIER: 0, F_FACTION: -1}
+    given = set()
     for m in re.finditer(r'^\s+(§[^§\n]*§) = ([^;\n]+);\s*$', ctor, re.M):
-        if m.group(1) in f: f[m.group(1)] = _num(m.group(2))
+        if m.group(1) in f: f[m.group(1)] = _num(m.group(2)); given.add(m.group(1))
+    # an upgrade that has no cost of Ascension 0 starts at the first Ascension that has one (the upgrades the pages already say need Ascension 1 or 2 are all
+    # set up this way): below it there is no cost to show
+    first = 0 if F_A0 in given or F_TIER in given else next((a for a, k in enumerate((F_A0, F_A1, F_A2, F_A3, F_A4)) if k in given), 0)
     f[F_TIER] = int(f[F_TIER]); f[F_FACTION] = int(f[F_FACTION])
     fc = sorted(faction_coins(text).items())
-    return [(coins(f, a), [(i, v) for i, v in fc if v > 0]) for a in range(MAXA + 1)]
+    return [None if a < first else (coins(f, a), [(i, v) for i, v in fc if v > 0]) for a in range(MAXA + 1)]
+
+
+SCRIPTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'out', 'script', 'scripts')
+
+
+def names():
+    """the game's names of the coins: (the main currency of Ascension 0 to MAXA, the Faction Coin of each faction 0 to 15)"""
+    t = open(os.path.join(SCRIPTS, '§&c§.as'), encoding='utf8').read()
+    body = _body(t, '§=!n§')
+    cur = {}
+    for m in re.finditer(r'§,P§ (>=|==) (\d)\)\s*\{\s*return _\("([^"]+)"\);', body): cur.setdefault(int(m.group(2)), m.group(3))
+    cur[0] = re.search(r'return _\("([^"]+)"\);\s*\}\s*$', body).group(1)
+    assert sorted(cur) == list(range(MAXA + 1)), cur
+    d = open(os.path.join(SCRIPTS, '§-D§.as'), encoding='utf8').read()
+    fac = re.findall(r'_\("([^"]+)"\)', re.search(r'const §45§:Array = new Array\((.*?)\);', d).group(1))
+    assert len(fac) == 16, fac
+    return [cur[a] for a in range(MAXA + 1)], fac

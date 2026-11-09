@@ -168,17 +168,17 @@ the base values <i>v</i>.</div>
     });
     if(list.some(function(f){ return f.s; })) parent.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
   }
-  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹', CUR=['coins','Diamond coins','Emerald coins','Amethyst coins','Sapphire coins'];
+  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
   function cnum(x){      // 145000000 -> 1.45 × 10⁸, as on the Buildings page
     if(x<1e6) return x.toLocaleString('en-US',{maximumFractionDigits:6});
     var e=Math.floor(Math.log10(x)), m=+(x/Math.pow(10,e)).toPrecision(12); if(m>=10){ m/=10; e++; }
     return m+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
   }
-  function costText(it){      // "Cost: ..." for the chosen Ascension (the coins of that Ascension, then Faction Coins); nothing for an upgrade that cannot be bought then
-    if(!it.c || unavailable(it)) return null;
+  function costText(it){      // the game's "Cost: ..." for the chosen Ascension: the coins of that Ascension, then Faction Coins; nothing for an upgrade that cannot be bought then
+    if(!it.c || !it.c[ASC] || unavailable(it)) return null;
     var c=it.c[ASC], parts=[];
-    if(c[0]>0) parts.push(cnum(c[0])+' '+CUR[ASC]);
-    c[1].forEach(function(f){ var fc=FACS.filter(function(x){ return x.i===f[0]; })[0]; parts.push(cnum(f[1])+' '+fc.n+' coins'); });
+    if(c[0]>0) parts.push(cnum(c[0])+' '+DATA.coins[0][ASC]);
+    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+DATA.coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
     return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
   }
   function showTip(it, anchor){

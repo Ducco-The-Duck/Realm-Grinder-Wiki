@@ -193,7 +193,8 @@ import costs
 _cls = {u['name']: u['class'] for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class') and u.get('name')}
 for _pg in COST_PAGES:
     for _u in pages[_pg]:
-        _u['_cost'] = [[int(c) if c < 1e15 and c == int(c) else c, [[i, int(v) if v == int(v) else v] for i, v in fcs]] for c, fcs in costs.upgrade_cost(_cls[_u['name']])]      # per Ascension: coins, then [faction, amount] pairs
+        _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v) if v == int(v) else v] for i, v in x[1]]] for x in costs.upgrade_cost(_cls[_u['name']])]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
+COIN_NAMES = costs.names()      # the game's names: the main currency of each Ascension, the Faction Coin of each faction
 
 sections = [
     alleg_section(),
@@ -203,7 +204,7 @@ sections = [
     section('secret', 'Secret Upgrades', pages['secret']),
 ]
 json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
-data = json.dumps({'max': meta['max_ascension'], 'sections': sections, 'factions': FACTIONS}, ensure_ascii=False,
+data = json.dumps({'max': meta['max_ascension'], 'sections': sections, 'factions': FACTIONS, 'coins': COIN_NAMES}, ensure_ascii=False,
                   separators=(',', ':')).replace('</', '<\\/')
 
 html = tmpl.load('upgrades.html')
@@ -229,7 +230,7 @@ total = 0
 for fname, title, ids, sub in SPLIT:
     secs = [x for x in sections if x['id'] in ids]
     secs.sort(key=lambda x: ids.index(x['id']))
-    pdata = json.dumps({'max': meta['max_ascension'], 'sections': secs, 'factions': FACTIONS}, ensure_ascii=False,
+    pdata = json.dumps({'max': meta['max_ascension'], 'sections': secs, 'factions': FACTIONS, 'coins': COIN_NAMES}, ensure_ascii=False,
                        separators=(',', ':')).replace('</', '<\\/')
     h = html.replace('__BUGS__', BUGS.get(fname, '')).replace('__DATA__', pdata).replace('__TITLE__', 'Realm Grinder ' + title).replace('__H1__', title).replace('__SUB__', sub)
     if 'allegiances' not in ids:      # no faction picker on the other pages
