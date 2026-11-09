@@ -266,7 +266,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <div id="root"></div>
 <div class="gv">Game version 4.3.15</div></main>
 <div id="tip" role="tooltip"></div>
-<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":3,"what":"A new faction"},{"n":7,"what":"A new upgrade type"},{"n":14,"what":"A new spell"},{"n":16,"what":"A new progress system"},{"n":24,"what":"Neutral Faction Researches"},{"n":32,"what":"Prestige Faction Researches"},{"n":42,"what":"A new Faction Quest"},{"n":60,"what":"Lineages"},{"n":75,"what":"Mercenary Researches"},{"n":105,"what":"Faction Union powers"},{"n":110,"what":"Prestige Factions treaties"},{"n":112,"what":"Prestige Unique Buildings"},{"n":115,"what":"Prestige Faction Unions"},{"n":125,"what":"Astral Factions treaties"},{"n":130,"what":"Astral Unique Buildings, Faction Unions, Bloodlines and Lineages"},{"n":165,"what":"Prestige Factions treaties"},{"n":172,"what":"Astral Factions treaties"},{"n":225,"what":"Sets"},{"n":230,"what":"Lineages"},{"n":235,"what":"Prestige Factions treaties"},{"n":255,"what":"Astral Factions treaties"}]}</script>
+<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":0,"what":["Excavations","Neutral factions (Titan, Druid, Faceless)","Prestige factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]}]}</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 2, MODE = 'unlocks';
@@ -292,7 +292,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     root.textContent='';
     if(MODE==='all'){      // the overall Unlocks page: what the Reincarnate window says is unlocked
       var tb=el('table','rtab'), hd=el('tr'); hd.appendChild(el('th',null,'Reincarnation')); hd.appendChild(el('th',null,'Unlocked')); tb.appendChild(hd);
-      (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); tr.appendChild(el('td',null,r.what)); tb.appendChild(tr); });
+      (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); var td=el('td'); r.what.forEach(function(w){ td.appendChild(el('div',null,w)); }); tr.appendChild(td); tb.appendChild(tr); });
       root.appendChild(tb); return;
     }
     if(MODE==='unlocks'){

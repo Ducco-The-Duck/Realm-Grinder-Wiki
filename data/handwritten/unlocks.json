@@ -429,5 +429,115 @@
     "§[k§.§%?§"
    ]
   }
+ ],
+ "reincarnation_unlocks": [
+  {
+   "n": 0,
+   "what": [
+    "Excavations",
+    "Neutral factions (Titan, Druid, Faceless)",
+    "Prestige factions (Dwarf, Drow)"
+   ]
+  },
+  {
+   "n": 3,
+   "what": [
+    "New faction: Mercenaries"
+   ]
+  },
+  {
+   "n": 7,
+   "what": [
+    "New upgrade: Bloodlines"
+   ]
+  },
+  {
+   "n": 14,
+   "what": [
+    "New spell: Spiritual Surge"
+   ]
+  },
+  {
+   "n": 16,
+   "what": [
+    "Vanilla Factions Research"
+   ]
+  },
+  {
+   "n": 24,
+   "what": [
+    "Neutral Factions Research"
+   ]
+  },
+  {
+   "n": 32,
+   "what": [
+    "Prestige Factions Research"
+   ]
+  },
+  {
+   "n": 40,
+   "what": [
+    "Ascension 1"
+   ]
+  },
+  {
+   "n": 48,
+   "what": [
+    "New faction: Neutral Prestige Faction (Dragon)"
+   ]
+  },
+  {
+   "n": 60,
+   "what": [
+    "New upgrade: Lineages"
+   ]
+  },
+  {
+   "n": 75,
+   "what": [
+    "Mercenary Research"
+   ]
+  },
+  {
+   "n": 100,
+   "what": [
+    "Ascension 2",
+    "Artifact Sets",
+    "Second alignment",
+    "Second unique buildings for base factions",
+    "New upgrade: Faction Unions for base factions"
+   ]
+  },
+  {
+   "n": 110,
+   "what": [
+    "Prestige factions (Dwarf, Drow, Dragon) reintroduced"
+   ]
+  },
+  {
+   "n": 112,
+   "what": [
+    "Second unique buildings for prestige factions"
+   ]
+  },
+  {
+   "n": 115,
+   "what": [
+    "Faction Unions for prestige factions"
+   ]
+  },
+  {
+   "n": 125,
+   "what": [
+    "New factions: Astral Factions (Archon, Djinn, Maker)"
+   ]
+  },
+  {
+   "n": 130,
+   "what": [
+    "Unique buildings, faction unions, bloodlines and lineages for astral factions"
+   ]
+  }
  ]
 }
