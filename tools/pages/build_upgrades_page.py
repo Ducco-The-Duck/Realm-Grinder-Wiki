@@ -194,7 +194,6 @@ def alleg_section():
         if u['akind'] != 'lineage': continue
         it = item(u)
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
-        it['lc'] = costs.lineage_spec(u['faction'])      # the cost formula of the tooltip
         lin_by[u['faction']] = it
     lineages = [lin_by[i] for i in range(16) if i in lin_by]
     set_by = {u['faction']: item(u) for u in allu if u['akind'] == 'set'}
@@ -205,7 +204,7 @@ def alleg_section():
         it = item(u)
         if u['akind'] == 'heritage': it['fa'] = -1
         if u['akind'] == 'bloodline_c': it['bl'] = blood
-        if u['akind'] == 'lineage_c': it['lg'] = lineages
+        if u['akind'] == 'lineage_c': it['lg'] = lineages; it['lc'] = costs.lineage_spec()      # the cost formula sits in the tooltip of the Lineages
         if u['akind'] == 'set_c': it['st'] = sets
         es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
