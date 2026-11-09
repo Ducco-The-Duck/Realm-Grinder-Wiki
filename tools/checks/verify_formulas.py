@@ -258,23 +258,22 @@ def main_buildings():
 
 
 def main_costs():
-    """the costs shown on the pages (tools/pages/costs.py): every coin and Faction Coin amount of an upgrade must be a number its own class writes"""
+    """the costs shown on the pages come from the game's own code run in the engine (tools/pages/costs.py); where an upgrade has a class of its own they are
+    checked against the numbers that class writes (read without running anything)"""
     sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pages')]
     import costs
     pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
     cls = {u['name']: u['class'] for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class') and u.get('name')}
-    total = bad = 0
-    for pg in ('secret',):      # the pages that show costs so far
+    total = bad = alone = 0
+    for pg in ('secret', 'magic'):      # the pages that show costs so far
+        ec = costs.engine_costs([it['order'] for it in pages[pg]])
         for it in pages[pg]:
-            nums = code_numbers(read(path_of(cls[it['name']])))
-            for c in costs.upgrade_cost(cls[it['name']]):
-                if c is None: continue
-                coins, fcs = c
-                for x in [coins] + [v for _, v in fcs]:
-                    if not x: continue
-                    total += 1
-                    if x not in nums: bad += 1; print(f"    {x:g}   {it['name']}")
-    print(f'{total} cost amounts checked on the pages, {bad} not found in their class')
+            eng = ec[it['order']][1]
+            if it['name'] not in cls: alone += 1; continue      # made by a generic class (the mana upgrades, the spell tiers): only the engine knows it
+            total += 1
+            norm = lambda c: [None if x is None else (float(x[0]), [(i, float(v)) for i, v in x[1]]) for x in c]
+            if norm(eng) != norm(costs.static_cost(cls[it['name']])): bad += 1; print(f"    {it['name']}: engine {eng} / class {costs.static_cost(cls[it['name']])}")
+    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} come from generic classes and are not cross-checked)')
     return bad
 
 

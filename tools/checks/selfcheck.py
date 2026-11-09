@@ -167,7 +167,7 @@ else:
       print(f"11. costs on the pages: {buf5.getvalue().strip().splitlines()[-1]}")
       if n_bad5:
           print(buf5.getvalue())
-          problems.append(f"{n_bad5} cost amount(s) on the pages are not found in their class (run tools/checks/verify_formulas.py --costs)")
+          problems.append(f"{n_bad5} cost(s) on the pages differ from their class (run tools/checks/verify_formulas.py --costs)")
       if n_bad4:
           print(buf4.getvalue())
           problems.append(f"{n_bad4} number(s) in data/handwritten/buildings.json are not found in the game code (run tools/checks/verify_formulas.py --buildings)")

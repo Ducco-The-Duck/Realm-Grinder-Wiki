@@ -7,6 +7,7 @@ the values its own class returns for each faction (0 to 15). Anything else in a 
 import math, os, re, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('checks',)]
 import verify_formulas as V
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pylib'))
 
 F_A0, F_A1, F_A2, F_A3, F_A4 = '§>=§', '§<R§', '§#!m§', '§#"-§', '§;">§'      # the coin cost of Ascension 0, and the one it has instead from Ascension 1, 2, 3, 4 on
 F_TIER, F_FACTION = '§!"E§', '§-!^§'
@@ -58,7 +59,7 @@ def faction_coins(text):
     return out
 
 
-def upgrade_cost(cls):
+def static_cost(cls):
     """cost[a] for Ascension 0 to MAXA: (coins, [(faction, amount), ...]), or None below the Ascension the upgrade starts at"""
     text = V.read(V.path_of(cls))
     assert re.search(r'class .+? extends ' + re.escape(BASE) + r'(?!\S)', text), ('not a direct upgrade', cls)
@@ -94,3 +95,46 @@ def names():
     fac = re.findall(r'_\("([^"]+)"\)', re.search(r'const §45§:Array = new Array\((.*?)\);', d).group(1))
     assert len(fac) == 16, fac
     return [cur[a] for a in range(MAXA + 1)], fac
+
+
+# ---- the engine: the game's own code run in QuickJS (data/derived/engine.js), asked for the cost of each upgrade object -------------------------------------
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
+
+
+def engine_costs(indexes):
+    """{index into the game's upgrade list: cost[a] for a in 0..MAXA} where cost[a] is (coins, [(faction, amount), ...]) or None below the Ascension the upgrade starts at.
+    The numbers are what the game's own getters return (coins: the getter above; Faction Coins: the method of each class, rounded like the game rounds what it takes).
+    Every state a cost could depend on (Reincarnations, Gems) is tried: a cost that changes with one stops the build."""
+    import json, quickjs
+    names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+    J = lambda t: names[t]
+    g = J('§8G§')
+    ctx = quickjs.Context()
+    ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
+    prog = """(function () {
+  var G = __G, U = G.__U, out = {}, idx = __IDX__;
+  for (var n = 0; n < idx.length; n++) { var o = U[idx[n]], row = { n: o.__NAME, rows: [], fld: [o.__A0, o.__A1, o.__A2, o.__A3, o.__A4], tier: o.__TIER };
+    for (var A = 0; A <= __MAXA; A++) { var seen = [];
+      [[0, 0], [1, 0], [60, 1e6], [300, 1e30]].forEach(function (st) {
+        G.__ASC = A; G.__REINC = st[0]; G.__GEMS = st[1];
+        var coins = 0; try { coins = o.__COINS; } catch (e) {}
+        var f = []; for (var k = 0; k < 16; k++) { var v = 0; try { v = Math.round(o.__FACN(k)); } catch (e) {} f.push(v); }
+        seen.push(JSON.stringify([coins, f])); });
+      row.rows.push(seen); }
+    out[idx[n]] = row; }
+  return JSON.stringify(out); })()"""
+    for k, v in (('__G', g), ('__U', J('§-!4§')), ('__NAME', J('§1i§')), ('__A0', J('§>=§')), ('__A1', J('§<R§')), ('__A2', J('§#!m§')), ('__A3', J('§#"-§')),
+                 ('__A4', J('§;">§')), ('__TIER', J('§!"E§')), ('__ASC', J('§,P§')), ('__REINC', J('§8!H§')), ('__GEMS', J('§"!0§')), ('__COINS', J('§9!U§')),
+                 ('__FACN', J('§75§')), ('__MAXA', str(MAXA)), ('__IDX__', json.dumps(list(indexes)))):
+        prog = prog.replace(k, v)
+    res = json.loads(ctx.eval(prog))
+    out = {}
+    for k, r in res.items():
+        per = []
+        for a, seen in enumerate(r['rows']):
+            assert len(set(seen)) == 1, ('a cost that changes with Reincarnations or Gems', r['n'], a, seen)
+            coins, f = json.loads(seen[0]); per.append((coins, [(i, v) for i, v in enumerate(f) if v > 0]))
+        fld = r['fld']
+        first = 0 if fld[0] or r['tier'] else next((a for a in range(1, MAXA + 1) if fld[a]), 0)      # no cost of Ascension 0, a later one: the upgrade starts there
+        out[int(k)] = (r['n'], [None if a < first else per[a] for a in range(MAXA + 1)])
+    return out

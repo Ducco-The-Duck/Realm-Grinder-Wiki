@@ -188,12 +188,14 @@ def alleg_section():
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
 
-COST_PAGES = ('secret',)      # the pages that show costs so far
+COST_PAGES = ('secret', 'magic')      # the pages that show costs so far
 import costs
-_cls = {u['name']: u['class'] for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class') and u.get('name')}
+_ec = costs.engine_costs([_u['order'] for _pg in COST_PAGES for _u in pages[_pg]])      # the game's own code, asked for the cost of each upgrade
 for _pg in COST_PAGES:
     for _u in pages[_pg]:
-        _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v) if v == int(v) else v] for i, v in x[1]]] for x in costs.upgrade_cost(_cls[_u['name']])]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
+        _n, _c = _ec[_u['order']]
+        assert _n == _u['name'], (_n, _u['name'])
+        _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _c]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
 COIN_NAMES = costs.names()      # the game's names: the main currency of each Ascension, the Faction Coin of each faction
 
 sections = [
