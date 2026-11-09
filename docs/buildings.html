@@ -36,6 +36,7 @@ main .blurb{margin:4px 0 10px}
 #list button .pl{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:0 1px 2px #000,0 0 2px #000;
   width:224px;height:74px;padding:8px 10px 8px 12px;box-sizing:border-box;background:transparent no-repeat center/100% 100%;image-rendering:pixelated;
   display:flex;align-items:center;gap:6px;text-align:left;white-space:nowrap}
+#list button .pl .base{display:block;font-weight:400;font-size:.78rem}
 #list button .pl .ic{display:block;flex:none;width:56px;height:56px;pointer-events:none}      /* a .cell: the shared golden icon frame on its black background */
 #list button:focus-visible .pl{outline:2px solid var(--accent);outline-offset:-2px}
 #list[data-al="good"] .pl{background-image:url(assets/ui/buildings/goodBuilding_Up.png)}
@@ -352,6 +353,7 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
     var fs=candidates(), A=align+1; if(!fs) return null;
     return D.uniques.filter(function(u){ return u.s===slot && fs.indexOf(u.f)>=0 && u.a0<=ASC && u.an.indexOf(ASC)<0 && (!u.al || u.al.indexOf(A)>=0) && (!u.ra || u.ra===A); })[0] || null;
   }
+  function base(b){ return b.names.length>1 ? b.names[align] : b.names[0]; }      // the base building's name for the chosen alignment
   function nm(b){ var u=uniqueFor(b.i); return u ? [u.n] : b.names.length>1 ? [b.names[align]] : b.names; }
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function math(tex, node){
@@ -377,7 +379,7 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
   function show(b){
     cur=b; info.textContent='';
     btns.forEach(function(x){ x.b.setAttribute('aria-pressed', x.i===b.i ? 'true' : 'false'); });
-    info.appendChild(el('h2',null,nm(b).join(' / ')));
+    info.appendChild(el('h2',null,nm(b).join(' / ')+(uniqueFor(b.i) ? ' ('+base(b)+')' : '')));
     var p=b.i===11 ? D.hall : D.production;
     info.appendChild(el('h3',null,p.title)); info.appendChild(el('p',null,p.text));
     if(b.i===11) formulas(info, p.formulas);
@@ -410,7 +412,9 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
   function labels(){ list.setAttribute('data-al',['good','evil','neutral'][align]); btns.forEach(function(x){ x.b.textContent=''; var d=x.d, k=d.names.length>1 ? align : 0;
     var u=uniqueFor(d.i); x.b.className=(d.names.length===1 ? 'neu' : '')+(u ? ' f-'+u.fc : '');      // the button of its faction for a unique building
     var pl=el('span','pl'), im=el('img'); im.src=u ? u.ic : d.icons[k]; im.alt=''; var ic=el('span','cell ic'); ic.appendChild(im); pl.appendChild(ic);
-    var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx); x.b.appendChild(pl); }); }
+    var tx=el('span'); tx.textContent=nm(d).join(' / '); pl.appendChild(tx);
+    if(u){ var bs=el('span','base',base(d)); tx.appendChild(bs); }      // a unique building: the name of the building it replaces, below its own
+    x.b.appendChild(pl); }); }
   function pick(label, names, def, on, row, vals){
     var l=el('label'), b=el('b',null,label), s=el('select');
     names.forEach(function(n,k){ var o=el('option',null,n); o.value=vals ? vals[k] : k; if(k===def) o.selected=true; s.appendChild(o); });
