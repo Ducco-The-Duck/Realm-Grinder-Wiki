@@ -39,6 +39,10 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
 .empty{color:var(--muted)}
+table.rtab{border-collapse:collapse;width:100%}
+.rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
+.rtab th{color:var(--accent)}
+.rtab td.n{width:1%;white-space:nowrap}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -262,7 +266,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <div id="root"></div>
 <div class="gv">Game version 4.3.15</div></main>
 <div id="tip" role="tooltip"></div>
-<script id="data" type="application/json">{"mechanics":[]}</script>
+<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":3,"what":"A new faction"},{"n":7,"what":"A new upgrade type"},{"n":14,"what":"A new spell"},{"n":16,"what":"A new progress system"},{"n":24,"what":"Neutral Faction Researches"},{"n":32,"what":"Prestige Faction Researches"},{"n":42,"what":"A new Faction Quest"},{"n":60,"what":"Lineages"},{"n":75,"what":"Mercenary Researches"},{"n":105,"what":"Faction Union powers"},{"n":110,"what":"Prestige Factions treaties"},{"n":112,"what":"Prestige Unique Buildings"},{"n":115,"what":"Prestige Faction Unions"},{"n":125,"what":"Astral Factions treaties"},{"n":130,"what":"Astral Unique Buildings, Faction Unions, Bloodlines and Lineages"},{"n":165,"what":"Prestige Factions treaties"},{"n":172,"what":"Astral Factions treaties"},{"n":225,"what":"Sets"},{"n":230,"what":"Lineages"},{"n":235,"what":"Prestige Factions treaties"},{"n":255,"what":"Astral Factions treaties"}]}</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 4, MODE = 'all';
@@ -286,7 +290,11 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
     root.textContent='';
-    if(MODE==='all') return;      // the overall Unlocks page has no content yet
+    if(MODE==='all'){      // the overall Unlocks page: what the Reincarnate window says is unlocked
+      var tb=el('table','rtab'), hd=el('tr'); hd.appendChild(el('th',null,'Reincarnation')); hd.appendChild(el('th',null,'Unlocked')); tb.appendChild(hd);
+      (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); tr.appendChild(el('td',null,r.what)); tb.appendChild(tr); });
+      root.appendChild(tb); return;
+    }
     if(MODE==='unlocks'){
       var ul0=el('ul','items');
       DATA.mechanics.filter(function(m){ return m.asc===ASC; }).forEach(function(m){

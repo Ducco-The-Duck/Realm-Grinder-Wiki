@@ -3,7 +3,7 @@ from data/handwritten/unlocks.json (hand-written).
 
     python -I tools/pages/build_unlocks_page.py
 """
-import json, os, sys
+import json, os, re, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 import tmpl
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
@@ -18,8 +18,16 @@ for m in d['mechanics']:
     m['href'] = hrefs[m['name']]
 
 
+# what the Reincarnate window announces as unlocked ("You will unlock X in this Reincarnation."), read from the window's class
+_win = open(os.path.join(ROOT, 'out', 'script', 'scripts', '§4X§', '§59§.as'), encoding='utf8').read()
+RUNLOCKS = [{'n': int(m.group(1)), 'what': m.group(2)[0].upper() + m.group(2)[1:]}
+            for m in re.finditer(r'\+ 1 == (\d+)\)\s*\{\s*_loc3_ \+= "(?:\\n)+" \+ _\("You will unlock (.+?) in this Reincarnation\."\)', _win)]
+RUNLOCKS.sort(key=lambda r: r['n'])
+assert len(RUNLOCKS) == 21, len(RUNLOCKS)
+
+
 def write(fn, title, sub, mode, asc, mechs):
-    data = json.dumps({'mechanics': mechs}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+    data = json.dumps({'mechanics': mechs, 'rows': RUNLOCKS}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
     page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__UC__', search_snippet.UNDER_CONSTRUCTION).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
     page = search_snippet.apply(page, '', fn).replace('<title>' + title + '</title>', '<title>Realm Grinder ' + title + '</title>')
     open(os.path.join(ROOT, 'docs', fn), 'w', encoding='utf8').write(page)
