@@ -142,9 +142,9 @@ the base values <i>v</i>.</div>
     return k;
   }
   function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
-  function formulas(parent, list){
+  function formulas(parent, list, title){
     var many=list.length>1, seen={};
-    parent.appendChild(el('span','lbl',many?'Formulas':'Formula'));
+    parent.appendChild(el('span','lbl',title||(many?'Formulas':'Formula')));
     var anyScaled=many && list.some(function(f){ return f.s; });
     list.forEach(function(f,i){
       if(i>0) parent.appendChild(el('div','fsep'));
@@ -213,6 +213,15 @@ the base values <i>v</i>.</div>
     });
     if(it.f.length){
       formulas(tip, it.f);
+    }
+    if(it.lc && !unavailable(it)){      // a Lineage: what raising it a level costs
+      var L=it.lc, fn=DATA.coins[1][L.fi];
+      var cf=[{l:'C = \\left(b \\cdot 10^{L/A}\\right)^{1 + \\left(c + \\frac{1}{2A} - r\\right)\\left\\lfloor L/'+L.ev+' \\right\\rfloor}', lb:null, v:[
+          {symbol:'C', text:'the '+fn+' Coins the next level costs (no other coins are needed)'}, {symbol:'L', text:'the level the Lineage has'}, {symbol:'A', text:'your Ascension number'},
+          {symbol:'b', text:'the base cost at Ascension '+ASC+': '+cnum(L.b[ASC])}, {symbol:'c', text:'the growth at Ascension '+ASC+': '+L.c[ASC]},
+          {symbol:'r', text:'0, or $'+L.hr+' \\cdot R / A$ with '+L.hg+', where $R$ is your number of Reincarnations'}]},
+        {l:'C_{2} = C^{'+L.hp+'}', lb:null, v:[{symbol:'C_{2}', text:'the cost with '+L.hh+', for a Lineage whose level is below your highest Lineage level'}]}];
+      formulas(tip, cf, 'Cost');
     }
     var rq=it.s.slice();
     if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in

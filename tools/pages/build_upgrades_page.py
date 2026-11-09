@@ -115,7 +115,7 @@ def item(u):
         'mn': u.get('more_note'),
         **({'c': u['_cost']} if '_cost' in u else {}),
         **({'cb': [dict(item({'name': c['name'], 'icon': c['icon'], 'description': [dict(q, s=q.get('s')) for q in c['description']], 'sources': [], 'requirements': [],
-                                'conditions': [], 'asc_min': 4, 'asc_max': None}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
+                                'conditions': [], 'asc_min': 4, 'asc_max': None, **({'_cost': c['_cost']} if '_cost' in c else {})}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
         **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
         **({'ra': u['unlock_by_asc'], 'sp': u['spell']} if u.get('unlock_by_asc') else {}),
         **({'fa': u['faction'], 'fn': FSEARCH.get(u['faction']), 'ak': u['akind']} if 'faction' in u else {}),
@@ -194,6 +194,7 @@ def alleg_section():
         if u['akind'] != 'lineage': continue
         it = item(u)
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
+        it['lc'] = costs.lineage_spec(u['faction'])      # the cost formula of the tooltip
         lin_by[u['faction']] = it
     lineages = [lin_by[i] for i in range(16) if i in lin_by]
     set_by = {u['faction']: item(u) for u in allu if u['akind'] == 'set'}
@@ -224,6 +225,11 @@ for _u in _todo:
     assert not _odd, ('infinite cost at an Ascension the page says it can be had at', _u['name'], _odd)
     _c = [None if (x is not None and x[0] == float('inf')) else x for x in _c]
     _u['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _c]      # per Ascension: coins, then [faction, amount] pairs (null: the upgrade does not exist yet)
+_combo = next(_u for _u in pages['allegiances'] if _u.get('akind') == 'combo_c')      # the Legacy Combos: upgrades of the game that the page holds inside the heading
+_ix = costs.engine_find([_c['name'] for _c in _combo['combos']])
+_cc = costs.engine_costs(list(_ix.values()))
+for _c in _combo['combos']:
+    _c['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _cc[_ix[_c['name']]][1]]
 COIN_NAMES = costs.names()      # the game's names: the main currency of each Ascension, the Faction Coin of each faction
 
 sections = [

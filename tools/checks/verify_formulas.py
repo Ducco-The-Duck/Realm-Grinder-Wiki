@@ -277,7 +277,9 @@ def main_costs():
             except AssertionError: alone += 1; continue      # a cost with a rule of its own (written in the class as code, not as a number)
             total += 1
             if norm(eng) != norm(stat): bad += 1; print(f"    {it['name']}: engine {eng} / class {stat}")
-    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code)')
+    n, worst = costs.lineage_check()      # the Lineage cost formula of the tooltips against the game's own method
+    if not n or worst > 1e-9: bad += 1; print(f'    Lineage cost formula: {n} states compared, worst relative error {worst:g}')
+    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code); Lineage cost formula: {n} states, worst error {worst:.1g}')
     return bad
 
 

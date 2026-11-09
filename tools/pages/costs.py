@@ -156,3 +156,87 @@ def engine_costs(indexes):
         first = 0 if fld[0] is None or fld[0] or r['tier'] else next((a for a in range(1, MAXA + 1) if fld[a]), 0)      # no cost of Ascension 0, a later one: the upgrade starts there
         out[int(k)] = (r['n'], [None if a < first else per[a] for a in range(MAXA + 1)])
     return out
+
+
+def engine_find(wanted):
+    """{name: index into the game's upgrade list} for the upgrades the pages hold under no entry of their own (the Legacy Combos)"""
+    import json, quickjs
+    names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+    J = lambda t: names[t]
+    ctx = quickjs.Context()
+    ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
+    prog = ('(function () { var U = %s.%s, w = %s, out = {}; for (var i = 0; i < U.length; i++) { var n = U[i].%s; if (w.indexOf(n) >= 0 && !(n in out)) out[n] = i; } return JSON.stringify(out); })()'
+            % (J('§8G§'), J('§-!4§'), json.dumps(list(wanted)), J('§1i§')))
+    return json.loads(ctx.eval(prog))
+
+
+# ---- the Lineages: the Faction Coins to raise one a level (the lineage base class, tools: out/script/scripts/§3^§/§6P§.as) ------------------------------------
+LINEAGE_BASE = os.path.join(SCRIPTS, '§3^§', '§6P§.as')
+LINEAGE = {'every': 25, 'hourglass': 0.002, 'heirloom': 0.97}      # the constants of the formula that the class writes as code; lineage_check() holds them to the engine
+
+
+def lineage_params():
+    """what the lineage base class uses: the base and the exponent part c of each Ascension, and the two upgrades that change the cost (their names)"""
+    t = open(LINEAGE_BASE, encoding='utf8').read()
+    body = _body(t, FN_FACTION)
+    head = body.split('if(§8G§.§,P§ == 2)')[0]
+    b = {a: _num(re.search(r'_loc8_ = ([^;]+);', head).group(1)) for a in range(MAXA + 1)}
+    c = {a: _num(re.search(r'_loc7_ = ([^;]+);', head).group(1)) for a in range(MAXA + 1)}
+    E = re.escape
+    for m in re.finditer(E('§8G§.§,P§') + r' == (\d)\)\s*\{([^}]*)\}', body):
+        a = int(m.group(1))
+        for k, d in (('_loc8_', b), ('_loc7_', c)):
+            mm = re.search(k + r' = ([^;]+);', m.group(2))
+            if mm: d[a] = _num(mm.group(1))
+    own = E('§8G§.§7d§') + r'\((.+?)\.id\)'      # the upgrades it checks the player owns
+    hg = re.search(own + r' \? ', body).group(1)
+    hh = re.search(own + ' && ' + E('§8G§.§1!#§') + r'\[' + E('§0!N§') + r'\] < ' + E('§&c§.§,T§') + r'\(\)', body).group(1)
+    import json
+    ups = {u['class']: u.get('name') for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class')}
+    imports = {m.group(1).rsplit('.', 1)[-1]: m.group(1) for m in re.finditer(r'^\s*import (.+);\s*$', t, re.M)}
+    return {'b': [b[a] for a in range(MAXA + 1)], 'c': [c[a] for a in range(MAXA + 1)], 'hourglass': ups[imports[hg]], 'heirloom': ups[imports[hh]]}
+
+
+def lineage_log10(a, level, bases, cs, hourglass, heirloom, reincarnations, highest):
+    """log10 of the cost the formula gives (the numbers get too large for a float)"""
+    r = LINEAGE['hourglass'] * reincarnations / a if hourglass else 0
+    lg = (math.log10(bases[a]) + level / a) * (1 + (cs[a] + 1 / (2 * a) - r) * math.floor(level / LINEAGE['every']))
+    return lg * LINEAGE['heirloom'] if heirloom and level < highest else lg
+
+
+def lineage_check():
+    """the formula against the game's own method for every lineage, Ascension 1 to 4, a range of levels, with and without the two upgrades: (states compared, worst relative error)"""
+    import json, quickjs
+    names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+    J = lambda t: names[t]
+    pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
+    idx = [x['order'] for x in pages['allegiances'] if x.get('akind') == 'lineage']
+    P = lineage_params()
+    ctx = quickjs.Context()
+    ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
+    prog = """(function () { var G = __G, U = G.__U, out = [], idx = __IDX__, hour = null, heir = null;
+  for (var i = 0; i < U.length; i++) { if (U[i].__NAME === __HG) hour = U[i]; if (U[i].__NAME === __HH) heir = U[i]; }
+  for (var n = 0; n < idx.length; n++) { var o = U[idx[n]], slot = o.__SLOT, fac = o.__FAC;
+    [1, 2, 3, 4].forEach(function (A) { [0, 1, 24, 25, 26, 60, 120].forEach(function (L) { [[0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 1, 1], [1, 1, 1]].forEach(function (st) {
+      G.__ASC = A; G.__REINC = 100 + A; for (var q = 0; q < 15; q++) G.__LEV[q] = 0; G.__LEV[slot] = L; if (st[2]) G.__LEV[(slot + 1) % 15] = L + 30;
+      __X.__PICK = fac; hour.__OWN = !!st[0]; heir.__OWN = !!st[1];
+      var v = 0; try { v = o.__FACN(fac); } catch (e) { v = null; }
+      out.push([A, L, st[0], st[1], st[2], v]); }); }); }); }
+  return JSON.stringify(out); })()"""
+    rep = (('__G', J('§8G§')), ('__U', J('§-!4§')), ('__IDX__', json.dumps(idx)), ('__NAME', J('§1i§')), ('__HG', json.dumps(P['hourglass'])), ('__HH', json.dumps(P['heirloom'])),
+           ('__SLOT', J('§0!N§')), ('__FACN', J('§75§')), ('__FAC', J('§-!^§')), ('__ASC', J('§,P§')), ('__REINC', J('§8!H§')), ('__LEV', J('§1!#§')), ('__X', J('§#!!§')), ('__PICK', J('§3"§')),
+           ('__OWN', J('§<!7§')))
+    for k, v in rep: prog = prog.replace(k, v)
+    res = json.loads(ctx.eval(prog))
+    worst, n = 0.0, 0
+    for a, level, hg, hh, hi, v in res:
+        f = lineage_log10(a, level, P['b'], P['c'], hg, hh, 100 + a, level + 30 if hi else level)
+        if v is None or v == 0 or f > 300: continue
+        n += 1; worst = max(worst, abs(math.log10(v) - f) / max(abs(f), 1e-9))
+    return n, worst
+
+
+def lineage_spec(faction):
+    """what the page needs for the cost section of the lineage of a faction"""
+    P = lineage_params()
+    return {'fi': faction, 'b': P['b'], 'c': P['c'], 'hg': P['hourglass'], 'hh': P['heirloom'], 'ev': LINEAGE['every'], 'hr': LINEAGE['hourglass'], 'hp': LINEAGE['heirloom']}
