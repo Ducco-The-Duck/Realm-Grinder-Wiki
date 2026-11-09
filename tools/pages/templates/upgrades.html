@@ -171,10 +171,11 @@ the base values <i>v</i>.</div>
     if(list.some(function(f){ return f.s; })) parent.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
   }
   var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
-  function cnum(x){      // 145000000 -> 1.45 × 10⁸, as on the Buildings page
-    if(x<1e6) return x.toLocaleString('en-US',{maximumFractionDigits:6});
-    var e=Math.floor(Math.log10(x)), m=+(x/Math.pow(10,e)).toPrecision(12); if(m>=10){ m/=10; e++; }
-    return m+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
+  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
+    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
   }
   function costText(it){      // the game's "Cost: ..." for the chosen Ascension: the coins of that Ascension, then Faction Coins; nothing for an upgrade that cannot be bought then
     if(!it.c || !it.c[ASC] || unavailable(it)) return null;
