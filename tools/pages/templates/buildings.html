@@ -98,7 +98,11 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
     node.textContent=tex;
   }
   var SUP='⁰¹²³⁴⁵⁶⁷⁸⁹';
-  function sci(x){ var e=Math.floor(Math.log10(x)), m=+(x/Math.pow(10,e)).toPrecision(12); if(m>=10){ m/=10; e++; } return [m,e]; }      // 145000000 -> 1.45 and 8
+  function sci(x){      // the game's number format: the mantissa to 4 significant digits, without trailing zeros; 145000000 -> 1.45 and 8
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return [s,e];
+  }
   function num(x){ if(x>=1e6){ var s=sci(x); return s[0]+' × 10'+String(s[1]).split('').map(function(c){ return SUP[+c]; }).join(''); } return x.toLocaleString('en-US',{maximumFractionDigits:6}); }
   function tex(x){ if(x>=1e6){ var s=sci(x); return s[0]+' \\times 10^{'+s[1]+'}'; } return String(x); }      // the same for a formula
   function formulas(box, fs){
