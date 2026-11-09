@@ -67,6 +67,8 @@ body.searching .cell.group[data-un]{display:none}
 #tip ul{margin:2px 0 0;padding-left:18px}
 #tip p{margin:3px 0 0}
 #tip .more{color:var(--muted)}
+#tip .cost{margin-bottom:2px}
+#more .cost{margin-top:6px}
 #tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
 #tip ul.vars li{margin:2px 0}
 #tip .formula{padding:4px 0;overflow-wrap:anywhere}
@@ -531,7 +533,7 @@ the base values <i>v</i>.</div>
   function showTip(it, anchor){
     tip.textContent='';
     tip.appendChild(el('b','t',it.n));
-    var ct=costText(it); if(ct) tip.appendChild(el('div','more cost',ct));      // right below the name, faded
+    var ct=costText(it); if(ct) tip.appendChild(el('div','cost',ct));      // right below the name, faded
     if(it.sub) tip.appendChild(el('div','more',it.sub));
     if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(el('div','more','Click for more info'));
     if(it.o.length){
@@ -635,7 +637,7 @@ the base values <i>v</i>.</div>
   var more=document.getElementById('more'), morebody=document.getElementById('morebody'), moretitle=document.getElementById('moretitle');
   function openMore(it){
     moretitle.textContent=it.n; morebody.textContent='';
-    var ct=costText(it); if(ct) morebody.appendChild(el('div','more cost',ct));
+    var ct=costText(it); if(ct) morebody.appendChild(el('div','cost',ct));
     more.querySelector('.card').classList.toggle('wide', /^Reincarnation Power/.test(it.n));
     var seen={}, scaled=false;
     var isRP=/^Reincarnation Power/.test(it.n), rtab=null, rfirst=null;
