@@ -78,7 +78,7 @@ __UC__
     root.textContent='';
     if(MODE==='all'){      // the overall Unlocks page: what the Reincarnate window says is unlocked
       var tb=el('table','rtab'), hd=el('tr'); hd.appendChild(el('th',null,'Reincarnation')); hd.appendChild(el('th',null,'Unlocked')); tb.appendChild(hd);
-      (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); var td=el('td'); r.what.forEach(function(w){ td.appendChild(el('div',null,w)); }); tr.appendChild(td); tb.appendChild(tr); });
+      (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); var td=el('td'); r.what.forEach(function(w){ var dv=el('div'), am=/^Ascension (\d+)$/.exec(w); if(am){ var al=el('a',null,w); al.href='unlocks-a'+am[1]+'.html'; dv.appendChild(al); } else dv.textContent=w; td.appendChild(dv); }); tr.appendChild(td); tb.appendChild(tr); });
       root.appendChild(tb); return;
     }
     if(MODE==='unlocks'){
