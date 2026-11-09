@@ -257,8 +257,28 @@ def main_buildings():
     return bad
 
 
+def main_costs():
+    """the costs shown on the pages (tools/pages/costs.py): every coin and Faction Coin amount of an upgrade must be a number its own class writes"""
+    sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pages')]
+    import costs
+    pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
+    cls = {u['name']: u['class'] for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class') and u.get('name')}
+    total = bad = 0
+    for pg in ('secret',):      # the pages that show costs so far
+        for it in pages[pg]:
+            nums = code_numbers(read(path_of(cls[it['name']])))
+            for coins, fcs in costs.upgrade_cost(cls[it['name']]):
+                for x in [coins] + [v for _, v in fcs]:
+                    if not x: continue
+                    total += 1
+                    if x not in nums: bad += 1; print(f"    {x:g}   {it['name']}")
+    print(f'{total} cost amounts checked on the pages, {bad} not found in their class')
+    return bad
+
+
 if __name__ == '__main__':
     args = set(sys.argv[1:])
+    if '--costs' in args: main_costs(); sys.exit(0)
     if '--buildings' in args: main_buildings(); sys.exit(0)
     if '--mechanics' in args: main_mechanics(args - {'--mechanics'})
     elif '--items' in args: main_items(args - {'--items'})

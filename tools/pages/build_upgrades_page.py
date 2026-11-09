@@ -91,6 +91,7 @@ def item(u):
         'm': [{'t': b['text'], 's': b['s'], 'f': [{'l': f['latex'], 'v': f['vars']} for f in b['formulas']]}
               for b in u['more']] if u.get('more') else None,
         'mn': u.get('more_note'),
+        **({'c': u['_cost']} if '_cost' in u else {}),
         **({'cb': [dict(item({'name': c['name'], 'icon': c['icon'], 'description': [dict(q, s=q.get('s')) for q in c['description']], 'sources': [], 'requirements': [],
                                 'conditions': [], 'asc_min': 4, 'asc_max': None}), sub=c['note']) for c in u['combos']]} if u.get('combos') else {}),
         **({'nt': NOTES[u['name']][0], 'nr': NOTES[u['name']][1]} if u['name'] in NOTES else {}),
@@ -186,6 +187,13 @@ def alleg_section():
         es.append({'g': None, 'items': [it]})
     return {'id': 'allegiances', 'name': 'Allegiances Upgrades', 'entries': es, 'count': len(es), 'alleg': True}
 
+
+COST_PAGES = ('secret',)      # the pages that show costs so far
+import costs
+_cls = {u['name']: u['class'] for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class') and u.get('name')}
+for _pg in COST_PAGES:
+    for _u in pages[_pg]:
+        _u['_cost'] = [[int(c) if c < 1e15 and c == int(c) else c, [[i, int(v) if v == int(v) else v] for i, v in fcs]] for c, fcs in costs.upgrade_cost(_cls[_u['name']])]      # per Ascension: coins, then [faction, amount] pairs
 
 sections = [
     alleg_section(),

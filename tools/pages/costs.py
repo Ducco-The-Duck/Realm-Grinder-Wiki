@@ -1,0 +1,75 @@
+"""What an upgrade costs, read from the game's class: the coins of each Ascension and the Faction Coins.
+
+The game's base class (the upgrade base, `§`6§`) gives the coin cost of an Ascension from the fields the upgrade sets: the Ascension 0 cost,
+the cost it has instead from Ascension 1, 2, 3 and 4 on, and the tier an upgrade of the later Ascensions costs by. The Faction Coins an upgrade costs are
+the values its own class returns for each faction (0 to 15). Anything else in a class that this does not understand stops the build.
+"""
+import math, os, re, sys
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('checks',)]
+import verify_formulas as V
+
+F_A0, F_A1, F_A2, F_A3, F_A4 = '§>=§', '§<R§', '§#!m§', '§#"-§', '§;">§'      # the coin cost of Ascension 0, and the one it has instead from Ascension 1, 2, 3, 4 on
+F_TIER, F_FACTION = '§!"E§', '§-!^§'
+FN_COINS, FN_FACTION = '§9!U§', '§75§'      # the coin cost (the base class's getter) and the Faction Coins of one faction (a method each class may override)
+OTHER_COSTS = ('§\'B§', '§6U§', '§%!;§', '§&q§')      # other kinds of cost (items, mana, money): the pages do not show them
+BASE = '§`6§'
+MAXA = 4
+NUM = re.compile(r'^[0-9eE+\-*/(). ]+$')
+
+
+def _num(expr):
+    expr = expr.strip()
+    assert NUM.match(expr), expr
+    return float(eval(expr, {'__builtins__': {}}))
+
+
+def _body(text, fn):
+    """the text of a method from its signature to the closing brace at the class level"""
+    m = re.search(r'^( {6})(?:override )?public (?:static )?function (?:get )?' + re.escape(fn) + r'\(.*?^\1\}', text, re.M | re.S)
+    return m.group(0) if m else None
+
+
+def tier_cost(tier, fac):
+    k = (tier - 1) // 3
+    base = 1e189 if fac in (13, 15, 14) else 1.0e120 if fac in (9, 10, 12) else 1e48
+    return base * math.pow(1000, tier - 1) * math.pow(1000, 0.5 * k * (k + 1))
+
+
+def coins(f, a):
+    """the base class's getter: the coins at Ascension a"""
+    if f[F_TIER] > 0 and a >= 4: return tier_cost(f[F_TIER], f[F_FACTION])
+    if f[F_A4] != 0 and a >= 4: return 0 if a >= 5 else f[F_A4]
+    if f[F_A3] != 0 and a >= 3: return 0 if a >= 4 else f[F_A3]
+    if f[F_A2] != 0 and a >= 2: return 0 if a >= 3 else f[F_A2]
+    if f[F_A1] != 0 and a >= 1: return 0 if a >= 2 else f[F_A1]
+    return 0 if a >= 1 else f[F_A0]
+
+
+def faction_coins(text):
+    """{faction: amount}: what the class's own method returns for each faction"""
+    body = _body(text, FN_FACTION)
+    if body is None: return {}
+    out = {}
+    rest = body
+    for m in re.finditer(r'if\(param1 == (\d+)\)\s*\{\s*return ([^;]+);\s*\}', body):
+        out[int(m.group(1))] = _num(m.group(2)); rest = rest.replace(m.group(0), '')
+    left = re.sub(r'\s+', '', rest.split('{', 1)[1])
+    assert left == 'return0;}', ('a Faction Coin cost this does not read', left)
+    return out
+
+
+def upgrade_cost(cls):
+    """cost[a] for Ascension 0 to MAXA: (coins, [(faction, amount), ...])"""
+    text = V.read(V.path_of(cls))
+    assert re.search(r'class .+? extends ' + re.escape(BASE) + r'(?!\S)', text), ('not a direct upgrade', cls)
+    assert _body(text, FN_COINS) is None, ('its own coin cost', cls)
+    for fn in OTHER_COSTS: assert _body(text, fn) is None, ('another cost', fn, cls)
+    name = cls.split('.')[-1]
+    ctor = _body(text, name)
+    assert ctor, cls
+    f = {F_A0: 0.0, F_A1: 0.0, F_A2: 0.0, F_A3: 0.0, F_A4: 0.0, F_TIER: 0, F_FACTION: -1}
+    for m in re.finditer(r'^\s+(§[^§\n]*§) = ([^;\n]+);\s*$', ctor, re.M):
+        if m.group(1) in f: f[m.group(1)] = _num(m.group(2))
+    f[F_TIER] = int(f[F_TIER]); f[F_FACTION] = int(f[F_FACTION])
+    fc = sorted(faction_coins(text).items())
+    return [(coins(f, a), [(i, v) for i, v in fc if v > 0]) for a in range(MAXA + 1)]
