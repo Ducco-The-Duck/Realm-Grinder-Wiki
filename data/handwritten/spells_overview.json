@@ -780,7 +780,7 @@
    }
   },
   "Hellfire Blast": {
-   "description": "Increase the production of Evil Fortresses based on your amount of trophies.",
+   "description": "Increase the production of Evil Fortresses and Hell Portals based on your amount of trophies.",
    "tags": [
     "Evil",
     "Chaos",
@@ -790,7 +790,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of Evil Fortresses based on your amount of trophies.",
+      "text": "Increases the production of Evil Fortresses and Hell Portals based on your amount of trophies.",
       "formulas": [
        {
         "latex": "M = \\left(1 + \\frac{X}{100}\\right)^{p}",
