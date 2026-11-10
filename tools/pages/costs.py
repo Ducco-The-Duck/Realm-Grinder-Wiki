@@ -279,3 +279,103 @@ def research_check(indexes_by_name):
             total += 1
             if not (got == want or (want and got != float('inf') and abs(got - want) <= 1e-9 * abs(want))): bad += 1
     return total, bad
+
+
+# ---- the research facilities: what one research point of a branch costs and gives (tools: out/script/scripts/§;!J§/§1!7§.as) --------------------------------
+FACILITY = os.path.join(SCRIPTS, '§;!J§', '§1!7§.as')
+
+
+def facility_params():
+    """the numbers of the facility upgrade class: the coin price of each Ascension, the Faction Coin price, the production bonus, the faction lists"""
+    t = open(FACILITY, encoding='utf8').read()
+    E = re.escape
+    P = E('§&c§.§&!<§(§!G§,true)')      # the research points of the branch
+    flat = lambda s: re.sub(r'\s+', '', s)
+    g = flat(_body(t, FN_COINS))
+    num = r'([0-9.e+]+)'
+    m4 = re.search(E('§8G§.§,P§>=4){if(') + P + r'<(\d+)\){return0;}returnMath\.pow\(' + num + ',' + num + r'\*\(' + P + r'-(\d+)\)\);', g)
+    m2 = re.search(E('§8G§.§,P§>=2&&§8G§.§,P§<4){if(') + P + r'<(\d+)\){return0;}return' + num + r'\*Math\.pow\(' + num + ',' + num + r'\*\(' + P + r'-(\d+)\)\);', g)
+    m1 = re.search(E('§8G§.§,P§==1){if(') + P + r'<=(\d+)\){return0;}return' + num + r'\*Math\.pow\(' + num + ',' + P + r'-(\d+)\);', g)
+    m0 = re.search(r'return' + num + r'\*Math\.pow\(' + num + ',' + P + r'\);\}$', g)
+    assert m4 and m2 and m1 and m0, 'the facility coin price changed shape'
+    f = flat(_body(t, FN_FACTION))
+    k_hi = re.search(r'if\(_loc5_>=(\d+)\)\{returnMath\.pow\(10,(-?\d+)\)\*Math\.pow\(' + num + r',' + num + r'\*_loc5_\);\}', f)
+    k_mid = re.search(r'if\(_loc5_>=(\d+)&&_loc5_<(\d+)\)\{returnMath\.pow\(_loc5_\+1,' + num + r'\);\}returnMath\.pow\(_loc5_\+1,' + num + r'\);', f)
+    assert k_hi and k_mid, 'the facility Faction Coin price changed shape'
+    b = re.search(r'\(§!G§==6\?(\d+):(\d+)\)\*\(1\+' + num + r'\*Math\.pow\(' + E('§&c§.§&!<§(§!G§)') + ',' + num + r'\)\),§!G§==6\?(\d+):(\d+)\)', flat(t))
+    assert b, 'the facility production bonus changed shape'
+    import json
+    lists = {k: json.loads('[' + v + ']') for k, v in re.findall(r'const(§[^§]*§):Array=\[([^\]]*)\]', flat(t))}
+    ext = re.findall(E('§8G§.§7d§(') + r'(§[^§]*§)\.id\)&&(§[^§]*§)\[§!G§\]!=-1', flat(t))
+    ups = {u['class']: u.get('name') for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('class')}
+    extra = [(ups['§;!J§.' + tok], lst) for tok, lst in ext]      # (upgrade name, the faction list it opens)
+    assert len(extra) == 2, extra
+    six = re.search(r'§!G§==6&&\(param1==(\d+)\|\|param1==(\d+)\)', f)      # the last branch takes the coins of two factions
+    assert six, 'the facility Faction Coins changed shape'
+    return {'own': lists['§^!C§'], 'six': [int(six.group(1)), int(six.group(2))], 'extra': [(n, lists[l]) for n, l in extra], 'a4': [float(x) for x in m4.groups()], 'a2': [float(x) for x in m2.groups()], 'a1': [float(x) for x in m1.groups()], 'a0': [float(x) for x in m0.groups()],
+            'k_hi': [float(x) for x in k_hi.groups()], 'k_mid': [float(x) for x in k_mid.groups()],
+            'boost': [float(x) for x in b.groups()]}
+
+
+def facility_coins(a, p, F):
+    """the coins the next research point costs at Ascension a with p points (log10 of a number too large for a float is not needed: the largest is 10^176)"""
+    if a >= 4: return 0 if p < F['a4'][0] else _big(1, F['a4'][1], F['a4'][2] * (p - F['a4'][3]))
+    if a >= 2: return 0 if p < F['a2'][0] else _big(F['a2'][1], F['a2'][2], F['a2'][3] * (p - F['a2'][4]))
+    if a == 1: return 0 if p <= F['a1'][0] else _big(F['a1'][1], F['a1'][2], p - F['a1'][3])
+    return _big(F['a0'][0], F['a0'][1], p)
+
+
+def facility_faction(p, F):
+    hi, mid = F['k_hi'], F['k_mid']
+    if p >= hi[0]: return math.pow(10, hi[1]) * math.pow(hi[2], hi[3] * p)
+    if p >= mid[0] and p < mid[1]: return math.pow(p + 1, mid[2])
+    return math.pow(p + 1, mid[3])
+
+
+def facility_boost(branch, p, F):
+    """the production bonus in % before the Ascension penalty"""
+    b = F['boost']
+    return (b[0] if branch == 6 else b[1]) * (1 + b[2] * math.pow(p, b[3]))
+
+
+def facility_check(verbose=False):
+    """the facility formulas against the game's own getters for the 7 branches, Ascension 0 to 4 and the points around every limit: (states compared, states differing)"""
+    import json, quickjs
+    names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+    J = lambda t: names[t]
+    F = facility_params()
+    ctx = quickjs.Context()
+    ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
+    pts = [0, 1, 2, 100, 779, 780, 781, 1000, 4999, 5000, 5001, 9999, 10000, 10001, 12000]
+    prog = """(function () { var G = __G, U = G.__U, out = [], pts = __PTS;
+  for (var i = 0; i < U.length; i++) { var o = U[i]; if (o.__FACIL === undefined) continue; var b = o.__BR, idx = b == 6 ? 154 : 90 + b;
+    for (var A = 0; A <= 4; A++) pts.forEach(function (P) {
+      G.__ASC = A; G.__STAT[idx] = P; G.__ERA[idx] = 0; G.__GAME[idx] = 0;
+      var c = 0, f = []; try { c = o.__COINS; } catch (e) { c = null; }
+      for (var k = 0; k < 16; k++) { var v = 0; try { v = o.__FACN(k); } catch (e) { v = null; } f.push(v); }
+      var d = ''; try { d = o.__DESC(); } catch (e) { d = 'ERR'; }
+      out.push([b, A, P, c, f, d]); }); }
+  return JSON.stringify(out); })()"""
+    rep = (('__FACIL', J('§>E§')), ('__FACN', J('§75§')), ('__DESC', J('§@"§')), ('__COINS', J('§9!U§')), ('__BR', J('§!G§')), ('__ASC', J('§,P§')), ('__STAT', J('§5!V§')),
+           ('__ERA', J('§=y§')), ('__GAME', J('§@w§')), ('__G', J('§8G§')), ('__U', J('§-!4§')), ('__PTS', json.dumps(pts)))
+    for k, v in rep: prog = prog.replace(k, v)
+    res = json.loads(ctx.eval(prog))
+    own = F['own']
+    n = bad = 0
+    for b, a, p, c, f, d in res:
+        want_c = facility_coins(a, p, F)
+        want_f = {k: 0 for k in range(16)}
+        for k in (F['six'] if b == 6 else [own[b]]): want_f[k] = facility_faction(p, F)
+        if c is None: c = float('inf')      # a number that cannot hold the price (shown as INF in the game)
+        ok = c == want_c or abs(c - want_c) <= 1e-9 * abs(want_c)
+        for k in range(16):
+            g = f[k]
+            ok = ok and g is not None and abs(g - want_f[k]) <= 1e-9 * max(1.0, abs(want_f[k]))
+            if g is None: print('   none', b, a, p, k)
+        if a == 0:      # the text of the production bonus (no Ascension penalty at Ascension 0), four significant digits
+            m = re.search(r'by ([0-9.,e+]+)%', d)
+            want = facility_boost(b, p, F)
+            ok = ok and m is not None and abs(float(m.group(1).replace(',', '')) - want) <= max(1.0, 1e-3 * want)      # the game shows whole numbers below a million (rounded down)
+        if verbose and not ok: print('   differs:', b, a, p, c, want_c, [x for x in f if x], d[:60].replace(chr(10), ' '))
+        n += 1; bad += 0 if ok else 1
+    return n, bad

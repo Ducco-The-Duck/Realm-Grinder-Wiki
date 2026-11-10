@@ -289,7 +289,10 @@ def main_costs():
     rn, rbad = costs.research_check(costs.engine_find([r['name'] for r in rs], research=True))      # the researches' price formula of the base class
     bad += rbad
     if rbad: print(f'    research costs: {rbad} of {rn} differ from the base class formula')
-    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code); Lineage cost formula: {n} states, worst error {worst:.1g}; research costs: {rn} checked, {rbad} differ')
+    fn, fbad = costs.facility_check()      # the research point price and production bonus formulas of the facility tooltips
+    bad += fbad
+    if fbad: print(f'    research facility formulas: {fbad} of {fn} states differ from the game')
+    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code); Lineage cost formula: {n} states, worst error {worst:.1g}; research costs: {rn} checked, {rbad} differ; facility formulas: {fn} states, {fbad} differ')
     return bad
 
 

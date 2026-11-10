@@ -156,10 +156,43 @@ popups are always the base values <i>v</i>.</div>
     c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+DATA.coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
     return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
   }
+  function tx(x){      // a number for a formula, in the game's format: 145000000 -> 1.45 \times 10^{8}
+    if(x<1e6) return String(x);
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' \\times 10^{'+e+'}';
+  }
+  function vars(list){
+    var ul=el('ul','vars');
+    list.forEach(function(v){ var li=el('li'), b=el('b'); b.style.display='inline'; math(v[0],b); li.appendChild(b); rich(li,' — '+v[1]); ul.appendChild(li); });
+    tip.appendChild(ul);
+  }
+  function formula(tex){ var d=el('div','formula'), m=el('span'); math(tex,m); d.appendChild(m); tip.appendChild(d); }
+  function facilitySection(it){      // the facility of a branch: what the next research point costs, and the production bonus the points give
+    if(!it.fc) return;
+    var F=DATA.facility, c=it.fc, A=ASC, nm=DATA.coins[1], cf, kf=F.k_mid, kh=F.k_hi;
+    var fac=c.fac.map(function(i){ return nm[i]; }).join(' and ');
+    tip.appendChild(el('span','lbl','Research point cost'));
+    if(A>=4) cf='C = \\begin{cases} 0 & P < '+F.a4[0]+' \\\\ '+F.a4[1]+'^{'+F.a4[2]+'\\,(P - '+F.a4[3]+')} & P \\ge '+F.a4[0]+' \\end{cases}';
+    else if(A>=2) cf='C = \\begin{cases} 0 & P < '+F.a2[0]+' \\\\ '+tx(F.a2[1])+' \\cdot '+F.a2[2]+'^{'+F.a2[3]+'\\,(P - '+F.a2[4]+')} & P \\ge '+F.a2[0]+' \\end{cases}';
+    else if(A===1) cf='C = \\begin{cases} 0 & P \\le '+F.a1[0]+' \\\\ '+tx(F.a1[1])+' \\cdot '+F.a1[2]+'^{P - '+F.a1[3]+'} & P > '+F.a1[0]+' \\end{cases}';
+    else cf='C = '+tx(F.a0[0])+' \\cdot '+F.a0[1]+'^{P}';
+    formula(cf);
+    formula('F = \\begin{cases} (P + 1)^{'+kf[3]+'} & P < '+kf[0]+' \\\\ (P + 1)^{'+kf[2]+'} & '+kf[0]+' \\le P < '+kf[1]+' \\\\ 10^{'+kh[1]+'} \\cdot '+kh[2]+'^{'+kh[3]+'\\,P} & P \\ge '+kh[0]+' \\end{cases}');
+    vars([['C', 'the '+DATA.coins[0][A]+' the next research point costs'], ['F', 'the '+fac+' Coins the next research point costs'+(c.fac.length>1 ? ' (each)' : '')],
+          ['P', 'the research points you have in this branch']]);
+    tip.appendChild(el('span','lbl','Production boost'));
+    var more=c.also.map(function(x){ return nm[x[1]]+' with '+x[0]; });
+    tip.appendChild(el('div',null,'Increases the production of '+nm[c.who]+(more.length ? ', plus '+more.join(' and ') : '')+'.'));
+    formula('B = '+(c.bs===4 ? F.boost[0] : F.boost[1])+' \\cdot \\left(1 + '+F.boost[2]+' \\cdot P^{'+F.boost[3]+'}\\right)');
+    vars([['B', 'the production bonus in %, before any Ascension penalty'], ['P', 'the research points you have in this branch']]);
+    if(A>=c.bs){ var pen=el('div','more','Ascension penalty: '); pen.appendChild(el('span','mark',new Array(A-c.bs+2).join('A'))); tip.appendChild(pen); }
+  }
   function showTip(it, anchor){
     tip.textContent='';
+    if(it.fc && !(it.sl || (it.bud && ASC>=3))){ tip.appendChild(el('b','t',it.n)); facilitySection(it); place(anchor); return; }      // a branch without slots or budget at this Ascension: only its research points
     if(it.sl || (it.bud && ASC>=3)){
-      if(ASC>=3){ tip.appendChild(el('b','t',it.n+' research budget')); tip.appendChild(el('div','more','Click for info about research budget')); place(anchor); return; }
+      if(ASC>=3){ tip.appendChild(el('b','t',it.n+' research budget')); tip.appendChild(el('div','more','Click for info about research budget')); facilitySection(it); place(anchor); return; }
       tip.appendChild(el('b','t',it.n+' research slots'));
       var tbl=el('div','slots');
       function row(d, txt, cls){
@@ -172,6 +205,7 @@ popups are always the base values <i>v</i>.</div>
       });
       tip.appendChild(tbl);
       if(ASC===2) tip.appendChild(el('div','more','Faction researches do not count towards the slots.'));
+      facilitySection(it);
       place(anchor); return;
     }
     tip.appendChild(el('b',null,it.n));
@@ -295,7 +329,7 @@ popups are always the base values <i>v</i>.</div>
   BRANCHES.forEach(function(br){
     var sec=el('section'); var h=el('h2',null,br.name); h.appendChild(el('small',null,br.items.length+' researches')); sec.appendChild(h);
     var g=el('div','grid');
-    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl, bud:br.bud},'buy'));
+    g.appendChild(cell({n:br.name, i:br.icon, nobuy:true, sl:br.sl, bud:br.bud, fc:br.fc},'buy'));
     br.items.forEach(function(it){ var c=cell(it,''); cells.push([c,it]); g.appendChild(c); });
     var inner=el('div'); inner.appendChild(g); foldable(sec, h, inner, br.name);
     root.appendChild(sec);

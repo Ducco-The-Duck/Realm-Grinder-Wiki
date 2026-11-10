@@ -135,6 +135,14 @@ def cost_of(r):
     return out
 
 
+FP = costs.facility_params()      # the cost and the production bonus of a research point (the facility upgrade of each branch)
+
+
+def facility_of(b):
+    return {'fac': FP['six'] if b == 6 else [FP['own'][b]], 'bs': int(FP['boost'][4] if b == 6 else FP['boost'][5]),
+            'who': FP['own'][b], 'also': [[n, lst[b]] for n, lst in FP['extra'] if lst[b] != -1]}
+
+
 BRANCHES = []
 for b in range(7):
     its = sorted((r for r in research if r['branch'] == b), key=lambda r: (r['number'], r['index']))
@@ -163,10 +171,10 @@ for b in range(7):
             'ps': r.get('pen'),
             'f': [{'l': f['latex'], 'v': f['vars'], 's': f.get('scale'), 'lb': f.get('label')} for f in r['formulas']],
         })
-    BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None, 'bud': budget_for(b)})
+    BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None, 'bud': budget_for(b), 'fc': facility_of(b)})
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
-payload = {'max': meta['max_ascension'], 'branches': BRANCHES, 'coins': costs.names(),
+payload = {'max': meta['max_ascension'], 'branches': BRANCHES, 'coins': costs.names(), 'facility': {k: FP[k] for k in ('a0', 'a1', 'a2', 'a4', 'k_mid', 'k_hi', 'boost')},
            'budget': {'common': BUDGET_COMMON, 'a4': BUDGET_A4, 'merc': BUDGET_MERC}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(b['items']) for b in BRANCHES)
