@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
+<title>Realm Grinder Factions</title>
+<style>
+/*THEME*/
+main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
+.blurb{margin:4px 0 10px}
+.sub{color:var(--muted);margin:0 0 18px}
+.cell{width:89px;height:89px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;font:inherit;color:inherit}
+.cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
+.cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
+@media (max-width:640px){#root.fac{--cs:calc((100vw - 32px - var(--lw) - 5 * var(--gap)) / 4);--lw:60px;--gap:6px}}
+#detail{margin-top:22px;scroll-margin-top:12px}
+#detail h2{margin:0 0 4px;color:var(--accent)}
+#detail p{margin:4px 0;white-space:pre-line}
+button.cell{cursor:pointer}
+/*SEARCH_CSS*/
+</style>
+</head>
+<body>
+<main>
+<nav><a href="index.html">Home</a><a href="factions.html" aria-current="page">Factions</a></nav>
+<h1>Factions</h1>
+__UC__
+<p class="blurb">__BLURB__</p>
+<div id="root" class="fac"></div>
+<section id="detail" hidden></section>
+</main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function(){
+  var FACTIONS = JSON.parse(document.getElementById('data').textContent), root=document.getElementById('root');
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function cellFor(f){
+    var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+f.icon; im.alt=f.name; c.appendChild(im);
+    c.title=''; c.setAttribute('aria-label',f.name); c.addEventListener('click',function(){ showDetail(f); });
+    return c;
+  }
+  // the base factions in the grid (alignment down, axis across), the prestige factions at the right of their alignment, the astral factions under their axis
+  var FIRST=['Good','Neutral','Evil'], SECOND=['Order','Balance','Chaos'], board=el('div','board fac');
+  FACTIONS.forEach(function(f){
+    var r=f.al ? 2+FIRST.indexOf(f.al) : 5, c=f.ax ? 2+SECOND.indexOf(f.ax) : 5, cell=cellFor(f);
+    cell.style.gridRow=String(r); cell.style.gridColumn=String(c); board.appendChild(cell);
+  });
+  FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,2+i,1)); });
+  SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,2+i)); });
+  var detail=document.getElementById('detail');
+  function showDetail(f){      // below the grid, like the spells page
+    detail.hidden=false; detail.textContent=''; detail.appendChild(el('h2',null,f.name)); detail.appendChild(el('p',null,f.blurb));
+    detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  root.appendChild(board);
+/*SEARCH_JS*/
+})();
+</script>
+</body>
+</html>

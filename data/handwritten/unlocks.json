@@ -252,6 +252,24 @@
    "page": "buildings.html"
   },
   {
+   "name": "Factions",
+   "asc": 0,
+   "unlock": [
+    "Available from the start (Reincarnation 0)."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Factions are the peoples you can side with. Each faction has its own Faction Coins, unique buildings and upgrades. You start with the six vanilla factions, and more become available as you progress.",
+     "link": {
+      "href": "factions.html",
+      "text": "All factions and their details"
+     }
+    }
+   ],
+   "page": "factions.html"
+  },
+  {
    "name": "Excavations",
    "asc": 0,
    "unlock": [
@@ -595,24 +613,29 @@
      "sections": [
       {
        "title": "Excavations",
-       "text": "Excavations are unlocked by buying the Archeology upgrade. It appears in the Upgrades panel, under the Misc category, once you have 1e9 Gems, and it is only offered once: buying it gives you the Archeology Expedition trophy, which is how the game remembers that you did. After that you can make [Excavations](mechanics.html#excavations).",
+       "text": "Excavations are unlocked by buying the Archeology upgrade. It appears in the Upgrades panel, under the Misc category, once you have 1e9 Gems, and it is only offered once: buying it gives you the Archeology Expedition trophy. After that you can make [Excavations](mechanics.html#excavations).",
        "source": [
         "§3?§.§-r§"
        ],
-       "upgrades": [
+       "side": [
         "Archeology"
        ]
       },
       {
        "title": "Neutral Factions",
-       "text": "Each Neutral Faction is unlocked by buying its own upgrade. The upgrade appears once you have found two quest artifacts of the faction through [Excavations](mechanics.html#excavations) and meet the requirement they describe. An artifact is found for certain as soon as you have made the number of excavations it asks for.",
+       "text": "Each Neutral Faction is unlocked by buying its own upgrade. The upgrade appears once you have found two quest artifacts of the faction through [Excavations](mechanics.html#excavations) and meet the requirement they describe. An artifact is found as soon as you have made the number of excavations it asks for.",
        "lists": [
         {
          "title": "",
          "items": [
-          "Titan: Ancient Stoneslab 1 (5 excavations) and Ancient Stoneslab 2 (20 excavations). Own 300 Halls of Legends, under whichever name your faction knows the building by, to make Fragment of a Titan Statue available.",
-          "Druid: Fossilized Piece of Bark 1 (10 excavations) and Fossilized Piece of Bark 2 (25 excavations). Find 1,000,000 Faction Coins in the current Era, before bonus multipliers, to make Druidic Runestone available.",
-          "Faceless: Bone Fragment 1 (15 excavations) and Bone Fragment 2 (30 excavations). Play for 36 hours (129,600 seconds) in total, over all your Eras and Reincarnations, to make Octopus Shaped Spine available."
+          "**Titan:** Ancient Stoneslab 1 and Ancient Stoneslab 2. Own 300 Halls of Legends to make Fragment of a Titan Statue available.",
+          "**Druid:** Fossilized Piece of Bark 1 and Fossilized Piece of Bark 2. Find 1,000,000 Faction Coins in the current Era to make Druidic Runestone available.",
+          "**Faceless:** Bone Fragment 1 and Bone Fragment 2. Play for 36 hours in total, over all your Eras and Reincarnations, to make Octopus Shaped Spine available."
+         ],
+         "upgrades": [
+          "Fragment of a Titan Statue",
+          "Druidic Runestone",
+          "Octopus Shaped Spine"
          ]
         }
        ],
@@ -626,11 +649,6 @@
         "§[Y§.§@!%3C§",
         "§[Y§.§+!#§",
         "§[Y§.§9!]§"
-       ],
-       "upgrades": [
-        "Fragment of a Titan Statue",
-        "Druidic Runestone",
-        "Octopus Shaped Spine"
        ]
       },
       {
@@ -638,34 +656,26 @@
        "text": "The Prestige Factions (Dwarf and Drow) are unlocked in three steps. Unlike the Neutral Factions, they do not need any quest artifacts.",
        "lists": [
         {
-         "title": "1. Passage to the Underworld. This upgrade appears once you have made 200 excavations since your last Excavation Reset. Buying it starts the search of the Underworld and makes the two quests of the next step appear.",
-         "items": []
-        },
-        {
-         "title": "2. The quests. Sturdy Bearded Man's Quest (Dwarf) and Cloaked Shady Figure's Quest (Drow) are two upgrades that can only be bought while you meet their requirements. Buying one unlocks its faction.",
-         "items": []
-        },
-        {
-         "title": "Sturdy Bearded Man's Quest:",
-         "items": [
-          "Good Alignment",
-          "7000 or more buildings",
-          "800 or more Inns",
-          "10000 or more clicks in this Reincarnation"
+         "title": "**1. Passage to the Underworld.** This upgrade appears once you have made 200 excavations. Buying it starts the search of the Underworld and makes the two quests of the next step appear.",
+         "items": [],
+         "side": [
+          "Passage to the Underworld"
          ]
         },
         {
-         "title": "Cloaked Shady Figure's Quest:",
-         "items": [
-          "Evil Alignment",
-          "325 or more trophies unlocked",
-          "650 or more Dark Temples",
-          "7500 or more spells cast in this Reincarnation"
+         "title": "**2. The quests.** Sturdy Bearded Man's Quest (Dwarf) and Cloaked Shady Figure's Quest (Drow) are two upgrades that can only be bought while you meet their requirements. Buying one unlocks its faction.",
+         "items": [],
+         "side": [
+          "Sturdy Bearded Man's Quest",
+          "Cloaked Shady Figure's Quest"
          ]
         },
         {
-         "title": "3. Underworld Diplomacy. Until it is bought, the Dwarven and Drow Coins, Royal Exchanges and Heritages stay locked. It appears once you have unlocked the Dwarf or the Drow, but only below Reincarnation 3, and it has to be bought again after every Abdication and Reincarnation. From Reincarnation 3 on, these are unlocked without it.",
-         "items": []
+         "title": "**3. Underworld Diplomacy.** Until it is bought, the Dwarven and Drow Coins, Royal Exchanges and Heritages stay locked. It appears once you have unlocked the Dwarf or the Drow, but only below Reincarnation 3, and it has to be bought again after every Abdication and Reincarnation. From Reincarnation 3 on, these are unlocked without it.",
+         "items": [],
+         "side": [
+          "Underworld Diplomacy"
+         ]
         }
        ],
        "source": [
@@ -673,12 +683,6 @@
         "§3?§.§9!S§",
         "§3?§.§0f§",
         "§3?§.§3o§"
-       ],
-       "upgrades": [
-        "Passage to the Underworld",
-        "Sturdy Bearded Man's Quest",
-        "Cloaked Shady Figure's Quest",
-        "Underworld Diplomacy"
        ]
       }
      ]

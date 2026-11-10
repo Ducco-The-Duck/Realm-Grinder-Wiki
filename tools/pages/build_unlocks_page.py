@@ -21,7 +21,12 @@ for m in d['mechanics']:
 def upgrade_cards():
     """the upgrades that the written Unlocks pages name ("upgrades" of a section): {name: card} with the icon, the game's description and the cost at each Ascension"""
     import shutil, costs
-    want = [u for pg in d.get('ascension_pages', {}).values() for e in pg['entries'] for sec in e.get('sections', []) for u in sec.get('upgrades', [])]
+    want = []
+    for pg in d.get('ascension_pages', {}).values():
+        for e in pg['entries']:
+            for sec in e.get('sections', []):      # the upgrades of a section: in a row ("upgrades"), at its right ("side"), or at the right of each item of a list (the "upgrades" of the list)
+                want += sec.get('upgrades', []) + sec.get('side', []) + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
+    want = list(dict.fromkeys(want))
     pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
     page_items = {u['name']: u for lst in pages.values() if isinstance(lst, list) for u in lst if isinstance(u, dict) and u.get('name') in want}
     derived = {u['name']: u for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('name') in want and u.get('class')}

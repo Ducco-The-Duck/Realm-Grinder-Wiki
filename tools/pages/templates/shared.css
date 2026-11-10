@@ -1,3 +1,26 @@
+/* the board (a grid with a label row and column) and the chips of alignments, used by the Spells and the Factions pages */
+#root{--cs:89px;--lw:84px;--gap:10px}
+@media (max-width:640px){#root{--cs:calc((100vw - 32px - 2 * var(--lw) - 6 * var(--gap)) / 5);--lw:60px;--gap:6px}}
+.board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs)) var(--lw);gap:var(--gap);align-items:center;justify-items:center;width:max-content;max-width:100%;margin:6px auto 18px}      /* a label column on each side keeps the icons centred */
+.board .lab{grid-column:auto;font-size:.85rem}
+.board .cell,.row .cell{width:var(--cs);height:var(--cs)}
+.lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
+.tags{display:flex;gap:4px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
+.chip{font-size:.72em;height:1.2em;line-height:1em;box-sizing:border-box;white-space:nowrap;padding:0 .5em;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
+.chip{border-color:transparent}
+.chip.c-tax-collection{background:#c9a227;color:#2a1f00}
+.chip.c-common{background:#8b5a2b;color:#fff}
+.chip.c-pseudo-faction{background:repeating-linear-gradient(45deg,#7a35b0 0 6px,#141414 6px 12px);color:#fff;text-shadow:0 0 2px #000,0 0 2px #000}
+.chip.c-alignment{background:#141414;color:#eee;border-color:#555}
+.chip.c-good{background:#8fd0ff;color:#0a2a40}
+.chip.c-evil{background:#c0392b;color:#fff}
+.chip.c-neutral{background:#9a9a9a;color:#111}
+.chip.c-order{background:#f4f4f4;color:#222}
+.chip.c-chaos{background:#8ee68e;color:#0d3a0d}
+.chip.c-balance{background:#fff3a0;color:#4a3f00}
+.chip.c-faction{background:#8e44ad;color:#fff}
+.chip.c-event{background:#ff9ec7;color:#5a0a2e}
+.board.fac{grid-template-columns:var(--lw) repeat(4,var(--cs))}      /* the Factions page: three columns and the prestige factions at the right */
 /* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
    :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
 #tip:where(.upg) b.t{display:block;font-size:1rem}
@@ -14,7 +37,10 @@
 #tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 /* a row of upgrade cells outside the upgrade pages' own grids */
 .upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
-.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
+.upgside{float:right;display:grid;grid-auto-flow:column;grid-auto-columns:88px;gap:6px;margin:0 0 8px 14px}      /* one upgrade cell at the right of a text, which runs around it */
+.upgrow .cell,.upgside .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
+.upgside .cell{width:100%}
+@media (max-width:700px){.upgside{float:none;margin:0 0 8px}}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}

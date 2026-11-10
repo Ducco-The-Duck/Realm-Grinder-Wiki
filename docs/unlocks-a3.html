@@ -38,11 +38,35 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
+.mech ul.items li.withup,.mech p.withup{display:flow-root;min-height:88px}      /* tall enough for its upgrade cell */
 .empty{color:var(--muted)}
 table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
 .rtab th{color:var(--accent)}
 .rtab td.n{width:1%;white-space:nowrap}
+/* the board (a grid with a label row and column) and the chips of alignments, used by the Spells and the Factions pages */
+#root{--cs:89px;--lw:84px;--gap:10px}
+@media (max-width:640px){#root{--cs:calc((100vw - 32px - 2 * var(--lw) - 6 * var(--gap)) / 5);--lw:60px;--gap:6px}}
+.board{display:grid;grid-template-columns:var(--lw) repeat(5,var(--cs)) var(--lw);gap:var(--gap);align-items:center;justify-items:center;width:max-content;max-width:100%;margin:6px auto 18px}      /* a label column on each side keeps the icons centred */
+.board .lab{grid-column:auto;font-size:.85rem}
+.board .cell,.row .cell{width:var(--cs);height:var(--cs)}
+.lab .chip{font-size:.85rem;height:1.3em;line-height:1.1em;display:inline-block}
+.tags{display:flex;gap:4px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
+.chip{font-size:.72em;height:1.2em;line-height:1em;box-sizing:border-box;white-space:nowrap;padding:0 .5em;border-radius:9px;border:1px solid var(--line);background:var(--cell);color:var(--muted)}
+.chip{border-color:transparent}
+.chip.c-tax-collection{background:#c9a227;color:#2a1f00}
+.chip.c-common{background:#8b5a2b;color:#fff}
+.chip.c-pseudo-faction{background:repeating-linear-gradient(45deg,#7a35b0 0 6px,#141414 6px 12px);color:#fff;text-shadow:0 0 2px #000,0 0 2px #000}
+.chip.c-alignment{background:#141414;color:#eee;border-color:#555}
+.chip.c-good{background:#8fd0ff;color:#0a2a40}
+.chip.c-evil{background:#c0392b;color:#fff}
+.chip.c-neutral{background:#9a9a9a;color:#111}
+.chip.c-order{background:#f4f4f4;color:#222}
+.chip.c-chaos{background:#8ee68e;color:#0d3a0d}
+.chip.c-balance{background:#fff3a0;color:#4a3f00}
+.chip.c-faction{background:#8e44ad;color:#fff}
+.chip.c-event{background:#ff9ec7;color:#5a0a2e}
+.board.fac{grid-template-columns:var(--lw) repeat(4,var(--cs))}      /* the Factions page: three columns and the prestige factions at the right */
 /* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
    :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
 #tip:where(.upg) b.t{display:block;font-size:1rem}
@@ -59,7 +83,10 @@ table.rtab{border-collapse:collapse;width:100%}
 #tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 /* a row of upgrade cells outside the upgrade pages' own grids */
 .upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
-.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
+.upgside{float:right;display:grid;grid-auto-flow:column;grid-auto-columns:88px;gap:6px;margin:0 0 8px 14px}      /* one upgrade cell at the right of a text, which runs around it */
+.upgrow .cell,.upgside .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
+.upgside .cell{width:100%}
+@media (max-width:700px){.upgside{float:none;margin:0 0 8px}}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -277,7 +304,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 </head>
 <body class="steel">
 <main>
-<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span><span class="uc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg></span></a><span class="dd-menu"><span class="uc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>Under construction</span><span class="dd-item"><a href="mechanics.html">Mechanics</a><span class="dd-sub"><a href="mechanics.html#progression">Progression</a><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a><a href="buildings.html">Buildings</a><a href="mechanics.html#excavations">Excavations</a></span></span><span class="dd-item"><a href="unlocks.html" aria-current="page">Unlocks</a><span class="dd-sub"><a href="unlocks-a0.html">Ascension 0</a><a href="unlocks-a1.html">Ascension 1</a><a href="unlocks-a2.html">Ascension 2</a><a href="unlocks-a3.html">Ascension 3</a><a href="unlocks-a4.html">Ascension 4</a></span></span></span></span></nav>
+<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span><span class="uc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg></span></a><span class="dd-menu"><span class="uc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>Under construction</span><span class="dd-item"><a href="mechanics.html">Mechanics</a><span class="dd-sub"><a href="mechanics.html#progression">Progression</a><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a><a href="buildings.html">Buildings</a><a href="factions.html">Factions</a><a href="mechanics.html#excavations">Excavations</a></span></span><span class="dd-item"><a href="unlocks.html" aria-current="page">Unlocks</a><span class="dd-sub"><a href="unlocks-a0.html">Ascension 0</a><a href="unlocks-a1.html">Ascension 1</a><a href="unlocks-a2.html">Ascension 2</a><a href="unlocks-a3.html">Ascension 3</a><a href="unlocks-a4.html">Ascension 4</a></span></span></span></span></nav>
 <h1>Unlocks (Ascension 3)</h1>
 <div class="bugs"><p><b>Under construction:</b> this page is still being written and is not finished yet.</p></div>
 <div id="root"></div>
@@ -289,9 +316,13 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 3, MODE = 'unlocks';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  function linked(tag, text){      // text with links written as [words](page)
-    var n=el(tag), re=/\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
-    while((m=re.exec(text))){ n.appendChild(document.createTextNode(text.slice(at,m.index))); var a=el('a',null,m[1]); a.href=m[2]; n.appendChild(a); at=re.lastIndex; }
+  function linked(tag, text){      // text with links written as [words](page) and bold written as **words**
+    var n=el(tag), re=/\*\*([^*]+)\*\*|\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
+    while((m=re.exec(text))){
+      n.appendChild(document.createTextNode(text.slice(at,m.index)));
+      if(m[1]!=null) n.appendChild(el('strong',null,m[1])); else { var a=el('a',null,m[2]); a.href=m[3]; n.appendChild(a); }
+      at=re.lastIndex;
+    }
     n.appendChild(document.createTextNode(text.slice(at)));
     return n;
   }
@@ -321,10 +352,23 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
         if(e.text) s.appendChild(linked('p',e.text));
         (e.sections||[]).forEach(function(c){
           s.appendChild(el('h3',null,c.title));
+          if(c.side){ var sd=el('div','upgside'); c.side.forEach(function(n){ sd.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(sd); }      // at the right, the text runs around it
           if(c.text) s.appendChild(linked('p',c.text));
           (c.lists||[]).forEach(function(l){
-            if(l.title) s.appendChild(linked('p',l.title));
-            if(l.items && l.items.length){ var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(linked('li',t)); }); s.appendChild(ul); }
+            if(l.title){
+              var lp=linked('p',l.title);
+              if(l.side){ var ls=el('div','upgside'); l.side.forEach(function(n){ ls.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); lp.insertBefore(ls, lp.firstChild); lp.classList.add('withup'); }      // the upgrades of this step at its right
+              s.appendChild(lp);
+            }
+            if(l.items && l.items.length){
+              var ul=el('ul','items');
+              l.items.forEach(function(t,i){
+                var li=linked('li',t);
+                if(l.upgrades && l.upgrades[i]){ var ic=el('div','upgside'); ic.appendChild(upgradeCell(DATA.ups[l.upgrades[i]], ASC, DATA.coins)); li.insertBefore(ic, li.firstChild); li.classList.add('withup'); }      // the upgrade of this item at its right
+                ul.appendChild(li);
+              });
+              s.appendChild(ul);
+            }
           });
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
         });
@@ -576,6 +620,18 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
     return b;
   }
+
+  // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
+  function chips(s){
+    var d=ce('div','tags');
+    (s.tags||s).forEach(function(t){ d.appendChild(ce('span','chip c-'+t.replace(/\*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-'),t)); });
+    return d;
+  }
+  function chipLabel(text, r, c, cs, span){
+    var d=ce('div','lab'); d.style.gridRow=String(r); d.style.gridColumn=span?c+' / span '+span:String(c);
+    d.appendChild(ce('span','chip c-'+text.toLowerCase().replace(/[^a-z0-9]+/g,'-'),text)); return d;
+  }
+  function ce(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
 
 })();
 </script>

@@ -35,6 +35,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
+.mech ul.items li.withup,.mech p.withup{display:flow-root;min-height:88px}      /* tall enough for its upgrade cell */
 .empty{color:var(--muted)}
 table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
@@ -58,9 +59,13 @@ __UC__
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__, MODE = '__MODE__';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-  function linked(tag, text){      // text with links written as [words](page)
-    var n=el(tag), re=/\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
-    while((m=re.exec(text))){ n.appendChild(document.createTextNode(text.slice(at,m.index))); var a=el('a',null,m[1]); a.href=m[2]; n.appendChild(a); at=re.lastIndex; }
+  function linked(tag, text){      // text with links written as [words](page) and bold written as **words**
+    var n=el(tag), re=/\*\*([^*]+)\*\*|\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
+    while((m=re.exec(text))){
+      n.appendChild(document.createTextNode(text.slice(at,m.index)));
+      if(m[1]!=null) n.appendChild(el('strong',null,m[1])); else { var a=el('a',null,m[2]); a.href=m[3]; n.appendChild(a); }
+      at=re.lastIndex;
+    }
     n.appendChild(document.createTextNode(text.slice(at)));
     return n;
   }
@@ -90,10 +95,23 @@ __UC__
         if(e.text) s.appendChild(linked('p',e.text));
         (e.sections||[]).forEach(function(c){
           s.appendChild(el('h3',null,c.title));
+          if(c.side){ var sd=el('div','upgside'); c.side.forEach(function(n){ sd.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(sd); }      // at the right, the text runs around it
           if(c.text) s.appendChild(linked('p',c.text));
           (c.lists||[]).forEach(function(l){
-            if(l.title) s.appendChild(linked('p',l.title));
-            if(l.items && l.items.length){ var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(linked('li',t)); }); s.appendChild(ul); }
+            if(l.title){
+              var lp=linked('p',l.title);
+              if(l.side){ var ls=el('div','upgside'); l.side.forEach(function(n){ ls.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); lp.insertBefore(ls, lp.firstChild); lp.classList.add('withup'); }      // the upgrades of this step at its right
+              s.appendChild(lp);
+            }
+            if(l.items && l.items.length){
+              var ul=el('ul','items');
+              l.items.forEach(function(t,i){
+                var li=linked('li',t);
+                if(l.upgrades && l.upgrades[i]){ var ic=el('div','upgside'); ic.appendChild(upgradeCell(DATA.ups[l.upgrades[i]], ASC, DATA.coins)); li.insertBefore(ic, li.firstChild); li.classList.add('withup'); }      // the upgrade of this item at its right
+                ul.appendChild(li);
+              });
+              s.appendChild(ul);
+            }
           });
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
         });

@@ -186,3 +186,15 @@
     b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
     return b;
   }
+
+  // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
+  function chips(s){
+    var d=ce('div','tags');
+    (s.tags||s).forEach(function(t){ d.appendChild(ce('span','chip c-'+t.replace(/\*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-'),t)); });
+    return d;
+  }
+  function chipLabel(text, r, c, cs, span){
+    var d=ce('div','lab'); d.style.gridRow=String(r); d.style.gridColumn=span?c+' / span '+span:String(c);
+    d.appendChild(ce('span','chip c-'+text.toLowerCase().replace(/[^a-z0-9]+/g,'-'),text)); return d;
+  }
+  function ce(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }

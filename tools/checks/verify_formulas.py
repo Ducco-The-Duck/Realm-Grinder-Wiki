@@ -302,7 +302,12 @@ def main_costs():
             total += 1
             if norm(eng) != norm(stat): bad += 1; print(f"    {it['name']}: engine {eng} / class {stat}")
     uk = json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))      # the upgrades the Unlocks pages show
-    want = [u for pg in uk.get('ascension_pages', {}).values() for e in pg['entries'] for sec in e.get('sections', []) for u in sec.get('upgrades', [])]
+    want = []
+    for pg in uk.get('ascension_pages', {}).values():
+        for e in pg['entries']:
+            for sec in e.get('sections', []):
+                want += sec.get('upgrades', []) + sec.get('side', []) + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
+    want = list(dict.fromkeys(want))
     ix = costs.engine_find(want)
     ec = costs.engine_costs([ix[n] for n in want])
     for n in want:
