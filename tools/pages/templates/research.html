@@ -183,10 +183,11 @@ popups are always the base values <i>v</i>.</div>
           ['P', 'the research points you have in this branch']]);
     tip.appendChild(el('span','lbl','Production boost'));
     var more=c.also.map(function(x){ return nm[x[1]]+' with '+x[0]; });
-    tip.appendChild(el('div',null,'Increases the production of '+nm[c.who]+(more.length ? ', plus '+more.join(' and ') : '')+'.'));
+    var sen=el('div',null,'Increases the production of '+nm[c.who]+(more.length ? ', plus '+more.join(' and ') : '')+'.');
+    if(A>=c.bs){ sen.appendChild(document.createTextNode(' ')); sen.appendChild(el('span','mark',new Array(A-c.bs+2).join('A'))); }      // the Ascension penalty marks, after the sentence
+    tip.appendChild(sen);
     formula('B = '+(c.bs===4 ? F.boost[0] : F.boost[1])+' \\cdot \\left(1 + '+F.boost[2]+' \\cdot P^{'+F.boost[3]+'}\\right)');
     vars([['B', 'the production bonus in %, before any Ascension penalty'], ['P', 'the research points you have in this branch']]);
-    if(A>=c.bs){ var pen=el('div','more','Ascension penalty: '); pen.appendChild(el('span','mark',new Array(A-c.bs+2).join('A'))); tip.appendChild(pen); }
   }
   function showTip(it, anchor){
     tip.textContent='';
