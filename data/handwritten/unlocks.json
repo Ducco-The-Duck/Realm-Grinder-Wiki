@@ -585,5 +585,105 @@
     "Astral Factions treaties"
    ]
   }
- ]
+ ],
+ "ascension_pages": {
+  "0": {
+   "overview": "Ascension 0 introduces a number of basic mechanics that stay relevant throughout the game. You start with the six vanilla factions, and you unlock the Neutral Factions, the Prestige Factions and the ability to do research. You also unlock the powerful Mercenary faction, which is only selectively available to you in later Ascensions.",
+   "entries": [
+    {
+     "title": "Reincarnation 0",
+     "sections": [
+      {
+       "title": "Excavations",
+       "text": "Excavations are unlocked by buying the Archeology upgrade. It appears in the Upgrades panel, under the Misc category, once you have 1e9 Gems, and it is only offered once: buying it gives you the Archeology Expedition trophy, which is how the game remembers that you did. After that you can make [Excavations](mechanics.html#excavations).",
+       "source": [
+        "§3?§.§-r§"
+       ],
+       "upgrades": [
+        "Archeology"
+       ]
+      },
+      {
+       "title": "Neutral Factions",
+       "text": "Each Neutral Faction is unlocked by buying its own upgrade. The upgrade appears once you have found two quest artifacts of the faction through [Excavations](mechanics.html#excavations) and meet the requirement they describe. An artifact is found for certain as soon as you have made the number of excavations it asks for.",
+       "lists": [
+        {
+         "title": "",
+         "items": [
+          "Titan: Ancient Stoneslab 1 (5 excavations) and Ancient Stoneslab 2 (20 excavations). Own 300 Halls of Legends, under whichever name your faction knows the building by, to make Fragment of a Titan Statue available.",
+          "Druid: Fossilized Piece of Bark 1 (10 excavations) and Fossilized Piece of Bark 2 (25 excavations). Find 1,000,000 Faction Coins in the current Era, before bonus multipliers, to make Druidic Runestone available.",
+          "Faceless: Bone Fragment 1 (15 excavations) and Bone Fragment 2 (30 excavations). Play for 36 hours (129,600 seconds) in total, over all your Eras and Reincarnations, to make Octopus Shaped Spine available."
+         ]
+        }
+       ],
+       "source": [
+        "§3?§.§^D§",
+        "§3?§.§^i§",
+        "§3?§.§5Z§",
+        "§[Y§.§]!M§",
+        "§[Y§.§#C§",
+        "§[Y§.§%22R§",
+        "§[Y§.§@!%3C§",
+        "§[Y§.§+!#§",
+        "§[Y§.§9!]§"
+       ],
+       "upgrades": [
+        "Fragment of a Titan Statue",
+        "Druidic Runestone",
+        "Octopus Shaped Spine"
+       ]
+      },
+      {
+       "title": "Prestige Factions",
+       "text": "The Prestige Factions (Dwarf and Drow) are unlocked in three steps. Unlike the Neutral Factions, they do not need any quest artifacts.",
+       "lists": [
+        {
+         "title": "1. Passage to the Underworld. This upgrade appears once you have made 200 excavations since your last Excavation Reset. Buying it starts the search of the Underworld and makes the two quests of the next step appear.",
+         "items": []
+        },
+        {
+         "title": "2. The quests. Sturdy Bearded Man's Quest (Dwarf) and Cloaked Shady Figure's Quest (Drow) are two upgrades that can only be bought while you meet their requirements. Buying one unlocks its faction.",
+         "items": []
+        },
+        {
+         "title": "Sturdy Bearded Man's Quest:",
+         "items": [
+          "Good Alignment",
+          "7000 or more buildings",
+          "800 or more Inns",
+          "10000 or more clicks in this Reincarnation"
+         ]
+        },
+        {
+         "title": "Cloaked Shady Figure's Quest:",
+         "items": [
+          "Evil Alignment",
+          "325 or more trophies unlocked",
+          "650 or more Dark Temples",
+          "7500 or more spells cast in this Reincarnation"
+         ]
+        },
+        {
+         "title": "3. Underworld Diplomacy. Until it is bought, the Dwarven and Drow Coins, Royal Exchanges and Heritages stay locked. It appears once you have unlocked the Dwarf or the Drow, but only below Reincarnation 3, and it has to be bought again after every Abdication and Reincarnation. From Reincarnation 3 on, these are unlocked without it.",
+         "items": []
+        }
+       ],
+       "source": [
+        "§3?§.§<&§",
+        "§3?§.§9!S§",
+        "§3?§.§0f§",
+        "§3?§.§3o§"
+       ],
+       "upgrades": [
+        "Passage to the Underworld",
+        "Sturdy Bearded Man's Quest",
+        "Cloaked Shady Figure's Quest",
+        "Underworld Diplomacy"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
 }

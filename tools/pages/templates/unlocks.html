@@ -58,6 +58,12 @@ __UC__
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__, MODE = '__MODE__';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function linked(tag, text){      // text with links written as [words](page)
+    var n=el(tag), re=/\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
+    while((m=re.exec(text))){ n.appendChild(document.createTextNode(text.slice(at,m.index))); var a=el('a',null,m[1]); a.href=m[2]; n.appendChild(a); at=re.lastIndex; }
+    n.appendChild(document.createTextNode(text.slice(at)));
+    return n;
+  }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
@@ -65,13 +71,8 @@ __UC__
   var tip=document.getElementById('tip');
   function hideTip(){ tip.style.display='none'; }
   function showTip(card, anchor){
-    tip.textContent=''; tip.appendChild(el('b',null,card.name)); tip.appendChild(el('p',null,card.text));
-    tip.style.display='block';
-    var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2),innerWidth-t.width-8);
-    var up=a.top-t.height-8>=8, y=up?a.top-t.height-8:a.bottom+8;
-    tip.className=up?'above':'below'; tip.style.setProperty('--ax',Math.min(Math.max(a.left+a.width/2-x,24),t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    tip.className=''; tip.textContent=''; tip.appendChild(el('b',null,card.name)); tip.appendChild(el('p',null,card.text));
+    placeTip(anchor);
   }
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
@@ -80,6 +81,25 @@ __UC__
       var tb=el('table','rtab'), hd=el('tr'); hd.appendChild(el('th',null,'Reincarnation')); hd.appendChild(el('th',null,'Unlocked')); tb.appendChild(hd);
       (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); var td=el('td'); r.what.forEach(function(w){ var dv=el('div'), am=/^Ascension (\d+)$/.exec(w); if(am){ var al=el('a',null,w); al.href='unlocks-a'+am[1]+'.html'; dv.appendChild(al); } else dv.textContent=w; td.appendChild(dv); }); tr.appendChild(td); tb.appendChild(tr); });
       root.appendChild(tb); return;
+    }
+    if(MODE==='unlocks' && DATA.page){      // a written page: an overview, a line, then a heading for each Reincarnation
+      var pg=DATA.page;
+      root.appendChild(linked('p',pg.overview)); root.appendChild(el('hr','fsep'));
+      (pg.entries||[]).forEach(function(e){
+        var s=el('section','mech'); s.appendChild(el('h2',null,e.title));
+        if(e.text) s.appendChild(linked('p',e.text));
+        (e.sections||[]).forEach(function(c){
+          s.appendChild(el('h3',null,c.title));
+          if(c.text) s.appendChild(linked('p',c.text));
+          (c.lists||[]).forEach(function(l){
+            if(l.title) s.appendChild(linked('p',l.title));
+            if(l.items && l.items.length){ var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(linked('li',t)); }); s.appendChild(ul); }
+          });
+          if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
+        });
+        root.appendChild(s);
+      });
+      return;
     }
     if(MODE==='unlocks'){
       var ul0=el('ul','items');

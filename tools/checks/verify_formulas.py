@@ -78,6 +78,9 @@ def found(x, nums):
 
 def latex_numbers(s):
     """the numbers a LaTeX / text string states (10^{6} counts as 1000000, the dollar signs are kept out of it)"""
+    s = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'', s)      # a link [text](page) counts as its text
+    s = re.sub(r'(?<![\w.,])\d{1,3}(?:,\d{3})+(?![\d,])', lambda m: m.group().replace(',', ''), s)      # 1,000,000
+    s = re.sub(r'(?<![\w.])(\d+(?:\.\d+)?)e(\d+)(?!\w)', lambda m: '%.0f' % (float(m.group(1)) * 10 ** int(m.group(2))), s)      # 1e9
     s = re.sub(r'10\^\{?(\d+)\}?', lambda m: str(10 ** int(m.group(1))), s)
     s = re.sub(r'\[a-zA-Z]+', ' ', s)
     s = re.sub(r'_\{[^}]*\}|_\w', ' ', s)      # subscripts (v_{1}, c_0) are names, not numbers
@@ -238,6 +241,21 @@ def main_mechanics(only=()):
         bad += len(miss)
         print(f"{m['name']}: {len(m['source'])} code sources, {len(nums)} numbers; not found: {len(miss)}")
         for where, x in miss: print(f'    {x:g}   {where}')
+    for asc, pg in (d.get('ascension_pages') or {}).items():      # the Unlocks pages: every section that names its code ("source")
+        for e in pg.get('entries', []):
+            for sec in e.get('sections', []):
+                if not sec.get('source'): continue
+                nums = set()
+                for src in sec['source']:
+                    p = path_of(src)
+                    if not os.path.exists(p): print(f"Unlocks (Ascension {asc}) {sec['title']}: source {src} not found"); bad += 1; continue
+                    nums |= code_numbers(read(p))
+                texts = [sec.get('text', '')] + [x for l in sec.get('lists', []) for x in [l.get('title', '')] + l.get('items', [])]
+                miss = [x for t in texts for x in latex_numbers(t) if x not in TRIVIAL and not found(x, nums)]
+                total += sum(1 for t in texts for x in latex_numbers(t) if x not in TRIVIAL)
+                bad += len(miss)
+                print(f"Unlocks (Ascension {asc}), {e['title']}, {sec['title']}: {len(sec['source'])} code sources, {len(nums)} numbers; not found: {len(miss)}")
+                for x in miss: print(f'    {x:g}')
     print(f'\n{total} numbers checked in the mechanics, {bad} not found in their code')
     return bad
 
@@ -283,6 +301,16 @@ def main_costs():
             except AssertionError: alone += 1; continue      # a cost with a rule of its own (written in the class as code, not as a number)
             total += 1
             if norm(eng) != norm(stat): bad += 1; print(f"    {it['name']}: engine {eng} / class {stat}")
+    uk = json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))      # the upgrades the Unlocks pages show
+    want = [u for pg in uk.get('ascension_pages', {}).values() for e in pg['entries'] for sec in e.get('sections', []) for u in sec.get('upgrades', [])]
+    ix = costs.engine_find(want)
+    ec = costs.engine_costs([ix[n] for n in want])
+    for n in want:
+        if n not in cls: alone += 1; continue      # the two quests are made by classes the upgrade list has no entry for: only the engine knows them here
+        try: stat = costs.static_cost(cls[n])
+        except AssertionError: alone += 1; continue      # a Faction Coin cost written as code
+        total += 1
+        if norm(ec[ix[n]][1]) != norm(stat): bad += 1; print(f"    {n}: engine {ec[ix[n]][1]} / class {stat}")
     n, worst = costs.lineage_check()      # the Lineage cost formula of the tooltips against the game's own method
     if not n or worst > 1e-9: bad += 1; print(f'    Lineage cost formula: {n} states compared, worst relative error {worst:g}')
     rs = json.load(open(os.path.join(ROOT, 'data', 'generated/research.json'), encoding='utf8'))

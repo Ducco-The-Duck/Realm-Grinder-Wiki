@@ -43,6 +43,23 @@ table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
 .rtab th{color:var(--accent)}
 .rtab td.n{width:1%;white-space:nowrap}
+/* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
+   :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
+#tip:where(.upg) b.t{display:block;font-size:1rem}
+#tip:where(.upg) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.upg) .faction{margin-top:6px;font-size:.88rem}
+#tip:where(.upg) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.upg) p{margin:3px 0 0;white-space:normal}
+#tip:where(.upg) .more{color:var(--muted)}
+#tip:where(.upg) .cost{margin-bottom:2px;font-size:1.15em}
+#tip:where(.upg) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.upg) ul.vars li{margin:2px 0}
+#tip:where(.upg) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.upg) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/* a row of upgrade cells outside the upgrade pages' own grids */
+.upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
+.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -266,12 +283,18 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <div id="root"></div>
 <div class="gv">Game version 4.3.15</div></main>
 <div id="tip" role="tooltip"></div>
-<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":0,"what":["Excavations","New Factions: Neutral Factions (Titan, Druid, Faceless)","New Factions: Prestige Factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]},{"n":160,"what":["Ascension 3"]},{"n":165,"what":["Prestige Factions treaties"]},{"n":172,"what":["Astral Factions treaties"]},{"n":225,"what":["Sets"]},{"n":230,"what":["Lineages"]},{"n":235,"what":["Prestige Factions treaties"]},{"n":255,"what":["Astral Factions treaties"]}]}</script>
+<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":0,"what":["Excavations","New Factions: Neutral Factions (Titan, Druid, Faceless)","New Factions: Prestige Factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]},{"n":160,"what":["Ascension 3"]},{"n":165,"what":["Prestige Factions treaties"]},{"n":172,"what":["Astral Factions treaties"]},{"n":225,"what":["Sets"]},{"n":230,"what":["Lineages"]},{"n":235,"what":["Prestige Factions treaties"]},{"n":255,"what":["Astral Factions treaties"]}],"page":null,"ups":{"Archeology":{"n":"Archeology","i":"ArcheologyUpgrade.png","d":["Rumors of recently found ancient relics have spread across the Realm. Perhaps you might want to fund an expedition party."],"s":[],"c":[[1e+29,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Fragment of a Titan Statue":{"n":"Fragment of a Titan Statue","i":"ArcheologyTitanUpgrade.png","d":["This is the fragment of a huge statue resembling the king of an ancient civilization, the Titans."],"s":[],"c":[[1e+30,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]]]},"Druidic Runestone":{"n":"Druidic Runestone","i":"ArcheologyDruidUpgrade.png","d":["This is a mystical runestone carved by druids and infused with powerful magic."],"s":[],"c":[[1e+30,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]]]},"Octopus Shaped Spine":{"n":"Octopus Shaped Spine","i":"ArcheologyFacelessUpgrade.png","d":["This is... what is this? Octopuses shouldn't have bones."],"s":[],"c":[[1e+30,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]]]},"Passage to the Underworld":{"n":"Passage to the Underworld","i":"ArcheologyUnderworldUpgrade.png","d":["Command your expedition to search the Underworld."],"s":[],"c":[[5e+49,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Sturdy Bearded Man's Quest":{"n":"Sturdy Bearded Man's Quest","i":"ArcheologyDwarf.png","d":["Aye lad, nice realm ye have thar! Me people and I wanna see more, but only from a good hearted man, mind ye. Show us some good ol' architecture, make sure ye work on those clicks, and don't forget tha beer!","Allows you to contact the Dwarves directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Good Alignment","7000 or more buildings","800 or more Inns","10000 or more clicks in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]]]},"Cloaked Shady Figure's Quest":{"n":"Cloaked Shady Figure's Quest","i":"ArcheologyDrow.png","d":["Greetings, kivvil. We have noticed your endeavors, and we have seen potential in you. If you wish to prove yourself worthy, we have three simple tasks for you: prove your devotion to our dark gods, your magic prowess, and the greatness of your deeds. Remember, do not show compassion for anyone but for yourself. Aluve.","Allows you to contact the Drow directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Evil Alignment","325 or more trophies unlocked","650 or more Dark Temples","7500 or more spells cast in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]]]},"Underworld Diplomacy":{"n":"Underworld Diplomacy","i":"UnderworldDiplomacy.png","d":["Unlock all underworld Faction Coins, Royal Exchanges and Heritages."],"s":[],"c":[[1e+45,[]],[0,[]],[0,[]],[0,[]],[0,[]]]}},"coins":[["Coins","Diamond Coins","Emerald Coins","Amethyst Coins","Sapphire Coins"],["Fairy","Elven","Angel","Goblin","Undead","Demon","Titan","Druid","Faceless","Dwarven","Drow","Mercenary","Dragon","Archon","Djinn","Makers"]]}</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 3, MODE = 'unlocks';
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function linked(tag, text){      // text with links written as [words](page)
+    var n=el(tag), re=/\[([^\]]*)\]\(([^)]*)\)/g, at=0, m;
+    while((m=re.exec(text))){ n.appendChild(document.createTextNode(text.slice(at,m.index))); var a=el('a',null,m[1]); a.href=m[2]; n.appendChild(a); at=re.lastIndex; }
+    n.appendChild(document.createTextNode(text.slice(at)));
+    return n;
+  }
   function math(tex, node){
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
@@ -279,13 +302,8 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   var tip=document.getElementById('tip');
   function hideTip(){ tip.style.display='none'; }
   function showTip(card, anchor){
-    tip.textContent=''; tip.appendChild(el('b',null,card.name)); tip.appendChild(el('p',null,card.text));
-    tip.style.display='block';
-    var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2),innerWidth-t.width-8);
-    var up=a.top-t.height-8>=8, y=up?a.top-t.height-8:a.bottom+8;
-    tip.className=up?'above':'below'; tip.style.setProperty('--ax',Math.min(Math.max(a.left+a.width/2-x,24),t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    tip.className=''; tip.textContent=''; tip.appendChild(el('b',null,card.name)); tip.appendChild(el('p',null,card.text));
+    placeTip(anchor);
   }
   window.addEventListener('scroll',hideTip,{passive:true});
   function apply(){
@@ -294,6 +312,25 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       var tb=el('table','rtab'), hd=el('tr'); hd.appendChild(el('th',null,'Reincarnation')); hd.appendChild(el('th',null,'Unlocked')); tb.appendChild(hd);
       (DATA.rows||[]).forEach(function(r){ var tr=el('tr'); tr.appendChild(el('td','n',String(r.n))); var td=el('td'); r.what.forEach(function(w){ var dv=el('div'), am=/^Ascension (\d+)$/.exec(w); if(am){ var al=el('a',null,w); al.href='unlocks-a'+am[1]+'.html'; dv.appendChild(al); } else dv.textContent=w; td.appendChild(dv); }); tr.appendChild(td); tb.appendChild(tr); });
       root.appendChild(tb); return;
+    }
+    if(MODE==='unlocks' && DATA.page){      // a written page: an overview, a line, then a heading for each Reincarnation
+      var pg=DATA.page;
+      root.appendChild(linked('p',pg.overview)); root.appendChild(el('hr','fsep'));
+      (pg.entries||[]).forEach(function(e){
+        var s=el('section','mech'); s.appendChild(el('h2',null,e.title));
+        if(e.text) s.appendChild(linked('p',e.text));
+        (e.sections||[]).forEach(function(c){
+          s.appendChild(el('h3',null,c.title));
+          if(c.text) s.appendChild(linked('p',c.text));
+          (c.lists||[]).forEach(function(l){
+            if(l.title) s.appendChild(linked('p',l.title));
+            if(l.items && l.items.length){ var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(linked('li',t)); }); s.appendChild(ul); }
+          });
+          if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
+        });
+        root.appendChild(s);
+      });
+      return;
     }
     if(MODE==='unlocks'){
       var ul0=el('ul','items');
@@ -486,6 +523,58 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     box.addEventListener('input', run);
     run();
     return run;
+  }
+
+  // ---- upgrade cells and their hover popup (the upgrade pages and every page that shows an upgrade); the popup rules are in shared.css
+  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
+  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
+    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
+  }
+  function ctex(x){      // the same number for a formula ($...$)
+    if(x<1e6) return String(x);
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' \\times 10^{'+e+'}';
+  }
+  function upgCost(u, asc, coins){      // the game's "Cost: ..." at an Ascension: the coins of that Ascension, then Faction Coins (u.c[asc] = [coins, [[faction, amount], ...]], or null)
+    var c=u.c && u.c[asc]; if(!c) return null;
+    var parts=[];
+    if(c[0]>0) parts.push(cnum(c[0])+' '+coins[0][asc]);
+    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
+    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  }
+  function placeTip(anchor, clamp){      // show #tip above the anchor (below when there is no room), its arrow under the anchor; clamp: also keep it inside the window at the bottom
+    var tip=document.getElementById('tip');
+    tip.style.display='block';
+    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
+    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
+    if(clamp && y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
+    tip.classList.remove('above','below'); tip.classList.add(up?'above':'below');
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  // an upgrade of a card {n: name, i: icon file, d: [description paragraphs], s: [unlock requirement lines], c: costs per Ascension}: its cell, and the popup with name, cost and text
+  function upgradeCell(u, asc, coins){
+    var tip=document.getElementById('tip'), b=document.createElement('button'), im=document.createElement('img');
+    b.className='cell'; b.type='button'; b.setAttribute('aria-label', u.n);
+    im.src='assets/icons/'+encodeURIComponent(u.i); im.alt=''; b.appendChild(im);
+    function add(tag, cls, text, to){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; (to||tip).appendChild(e); return e; }
+    function show(){
+      tip.className='upg'; tip.textContent='';
+      add('b','t',u.n);
+      var ct=upgCost(u, asc, coins); if(ct) add('div','cost',ct);
+      add('span','lbl','What it does');
+      u.d.forEach(function(t){ add('p',null,t); });
+      if(u.s && u.s.length){ add('span','lbl','Unlock requirement'); var ul=add('ul'); u.s.forEach(function(s){ add('li',null,s,ul); }); }
+      placeTip(b, true);
+    }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
 })();
