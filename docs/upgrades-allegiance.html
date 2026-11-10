@@ -39,14 +39,19 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
 #pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 #pop h3{margin:0;font-size:1.05rem}
+body:not(.searching) .cell.ung{display:none}
+body.searching .cell.group[data-un]{display:none}
+#pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
+#tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
+
+/* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
 #more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(480px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
 #more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
 #more h3{margin:0;font-size:1.1rem}
 #more .bonus{border-top:1px solid var(--line);padding:8px 0}
-body:not(.searching) .cell.ung{display:none}
-body.searching .cell.group[data-un]{display:none}
 #more .rtab{display:grid;grid-template-columns:max-content 1fr;border-top:1px solid var(--line)}
 #more .rtab>.d,#more .rtab>.bonus{border-top:0;border-bottom:1px solid var(--line);padding:6px 0}
 #more .rtab>.d{color:var(--accent);font-weight:700;white-space:nowrap;padding-right:14px;text-align:right}
@@ -58,11 +63,8 @@ body.searching .cell.group[data-un]{display:none}
 #more ul.vars{list-style:none;padding-left:0;margin:2px 0}
 #more .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
 #more .more{color:var(--muted);margin-top:10px}
-#pop button.x,#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
-#tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
-  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
 #more .cost{margin-top:6px;font-size:1.15em}
-
+#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 /* the board (a grid with a label row and column) and the chips of alignments, used by the Spells and the Factions pages */
 #root{--cs:89px;--lw:84px;--gap:10px}
 @media (max-width:640px){#root{--cs:calc((100vw - 32px - 2 * var(--lw) - 6 * var(--gap)) / 5);--lw:60px;--gap:6px}}
@@ -548,6 +550,129 @@ the base values <i>v</i>.</div>
     return b;
   }
 
+  // ---- the popup of an upgrade as the upgrade pages show it (name, cost, requirements, text, formulas); asc is the chosen Ascension
+  function upgMath(tex, host){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
+    host.textContent = tex;
+  }
+  function upgPred(p){
+    return p.replace(/^not having /,'you do not have ').replace(/^not playing /,'you are not playing ').replace(/^following /,'you are following ')
+            .replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
+            .replace(/^being able /,'you are able ').replace(/^being /,'you are ');
+  }
+  function upgAs(k){ return new Array(k+1).join('A'); }
+  function upgPenalty(it, ASC){
+    var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s && !(p.np && ASC>=4)) k=Math.max(k, ASC-p.s+1); });
+    if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
+    return k;
+  }
+  function upgUnavailable(it, ASC){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
+  function upgFormulas(parent, list, title, ASC){
+    var many=list.length>1, seen={};
+    parent.appendChild(ce('span','lbl',title||(many?'Formulas':'Formula')));
+    var anyScaled=many && list.some(function(f){ return f.s; });
+    list.forEach(function(f,i){
+      if(i>0) parent.appendChild(ce('div','fsep'));
+      var vs=many?'v_{'+(i+1)+'}':'v';
+      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l); if(own) vs=own[1];      // a formula for a named value (a, b, ...) keeps its own symbol
+      if(f.lb){
+        var lab=ce('div','flabel'); var lm=ce('span'); upgMath(vs,lm); lab.appendChild(lm);
+        var suf='', badge=null;
+        if(anyScaled){
+          if(!f.s) suf='';
+          else if(ASC>=f.s && !(f.np && ASC>=4)){ suf=' · '; badge=ce('span','mark',upgAs(ASC-f.s+1)); }
+        }
+        lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); parent.appendChild(lab);
+      }
+      var d=ce('div','formula'); var m=ce('span'); upgMath(f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
+      var ul=ce('ul','vars'), n=0;
+      f.v.forEach(function(v){
+        var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
+        var li=ce('li'); var b=ce('b'); b.style.display='inline'; upgMath(v.symbol,b); li.appendChild(b);
+        rich(li, ' — '+v.text); ul.appendChild(li);
+      });
+      if(n) parent.appendChild(ul);
+    });
+    if(list.some(function(f){ return f.s; })) parent.appendChild(ce('div','more','v is the base value, before any Ascension penalty.'));
+  }
+  function upgCostText(it, ASC, COINS){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
+    return upgUnavailable(it, ASC) ? null : upgCost(it, ASC, COINS);
+  }
+  function upgradeTip(it, anchor, ASC, COINS){
+    var tip=document.getElementById('tip');
+    tip.className='upg'; tip.textContent='';
+    tip.appendChild(ce('b','t',it.n));
+    var ct=upgCostText(it, ASC, COINS); if(ct) tip.appendChild(ce('div','cost',ct));      // right below the name, faded
+    if(it.sub) tip.appendChild(ce('div','more',it.sub));
+    if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(ce('div','more','Click for more info'));
+    if(it.o.length){
+      var rs=[], os=[];
+      var st=[];
+      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else if(c.indexOf('starting from')===0) st.push(c); else os.push(c); });
+      var ps=os.map(upgPred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
+      txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+(st.length?(os.length||rs.length?', ':' ')+st.join(' and '):'')+'.';
+      if(it.ns && it.an) txt+=' Cannot be bought at Ascension '+it.an.slice(0,-1).join(', ')+(it.an.length>1?' and ':'')+it.an[it.an.length-1]+'.';
+      tip.appendChild(ce('div','faction',txt));
+    }
+    if(upgUnavailable(it, ASC)){
+      tip.appendChild(ce('span','lbl','Not available'));
+      tip.appendChild(ce('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
+    }
+    tip.appendChild(ce('span','lbl','What it does'));
+    var noted=false;
+    it.d.forEach(function(p){
+      var e=ce('p',null,p.t);
+      if(p.s && ASC>=p.s && !(p.np && ASC>=4)){ e.appendChild(document.createTextNode(' ')); e.appendChild(ce('span','mark',upgAs(ASC-p.s+1))); }
+      tip.appendChild(e);
+      if(it.nt && !noted && new RegExp(it.nr).test(p.t)){ tip.appendChild(ce('div','more',it.nt)); noted=true; }
+    });
+    if(it.f.length){
+      upgFormulas(tip, it.f, null, ASC);
+    }
+    if(it.lc && !upgUnavailable(it, ASC)){      // a Lineage: what raising it a level costs
+      var L=it.lc;
+      var cf=[{l:'C = \\left(b \\cdot 10^{L/A}\\right)^{1 + \\left(c + \\frac{1}{2A} - r\\right)\\left\\lfloor L/'+L.ev+' \\right\\rfloor}', lb:null, v:[
+          {symbol:'C', text:'the associated faction coins the next level costs'}, {symbol:'L', text:'current lineage level'}, {symbol:'A', text:'your Ascension value'},
+          {symbol:'b', text:'base cost (changes with Ascensions, $'+ctex(L.b[ASC])+'$ at Ascension '+ASC+')'}, {symbol:'c', text:'base growth (changes with Ascensions, $'+L.c[ASC]+'$ at Ascension '+ASC+')'},
+          {symbol:'r', text:'growth reduction term, $0$ without '+L.hg}]}];
+      upgFormulas(tip, cf, 'Cost', ASC);
+    }
+    var rq=it.s.slice();
+    if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
+    if(rq.length){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      var ul=ce('ul'); rq.forEach(function(s){ ul.appendChild(ce('li',null,s)); }); tip.appendChild(ul);
+    }
+    if(it.nt && !noted) tip.appendChild(ce('div','more',it.nt));
+    placeTip(anchor, true);
+  }
+
+  // the perks of a Lineage in the #more popup of the page (the markup is on the Upgrades and Factions pages); keep(p) optionally picks the perks to show
+  function upgPerks(it, ASC, keep){
+    var more=document.getElementById('more'), body=document.getElementById('morebody'); document.getElementById('moretitle').textContent=it.n+' perks'; body.textContent='';
+    it.lp.filter(function(p){ return !keep || keep(p); }).forEach(function(p){
+      var blk=ce('div','bonus'), head=ce('p'), pi=p.it;
+      head.appendChild(ce('b',null,pi ? pi.n : 'Perk '+p.n)); blk.appendChild(head);
+      if(pi){
+        var pn=false;
+        pi.d.forEach(function(d){ blk.appendChild(ce('p',null,d.t)); if(pi.nt && !pn && new RegExp(pi.nr).test(d.t)){ blk.appendChild(ce('div','more',pi.nt)); pn=true; } });
+        if(pi.f.length){ var fw=ce('div'); upgFormulas(fw, pi.f, null, ASC); blk.appendChild(fw); }
+        if(pi.nt && !pn) blk.appendChild(ce('div','more',pi.nt));
+      }
+      blk.appendChild(ce('span','lbl','Unlock requirement'));
+      blk.appendChild(ce('div',null,'Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '')));
+      body.appendChild(blk);
+    });
+    more.classList.add('open'); document.getElementById('moreclose').focus();
+  }
+  function bindMore(){      // the close button, a click outside the card and Escape
+    var more=document.getElementById('more');
+    function close(){ more.classList.remove('open'); }
+    document.getElementById('moreclose').addEventListener('click',close);
+    more.addEventListener('click',function(e){ if(e.target===more) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
   function chips(s){
     var d=ce('div','tags');
@@ -575,96 +700,12 @@ the base values <i>v</i>.</div>
     if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
     host.textContent = tex;
   }
-  function pred(p){
-    return p.replace(/^not having /,'you do not have ').replace(/^not playing /,'you are not playing ').replace(/^following /,'you are following ')
-            .replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
-            .replace(/^being able /,'you are able ').replace(/^being /,'you are ');
-  }
-  function As(k){ return new Array(k+1).join('A'); }
-  function penalty(it){
-    var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s && !(p.np && ASC>=4)) k=Math.max(k, ASC-p.s+1); });
-    if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
-    return k;
-  }
-  function unavailable(it){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
-  function formulas(parent, list, title){
-    var many=list.length>1, seen={};
-    parent.appendChild(el('span','lbl',title||(many?'Formulas':'Formula')));
-    var anyScaled=many && list.some(function(f){ return f.s; });
-    list.forEach(function(f,i){
-      if(i>0) parent.appendChild(el('div','fsep'));
-      var vs=many?'v_{'+(i+1)+'}':'v';
-      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l); if(own) vs=own[1];      // a formula for a named value (a, b, ...) keeps its own symbol
-      if(f.lb){
-        var lab=el('div','flabel'); var lm=el('span'); math(vs,lm); lab.appendChild(lm);
-        var suf='', badge=null;
-        if(anyScaled){
-          if(!f.s) suf='';
-          else if(ASC>=f.s && !(f.np && ASC>=4)){ suf=' · '; badge=el('span','mark',As(ASC-f.s+1)); }
-        }
-        lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); parent.appendChild(lab);
-      }
-      var d=el('div','formula'); var m=el('span'); math(f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
-      var ul=el('ul','vars'), n=0;
-      f.v.forEach(function(v){
-        var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
-        var li=el('li'); var b=el('b'); b.style.display='inline'; math(v.symbol,b); li.appendChild(b);
-        rich(li, ' — '+v.text); ul.appendChild(li);
-      });
-      if(n) parent.appendChild(ul);
-    });
-    if(list.some(function(f){ return f.s; })) parent.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
-  }
-  function costText(it){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
-    return unavailable(it) ? null : upgCost(it, ASC, DATA.coins);
-  }
-  function showTip(it, anchor){
-    tip.className='upg'; tip.textContent='';
-    tip.appendChild(el('b','t',it.n));
-    var ct=costText(it); if(ct) tip.appendChild(el('div','cost',ct));      // right below the name, faded
-    if(it.sub) tip.appendChild(el('div','more',it.sub));
-    if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(el('div','more','Click for more info'));
-    if(it.o.length){
-      var rs=[], os=[];
-      var st=[];
-      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else if(c.indexOf('starting from')===0) st.push(c); else os.push(c); });
-      var ps=os.map(pred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
-      txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+(st.length?(os.length||rs.length?', ':' ')+st.join(' and '):'')+'.';
-      if(it.ns && it.an) txt+=' Cannot be bought at Ascension '+it.an.slice(0,-1).join(', ')+(it.an.length>1?' and ':'')+it.an[it.an.length-1]+'.';
-      tip.appendChild(el('div','faction',txt));
-    }
-    if(unavailable(it)){
-      tip.appendChild(el('span','lbl','Not available'));
-      tip.appendChild(el('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
-    }
-    tip.appendChild(el('span','lbl','What it does'));
-    var noted=false;
-    it.d.forEach(function(p){
-      var e=el('p',null,p.t);
-      if(p.s && ASC>=p.s && !(p.np && ASC>=4)){ e.appendChild(document.createTextNode(' ')); e.appendChild(el('span','mark',As(ASC-p.s+1))); }
-      tip.appendChild(e);
-      if(it.nt && !noted && new RegExp(it.nr).test(p.t)){ tip.appendChild(el('div','more',it.nt)); noted=true; }
-    });
-    if(it.f.length){
-      formulas(tip, it.f);
-    }
-    if(it.lc && !unavailable(it)){      // a Lineage: what raising it a level costs
-      var L=it.lc;
-      var cf=[{l:'C = \\left(b \\cdot 10^{L/A}\\right)^{1 + \\left(c + \\frac{1}{2A} - r\\right)\\left\\lfloor L/'+L.ev+' \\right\\rfloor}', lb:null, v:[
-          {symbol:'C', text:'the associated faction coins the next level costs'}, {symbol:'L', text:'current lineage level'}, {symbol:'A', text:'your Ascension value'},
-          {symbol:'b', text:'base cost (changes with Ascensions, $'+ctex(L.b[ASC])+'$ at Ascension '+ASC+')'}, {symbol:'c', text:'base growth (changes with Ascensions, $'+L.c[ASC]+'$ at Ascension '+ASC+')'},
-          {symbol:'r', text:'growth reduction term, $0$ without '+L.hg}]}];
-      formulas(tip, cf, 'Cost');
-    }
-    var rq=it.s.slice();
-    if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
-    if(rq.length){
-      tip.appendChild(el('span','lbl','Unlock requirement'));
-      var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
-    }
-    if(it.nt && !noted) tip.appendChild(el('div','more',it.nt));
-    placeTip(anchor, true);
-  }
+  function costText(it){ return upgCostText(it, ASC, DATA.coins); }
+  function As(k){ return upgAs(k); }
+  function penalty(it){ return upgPenalty(it, ASC); }
+  function unavailable(it){ return upgUnavailable(it, ASC); }
+  function formulas(parent, list, title){ upgFormulas(parent, list, title, ASC); }
+  function showTip(it, anchor){ upgradeTip(it, anchor, ASC, DATA.coins); }
   function hideTip(){ tip.style.display='none'; }
   document.addEventListener('scroll',hideTip,true);
   document.addEventListener('click',function(e){ if(!e.target.closest('.cell')) hideTip(); });
@@ -758,25 +799,7 @@ the base values <i>v</i>.</div>
     if(it.mn) morebody.appendChild(el('div','more',it.mn));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
-  function openPerks(it){
-    moretitle.textContent=it.n+' perks'; morebody.textContent='';
-    // while searching, only the perks that match (the lineage's own name counts for every perk of it)
-    it.lp.filter(function(p){ return qmatch(perkS(it, p)); }).forEach(function(p){
-      var blk=el('div','bonus'), head=el('p'), pi=p.it;
-      var b=el('b',null,pi ? pi.n : 'Perk '+p.n); head.appendChild(b); blk.appendChild(head);
-      if(pi){
-        var pn=false;
-        pi.d.forEach(function(d){ blk.appendChild(el('p',null,d.t)); if(pi.nt && !pn && new RegExp(pi.nr).test(d.t)){ blk.appendChild(el('div','more',pi.nt)); pn=true; } });
-        if(pi.f.length){ var fw=el('div'); formulas(fw, pi.f); blk.appendChild(fw); }
-        if(pi.nt && !pn) blk.appendChild(el('div','more',pi.nt));
-      }
-      var rq='Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '');
-      blk.appendChild(el('span','lbl','Unlock requirement'));
-      blk.appendChild(el('div',null,rq));
-      morebody.appendChild(blk);
-    });
-    hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
-  }
+  function openPerks(it){ hideTip(); upgPerks(it, ASC, function(p){ return qmatch(perkS(it, p)); }); }      // while searching, only the perks that match (the lineage's own name counts for every perk of it)
   function closeMore(){ more.classList.remove('open'); }
   document.getElementById('moreclose').addEventListener('click',closeMore);
   more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });

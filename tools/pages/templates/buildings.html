@@ -203,8 +203,21 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
   var penEl=document.getElementById('pen-formula'), PEN='\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%';
   math(PEN, penEl); window.addEventListener('load',function(){ math(PEN, penEl); });
   refresh();
-  var first=D.buildings.filter(function(b){ return location.hash.slice(1)===b.id; })[0];
-  if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
+  function slug(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+  function openUnique(u){      // #<unique building> (a link from the Factions page): the Ascension (the chosen one when the building exists in it) and the alignments that show it
+    var f=D.factions.filter(function(x){ return x.i===u.f; })[0], A=0;
+    function ok(a){ return u.a0<=a && u.an.indexOf(a)<0 && (f.role!=='astral' || a>=2); }
+    if(!ok(ASC)){ for(var a=0;a<=4;a++) if(ok(a)){ ASC=a; break; } }
+    for(var k=1;k<=3 && !A;k++) if((f.role==='astral' || f.role==='merc' || f.al===k) && (!u.al || u.al.indexOf(k)>=0) && (!u.ra || u.ra===k)) A=k;
+    align=A-1; AX = ASC>=2 ? (f.ax || (AX!==null ? AX : 4)) : null;      // the astral and base factions have their own path; a prestige faction or the Mercenaries go with any
+    var sels=document.querySelectorAll('#filters select');
+    sels[0].value=String(ASC); sels[0].dispatchEvent(new Event('change'));
+    sels[1].value=String(align); sels[1].dispatchEvent(new Event('change'));      // also stops the background picture from choosing the alignment
+    if(AX!==null){ sels[2].value=String(AX); sels[2].dispatchEvent(new Event('change')); }
+    show(D.buildings.filter(function(b){ return b.i===u.s; })[0]);
+  }
+  var hash=decodeURIComponent(location.hash.slice(1)), first=D.buildings.filter(function(b){ return hash===b.id; })[0], uq=D.uniques.filter(function(x){ return slug(x.n)===hash; })[0];
+  if(uq) openUnique(uq); else if(first) show(first); else info.appendChild(el('p','hint','Select a building on the right.'));
   window.addEventListener('load',function(){ var cur=btns.filter(function(x){ return x.b.getAttribute('aria-pressed')==='true'; })[0]; if(cur) cur.b.click(); });
 /*SEARCH_JS*/
 })();

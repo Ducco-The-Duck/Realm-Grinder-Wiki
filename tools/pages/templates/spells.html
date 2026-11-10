@@ -167,6 +167,11 @@ __UC__
   if(by.others.length) parts.push(group('Others','others',by.others));
   if(by.event.length) parts.push(group('Event','event',by.event));
   parts.forEach(function(p,i){ if(i) root.appendChild(el('hr','gsep')); root.appendChild(p); });      // a line between the four categories
+  function openHash(){      // spells.html#fairy-chanting opens that spell's details (the Factions page links here)
+    var h=decodeURIComponent(location.hash.slice(1)), s=SPELLS.filter(function(x){ return x.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')===h; })[0];
+    if(s) showDetail(s);
+  }
+  window.addEventListener('hashchange',openHash); openHash();
 /*SEARCH_JS*/
 })();
 </script>

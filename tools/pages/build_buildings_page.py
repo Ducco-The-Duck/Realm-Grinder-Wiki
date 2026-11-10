@@ -105,6 +105,8 @@ FACCSS = '''#list button.f-FC .pl{background-image:url(assets/ui/buildings/FCBui
 faccss = ''.join(FACCSS.replace('FC', fc) for fc in sorted({u['fc'] for u in uniques}))
 uniques.sort(key=lambda u: (u['s'], u['n']))
 
+json.dump({u['n']: {'id': next(b['id'] for b in slots if b['i'] == u['s']), 'd': u['d'], 'ic': u['ic'], 'fc': u['fc'], 'f': u['f']} for u in uniques},
+          open(os.path.join(ROOT, 'data', 'derived/unique_buildings.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))      # for the Factions page
 from factions import FACTIONS
 data = json.dumps({'buildings': slots, 'uniques': uniques, 'factions': FACTIONS, 'production': hand['production'], 'hall': hand['hall'], 'cost': hand['cost'],
                    'unique': hand['unique'], 'notes': hand['notes']},

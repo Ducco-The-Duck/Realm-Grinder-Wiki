@@ -231,6 +231,41 @@ for _c in _combo['combos']:
     _c['_cost'] = [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in _cc[_ix[_c['name']]][1]]
 COIN_NAMES = costs.names()      # the game's names: the main currency of each Ascension, the Faction Coin of each faction
 
+UNION_PICK = {9: 4, 10: 5, 12: 6}      # Dwarf: Order, Drow: Chaos, Dragon: Balance
+
+
+def faction_upgrades():
+    """for the Factions page: each faction's upgrades arranged as the page shows them. {'items': {name: item}, 'f': {faction: {rows: [[names]] (a treaty tier and the upgrades it opens), heritage, bloodline, lineage, set, combos, spell, uniques}}}"""
+    al = pages['allegiances']
+    items, out = {}, {}
+    cb = item(next(u for u in al if u['akind'] == 'combo_c'))['cb']
+    for f in FACTIONS:
+        fi, nm = f['i'], f['n']
+        mine = sorted((u for u in al if u['faction'] == fi), key=lambda u: u['order'])
+        tiers = [u for u in mine if u['akind'] == 'tier']
+        rows = [[u['name']] for u in tiers]
+        for u in mine:
+            if u['akind'] != 'perk': continue
+            r = (u['perk'] - 1) // 3 if u['perk'] else next(i for i, t in enumerate(tiers) if u['sources'] and u['sources'][0]['name'] == t['name'])      # the perks come three to a tier (the Mercenary ones name their contract)
+            rows[r].append(u['name'])
+        one = lambda k: next((u['name'] for u in mine if u['akind'] == k), None)
+        sp = next((re.sub('^having the spell ', '', c) for u in mine if u['akind'] == 'spell' for c in u['conditions']), None)      # the spell the faction's spell upgrade belongs to
+        mc = [c['n'] for c in cb if f['role'] == 'base' and (c['sub'].startswith(nm + '/') or ('/' + nm + ' ') in c['sub'])]
+        out[str(fi)] = {'rows': rows, 'heritage': [u['name'] for u in mine if u['akind'] == 'heritage'], 'bloodline': one('bloodline'), 'lineage': one('lineage'), 'set': one('set'),
+                        'combos': mc, 'spell': sp, 'uniques': [u['name'] for u in mine if u['akind'] == 'unique' and not u['name'].endswith(' Quest')]}
+        for u in mine:
+            if u['akind'] in ('tier', 'perk', 'heritage', 'bloodline', 'lineage', 'set') and u['name'] not in items: items[u['name']] = item(u)
+            if u.get('tier_no') == 4 and u['faction'] in UNION_PICK and not items[u['name']]['i']: items[u['name']]['i'] = items[u['name']]['ia'][str(UNION_PICK[u['faction']])]      # the Union of a prestige faction has one icon per path: one each, none twice
+    perk_items = {(u['faction'], int(u['name'].rsplit(' ', 1)[1])): item(u) for u in al if u['akind'] == 'lineage_perk'}
+    for u in al:      # a Lineage opens its perks when clicked
+        if u['akind'] == 'lineage' and u['name'] in items: items[u['name']]['lp'] = [dict(p, it=perk_items.get((u['faction'], p['n']))) for p in u['perks']]
+    for c in cb: items[c['n']] = c
+    return {'items': items, 'f': out}
+
+
+json.dump(faction_upgrades(), open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
+
+
 sections = [
     alleg_section(),
     section('misc', 'Misc Upgrades', pages['misc']),

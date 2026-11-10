@@ -5,20 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/bg.css"><script src="assets/bg.js" defer></script>
 <title>Realm Grinder Factions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <style>
 /*THEME*/
 main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .blurb{margin:4px 0 10px}
+main .pen-note{margin-bottom:26px}
 .sub{color:var(--muted);margin:0 0 18px}
-.cell{width:89px;height:89px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
+.cell{position:relative;width:89px;height:89px;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font:inherit;color:inherit}
 .cell:hover,.cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
+.cell.na{opacity:.35;filter:grayscale(1)}
 .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
+.cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;
+  background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
 @media (max-width:640px){#root.fac{--cs:calc((100vw - 32px - var(--lw) - 5 * var(--gap)) / 4);--lw:60px;--gap:6px}}
+#tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
+#tip b{display:block;font-size:1rem}
+#tip p{margin:4px 0 0;white-space:pre-line}
+#tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
+#detail h3{margin:18px 0 6px;color:var(--accent)}
 #detail p{margin:4px 0;white-space:pre-line}
-button.cell{cursor:pointer}
+#detail .box{margin:8px 0 0}
+#detail .box p{margin:0}
+#detail .arow{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;margin:0 0 12px}
+#detail .arow .hint{color:var(--muted);font-size:.85rem}
+#detail .cell{width:72px;height:72px;flex:none}
+.asp{display:flex;flex-wrap:wrap;gap:18px 24px;align-items:flex-start;padding-left:16px}
+.asp .tiers{display:flex;flex-direction:column;gap:6px}
+.asp .trow{display:flex;align-items:center;gap:6px}
+.asp .trow.heri{margin-top:12px}
+.asp .trow figure{width:72px;align-self:flex-start}
+.asp .trow figcaption{white-space:nowrap;margin-left:-10px;margin-right:-10px}
+#detail .cell.gap{visibility:hidden}
+.asp .trow .rl{width:150px;flex:none;font-weight:600;line-height:1.15;white-space:nowrap}
+.asp .rl small,.asp figcaption{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+.asp .side{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.asp .trio,.asp .line{display:flex;gap:8px;flex-wrap:wrap}
+.asp figure{margin:0;text-align:center}
+.asp figcaption{margin-top:2px}
+.asp .full{width:100%}
+.asp .cap{font-weight:600;margin:0 0 4px}
+/* a button as on the Buildings page (the game's building button of the faction, drawn larger) and the spell box of the game */
+.fbar{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:.75px 0 0 #000,-.75px 0 0 #000,0 .75px 0 #000,0 -.75px 0 #000,.75px .75px 0 #000,-.75px .75px 0 #000,.75px -.75px 0 #000,-.75px -.75px 0 #000,0 0 2px #000,0 0 3px #000;
+  width:224px;height:74px;padding:8px 10px 8px 12px;box-sizing:border-box;border:0;background:var(--up) transparent no-repeat center/100% 100%;image-rendering:pixelated;
+  display:flex;align-items:center;gap:6px;text-align:left;white-space:nowrap;cursor:pointer}
+.fbar:hover{background-image:var(--hv)}
+.fbar:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fbar .base{display:block;font-weight:700;font-size:.8rem}
+#detail .fbar .cell{width:56px;height:56px;cursor:inherit}
+.fbar.spellbox{background:none;border:16px solid transparent;border-image:var(--up) 16 fill/16px stretch;padding:0 6px}
+.fbar.spellbox:hover{border-image-source:var(--hv)}
+.fbar.spellbox .cell{margin-left:-2px}
+@media (max-width:640px){.asp .tiers{gap:4px}#detail .cell{width:56px;height:56px}.asp .trow .rl{width:70px;white-space:normal;font-size:.85rem}}
 /*SEARCH_CSS*/
 </style>
 </head>
@@ -26,22 +69,36 @@ button.cell{cursor:pointer}
 <main>
 <nav><a href="index.html">Home</a><a href="factions.html" aria-current="page">Factions</a></nav>
 <h1>Factions</h1>
-__UC__
 <p class="blurb">__BLURB__</p>
+<div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
+value is <i>v</i> (in %), the effect you get is <span id="pen-formula"></span>, where <i>k</i> is the number of <span class="mark">A</span>
+marks on the upgrade: <span class="mark">A</span> is <i>k</i>&nbsp;=&nbsp;1 (exponent 0.1), <span class="mark">AA</span> is <i>k</i>&nbsp;=&nbsp;2
+(exponent 0.01), <span class="mark">AAA</span> is <i>k</i>&nbsp;=&nbsp;3 (exponent 0.001), and so on, so more As means a harsher penalty.
+The marks follow the Ascension chosen below. Most are reduced from Ascension 1, so <i>k</i> equals the Ascension number; some start later
+and have fewer As, or none, at a given Ascension. Upgrades without a mark are not reduced. The formulas in the hover popups are always
+the base values <i>v</i>.</div>
 <div id="root" class="fac"></div>
 <section id="detail" hidden></section>
 </main>
+<div id="tip" role="tooltip"></div>
+<div id="more" role="dialog" aria-modal="true" aria-labelledby="moretitle"><div class="card">
+  <header><h3 id="moretitle"></h3><button class="x" type="button" id="moreclose">Close</button></header>
+  <div id="morebody"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
-  var FACTIONS = JSON.parse(document.getElementById('data').textContent), root=document.getElementById('root');
+  var D = JSON.parse(document.getElementById('data').textContent), FACTIONS=D.factions, ITEMS=D.items, root=document.getElementById('root'), tip=document.getElementById('tip'), ASC=0, current=null;
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function hideTip(){ tip.style.display='none'; }
+  window.addEventListener('scroll',hideTip,{passive:true});
   function cellFor(f){
     var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+f.icon; im.alt=f.name; c.appendChild(im);
-    c.title=''; c.setAttribute('aria-label',f.name); c.addEventListener('click',function(){ showDetail(f); });
+    c.setAttribute('aria-label',f.name); c.addEventListener('click',function(){ showDetail(f); });
     return c;
   }
-  // the base factions in the grid (alignment down, axis across), the prestige factions at the right of their alignment, the astral factions under their axis
+  // the base factions in the grid (alignment down, axis across), the prestige factions at the right of their alignment, the astral factions under their axis,
+  // the Mercenaries (neither) below the Drow
   var FIRST=['Good','Neutral','Evil'], SECOND=['Order','Balance','Chaos'], board=el('div','board fac');
   FACTIONS.forEach(function(f){
     var r=f.al ? 2+FIRST.indexOf(f.al) : 5, c=f.ax ? 2+SECOND.indexOf(f.ax) : 5, cell=cellFor(f);
@@ -49,12 +106,78 @@ __UC__
   });
   FIRST.forEach(function(x,i){ board.appendChild(chipLabel(x,2+i,1)); });
   SECOND.forEach(function(x,i){ board.appendChild(chipLabel(x,1,2+i)); });
-  var detail=document.getElementById('detail');
-  function showDetail(f){      // below the grid, like the spells page
-    detail.hidden=false; detail.textContent=''; detail.appendChild(el('h2',null,f.name)); detail.appendChild(el('p',null,f.blurb));
-    detail.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }
   root.appendChild(board);
+
+  // ---- the details of a faction
+  var detail=document.getElementById('detail'), TRIMF={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
+  function itemCell(name){      // an upgrade as on the upgrade pages: its icon, the popup, the A marks of the Ascension penalty, greyed out when not available in the chosen Ascension
+    var it=ITEMS[name], b=el('button','cell'); b.type='button'; b.setAttribute('aria-label',it.n);
+    if(it.fn && TRIMF[it.fn]) b.classList.add('t-'+it.fn);
+    if(it.i){ var im=el('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
+    var na=upgUnavailable(it,ASC), k=na?0:upgPenalty(it,ASC);
+    b.classList.toggle('na',na); if(k) b.appendChild(el('span','pen',upgAs(k)));
+    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,ASC,D.coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,ASC,D.coins); });
+    b.addEventListener('mouseleave',hideTip); b.addEventListener('blur',hideTip);
+    if(it.lp) b.addEventListener('click',function(){ hideTip(); upgPerks(it,ASC); });      // a Lineage opens its perks
+    return b;
+  }
+  bindMore();
+  var penEl=document.getElementById('pen-formula'), PEN='\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%';
+  upgMath(PEN, penEl); window.addEventListener('load',function(){ upgMath(PEN, penEl); });
+  function slug(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+  function tipFor(anchor, name, text){      // the popup of a spell or a building: the name, a short description, and a faded note
+    tip.className=''; tip.textContent=''; tip.appendChild(el('b',null,name)); tip.appendChild(el('p',null,text));
+    tip.appendChild(el('p','hint','Click for more detail.')); placeTip(anchor);
+  }
+  function barButton(img, name, sub, up, hv, href, text, extra){
+    var b=el('button','fbar'+(extra?' '+extra:'')); b.type='button'; b.style.setProperty('--up','url('+up+')'); b.style.setProperty('--hv','url('+hv+')'); b.setAttribute('aria-label',name);
+    var ic=el('span','cell'), im=el('img'); im.src=img; im.alt=''; ic.appendChild(im); b.appendChild(ic);
+    var tx=el('span',null,name); if(sub) tx.appendChild(el('span','base',sub)); b.appendChild(tx);
+    var on=function(){ tipFor(b,name,text); };
+    b.addEventListener('mouseenter',on); b.addEventListener('focus',on); b.addEventListener('mouseleave',hideTip); b.addEventListener('blur',hideTip);
+    b.addEventListener('click',function(){ location.href=href; });
+    return b;
+  }
+  function captioned(node, label){ var fg=el('figure'); fg.appendChild(node); fg.appendChild(el('figcaption',null,label)); return fg; }
+  var TIERS=['Trade Treaty','Friendship Pact','Alliance','Union'], METAL=['Bronze','Silver','Gold','Diamond'], MERC=['First Contract','Second Contract','Third Contract','Fourth Contract'];
+  function showDetail(f){      // below the grid, like the spells page
+    current=f; hideTip();
+    var a=f.asp, d=detail; d.hidden=false; d.textContent='';
+    d.appendChild(el('h2',null,f.name));
+    var bx=el('div','box'); bx.appendChild(el('p',null,f.blurb)); d.appendChild(bx);
+    d.appendChild(el('h3',null,'Faction Aspects'));
+    var h=el('div','arow'), lab=el('label',null,'Ascension '), sel=el('select'); sel.id='asc'; lab.htmlFor='asc';
+    for(var i=0;i<=D.max;i++){ var o=el('option',null,String(i)); o.value=String(i); sel.appendChild(o); }
+    sel.value=String(ASC); sel.addEventListener('change',function(){ ASC=parseInt(sel.value,10); try{ localStorage.setItem('rg-ascension',String(ASC)); }catch(e){} showDetail(current); });
+    lab.appendChild(sel); h.appendChild(lab); h.appendChild(el('span','hint','The A marks and the greyed-out upgrades (not available in it) follow the chosen Ascension.')); d.appendChild(h);
+    var asp=el('div','asp'); d.appendChild(asp);
+    var left=el('div','tiers'); asp.appendChild(left);
+    a.rows.forEach(function(row,i){      // a treaty tier and the upgrades it opens
+      var r=el('div','trow'), rl=el('div','rl',f.merc ? MERC[i] : TIERS[i]); if(!f.merc) rl.appendChild(el('small',null,METAL[i])); r.appendChild(rl);
+      row.forEach(function(n){ r.appendChild(itemCell(n)); }); left.appendChild(r);
+    });
+    var side=el('div','side'); asp.appendChild(side);
+    var trio=el('div','trio');
+    [['bloodline','Bloodline'],['lineage','Lineage'],['set','Artifact Set']].forEach(function(p){ if(a[p[0]]) trio.appendChild(captioned(itemCell(a[p[0]]),p[1])); });
+    if(trio.children.length) side.appendChild(trio);
+    if(a.spell){
+      var sp=D.spells[a.spell], bx2=sp.tags[0], ub='assets/ui/spellBox_'+bx2+'_';
+      side.appendChild(barButton('assets/icons/'+sp.icon, a.spell, null, ub+'Up.png', ub+'Hover.png', 'spells.html#'+slug(a.spell), sp.desc, 'spellbox'));
+    }
+    a.uniques.forEach(function(n){
+      var u=D.buildings[n], bp='assets/ui/buildings/'+u.fc+'Building_';
+      side.appendChild(barButton(u.ic, n, null, bp+'Up.png', bp+'Hover.png', 'buildings.html#'+slug(n), u.d));
+    });
+    if(a.heritage.length){
+      var hl=el('div','trow heri'); hl.appendChild(el('div','rl')); hl.appendChild(el('div','cell gap')); a.heritage.forEach(function(n,i){ hl.appendChild(captioned(itemCell(n), i ? 'Adv. Heritage' : 'Heritage')); }); left.appendChild(hl);      // under the second and third column of the rows above
+    }
+    if(a.combos.length){
+      var cw=el('div','full'); cw.appendChild(el('p','cap','Legacy Combos')); var cl=el('div','line'); a.combos.forEach(function(n){ cl.appendChild(itemCell(n)); }); cw.appendChild(cl); asp.appendChild(cw);
+    }
+    enhanceSelects();
+    d.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  try{ var sv=parseInt(localStorage.getItem('rg-ascension'),10); if(sv>=0 && sv<=D.max) ASC=sv; }catch(e){}
 /*SEARCH_JS*/
 })();
 </script>
