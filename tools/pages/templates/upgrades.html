@@ -58,19 +58,7 @@ body.searching .cell.group[data-un]{display:none}
 #pop button.x,#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 #tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
-#tip b.t{display:block;font-size:1rem}
-#tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
-#tip .faction{margin-top:6px;font-size:.88rem}
-#tip ul{margin:2px 0 0;padding-left:18px}
-#tip p{margin:3px 0 0}
-#tip .more{color:var(--muted)}
-#tip .cost{margin-bottom:2px;font-size:1.15em}
 #more .cost{margin-top:6px;font-size:1.15em}
-#tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
-#tip ul.vars li{margin:2px 0}
-#tip .formula{padding:4px 0;overflow-wrap:anywhere}
-#tip .flabel{margin-top:6px;font-weight:600}
-#tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 
 /*SEARCH_CSS*/
 </style>
@@ -170,28 +158,11 @@ the base values <i>v</i>.</div>
     });
     if(list.some(function(f){ return f.s; })) parent.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
   }
-  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
-  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
-    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
-    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
-    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
-    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
-  }
-  function ctex(x){      // the same number for a formula ($...$)
-    if(x<1e6) return String(x);
-    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
-    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
-    return s+' \\times 10^{'+e+'}';
-  }
-  function costText(it){      // the game's "Cost: ..." for the chosen Ascension: the coins of that Ascension, then Faction Coins; nothing for an upgrade that cannot be bought then
-    if(!it.c || !it.c[ASC] || unavailable(it)) return null;
-    var c=it.c[ASC], parts=[];
-    if(c[0]>0) parts.push(cnum(c[0])+' '+DATA.coins[0][ASC]);
-    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+DATA.coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
-    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  function costText(it){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
+    return unavailable(it) ? null : upgCost(it, ASC, DATA.coins);
   }
   function showTip(it, anchor){
-    tip.textContent='';
+    tip.className='upg'; tip.textContent='';
     tip.appendChild(el('b','t',it.n));
     var ct=costText(it); if(ct) tip.appendChild(el('div','cost',ct));      // right below the name, faded
     if(it.sub) tip.appendChild(el('div','more',it.sub));
@@ -235,14 +206,7 @@ the base values <i>v</i>.</div>
       var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
     }
     if(it.nt && !noted) tip.appendChild(el('div','more',it.nt));
-    tip.style.display='block';
-    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
-    if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
-    tip.className=up?'above':'below';
-    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    placeTip(anchor, true);
   }
   function hideTip(){ tip.style.display='none'; }
   document.addEventListener('scroll',hideTip,true);
@@ -273,16 +237,10 @@ the base values <i>v</i>.</div>
     else if(m){ m.remove(); }
   }
   function showGroupTip(sm, anchor){
-    tip.textContent='';
+    tip.className='upg'; tip.textContent='';
     tip.appendChild(el('b','t',sm.n));
     tip.appendChild(el('div','more',sm.summary));
-    tip.style.display='block';
-    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
-    tip.className=up?'above':'below';
-    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    placeTip(anchor);
   }
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function openGroup(en){

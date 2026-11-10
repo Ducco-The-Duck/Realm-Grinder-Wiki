@@ -61,20 +61,25 @@ body.searching .cell.group[data-un]{display:none}
 #pop button.x,#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 #tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
-#tip b.t{display:block;font-size:1rem}
-#tip .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
-#tip .faction{margin-top:6px;font-size:.88rem}
-#tip ul{margin:2px 0 0;padding-left:18px}
-#tip p{margin:3px 0 0}
-#tip .more{color:var(--muted)}
-#tip .cost{margin-bottom:2px;font-size:1.15em}
 #more .cost{margin-top:6px;font-size:1.15em}
-#tip ul.vars{list-style:none;padding-left:0;margin:4px 0}
-#tip ul.vars li{margin:2px 0}
-#tip .formula{padding:4px 0;overflow-wrap:anywhere}
-#tip .flabel{margin-top:6px;font-weight:600}
-#tip .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
 
+/* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
+   :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
+#tip:where(.upg) b.t{display:block;font-size:1rem}
+#tip:where(.upg) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.upg) .faction{margin-top:6px;font-size:.88rem}
+#tip:where(.upg) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.upg) p{margin:3px 0 0;white-space:normal}
+#tip:where(.upg) .more{color:var(--muted)}
+#tip:where(.upg) .cost{margin-bottom:2px;font-size:1.15em}
+#tip:where(.upg) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.upg) ul.vars li{margin:2px 0}
+#tip:where(.upg) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.upg) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/* a row of upgrade cells outside the upgrade pages' own grids */
+.upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
+.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -462,6 +467,58 @@ the base values <i>v</i>.</div>
     return run;
   }
 
+  // ---- upgrade cells and their hover popup (the upgrade pages and every page that shows an upgrade); the popup rules are in shared.css
+  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
+  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
+    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
+  }
+  function ctex(x){      // the same number for a formula ($...$)
+    if(x<1e6) return String(x);
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' \\times 10^{'+e+'}';
+  }
+  function upgCost(u, asc, coins){      // the game's "Cost: ..." at an Ascension: the coins of that Ascension, then Faction Coins (u.c[asc] = [coins, [[faction, amount], ...]], or null)
+    var c=u.c && u.c[asc]; if(!c) return null;
+    var parts=[];
+    if(c[0]>0) parts.push(cnum(c[0])+' '+coins[0][asc]);
+    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
+    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  }
+  function placeTip(anchor, clamp){      // show #tip above the anchor (below when there is no room), its arrow under the anchor; clamp: also keep it inside the window at the bottom
+    var tip=document.getElementById('tip');
+    tip.style.display='block';
+    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
+    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
+    if(clamp && y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
+    tip.classList.remove('above','below'); tip.classList.add(up?'above':'below');
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  // an upgrade of a card {n: name, i: icon file, d: [description paragraphs], s: [unlock requirement lines], c: costs per Ascension}: its cell, and the popup with name, cost and text
+  function upgradeCell(u, asc, coins){
+    var tip=document.getElementById('tip'), b=document.createElement('button'), im=document.createElement('img');
+    b.className='cell'; b.type='button'; b.setAttribute('aria-label', u.n);
+    im.src='assets/icons/'+encodeURIComponent(u.i); im.alt=''; b.appendChild(im);
+    function add(tag, cls, text, to){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; (to||tip).appendChild(e); return e; }
+    function show(){
+      tip.className='upg'; tip.textContent='';
+      add('b','t',u.n);
+      var ct=upgCost(u, asc, coins); if(ct) add('div','cost',ct);
+      add('span','lbl','What it does');
+      u.d.forEach(function(t){ add('p',null,t); });
+      if(u.s && u.s.length){ add('span','lbl','Unlock requirement'); var ul=add('ul'); u.s.forEach(function(s){ add('li',null,s,ul); }); }
+      placeTip(b, true);
+    }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
+  }
+
   function sOf(it){ return it._s || (it._s = normS([it.n,it.sub||'',it.fn||'',Object.values(it.ra||{}).join(' '),facLines(it.o),facLines(it.s)].concat(it.d.map(function(p){ return p.t; })).join(' '))); }
   function perkS(it, p){ return normS([it.n, it.fn||'', p.it ? p.it.n : 'Perk '+p.n].concat(p.it ? p.it.d.map(function(d){ return d.t; }) : []).join(' ')); }
   // an object matches when its own text matches all the search words, or one entry inside it does (each faction's entry of a
@@ -517,28 +574,11 @@ the base values <i>v</i>.</div>
     });
     if(list.some(function(f){ return f.s; })) parent.appendChild(el('div','more','v is the base value, before any Ascension penalty.'));
   }
-  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
-  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
-    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
-    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
-    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
-    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
-  }
-  function ctex(x){      // the same number for a formula ($...$)
-    if(x<1e6) return String(x);
-    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
-    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
-    return s+' \\times 10^{'+e+'}';
-  }
-  function costText(it){      // the game's "Cost: ..." for the chosen Ascension: the coins of that Ascension, then Faction Coins; nothing for an upgrade that cannot be bought then
-    if(!it.c || !it.c[ASC] || unavailable(it)) return null;
-    var c=it.c[ASC], parts=[];
-    if(c[0]>0) parts.push(cnum(c[0])+' '+DATA.coins[0][ASC]);
-    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+DATA.coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
-    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  function costText(it){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
+    return unavailable(it) ? null : upgCost(it, ASC, DATA.coins);
   }
   function showTip(it, anchor){
-    tip.textContent='';
+    tip.className='upg'; tip.textContent='';
     tip.appendChild(el('b','t',it.n));
     var ct=costText(it); if(ct) tip.appendChild(el('div','cost',ct));      // right below the name, faded
     if(it.sub) tip.appendChild(el('div','more',it.sub));
@@ -582,14 +622,7 @@ the base values <i>v</i>.</div>
       var ul=el('ul'); rq.forEach(function(s){ ul.appendChild(el('li',null,s)); }); tip.appendChild(ul);
     }
     if(it.nt && !noted) tip.appendChild(el('div','more',it.nt));
-    tip.style.display='block';
-    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
-    if(y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
-    tip.className=up?'above':'below';
-    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    placeTip(anchor, true);
   }
   function hideTip(){ tip.style.display='none'; }
   document.addEventListener('scroll',hideTip,true);
@@ -620,16 +653,10 @@ the base values <i>v</i>.</div>
     else if(m){ m.remove(); }
   }
   function showGroupTip(sm, anchor){
-    tip.textContent='';
+    tip.className='upg'; tip.textContent='';
     tip.appendChild(el('b','t',sm.n));
     tip.appendChild(el('div','more',sm.summary));
-    tip.style.display='block';
-    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
-    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
-    tip.className=up?'above':'below';
-    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
-    tip.style.left=x+'px'; tip.style.top=y+'px';
+    placeTip(anchor);
   }
   var pop=document.getElementById('pop'), popgrid=document.getElementById('popgrid'), poptitle=document.getElementById('poptitle');
   function openGroup(en){

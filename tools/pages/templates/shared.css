@@ -1,3 +1,20 @@
+/* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
+   :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
+#tip:where(.upg) b.t{display:block;font-size:1rem}
+#tip:where(.upg) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.upg) .faction{margin-top:6px;font-size:.88rem}
+#tip:where(.upg) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.upg) p{margin:3px 0 0;white-space:normal}
+#tip:where(.upg) .more{color:var(--muted)}
+#tip:where(.upg) .cost{margin-bottom:2px;font-size:1.15em}
+#tip:where(.upg) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.upg) ul.vars li{margin:2px 0}
+#tip:where(.upg) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.upg) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/* a row of upgrade cells outside the upgrade pages' own grids */
+.upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
+.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}

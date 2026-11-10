@@ -45,6 +45,23 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .flavor{font-style:italic;color:var(--muted)}
 #tip .al{margin-top:6px}
 #tip .al b{color:var(--fg)}
+/* the hover popup of an upgrade (class "upg" on #tip): used by the upgrade pages and every page that shows an upgrade (see upgradeCell in shared.js).
+   :where() keeps the specificity of the plain #tip rules, so the rules below this block still decide ties as before */
+#tip:where(.upg) b.t{display:block;font-size:1rem}
+#tip:where(.upg) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.upg) .faction{margin-top:6px;font-size:.88rem}
+#tip:where(.upg) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.upg) p{margin:3px 0 0;white-space:normal}
+#tip:where(.upg) .more{color:var(--muted)}
+#tip:where(.upg) .cost{margin-bottom:2px;font-size:1.15em}
+#tip:where(.upg) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.upg) ul.vars li{margin:2px 0}
+#tip:where(.upg) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.upg) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.upg) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+/* a row of upgrade cells outside the upgrade pages' own grids */
+.upgrow{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:6px;margin:8px 0 6px}
+.upgrow .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
 /* the Ascension penalty note and the A marks (Upgrades and Buildings pages) */
 .pen-note{margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.92rem}
 .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
@@ -409,6 +426,58 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     box.addEventListener('input', run);
     run();
     return run;
+  }
+
+  // ---- upgrade cells and their hover popup (the upgrade pages and every page that shows an upgrade); the popup rules are in shared.css
+  var SUPD='⁰¹²³⁴⁵⁶⁷⁸⁹';
+  function cnum(x){      // the game's number format: the mantissa to 4 significant digits (3 after the point), without trailing zeros; 145000000 -> 1.45 × 10⁸
+    if(x<1e6) return Math.floor(x).toLocaleString('en-US');
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' × 10'+String(e).split('').map(function(c){ return SUPD[+c]; }).join('');
+  }
+  function ctex(x){      // the same number for a formula ($...$)
+    if(x<1e6) return String(x);
+    var e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e), s;
+    if(m>=9.999){ s='1'; e++; } else { s=m.toPrecision(4); if(s.indexOf('.')>=0) s=s.replace(/\.?0+$/,''); }
+    return s+' \\times 10^{'+e+'}';
+  }
+  function upgCost(u, asc, coins){      // the game's "Cost: ..." at an Ascension: the coins of that Ascension, then Faction Coins (u.c[asc] = [coins, [[faction, amount], ...]], or null)
+    var c=u.c && u.c[asc]; if(!c) return null;
+    var parts=[];
+    if(c[0]>0) parts.push(cnum(c[0])+' '+coins[0][asc]);
+    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
+    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  }
+  function placeTip(anchor, clamp){      // show #tip above the anchor (below when there is no room), its arrow under the anchor; clamp: also keep it inside the window at the bottom
+    var tip=document.getElementById('tip');
+    tip.style.display='block';
+    var r=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(8,r.left+r.width/2-t.width/2), window.innerWidth-t.width-8);
+    var up=r.top-t.height-8>=8, y=up ? r.top-t.height-8 : r.bottom+8;
+    if(clamp && y+t.height>window.innerHeight-8) y=Math.max(8,window.innerHeight-t.height-8);
+    tip.classList.remove('above','below'); tip.classList.add(up?'above':'below');
+    tip.style.setProperty('--ax', Math.min(Math.max(r.left+r.width/2-x, 24), t.width-24)+'px');
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  // an upgrade of a card {n: name, i: icon file, d: [description paragraphs], s: [unlock requirement lines], c: costs per Ascension}: its cell, and the popup with name, cost and text
+  function upgradeCell(u, asc, coins){
+    var tip=document.getElementById('tip'), b=document.createElement('button'), im=document.createElement('img');
+    b.className='cell'; b.type='button'; b.setAttribute('aria-label', u.n);
+    im.src='assets/icons/'+encodeURIComponent(u.i); im.alt=''; b.appendChild(im);
+    function add(tag, cls, text, to){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; (to||tip).appendChild(e); return e; }
+    function show(){
+      tip.className='upg'; tip.textContent='';
+      add('b','t',u.n);
+      var ct=upgCost(u, asc, coins); if(ct) add('div','cost',ct);
+      add('span','lbl','What it does');
+      u.d.forEach(function(t){ add('p',null,t); });
+      if(u.s && u.s.length){ add('span','lbl','Unlock requirement'); var ul=add('ul'); u.s.forEach(function(s){ add('li',null,s,ul); }); }
+      placeTip(b, true);
+    }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
