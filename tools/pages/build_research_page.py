@@ -118,6 +118,23 @@ def budget_for(b):
     return {'fac': ent, 'w': weights}
 
 
+import costs, availability
+_ix = costs.engine_find([r['name'] for r in research], research=True)      # the game's own code, asked for the cost of each research
+assert len(_ix) == len(research), len(_ix)
+_ec = costs.engine_costs(list(_ix.values()))
+
+
+def cost_of(r):
+    """per Ascension: [coins, [[faction, amount], ...]], or null where the research cannot be had (a cost too large for a number only happens there)"""
+    out = []
+    for a, x in enumerate(_ec[_ix[r['name']]][1]):
+        if x is None or x[0] == float('inf'):
+            assert x is None or r['number'] > availability.MAXNUM[a] or (r['unavailable_from'] is not None and a >= r['unavailable_from']), ('infinite cost of an available research', r['name'], a)
+            out.append(None); continue
+        out.append([int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]])
+    return out
+
+
 BRANCHES = []
 for b in range(7):
     its = sorted((r for r in research if r['branch'] == b), key=lambda r: (r['number'], r['index']))
@@ -138,7 +155,7 @@ for b in range(7):
             'n': r['name'], 'k': f"{r['code']} · {name} {r['number']:,}", 'i': icon_file(f"Research{r['number']}"), 'b': bicon,
             'd': tight(r['description']), 'q': r['requirements'], 'h': r['hint'],
             'u': r['unavailable_from'], 'm': r['mercenary_exception'], 'nm': r['number'],
-            'nt': NOTES.get(r['code']),
+            'nt': NOTES.get(r['code']), 'c': cost_of(r),
             'fn': r['faction_name'], 'fk': r['faction_kind'], 'fc': meta['faction_colors'].get(str(r['faction'])),
             'mn': r['mercenary_note'], 'al': r['alignment_lock'], 'an': r['alignment_not'],
             'ac': meta['alignment_colors'].get(r['alignment_lock'] or ''),
@@ -149,7 +166,7 @@ for b in range(7):
     BRANCHES.append({'name': name, 'icon': bicon, 'items': items, 'sl': slot_sources(b) if b in SLOT_UPGRADE else None, 'bud': budget_for(b)})
 
 json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
-payload = {'max': meta['max_ascension'], 'branches': BRANCHES,
+payload = {'max': meta['max_ascension'], 'branches': BRANCHES, 'coins': costs.names(),
            'budget': {'common': BUDGET_COMMON, 'a4': BUDGET_A4, 'merc': BUDGET_MERC}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(b['items']) for b in BRANCHES)

@@ -279,7 +279,11 @@ def main_costs():
             if norm(eng) != norm(stat): bad += 1; print(f"    {it['name']}: engine {eng} / class {stat}")
     n, worst = costs.lineage_check()      # the Lineage cost formula of the tooltips against the game's own method
     if not n or worst > 1e-9: bad += 1; print(f'    Lineage cost formula: {n} states compared, worst relative error {worst:g}')
-    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code); Lineage cost formula: {n} states, worst error {worst:.1g}')
+    rs = json.load(open(os.path.join(ROOT, 'data', 'generated/research.json'), encoding='utf8'))
+    rn, rbad = costs.research_check(costs.engine_find([r['name'] for r in rs], research=True))      # the researches' price formula of the base class
+    bad += rbad
+    if rbad: print(f'    research costs: {rbad} of {rn} differ from the base class formula')
+    print(f'{total} upgrade costs checked against their classes, {bad} differ ({alone} are not cross-checked: generic classes or costs written as code); Lineage cost formula: {n} states, worst error {worst:.1g}; research costs: {rn} checked, {rbad} differ')
     return bad
 
 

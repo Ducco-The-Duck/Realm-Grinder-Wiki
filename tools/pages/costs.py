@@ -158,15 +158,15 @@ def engine_costs(indexes):
     return out
 
 
-def engine_find(wanted):
-    """{name: index into the game's upgrade list} for the upgrades the pages hold under no entry of their own (the Legacy Combos)"""
+def engine_find(wanted, research=False):
+    """{name: index into the game's upgrade list} for the upgrades the pages hold under no entry of their own (the Legacy Combos), or, with research, for researches"""
     import json, quickjs
     names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
     J = lambda t: names[t]
     ctx = quickjs.Context()
     ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
-    prog = ('(function () { var U = %s.%s, w = %s, out = {}; for (var i = 0; i < U.length; i++) { var n = U[i].%s; if (w.indexOf(n) >= 0 && !(n in out)) out[n] = i; } return JSON.stringify(out); })()'
-            % (J('§8G§'), J('§-!4§'), json.dumps(list(wanted)), J('§1i§')))
+    prog = ('(function () { var U = %s.%s, w = %s, out = {}; for (var i = 0; i < U.length; i++) { var n = U[i].%s; if (w.indexOf(n) >= 0 && !(n in out) && (!%s || U[i].%s >= 0)) out[n] = i; } return JSON.stringify(out); })()'
+            % (J('§8G§'), J('§-!4§'), json.dumps(list(wanted)), J('§1i§'), 'true' if research else 'false', J('§!G§')))
     return json.loads(ctx.eval(prog))
 
 
@@ -240,3 +240,42 @@ def lineage_spec():
     """what the page needs for the cost section of the Lineages"""
     P = lineage_params()
     return {'b': P['b'], 'c': P['c'], 'hg': P['hourglass'], 'ev': LINEAGE['every']}
+
+
+# ---- the researches: the research base class prices them by their number (tools: out/script/scripts/§;!J§/§&!_§.as) ------------------------------------
+RESEARCH_BASE = os.path.join(SCRIPTS, '§;!J§', '§&!_§.as')
+
+
+def _big(a, b, e):
+    """a * b ** e, infinite where a number cannot hold it (as in the game)"""
+    try: return a * math.pow(b, e)
+    except OverflowError: return float('inf')
+
+
+def research_check(indexes_by_name):
+    """the coins of every research at each Ascension, worked out from the base class's own numbers and the number the research class writes, against the engine: (compared, differing)"""
+    import json
+    t = open(RESEARCH_BASE, encoding='utf8').read()
+    body = _body(t, FN_COINS)
+    E = re.escape
+    n = E('§%w§')
+    free_to = int(re.search(n + r' <= (\d+)', body).group(1))
+    a1 = re.search(r'return ([0-9.e+]+) \* Math\.pow\(([0-9.]+),' + n + r' - (\d+)\)', body)
+    a0 = re.search(r'return ([0-9.e+]+) \* Math\.pow\(([0-9.]+),' + n + r'\)', body)
+    free_from = int(re.search(E('§8G§.§,P§') + r' >= (\d)\)\s*\{\s*return 0;', body).group(1))
+    ec = engine_costs(list(indexes_by_name.values()))
+    res = json.load(open(os.path.join(ROOT, 'data', 'derived/researchs.json'), encoding='utf8'))
+    bad = total = 0
+    for r in res:
+        if r['name'] not in indexes_by_name: continue
+        text = V.read(V.path_of(r['class']))
+        if '_("' + r['name'] + '")' not in text: continue      # two class names that differ only in case share one file on Windows: the other research's file
+        w = int(re.search(n + r' = (\d+);', _body(text, r['class'].split('.')[-1])).group(1))
+        for a in range(MAXA + 1):
+            if a >= free_from: want = 0
+            elif a == 1: want = 0 if w <= free_to else _big(float(a1.group(1)), float(a1.group(2)), w - int(a1.group(3)))
+            else: want = _big(float(a0.group(1)), float(a0.group(2)), w)
+            got = ec[indexes_by_name[r['name']]][1][a][0]
+            total += 1
+            if not (got == want or (want and got != float('inf') and abs(got - want) <= 1e-9 * abs(want))): bad += 1
+    return total, bad
