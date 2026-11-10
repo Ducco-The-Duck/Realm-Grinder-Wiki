@@ -111,7 +111,12 @@ __UC__
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
         });
         if(c.link){ var lp=el('p'), la=el('a',null,c.link.text); la.href=c.link.href; lp.appendChild(la); inner.appendChild(lp); }
-        if(c.after) inner.appendChild(el('p','after',c.after));
+        if(c.after){
+          var ap=el('p','after'), al=c.after_link, at=al ? c.after.indexOf(al.text) : -1;      // a link inside the sentence
+          if(at>=0){ ap.appendChild(document.createTextNode(c.after.slice(0,at))); var aa=el('a',null,al.text); aa.href=al.href; ap.appendChild(aa); ap.appendChild(document.createTextNode(c.after.slice(at+al.text.length))); }
+          else ap.textContent=c.after;
+          inner.appendChild(ap);
+        }
         (c.lists||[]).forEach(function(l){
           if(l.title) inner.appendChild(el('p',null,l.title));
           var ul=el('ul','items'); l.items.forEach(function(t){ ul.appendChild(el('li',null,t)); }); inner.appendChild(ul);

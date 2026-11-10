@@ -383,7 +383,11 @@
        ]
       }
      ],
-     "after": "The coin threshold for a free reset starts at 12 orders of magnitude below the number of coins needed to reach the gem requirement for the next Reincarnation, and goes up by 3 orders of magnitude with each free reset. See the Abdication section for the conversion formula."
+     "after": "The coin threshold for a free reset starts at 12 orders of magnitude below the number of coins needed to reach the gem requirement for the next Reincarnation, and goes up by 3 orders of magnitude with each free reset. See the Abdication section for the conversion formula.",
+     "after_link": {
+      "text": "Abdication section",
+      "href": "mechanics.html#progression"
+     }
     },
     {
      "title": "Faction Coins",
