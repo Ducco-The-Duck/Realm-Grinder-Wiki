@@ -183,5 +183,30 @@ else:
   except Exception as e:
       problems.append(f"tools/checks/verify_formulas.py failed: {e}")
 
+# 12. the Factions page: its data (written by the Upgrades, Buildings and Spells page builders into data/derived) is complete and consistent
+if not os.environ.get('RG_SCRIPTS'):      # the data files belong to the old build while a new one is checked
+    try:
+        def _d(n): return json.load(open(os.path.join(ROOT, 'data', 'derived', n), encoding='utf8'))
+        fu, ub, sc = _d('faction_upgrades.json'), _d('unique_buildings.json'), _d('spell_cards.json')
+        bad = []
+        if len(fu['f']) != 16: bad.append(f"{len(fu['f'])} factions instead of 16")
+        for i, f in fu['f'].items():
+            names = [n for r in f['rows'] for n in r] + f['heritage'] + f['combos'] + [x for x in (f['bloodline'], f['lineage'], f['set']) if x]
+            bad += [f'faction {i}: {n} has no item' for n in names if n not in fu['items']]
+            bad += [f'faction {i}: {n} has no icon' for n in names if n in fu['items'] and not fu['items'][n].get('i')]
+            if not f['rows']: bad.append(f'faction {i}: no upgrades')
+            if f['spell'] and f['spell'] not in sc: bad.append(f"faction {i}: spell {f['spell']} is not on the Spells page")
+            bad += [f"faction {i}: unique building {u} is not on the Buildings page" for u in f['uniques'] if u not in ub]
+            if f['lineage'] and len(fu['items'].get(f['lineage'], {}).get('lp', [])) != 6: bad.append(f'faction {i}: the Lineage has no six perks')
+            if int(i) <= 5 and len(f['combos']) != 5: bad.append(f"faction {i}: {len(f['combos'])} legacy combos instead of 5")
+        slugs = [re.sub('[^a-z0-9]+', '-', n.lower()) for n in ub]
+        if len(set(slugs)) != len(slugs): bad.append('two unique buildings share a link address')
+        if not os.path.exists(os.path.join(ROOT, 'docs', 'factions.html')): bad.append('docs/factions.html is missing (run build_factions_page.py)')
+        print(f"12. factions page: {len(fu['f'])} factions, {len(fu['items'])} upgrades, {len(ub)} unique buildings" + (f"; problems: {bad[:6]}" if bad else ''))
+        if bad: problems.append('the Factions page data is incomplete (see 12)')
+    except (OSError, ValueError, KeyError) as e:
+        print('12. factions page data unreadable (run the page builders):', e)
+        problems.append('the Factions page data is unreadable')
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
