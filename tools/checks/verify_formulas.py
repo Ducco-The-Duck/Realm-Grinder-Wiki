@@ -19,8 +19,14 @@ ENC = {'?': '%3F', '<': '%3C', '>': '%3E', ':': '%3A', '"': '%22', '|': '%7C', '
 
 def enc(s): return ''.join(ENC.get(c, c) for c in s)
 def path_of(cls):
+    """the class file; two classes whose names differ only in case cannot both be written as one file name on Windows, so the exporter names the second one NAME_2.as (then _3 ...)"""
     pkg, _, name = cls.rpartition('.')
-    return os.path.join(SCRIPTS, enc(pkg), enc(name) + '.as')
+    d, base = os.path.join(SCRIPTS, enc(pkg)), enc(name)
+    for k in range(1, 10):
+        p = os.path.join(d, base + ('.as' if k == 1 else f'_{k}.as'))
+        if not os.path.exists(p): break
+        if re.search(r'class ' + re.escape(name) + r'(?!\S)', open(p, encoding='utf8', errors='replace').read()): return p
+    return os.path.join(d, base + '.as')
 
 
 _cache = {}

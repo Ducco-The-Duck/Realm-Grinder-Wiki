@@ -269,7 +269,7 @@ def research_check(indexes_by_name):
     for r in res:
         if r['name'] not in indexes_by_name: continue
         text = V.read(V.path_of(r['class']))
-        if '_("' + r['name'] + '")' not in text: continue      # two class names that differ only in case share one file on Windows: the other research's file
+        assert '_("' + r['name'] + '")' in text or '_("' + r['name'].replace("'", ""+chr(92)+"'") + '")' in text, ('the class file is another class', r['name'])      # (the exporter writes class names that differ only in case as NAME_2.as: see verify_formulas.path_of)
         w = int(re.search(n + r' = (\d+);', _body(text, r['class'].split('.')[-1])).group(1))
         for a in range(MAXA + 1):
             if a >= free_from: want = 0
