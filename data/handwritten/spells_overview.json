@@ -1413,7 +1413,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all buildings based on the time you have had Hailstorm active. The bonus grows progressively over the duration of each cast.",
+      "text": "Increases the production of all buildings based on the time you have had Hailstorm active. The bonus grows progressively over the duration of each cast. It is a spell of the Summer event.",
       "formulas": [
        {
         "latex": "B = 0.1 \\cdot (1 + a)^{0.6} \\cdot (1 + k)^{1.1}",
@@ -1470,7 +1470,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all buildings based on the spells you cast in this Era. It also grants Faction Coins based on the Flame Orbs collected in this event.",
+      "text": "Increases the production of all buildings based on the spells you cast in this Era. It also grants Faction Coins based on the Flame Orbs collected in this event. It is a spell of the Summer event.",
       "formulas": [
        {
         "latex": "B = 5 \\cdot c^{0.85}",
@@ -1634,7 +1634,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases your Faction Coin find chance based on the Bones you collected and the Reincarnations you made.",
+      "text": "Increases your Faction Coin find chance based on the Bones you collected and the Reincarnations you made. It is a spell of the Halloween event.",
       "formulas": [
        {
         "latex": "F = \\lceil 0.75 \\cdot (R + 1) \\cdot b^{0.75} \\rceil",
@@ -1667,7 +1667,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the size of your assistant army based on the Reincarnations you made. The bonus grows as you keep casting the spell.",
+      "text": "Increases the size of your assistant army based on the Reincarnations you made. The bonus grows as you keep casting the spell. It is a spell of the Halloween event.",
       "formulas": [
        {
         "latex": "A = \\lceil (R + 1) \\cdot q^{0.5} \\rceil",
@@ -1700,7 +1700,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Increases the production of all buildings based on the mana produced in this Era and the Reincarnations you made.",
+      "text": "Increases the production of all buildings based on the mana produced in this Era and the Reincarnations you made. It is a spell of the Halloween event.",
       "formulas": [
        {
         "latex": "B = 0.2 \\cdot (R + 1) \\cdot m^{0.45}",
@@ -2383,7 +2383,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Multiplies the production bonus you get from Gems while it is active.",
+      "text": "Multiplies the production bonus you get from Gems while it is active. It is a spell of the Thanksgiving event.",
       "formulas": [
        {
         "latex": "M = 1 + \\frac{X}{100}",
