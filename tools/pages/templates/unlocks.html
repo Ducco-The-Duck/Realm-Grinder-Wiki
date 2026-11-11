@@ -163,13 +163,17 @@ __UC__
       s.appendChild(inner); root.appendChild(s);
       foldable(s, h, inner, m.name);
     });
-    openHash();
+    openHash(true);
   }
-  function openHash(){      // a link to a mechanic opens its section (also when it is followed from the Codex menu while this page is open)
+  function openHash(arrived){      // a link to a mechanic opens its section (also when it is followed from the Codex menu while this page is open); arriving from another page folds all the others
     var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if(tgt && tgt.querySelector('h2')){ if(!tgt.classList.contains('open')) tgt.querySelector('h2').click(); tgt.scrollIntoView(); }
+    if(tgt && tgt.querySelector('h2')){
+      if(arrived===true) Array.prototype.forEach.call(root.querySelectorAll('section.mech'), function(s){ if(s!==tgt && s._fold) s._fold(false); });
+      if(!tgt.classList.contains('open')) tgt.querySelector('h2').click();
+      tgt.scrollIntoView();
+    }
   }
-  window.addEventListener('hashchange',openHash);
+  window.addEventListener('hashchange',function(){ openHash(); });
   document.addEventListener('click',function(e){      // the same link again leaves the address unchanged, so no hashchange follows it
     var a=e.target.closest && e.target.closest('a'); if(a && a.hash && a.pathname===location.pathname) setTimeout(openHash,0);
   });

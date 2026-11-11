@@ -30,16 +30,19 @@
     var body=document.createElement('div'); body.className='dd-body';
     inner.classList.add('dd-in'); body.appendChild(inner); sec.appendChild(body);
     sec.classList.add('dd'); if(open) sec.classList.add('open');
-    function toggle(){
-      open=!open; sec.classList.toggle('open', open); h.setAttribute('aria-expanded', String(open));
+    function toggle(){ setOpen(!open, true); }
+    sec._fold=function(o){ setOpen(o, false); };      // folds or unfolds without remembering it (a link that lands on one section folds the others)
+    function setOpen(o, remember){
+      if(o===open) return;
+      open=o; sec.classList.toggle('open', open); h.setAttribute('aria-expanded', String(open));
       if(typeof hideTip==='function') hideTip();
       if(open){
         var cs=inner.querySelectorAll('.cell');
         for(var k=0;k<cs.length && k<90;k++) cs[k].style.setProperty('--i', k);
         inner.classList.add('casc'); setTimeout(function(){ inner.classList.remove('casc'); }, 1300);
       }
-      store[key]=open;
-      try{ localStorage.setItem(sk, JSON.stringify(store)); }catch(e){}
+      if(remember){ store[key]=open;
+        try{ localStorage.setItem(sk, JSON.stringify(store)); }catch(e){} }
     }
     h.addEventListener('click', toggle);
     h.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
