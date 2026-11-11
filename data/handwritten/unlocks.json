@@ -493,6 +493,83 @@
     }
    ],
    "page": "research.html"
+  },
+  {
+   "name": "Legacies",
+   "asc": 4,
+   "unlock": [
+    "Available from Ascension 4: the Legacy containers need Ascension 4."
+   ],
+   "source": [
+    "§ \"E§.§1\">§",
+    "§ \"E§.§0\"A§",
+    "§1Z§.§#\"C§",
+    "§ \"E§.§5\"E§",
+    "§ \"E§.§0\"E§"
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Legacies let you use the upgrades of other factions. A Legacy is one tier (Bronze, Silver, Gold or Diamond) of a faction that is not part of your own line, which you choose in a Legacy container. Owning it makes that faction's upgrades of that tier available to you, in place of the treaty tier they would otherwise need. You cannot change your Legacies until you abdicate."
+    },
+    {
+     "title": "Legacy containers",
+     "text": "You have four Legacy containers by default, and each one holds one Legacy. A fifth container, Relativity's Legacy, is free and comes with the Relativity research. A Legacy costs Sapphire Coins (the coins of Ascension 4) together with Faction Coins of the faction you take it from, and it costs more the further you are in the containers: the price depends on the number n of the container you choose it in, from 1 to 4. The Legacies of the prestige factions (Dwarf, Drow and Dragon) have a much higher base price than those of the other factions.",
+     "formulas": [
+      {
+       "latex": "G = g \\cdot 1000^{\\,0.5\\left((n + 3)^{2} - (n + 3)\\right)}",
+       "vars": [
+        [
+         "G",
+         "the Sapphire Coins a Legacy costs"
+        ],
+        [
+         "n",
+         "the number of the container (1 to 4, and 0 for the free container, which costs nothing)"
+        ],
+        [
+         "g",
+         "the base price: 1e39, or 1e118 for a prestige faction"
+        ]
+       ]
+      },
+      {
+       "latex": "C = c \\cdot \\left(10^{9}\\right)^{n - 1}",
+       "vars": [
+        [
+         "C",
+         "the Faction Coins a Legacy costs"
+        ],
+        [
+         "c",
+         "the base amount: 1e21, or 1e45 for a prestige faction"
+        ]
+       ]
+      }
+     ],
+     "lists": [
+      {
+       "title": "A faction that has no Faction Coins of its own is paid for in the coins of its two parent factions, the full amount of each:",
+       "items": [
+        "Titan: Angel and Goblin",
+        "Druid: Elf and Demon",
+        "Faceless: Fairy and Undead",
+        "Dragon: Dwarf and Drow",
+        "Archon: Angel and Undead",
+        "Djinn: Fairy and Demon",
+        "Makers: Elf and Goblin"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Legacy combos",
+     "text": "Legacy combos are bonus effects that need Legacies of two of the six base factions. There is one combo for each pair of them, 15 in total. You can have only one combo before you abdicate, or two with the Revelations research, and they reset when you abdicate. A combo costs 1e72 Sapphire Coins and 1e33 Faction Coins of each of its two factions. Click the object to see all of them.",
+     "side": [
+      "Legacy Combos"
+     ]
+    }
+   ]
   }
  ],
  "reincarnation_unlocks": [

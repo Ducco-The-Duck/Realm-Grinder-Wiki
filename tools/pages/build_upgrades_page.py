@@ -238,7 +238,9 @@ def faction_upgrades():
     """for the Factions page: each faction's upgrades arranged as the page shows them. {'items': {name: item}, 'f': {faction: {rows: [[names]] (a treaty tier and the upgrades it opens), heritage, bloodline, lineage, set, combos, spell, uniques}}}"""
     al = pages['allegiances']
     items, out = {}, {}
-    cb = item(next(u for u in al if u['akind'] == 'combo_c'))['cb']
+    container = item(next(u for u in al if u['akind'] == 'combo_c'))      # the Legacy Combos object, which holds the 15 combos
+    cb = container['cb']
+    items['Legacy Combos'] = container
     for f in FACTIONS:
         fi, nm = f['i'], f['n']
         mine = sorted((u for u in al if u['faction'] == fi), key=lambda u: u['order'])

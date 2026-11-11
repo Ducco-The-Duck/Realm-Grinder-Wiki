@@ -362,6 +362,39 @@
     return b;
   }
 
+  // ---- an upgrade of the Upgrades pages' data ({n, i, d, f, s, o, lo, ...} as build_upgrades_page.item makes it) as a cell: the icon, the popup (upgradeTip), the A marks of the Ascension penalty,
+  // greyed out when it is not available in asc; a click opens what the upgrade holds (the perks of a Lineage, the upgrades of a Legacy Combos / Bloodlines / Lineages / Artifact Sets container)
+  var UPG_TRIM={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
+  function upgItemCell(it, asc, coins){
+    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label',it.n);
+    if(it.fn && UPG_TRIM[it.fn]) b.classList.add('t-'+it.fn);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
+    var na=upgUnavailable(it,asc), k=na?0:upgPenalty(it,asc);
+    b.classList.toggle('na',na); if(k) b.appendChild(ce('span','pen',upgAs(k)));
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,asc,coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,asc,coins); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    var group = it.cb ? ['Legacy Combos',it.cb] : it.bl ? ['Bloodlines',it.bl] : it.lg ? ['Lineages',it.lg] : it.st ? ['Artifact Sets',it.st] : null;
+    if(it.lp) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); upgPerks(it,asc); });
+    else if(group) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); openUpgGroup(group[0], group[1], asc, coins); });
+    return b;
+  }
+  // the group popup (#pop, #poptitle, #popgrid, #popclose in the page): the upgrades in a grid of three columns
+  function openUpgGroup(title, items, asc, coins){
+    var pop=document.getElementById('pop'), grid=document.getElementById('popgrid');
+    document.getElementById('poptitle').textContent=title; grid.textContent=''; grid.className='grid cols3';
+    pop.querySelector('.card').classList.add('narrow');
+    items.forEach(function(it){ if(it) grid.appendChild(upgItemCell(it,asc,coins)); });
+    pop.classList.add('open'); document.getElementById('popclose').focus();
+  }
+  function bindPop(){
+    var pop=document.getElementById('pop');
+    function close(){ pop.classList.remove('open'); document.getElementById('tip').style.display='none'; }
+    document.getElementById('popclose').addEventListener('click',close);
+    pop.addEventListener('click',function(e){ if(e.target===pop) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
   function chips(s){
     var d=ce('div','tags');

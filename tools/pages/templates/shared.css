@@ -1,3 +1,13 @@
+/* the popup that lists a group of upgrades (the Legacy Combos, the Bloodlines ...; openUpgGroup in shared.js) */
+#pop{position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#pop.open{display:flex}
+#pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
+#pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+#pop h3{margin:0;font-size:1.05rem}
+#pop .grid{display:grid;grid-template-columns:repeat(7,1fr)}
+#pop .grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
+#pop .grid .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
+#pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 /* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
 #tip:where(.art) b{display:block;font-size:1rem}
 #tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}

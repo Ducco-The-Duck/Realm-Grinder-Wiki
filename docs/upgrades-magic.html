@@ -18,7 +18,6 @@ nav a{color:var(--muted);text-decoration:none}
 nav a[aria-current]{color:var(--fg);font-weight:600;border-bottom:2px solid var(--accent)}
 h1{margin:0 0 4px;font-size:1.7rem}
 .sub{color:var(--muted);margin:0 0 12px}
-.grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
 .cell.gap{visibility:hidden}
 .subh{margin:14px 0 6px;font-size:.92rem;color:var(--muted)}
 section{margin:0 0 26px}
@@ -34,17 +33,21 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
   background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
 .cell.group{cursor:pointer}
 .badge{position:absolute;right:2px;bottom:2px;font-size:.62rem;line-height:1;padding:2px 4px;border-radius:6px;background:var(--accent);color:var(--bg);font-weight:700;pointer-events:none}
+body:not(.searching) .cell.ung{display:none}
+body.searching .cell.group[data-un]{display:none}
+#tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
+
+/* the popup that lists a group of upgrades (the Legacy Combos, the Bloodlines ...; openUpgGroup in shared.js) */
 #pop{position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #pop.open{display:flex}
 #pop .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(460px,100%);max-height:90vh;overflow:auto;padding:14px}
 #pop header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 #pop h3{margin:0;font-size:1.05rem}
-body:not(.searching) .cell.ung{display:none}
-body.searching .cell.group[data-un]{display:none}
+#pop .grid{display:grid;grid-template-columns:repeat(7,1fr)}
+#pop .grid.cols3{grid-template-columns:repeat(3,minmax(0,88px));justify-content:center;width:100%;margin:0 auto}
+#pop .grid .cell{float:none;width:auto;height:auto;aspect-ratio:1;margin:0}
 #pop button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
-#tip{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
-  border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
-
 /* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
 #tip:where(.art) b{display:block;font-size:1rem}
 #tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
@@ -335,7 +338,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 </head>
 <body class="steel">
 <main>
-<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html" aria-current="page">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span><span class="uc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg></span></a><span class="dd-menu"><span class="uc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>Under construction</span><span class="dd-item"><a href="mechanics.html">Mechanics</a><span class="dd-sub"><a href="mechanics.html#progression">Progression</a><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a><a href="buildings.html">Buildings</a><a href="factions.html">Factions</a><a href="mechanics.html#excavations">Excavations</a><a href="mechanics.html#challenges">Challenges</a><a href="research.html">Researches</a></span></span><span class="dd-item"><a href="unlocks.html">Unlocks</a><span class="dd-sub"><a href="unlocks-a0.html">Ascension 0</a><a href="unlocks-a1.html">Ascension 1</a><a href="unlocks-a2.html">Ascension 2</a><a href="unlocks-a3.html">Ascension 3</a><a href="unlocks-a4.html">Ascension 4</a></span></span></span></span></nav>
+<nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" aria-current="page" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html" aria-current="page">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span><span class="uc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg></span></a><span class="dd-menu"><span class="uc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>Under construction</span><span class="dd-item"><a href="mechanics.html">Mechanics</a><span class="dd-sub"><a href="mechanics.html#progression">Progression</a><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a><a href="buildings.html">Buildings</a><a href="factions.html">Factions</a><a href="mechanics.html#excavations">Excavations</a><a href="mechanics.html#challenges">Challenges</a><a href="research.html">Researches</a><a href="mechanics.html#legacies">Legacies</a></span></span><span class="dd-item"><a href="unlocks.html">Unlocks</a><span class="dd-sub"><a href="unlocks-a0.html">Ascension 0</a><a href="unlocks-a1.html">Ascension 1</a><a href="unlocks-a2.html">Ascension 2</a><a href="unlocks-a3.html">Ascension 3</a><a href="unlocks-a4.html">Ascension 4</a></span></span></span></span></nav>
 <h1>Magic Upgrades</h1>
 
 <div class="pen-note"><b>Ascension penalty.</b> From Ascension 1 on, the game reduces the percentage effects of many upgrades. If an upgrade's
@@ -730,6 +733,39 @@ the base values <i>v</i>.</div>
     b.addEventListener('mouseenter',function(){ artifactTip(it,b); }); b.addEventListener('focus',function(){ artifactTip(it,b); });
     b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
     return b;
+  }
+
+  // ---- an upgrade of the Upgrades pages' data ({n, i, d, f, s, o, lo, ...} as build_upgrades_page.item makes it) as a cell: the icon, the popup (upgradeTip), the A marks of the Ascension penalty,
+  // greyed out when it is not available in asc; a click opens what the upgrade holds (the perks of a Lineage, the upgrades of a Legacy Combos / Bloodlines / Lineages / Artifact Sets container)
+  var UPG_TRIM={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
+  function upgItemCell(it, asc, coins){
+    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label',it.n);
+    if(it.fn && UPG_TRIM[it.fn]) b.classList.add('t-'+it.fn);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
+    var na=upgUnavailable(it,asc), k=na?0:upgPenalty(it,asc);
+    b.classList.toggle('na',na); if(k) b.appendChild(ce('span','pen',upgAs(k)));
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,asc,coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,asc,coins); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    var group = it.cb ? ['Legacy Combos',it.cb] : it.bl ? ['Bloodlines',it.bl] : it.lg ? ['Lineages',it.lg] : it.st ? ['Artifact Sets',it.st] : null;
+    if(it.lp) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); upgPerks(it,asc); });
+    else if(group) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); openUpgGroup(group[0], group[1], asc, coins); });
+    return b;
+  }
+  // the group popup (#pop, #poptitle, #popgrid, #popclose in the page): the upgrades in a grid of three columns
+  function openUpgGroup(title, items, asc, coins){
+    var pop=document.getElementById('pop'), grid=document.getElementById('popgrid');
+    document.getElementById('poptitle').textContent=title; grid.textContent=''; grid.className='grid cols3';
+    pop.querySelector('.card').classList.add('narrow');
+    items.forEach(function(it){ if(it) grid.appendChild(upgItemCell(it,asc,coins)); });
+    pop.classList.add('open'); document.getElementById('popclose').focus();
+  }
+  function bindPop(){
+    var pop=document.getElementById('pop');
+    function close(){ pop.classList.remove('open'); document.getElementById('tip').style.display='none'; }
+    document.getElementById('popclose').addEventListener('click',close);
+    pop.addEventListener('click',function(e){ if(e.target===pop) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

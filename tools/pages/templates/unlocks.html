@@ -54,6 +54,10 @@ __UC__
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
+<div id="pop" role="dialog" aria-modal="true" aria-labelledby="poptitle"><div class="card">
+  <header><h3 id="poptitle"></h3><button class="x" type="button" id="popclose">Close</button></header>
+  <div class="grid" id="popgrid"></div>
+</div></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function(){
@@ -81,6 +85,7 @@ __UC__
     placeTip(anchor);
   }
   window.addEventListener('scroll',hideTip,{passive:true});
+  bindPop();
   function apply(){
     root.textContent='';
     if(MODE==='all'){      // the overall Unlocks page: what the Reincarnate window says is unlocked
@@ -143,6 +148,7 @@ __UC__
       if(MODE!=='mechanics') (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });      // the Mechanics page does not say when a mechanic becomes available
       (m.sections||[]).forEach(function(c){
         if(c.title) inner.appendChild(el('h3',null,c.title));
+        if(c.side){ var us=el('div','upgside'); c.side.forEach(function(n){ us.appendChild(upgItemCell(DATA.items[n], m.asc, DATA.coins)); }); inner.appendChild(us); }      // an upgrade at the right of the text, as on the Upgrades pages (the text runs around it)
         if(c.text) inner.appendChild(el('p',null,c.text));
         (c.formulas||[]).forEach(function(f,fi){
           if(fi) inner.appendChild(el('hr','fsep'));      // a line between formulas that follow each other

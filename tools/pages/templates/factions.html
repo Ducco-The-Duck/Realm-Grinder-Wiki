@@ -109,21 +109,8 @@ the base values <i>v</i>.</div>
   root.appendChild(board);
 
   // ---- the details of a faction
-  var detail=document.getElementById('detail'), TRIMF={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
-  function itemCell(name){      // an upgrade as on the upgrade pages: its icon, the popup, the A marks of the Ascension penalty, greyed out when not available in the chosen Ascension
-    var it=ITEMS[name], b=el('button','cell'); b.type='button'; b.setAttribute('aria-label',it.n);
-    if(it.fn && TRIMF[it.fn]) b.classList.add('t-'+it.fn);
-    if(it.i){ var im=el('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
-    var na=upgUnavailable(it,ASC), k=na?0:upgPenalty(it,ASC);
-    b.classList.toggle('na',na); if(k) b.appendChild(el('span','pen',upgAs(k)));
-    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,ASC,D.coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,ASC,D.coins); });
-    b.addEventListener('mouseleave',hideTip); b.addEventListener('blur',hideTip);
-    if(it.lp) b.addEventListener('click',function(){ hideTip(); upgPerks(it,ASC); });      // a Lineage opens its perks
-    return b;
-  }
-  bindMore();
-  var penEl=document.getElementById('pen-formula'), PEN='\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%';
-  upgMath(PEN, penEl); window.addEventListener('load',function(){ upgMath(PEN, penEl); });
+  var detail=document.getElementById('detail');
+  function itemCell(name){ return upgItemCell(ITEMS[name], ASC, D.coins); }      // an upgrade as on the upgrade pages (shared)
   function slug(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
   function tipFor(anchor, name, text){      // the popup of a spell or a building: the name, a short description, and a faded note
     tip.className=''; tip.textContent=''; tip.appendChild(el('b',null,name)); tip.appendChild(el('p',null,text));
