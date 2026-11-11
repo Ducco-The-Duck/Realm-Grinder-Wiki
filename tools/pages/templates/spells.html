@@ -171,7 +171,7 @@ __UC__
     var h=decodeURIComponent(location.hash.slice(1)), s=SPELLS.filter(function(x){ return x.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')===h; })[0];
     if(s) showDetail(s);
   }
-  window.addEventListener('hashchange',openHash); openHash();
+  window.addEventListener('hashchange',openHash); openHash(); document.addEventListener('DOMContentLoaded',openHash);      // again once the formula library (deferred) is there
 /*SEARCH_JS*/
 })();
 </script>

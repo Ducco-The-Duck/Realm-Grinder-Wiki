@@ -208,5 +208,20 @@ if not os.environ.get('RG_SCRIPTS'):      # the data files belong to the old bui
         print('12. factions page data unreadable (run the page builders):', e)
         problems.append('the Factions page data is unreadable')
 
+# 13. every icon a page uses exists in docs/assets/icons (a new item of an update needs its artwork, which comes from the game's image atlases, not from the .swf: tools/UPDATING.md step 1b)
+if not os.environ.get('RG_SCRIPTS'):
+    try:
+        icon_dir = os.path.join(ROOT, 'docs', 'assets', 'icons')
+        need = {sp['icon'] + '.png': sp['name'] for sp in json.load(open(os.path.join(ROOT, 'data', 'derived/spells.json'), encoding='utf8')) if sp.get('icon')}      # the spells
+        docs = os.path.join(ROOT, 'docs')
+        for fn in os.listdir(docs):
+            if fn.endswith('.html'):
+                for m in re.findall(r"""assets/icons/([^"'\s)<>+]+\.png)""", open(os.path.join(docs, fn), encoding='utf8').read()): need.setdefault(m.replace('%20', ' '), fn)
+        absent = sorted((w, f) for f, w in need.items() if not os.path.exists(os.path.join(icon_dir, f)))
+        print(f"13. icons used by the pages: {len(need)}" + (f"; MISSING {len(absent)}: {absent[:8]}" if absent else '; all present'))
+        if absent: problems.append(f"{len(absent)} icon(s) used by the pages are missing in docs/assets/icons (new artwork? see tools/UPDATING.md step 1b)")
+    except OSError as e:
+        print('13. icons check failed:', e)
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

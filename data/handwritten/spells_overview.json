@@ -2373,6 +2373,35 @@
     ],
     "note": "* Only a Pseudo-Faction spell if obtained from the Fairy/Angel legacy combo."
    }
+  },
+  "Feast Offering": {
+   "description": "Multiplicatively increase the production bonus from Gems by 1000%.",
+   "tags": [
+    "Event"
+   ],
+   "detail": {
+    "sections": [
+     {
+      "title": "What it does",
+      "text": "Multiplies the production bonus you get from Gems while it is active. It is a spell of the Thanksgiving event.",
+      "formulas": [
+       {
+        "latex": "M = 1 + \frac{X}{100}",
+        "vars": [
+         [
+          "M",
+          "the multiplier of the production bonus from Gems"
+         ],
+         [
+          "X",
+          "the bonus in %, $1000\\%$"
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   }
   }
  }
 }

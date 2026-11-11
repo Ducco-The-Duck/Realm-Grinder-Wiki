@@ -44,6 +44,26 @@ table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
 .rtab th{color:var(--accent)}
 .rtab td.n{width:1%;white-space:nowrap}
+/* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
+#more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
+#more.open{display:flex}
+#more .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);width:min(480px,100%);max-height:90vh;overflow:auto;padding:12px 14px}
+#more header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;background:var(--card);padding:6px 0}
+#more h3{margin:0;font-size:1.1rem}
+#more .bonus{border-top:1px solid var(--line);padding:8px 0}
+#more .rtab{display:grid;grid-template-columns:max-content 1fr;border-top:1px solid var(--line)}
+#more .rtab>.d,#more .rtab>.bonus{border-top:0;border-bottom:1px solid var(--line);padding:6px 0}
+#more .rtab>.d{color:var(--accent);font-weight:700;white-space:nowrap;padding-right:14px;text-align:right}
+#more .card.wide{width:min(700px,100%)}
+#more .bonus p{margin:0 0 2px}
+#more .formula{padding:2px 0;overflow-wrap:anywhere}
+#more .flabel{margin-top:4px;font-weight:600}
+#more .fsep{display:none}      /* the perks of a popup are already divided by lines */
+#more ul.vars{list-style:none;padding-left:0;margin:2px 0}
+#more .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
+#more .more{color:var(--muted);margin-top:10px}
+#more .cost{margin-top:6px;font-size:1.15em}
+#more button.x{font:inherit;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer}
 /* the board (a grid with a label row and column) and the chips of alignments, used by the Spells and the Factions pages */
 #root{--cs:89px;--lw:84px;--gap:10px}
 @media (max-width:640px){#root{--cs:calc((100vw - 32px - 2 * var(--lw) - 6 * var(--gap)) / 5);--lw:60px;--gap:6px}}
@@ -308,7 +328,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <h1>Mechanics</h1>
 <div class="bugs"><p><b>Under construction:</b> this page is still being written and is not finished yet.</p></div>
 <div id="root"></div>
-<div class="gv">Game version 4.3.15</div></main>
+<div class="gv">Game version 4.3.16</div></main>
 <div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">{"mechanics":[{"name":"Progression","asc":0,"unlock":[],"source":["§#!!§::§&v§","§#!!§::§9!E§","§#!!§::§,\"C§","§#!!§::§#%§","§4X§.§59§","§3?§.§`J§"],"sections":[{"title":"Abdication","text":"Abdication is the first reset introduced in the game. Stats counted in this Era are reset when you abdicate. Abdicating also converts the coins you made into Gems:","formulas":[{"latex":"C = \\frac{10^{12}}{2}\\,G\\,(G + 1)","vars":[["C","the coins you made in this Reincarnation, all its Eras together"],["G","your total Gems after abdicating: the Gems you own plus the ones you gain"]]}]},{"title":"Reincarnation","text":"Reincarnation is the second reset introduced in the game. Stats counted in this Reincarnation are reset when you reincarnate. To make the next Reincarnation you need to have a number of Gems that grows with every one you make:","formulas":[{"latex":"G_n = 10^{27} \\cdot 1000^{\\,n - 1} \\quad (A = 0)","vars":[["G_n","the Gems you need to have to make the n-th Reincarnation"],["n","the number of the Reincarnation you are making"]]},{"latex":"G_n = 10^{27} \\cdot 100^{\\,n - 1 - 40 - 60\\,(A - 1)} \\quad (1 \\le A \\le 4)","vars":[["A","your Ascension number"]]}]},{"title":"Ascension","text":"An Ascension is a special kind of Reincarnation that resets your economy and introduces new mechanics. Ascensions happen at Reincarnation 40, 100, 160 and 220. From Ascension 1 on, the Ascension penalty reduces the percentage bonuses of many upgrades, researches, spells and unique buildings. A bonus of v % becomes:","formulas":[{"latex":"\\left(\\left(1 + \\frac{v}{100}\\right)^{0.1^{k}} - 1\\right) \\cdot 100\\,\\%","vars":[["v","the bonus before the penalty, in %"],["k","how many times the penalty is applied: your Ascension number minus the Ascension it starts at, plus 1 (usually just your Ascension number)"]]}],"after":"Some effects are not reduced at all, and some are not reduced at Ascension 4. Further information about each Ascension and what it encompasses is given on its Unlocks page."}],"id":"progression","href":"mechanics.html#progression"},{"name":"Royal Exchanges","asc":0,"unlock":["Available from the start (Reincarnation 0): the Royal Market opens as soon as you have chosen a faction."],"card":{"icon":"RoyalExchange.png","name":"Royal Market","text":"Opens the Royal Market in the game, where you can purchase Royal Exchanges for Faction Coins. They can be bought multiple times for an increasing price per Faction Coin type."},"sections":[{"title":"What they are","text":"Royal Exchanges are bought in the Royal Market with Faction Coins, one coin type per faction. Every exchange you buy adds to a bonus that multiplies all of your production. An exchange can be bought any number of times, and the price rises with every one you buy of the same coin type."},{"title":"Bonus per exchange","text":"The base bonus is 10% per exchange. This is the Individual Bonus shown in the Royal Market. Various things in the game affect it.","formulas":[{"latex":"b = \\left(10 + \\sum a_i\\right)\\cdot\\prod_j\\left(1+\\frac{m_j}{100}\\right)","vars":[["b","the bonus per exchange, in %"],["a_i","additive increases to the Royal Exchange bonus"],["m_j","multiplicative increases to the Royal Exchange bonus, in %"]]}],"after":"For example, Diplomacy (E30) and the Titan Set add to it, and Equivalence (A5875) and the Titan Lineage multiply it."},{"title":"Overall bonus","text":"The overall bonus multiplies your total production. With no exchanges bought it is 1. At Ascension 0 every exchange adds b% of your production: 100 exchanges at 10% give a multiplier of 11. From Ascension 1 the Ascension penalty below applies.","formulas":[{"latex":"M = \\left(1+\\frac{b\\cdot N}{100}\\right)^{p}\\qquad N = n\\cdot\\prod_k\\left(1+\\frac{c_k}{100}\\right)","vars":[["M","the overall bonus, a multiplier on production"],["n","exchanges bought (Exchanges Made in the stats), all coin types together"],["N","the number of exchanges counted"],["c_k","extra exchanges counted, in %"],["p","1 at Ascension 0, see the Ascension penalty below"]]}],"after":"For example, the Archon Heritage makes every exchange count for 10% more."},{"title":"Ascension penalty","text":"From Ascension 1 the overall bonus is raised to a power p that is below 1 instead of being used as it is. This is not the penalty of the researches (the A marks): the exchanges have their own formula, which weakens with every Ascension. The Individual Bonus shown in the Royal Market is not reduced, only the overall bonus is.","formulas":[{"latex":"p = \\frac{0.7\\,E^{0.7}}{1+2.5\\,\\ln A}\\qquad E = 0.1 + \\sum e_i","vars":[["A","your Ascension (at least 1 here)"],["E","the Ascension multiplier, 0.1 by default"],["e_i","increases to the Ascension multiplier from items"]]}],"after":"For example, Hoarding (E1225) raises the Ascension multiplier."},{"title":"Cost","text":"The first exchange of a coin type costs 20 Faction Coins of that type. Each one you buy of that coin type makes the next one g times as expensive, so the price of the next one is about 20 · g to the power of the number already bought. Every coin type has its own count. The first formula gives the total price of buying k more when n are already bought; g is called the cost multiplier and starts at 1.1.","formulas":[{"latex":"C(n,k) = \\left\\lfloor\\frac{20\\,(g^{n+k}-1)}{g-1}\\right\\rfloor - \\left\\lfloor\\frac{20\\,(g^{n}-1)}{g-1}\\right\\rfloor","vars":[["n","exchanges of this coin type already bought"],["k","how many more you buy"],["g","the cost multiplier"]]},{"latex":"g = \\max\\left(0,\\ 1.1-\\sum r_i\\right)","vars":[["r_i","cost reduction multiplier values"]]}],"after":"For example, Intimidation (E1325) lowers the cost multiplier."}],"id":"royal-exchanges","href":"mechanics.html#royal-exchanges"},{"name":"Spells","asc":0,"unlock":["Available from the start (Reincarnation 0)."],"sections":[{"title":"What they are","text":"Spells are powers you cast with mana. Each spell has a mana cost, which is taken from your mana when you cast it, and most last for a limited time, during which their effect is active. A spell that is still active can't be cast again until it ends.","link":{"href":"spells.html","text":"All spells and their details"}}],"page":"spells.html","id":"spells","href":"spells.html"},{"name":"Buildings","asc":0,"unlock":["Available from the start (Reincarnation 0)."],"sections":[{"title":"What they are","text":"Buildings are bought with coins and produce coins every second. The price of each kind rises with every one you own.","link":{"href":"buildings.html","text":"All buildings, their production and cost"}}],"page":"buildings.html","id":"buildings","href":"buildings.html"},{"name":"Factions","asc":0,"unlock":["Available from the start (Reincarnation 0)."],"sections":[{"title":"What they are","text":"Factions are the peoples you can side with. Each faction has its own Faction Coins, unique buildings and upgrades. You start with the six vanilla factions, and more become available as you progress.","link":{"href":"factions.html","text":"All factions and their details"}}],"page":"factions.html","id":"factions","href":"factions.html"},{"name":"Excavations","asc":0,"unlock":["Available from the start (Reincarnation 0): buy the Archeology upgrade, which appears at 1e9 Gems and costs 1e29 coins. Then Excavation can be bought."],"sections":[{"title":"What they are","text":"Excavations are bought with coins in the Excavation panel. Every excavation finds Faction Coins, and may find artifacts. The price of the next excavation rises with every one you make, until you reset your excavations. The excavations you made are kept when you Abdicate; a reset or a Reincarnation sets them back to zero.","link":{"href":"archaeology.html","text":"All artifacts and their chances"}},{"title":"Cost","text":"Buying n excavations at once, when d have been made since your last reset, costs the sum of their prices. Each price is the cost multiplier r times the one before it, starting from a. From Ascension 1 the part of the multiplier above 1 is divided by 5A, so the price rises much more slowly.","formulas":[{"latex":"C(n) = \\left\\lfloor \\frac{a\\,\\left(r^{\\,d+n} - 1\\right)}{r - 1} \\right\\rfloor - \\left\\lfloor \\frac{a\\,\\left(r^{\\,d} - 1\\right)}{r - 1} \\right\\rfloor","vars":[["C(n)","the coins the next n excavations cost"],["n","how many excavations you buy at once"],["d","the excavations made since your last Excavation Reset (your excavation depth)"],["a","the price of the first excavation after a reset"],["r","the cost multiplier"]]},{"latex":"a = \\left(10^{27}\\right)^{0.75^{A}}","vars":[["A","your Ascension number"]]},{"latex":"r = r_0 \\quad (A = 0) \\qquad r = 1 + \\frac{r_0 - 1}{5A} \\quad (A \\ge 1)"},{"latex":"r_0 = 1.2 - \\sum r_i","vars":[["r_0","the cost multiplier before the Ascension is taken into account"],["r_i","the reductions of the excavation cost multiplier, below"]]}],"lists":[{"title":"Examples of cost reduction multipliers:","items":["Surveyorship (E270): 0.02","Discount (E13125): 0.02","Magic Resistance: 0.02","Reality Crater, while Infinite Spiral is active"]}]},{"title":"Rubies","text":"You receive one Ruby each time you reach one of the depths below for the first time.","formulas":[{"latex":"D_k = 25\\,k\\,(k + 1)","vars":[["D_k","the excavation depth that gives the k-th Ruby"]]}]},{"title":"Excavation Resets","text":"A reset sets the excavations made since the last reset back to zero, so the price starts again at the first excavation. A regular reset costs Rubies, while free resets (from Ascension 1) cost nothing, but require you to meet a coin threshold based on your Reincarnation. Each free reset you make in a Reincarnation raises the amount needed for the next one, and it is counted in the stats as Excavation Resets (Free).","formulas":[{"latex":"R_c = 1 + \\left\\lfloor \\frac{d}{3000} \\right\\rfloor","vars":[["R_c","the Rubies a regular reset costs"],["d","the excavations made since your last reset"]]},{"latex":"Q = \\operatorname{round}\\left( \\frac{X\\,(X + 1)}{2} \\cdot 10^{\\,3f} \\right)","vars":[["Q","the coins you need to have for a free reset (they are not spent)"],["X","the gems needed for your next Reincarnation"],["f","the free resets you have made in this Reincarnation"]]}],"after":"The coin threshold for a free reset starts at 12 orders of magnitude below the number of coins needed to reach the gem requirement for the next Reincarnation, and goes up by 3 orders of magnitude with each free reset. See the Abdication section for the conversion formula.","after_link":{"text":"Abdication section","href":"mechanics.html#progression"}},{"title":"Faction Coins","text":"Every excavation finds Faction Coins. The amount is worked out for each excavation on its own, with d the excavations made since your last reset before this one, so it grows as you dig deeper and starts again after a reset.","formulas":[{"latex":"F = \\left( 250 + \\left\\lfloor 0.5\\,d^{1.05} \\right\\rfloor \\right)^{1 + 0.35\\,A}","vars":[["F","the Faction Coins one excavation finds"],["d","the excavations made since your last reset, before this one"],["A","your Ascension number"]]}]}],"source":["§#!!§::§#!?§","§#!!§::§!!V§","§#!!§::§%1§","§8G§::§,k§","§3?§.§[9§","§3?§.§`J§","§3?§.§-r§","§;!J§.§2x§","§;!J§.§%\"G§","§^!9§.§'\"?§","§ !M§.§[\"$§","§3^§.§0\"&§","§ !M§.§\"!O§","§ !M§.§&\"I§","§ !M§.§,4§","§?7§.§7!K§","§[k§.§%?§"],"id":"excavations","href":"mechanics.html#excavations"}],"rows":[{"n":0,"what":["Excavations","New Factions: Neutral Factions (Titan, Druid, Faceless)","New Factions: Prestige Factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]},{"n":160,"what":["Ascension 3"]},{"n":165,"what":["Prestige Factions treaties"]},{"n":172,"what":["Astral Factions treaties"]},{"n":225,"what":["Sets"]},{"n":230,"what":["Lineages"]},{"n":235,"what":["Prestige Factions treaties"]},{"n":255,"what":["Astral Factions treaties"]}],"page":null,"ups":{},"coins":[["Coins","Diamond Coins","Emerald Coins","Amethyst Coins","Sapphire Coins"],["Fairy","Elven","Angel","Goblin","Undead","Demon","Titan","Druid","Faceless","Dwarven","Drow","Mercenary","Dragon","Archon","Djinn","Makers"]]}</script>
 <script>
@@ -619,6 +639,129 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     function hide(){ tip.style.display='none'; }
     b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
     return b;
+  }
+
+  // ---- the popup of an upgrade as the upgrade pages show it (name, cost, requirements, text, formulas); asc is the chosen Ascension
+  function upgMath(tex, host){
+    if(window.katex){ try{ katex.render('\\displaystyle '+tex, host, {throwOnError:false}); return; }catch(e){} }
+    host.textContent = tex;
+  }
+  function upgPred(p){
+    return p.replace(/^not having /,'you do not have ').replace(/^not playing /,'you are not playing ').replace(/^following /,'you are following ')
+            .replace(/^having /,'you have ').replace(/^playing /,'you are playing ').replace(/^using /,'you are using ')
+            .replace(/^being able /,'you are able ').replace(/^being /,'you are ');
+  }
+  function upgAs(k){ return new Array(k+1).join('A'); }
+  function upgPenalty(it, ASC){
+    var k=0; it.d.forEach(function(p){ if(p.s && ASC>=p.s && !(p.np && ASC>=4)) k=Math.max(k, ASC-p.s+1); });
+    if(it.m) it.m.forEach(function(p){ if(p.s && ASC>=p.s) k=Math.max(k, ASC-p.s+1); });
+    return k;
+  }
+  function upgUnavailable(it, ASC){ return (it.lo!==null && ASC<it.lo) || (it.hi!==null && ASC>=it.hi) || !!(it.an && it.an.indexOf(ASC)>=0); }
+  function upgFormulas(parent, list, title, ASC){
+    var many=list.length>1, seen={};
+    parent.appendChild(ce('span','lbl',title||(many?'Formulas':'Formula')));
+    var anyScaled=many && list.some(function(f){ return f.s; });
+    list.forEach(function(f,i){
+      if(i>0) parent.appendChild(ce('div','fsep'));
+      var vs=many?'v_{'+(i+1)+'}':'v';
+      var own=/^([a-uw-zA-Z](?:_\{[^}]*\})?) = /.exec(f.l); if(own) vs=own[1];      // a formula for a named value (a, b, ...) keeps its own symbol
+      if(f.lb){
+        var lab=ce('div','flabel'); var lm=ce('span'); upgMath(vs,lm); lab.appendChild(lm);
+        var suf='', badge=null;
+        if(anyScaled){
+          if(!f.s) suf='';
+          else if(ASC>=f.s && !(f.np && ASC>=4)){ suf=' · '; badge=ce('span','mark',upgAs(ASC-f.s+1)); }
+        }
+        lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); parent.appendChild(lab);
+      }
+      var d=ce('div','formula'); var m=ce('span'); upgMath(f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
+      var ul=ce('ul','vars'), n=0;
+      f.v.forEach(function(v){
+        var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
+        var li=ce('li'); var b=ce('b'); b.style.display='inline'; upgMath(v.symbol,b); li.appendChild(b);
+        rich(li, ' — '+v.text); ul.appendChild(li);
+      });
+      if(n) parent.appendChild(ul);
+    });
+    if(list.some(function(f){ return f.s; })) parent.appendChild(ce('div','more','v is the base value, before any Ascension penalty.'));
+  }
+  function upgCostText(it, ASC, COINS){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
+    return upgUnavailable(it, ASC) ? null : upgCost(it, ASC, COINS);
+  }
+  function upgradeTip(it, anchor, ASC, COINS){
+    var tip=document.getElementById('tip');
+    tip.className='upg'; tip.textContent='';
+    tip.appendChild(ce('b','t',it.n));
+    var ct=upgCostText(it, ASC, COINS); if(ct) tip.appendChild(ce('div','cost',ct));      // right below the name, faded
+    if(it.sub) tip.appendChild(ce('div','more',it.sub));
+    if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(ce('div','more','Click for more info'));
+    if(it.o.length){
+      var rs=[], os=[];
+      var st=[];
+      it.o.forEach(function(c){ var m=/^being at Reincarnation ([0-9]+) or higher$/.exec(c); if(m) rs.push('after Reincarnation '+m[1]); else if(c.indexOf('starting from')===0) st.push(c); else os.push(c); });
+      var ps=os.map(upgPred), pj=ps.length>1 ? ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1] : ps.join(''), txt;
+      txt='Can only be bought'+(os.length?' when '+pj:'')+(rs.length?(os.length?' and ':' ')+rs.join(' and '):'')+(st.length?(os.length||rs.length?', ':' ')+st.join(' and '):'')+'.';
+      if(it.ns && it.an) txt+=' Cannot be bought at Ascension '+it.an.slice(0,-1).join(', ')+(it.an.length>1?' and ':'')+it.an[it.an.length-1]+'.';
+      tip.appendChild(ce('div','faction',txt));
+    }
+    if(upgUnavailable(it, ASC)){
+      tip.appendChild(ce('span','lbl','Not available'));
+      tip.appendChild(ce('div',null,'This upgrade is not available in Ascension '+ASC+'.'));
+    }
+    tip.appendChild(ce('span','lbl','What it does'));
+    var noted=false;
+    it.d.forEach(function(p){
+      var e=ce('p',null,p.t);
+      if(p.s && ASC>=p.s && !(p.np && ASC>=4)){ e.appendChild(document.createTextNode(' ')); e.appendChild(ce('span','mark',upgAs(ASC-p.s+1))); }
+      tip.appendChild(e);
+      if(it.nt && !noted && new RegExp(it.nr).test(p.t)){ tip.appendChild(ce('div','more',it.nt)); noted=true; }
+    });
+    if(it.f.length){
+      upgFormulas(tip, it.f, null, ASC);
+    }
+    if(it.lc && !upgUnavailable(it, ASC)){      // a Lineage: what raising it a level costs
+      var L=it.lc;
+      var cf=[{l:'C = \\left(b \\cdot 10^{L/A}\\right)^{1 + \\left(c + \\frac{1}{2A} - r\\right)\\left\\lfloor L/'+L.ev+' \\right\\rfloor}', lb:null, v:[
+          {symbol:'C', text:'the associated faction coins the next level costs'}, {symbol:'L', text:'current lineage level'}, {symbol:'A', text:'your Ascension value'},
+          {symbol:'b', text:'base cost (changes with Ascensions, $'+ctex(L.b[ASC])+'$ at Ascension '+ASC+')'}, {symbol:'c', text:'base growth (changes with Ascensions, $'+L.c[ASC]+'$ at Ascension '+ASC+')'},
+          {symbol:'r', text:'growth reduction term, $0$ without '+L.hg}]}];
+      upgFormulas(tip, cf, 'Cost', ASC);
+    }
+    var rq=it.s.slice();
+    if(it.ra){ var ra=it.ra[String(Math.min(Math.max(ASC, it.lo||1),4))]; if(ra) rq.unshift(ra); }      // before it unlocks: the numbers of the Ascension it unlocks in
+    if(rq.length){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      var ul=ce('ul'); rq.forEach(function(s){ ul.appendChild(ce('li',null,s)); }); tip.appendChild(ul);
+    }
+    if(it.nt && !noted) tip.appendChild(ce('div','more',it.nt));
+    placeTip(anchor, true);
+  }
+
+  // the perks of a Lineage in the #more popup of the page (the markup is on the Upgrades and Factions pages); keep(p) optionally picks the perks to show
+  function upgPerks(it, ASC, keep){
+    var more=document.getElementById('more'), body=document.getElementById('morebody'); document.getElementById('moretitle').textContent=it.n+' perks'; body.textContent='';
+    it.lp.filter(function(p){ return !keep || keep(p); }).forEach(function(p){
+      var blk=ce('div','bonus'), head=ce('p'), pi=p.it;
+      head.appendChild(ce('b',null,pi ? pi.n : 'Perk '+p.n)); blk.appendChild(head);
+      if(pi){
+        var pn=false;
+        pi.d.forEach(function(d){ blk.appendChild(ce('p',null,d.t)); if(pi.nt && !pn && new RegExp(pi.nr).test(d.t)){ blk.appendChild(ce('div','more',pi.nt)); pn=true; } });
+        if(pi.f.length){ var fw=ce('div'); upgFormulas(fw, pi.f, null, ASC); blk.appendChild(fw); }
+        if(pi.nt && !pn) blk.appendChild(ce('div','more',pi.nt));
+      }
+      blk.appendChild(ce('span','lbl','Unlock requirement'));
+      blk.appendChild(ce('div',null,'Reincarnation '+p.reinc+', Lineage level '+p.level+(p.challenge ? ', '+p.challenge : '')));
+      body.appendChild(blk);
+    });
+    more.classList.add('open'); document.getElementById('moreclose').focus();
+  }
+  function bindMore(){      // the close button, a click outside the card and Escape
+    var more=document.getElementById('more');
+    function close(){ more.classList.remove('open'); }
+    document.getElementById('moreclose').addEventListener('click',close);
+    more.addEventListener('click',function(e){ if(e.target===more) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

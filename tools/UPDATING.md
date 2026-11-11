@@ -10,6 +10,8 @@ added, add it to `STEPS` in `tools/update.py`. The manual steps it replaces:
 1. Put the new `RealmGrinderDesktop.swf` in `raw/<version>/` (one folder per version) and extract it: `sh tools/extract.sh <version> out_<version>` first,
    compare it with `out/` (same file names = the scrambled names did not move), then make it current (rename `out` to `out_<old version>`, the new folder to `out`)
    and run `python -I tools/extract/parse_mo.py`. `sh tools/extract.sh <version>` with no destination writes straight to `out/`. `out/VERSION` says which build `out/` is.
+1b. **New artwork.** The icons are not in the `.swf`: they are in the game's image atlases (the `images` folder of the game install, `*.xml` with the sheets). When an update adds items with new icons, selfcheck 13 lists the missing ones.
+   Copy the game's `images` folder to `raw/<version>/images/`, run `python -I tools/extract/slice_atlases.py raw/<version>` (writes `assets/sprites/` and `data/derived/sprites.json`), then run `python -I tools/update.py <version> --force` again to rebuild with the new sprites.
 2. `python -I tools/checks/selfcheck.py` : did the obfuscated names move? Stop here if it says LOOK AT.
    - "names used by the tools ... gone" or "Ascension/Reincarnation fields are now ..." means the name mapping is stale.
    - New item ids are listed as new; an item whose id changed is reported as CHANGED ID.
