@@ -260,13 +260,21 @@ def chance_info(c):
     return ch
 
 
+# wording the wiki shows differently from the game's flavor text (asked for by the user): the six lore artifacts from Mana Loom to Battlefield say "INF budget"
+FLAVOR_FIXES = {'Provides INF budget': 'Provides budget'}
+
+
+def fix_flavor(t):
+    for k, v in FLAVOR_FIXES.items(): t = t.replace(k, v)
+    return t
+
 out = []
 for a in res['arts']:
     c = cl.get(a['q'])
     reqs, undec, has_cond = decode(c, a) if c else ([], [], False)
     hint = (a['hint'] or '').strip()
     out.append({
-        'order': a['order'], 'kind': 'lore' if a['lore'] else 'quest', 'name': a['name'], 'flavor': a['flavor'].strip(),
+        'order': a['order'], 'kind': 'lore' if a['lore'] else 'quest', 'name': a['name'], 'flavor': fix_flavor(a['flavor'].strip()),
         'icon': a['icon'] if a['icon'] in sprites else None, 'icon_name': a['icon'],
         'hint': hint, 'chance': chance_info(c), 'requirements': reqs, 'undecoded_conditions': len(undec),
         'undecoded': undec,
