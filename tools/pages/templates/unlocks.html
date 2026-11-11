@@ -32,6 +32,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 .mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 .mech p.after{margin-top:14px}
+.mech p.line{margin-top:14px}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
@@ -147,6 +148,11 @@ __UC__
           if(fi) inner.appendChild(el('hr','fsep'));      // a line between formulas that follow each other
           var d=el('div','formula'); math(f.latex,d); inner.appendChild(d);
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
+        });
+        (c.lines||[]).forEach(function(l){      // a line of its own, with the artifacts it names at its right
+          var p=el('p','line');
+          if(l.artifacts && l.artifacts.length){ var sd=el('div','upgside'); l.artifacts.forEach(function(n){ sd.appendChild(artifactCell(DATA.arts[n])); }); p.appendChild(sd); p.classList.add('withup'); }
+          p.appendChild(document.createTextNode(l.text)); inner.appendChild(p);
         });
         if(c.link){ var lp=el('p'), la=el('a',null,c.link.text); la.href=c.link.href; lp.appendChild(la); inner.appendChild(lp); }
         if(c.after){

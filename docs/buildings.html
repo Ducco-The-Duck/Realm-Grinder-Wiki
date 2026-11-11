@@ -102,6 +102,16 @@ main .blurb{margin:4px 0 10px}
 #list button.f-undead:hover .pl{background-image:url(assets/ui/buildings/undeadBuilding_Hover.png)}
 #list button.f-undead[aria-pressed="true"] .pl{background-image:url(assets/ui/buildings/undeadBuilding_Down.png)}
 @media (max-width:640px){#list{float:none;margin:0 0 12px;align-items:center}}
+/* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
+#tip:where(.art) b{display:block;font-size:1rem}
+#tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.art) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.art) .hint,#tip:where(.art) .more,#tip:where(.art) .chance{color:var(--muted)}
+#tip:where(.art) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.art) ul.vars li{margin:2px 0}
+#tip:where(.art) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.art) .flavor{font-style:italic;color:var(--muted)}
+.withup{display:flow-root;min-height:88px}      /* a text with an object at its right: tall enough for the object */
 /* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
@@ -858,6 +868,55 @@ and have fewer As, or none, at a given Ascension. Upgrades without a mark are no
     document.getElementById('moreclose').addEventListener('click',close);
     more.addEventListener('click',function(e){ if(e.target===more) close(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
+  // ---- an artifact {n: name, h: hint, q: unlock requirements, x: undecoded conditions, c: how it is found, p: percent, l: formula, v: its variables, f: flavor text, i: icon file}
+  // as the Archaeology page shows it: the popup, and the cell that opens it
+  function artifactTip(it, anchor){
+    var tip=document.getElementById('tip');
+    tip.className='art'; tip.textContent='';
+    tip.appendChild(ce('b',null,it.n));
+    if(it.h){ tip.appendChild(ce('span','lbl','Hint')); tip.appendChild(ce('div','hint',it.h)); }
+    if(it.q.length || it.x){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      if(it.q.length){ var ul=ce('ul'); it.q.forEach(function(q){ ul.appendChild(ce('li',null,q)); }); tip.appendChild(ul); }
+      if(it.x) tip.appendChild(ce('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
+    } else {
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      tip.appendChild(ce('div','hint','None. It can be found on any excavation.'));
+    }
+    if(it.c){
+      tip.appendChild(ce('span','lbl','How it is found'));
+      var pct = (it.p!=null) ? String(it.p) : '';
+      var lead = (it.q.length || it.x) ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ' : 'Each excavation has ';
+      if(it.c==='guaranteed'){
+        tip.appendChild(ce('div','chance','Once the requirements are met, it is found on your next excavation.'));
+      } else if(it.c==='fixed'){
+        tip.appendChild(ce('div','chance',lead+'a '+pct+'% chance to find it.'));
+      } else if(it.l && it.v){
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on:'));
+        var ul2=ce('ul','vars');
+        it.v.forEach(function(v){ var li=ce('li'); var b=ce('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); rich(li, ' — '+v.text); ul2.appendChild(li); });
+        tip.appendChild(ul2);
+        var f=ce('div','formula');
+        if(window.katex){ try{ katex.render('\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }
+        else f.textContent=it.l;
+        tip.appendChild(f);
+        tip.appendChild(ce('div','more','p is the percent chance per excavation.'));
+      } else {
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on your stats.'));
+      }
+    }
+    if(it.f){ tip.appendChild(ce('span','lbl','Flavor text')); tip.appendChild(ce('div','flavor',it.f)); }
+    placeTip(anchor, true);
+  }
+  function artifactCell(it){
+    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ artifactTip(it,b); }); b.addEventListener('focus',function(){ artifactTip(it,b); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

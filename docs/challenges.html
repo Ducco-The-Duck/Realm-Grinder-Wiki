@@ -23,6 +23,11 @@ section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.blurb{margin:0 0 14px}
+.vline{margin:0 0 14px}
+.vline #vart{float:right;width:88px;margin:0 0 8px 14px}
+.vline #vart .cell{width:100%}
+@media (max-width:700px){.vline #vart{float:none;display:block;margin:0 0 8px}}
 .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
@@ -45,6 +50,16 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 #tip .flavor{font-style:italic;color:var(--muted)}
 #tip .al{margin-top:6px}
 #tip .al b{color:var(--fg)}
+/* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
+#tip:where(.art) b{display:block;font-size:1rem}
+#tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.art) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.art) .hint,#tip:where(.art) .more,#tip:where(.art) .chance{color:var(--muted)}
+#tip:where(.art) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.art) ul.vars li{margin:2px 0}
+#tip:where(.art) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.art) .flavor{font-style:italic;color:var(--muted)}
+.withup{display:flow-root;min-height:88px}      /* a text with an object at its right: tall enough for the object */
 /* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
@@ -327,6 +342,9 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <main>
 <nav class="tabs"><a class="tab" href="index.html"><img src="assets/ui/nav/UiBuildings.png" alt="" style="--y:4"><span class="n">Home</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UiUpgrades.png" alt="" style="--y:4;--z:.84"><span class="n">Upgrades</span></a><span class="dd-menu"><a href="upgrades-allegiance.html">Allegiance</a><a href="upgrades-magic.html">Magic</a><a href="upgrades-secret.html">Secret</a><a href="upgrades-misc.html">Miscellaneous</a></span></span><a class="tab" href="trophies.html"><img src="assets/ui/nav/UiTrophies.png" alt="" style="--y:-2"><span class="n">Trophies</span></a><a class="tab long" href="archaeology.html"><img src="assets/ui/nav/UiExcavation.png" alt="" style="--y:-2"><span class="n">Archaeology</span></a><a class="tab" href="research.html"><img src="assets/ui/nav/UiResearch.png" alt="" style="--y:1"><span class="n">Research</span></a><a class="tab" href="challenges.html" aria-current="page"><img src="assets/ui/nav/UiChallenges.png" alt="" style="--y:1"><span class="n">Challenges</span></a><span class="dd-nav"><a class="tab" role="button" tabindex="0" onclick="this.parentNode.classList.toggle('open')"><img src="assets/ui/nav/UICrystalBall.png" alt="" style="--y:4;--z:.84"><span class="n">Codex</span><span class="uc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg></span></a><span class="dd-menu"><span class="uc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>Under construction</span><span class="dd-item"><a href="mechanics.html">Mechanics</a><span class="dd-sub"><a href="mechanics.html#progression">Progression</a><a href="mechanics.html#royal-exchanges">Royal Exchanges</a><a href="spells.html">Spells</a><a href="buildings.html">Buildings</a><a href="factions.html">Factions</a><a href="mechanics.html#excavations">Excavations</a><a href="mechanics.html#challenges">Challenges</a></span></span><span class="dd-item"><a href="unlocks.html">Unlocks</a><span class="dd-sub"><a href="unlocks-a0.html">Ascension 0</a><a href="unlocks-a1.html">Ascension 1</a><a href="unlocks-a2.html">Ascension 2</a><a href="unlocks-a3.html">Ascension 3</a><a href="unlocks-a4.html">Ascension 4</a></span></span></span></span></nav>
 <h1>Challenges</h1>
+<p class="blurb">Challenges are tasks that each faction sets you. A challenge generally has one or two tasks that you have to actively build towards, along with a number of what are essentially check boxes. Completing a challenge gives you various bonuses. Each faction has its own challenges, which do not necessarily always benefit that faction.</p>
+<p class="vline withup"><span id="vart"></span>The Veteran Figurine lore artifact allows Mercenaries to benefit from all challenges.</p>
+<script id="vdata" type="application/json">{"n":"Veteran Figurine","f":"The warrior of a thousand battles, ultimate champion of the Realms.\n\nPassive effect: allows Mercenaries to benefit from all faction challenges.","h":"A reward for the veteran challenger.","q":["Reincarnation 85 or higher","Have completed challenge Dracomet Vault (Dragon Challenge 6)"],"x":0,"i":"VeteranFigurineArtifact.png","c":"variable","p":null,"l":"p = \\frac{E}{10^{6}}","v":[{"symbol":"E","text":"Time played in this Era (seconds)"}]}</script>
 <div class="search"><input id="q" type="search" placeholder="Search challenge names, flavor text, challenge and reward descriptions" autocomplete="off" aria-label="Search"><span class="qn" id="qn"></span></div>
 <div class="bugs"><p><b>Known bug, Mystic Maze:</b> The reward text says &quot;the highest amount of buildings you had in this Reincarnation&quot;, but the game uses the highest number you currently own of any single building type (including bonuses that make buildings count as more), which starts over every Era.</p></div>
 <div id="root"></div>
@@ -336,6 +354,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <script>
 (function(){
   var SECTIONS = JSON.parse(document.getElementById('data').textContent);
+  document.getElementById('vart').appendChild(artifactCell(JSON.parse(document.getElementById('vdata').textContent)));      // the Veteran Figurine, as on the Archaeology page
   var root=document.getElementById('root'), tip=document.getElementById('tip');
 
   var QT = [];
@@ -650,6 +669,55 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     document.getElementById('moreclose').addEventListener('click',close);
     more.addEventListener('click',function(e){ if(e.target===more) close(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
+  // ---- an artifact {n: name, h: hint, q: unlock requirements, x: undecoded conditions, c: how it is found, p: percent, l: formula, v: its variables, f: flavor text, i: icon file}
+  // as the Archaeology page shows it: the popup, and the cell that opens it
+  function artifactTip(it, anchor){
+    var tip=document.getElementById('tip');
+    tip.className='art'; tip.textContent='';
+    tip.appendChild(ce('b',null,it.n));
+    if(it.h){ tip.appendChild(ce('span','lbl','Hint')); tip.appendChild(ce('div','hint',it.h)); }
+    if(it.q.length || it.x){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      if(it.q.length){ var ul=ce('ul'); it.q.forEach(function(q){ ul.appendChild(ce('li',null,q)); }); tip.appendChild(ul); }
+      if(it.x) tip.appendChild(ce('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
+    } else {
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      tip.appendChild(ce('div','hint','None. It can be found on any excavation.'));
+    }
+    if(it.c){
+      tip.appendChild(ce('span','lbl','How it is found'));
+      var pct = (it.p!=null) ? String(it.p) : '';
+      var lead = (it.q.length || it.x) ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ' : 'Each excavation has ';
+      if(it.c==='guaranteed'){
+        tip.appendChild(ce('div','chance','Once the requirements are met, it is found on your next excavation.'));
+      } else if(it.c==='fixed'){
+        tip.appendChild(ce('div','chance',lead+'a '+pct+'% chance to find it.'));
+      } else if(it.l && it.v){
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on:'));
+        var ul2=ce('ul','vars');
+        it.v.forEach(function(v){ var li=ce('li'); var b=ce('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); rich(li, ' — '+v.text); ul2.appendChild(li); });
+        tip.appendChild(ul2);
+        var f=ce('div','formula');
+        if(window.katex){ try{ katex.render('\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }
+        else f.textContent=it.l;
+        tip.appendChild(f);
+        tip.appendChild(ce('div','more','p is the percent chance per excavation.'));
+      } else {
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on your stats.'));
+      }
+    }
+    if(it.f){ tip.appendChild(ce('span','lbl','Flavor text')); tip.appendChild(ce('div','flavor',it.f)); }
+    placeTip(anchor, true);
+  }
+  function artifactCell(it){
+    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ artifactTip(it,b); }); b.addEventListener('focus',function(){ artifactTip(it,b); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

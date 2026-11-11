@@ -1,3 +1,13 @@
+/* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
+#tip:where(.art) b{display:block;font-size:1rem}
+#tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.art) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.art) .hint,#tip:where(.art) .more,#tip:where(.art) .chance{color:var(--muted)}
+#tip:where(.art) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.art) ul.vars li{margin:2px 0}
+#tip:where(.art) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.art) .flavor{font-style:italic;color:var(--muted)}
+.withup{display:flow-root;min-height:88px}      /* a text with an object at its right: tall enough for the object */
 /* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}

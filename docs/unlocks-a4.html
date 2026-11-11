@@ -35,6 +35,7 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 .mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 .mech p.after{margin-top:14px}
+.mech p.line{margin-top:14px}
 .mech ul.vars{margin:2px 0 6px}
 .mech ul.vars li{margin:0}
 .mech ul.vars b{display:inline;font-family:inherit;font-size:inherit}
@@ -44,6 +45,16 @@ table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
 .rtab th{color:var(--accent)}
 .rtab td.n{width:1%;white-space:nowrap}
+/* the popup of an artifact (artifactTip in shared.js): the hint, the unlock requirements, how it is found, the flavor text */
+#tip:where(.art) b{display:block;font-size:1rem}
+#tip:where(.art) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.art) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.art) .hint,#tip:where(.art) .more,#tip:where(.art) .chance{color:var(--muted)}
+#tip:where(.art) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.art) ul.vars li{margin:2px 0}
+#tip:where(.art) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.art) .flavor{font-style:italic;color:var(--muted)}
+.withup{display:flow-root;min-height:88px}      /* a text with an object at its right: tall enough for the object */
 /* the popup that opens on a click (the perks of a Lineage, the bonuses of an upgrade) */
 #more{position:fixed;inset:0;z-index:46;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #more.open{display:flex}
@@ -330,7 +341,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <div id="root"></div>
 <div class="gv">Game version 4.3.16</div></main>
 <div id="tip" role="tooltip"></div>
-<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":0,"what":["Excavations","New Factions: Neutral Factions (Titan, Druid, Faceless)","New Factions: Prestige Factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]},{"n":160,"what":["Ascension 3"]},{"n":165,"what":["Prestige Factions treaties"]},{"n":172,"what":["Astral Factions treaties"]},{"n":225,"what":["Sets"]},{"n":230,"what":["Lineages"]},{"n":235,"what":["Prestige Factions treaties"]},{"n":255,"what":["Astral Factions treaties"]}],"page":null,"ups":{"Archeology":{"n":"Archeology","i":"ArcheologyUpgrade.png","d":["Rumors of recently found ancient relics have spread across the Realm. Perhaps you might want to fund an expedition party."],"s":[],"c":[[1e+29,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Fragment of a Titan Statue":{"n":"Fragment of a Titan Statue","i":"ArcheologyTitanUpgrade.png","d":["This is the fragment of a huge statue resembling the king of an ancient civilization, the Titans."],"s":[],"c":[[1e+30,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]]]},"Druidic Runestone":{"n":"Druidic Runestone","i":"ArcheologyDruidUpgrade.png","d":["This is a mystical runestone carved by druids and infused with powerful magic."],"s":[],"c":[[1e+30,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]]]},"Octopus Shaped Spine":{"n":"Octopus Shaped Spine","i":"ArcheologyFacelessUpgrade.png","d":["This is... what is this? Octopuses shouldn't have bones."],"s":[],"c":[[1e+30,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]]]},"Passage to the Underworld":{"n":"Passage to the Underworld","i":"ArcheologyUnderworldUpgrade.png","d":["Command your expedition to search the Underworld."],"s":[],"c":[[5e+49,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Sturdy Bearded Man's Quest":{"n":"Sturdy Bearded Man's Quest","i":"ArcheologyDwarf.png","d":["Aye lad, nice realm ye have thar! Me people and I wanna see more, but only from a good hearted man, mind ye. Show us some good ol' architecture, make sure ye work on those clicks, and don't forget tha beer!","Allows you to contact the Dwarves directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Good Alignment","7000 or more buildings","800 or more Inns","10000 or more clicks in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]]]},"Cloaked Shady Figure's Quest":{"n":"Cloaked Shady Figure's Quest","i":"ArcheologyDrow.png","d":["Greetings, kivvil. We have noticed your endeavors, and we have seen potential in you. If you wish to prove yourself worthy, we have three simple tasks for you: prove your devotion to our dark gods, your magic prowess, and the greatness of your deeds. Remember, do not show compassion for anyone but for yourself. Aluve.","Allows you to contact the Drow directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Evil Alignment","325 or more trophies unlocked","650 or more Dark Temples","7500 or more spells cast in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]]]},"Underworld Diplomacy":{"n":"Underworld Diplomacy","i":"UnderworldDiplomacy.png","d":["Unlock all underworld Faction Coins, Royal Exchanges and Heritages."],"s":[],"c":[[1e+45,[]],[0,[]],[0,[]],[0,[]],[0,[]]]}},"coins":[["Coins","Diamond Coins","Emerald Coins","Amethyst Coins","Sapphire Coins"],["Fairy","Elven","Angel","Goblin","Undead","Demon","Titan","Druid","Faceless","Dwarven","Drow","Mercenary","Dragon","Archon","Djinn","Makers"]]}</script>
+<script id="data" type="application/json">{"mechanics":[],"rows":[{"n":0,"what":["Excavations","New Factions: Neutral Factions (Titan, Druid, Faceless)","New Factions: Prestige Factions (Dwarf, Drow)"]},{"n":3,"what":["New faction: Mercenaries"]},{"n":7,"what":["New upgrade: Bloodlines"]},{"n":14,"what":["New spell: Spiritual Surge"]},{"n":16,"what":["Vanilla Factions Research"]},{"n":24,"what":["Neutral Factions Research"]},{"n":32,"what":["Prestige Factions Research"]},{"n":40,"what":["Ascension 1"]},{"n":48,"what":["New faction: Neutral Prestige Faction (Dragon)"]},{"n":60,"what":["New upgrade: Lineages"]},{"n":75,"what":["Mercenary Research"]},{"n":100,"what":["Ascension 2","Artifact Sets","Second alignment","Second unique buildings for base factions","New upgrade: Faction Unions for base factions"]},{"n":110,"what":["Prestige factions (Dwarf, Drow, Dragon) reintroduced"]},{"n":112,"what":["Second unique buildings for prestige factions"]},{"n":115,"what":["Faction Unions for prestige factions"]},{"n":125,"what":["New factions: Astral Factions (Archon, Djinn, Maker)"]},{"n":130,"what":["Unique buildings, faction unions, bloodlines and lineages for astral factions"]},{"n":160,"what":["Ascension 3"]},{"n":165,"what":["Prestige Factions treaties"]},{"n":172,"what":["Astral Factions treaties"]},{"n":225,"what":["Sets"]},{"n":230,"what":["Lineages"]},{"n":235,"what":["Prestige Factions treaties"]},{"n":255,"what":["Astral Factions treaties"]}],"page":null,"ups":{"Archeology":{"n":"Archeology","i":"ArcheologyUpgrade.png","d":["Rumors of recently found ancient relics have spread across the Realm. Perhaps you might want to fund an expedition party."],"s":[],"c":[[1e+29,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Fragment of a Titan Statue":{"n":"Fragment of a Titan Statue","i":"ArcheologyTitanUpgrade.png","d":["This is the fragment of a huge statue resembling the king of an ancient civilization, the Titans."],"s":[],"c":[[1e+30,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]],[0,[[2,25000],[3,25000]]]]},"Druidic Runestone":{"n":"Druidic Runestone","i":"ArcheologyDruidUpgrade.png","d":["This is a mystical runestone carved by druids and infused with powerful magic."],"s":[],"c":[[1e+30,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]],[0,[[1,25000],[5,25000]]]]},"Octopus Shaped Spine":{"n":"Octopus Shaped Spine","i":"ArcheologyFacelessUpgrade.png","d":["This is... what is this? Octopuses shouldn't have bones."],"s":[],"c":[[1e+30,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]],[0,[[0,25000],[4,25000]]]]},"Passage to the Underworld":{"n":"Passage to the Underworld","i":"ArcheologyUnderworldUpgrade.png","d":["Command your expedition to search the Underworld."],"s":[],"c":[[5e+49,[]],[0,[]],[0,[]],[0,[]],[0,[]]]},"Sturdy Bearded Man's Quest":{"n":"Sturdy Bearded Man's Quest","i":"ArcheologyDwarf.png","d":["Aye lad, nice realm ye have thar! Me people and I wanna see more, but only from a good hearted man, mind ye. Show us some good ol' architecture, make sure ye work on those clicks, and don't forget tha beer!","Allows you to contact the Dwarves directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Good Alignment","7000 or more buildings","800 or more Inns","10000 or more clicks in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]],[0,[[0,10000],[1,10000],[2,10000]]]]},"Cloaked Shady Figure's Quest":{"n":"Cloaked Shady Figure's Quest","i":"ArcheologyDrow.png","d":["Greetings, kivvil. We have noticed your endeavors, and we have seen potential in you. If you wish to prove yourself worthy, we have three simple tasks for you: prove your devotion to our dark gods, your magic prowess, and the greatness of your deeds. Remember, do not show compassion for anyone but for yourself. Aluve.","Allows you to contact the Drow directly. If you meet their requirements, you will be able to start diplomatic negotiations.","Requirements:","Evil Alignment","325 or more trophies unlocked","650 or more Dark Temples","7500 or more spells cast in this Reincarnation"],"s":["Upgrade: Passage to the Underworld"],"c":[[1e+46,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]],[0,[[3,10000],[4,10000],[5,10000]]]]},"Underworld Diplomacy":{"n":"Underworld Diplomacy","i":"UnderworldDiplomacy.png","d":["Unlock all underworld Faction Coins, Royal Exchanges and Heritages."],"s":[],"c":[[1e+45,[]],[0,[]],[0,[]],[0,[]],[0,[]]]}},"arts":{"Veteran Figurine":{"n":"Veteran Figurine","f":"The warrior of a thousand battles, ultimate champion of the Realms.\n\nPassive effect: allows Mercenaries to benefit from all faction challenges.","h":"A reward for the veteran challenger.","q":["Reincarnation 85 or higher","Have completed challenge Dracomet Vault (Dragon Challenge 6)"],"x":0,"i":"VeteranFigurineArtifact.png","c":"variable","p":null,"l":"p = \\frac{E}{10^{6}}","v":[{"symbol":"E","text":"Time played in this Era (seconds)"}]}},"coins":[["Coins","Diamond Coins","Emerald Coins","Amethyst Coins","Sapphire Coins"],["Fairy","Elven","Angel","Goblin","Undead","Demon","Titan","Druid","Faceless","Dwarven","Drow","Mercenary","Dragon","Archon","Djinn","Makers"]]}</script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 4, MODE = 'unlocks';
@@ -424,6 +435,11 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
           if(fi) inner.appendChild(el('hr','fsep'));      // a line between formulas that follow each other
           var d=el('div','formula'); math(f.latex,d); inner.appendChild(d);
           if(f.vars){ var ul=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), b=el('b'); math(v[0],b); li.appendChild(b); li.appendChild(document.createTextNode(' — '+v[1])); ul.appendChild(li); }); inner.appendChild(ul); }
+        });
+        (c.lines||[]).forEach(function(l){      // a line of its own, with the artifacts it names at its right
+          var p=el('p','line');
+          if(l.artifacts && l.artifacts.length){ var sd=el('div','upgside'); l.artifacts.forEach(function(n){ sd.appendChild(artifactCell(DATA.arts[n])); }); p.appendChild(sd); p.classList.add('withup'); }
+          p.appendChild(document.createTextNode(l.text)); inner.appendChild(p);
         });
         if(c.link){ var lp=el('p'), la=el('a',null,c.link.text); la.href=c.link.href; lp.appendChild(la); inner.appendChild(lp); }
         if(c.after){
@@ -769,6 +785,55 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     document.getElementById('moreclose').addEventListener('click',close);
     more.addEventListener('click',function(e){ if(e.target===more) close(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
+  // ---- an artifact {n: name, h: hint, q: unlock requirements, x: undecoded conditions, c: how it is found, p: percent, l: formula, v: its variables, f: flavor text, i: icon file}
+  // as the Archaeology page shows it: the popup, and the cell that opens it
+  function artifactTip(it, anchor){
+    var tip=document.getElementById('tip');
+    tip.className='art'; tip.textContent='';
+    tip.appendChild(ce('b',null,it.n));
+    if(it.h){ tip.appendChild(ce('span','lbl','Hint')); tip.appendChild(ce('div','hint',it.h)); }
+    if(it.q.length || it.x){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      if(it.q.length){ var ul=ce('ul'); it.q.forEach(function(q){ ul.appendChild(ce('li',null,q)); }); tip.appendChild(ul); }
+      if(it.x) tip.appendChild(ce('div','more',(it.q.length?'Plus ':'')+'additional conditions not listed here.'));
+    } else {
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      tip.appendChild(ce('div','hint','None. It can be found on any excavation.'));
+    }
+    if(it.c){
+      tip.appendChild(ce('span','lbl','How it is found'));
+      var pct = (it.p!=null) ? String(it.p) : '';
+      var lead = (it.q.length || it.x) ? 'Meeting the requirements does not unlock it by itself. From then on, each excavation has ' : 'Each excavation has ';
+      if(it.c==='guaranteed'){
+        tip.appendChild(ce('div','chance','Once the requirements are met, it is found on your next excavation.'));
+      } else if(it.c==='fixed'){
+        tip.appendChild(ce('div','chance',lead+'a '+pct+'% chance to find it.'));
+      } else if(it.l && it.v){
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on:'));
+        var ul2=ce('ul','vars');
+        it.v.forEach(function(v){ var li=ce('li'); var b=ce('b',null,v.symbol); if(window.katex){ try{ katex.render(v.symbol,b,{throwOnError:false}); }catch(e){} } li.appendChild(b); rich(li, ' — '+v.text); ul2.appendChild(li); });
+        tip.appendChild(ul2);
+        var f=ce('div','formula');
+        if(window.katex){ try{ katex.render('\\displaystyle '+it.l,f,{throwOnError:false,displayMode:false}); }catch(e){ f.textContent=it.l; } }
+        else f.textContent=it.l;
+        tip.appendChild(f);
+        tip.appendChild(ce('div','more','p is the percent chance per excavation.'));
+      } else {
+        tip.appendChild(ce('div','chance',lead+'a chance to find it, which depends on your stats.'));
+      }
+    }
+    if(it.f){ tip.appendChild(ce('span','lbl','Flavor text')); tip.appendChild(ce('div','flavor',it.f)); }
+    placeTip(anchor, true);
+  }
+  function artifactCell(it){
+    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label', it.n);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ artifactTip(it,b); }); b.addEventListener('focus',function(){ artifactTip(it,b); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

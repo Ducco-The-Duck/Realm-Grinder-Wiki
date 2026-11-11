@@ -41,9 +41,16 @@ bugs = [(it['name'], it['bug']) for f in factions for it in f['items'] if it.get
 bug_html = ''.join(f'<p><b>Known bug, {_html.escape(n)}:</b> {_html.escape(t)}</p>' for n, t in bugs)
 n_ch = sum(1 for f in factions for it in f['items'] if not it['spell_upgrade'])
 
+# the blurb and the line about the Veteran Figurine: the same text as in the Challenges section of the Mechanics page (data/handwritten/unlocks.json)
+import artifact_items
+_sec = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Challenges')['sections'][0]
+BLURB = _html.escape(_sec['text'])
+VLINE = _html.escape(_sec['lines'][0]['text'])
+VART = json.dumps(artifact_items.by_name(_sec['lines'][0]['artifacts'])[_sec['lines'][0]['artifacts'][0]], ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+
 html = tmpl.load('challenges.html')
 import search_snippet
-html = html.replace('__BUGS__', bug_html).replace('__DATA__', data).replace('__TOTAL__', str(n_ch))
+html = html.replace('__BLURB__', BLURB).replace('__VLINE__', VLINE).replace('__VART__', VART).replace('__BUGS__', bug_html).replace('__DATA__', data).replace('__TOTAL__', str(n_ch))
 html = search_snippet.apply(html, 'Search challenge names, flavor text, challenge and reward descriptions')
 open(os.path.join(ROOT, 'docs', 'challenges.html'), 'w', encoding='utf8').write(html)
 print('docs/challenges.html', len(html) // 1024, 'KB;', [s['name'] for s in sections])

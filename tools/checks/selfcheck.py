@@ -123,6 +123,8 @@ except OSError:
 try:
     uk = json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))
     bad = [m.get('name', '?') for m in uk['mechanics'] if not isinstance(m.get('asc'), int) or not 0 <= m['asc'] <= uk['max_ascension'] or not m.get('name')]
+    arts = {a['name'] for a in json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))}
+    bad += [n for m in uk['mechanics'] for sec in m.get('sections', []) for l in sec.get('lines', []) for n in l.get('artifacts', []) if n not in arts]      # artifacts shown beside a line of a mechanic
     print(f"5. unlocks page: {len(uk['mechanics'])} mechanics" + (f"; bad entries: {bad}" if bad else ''))
     if bad:
         problems.append('data/handwritten/unlocks.json has entries without a name or a valid Ascension')

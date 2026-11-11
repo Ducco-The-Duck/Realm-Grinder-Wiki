@@ -20,6 +20,11 @@ section{margin:0 0 26px}
 h2{font-size:1.05rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.blurb{margin:0 0 14px}
+.vline{margin:0 0 14px}
+.vline #vart{float:right;width:88px;margin:0 0 8px 14px}
+.vline #vart .cell{width:100%}
+@media (max-width:700px){.vline #vart{float:none;display:block;margin:0 0 8px}}
 .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);padding:3px;
   display:flex;align-items:center;justify-content:center;cursor:default;font:inherit;color:inherit}
 .cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
@@ -49,6 +54,9 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <main>
 <nav><a href="index.html">Home</a><a href="trophies.html">Trophies</a><a href="archaeology.html">Archaeology</a><a href="research.html">Research</a><a href="challenges.html" aria-current="page">Challenges</a><a href="upgrades.html">Upgrades</a></nav>
 <h1>Challenges</h1>
+<p class="blurb">__BLURB__</p>
+<p class="vline withup"><span id="vart"></span>__VLINE__</p>
+<script id="vdata" type="application/json">__VART__</script>
 <p class="sub">__TOTAL__ challenges. The first square of each faction is the permanent spell upgrade you get for completing all of that faction's challenges. Hover an icon for the requirements, the challenge itself, the reward and its formula. Everything from the Mercenary section on is read from the game code and has not been checked in the game.</p>
 <!--SEARCH_BAR-->
 <div class="bugs">__BUGS__</div>
@@ -59,6 +67,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
 <script>
 (function(){
   var SECTIONS = JSON.parse(document.getElementById('data').textContent);
+  document.getElementById('vart').appendChild(artifactCell(JSON.parse(document.getElementById('vdata').textContent)));      // the Veteran Figurine, as on the Archaeology page
   var root=document.getElementById('root'), tip=document.getElementById('tip');
 /*SEARCH_JS*/
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }

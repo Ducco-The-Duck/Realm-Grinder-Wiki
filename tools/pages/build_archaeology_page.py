@@ -6,34 +6,8 @@ import json, os, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 import tmpl
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-artifacts = json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))
-icons = json.load(open(os.path.join(ROOT, 'data', 'generated/icons.json')))
-
-# artifact icons are not referenced by entity data, so make sure they are exported
-import shutil
-sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
-icon_dir = os.path.join(ROOT, 'docs', 'assets', 'icons')
-os.makedirs(icon_dir, exist_ok=True)
-
-
-def icon_file(a):
-    n = a['icon']
-    if not n: return None
-    dst = os.path.basename(sprites[n][0]['file'])
-    path = os.path.join(icon_dir, dst)
-    if not os.path.exists(path):
-        src = os.path.join(ROOT, sprites[n][0]['file'])
-        if os.path.exists(src): shutil.copy(src, path)
-    if not os.path.exists(path): return None
-    icons[n] = dst
-    return dst
-
-
-def item(a):
-    ch = a.get('chance', {})
-    return {'n': a['name'], 'f': a['flavor'], 'h': a['hint'], 'q': a['requirements'],
-            'x': a['undecoded_conditions'], 'i': icon_file(a),
-            'c': ch.get('mode'), 'p': ch.get('percent'), 'l': ch.get('latex'), 'v': ch.get('vars')}
+import artifact_items
+from artifact_items import artifacts, icons, item      # the artifact as the pages show it (shared with the pages that show one beside a text)
 
 
 sections = []
