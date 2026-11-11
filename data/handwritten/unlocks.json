@@ -475,6 +475,24 @@
      }
     }
    ]
+  },
+  {
+   "name": "Researches",
+   "asc": 0,
+   "unlock": [
+    "Available from Reincarnation 16 for the six vanilla factions, 24 for the Neutral factions, 32 for the Prestige factions and 75 for the Mercenaries."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Researches are upgrades that you unlock by investing coins and Faction Coins into a research branch. Doing so earns you Research Points in that branch, and more researches appear under it as you do. The Research Points you can invest are limited by your number of Reincarnations, and each branch only has room for a limited number of researches at a time.",
+     "link": {
+      "href": "research.html",
+      "text": "All researches and their details"
+     }
+    }
+   ],
+   "page": "research.html"
   }
  ],
  "reincarnation_unlocks": [
