@@ -546,20 +546,6 @@
         ]
        ]
       }
-     ],
-     "lists": [
-      {
-       "title": "A faction that has no Faction Coins of its own is paid for in the coins of its two parent factions, the full amount of each:",
-       "items": [
-        "Titan: Angel and Goblin",
-        "Druid: Elf and Demon",
-        "Faceless: Fairy and Undead",
-        "Dragon: Dwarf and Drow",
-        "Archon: Angel and Undead",
-        "Djinn: Fairy and Demon",
-        "Makers: Elf and Goblin"
-       ]
-      }
      ]
     },
     {
