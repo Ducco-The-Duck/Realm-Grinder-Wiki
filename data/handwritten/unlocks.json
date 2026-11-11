@@ -514,7 +514,7 @@
     },
     {
      "title": "Legacy containers",
-     "text": "You have four Legacy containers by default, and each one holds one Legacy. A fifth container, Relativity's Legacy, is free and comes with the Relativity research. A Legacy costs Sapphire Coins (the coins of Ascension 4) together with Faction Coins of the faction you take it from, and it costs more the further you are in the containers: the price depends on the number n of the container you choose it in, from 1 to 4. The Legacies of the prestige factions (Dwarf, Drow and Dragon) have a much higher base price than those of the other factions.",
+     "text": "You have four Legacy containers by default, and each one holds one Legacy. A Legacy costs coins, along with Faction Coins of the faction you take it from, and it costs more the further you are in the containers: the price depends on the number n of the container you choose it in, from 1 to 4. The Legacies of the prestige factions have a much higher base price than those of the other factions.",
      "formulas": [
       {
        "latex": "G = g \\cdot 1000^{\\,0.5\\left((n + 3)^{2} - (n + 3)\\right)}",
@@ -564,7 +564,7 @@
     },
     {
      "title": "Legacy combos",
-     "text": "Legacy combos are bonus effects that need Legacies of two of the six base factions. There is one combo for each pair of them, 15 in total. You can have only one combo before you abdicate, or two with the Revelations research, and they reset when you abdicate. A combo costs 1e72 Sapphire Coins and 1e33 Faction Coins of each of its two factions. Click the object to see all of them.",
+     "text": "Legacy combos are bonus effects that need Legacies of two of the six base factions. There is one combo for each pair of them, 15 in total. You can have only one combo by default, and they reset when you abdicate. A combo costs 1e72 Sapphire Coins and 1e33 Faction Coins of each of its two factions. Click the object to see all of them.",
      "side": [
       "Legacy Combos"
      ]
