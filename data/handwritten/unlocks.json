@@ -450,6 +450,23 @@
     "§?7§.§7!K§",
     "§[k§.§%?§"
    ]
+  },
+  {
+   "name": "Challenges",
+   "asc": 0,
+   "unlock": [
+    "Available from Reincarnation 2: the Challenges tab opens."
+   ],
+   "sections": [
+    {
+     "title": "What they are",
+     "text": "Challenges are tasks that each faction sets you. A challenge generally has one or two tasks that you have to actively build towards, along with a number of what are essentially check boxes. Completing a challenge gives you various bonuses. Each faction has its own challenges, which do not necessarily always benefit that faction.\nThe Veteran Figurine lore artifact allows Mercenaries to benefit from all challenges.",
+     "link": {
+      "href": "challenges.html",
+      "text": "All challenges and their rewards"
+     }
+    }
+   ]
   }
  ],
  "reincarnation_unlocks": [
