@@ -223,5 +223,20 @@ if not os.environ.get('RG_SCRIPTS'):
     except OSError as e:
         print('13. icons check failed:', e)
 
+# 14. no stray control characters in the hand-written data (a backslash escape written through a shell can turn into one, e.g. a backslash-f into a form feed, and breaks a formula)
+CONTROL = {chr(i) for i in range(32)} - {chr(9), chr(10), chr(13)}
+try:
+    ctl = []
+    def _walk(x, fn):
+        if isinstance(x, dict): [_walk(v, fn) for v in x.values()]
+        elif isinstance(x, list): [_walk(v, fn) for v in x]
+        elif isinstance(x, str) and any(c in CONTROL for c in x): ctl.append((fn, x[:40]))
+    for fn in os.listdir(os.path.join(ROOT, 'data', 'handwritten')):
+        if fn.endswith('.json'): _walk(json.load(open(os.path.join(ROOT, 'data', 'handwritten', fn), encoding='utf8')), fn)
+    print('14. control characters in the hand-written data: ' + (f'FOUND {ctl[:3]!r}' if ctl else 'none'))
+    if ctl: problems.append('control characters in data/handwritten (a backslash escape lost in a shell?)')
+except (OSError, ValueError) as e:
+    print('14. hand-written data check failed:', e)
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
