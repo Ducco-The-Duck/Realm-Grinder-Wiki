@@ -2383,7 +2383,7 @@
     "sections": [
      {
       "title": "What it does",
-      "text": "Multiplies the production bonus you get from Gems while it is active. It is a spell of the Thanksgiving event.",
+      "text": "Multiplies the production bonus you get from Gems while it is active.",
       "formulas": [
        {
         "latex": "M = 1 + \\frac{X}{100}",
