@@ -529,7 +529,7 @@
         ],
         [
          "g",
-         "the base price: 1e39, or 1e118 for a prestige faction"
+         "the base price: $10^{39}$, or $10^{118}$ for a prestige faction"
         ]
        ]
       },
@@ -542,7 +542,7 @@
         ],
         [
          "c",
-         "the base amount: 1e21, or 1e45 for a prestige faction"
+         "the base amount: $10^{21}$, or $10^{45}$ for a prestige faction"
         ]
        ]
       }
