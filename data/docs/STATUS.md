@@ -5,13 +5,8 @@ Only these need checking; remove an item from the open list when it is settled.
 
 1. **Formula disagreements** (open ones: `data/docs/FORMULA_MISMATCHES.md`, resolved ones: `data/docs/FORMULA_MISMATCHES_RESOLVED.md`; code against older sources; the wiki shows the code, which is probably right; each needs the
    in-game tooltip value). Object, then where it is on the wiki:
-   - **Poison Vial:** the chance is K / 10^7 with K = (100 + P) * x^0.9 (x = Combo Strike counter, K before the Ascension
-     penalty). The patch-notes doc has 100 * x^0.9, i.e. P = 0. P is the Drow lineage perk 4 bonus, 0.5 * floor(Time played this
-     Era), unit and size unconfirmed. Archaeology page; the perk is on the Allegiance upgrades page (Drow Perk 4). Check the
-     tooltip with and without the perk.
-   - **Druid Perk 4 (lineage perk), first value:** the old wiki has 3 * (ln(1 + x))^3 for x = assistants owned; the code has
-     2 * (ln(1 + A))^2 with A = assistants. Allegiance upgrades page (Druid lineage perks). Not mentioned in any more recent
-     document. Needs the in-game tooltip value once the perk is reached.
+   - **Artificial Currency (Makers challenge 2), Tax Collection increase:** the code uses the natural logarithm, the older sources log10. Challenges
+     page. Code checked, not confirmed in game.
 2. **Upgrade page verification** (the user checks the upgrade pages in game; built from code until then):
    - **Magic upgrades, Mercenary-only entries** (Round Table, Dark Covenant, Secret Exchange): unchecked because the user has
      not reached them. Arcane Brilliance is left for the Spells item.
@@ -31,7 +26,7 @@ Only these need checking; remove an item from the open list when it is settled.
        terms, the Mercenary-only variants of Evolutive Mutation and Deep Memory.
      - Iron Flight counts spell *effects* on Iron Strongholds (a spell with two effects counts twice): confirmed by the user's tooltip.
      - Heritages and Advanced Heritages (including the multiplier `m` and the Mercenary Badge) were confirmed by the user.
-     - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (only the first value of Druid Perk 4 is open, see item 1).
+     - Bloodlines, Lineages with their perks, and the Artifact Sets were checked in the game by the user (the first value of Druid Perk 4 was confirmed by a community member).
      - Mercenary Upgrades 1-16, Remnants and the Mercenary contracts' extras are still not covered. Each individual faction upgrade is still to be checked.
 3. **Spells page** (Magic upgrades spell tiers and the spell cost scaling; for the Spells page, unchecked).
    - Spell tiers (Magic upgrades; 23 spells x tiers 2 to 5, plus Arcane Brilliance; built from code, unchecked). The unlock
@@ -68,8 +63,8 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 - Lantern of Guidance (artifact and secret upgrade) and Oil Lamp: checked in game; the code is right (artifact: the chance at 2 mana/s reads 1.4 x 10^-6, matching the code's 1.42 x 10^-6 and not ln(1 + x) with 5.65 x 10^-6; Lantern upgrade: 2 mana/s with an Order faction gives 9%, coefficient 4; Oil Lamp: 1000 Maximum Mana without a Chaos faction gives 35%, coefficient 9). The patch notes had the two constants swapped.
 - Misc upgrades as built so far (Reincarnation Powers 1-5 with every effect, range and formula, Gem Power and the Gem upgrades,
   Challenge Power, Ruby Power and its tiers, the clicking, offline and assistant series): confirmed by the user.
-- Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; only the
-  earmarked items stay open (Poison Vial's Drow Perk 4 term).
+- Archaeology page as a whole (all lore and quest artifacts, requirements, hints, chances): checked by the user; Poison Vial's
+  formula (with the Drow Perk 4 term) was confirmed by a community member.
 - Wall Fragment, Wall Chunk, Mathematician (building tier multipliers, tier counted from 1): Wall Fragment checked in game against four
   buildings (1 + 5 * (2 * (11 - T))^2.5, not the old wiki 3 * (2 * (11 - T))^3 %); Wall Chunk and Mathematician agree with the old wiki.
 - Reverse Autocasting (from R40 = Ascension 1) and Tiered Autocasting (from R42) availability; the Mana Regeneration

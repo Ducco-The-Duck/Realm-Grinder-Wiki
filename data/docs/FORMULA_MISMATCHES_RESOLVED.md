@@ -10,6 +10,8 @@ The resolved entries of `FORMULA_MISMATCHES.md` (checked in game, or settled by 
 | Silent Assistance (Druid challenge 1) | Challenges page | 1.3 * x^0.7, x = time spent in this Era | 3 * t^0.7 | Resolved: confirmed in game, the code is right |
 | Dracomet Vault (Dragon challenge 6) | Challenges page | 0.03 * x^0.6 * t^0.9 %, x = Artifacts found, t = time spent in this Era | 0.03 * t^0.6 * N^0.9 (exponents the other way round: 0.6 on the time, 0.9 on the artifacts) | Resolved: confirmed in game, the code is right |
 | Warcry (Mercenary challenge reward): Call to Arms bonus y | Challenges page | y = 25 + (0.3 * L^0.975) (as given, grouping unclear) | y = 25 + (0.3 * L)^0.975, L = buildings Call to Arms counts | Resolved: confirmed in game by the user, the code is right |
+| Poison Vial | Archaeology page; perk on the Allegiance upgrades page (Drow Perk 4) | 100 * x^0.9 | (100 + P) * x^0.9, P = Drow lineage perk 4 bonus | Resolved: confirmed by a community member, the code is right |
+| Druid Perk 4, first value | Allegiance upgrades page (Druid lineage perks) | 3 * (ln(1 + x))^3, x = assistants owned | 2 * (ln(1 + A))^2 | Resolved: confirmed by a community member, the code is right |
 
 ## Other mismatches (not formulas)
 
