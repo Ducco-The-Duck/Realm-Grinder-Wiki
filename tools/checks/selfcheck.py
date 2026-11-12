@@ -281,6 +281,7 @@ try:
     lost = []
     fu = json.load(open(os.path.join(ROOT, 'data', 'derived', 'faction_upgrades.json'), encoding='utf8'))
     lost += [('upgrade', n) for n in list(fu['items']) + list(fu['umbrella']) if n not in cat['upgrade']['items']]
+    lost += [('upgrade', p['it']['n']) for it in fu['items'].values() for p in (it.get('lp') or []) if p.get('it') and p['it']['n'] not in cat['upgrade']['items']]      # the perk upgrades of the Lineage window
     lost += [('spell', n) for n in json.load(open(os.path.join(ROOT, 'data', 'derived', 'spell_cards.json'), encoding='utf8')) if n not in cat['spell']['items']]
     for page, key, typ in (('archaeology.html', None, 'artifact'), ('challenges.html', None, 'challenge'), ('research.html', 'branches', 'research')):
         t = open(os.path.join(ROOT, 'docs', page), encoding='utf8').read()

@@ -306,6 +306,9 @@ import catalog
 BIG = ('bl', 'lg', 'st', 'lp', 'cb')      # the lists that the click on a Bloodline, Lineage, Artifact Set, Legacy Combo object opens: a pinned object only shows its popup
 _up = catalog.unique('upgrade', [(it['n'], {k: v for k, v in it.items() if k not in BIG}) for s in sections for e in s['entries'] for it in e['items']])
 for _n, _it in FU_ALL['items'].items(): _up.setdefault(_n, {k: v for k, v in _it.items() if k not in BIG})      # the faction's own Bloodline, Lineage and Set live in the lists of the umbrella objects
+for _it in list(FU_ALL['items'].values()) + [it for s in sections for e in s['entries'] for it in e['items']]:      # the upgrade that each perk of a Lineage unlocks (shown in the perks window)
+    for _p in _it.get('lp') or []:
+        if _p.get('it'): _up.setdefault(_p['it']['n'], {k: v for k, v in _p['it'].items() if k not in BIG})
 catalog.write('upgrade', {'coins': COIN_NAMES, 'items': _up})      # for the tray
 html = tmpl.load('upgrades.html')
 import search_snippet
