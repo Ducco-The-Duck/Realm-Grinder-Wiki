@@ -36,7 +36,7 @@ The open items and the resolved ones are in `data/docs/STATUS.md`.
 | `§=y§[i]` | stat `i` for earlier Eras of this Reincarnation | medium | same; "Max depth in this Reincarnation" uses `max(5!V, =y)` |
 | `§@w§[i]` | stat `i` for previous Reincarnations (so 5!V + =y + @w = all-time, never reset, not even by Ascension) | **high** | code: only a full wipe zeroes it; user (patch notes and play): time-as-faction requirements span the whole playthrough |
 | index 4 | Clicks | high | stats panel / trophy text |
-| index 1 | Playtime (seconds, this Era) | medium | `=y[29] = 5!V[1]` at Abdication, "Playtime: %0" |
+| index 1 | Playtime (seconds, this Era) | **confirmed by the user** (the t of the Mercenary Tribute's price, 2026-11-12) | `=y[29] = 5!V[1]` at Abdication, "Playtime: %0" |
 | index 15 / 40 | Spells Cast / Spells Cast (Max) | high | stats panel |
 | index 24 | Royal Exchanges made | high | stats panel |
 | index 35 | Excavations made | high | stats panel |
@@ -105,7 +105,7 @@ The open items and the resolved ones are in `data/docs/STATUS.md`.
 | `§&c§.§`!=§()` | Total Lineage level | medium | Genealogist text |
 | `§@W§.§'!b§()` | Combo Strike's current production bonus (%) | medium | Combo Strike tooltip "Current: %1%" |
 | `Brainwave.§"!P§()` | Brainwave headstart (s): 600 per tier + bonuses | medium | tooltip "Increase headstart time based on spell tier", "Headstart: %0" |
-| `§&c§.§"!B§(i, false, true)` | Stat `i` of this Era (with i = 1: time spent in this Era, seconds); the other parameters' meanings are guessed from the call sites | medium | Temporal Flux uses `§"!B§(1,false,true)` as "time spent in this Era" (text and the Era-time stat 1) |
+| `§&c§.§"!B§(i, false, true)` | Stat `i` of this Era (with i = 1: time spent in this Era, seconds); the other parameters' meanings are guessed from the call sites | medium (stat 1 itself confirmed by the user) | Temporal Flux uses `§"!B§(1,false,true)` as "time spent in this Era" (text and the Era-time stat 1) |
 | `§2<§` (class) | the Tax Collection spell (`ids = ["s:TaxCollection"]`) | **high** | id string; its upgrades (Share Benefits `§=!i§`, Reap Interests, Appraisal Vantage `§;!j§`, the game calls it "Secret Exchange" internally) are named by their texts |
 | `§2<§.§,!G§(30)` | Tax Collection's seconds worth for a base of 30 seconds: the base plus every additive bonus, then the multipliers | medium | the Appraisal Vantage formula multiplies it with assistants and find chance; read from the function body, not the UI |
 | `§;!j§.§,!G§()` | Appraisal Vantage: Faction Coins per cast = assistants (`§&c§.§!-§()`) × Tax Collection worth (`§2<§.§,!G§(30)`) × find chance^1.25 | medium | agrees with the 4.3.11 patch-notes line (x * y * z^1.25) |
