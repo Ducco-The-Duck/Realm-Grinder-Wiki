@@ -133,7 +133,7 @@ def engine_raw(indexes):
 
 
 # the two Trade Treaties that cost 20 of their faction's coins only once you own a Gem or have Reincarnated (the very first run has no cost)
-NO_COST = ('Mercenary Tribute',)      # the price grows with the time played in the Era: the engine cannot give one number, so the Unlocks pages show the formula and no cost
+NO_COST = ('Mercenary Tribute', 'Lineage')      # the price depends on time played or on the Lineage level: the engine cannot give one number, so the Unlocks pages show no cost (the Tribute's formula is in its popup)
 STATE_DEPENDENT = {'Fairies Trade Treaty', 'Goblins Trade Treaty'}
 
 

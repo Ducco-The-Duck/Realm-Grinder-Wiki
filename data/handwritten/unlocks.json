@@ -1041,6 +1041,114 @@
      ]
     }
    ]
+  },
+  "1": {
+   "overview": "Ascension 1 lasts from Reincarnation 40 to 99. It introduces the Ascension penalty, the quest that unlocks the Dragon, Lineages and research for the Mercenaries.",
+   "entries": [
+    {
+     "title": "Reincarnation 40",
+     "sections": [
+      {
+       "title": "Ascension",
+       "text": "Ascension 1 begins at Reincarnation 40. An Ascension is a special kind of Reincarnation that resets your economy and introduces new mechanics. From Ascension 1 on, the Ascension penalty reduces the percentage bonuses of many upgrades, researches, spells and unique buildings. See [Progression](mechanics.html#progression) on the Mechanics page."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 42",
+     "sections": [
+      {
+       "title": "Dragon Unlock Quest",
+       "text": "The Dragon is unlocked through a quest of four steps, one at each of Reincarnations 42, 44, 46 and 48. It starts when you find the Spiky Rough Egg artifact in an excavation, from 1,500 excavations at Reincarnation 42 or higher. Once you own it, Hatch! becomes available, and you can buy it after 2 hours.",
+       "rows": [
+        [
+         "Hatch!",
+         "Drakeling",
+         "Dragon",
+         "Elder Dragon"
+        ]
+       ]
+      },
+      {
+       "title": "Spell Tiers",
+       "text": "The tiers of Call to Arms and Spiritual Surge become available once you own Hatch!. At Ascension 1 only the second tier can be bought."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 44",
+     "sections": [
+      {
+       "title": "Dragon Unlock Quest",
+       "text": "Drakeling becomes available to buy. It needs 2 hours of Hellfire Blast active time."
+      },
+      {
+       "title": "Spell Tiers",
+       "text": "The tiers of Blood Frenzy, Goblin's Greed, Night Time, Hellfire Blast and Combo Strike become available once you own Drakeling."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 46",
+     "sections": [
+      {
+       "title": "Dragon Unlock Quest",
+       "text": "Dragon becomes available to buy. It needs 2 hours and 5,000 assistants, while you are allied with the Fairy."
+      },
+      {
+       "title": "Spell Tiers",
+       "text": "The tiers of Holy Light, Fairy Chanting, Moon Blessing, God's Hand and Diamond Pickaxe become available once you own Dragon."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 48",
+     "sections": [
+      {
+       "title": "Dragon Unlock Quest",
+       "text": "Elder Dragon becomes available to buy. It needs 2 hours and 60,000 Maximum Mana. Buying it unlocks the Dragon."
+      },
+      {
+       "title": "Spell Tiers",
+       "text": "The tiers of Gem Grinder, Lightning Strike, Grand Balance and Brainwave become available once you own Elder Dragon."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 60",
+     "sections": [
+      {
+       "title": "Lineages",
+       "text": "The Lineage upgrade becomes available at Reincarnation 60. See [Lineages](mechanics.html#lineage) on the Mechanics page.",
+       "side": [
+        "Lineage"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 75",
+     "sections": [
+      {
+       "title": "Mercenary Research",
+       "text": "Research becomes available for the Mercenaries. It needs the Mercenary Encampment Quest (125,000 buildings), then one of the three Mercenary unique buildings, one for each alignment, and the Obsidian Shard artifact, which is found at 1,500 excavations. These unlock Secrets of the Warriors, which unlocks research for the Mercenaries.",
+       "rows": [
+        [
+         "Mercenary Encampment Quest"
+        ],
+        [
+         "Mercenary Camp",
+         "Freemason's Hall",
+         "Tyrant Garrison"
+        ],
+        [
+         "Secrets of the Warriors"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "upgrade_formulas": {
