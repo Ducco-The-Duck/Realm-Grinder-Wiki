@@ -1291,7 +1291,7 @@
      "sections": [
       {
        "title": "Astral Factions",
-       "text": "The Astral Factions (Archon, Djinn and Makers) are unlocked at Reincarnation 125. Each one needs its own unlock quest, which only needs to be completed once, and the Alliance of both your base faction and your prestige faction.",
+       "text": "The Astral Factions (Archon, Djinn and Makers) are unlocked. Each one needs its own unlock quest, which only needs to be completed once.",
        "rows": [
         [
          "Archon Quest",
