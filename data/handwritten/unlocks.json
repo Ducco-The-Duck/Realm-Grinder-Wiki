@@ -1238,7 +1238,7 @@
      "sections": [
       {
        "title": "Prestige Factions",
-       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced. Their Trade Treaties become available again at Reincarnation 110, and you need the Alliance of your base faction to buy one.",
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced.",
        "rows": [
         [
          "Dwarven Trade Treaty",
@@ -1275,7 +1275,7 @@
      "sections": [
       {
        "title": "Faction Unions",
-       "text": "A faction's union becomes available once you own its second unique building.",
+       "text": "Prestige faction unions become available once you own their second unique building.",
        "rows": [
         [
          "Dwarven Union",
