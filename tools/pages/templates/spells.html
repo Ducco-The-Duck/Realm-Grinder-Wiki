@@ -21,14 +21,11 @@ hr.gsep{border:0;border-top:1px solid var(--line);margin:18px 0}
 .cell img{max-width:100%;max-height:100%;image-rendering:pixelated;pointer-events:none}
 #tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);
   border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
-#tip b{display:block;font-size:1rem}
-#tip p{margin:4px 0 0;white-space:pre-line}
 #detail .chip{font-size:.8em}
 main .blurb{margin:4px 0 10px}
 .fnote{color:var(--muted);opacity:.8;font-size:.9rem;margin:14px 0 0}
 #detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:6px 0 0}
 #detail h3{margin:16px 0 0;color:var(--accent)}
-#tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
 #detail .empty{color:var(--muted)}
@@ -116,17 +113,7 @@ __UC__
     return e;
   }
   function hideTip(){ tip.style.display='none'; }
-  function showTip(s, anchor){
-    tip.textContent=''; tip.appendChild(el('b',null,s.name));
-    if(s.tags.length) tip.appendChild(chips(s));
-    tip.appendChild(el('p',null,s.desc));
-    tip.appendChild(el('p','hint','Click the spell icon to show detailed information.'));
-    tip.style.display='block';
-    var a=anchor.getBoundingClientRect(), t=tip.getBoundingClientRect();
-    var x=Math.min(Math.max(8,a.left+a.width/2-t.width/2),innerWidth-t.width-8);
-    var up=a.top-t.height-8>=8;
-    tip.style.left=x+'px'; tip.style.top=(up?a.top-t.height-8:a.bottom+8)+'px';
-  }
+  function showTip(s, anchor){ spellTip(s, anchor, true); }
   window.addEventListener('scroll',hideTip,{passive:true});
   function cellFor(s){
     var c=makeCell(s.name, '', 'spell|'+s.name), im=el('img'); im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);

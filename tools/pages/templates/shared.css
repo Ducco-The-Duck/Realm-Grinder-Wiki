@@ -1,3 +1,22 @@
+/* the hover popup of a research (class "res" on #tip; researchTip in shared.js) and of a spell (class "spl"; spellTip) */
+#tip:where(.res) b{display:block;font-size:1rem}
+#tip:where(.res) .num{color:var(--muted);font-size:.8rem}
+#tip:where(.res) .cost{margin-bottom:2px;font-size:1.15em}
+#tip:where(.res) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.res) .desc{white-space:pre-line}
+#tip:where(.res) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.res) .more,#tip:where(.res) .hint{color:var(--muted)}
+#tip:where(.res) .mark{font-weight:700;color:#fff;background:#a3341f;padding:0 4px;border-radius:4px;font-size:.8em}
+#tip:where(.res) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.res) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.res) ul.vars li{margin:2px 0}
+#tip:where(.res) .formula{padding:2px 0;overflow-wrap:anywhere}
+#tip:where(.res) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+#tip:where(.res) .faction{margin-top:6px;display:flex;gap:6px;align-items:baseline;font-size:.88rem}
+#tip:where(.res) .faction .sw{flex:none;width:10px;height:10px;border-radius:3px;border:1px solid var(--line)}
+#tip:where(.spl) b{display:block;font-size:1rem}
+#tip:where(.spl) p{margin:4px 0 0;white-space:pre-line}
+#tip:where(.spl) .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
 /* the popup of a challenge (challengeTip in shared.js) */
 #tip:where(.chl) b.t{display:block;font-size:1rem}
 #tip:where(.chl) .kind{display:block;color:var(--muted);font-size:.82rem}

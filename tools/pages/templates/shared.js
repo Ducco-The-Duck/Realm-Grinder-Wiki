@@ -461,6 +461,102 @@
     return b;
   }
 
+  // ---- a research (not a branch) as the Research page shows it: the helpers that depend on the Ascension, and the popup
+  // X = {coins: the coin names (the game's, per Ascension and per faction), maxnum: the highest research number per Ascension}
+  function resPenalty(it, A){
+    var k=0; (it.f||[]).forEach(function(f){ if(f.s && A>=f.s) k=Math.max(k, A-f.s+1); });
+    if(it.ps && A>=it.ps[0] && !(it.ps[1] && A>=4)) k=Math.max(k, A-it.ps[0]+1);
+    return k;
+  }
+  function resUnavailable(it, A, maxnum){ return (it.u!==null && it.u!==undefined && A>=it.u) || (it.nm!==undefined && it.nm>maxnum[A]); }
+  function resText(it, A){      // the description and the unlock requirements as they are at the Ascension
+    var cur={d:it.d,q:it.q}, ks=Object.keys(it.a||{}).map(Number).sort(function(a,b){return a-b;});
+    ks.forEach(function(k){ if(k<=A) cur=it.a[k]; });
+    return cur;
+  }
+  function resCost(it, A, X){      // the game's "Cost: ..." for the Ascension; nothing for a research that cannot be had then
+    if(!it.c || !it.c[A] || resUnavailable(it, A, X.maxnum)) return null;
+    var c=it.c[A], parts=[];
+    if(c[0]>0) parts.push(cnum(c[0])+' '+X.coins[0][A]);
+    c[1].forEach(function(f){ parts.push(cnum(f[1])+' '+X.coins[1][f[0]]+(f[1]===1 ? ' Coin' : ' Coins')); });
+    return 'Cost: '+(parts.length ? parts.join(', ') : 'Free');
+  }
+  function researchTip(it, anchor, A, X){
+    var tip=document.getElementById('tip');
+    tip.className='res'; tip.textContent='';
+    tip.appendChild(ce('b',null,it.n));
+    var ct=resCost(it, A, X); if(ct) tip.appendChild(ce('div','cost',ct));      // right below the name
+    if(it.k) tip.appendChild(ce('div','num',it.k));
+    if(it.al || it.an){
+      var al=ce('div','faction'), sw2=ce('span','sw'); sw2.style.background=it.ac||'transparent'; al.appendChild(sw2);
+      al.appendChild(document.createTextNode(it.al ? 'Can only be bought while your alignment is '+it.al+'.'
+                                                   : 'Cannot be bought while your alignment is '+it.an+'.'));
+      tip.appendChild(al);
+    }
+    if(it.fn){
+      var fl=ce('div','faction'), sw=ce('span','sw'); sw.style.background=it.fc||'transparent'; fl.appendChild(sw);
+      fl.appendChild(document.createTextNode(it.fn+' research. Can only be bought '+
+        (it.fk==='prestige' ? 'when '+it.fn+' is your prestige faction.' : 'when playing as '+it.fn+'.')+
+        (it.mn ? ' '+it.mn : '')));
+      tip.appendChild(fl);
+    }
+    var t=resText(it, A), noted=false;
+    if(it.nobuy){ placeTip(anchor, true); return; }
+    if(resUnavailable(it, A, X.maxnum)){
+      tip.appendChild(ce('span','lbl','Not available'));
+      tip.appendChild(ce('div',null,'This research is not available in Ascension '+A+'.'+(it.m?' (Mercenaries may be an exception.)':'')));
+      if(t.d){ tip.appendChild(ce('span','lbl','What it does')); tip.appendChild(ce('div','desc',t.d)); }
+      placeTip(anchor, true); return;
+    }
+    if(t.d){
+      tip.appendChild(ce('span','lbl','What it does'));
+      var dd=ce('div','desc',t.d), pk0=resPenalty(it, A);
+      if(pk0 && it.f && it.f.length===1){ dd.appendChild(document.createTextNode(' ')); dd.appendChild(ce('span','mark',new Array(pk0+1).join('A'))); }
+      tip.appendChild(dd);
+      if(it.nt){ it.nt.forEach(function(n){ tip.appendChild(ce('div','more',n)); }); noted=true; }
+    }
+    if(it.f && it.f.length){
+      tip.appendChild(ce('span','lbl',it.f.length>1?'Formulas':'Formula'));
+      var anyScaled=it.f.length>1 && it.f.some(function(f){ return f.s; });
+      it.f.forEach(function(f,i){
+        if(i>0) tip.appendChild(ce('div','fsep'));
+        var vs = it.f.length>1 ? 'v_{'+(i+1)+'}' : 'v';
+        var tex=f.l.replace(/^v = /, vs+' = ');
+        if(f.lb){
+          var lab=ce('div','flabel'); var lm=ce('span'); upgMath(vs,lm); lab.appendChild(lm);
+          var suf='', badge=null;
+          if(anyScaled){
+            if(!f.s) suf='';
+            else if(A>=f.s){ suf=' · '; badge=ce('span','mark',new Array(A-f.s+2).join('A')); }
+          }
+          lab.appendChild(document.createTextNode(' — '+f.lb+suf)); if(badge) lab.appendChild(badge); tip.appendChild(lab);
+        }
+        var d=ce('div','formula'); var m=ce('span'); upgMath(tex,m); d.appendChild(m); tip.appendChild(d);
+        var ul=ce('ul','vars');
+        f.v.forEach(function(v){ var li=ce('li'); var b=ce('b'); b.style.display='inline'; upgMath(v.symbol,b); li.appendChild(b); rich(li, ' — '+v.text); ul.appendChild(li); });
+        tip.appendChild(ul);
+      });
+      tip.appendChild(ce('div','more','v is the base value, before any Ascension penalty.'));
+    }
+    if(it.nt && !noted) it.nt.forEach(function(n){ tip.appendChild(ce('div','more',n)); });
+    if(it.h){ tip.appendChild(ce('span','lbl','Hint')); tip.appendChild(ce('div','hint',it.h)); }
+    if(t.q && t.q.length){
+      tip.appendChild(ce('span','lbl','Unlock requirement'));
+      var ul2=ce('ul'); t.q.forEach(function(q){ ul2.appendChild(ce('li',null,q)); }); tip.appendChild(ul2);
+    }
+    placeTip(anchor, true);
+  }
+  // ---- a spell {name, tags, desc} : the popup; hint: the line that tells the Spells page's visitor to click for the details
+  function spellTip(s, anchor, hint){
+    var tip=document.getElementById('tip');
+    tip.className='spl'; tip.textContent='';
+    tip.appendChild(ce('b',null,s.name));
+    if(s.tags.length) tip.appendChild(chips(s));
+    tip.appendChild(ce('p',null,s.desc));
+    if(hint) tip.appendChild(ce('p','hint','Click the spell icon to show detailed information.'));
+    placeTip(anchor, false);
+  }
+
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
   function chips(s){
     var d=ce('div','tags');
