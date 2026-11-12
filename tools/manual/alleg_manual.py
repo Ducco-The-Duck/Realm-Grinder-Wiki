@@ -44,6 +44,12 @@ FORMULAS = {
     "Fool's Gold": [(0, F(r'v = 2 \cdot N^{0.6}', ('N', most('Witch Conclave'))))],
     'Hobgoblin Gladiators': [(0, F(r'v = 4 \cdot \left(\ln\left(1 + W\right)\right)^{2}',
                                    ('W', 'The worth of a Tax Collection (seconds)')))],
+    'Green Fingers Discount': [
+        (0, F(r'D = 30 \cdot P + c \cdot a \cdot \left(1 + 0.01 \cdot t^{0.8}\right)',
+              ('P', 'Production per tick of all your buildings (30 ticks make a second)'),
+              ('c', 'The click value: the base click reward times the clicking multipliers'),
+              ('a', 'Your assistants'), ('t', 'Time played in this Reincarnation (seconds)'), label='Value of a Discount')),
+        (0, F(r'G = x \cdot D', ('x', 'A random number from 1 to 1500'), ('D', 'The value of a Discount (above)'), label='Coins gained'))],
     'Lousy Architecture': [
         (0, F(r'v = 2 \cdot N^{0.75}', ('N', 'Number of buildings of that type you own'), label='Production of each Non-Unique building (%)')),
         (0, F(r'v = 0.01', ('v', 'Amount taken off the cost multiplier of Non-Unique buildings'), label='Cost multiplier'))],

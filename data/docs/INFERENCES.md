@@ -36,6 +36,7 @@ The open items and the resolved ones are in `data/docs/STATUS.md`.
 | `§=y§[i]` | stat `i` for earlier Eras of this Reincarnation | medium | same; "Max depth in this Reincarnation" uses `max(5!V, =y)` |
 | `§@w§[i]` | stat `i` for previous Reincarnations (so 5!V + =y + @w = all-time, never reset, not even by Ascension) | **high** | code: only a full wipe zeroes it; user (patch notes and play): time-as-faction requirements span the whole playthrough |
 | index 4 | Clicks | high | stats panel / trophy text |
+| Green Fingers Discount value D = 30 P + c a (1 + 0.01 t^0.8) | P = the per-tick production of all buildings (`§#!!§.§[W§(-1)`, 30 ticks make a second, as on the Buildings page), c = the click value (`§#!!§.§]c§()` times `§#!!§.§7D§(true)`, the base click reward and the clicking multipliers), a = assistants (`§&c§.§!-§()`, the same count the Dragon step asks for), t = stat 1 summed over the three arrays (time in this Reincarnation, as the game's text says); the Discount gives a random 1 to 1500 times D (the game's own "Next Discount: D to 1500 D") | medium | the formula is the code's `§1H§`; the meanings are read from the function bodies |
 | index 1 | Playtime (seconds, this Era) | **confirmed by the user** (the t of the Mercenary Tribute's price, 2026-11-12) | `=y[29] = 5!V[1]` at Abdication, "Playtime: %0" |
 | index 15 / 40 | Spells Cast / Spells Cast (Max) | high | stats panel |
 | index 24 | Royal Exchanges made | high | stats panel |

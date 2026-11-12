@@ -3719,7 +3719,44 @@
 "description": [
 {
 "text": "Gain coins randomly every 120 seconds based on your total production. Value increases over time spent in this Reincarnation. Also works while offline.",
-"formulas": [],
+"formulas": [
+{
+"latex": "D = 30 \\cdot P + c \\cdot a \\cdot \\left(1 + 0.01 \\cdot t^{0.8}\\right)",
+"vars": [
+{
+"symbol": "P",
+"text": "Production per tick of all your buildings (30 ticks make a second)"
+},
+{
+"symbol": "c",
+"text": "The click value: the base click reward times the clicking multipliers"
+},
+{
+"symbol": "a",
+"text": "Your assistants"
+},
+{
+"symbol": "t",
+"text": "Time played in this Reincarnation (seconds)"
+}
+],
+"label": "Value of a Discount"
+},
+{
+"latex": "G = x \\cdot D",
+"vars": [
+{
+"symbol": "x",
+"text": "A random number from 1 to 1500"
+},
+{
+"symbol": "D",
+"text": "The value of a Discount (above)"
+}
+],
+"label": "Coins gained"
+}
+],
 "s": 1,
 "np": false
 }
