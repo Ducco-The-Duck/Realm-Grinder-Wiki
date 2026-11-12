@@ -4,7 +4,7 @@
   // pins an object (to the newest section) or removes it from the tray. The objects of the tray are drawn by objectFor from the catalogue, without their click.
   (function(){
     var KEY='rg-tray', MAXOBJ=200, MAXSEC=30, NAMELEN=24, MAXA=__MAXA__, DEFW=300, MINW=200;
-    var T, tray, body, tab, toast, narrow=window.matchMedia('(max-width:700px)'), undoState=null, toastTimer=null;
+    var T, tray, body, toast, narrow=window.matchMedia('(max-width:700px)'), undoState=null, toastTimer=null;
     function uid(){ return 'k'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
     function globalAsc(){ try{ var a=parseInt(localStorage.getItem('rg-ascension'),10); if(a>=0 && a<=MAXA) return a; }catch(e){} return 0; }
     function cleanName(s, d){ s=String(s==null?'':s).replace(/\s+/g,' ').trim().slice(0,NAMELEN).trim(); return s||d; }
@@ -14,7 +14,7 @@
       if(!sub) o.subs=(Array.isArray(s.subs)?s.subs:[]).map(function(x){ return cleanSec(x,true); });
       return o;
     }
-    function fresh(){ var s=cleanSec({name:'Pins'}); return {open:!narrow.matches, w:DEFW, last:s.id, secs:[s]}; }
+    function fresh(){ var s=cleanSec({name:'General'}); return {open:!narrow.matches, w:DEFW, last:s.id, secs:[s]}; }
     function load(){
       try{
         var o=JSON.parse(localStorage.getItem(KEY)||'null');
@@ -49,7 +49,7 @@
     // ---- changes (each saves and redraws)
     function pin(ref, sec, index){
       if(countObjects()>=MAXOBJ){ say('The tray holds up to '+MAXOBJ+' objects.'); return false; }
-      if(!sec){ sec=newest(); if(!sec){ sec=cleanSec({name:'Pins'}); T.secs.push(sec); } }
+      if(!sec){ sec=newest(); if(!sec){ sec=cleanSec({name:'General'}); T.secs.push(sec); } }
       if(index==null || index>sec.items.length) index=sec.items.length;
       sec.items.splice(index,0,ref); save(); render(); return true;
     }
@@ -142,16 +142,16 @@
     function layout(){
       var open=T.open;
       document.documentElement.style.setProperty('--tray-w', T.w+'px');
-      tray.classList.toggle('closed', !open); body.classList.toggle('tray-open', open); tab.hidden=open;
-      tray.setAttribute('aria-hidden', String(!open));
+      tray.classList.toggle('closed', !open); body.classList.toggle('tray-open', open);
+      var arrow=tray.querySelector('.tray-close'); arrow.title=open ? 'Hide the tray' : 'Show the tray'; arrow.setAttribute('aria-label', arrow.title);
     }
     function setOpen(o){ T.open=o; save(); layout(); }
 
-    // ---- the shell: header, resize edge, tab, messages
+    // ---- the shell: arrow, heading, resize edge, messages
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
+      var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(!T.open); });
       tray.appendChild(close);
       tray.appendChild(ce('h2','tray-title','Pins'));      // the heading of the tray
       tray.appendChild(ce('div','tray-body'));
@@ -162,9 +162,8 @@
         function up(){ rz.removeEventListener('pointermove',mv); rz.removeEventListener('pointerup',up); rz.removeEventListener('pointercancel',up); body.classList.remove('tray-resizing'); save(); }
         rz.addEventListener('pointermove',mv); rz.addEventListener('pointerup',up); rz.addEventListener('pointercancel',up);
       });
-      tab=ce('button','tray-tab'); tab.type='button'; tab.id='tray-tab'; tab.title='Show the tray'; tab.setAttribute('aria-label','Show the tray'); tab.addEventListener('click',function(){ setOpen(true); });
       toast=ce('div'); toast.id='tray-toast'; toast.setAttribute('role','status');
-      body.appendChild(tray); body.appendChild(tab); body.appendChild(toast);
+      body.appendChild(tray); body.appendChild(toast);
       if(!document.getElementById('tip')){ var t=ce('div'); t.id='tip'; t.setAttribute('role','tooltip'); t.setAttribute('data-own',''); body.appendChild(t); }      // a page without popups of its own
     }
 
@@ -174,7 +173,6 @@
     function where(x, y){      // the container under the pointer: {id, index} in the tray, or null
       var el=document.elementFromPoint(x,y), box=el && el.closest && el.closest('#tray .ts');
       if(!box){
-        if(el && el.closest && el.closest('#tray .tray-body') && T.secs.length){ var last=T.secs[T.secs.length-1]; return {id:last.id, index:null}; }
         if(el && el.closest && el.closest('#tray .tray-body')) return {id:null, index:null};
         return null;
       }
@@ -204,6 +202,7 @@
       if(cancel) return;
       var swallow=function(ev){ ev.stopPropagation(); ev.preventDefault(); }; window.addEventListener('click',swallow,true); setTimeout(function(){ window.removeEventListener('click',swallow,true); },60);      // the click that ends a drag is not a click
       if(!w){ if(d.fromTray) unpin(d.src.id, d.src.i); return; }
+      if(!w.id && T.secs.length) return;      // the empty space below the last section is not a section
       var sec=w.id && find(w.id); if(w.id && !sec) return;
       if(d.fromTray){ if(w.id) move(d.src, w.id, w.index); }
       else pin(d.ref, sec && sec.sec, w.index);

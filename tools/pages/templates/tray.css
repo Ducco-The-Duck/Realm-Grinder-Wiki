@@ -3,7 +3,8 @@
   border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:var(--fg);font-size:.92rem;line-height:1.15;
   transition:transform .22s ease}
-#tray.closed{transform:translateX(-110%);pointer-events:none}
+#tray.closed{transform:translateX(calc(-100% - 2px));pointer-events:none}      /* far enough to leave only the arrow, which is part of the tray and slides with it */
+#tray.closed .tray-close{pointer-events:auto}
 body{transition:padding-left .22s ease}
 body.tray-open{padding-left:var(--tray-w,300px)}
 body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cursor:ew-resize}
@@ -21,14 +22,12 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-addrow:hover::before,.tray-addrow:hover::after{opacity:.85;background:var(--accent)}
 #tray-toast button{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
 #tray-toast button:hover{color:var(--accent);background:var(--cellhi)}
-.tray-close,.tray-tab{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
+.tray-close{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f}
-.tray-close::after,.tray-tab::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
-.tray-tab::after{transform:translate(-70%,-50%) rotate(-135deg)}
-.tray-close:hover::after,.tray-tab:hover::after{border-color:var(--accent)}
+.tray-close::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
+#tray.closed .tray-close::after{transform:translate(-70%,-50%) rotate(-135deg)}
+.tray-close:hover::after{border-color:var(--accent)}
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
-.tray-tab{position:fixed;z-index:47;left:0;top:10px}
-.tray-tab[hidden]{display:none}
 .tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:4px 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}

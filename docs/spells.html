@@ -342,7 +342,8 @@ body.steel .search input{padding:0 96px 0 8px}
   border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:var(--fg);font-size:.92rem;line-height:1.15;
   transition:transform .22s ease}
-#tray.closed{transform:translateX(-110%);pointer-events:none}
+#tray.closed{transform:translateX(calc(-100% - 2px));pointer-events:none}      /* far enough to leave only the arrow, which is part of the tray and slides with it */
+#tray.closed .tray-close{pointer-events:auto}
 body{transition:padding-left .22s ease}
 body.tray-open{padding-left:var(--tray-w,300px)}
 body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cursor:ew-resize}
@@ -360,14 +361,12 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-addrow:hover::before,.tray-addrow:hover::after{opacity:.85;background:var(--accent)}
 #tray-toast button{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
 #tray-toast button:hover{color:var(--accent);background:var(--cellhi)}
-.tray-close,.tray-tab{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
+.tray-close{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f}
-.tray-close::after,.tray-tab::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
-.tray-tab::after{transform:translate(-70%,-50%) rotate(-135deg)}
-.tray-close:hover::after,.tray-tab:hover::after{border-color:var(--accent)}
+.tray-close::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
+#tray.closed .tray-close::after{transform:translate(-70%,-50%) rotate(-135deg)}
+.tray-close:hover::after{border-color:var(--accent)}
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
-.tray-tab{position:fixed;z-index:47;left:0;top:10px}
-.tray-tab[hidden]{display:none}
 .tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:4px 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
@@ -1206,7 +1205,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   // pins an object (to the newest section) or removes it from the tray. The objects of the tray are drawn by objectFor from the catalogue, without their click.
   (function(){
     var KEY='rg-tray', MAXOBJ=200, MAXSEC=30, NAMELEN=24, MAXA=4, DEFW=300, MINW=200;
-    var T, tray, body, tab, toast, narrow=window.matchMedia('(max-width:700px)'), undoState=null, toastTimer=null;
+    var T, tray, body, toast, narrow=window.matchMedia('(max-width:700px)'), undoState=null, toastTimer=null;
     function uid(){ return 'k'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
     function globalAsc(){ try{ var a=parseInt(localStorage.getItem('rg-ascension'),10); if(a>=0 && a<=MAXA) return a; }catch(e){} return 0; }
     function cleanName(s, d){ s=String(s==null?'':s).replace(/\s+/g,' ').trim().slice(0,NAMELEN).trim(); return s||d; }
@@ -1216,7 +1215,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       if(!sub) o.subs=(Array.isArray(s.subs)?s.subs:[]).map(function(x){ return cleanSec(x,true); });
       return o;
     }
-    function fresh(){ var s=cleanSec({name:'Pins'}); return {open:!narrow.matches, w:DEFW, last:s.id, secs:[s]}; }
+    function fresh(){ var s=cleanSec({name:'General'}); return {open:!narrow.matches, w:DEFW, last:s.id, secs:[s]}; }
     function load(){
       try{
         var o=JSON.parse(localStorage.getItem(KEY)||'null');
@@ -1251,7 +1250,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     // ---- changes (each saves and redraws)
     function pin(ref, sec, index){
       if(countObjects()>=MAXOBJ){ say('The tray holds up to '+MAXOBJ+' objects.'); return false; }
-      if(!sec){ sec=newest(); if(!sec){ sec=cleanSec({name:'Pins'}); T.secs.push(sec); } }
+      if(!sec){ sec=newest(); if(!sec){ sec=cleanSec({name:'General'}); T.secs.push(sec); } }
       if(index==null || index>sec.items.length) index=sec.items.length;
       sec.items.splice(index,0,ref); save(); render(); return true;
     }
@@ -1344,16 +1343,16 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     function layout(){
       var open=T.open;
       document.documentElement.style.setProperty('--tray-w', T.w+'px');
-      tray.classList.toggle('closed', !open); body.classList.toggle('tray-open', open); tab.hidden=open;
-      tray.setAttribute('aria-hidden', String(!open));
+      tray.classList.toggle('closed', !open); body.classList.toggle('tray-open', open);
+      var arrow=tray.querySelector('.tray-close'); arrow.title=open ? 'Hide the tray' : 'Show the tray'; arrow.setAttribute('aria-label', arrow.title);
     }
     function setOpen(o){ T.open=o; save(); layout(); }
 
-    // ---- the shell: header, resize edge, tab, messages
+    // ---- the shell: arrow, heading, resize edge, messages
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
+      var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(!T.open); });
       tray.appendChild(close);
       tray.appendChild(ce('h2','tray-title','Pins'));      // the heading of the tray
       tray.appendChild(ce('div','tray-body'));
@@ -1364,9 +1363,8 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
         function up(){ rz.removeEventListener('pointermove',mv); rz.removeEventListener('pointerup',up); rz.removeEventListener('pointercancel',up); body.classList.remove('tray-resizing'); save(); }
         rz.addEventListener('pointermove',mv); rz.addEventListener('pointerup',up); rz.addEventListener('pointercancel',up);
       });
-      tab=ce('button','tray-tab'); tab.type='button'; tab.id='tray-tab'; tab.title='Show the tray'; tab.setAttribute('aria-label','Show the tray'); tab.addEventListener('click',function(){ setOpen(true); });
       toast=ce('div'); toast.id='tray-toast'; toast.setAttribute('role','status');
-      body.appendChild(tray); body.appendChild(tab); body.appendChild(toast);
+      body.appendChild(tray); body.appendChild(toast);
       if(!document.getElementById('tip')){ var t=ce('div'); t.id='tip'; t.setAttribute('role','tooltip'); t.setAttribute('data-own',''); body.appendChild(t); }      // a page without popups of its own
     }
 
@@ -1376,7 +1374,6 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     function where(x, y){      // the container under the pointer: {id, index} in the tray, or null
       var el=document.elementFromPoint(x,y), box=el && el.closest && el.closest('#tray .ts');
       if(!box){
-        if(el && el.closest && el.closest('#tray .tray-body') && T.secs.length){ var last=T.secs[T.secs.length-1]; return {id:last.id, index:null}; }
         if(el && el.closest && el.closest('#tray .tray-body')) return {id:null, index:null};
         return null;
       }
@@ -1406,6 +1403,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       if(cancel) return;
       var swallow=function(ev){ ev.stopPropagation(); ev.preventDefault(); }; window.addEventListener('click',swallow,true); setTimeout(function(){ window.removeEventListener('click',swallow,true); },60);      // the click that ends a drag is not a click
       if(!w){ if(d.fromTray) unpin(d.src.id, d.src.i); return; }
+      if(!w.id && T.secs.length) return;      // the empty space below the last section is not a section
       var sec=w.id && find(w.id); if(w.id && !sec) return;
       if(d.fromTray){ if(w.id) move(d.src, w.id, w.index); }
       else pin(d.ref, sec && sec.sec, w.index);
