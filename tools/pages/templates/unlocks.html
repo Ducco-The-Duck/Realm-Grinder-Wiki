@@ -104,17 +104,17 @@ __UC__
       var pg=DATA.page;
       root.appendChild(linked('p',pg.overview)); root.appendChild(el('hr','fsep'));
       (pg.entries||[]).forEach(function(e){
-        var s=el('section','mech'); s.appendChild(el('h2',null,e.title));
-        if(e.text) s.appendChild(linked('p',e.text));
+        var s=el('section','mech'), h=el('h2',null,e.title), inner=el('div'); s.appendChild(h);      // the title folds and unfolds the section
+        if(e.text) inner.appendChild(linked('p',e.text));
         (e.sections||[]).forEach(function(c){
-          s.appendChild(el('h3',null,c.title));
-          if(c.side){ var sd=el('div','upgside'); c.side.forEach(function(n){ sd.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(sd); }      // at the right, the text runs around it
-          if(c.text) s.appendChild(linked('p',c.text));
+          inner.appendChild(el('h3',null,c.title));
+          if(c.side){ var sd=el('div','upgside'); c.side.forEach(function(n){ sd.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); inner.appendChild(sd); }      // at the right, the text runs around it
+          if(c.text) inner.appendChild(linked('p',c.text));
           (c.lists||[]).forEach(function(l){
             if(l.title){
               var lp=linked('p',l.title);
               if(l.side){ var ls=el('div','upgside'); l.side.forEach(function(n){ ls.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); lp.insertBefore(ls, lp.firstChild); lp.classList.add('withup'); }      // the upgrades of this step at its right
-              s.appendChild(lp);
+              inner.appendChild(lp);
             }
             if(l.items && l.items.length){
               var ul=el('ul','items');
@@ -123,19 +123,20 @@ __UC__
                 if(l.upgrades && l.upgrades[i]){ var ic=el('div','upgside'); ic.appendChild(upgradeCell(DATA.ups[l.upgrades[i]], ASC, DATA.coins)); li.insertBefore(ic, li.firstChild); li.classList.add('withup'); }      // the upgrade of this item at its right
                 ul.appendChild(li);
               });
-              s.appendChild(ul);
+              inner.appendChild(ul);
             }
             (l.formulas||[]).forEach(function(f,fi){      // the formulas of a step, below its text
-              if(fi) s.appendChild(el('hr','fsep'));
-              var fd=el('div','formula'); math(f.latex,fd); s.appendChild(fd);
-              if(f.vars){ var vl=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), bb=el('b'); math(v[0],bb); li.appendChild(bb); li.appendChild(document.createTextNode(' \u2014 ')); rich(li, v[1]); vl.appendChild(li); }); s.appendChild(vl); }
+              if(fi) inner.appendChild(el('hr','fsep'));
+              var fd=el('div','formula'); math(f.latex,fd); inner.appendChild(fd);
+              if(f.vars){ var vl=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), bb=el('b'); math(v[0],bb); li.appendChild(bb); li.appendChild(document.createTextNode(' \u2014 ')); rich(li, v[1]); vl.appendChild(li); }); inner.appendChild(vl); }
             });
           });
-          if(c.after) s.appendChild(linked('p',c.after));      // a last paragraph, after the steps
-          (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow mid'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(rr); });      // rows of upgrades, one under the other
-          if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
+          if(c.after) inner.appendChild(linked('p',c.after));      // a last paragraph, after the steps
+          (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow mid'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); inner.appendChild(rr); });      // rows of upgrades, one under the other
+          if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); inner.appendChild(row); }
         });
         root.appendChild(s);
+        foldable(s, h, inner, e.title);
       });
       return;
     }
