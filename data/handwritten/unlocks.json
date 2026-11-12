@@ -1399,7 +1399,7 @@
      "sections": [
       {
        "title": "Forbidden Research",
-       "text": "Forbidden Research is unlocked by purchasing Apeiron, which becomes available once you have found the Forgotten Relic and Apeiron artifacts. The Apeiron artifact can only be found while playing as a Mercenary, after purchasing one upgrade from 15 different factions.",
+       "text": "Forbidden Research is unlocked by purchasing Apeiron, which becomes available once you have found the Forgotten Relic and Apeiron artifacts.",
        "side": [
         "Apeiron"
        ]
