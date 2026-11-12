@@ -1122,10 +1122,7 @@
      "sections": [
       {
        "title": "Lineages",
-       "text": "The Lineage upgrade becomes available at Reincarnation 60. See [Lineages](mechanics.html#lineage) on the Mechanics page.",
-       "side": [
-        "Lineage"
-       ]
+       "text": "The Lineage upgrade becomes available immediately upon reaching Reincarnation 60. See [Lineages](mechanics.html#lineage) on the Mechanics page."
       }
      ]
     },
