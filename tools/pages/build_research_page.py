@@ -63,7 +63,7 @@ BUDGET_COMMON = [
      'l': r'v = \left(\ln\left(1 + t\right)\right)^{3}', 'v': [['t', 'Time played in this Era (seconds)']],},
     {'n': 'Faceless Set, Set Bonus 2',
      'l': r'v = \min\left(3000,\; \left(\ln\left(1 + F\right)\right)^{1.5}\right)',
-     'v': [['F', 'Faction Coins found in this Era']],},
+     'v': [['F', 'Faction Coins found in this Era']], 'a': 4,},      # its artifact (The Blackest Ink) needs Ascension 4
     {'n': 'Goblin Perk 6',
      'l': r'v = \min\left(3000,\; 4 \cdot W^{0.5}\right)', 'v': [['W', "Tax Collection's worth"]],},
     {'n': 'Dwarven Perk 6',
