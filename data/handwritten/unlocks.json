@@ -1066,7 +1066,7 @@
      "sections": [
       {
        "title": "Drakeling",
-       "text": "Drakeling becomes available to buy. It needs 2 hours of Hellfire Blast active time.",
+       "text": "Drakeling becomes available to buy. It needs 2 hours of Hellfire Blast active time since buying Hatch!.",
        "side": [
         "Drakeling"
        ]
@@ -1082,7 +1082,7 @@
      "sections": [
       {
        "title": "Dragon",
-       "text": "Dragon becomes available to buy. It needs 2 hours and 5,000 assistants, while you are allied with the Fairy.",
+       "text": "Dragon becomes available to buy. It needs 2 hours since buying Drakeling and 5,000 assistants, while you are allied with the Fairy.",
        "side": [
         "Dragon"
        ]
@@ -1098,7 +1098,7 @@
      "sections": [
       {
        "title": "Elder Dragon",
-       "text": "Elder Dragon becomes available to buy. It needs 2 hours and 60,000 Maximum Mana. Buying it unlocks the Dragon.",
+       "text": "Elder Dragon becomes available to buy. It needs 2 hours since buying Dragon and 60,000 Maximum Mana. Buying it unlocks the Dragon faction to ally with.",
        "side": [
         "Elder Dragon"
        ]
