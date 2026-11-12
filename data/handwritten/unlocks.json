@@ -1149,6 +1149,185 @@
      ]
     }
    ]
+  },
+  "2": {
+   "overview": "Ascension 2 lasts from Reincarnation 100 to 159. It introduces the second alignment, Artifact Sets, the second unique buildings and Faction Unions, and the Astral Factions. The Prestige Factions come back at Reincarnation 110.",
+   "entries": [
+    {
+     "title": "Reincarnation 100",
+     "sections": [
+      {
+       "title": "Second Alignment",
+       "text": "From Ascension 2 you can choose a second alignment once you have chosen your first: Order, Chaos or Balance. Each one lets you affiliate with three factions, one Good, one Neutral and one Evil: Order with the Angel, the Titan and the Undead, Chaos with the Fairy, the Faceless and the Demon, and Balance with the Elves, the Druids and the Goblins.",
+       "rows": [
+        [
+         "Proof of Order",
+         "Proof of Chaos",
+         "Proof of Balance"
+        ]
+       ]
+      },
+      {
+       "title": "Artifact Sets",
+       "text": "Artifact Sets become available at Reincarnation 100. See [Artifact Sets](mechanics.html#artifact-set) on the Mechanics page."
+      },
+      {
+       "title": "Second Unique Buildings",
+       "text": "The six vanilla factions and the three Neutral Factions get a second unique building. Each one needs its own unlock quest, which only needs to be completed once.",
+       "rows": [
+        [
+         "Swarming Tower Quest",
+         "Arboreal City Quest",
+         "Holy Site Quest",
+         "Slave Market Quest",
+         "Flesh Workshop Quest",
+         "Burning Abyss Quest",
+         "Mountain Palace Quest",
+         "Ziggurat Quest",
+         "Forbidden Library Quest"
+        ],
+        [
+         "Swarming Tower",
+         "Arboreal City",
+         "Holy Site",
+         "Slave Market",
+         "Flesh Workshop",
+         "Burning Abyss",
+         "Mountain Palace",
+         "Ziggurat",
+         "Forbidden Library"
+        ]
+       ]
+      },
+      {
+       "title": "Faction Unions",
+       "text": "The Union of a faction becomes available once you own its second unique building.",
+       "rows": [
+        [
+         "Fairies Union",
+         "Elven Union",
+         "Angels Union",
+         "Goblins Union",
+         "Undead Union",
+         "Demons Union",
+         "Titans Union",
+         "Druids Union",
+         "Faceless Union"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 105",
+     "sections": [
+      {
+       "title": "Union Effects",
+       "text": "From Reincarnation 105 the Unions of the six vanilla factions and the three Neutral Factions have an additional effect."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 110",
+     "sections": [
+      {
+       "title": "Prestige Factions",
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced. Their Trade Treaties become available again at Reincarnation 110, and you need the Alliance of your base faction to buy one.",
+       "rows": [
+        [
+         "Dwarven Trade Treaty",
+         "Drow Trade Treaty",
+         "Dragons Trade Treaty"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 112",
+     "sections": [
+      {
+       "title": "Second Unique Buildings",
+       "text": "The Prestige Factions get a second unique building. Each one needs its own unlock quest, which only needs to be completed once.",
+       "rows": [
+        [
+         "High Bastion Quest",
+         "Brothel Quest",
+         "Dragon Pasture Quest"
+        ],
+        [
+         "High Bastion",
+         "Brothel",
+         "Dragon Pasture"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 115",
+     "sections": [
+      {
+       "title": "Faction Unions",
+       "text": "The Unions of the Prestige Factions become available once you own their second unique building.",
+       "rows": [
+        [
+         "Dwarven Union",
+         "Drow Union",
+         "Dragon Union"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 125",
+     "sections": [
+      {
+       "title": "Astral Factions",
+       "text": "The Astral Factions (Archon, Djinn and Makers) are unlocked at Reincarnation 125. Each one needs its own unlock quest, which only needs to be completed once, and the Alliance of both your base faction and your prestige faction.",
+       "rows": [
+        [
+         "Archon Quest",
+         "Djinn Quest",
+         "Makers Quest"
+        ],
+        [
+         "Archon Trade Treaty",
+         "Djinn Trade Treaty",
+         "Makers Trade Treaty"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 130",
+     "sections": [
+      {
+       "title": "Astral Unique Buildings and Unions",
+       "text": "The Astral Factions get their unique buildings and Unions at Reincarnation 130. Each unique building needs its own unlock quest, which only needs to be completed once, and each Union needs its unique building.",
+       "rows": [
+        [
+         "Nexus Quest",
+         "Pavilion Quest",
+         "Hall of Origination Quest"
+        ],
+        [
+         "Nexus",
+         "Pavilion",
+         "Hall of Origination"
+        ],
+        [
+         "Archon Union",
+         "Djinn Union",
+         "Makers Union"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "upgrade_formulas": {
