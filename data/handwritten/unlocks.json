@@ -1244,14 +1244,7 @@
      "sections": [
       {
        "title": "Prestige Factions",
-       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced.",
-       "rows": [
-        [
-         "Dwarven Trade Treaty",
-         "Drow Trade Treaty",
-         "Dragons Trade Treaty"
-        ]
-       ]
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced."
       }
      ]
     },
@@ -1360,14 +1353,7 @@
      "sections": [
       {
        "title": "Prestige Factions",
-       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced.",
-       "rows": [
-        [
-         "Dwarven Trade Treaty",
-         "Drow Trade Treaty",
-         "Dragons Trade Treaty"
-        ]
-       ]
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced."
       },
       {
        "title": "Mercenary Building Contract",
@@ -1383,14 +1369,7 @@
      "sections": [
       {
        "title": "Astral Factions",
-       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced.",
-       "rows": [
-        [
-         "Archon Trade Treaty",
-         "Djinn Trade Treaty",
-         "Makers Trade Treaty"
-        ]
-       ]
+       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced."
       }
      ]
     },
@@ -1443,14 +1422,7 @@
      "sections": [
       {
        "title": "Prestige Factions",
-       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced.",
-       "rows": [
-        [
-         "Dwarven Trade Treaty",
-         "Drow Trade Treaty",
-         "Dragons Trade Treaty"
-        ]
-       ]
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced."
       }
      ]
     },
@@ -1459,14 +1431,7 @@
      "sections": [
       {
        "title": "Astral Factions",
-       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced. To ally with them, you must find the Mask of Scorch'Rah quest artifact.",
-       "rows": [
-        [
-         "Archon Trade Treaty",
-         "Djinn Trade Treaty",
-         "Makers Trade Treaty"
-        ]
-       ]
+       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced. To ally with them, you must find the Mask of Scorch'Rah quest artifact."
       }
      ]
     }
