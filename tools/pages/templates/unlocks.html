@@ -54,6 +54,10 @@ __UC__
 <div id="root"></div>
 </main>
 <div id="tip" role="tooltip"></div>
+<div id="more" role="dialog" aria-modal="true" aria-labelledby="moretitle"><div class="card">
+  <header><h3 id="moretitle"></h3><button class="x" type="button" id="moreclose">Close</button></header>
+  <div id="morebody"></div>
+</div></div>
 <div id="pop" role="dialog" aria-modal="true" aria-labelledby="poptitle"><div class="card">
   <header><h3 id="poptitle"></h3><button class="x" type="button" id="popclose">Close</button></header>
   <div class="grid" id="popgrid"></div>
@@ -85,7 +89,7 @@ __UC__
     placeTip(anchor);
   }
   window.addEventListener('scroll',hideTip,{passive:true});
-  bindPop();
+  bindPop(); bindMore();
   function apply(){
     root.textContent='';
     if(MODE==='all'){      // the overall Unlocks page: what the Reincarnate window says is unlocked
@@ -147,8 +151,8 @@ __UC__
       }
       if(MODE!=='mechanics') (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });      // the Mechanics page does not say when a mechanic becomes available
       (m.sections||[]).forEach(function(c){
-        if(c.title) inner.appendChild(el('h3',null,c.title));
-        if(c.side){ var us=el('div','upgside'); c.side.forEach(function(n){ us.appendChild(upgItemCell(DATA.items[n], m.asc, DATA.coins)); }); inner.appendChild(us); }      // an upgrade at the right of the text, as on the Upgrades pages (the text runs around it)
+        if(c.title){ var h3=el('h3',null,c.title); if(c.id) h3.id=c.id; inner.appendChild(h3); }      // a subsection with an "id" can be linked to
+        if(c.side){ var us=el('div','upgside'); c.side.forEach(function(n){ us.appendChild(upgItemCell(DATA.items[n], m.asc_view!=null ? m.asc_view : m.asc, DATA.coins)); }); inner.appendChild(us); }      // an upgrade at the right of the text, as on the Upgrades pages (the text runs around it); shown at the Ascension where all of it exists ("asc_view")
         if(c.text) inner.appendChild(el('p',null,c.text));
         (c.formulas||[]).forEach(function(f,fi){
           if(fi) inner.appendChild(el('hr','fsep'));      // a line between formulas that follow each other
@@ -178,10 +182,10 @@ __UC__
     openHash(true);
   }
   function openHash(arrived){      // a link to a mechanic opens its section (also when it is followed from the Codex menu while this page is open); arriving from another page folds all the others
-    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if(tgt && tgt.querySelector('h2')){
-      if(arrived===true) Array.prototype.forEach.call(root.querySelectorAll('section.mech'), function(s){ if(s!==tgt && s._fold) s._fold(false); });
-      if(!tgt.classList.contains('open')) tgt.querySelector('h2').click();
+    var tgt=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))), sec=tgt && tgt.closest && tgt.closest('section.mech');      // a section, or a subsection of one
+    if(sec && sec.querySelector('h2')){
+      if(arrived===true) Array.prototype.forEach.call(root.querySelectorAll('section.mech'), function(s){ if(s!==sec && s._fold) s._fold(false); });
+      if(!sec.classList.contains('open')) sec.querySelector('h2').click();
       tgt.scrollIntoView();
     }
   }

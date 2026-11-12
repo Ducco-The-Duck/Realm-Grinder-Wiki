@@ -556,6 +556,59 @@
      ]
     }
    ]
+  },
+  {
+   "name": "Bloodlines, Lineages and Sets",
+   "asc": 0,
+   "asc_view": 4,
+   "menu": [
+    [
+     "Bloodlines",
+     "bloodline"
+    ],
+    [
+     "Lineages",
+     "lineage"
+    ],
+    [
+     "Artifact Sets",
+     "artifact-set"
+    ]
+   ],
+   "unlock": [
+    "Bloodlines are available from Reincarnation 7, Lineages from Reincarnation 60 and Artifact Sets from Reincarnation 100."
+   ],
+   "source": [
+    "§3?§.§]!-§",
+    "§3^§.§=R§",
+    "§3!s§.§,!q§"
+   ],
+   "sections": [
+    {
+     "title": "Bloodline",
+     "id": "bloodline",
+     "text": "Bloodlines are bonuses tied to a faction. Every faction except the Mercenaries has its own Bloodline. You can only have one Bloodline, it persists until you abdicate, and it does not suffer from Ascension penalties. Click the object to see all of them.",
+     "side": [
+      "Bloodline"
+     ]
+    },
+    {
+     "title": "Lineage",
+     "id": "lineage",
+     "text": "Lineages are bonuses tied to a faction that grow with levels, and higher levels unlock perks. You can only have one Lineage, and it persists until you abdicate. It requires 400 Royal Exchanges and the Bloodline of a specific faction, and it cannot match any of your chosen factions. Click the object to see all of them, and click one to see its perks.",
+     "side": [
+      "Lineage"
+     ]
+    },
+    {
+     "title": "Artifact Set",
+     "id": "artifact-set",
+     "text": "Artifact Sets are bonuses that you unlock by finding the lore artifacts of a faction. You can only have one Set, and it persists until you abdicate. Most Sets give a second bonus once you also have their fourth artifact. Click the object to see all of them.",
+     "side": [
+      "Artifact Set"
+     ]
+    }
+   ]
   }
  ],
  "reincarnation_unlocks": [

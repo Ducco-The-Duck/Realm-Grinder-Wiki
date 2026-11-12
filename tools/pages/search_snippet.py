@@ -33,7 +33,11 @@ def mechanics_list():
     """the mechanics of data/handwritten/unlocks.json as (name, href): a mechanic with its own page ("page") links there, the others to their section of the Mechanics page"""
     import json, os
     d = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'data', 'handwritten/unlocks.json'), encoding='utf8'))
-    return [(m['name'], m.get('page') or 'mechanics.html#' + mech_slug(m['name'])) for m in d['mechanics']]
+    out = []
+    for m in d['mechanics']:
+        if m.get('menu'): out += [(n, 'mechanics.html#' + a) for n, a in m['menu']]      # a mechanic with several entries ("menu": [name, anchor of a subsection]) instead of its own
+        else: out.append((m['name'], m.get('page') or 'mechanics.html#' + mech_slug(m['name'])))
+    return out
 
 
 HAT = '''<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5h18v2.2H3z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M5 17.5a7 7 0 0 1 14 0z" fill="#f2b705" stroke="#3a2a00" stroke-width="1.1" stroke-linejoin="round"/><path d="M10.5 10.5V6.8h3v3.7z" fill="#d99a00" stroke="#3a2a00" stroke-width="1" stroke-linejoin="round"/></svg>'''      # the Under construction icon (a hard hat)

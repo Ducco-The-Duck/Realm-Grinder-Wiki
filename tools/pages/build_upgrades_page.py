@@ -167,6 +167,26 @@ def section(sid, name, items):
     return {'id': sid, 'name': name, 'entries': es, 'count': sum(len(e['items']) for e in es) if es else 0}
 
 
+def group_lists(allu):
+    """the Bloodlines, the Lineages (with their perks) and the Artifact Sets, one of each faction, as the popups of the Bloodline, Lineage and Artifact Set objects list them"""
+    bl_by = {u['faction']: item(u) for u in allu if u['akind'] == 'bloodline'}
+    blood = [bl_by[i] for i in range(16) if i in bl_by]          # the game's grid: three columns in faction order (Mercenaries have none)
+    perks = {}
+    for u in allu:
+        if u['akind'] == 'lineage_perk':
+            perks[(u['faction'], int(u['name'].rsplit(' ', 1)[1]))] = item(u)
+    lin_by = {}
+    for u in allu:
+        if u['akind'] != 'lineage': continue
+        it = item(u)
+        it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
+        lin_by[u['faction']] = it
+    lineages = [lin_by[i] for i in range(16) if i in lin_by]
+    set_by = {u['faction']: item(u) for u in allu if u['akind'] == 'set'}
+    sets = [set_by[i] for i in range(16) if i in set_by]
+    return blood, lineages, sets
+
+
 def alleg_section():
     pair_asc = {}
     for u in pages['allegiances']:
@@ -183,21 +203,7 @@ def alleg_section():
         general = u['faction'] == -1 or u['akind'] == 'heritage'      # the heritages are not tied to the faction you play
         return (-1 if general else FORDER.index(u['faction']), KIND_ORDER[u['akind']], sub, u['name'])
     allu = sorted(pages['allegiances'], key=key)
-    bl_by = {u['faction']: item(u) for u in allu if u['akind'] == 'bloodline'}
-    blood = [bl_by[i] for i in range(16) if i in bl_by]          # the game's grid: three columns in faction order (Mercenaries have none)
-    perks = {}
-    for u in allu:
-        if u['akind'] == 'lineage_perk':
-            perks[(u['faction'], int(u['name'].rsplit(' ', 1)[1]))] = item(u)
-    lin_by = {}
-    for u in allu:
-        if u['akind'] != 'lineage': continue
-        it = item(u)
-        it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
-        lin_by[u['faction']] = it
-    lineages = [lin_by[i] for i in range(16) if i in lin_by]
-    set_by = {u['faction']: item(u) for u in allu if u['akind'] == 'set'}
-    sets = [set_by[i] for i in range(16) if i in set_by]
+    blood, lineages, sets = group_lists(allu)
     es = []
     for u in allu:
         if u['akind'] in ('bloodline', 'quest', 'lineage', 'lineage_perk', 'set') or (u['akind'] == 'unique' and u['name'].endswith(' Quest')): continue
@@ -262,7 +268,16 @@ def faction_upgrades():
     for u in al:      # a Lineage opens its perks when clicked
         if u['akind'] == 'lineage' and u['name'] in items: items[u['name']]['lp'] = [dict(p, it=perk_items.get((u['faction'], p['n']))) for p in u['perks']]
     for c in cb: items[c['n']] = c
-    return {'items': items, 'f': out}
+    blood, lineages, sets = group_lists(al)
+    umbrella = {}      # the Bloodline, Lineage and Artifact Set objects, each with the list its click opens (kept apart from the items: they are big)
+    for u in al:
+        if u['akind'] not in ('bloodline_c', 'lineage_c', 'set_c'): continue
+        it = item(u)
+        if u['akind'] == 'bloodline_c': it['bl'] = blood
+        if u['akind'] == 'lineage_c': it['lg'] = lineages; it['lc'] = costs.lineage_spec()
+        if u['akind'] == 'set_c': it['st'] = sets
+        umbrella[u['name']] = it
+    return {'items': items, 'f': out, 'umbrella': umbrella}
 
 
 json.dump(faction_upgrades(), open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))

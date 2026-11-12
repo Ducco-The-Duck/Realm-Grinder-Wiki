@@ -12,10 +12,9 @@ MAXA = d['max_ascension']
 
 html = tmpl.load('unlocks.html')
 import search_snippet
-hrefs = dict(search_snippet.mechanics_list())
 for m in d['mechanics']:
     m['id'] = search_snippet.mech_slug(m['name'])
-    m['href'] = hrefs[m['name']]
+    m['href'] = m.get('page') or 'mechanics.html#' + m['id']
 
 
 def upgrade_cards():
@@ -49,7 +48,8 @@ def upgrade_cards():
 
 UPS = upgrade_cards()
 import artifact_items
-FU_ITEMS = json.load(open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), encoding='utf8'))['items']      # the upgrades as the Upgrades pages show them (written by build_upgrades_page.py)
+_FU = json.load(open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), encoding='utf8'))
+FU_ITEMS = {**_FU['items'], **_FU['umbrella']}      # the upgrades as the Upgrades pages show them (written by build_upgrades_page.py)
 ITEMS = {n: FU_ITEMS[n] for n in dict.fromkeys(n for m in d['mechanics'] for s in m.get('sections', []) for n in s.get('side', []))}      # the upgrades shown beside a text of a mechanic ("side")
 ARTS = artifact_items.by_name(list(dict.fromkeys(a for m in d['mechanics'] for s in m.get('sections', []) for l in s.get('lines', []) for a in l.get('artifacts', []))))      # the artifacts shown beside a line of a mechanic
 COINS = __import__('costs').names()      # the game's names of the coins
