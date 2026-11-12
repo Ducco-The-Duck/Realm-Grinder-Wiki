@@ -880,6 +880,72 @@
        ]
       }
      ]
+    },
+    {
+     "title": "Reincarnation 2",
+     "sections": [
+      {
+       "title": "Challenges",
+       "text": "Challenges are unlocked at Reincarnation 2. You gain access immediately upon reaching Reincarnation 2, and you must buy the Challenge Power upgrade to benefit from them. More unlock as you advance through Reincarnations. See the [Challenges](challenges.html) page for all of them.",
+     "side": [
+      "Challenge Power"
+     ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 3",
+     "sections": [
+      {
+       "title": "Mercenaries",
+       "text": "From Reincarnation 3 the Mercenaries take an interest in you and the Mercenary Tribute upgrade becomes available, which unlocks their powers. The underworld Faction Coins, Royal Exchanges and Heritages are also unlocked from now on, without needing Underworld Diplomacy."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 7",
+     "sections": [
+      {
+       "title": "Bloodlines",
+       "text": "The Bloodline upgrade becomes available at Reincarnation 7. A Bloodline is a bonus tied to a faction, and you can only have one until you abdicate, so choose carefully. See [Bloodlines](mechanics.html#bloodline) on the Mechanics page."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 14",
+     "sections": [
+      {
+       "title": "Spiritual Surge",
+       "text": "Spiritual Surge, a spell whose power is based on your Reincarnations, is unlocked at Reincarnation 14. See the [Spells](spells.html) page."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 16",
+     "sections": [
+      {
+       "title": "Vanilla Faction Research",
+       "text": "Research becomes available for the six vanilla factions. The first Unique Buildings of the vanilla factions are unlocked too. See the [Research](research.html) page."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 24",
+     "sections": [
+      {
+       "title": "Neutral Faction Research",
+       "text": "Research becomes available for the Neutral Factions (Titan, Druid and Faceless). Their first Unique Buildings (Olympian Hall, Stonehenge and Sunken City) are unlocked too, along with the Key to the Lost City artifact."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 32",
+     "sections": [
+      {
+       "title": "Prestige Faction Research",
+       "text": "Research becomes available for the Prestige Factions (Dwarf and Drow). Their Unique Buildings (Dwarven Forge and Spider Sanctuary) are unlocked too, along with the Earth Core artifact."
+      }
+     ]
     }
    ]
   }
