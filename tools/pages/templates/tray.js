@@ -101,15 +101,15 @@
     }
     function section(sec, sub, parentAsc){      // a subsection shows its objects at the Ascension of its section
       var box=ce('div','ts'+(sub?' tsub':'')+(sec.shut?' shut':'')); box.setAttribute('data-id',sec.id);
-      var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name), click=null;
+      var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name);
       h.appendChild(chev); nm.title='Double-click to rename'; h.appendChild(nm);
       if(!sub){ var add=ce('button','ts-b2 ts-plus','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
       var x=ce('button','ts-b2 ts-x','×'); x.type='button'; x.title='Delete'; x.setAttribute('aria-label','Delete '+sec.name); x.addEventListener('click',function(e){ e.stopPropagation(); remove(sec.id); }); h.appendChild(x);
-      h.addEventListener('click',function(e){      // a click folds; a double click on the name renames (so the fold waits a moment)
+      h.addEventListener('click',function(e){      // a click folds at once; a double click on the name renames
         if(e.target.closest('select,button,input')) return;
-        clearTimeout(click); click=setTimeout(function(){ sec.shut=!sec.shut; save(); box.classList.toggle('shut',sec.shut); }, 230);
+        sec.shut=!sec.shut; save(); box.classList.toggle('shut',sec.shut);
       });
-      nm.addEventListener('dblclick',function(e){ clearTimeout(click); e.stopPropagation(); rename(sec.id); });
+      nm.addEventListener('dblclick',function(e){ e.stopPropagation(); rename(sec.id); });      // its two clicks have folded and unfolded the section again
       box.appendChild(h);
       if(!sub){ var ar=ce('div','ts-ar'); ar.appendChild(ascSelect(sec)); box.appendChild(ar); }      // under the name, so that the name keeps its room on a narrow screen
       var b=ce('div','ts-b'), g=ce('div','tgrid'); b.appendChild(g);
