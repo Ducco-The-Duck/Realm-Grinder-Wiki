@@ -1329,6 +1329,83 @@
      ]
     }
    ]
+  },
+  "3": {
+   "overview": "Ascension 3 lasts from Reincarnation 160 to 219. It replaces the research slots with a research budget, brings the Mercenaries back through the Mercenary Duel, and gives every faction two more perks. The Prestige Factions return at Reincarnation 165 and the Astral Factions at Reincarnation 172.",
+   "entries": [
+    {
+     "title": "Reincarnation 160",
+     "sections": [
+      {
+       "title": "Research Budget",
+       "text": "From Ascension 3 the research slots of each branch are replaced by a research budget. It starts at 0 and is raised from Reincarnation 170 on. See the [Research](research.html) page."
+      },
+      {
+       "title": "Mercenaries",
+       "text": "The Mercenaries are reintroduced. You no longer need the Oath of the Mercenaries: you complete the Mercenary Duel instead, which only needs to be done once. After that, the Mercenary First Contract becomes available.",
+       "side": [
+        "Mercenary Duel",
+        "Mercenary First Contract"
+       ]
+      },
+      {
+       "title": "Faction Perks",
+       "text": "Every faction except the Mercenaries gets two more perks, Perk 5 and Perk 6."
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 165",
+     "sections": [
+      {
+       "title": "Prestige Factions",
+       "text": "The Prestige Factions (Dwarf, Drow and Dragon) are reintroduced.",
+       "rows": [
+        [
+         "Dwarven Trade Treaty",
+         "Drow Trade Treaty",
+         "Dragons Trade Treaty"
+        ]
+       ]
+      },
+      {
+       "title": "Mercenary Building Contract",
+       "text": "The Mercenary Building Contract becomes available at Reincarnation 165, once you have completed the Mercenary Duel. It lets you buy one Ascension 2 unique building of any faction.",
+       "side": [
+        "Mercenary Building Contract"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 170",
+     "sections": [
+      {
+       "title": "Reincarnation Power 4",
+       "text": "Reincarnation Power 4 becomes available at Reincarnation 170. It increases the research budget of every branch based on the Reincarnations you have made, and the production of all buildings.",
+       "side": [
+        "Reincarnation Power 4"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 172",
+     "sections": [
+      {
+       "title": "Astral Factions",
+       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced.",
+       "rows": [
+        [
+         "Archon Trade Treaty",
+         "Djinn Trade Treaty",
+         "Makers Trade Treaty"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "upgrade_formulas": {
