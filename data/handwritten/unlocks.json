@@ -1416,7 +1416,7 @@
      "sections": [
       {
        "title": "Legacies",
-       "text": "Legacies and Legacy Combos become available at Reincarnation 220. See [Legacies](mechanics.html#legacies) on the Mechanics page."
+       "text": "Legacies and Legacy Combos become available immediately upon reaching Reincarnation 220. See [Legacies](mechanics.html#legacies) on the Mechanics page."
       }
      ]
     },
@@ -1425,7 +1425,7 @@
      "sections": [
       {
        "title": "Artifact Sets",
-       "text": "After reaching Reincarnation 225, owning a set of three lore artifacts associated with a faction unlocks that faction's artifact set bonus for you to benefit from. See [Artifact Sets](mechanics.html#artifact-set) on the Mechanics page."
+       "text": "After reaching Reincarnation 225, Artifact Sets are reintroduced. See [Artifact Sets](mechanics.html#artifact-set) on the Mechanics page."
       }
      ]
     },
@@ -1434,7 +1434,7 @@
      "sections": [
       {
        "title": "Lineages",
-       "text": "The Lineage upgrade becomes available immediately upon reaching Reincarnation 230. See [Lineages](mechanics.html#lineage) on the Mechanics page."
+       "text": "Lineages are reintroduced upon reaching Reincarnation 230. See [Lineages](mechanics.html#lineage) on the Mechanics page."
       }
      ]
     },
@@ -1459,7 +1459,7 @@
      "sections": [
       {
        "title": "Astral Factions",
-       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced. You also need to find the Mask of Scorch'Rah artifact, which requires 50,000 excavations and owning 4 Legacy upgrades.",
+       "text": "The Astral Factions (Archon, Djinn and Makers) are reintroduced. To ally with them, you must find the Mask of Scorch'Rah quest artifact.",
        "rows": [
         [
          "Archon Trade Treaty",
