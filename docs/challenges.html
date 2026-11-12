@@ -337,11 +337,16 @@ body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cur
 #pop,#more{transition:left .22s ease}
 body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the windows of the page open beside the tray, which stays usable */
 @media (max-width:700px){body.tray-open{padding-left:0}body.tray-open #pop,body.tray-open #more{left:0}#tray{width:min(var(--tray-w,300px),88vw);box-shadow:0 0 40px rgba(0,0,0,.6)}}
-.tray-head{display:flex;align-items:center;gap:6px;padding:2px 2px 6px}
-.tray-add{font:inherit;color:var(--fg);border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 8px;cursor:pointer}
+.tray-body{display:flex;flex-direction:column}
+/* the way to a new section: a faint + under the lowest section; the whole space below it answers to the pointer with a glow that starts at the bottom of that section */
+.tray-addrow{position:relative;flex:1 0 64px;cursor:pointer;color:var(--muted);transition:background .25s}
+.tray-addrow::before,.tray-addrow::after{content:"";position:absolute;left:50%;top:22px;background:currentColor;opacity:.3;border-radius:1px;transform:translate(-50%,-50%);transition:opacity .25s,background .25s}
+.tray-addrow::before{width:22px;height:3px}
+.tray-addrow::after{width:3px;height:22px}
+.tray-addrow:hover{background:linear-gradient(to bottom,rgba(224,166,74,.22),rgba(224,166,74,.08) 35%,transparent 80%)}
+.tray-addrow:hover::before,.tray-addrow:hover::after{opacity:.85;background:var(--accent)}
 #tray-toast button{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
-.tray-add:hover,#tray-toast button:hover{color:var(--accent)}
-#tray-toast button:hover{background:var(--cellhi)}
+#tray-toast button:hover{color:var(--accent);background:var(--cellhi)}
 .tray-close,.tray-tab{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
   --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f}
 .tray-close::after,.tray-tab::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
@@ -350,7 +355,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
 .tray-tab{position:fixed;z-index:47;left:0;top:10px}
 .tray-tab[hidden]{display:none}
-.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 2px 8px}
+.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:4px 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
 .tray-empty{color:var(--muted);opacity:.75;font-size:.85rem;margin:6px 4px}
@@ -363,14 +368,16 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tsub .ts-name,.tsub .ts-in{font-size:22px;color:var(--accent)}
 .ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:20px}
 .ts-ar{margin:0 0 4px}
-.ts-b2{flex:none;font:inherit;font-size:1.5rem;line-height:1;color:var(--muted);background:none;border:0;padding:0 3px;cursor:pointer}
+.ts-b2{position:relative;flex:none;width:24px;height:24px;font-size:0;padding:0;color:var(--muted);background:none;border:0;cursor:pointer}
+.ts-b2::before,.ts-b2::after{content:"";position:absolute;left:50%;top:50%;background:currentColor;border-radius:1px;transform:translate(-50%,-50%)}
+.ts-plus::before{width:18px;height:3px}
+.ts-plus::after{width:3px;height:18px}
+.ts-x::before{width:16px;height:3px;transform:translate(-50%,-50%) rotate(45deg)}
+.ts-x::after{width:16px;height:3px;transform:translate(-50%,-50%) rotate(-45deg)}
 .ts-b2:hover{color:var(--accent)}
-.ts-plus{font-size:2.2rem;line-height:.8;padding:0 2px}
-.tray-add .plus{font-size:1.8em;line-height:.7;vertical-align:-.12em}
 #tray .cs{display:inline-block}
 #tray .cs>button{font-size:.85rem}
-.ts-x{font-size:1.35rem}
-.ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 4px 3px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
+.ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 8px 0 4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
 .ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}
 .ts.shut>.ts-b{display:none}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:4px;margin:4px 0}
@@ -385,7 +392,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 #tray .cell.na{opacity:.35;filter:grayscale(1)}
 #tray .cell.gone{opacity:.45;cursor:default;border-style:dashed}
 #tray .cell.ph{opacity:.3}
-#tray .cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
+#tray .cell .pen{position:absolute;z-index:2;top:auto;bottom:2px;right:2px;font:700 11px/1 "Liony",system-ui,sans-serif;letter-spacing:0;color:#fff;background:#a3341f;padding:1px 3px;border-radius:3px;pointer-events:none}
 #tray .cell .px{display:none;position:absolute;z-index:3;top:-5px;left:-5px;width:16px;height:16px;line-height:14px;text-align:center;border-radius:50%;background:#a3341f;color:#fff;font:700 12px/16px system-ui,sans-serif;cursor:pointer}
 @media (hover:hover){#tray .cell:hover .px{display:block}}
 #tray .cell.ins-b{box-shadow:-4px 0 0 0 var(--accent)}
@@ -1223,6 +1230,9 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       var host=tray.querySelector('.tray-body'); host.textContent='';
       T.secs.forEach(function(s){ host.appendChild(section(s,false)); });
       if(!T.secs.length) host.appendChild(ce('p','tray-empty','Drag an object from the wiki here to pin it'));
+      var more=ce('div','tray-addrow'); more.title='Add a section'; more.setAttribute('role','button'); more.setAttribute('aria-label','Add a section'); more.tabIndex=0;
+      more.addEventListener('click',function(){ addSection(null); }); more.addEventListener('keydown',function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); addSection(null); } });
+      host.appendChild(more);
       if(countObjects()) ensureKatex();
       enhanceSelects();
       layout();
@@ -1239,9 +1249,8 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var head=ce('div','tray-head'), add=ce('button','tray-add'); add.appendChild(ce('span','plus','+')); add.appendChild(document.createTextNode(' Section')); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
-      head.appendChild(add); tray.appendChild(head); tray.appendChild(close);
+      tray.appendChild(close);
       tray.appendChild(ce('div','tray-body'));
       var rz=ce('div','tray-rz'); rz.title='Drag to resize'; tray.appendChild(rz);
       rz.addEventListener('pointerdown',function(e){

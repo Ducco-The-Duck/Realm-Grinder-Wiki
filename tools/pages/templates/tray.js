@@ -132,6 +132,9 @@
       var host=tray.querySelector('.tray-body'); host.textContent='';
       T.secs.forEach(function(s){ host.appendChild(section(s,false)); });
       if(!T.secs.length) host.appendChild(ce('p','tray-empty','Drag an object from the wiki here to pin it'));
+      var more=ce('div','tray-addrow'); more.title='Add a section'; more.setAttribute('role','button'); more.setAttribute('aria-label','Add a section'); more.tabIndex=0;
+      more.addEventListener('click',function(){ addSection(null); }); more.addEventListener('keydown',function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); addSection(null); } });
+      host.appendChild(more);
       if(countObjects()) ensureKatex();
       enhanceSelects();
       layout();
@@ -148,9 +151,8 @@
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var head=ce('div','tray-head'), add=ce('button','tray-add'); add.appendChild(ce('span','plus','+')); add.appendChild(document.createTextNode(' Section')); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
-      head.appendChild(add); tray.appendChild(head); tray.appendChild(close);
+      tray.appendChild(close);
       tray.appendChild(ce('div','tray-body'));
       var rz=ce('div','tray-rz'); rz.title='Drag to resize'; tray.appendChild(rz);
       rz.addEventListener('pointerdown',function(e){
