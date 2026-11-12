@@ -352,7 +352,8 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-title{margin:0 0 4px;padding:0 12px 4px;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:40px;line-height:1.1;color:var(--fg);border-bottom:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tray-body{display:flex;flex-direction:column}
 /* the way to a new section: a faint + under the lowest section; the whole space below it answers to the pointer with a glow that starts at the bottom of that section */
-.tray-addrow{position:relative;flex:1 0 64px;cursor:pointer;color:var(--muted);transition:background .25s}
+.tray-addrow{position:relative;flex:1 0 64px;margin-top:8px;cursor:pointer;color:var(--muted);transition:background .25s;border-top:1px solid transparent;
+  border-image:linear-gradient(90deg,transparent,rgba(163,155,138,.4) 25%,rgba(163,155,138,.4) 75%,transparent) 1}
 .tray-addrow::before,.tray-addrow::after{content:"";position:absolute;left:50%;top:22px;background:currentColor;opacity:.3;border-radius:1px;transform:translate(-50%,-50%);transition:opacity .25s,background .25s}
 .tray-addrow::before{width:22px;height:3px}
 .tray-addrow::after{width:3px;height:22px}
@@ -390,10 +391,12 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 #tray .cs>button{font-size:.85rem}
 .ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 8px 0 4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
 .ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}
-.ts.shut>.ts-b{display:none}
+.ts-b{display:grid;grid-template-rows:1fr;opacity:1;transition:grid-template-rows .2s ease,opacity .18s ease}
+.ts-bi{min-height:0;overflow:hidden;padding:6px;margin:-6px}      /* the padding keeps the hover marks and the frames of the objects from being clipped */
+.ts.shut>.ts-b{grid-template-rows:0fr;opacity:0}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:12px;margin:12px 0 10px}
 .ts.drop>.ts-h{outline:2px solid var(--accent);outline-offset:1px}
-.ts.drop>.ts-b>.tgrid{background:rgba(224,166,74,.08)}
+.ts.drop>.ts-b>.ts-bi>.tgrid{background:rgba(224,166,74,.08)}
 /* the objects of the tray: all the same square, whatever they are on their own page (a research is smaller there) */
 #tray .cell{position:relative;float:none;width:auto;height:auto;margin:0;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:3px;box-sizing:border-box;
   border:1px solid var(--line);border-radius:8px;background:var(--cell);font:inherit;color:inherit;cursor:grab;-webkit-touch-callout:none}
@@ -1343,18 +1346,18 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     }
     function section(sec, sub, parentAsc){      // a subsection shows its objects at the Ascension of its section
       var box=ce('div','ts'+(sub?' tsub':'')+(sec.shut?' shut':'')); box.setAttribute('data-id',sec.id);
-      var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name);
+      var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name), click=null;
       h.appendChild(chev); nm.title='Double-click to rename'; h.appendChild(nm);
       if(!sub){ var add=ce('button','ts-b2 ts-plus','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
       var x=ce('button','ts-b2 ts-x','×'); x.type='button'; x.title='Delete'; x.setAttribute('aria-label','Delete '+sec.name); x.addEventListener('click',function(e){ e.stopPropagation(); remove(sec.id); }); h.appendChild(x);
-      h.addEventListener('click',function(e){      // a click folds at once; a double click on the name renames
+      h.addEventListener('click',function(e){      // a click folds; a double click on the name renames (so the fold waits a moment)
         if(e.target.closest('select,button,input')) return;
-        sec.shut=!sec.shut; save(); box.classList.toggle('shut',sec.shut);
+        clearTimeout(click); click=setTimeout(function(){ sec.shut=!sec.shut; save(); box.classList.toggle('shut',sec.shut); }, 230);
       });
-      nm.addEventListener('dblclick',function(e){ e.stopPropagation(); rename(sec.id); });      // its two clicks have folded and unfolded the section again
+      nm.addEventListener('dblclick',function(e){ clearTimeout(click); e.stopPropagation(); rename(sec.id); });
       box.appendChild(h);
       if(!sub){ var ar=ce('div','ts-ar'); ar.appendChild(ascSelect(sec)); box.appendChild(ar); }      // under the name, so that the name keeps its room on a narrow screen
-      var b=ce('div','ts-b'), g=ce('div','tgrid'); b.appendChild(g);
+      var outer=ce('div','ts-b'), b=ce('div','ts-bi'), g=ce('div','tgrid'); outer.appendChild(b); b.appendChild(g);
       sec.items.forEach(function(ref,i){
         var ph=ce('span','cell ph'); ph.setAttribute('data-i',String(i)); g.appendChild(ph);
         objectFor(ref, sub ? parentAsc : sec.asc).then(function(c){
@@ -1366,7 +1369,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       var empty=!sec.items.length && !(sec.subs||[]).some(function(u){ return u.items.length; });
       if(empty) b.appendChild(ce('p','tray-empty','Drag an object from the wiki here to pin it'));
       (sec.subs||[]).forEach(function(u){ b.appendChild(section(u,true,sec.asc)); });
-      box.appendChild(b);
+      box.appendChild(outer);
       return box;
     }
     function render(){
