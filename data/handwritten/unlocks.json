@@ -795,6 +795,12 @@
    ]
   },
   {
+   "n": 180,
+   "what": [
+    "Forbidden Research"
+   ]
+  },
+  {
    "n": 220,
    "what": [
     "Ascension 4",
@@ -1331,7 +1337,7 @@
    ]
   },
   "3": {
-   "overview": "Ascension 3 lasts from Reincarnation 160 to 219. It replaces the research slots with a research budget, brings the Mercenaries back through the Mercenary Duel, and gives every faction two more perks. The Prestige Factions return at Reincarnation 165 and the Astral Factions at Reincarnation 172.",
+   "overview": "Ascension 3 reintroduces mercenaries with research, this time with a new method of picking researches. You are also able to access forbidden research, thanks to the mercenaries' influence.",
    "entries": [
     {
      "title": "Reincarnation 160",
@@ -1384,6 +1390,18 @@
          "Djinn Trade Treaty",
          "Makers Trade Treaty"
         ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Reincarnation 180",
+     "sections": [
+      {
+       "title": "Forbidden Research",
+       "text": "Forbidden Research is unlocked by purchasing Apeiron, which becomes available once you have found the Forgotten Relic and Apeiron artifacts. The Apeiron artifact can only be found while playing as a Mercenary, after purchasing one upgrade from 15 different factions.",
+       "side": [
+        "Apeiron"
        ]
       }
      ]
