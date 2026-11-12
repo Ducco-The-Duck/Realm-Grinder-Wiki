@@ -159,6 +159,18 @@ def engine_costs(indexes):
     return out
 
 
+def engine_desc(indexes):
+    """{index: the game's own description text at Ascension 0} for upgrades whose text the data files hold only as code (a number worked out in the text)"""
+    import json, quickjs
+    names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
+    J = lambda t: names[t]
+    ctx = quickjs.Context()
+    ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
+    prog = ('(function () { var G = %s, U = G.%s, out = {}, ix = %s; G.%s = 0; ix.forEach(function (i) { out[i] = U[i].%s(); }); return JSON.stringify(out); })()'
+            % (J('§8G§'), J('§-!4§'), json.dumps(list(indexes)), J('§,P§'), J('§@"§')))
+    return {int(k): v for k, v in json.loads(ctx.eval(prog)).items()}
+
+
 def engine_find(wanted, research=False):
     """{name: index into the game's upgrade list} for the upgrades the pages hold under no entry of their own (the Legacy Combos), or, with research, for researches"""
     import json, quickjs
