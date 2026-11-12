@@ -30,6 +30,8 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech ul.items li{margin:0 0 2px;padding-left:16px;position:relative}
 .mech ul.items li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
 .mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
+.upgrow.mid{display:flex;flex-wrap:wrap;justify-content:center}      /* a row of upgrades in the middle of the page */
+.upgrow.mid .cell{width:88px}
 .mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 .mech p.after{margin-top:14px}
 .mech p.line{margin-top:14px}
@@ -130,7 +132,7 @@ __UC__
             });
           });
           if(c.after) s.appendChild(linked('p',c.after));      // a last paragraph, after the steps
-          (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(rr); });      // rows of upgrades, one under the other
+          (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow mid'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(rr); });      // rows of upgrades, one under the other
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
         });
         root.appendChild(s);
