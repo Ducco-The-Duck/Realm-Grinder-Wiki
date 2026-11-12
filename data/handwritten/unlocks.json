@@ -817,7 +817,7 @@
       },
       {
        "title": "Neutral Factions",
-       "text": "Each Neutral Faction is unlocked by buying its own upgrade. The upgrade appears once you have found two quest artifacts of the faction through [Excavations](mechanics.html#excavations) and meet the requirement they describe. An artifact is found as soon as you have made the number of excavations it asks for.",
+       "text": "Each Neutral Faction is unlocked by buying its own upgrade. The upgrade appears once you have found two quest artifacts of the faction through [Excavations](mechanics.html#excavations) and meet the requirement they describe. The artifacts are found within a handful of excavations.",
        "lists": [
         {
          "title": "",
