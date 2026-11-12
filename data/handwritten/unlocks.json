@@ -1175,7 +1175,7 @@
       },
       {
        "title": "Artifact Sets",
-       "text": "Artifact Sets become available at Reincarnation 100. See [Artifact Sets](mechanics.html#artifact-set) on the Mechanics page."
+       "text": "After reaching Reincarnation 100, owning a set of three lore artifacts associated with a faction unlocks that faction's artifact set bonus for you to benefit from. See [Artifact Sets](mechanics.html#artifact-set) on the Mechanics page."
       },
       {
        "title": "Second Unique Buildings",
@@ -1275,7 +1275,7 @@
      "sections": [
       {
        "title": "Faction Unions",
-       "text": "The Unions of the Prestige Factions become available once you own their second unique building.",
+       "text": "A faction's union becomes available once you own its second unique building.",
        "rows": [
         [
          "Dwarven Union",
