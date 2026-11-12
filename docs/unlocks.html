@@ -547,6 +547,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
             });
           });
           if(c.after) s.appendChild(linked('p',c.after));      // a last paragraph, after the steps
+          (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(rr); });      // rows of upgrades, one under the other
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
         });
         root.appendChild(s);

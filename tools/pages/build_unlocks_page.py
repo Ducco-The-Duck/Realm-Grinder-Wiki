@@ -24,7 +24,7 @@ def upgrade_cards():
     for pg in d.get('ascension_pages', {}).values():
         for e in pg['entries']:
             for sec in e.get('sections', []):      # the upgrades of a section: in a row ("upgrades"), at its right ("side"), or at the right of each item of a list (the "upgrades" of the list)
-                want += sec.get('upgrades', []) + sec.get('side', []) + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
+                want += sec.get('upgrades', []) + sec.get('side', []) + [u for r in sec.get('rows', []) for u in r] + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
     want = list(dict.fromkeys(want))
     pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
     page_items = {u['name']: u for lst in pages.values() if isinstance(lst, list) for u in lst if isinstance(u, dict) and u.get('name') in want}

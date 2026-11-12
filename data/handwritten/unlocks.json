@@ -942,7 +942,25 @@
      "sections": [
       {
        "title": "Vanilla Faction Research",
-       "text": "Research becomes available for the six vanilla factions. The first Unique Buildings of the vanilla factions are unlocked too. See the [Research](research.html) page."
+       "text": "Researches are unlocked for the vanilla factions by purchasing their unique building. The unique buildings each have an associated unlock quest that you must complete once. Prestige Factions cannot perform research yet, so allying with them will revoke your ability to buy your unique building, and thus access to research. See the [Research](research.html) page.",
+       "rows": [
+        [
+         "Enchanted Field Quest",
+         "Training Grounds Quest",
+         "Heaven's Domain Quest",
+         "Goblin Bank Quest",
+         "Undercity Quest",
+         "Infernal Realm Quest"
+        ],
+        [
+         "Enchanted Field",
+         "Training Grounds",
+         "Heaven's Domain",
+         "Goblin Bank",
+         "Undercity",
+         "Infernal Realm"
+        ]
+       ]
       }
      ]
     },
