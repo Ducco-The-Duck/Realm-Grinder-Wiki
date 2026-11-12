@@ -6,30 +6,8 @@ import json, os, shutil, sys
 sys.path[:0] = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), d) for d in ('extract', 'export', 'manual', 'pages', 'checks')]
 import tmpl
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..')
-factions = json.load(open(os.path.join(ROOT, 'data', 'generated/challenges.json'), encoding='utf8'))
-icons = json.load(open(os.path.join(ROOT, 'data', 'generated/icons.json')))
-sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
-icon_dir = os.path.join(ROOT, 'docs', 'assets', 'icons')
-os.makedirs(icon_dir, exist_ok=True)
-
-
-def icon_file(n):
-    if not n or n not in sprites: return None
-    dst = os.path.basename(sprites[n][0]['file'])
-    path = os.path.join(icon_dir, dst)
-    if not os.path.exists(path):
-        src = os.path.join(ROOT, sprites[n][0]['file'])
-        if os.path.exists(src): shutil.copy(src, path)
-    if not os.path.exists(path): return None
-    icons[n] = dst
-    return dst
-
-
-def item(f, it):
-    return {'n': it['name'], 'i': icon_file(it['icon']), 'su': it['spell_upgrade'], 'num': it['number'],
-            'fl': it['flavor'], 'q': it['requirements'], 'c': it['challenge'], 'r': it['rewards'],
-            'f': [{'l': g['latex'], 'v': g['vars'], 'lb': g['label']} for g in it['formulas']], 'a': it['applies_to'], 'sh': any(g['shown'] for g in it['formulas']), 'nt': it['note'], 'rn': it.get('rnotes') or [],
-            'g': it['game_name']}
+import challenge_items
+from challenge_items import factions, icons, item      # the challenge as the pages show it (shared with the Factions page)
 
 
 sections = [{'id': f['id'], 'name': f['name'], 'kind': f['kind'], 'items': [item(f, it) for it in f['items']]}

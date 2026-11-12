@@ -49,6 +49,21 @@ main .blurb{margin:4px 0 10px}
 #detail ul.vars{margin:2px 0 6px;padding-left:20px}
 #detail ul.vars li{margin:0}
 #detail ul.vars b{display:inline;font-family:inherit;font-size:inherit}
+/* the popup of a challenge (challengeTip in shared.js) */
+#tip:where(.chl) b.t{display:block;font-size:1rem}
+#tip:where(.chl) .kind{display:block;color:var(--muted);font-size:.82rem}
+#tip:where(.chl) .lbl{display:block;color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+#tip:where(.chl) ul{margin:2px 0 0;padding-left:18px}
+#tip:where(.chl) p{margin:3px 0 0}
+#tip:where(.chl) .chal{font-weight:600}
+#tip:where(.chl) .muted,#tip:where(.chl) .more{color:var(--muted)}
+#tip:where(.chl) ul.vars{list-style:none;padding-left:0;margin:4px 0}
+#tip:where(.chl) ul.vars li{margin:2px 0}
+#tip:where(.chl) .formula{padding:4px 0;overflow-wrap:anywhere}
+#tip:where(.chl) .flabel{margin-top:6px;font-weight:600}
+#tip:where(.chl) .fsep{border-top:1px solid var(--line);margin:8px 0 2px}
+#tip:where(.chl) .flavor{font-style:italic;color:var(--muted)}
+.cell.su{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}      /* the permanent spell upgrade of a faction's challenges */
 /* the popup that lists a group of upgrades (the Legacy Combos, the Bloodlines ...; openUpgGroup in shared.js) */
 #pop{position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px}
 #pop.open{display:flex}
@@ -864,6 +879,72 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
     document.getElementById('popclose').addEventListener('click',close);
     pop.addEventListener('click',function(e){ if(e.target===pop) close(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
+  // ---- a challenge (challenge_items.item) of a faction section {name, ...} as the Challenges page shows it: the popup, and the cell that opens it
+  function chalFormulas(parent, list){
+    var many=list.filter(function(f){ return /^v/.test(f.l); }).length>1, seen={}, vk=0;
+    parent.appendChild(ce('span','lbl',many?'Formulas':'Formula'));
+    list.forEach(function(f,i){
+      if(i>0) parent.appendChild(ce('div','fsep'));
+      var isy=!/^v/.test(f.l);
+      var vs=isy?'y':many?'v_{'+(++vk)+'}':'v';
+      if(f.lb){
+        var lab=ce('div','flabel'); var lm=ce('span'); upgMath(vs,lm); lab.appendChild(lm);
+        lab.appendChild(document.createTextNode(' — '+f.lb)); parent.appendChild(lab);
+      }
+      var d=ce('div','formula'); var m=ce('span'); upgMath(isy?f.l:f.l.replace(/^v(_\{\d+\})? = /, vs+' = '), m); d.appendChild(m); parent.appendChild(d);
+      var ul=ce('ul','vars'), n=0;
+      f.v.forEach(function(v){
+        var k=v.symbol+'|'+v.text; if(seen[k]) return; seen[k]=1; n++;
+        var li=ce('li'); var b=ce('b'); b.style.display='inline'; upgMath(v.symbol,b); li.appendChild(b);
+        rich(li, ' — '+v.text); ul.appendChild(li);
+      });
+      if(n) parent.appendChild(ul);
+    });
+  }
+  function challengeTip(sec, it, anchor){
+    var tip=document.getElementById('tip');
+    tip.className='chl'; tip.textContent='';
+    tip.appendChild(ce('b','t',it.n));
+    if(it.su){
+      tip.appendChild(ce('span','kind','Permanent spell upgrade for '+sec.name));
+    } else {
+      tip.appendChild(ce('span','kind',sec.name+' challenge '+it.num));
+      tip.appendChild(ce('span','lbl','Requirements'));
+      var ul2=ce('ul'); it.q.forEach(function(q){ ul2.appendChild(ce('li',null,q)); }); tip.appendChild(ul2);
+      tip.appendChild(ce('span','lbl','The challenge'));
+      tip.appendChild(ce('div','chal',it.c));
+    }
+    tip.appendChild(ce('span','lbl',it.su ? 'Effect' : 'Reward'));
+    it.r.forEach(function(t,i){ tip.appendChild(ce('p',null,t));
+      it.rn.forEach(function(n){ if(n[0]===i) tip.appendChild(ce('div','more',n[1])); }); });
+    if(it.f.length){
+      chalFormulas(tip, it.f);
+      if(it.nt) tip.appendChild(ce('div','more',it.nt));
+      else if(it.sh) tip.appendChild(ce('div','more','v is the number the game shows for the reward.'));
+    }
+    if(it.a){
+      tip.appendChild(ce('span','lbl','Reward can be used'));
+      var a = it.a, txt;
+      if(a.indexOf('any ')===0) txt = 'While playing with '+a+'.';
+      else txt = 'Only while playing with the '+a+' faction.';
+      tip.appendChild(ce('div',null,txt));
+    }
+    if(it.fl){ tip.appendChild(ce('span','lbl','Flavor text')); tip.appendChild(ce('div','flavor',it.fl)); }
+    tip.style.width=''; tip.style.display='block';
+    var need=0; tip.querySelectorAll('.formula').forEach(function(f){ need=Math.max(need, f.scrollWidth-f.clientWidth); });
+    if(need>0) tip.style.width=Math.min(window.innerWidth-16, tip.getBoundingClientRect().width+need+8)+'px';
+    placeTip(anchor, true);
+  }
+  function challengeCell(sec, it){
+    var b=ce('button','cell'+(it.su?' su':'')), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label',it.n);
+    var tn=trimName(sec.name); if(tn) b.classList.add('t-'+tn);
+    if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
+    function hide(){ tip.style.display='none'; }
+    b.addEventListener('mouseenter',function(){ challengeTip(sec,it,b); }); b.addEventListener('focus',function(){ challengeTip(sec,it,b); });
+    b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    return b;
   }
 
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board

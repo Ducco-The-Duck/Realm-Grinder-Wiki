@@ -201,6 +201,14 @@ if not os.environ.get('RG_SCRIPTS'):      # the data files belong to the old bui
             bad += [f"faction {i}: unique building {u} is not on the Buildings page" for u in f['uniques'] if u not in ub]
             if f['lineage'] and len(fu['items'].get(f['lineage'], {}).get('lp', [])) != 6: bad.append(f'faction {i}: the Lineage has no six perks')
             if int(i) <= 5 and len(f['combos']) != 5: bad.append(f"faction {i}: {len(f['combos'])} legacy combos instead of 5")
+        ch_ids = {f['id'] for f in json.load(open(os.path.join(ROOT, 'data', 'generated/challenges.json'), encoding='utf8'))}
+        art_names = {a['name'] for a in json.load(open(os.path.join(ROOT, 'data', 'generated/artifacts.json'), encoding='utf8'))}
+        for i, f in fu['f'].items():
+            if int(i) not in ch_ids: bad.append(f'faction {i}: no challenges')
+            if f['set']:
+                arts = [x[len('Artifact: '):].split(' (')[0] for x in fu['items'][f['set']]['s'] if x.startswith('Artifact: ')]
+                if not arts: bad.append(f"faction {i}: the Artifact Set names no artifacts")
+                bad += [f"faction {i}: artifact {n} does not exist" for n in arts if n not in art_names]
         slugs = [re.sub('[^a-z0-9]+', '-', n.lower()) for n in ub]
         if len(set(slugs)) != len(slugs): bad.append('two unique buildings share a link address')
         if not os.path.exists(os.path.join(ROOT, 'docs', 'factions.html')): bad.append('docs/factions.html is missing (run build_factions_page.py)')
@@ -239,6 +247,19 @@ try:
     if ctl: problems.append('control characters in data/handwritten (a backslash escape lost in a shell?)')
 except (OSError, ValueError) as e:
     print('14. hand-written data check failed:', e)
+
+# 15. a page that carries the perks popup (#more) or the group popup (#pop) wires up its close button, outside click and Escape (bindMore / bindPop of the shared script, or the page's own handlers)
+try:
+    unwired = []
+    for fn in sorted(os.listdir(os.path.join(ROOT, 'docs'))):
+        if not fn.endswith('.html'): continue
+        t = open(os.path.join(ROOT, 'docs', fn), encoding='utf8').read()
+        if 'id="more"' in t and t.count('bindMore()') < 2 and 'function closeMore' not in t: unwired.append((fn, 'more'))
+        if 'id="pop"' in t and t.count('bindPop()') < 2 and 'function closePop' not in t: unwired.append((fn, 'pop'))
+    print('15. popups wired up on the pages: ' + (f'NOT WIRED {unwired}' if unwired else 'ok'))
+    if unwired: problems.append(f'a popup cannot be closed on {unwired}')
+except OSError as e:
+    print('15. popup check failed:', e)
 
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

@@ -39,7 +39,13 @@ for n in sorted({c['tags'][0] for c in SC.values() if c['tags']} & {'Good', 'Evi
         if not os.path.exists(dst): shutil.copy(os.path.join(ROOT, sprites[f'spellBox_{n}_{st}'][0]['file']), dst)
 USED_SPELLS = {f['asp']['spell'] for f in out if f['asp']['spell']}
 USED_BUILDINGS = {b for f in out for b in f['asp']['uniques']}
-data = json.dumps({'factions': out, 'items': FU['items'], 'spells': {k: v for k, v in SC.items() if k in USED_SPELLS}, 'buildings': {k: v for k, v in UB.items() if k in USED_BUILDINGS}, 'coins': __import__('costs').names(), 'max': MAXA}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
+import re, artifact_items, challenge_items
+CH = {f['id']: challenge_items.section(f) for f in challenge_items.factions}      # each faction's challenges (the Challenges page's data)
+for f in out:      # the lore artifacts of the faction's Artifact Set (the Set upgrade names them in its unlock requirements)
+    st = f['asp']['set']
+    f['asp']['arts'] = [re.match(r'Artifact: (.*?)(?: \(|$)', x).group(1) for x in FU['items'][st]['s'] if x.startswith('Artifact: ')] if st else []
+ARTS = artifact_items.by_name(list(dict.fromkeys(n for f in out for n in f['asp']['arts'])))
+data = json.dumps({'factions': out, 'chal': {str(k): v for k, v in CH.items()}, 'arts': ARTS, 'items': FU['items'], 'spells': {k: v for k, v in SC.items() if k in USED_SPELLS}, 'buildings': {k: v for k, v in UB.items() if k in USED_BUILDINGS}, 'coins': __import__('costs').names(), 'max': MAXA}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
 mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Factions')
 import html as _html
 BLURB = _html.escape(next(s for s in mech['sections'] if s['title'] == 'What they are')['text'])      # the same text as on the Mechanics page

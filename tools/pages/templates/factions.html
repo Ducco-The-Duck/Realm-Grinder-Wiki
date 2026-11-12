@@ -49,7 +49,9 @@ main .pen-note{margin-bottom:26px}
 .asp figure{margin:0;text-align:center}
 .asp figcaption{margin-top:2px}
 .asp .full{width:100%}
-.asp .cap{font-weight:600;margin:0 0 4px}
+#detail .cen{margin-top:22px;text-align:center}
+#detail .cen .cap{font-weight:600;margin:0 0 6px}
+#detail .cen .line{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 /* a button as on the Buildings page (the game's building button of the faction, drawn larger) and the spell box of the game */
 .fbar{font-family:"Liony",system-ui,sans-serif;font-weight:700;font-size:.9rem;line-height:1.05;color:#f6f6f6;text-shadow:.75px 0 0 #000,-.75px 0 0 #000,0 .75px 0 #000,0 -.75px 0 #000,.75px .75px 0 #000,-.75px .75px 0 #000,.75px -.75px 0 #000,-.75px -.75px 0 #000,0 0 2px #000,0 0 3px #000;
   width:224px;height:74px;padding:8px 10px 8px 12px;box-sizing:border-box;border:0;background:var(--up) transparent no-repeat center/100% 100%;image-rendering:pixelated;
@@ -111,6 +113,9 @@ the base values <i>v</i>.</div>
   // ---- the details of a faction
   var detail=document.getElementById('detail');
   function itemCell(name){ return upgItemCell(ITEMS[name], ASC, D.coins); }      // an upgrade as on the upgrade pages (shared)
+  bindMore();
+  var penEl=document.getElementById('pen-formula'), PEN='\\left(\\left(1+\\frac{v}{100}\\right)^{0.1^{k}}-1\\right)\\cdot 100\\,\\%';
+  upgMath(PEN, penEl); window.addEventListener('load',function(){ upgMath(PEN, penEl); });
   function slug(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
   function tipFor(anchor, name, text){      // the popup of a spell or a building: the name, a short description, and a faded note
     tip.className=''; tip.textContent=''; tip.appendChild(el('b',null,name)); tip.appendChild(el('p',null,text));
@@ -158,9 +163,16 @@ the base values <i>v</i>.</div>
     if(a.heritage.length){
       var hl=el('div','trow heri'); hl.appendChild(el('div','rl')); hl.appendChild(el('div','cell gap')); a.heritage.forEach(function(n,i){ hl.appendChild(captioned(itemCell(n), i ? 'Adv. Heritage' : 'Heritage')); }); left.appendChild(hl);      // under the second and third column of the rows above
     }
-    if(a.combos.length){
-      var cw=el('div','full'); cw.appendChild(el('p','cap','Legacy Combos')); var cl=el('div','line'); a.combos.forEach(function(n){ cl.appendChild(itemCell(n)); }); cw.appendChild(cl); asp.appendChild(cw);
+    // below: centred rows, the challenges of the faction, the lore artifacts of its Artifact Set and its Legacy Combos
+    function centred(label, cells){
+      if(!cells.length) return;
+      var w=el('div','cen'); w.appendChild(el('p','cap',label));
+      var l=el('div','line'); cells.forEach(function(x){ l.appendChild(x); }); w.appendChild(l); d.appendChild(w);
     }
+    var ch=D.chal[String(f.i)];
+    centred('Challenges', ch ? ch.items.map(function(it){ return challengeCell(ch, it); }) : []);
+    centred('Lore Artifacts', a.arts.map(function(n){ return artifactCell(D.arts[n]); }));
+    centred('Legacy Combos', a.combos.map(itemCell));
     enhanceSelects();
     d.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
