@@ -172,8 +172,7 @@
   }
   // an upgrade of a card {n: name, i: icon file, d: [description paragraphs], s: [unlock requirement lines], c: costs per Ascension}: its cell, and the popup with name, cost and text
   function upgradeCell(u, asc, coins){
-    var tip=document.getElementById('tip'), b=document.createElement('button'), im=document.createElement('img');
-    b.className='cell'; b.type='button'; b.setAttribute('aria-label', u.n);
+    var tip=document.getElementById('tip'), b=makeCell(u.n, '', 'upgrade|'+u.n), im=document.createElement('img');
     im.src='assets/icons/'+encodeURIComponent(u.i); im.alt=''; b.appendChild(im);
     function add(tag, cls, text, to){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; (to||tip).appendChild(e); return e; }
     function show(){
@@ -355,7 +354,7 @@
     placeTip(anchor, true);
   }
   function artifactCell(it){
-    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label', it.n);
+    var b=makeCell(it.n, '', 'artifact|'+it.n), tip=document.getElementById('tip');
     if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
     function hide(){ tip.style.display='none'; }
     b.addEventListener('mouseenter',function(){ artifactTip(it,b); }); b.addEventListener('focus',function(){ artifactTip(it,b); });
@@ -367,7 +366,7 @@
   // greyed out when it is not available in asc; a click opens what the upgrade holds (the perks of a Lineage, the upgrades of a Legacy Combos / Bloodlines / Lineages / Artifact Sets container)
   var UPG_TRIM={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
   function upgItemCell(it, asc, coins){
-    var b=ce('button','cell'), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label',it.n);
+    var b=makeCell(it.n, '', 'upgrade|'+it.n), tip=document.getElementById('tip');
     if(it.fn && UPG_TRIM[it.fn]) b.classList.add('t-'+it.fn);
     if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
     var na=upgUnavailable(it,asc), k=na?0:upgPenalty(it,asc);
@@ -453,7 +452,7 @@
     placeTip(anchor, true);
   }
   function challengeCell(sec, it){
-    var b=ce('button','cell'+(it.su?' su':'')), tip=document.getElementById('tip'); b.type='button'; b.setAttribute('aria-label',it.n);
+    var b=makeCell(it.n, it.su?'su':'', 'challenge|'+sec.name+'|'+it.n), tip=document.getElementById('tip');
     var tn=trimName(sec.name); if(tn) b.classList.add('t-'+tn);
     if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; im.loading='lazy'; b.appendChild(im); }
     function hide(){ tip.style.display='none'; }
@@ -471,5 +470,13 @@
   function chipLabel(text, r, c, cs, span){
     var d=ce('div','lab'); d.style.gridRow=String(r); d.style.gridColumn=span?c+' / span '+span:String(c);
     d.appendChild(ce('span','chip c-'+text.toLowerCase().replace(/[^a-z0-9]+/g,'-'),text)); return d;
+  }
+  // every object of the wiki (an upgrade, artifact, challenge, spell, faction ...) is built here: the button, its aria label and its reference "type|name" (data-obj),
+  // which says which object it is wherever it is shown; behaviour that applies to all objects belongs here
+  function makeCell(label, cls, ref){
+    var b=document.createElement('button'); b.className='cell'+(cls?' '+cls:''); b.type='button';
+    if(label) b.setAttribute('aria-label', label);
+    if(ref) b.setAttribute('data-obj', ref);
+    return b;
   }
   function ce(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }

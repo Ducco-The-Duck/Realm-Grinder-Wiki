@@ -85,8 +85,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     node.addEventListener('blur',hideTip);
   }
   function cellButton(it, extraClass){
-    var b=el('button','cell'+(extraClass?' '+extraClass:'')); b.type='button';
-    b.setAttribute('aria-label', it.n+(it.r?': '+it.r:''));
+    var b=makeCell(it.n+(it.r?': '+it.r:''), extraClass, 'trophy|'+it.n);
     b.appendChild(icon(it));
     return b;
   }

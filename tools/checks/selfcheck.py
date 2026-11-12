@@ -261,5 +261,18 @@ try:
 except OSError as e:
     print('15. popup check failed:', e)
 
+# 16. every object of the wiki (a button with the class "cell") is made by makeCell() of the shared script, which gives it its reference (data-obj); a template that builds one by hand would leave it out of everything that works on all objects
+try:
+    by_hand = []
+    for fn in sorted(os.listdir(os.path.join(ROOT, 'tools', 'pages', 'templates'))):
+        if not fn.endswith(('.html', '.js')): continue
+        for i, line in enumerate(open(os.path.join(ROOT, 'tools', 'pages', 'templates', fn), encoding='utf8'), 1):
+            if re.search(r"""(?:el|ce)\('button',\s*'cell|createElement\('button'\).*'cell""", line) and 'b.className=\'cell\'+(cls' not in line:      # the one place that makes them is makeCell itself
+                by_hand.append(f'{fn}:{i}')
+    print('16. objects made by makeCell: ' + (f'BUILT BY HAND {by_hand}' if by_hand else 'ok'))
+    if by_hand: problems.append(f'objects built without makeCell at {by_hand}')
+except OSError as e:
+    print('16. object check failed:', e)
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

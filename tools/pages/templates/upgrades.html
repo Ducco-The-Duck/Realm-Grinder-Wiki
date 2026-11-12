@@ -109,7 +109,7 @@ the base values <i>v</i>.</div>
     return it.fn && TRIMF[it.fn] ? it.fn : null;
   }
   function itemCell(it, plain){
-    var b=el('button','cell'); b.type='button'; b.setAttribute('aria-label', it.n);
+    var b=makeCell(it.n, '', 'upgrade|'+it.n);
     var tr=trimOf(it); if(tr) b.classList.add('t-'+tr);
     if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
     if(!plain){

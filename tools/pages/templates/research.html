@@ -305,7 +305,7 @@ popups are always the base values <i>v</i>.</div>
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
-    var b=el('button','cell'+(cls?' '+cls:'')); b.type='button'; b.setAttribute('aria-label', it.n);
+    var b=makeCell(it.n, cls, (it.nobuy ? 'branch|' : 'research|')+it.n);
     if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
     if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
     var tn=trimName(it.fn); if(tn) b.classList.add('t-'+tn);

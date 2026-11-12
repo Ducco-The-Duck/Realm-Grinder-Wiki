@@ -144,14 +144,16 @@ __UC__
       var s=el('section','mech'), h=el('h2',null,m.name), inner=el('div'); s.id=m.id;
       s.appendChild(h);
       if(m.card){
-        var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+m.card.icon; im.alt=m.card.name; c.appendChild(im);
+        var c=makeCell(null, '', 'card|'+m.card.name), im=el('img'); im.src='assets/icons/'+m.card.icon; im.alt=m.card.name; c.appendChild(im);
         c.addEventListener('mouseenter',function(){ showTip(m.card,c); }); c.addEventListener('focus',function(){ showTip(m.card,c); });
         c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
         inner.appendChild(c);
       }
       if(MODE!=='mechanics') (m.unlock||[]).forEach(function(u){ inner.appendChild(el('p','unl',u)); });      // the Mechanics page does not say when a mechanic becomes available
+      if(m.note) inner.appendChild(el('p','unl',m.note));      // a faded note under the title of a mechanic: when it unlocks
       (m.sections||[]).forEach(function(c){
         if(c.title){ var h3=el('h3',null,c.title); if(c.id) h3.id=c.id; inner.appendChild(h3); }      // a subsection with an "id" can be linked to
+        if(c.note) inner.appendChild(el('p','unl',c.note));      // the same, for a subsection
         if(c.side){ var us=el('div','upgside'); c.side.forEach(function(n){ us.appendChild(upgItemCell(DATA.items[n], m.asc_view!=null ? m.asc_view : m.asc, DATA.coins)); }); inner.appendChild(us); }      // an upgrade at the right of the text, as on the Upgrades pages (the text runs around it); shown at the Ascension where all of it exists ("asc_view")
         if(c.text) inner.appendChild(el('p',null,c.text));
         (c.formulas||[]).forEach(function(f,fi){

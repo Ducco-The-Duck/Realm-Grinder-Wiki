@@ -52,8 +52,7 @@ h2 small{font-weight:400;color:var(--muted);margin-left:8px}
     var sec=el('section'); var h=el('h2',null,s.title); h.appendChild(el('small',null,s.n+' artifacts')); sec.appendChild(h);
     var g=el('div','grid');
     s.items.forEach(function(it){
-      var b=el('button','cell'); b.type='button';
-      b.setAttribute('aria-label', it.n);
+      var b=makeCell(it.n, '', 'artifact|'+it.n);
       b._s=normS([it.n,it.h,it.f,facLines(it.q)].join(' '));
       if(it.i){ var img=el('img'); img.src='assets/icons/'+encodeURIComponent(it.i); img.alt=''; img.loading='lazy'; b.appendChild(img); }
       b.addEventListener('mouseenter',function(){ showTip(it,b); });

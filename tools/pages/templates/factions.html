@@ -28,6 +28,7 @@ main .pen-note{margin-bottom:26px}
 #tip .hint{color:var(--muted);opacity:.75;font-size:.8rem;margin-top:8px}
 #detail{margin-top:22px;scroll-margin-top:12px}
 #detail h2{margin:0 0 4px;color:var(--accent)}
+#detail .note{color:var(--muted);opacity:.8;font-size:.9rem;margin:0 0 6px}
 #detail h3{margin:18px 0 6px;color:var(--accent)}
 #detail p{margin:4px 0;white-space:pre-line}
 #detail .box{margin:8px 0 0}
@@ -95,8 +96,8 @@ the base values <i>v</i>.</div>
   function hideTip(){ tip.style.display='none'; }
   window.addEventListener('scroll',hideTip,{passive:true});
   function cellFor(f){
-    var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+f.icon; im.alt=f.name; c.appendChild(im);
-    c.setAttribute('aria-label',f.name); c.addEventListener('click',function(){ showDetail(f); });
+    var c=makeCell(f.name, '', 'faction|'+f.name), im=el('img'); im.src='assets/icons/'+f.icon; im.alt=f.name; c.appendChild(im);
+    c.addEventListener('click',function(){ showDetail(f); });
     return c;
   }
   // the base factions in the grid (alignment down, axis across), the prestige factions at the right of their alignment, the astral factions under their axis,
@@ -135,7 +136,7 @@ the base values <i>v</i>.</div>
   function showDetail(f){      // below the grid, like the spells page
     current=f; hideTip();
     var a=f.asp, d=detail; d.hidden=false; d.textContent='';
-    d.appendChild(el('h2',null,f.name));
+    d.appendChild(el('h2',null,f.name)); if(f.note) d.appendChild(el('p','note',f.note));
     var bx=el('div','box'); bx.appendChild(el('p',null,f.blurb)); d.appendChild(bx);
     d.appendChild(el('h3',null,'Faction Aspects'));
     var h=el('div','arow'), lab=el('label',null,'Ascension '), sel=el('select'); sel.id='asc'; lab.htmlFor='asc';

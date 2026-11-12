@@ -129,7 +129,7 @@ __UC__
   }
   window.addEventListener('scroll',hideTip,{passive:true});
   function cellFor(s){
-    var c=el('button','cell'), im=el('img'); c.type='button'; im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
+    var c=makeCell(s.name, '', 'spell|'+s.name), im=el('img'); im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
     c.addEventListener('mouseenter',function(){ showTip(s,c); }); c.addEventListener('focus',function(){ showTip(s,c); });
     c.addEventListener('click',function(){ hideTip(); showDetail(s); });
     c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
