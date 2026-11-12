@@ -63,7 +63,7 @@ COINS = __import__('costs').names()      # the game's names of the coins
 RUNLOCKS = d['reincarnation_unlocks']      # the table on the overall Unlocks page (hand-written)
 
 
-FINISHED = ('unlocks.html', 'unlocks-a0.html', 'unlocks-a1.html')      # the pages without the "under construction" note
+FINISHED = ('mechanics.html', 'unlocks.html', 'unlocks-a0.html', 'unlocks-a1.html')      # the pages without the "under construction" note
 
 
 def write(fn, title, sub, mode, asc, mechs):
