@@ -634,9 +634,16 @@
   {
    "n": 0,
    "what": [
+    "Ascension 0",
     "Excavations",
     "New Factions: Neutral Factions (Titan, Druid, Faceless)",
     "New Factions: Prestige Factions (Dwarf, Drow)"
+   ]
+  },
+  {
+   "n": 2,
+   "what": [
+    "Challenges"
    ]
   },
   {
@@ -742,43 +749,52 @@
   {
    "n": 160,
    "what": [
-    "Ascension 3"
+    "Ascension 3",
+    "Research slots replaced by a research budget",
+    "Mercenaries reintroduced"
    ]
   },
   {
    "n": 165,
    "what": [
-    "Prestige Factions treaties"
+    "Prestige Factions reintroduced"
    ]
   },
   {
    "n": 172,
    "what": [
-    "Astral Factions treaties"
+    "Astral Factions reintroduced"
+   ]
+  },
+  {
+   "n": 220,
+   "what": [
+    "Ascension 4",
+    "Legacies and Legacy Combos"
    ]
   },
   {
    "n": 225,
    "what": [
-    "Sets"
+    "Artifact Sets reintroduced"
    ]
   },
   {
    "n": 230,
    "what": [
-    "Lineages"
+    "Lineages reintroduced"
    ]
   },
   {
    "n": 235,
    "what": [
-    "Prestige Factions treaties"
+    "Prestige Factions reintroduced"
    ]
   },
   {
    "n": 255,
    "what": [
-    "Astral Factions treaties"
+    "Astral Factions reintroduced"
    ]
   }
  ],
