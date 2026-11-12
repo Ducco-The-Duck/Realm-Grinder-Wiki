@@ -1342,7 +1342,7 @@
       },
       {
        "title": "Mercenaries",
-       "text": "The Mercenaries are reintroduced. You no longer need the Oath of the Mercenaries: you complete the Mercenary Duel instead, which only needs to be done once. After that, the Mercenary First Contract becomes available.",
+       "text": "The Mercenaries are reintroduced. Upon completing the Mercenary Duel, which only needs to be done once, you can choose to affiliate with them.",
        "side": [
         "Mercenary Duel",
         "Mercenary First Contract"
