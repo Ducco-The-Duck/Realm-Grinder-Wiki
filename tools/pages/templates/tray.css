@@ -10,14 +10,18 @@ body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cur
 #pop,#more{transition:left .22s ease}
 body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the windows of the page open beside the tray, which stays usable */
 @media (max-width:700px){body.tray-open{padding-left:0}body.tray-open #pop,body.tray-open #more{left:0}#tray{width:min(var(--tray-w,300px),88vw);box-shadow:0 0 40px rgba(0,0,0,.6)}}
-.tray-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:2px 2px 6px}
-.tray-add,#tray-toast button,.ts-b2{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
-.tray-add:hover,.ts-b2:hover,#tray-toast button:hover{background:var(--cellhi);color:var(--accent)}
-.tray-close,.tray-tab{position:relative;width:30px;height:30px;padding:0;background:var(--cell);border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.tray-head{display:flex;align-items:center;gap:6px;padding:2px 2px 6px}
+.tray-add{font:inherit;color:var(--fg);border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 8px;cursor:pointer}
+#tray-toast button{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
+.tray-add:hover,#tray-toast button:hover{color:var(--accent)}
+#tray-toast button:hover{background:var(--cellhi)}
+.tray-close,.tray-tab{position:absolute;box-sizing:border-box;width:36px;height:56px;padding:0;color:var(--fg);cursor:pointer;border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f}
 .tray-close::after,.tray-tab::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
 .tray-tab::after{transform:translate(-70%,-50%) rotate(-135deg)}
 .tray-close:hover::after,.tray-tab:hover::after{border-color:var(--accent)}
-.tray-tab{position:fixed;z-index:47;left:0;top:12px;width:26px;height:46px;border-radius:0 8px 8px 0;border-left:0;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--cell:#2b261f}
+.tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
+.tray-tab{position:fixed;z-index:47;left:0;top:10px}
 .tray-tab[hidden]{display:none}
 .tray-body{flex:1;min-height:0;overflow:auto;padding:0 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
@@ -31,9 +35,15 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tsub{margin:6px 0 4px 8px}
 .tsub .ts-name,.tsub .ts-in{font-size:22px;color:var(--accent)}
 .ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:20px}
-.ts-asc{font:inherit;font-size:.8rem;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:1px 2px}
-.ts-b2{padding:0 7px;line-height:1.4}
-.ts-x{font-size:1.1rem;line-height:1.2}
+.ts-ar{margin:0 0 4px}
+.ts-sel{position:relative;flex:none;display:inline-flex}
+.ts-asc{appearance:none;-webkit-appearance:none;font:inherit;font-size:.8rem;line-height:1;color:var(--fg);border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 14px 0 2px;cursor:pointer;outline:none}
+.ts-sel::after{content:"";position:absolute;right:9px;top:50%;width:5px;height:5px;margin-top:-4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+.ts-asc:hover{color:var(--accent)}
+.ts-asc option{background:#201d18;color:#ece6d8}
+.ts-b2{flex:none;font:inherit;font-size:1.5rem;line-height:1;color:var(--muted);background:none;border:0;padding:0 3px;cursor:pointer}
+.ts-b2:hover{color:var(--accent)}
+.ts-x{font-size:1.35rem}
 .ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 4px 3px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
 .ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}
 .ts.shut>.ts-b{display:none}
