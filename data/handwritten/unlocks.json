@@ -1057,7 +1057,7 @@
       },
       {
        "title": "Spell Tiers",
-       "text": "The tiers of Call to Arms and Spiritual Surge become available once you own Hatch!. At Ascension 1 only the second tier can be bought."
+       "text": "The tiers of Common spells (Call to Arms and Spiritual Surge) become available once you own Hatch!. At Ascension 1 only the second tier can be bought."
       }
      ]
     },
@@ -1073,7 +1073,7 @@
       },
       {
        "title": "Spell Tiers",
-       "text": "The tiers of Blood Frenzy, Goblin's Greed, Night Time, Hellfire Blast and Combo Strike become available once you own Drakeling."
+       "text": "The tiers of Evil spells (Blood Frenzy, Goblin's Greed, Night Time, Hellfire Blast and Combo Strike) become available once you own Drakeling."
       }
      ]
     },
@@ -1089,7 +1089,7 @@
       },
       {
        "title": "Spell Tiers",
-       "text": "The tiers of Holy Light, Fairy Chanting, Moon Blessing, God's Hand and Diamond Pickaxe become available once you own Dragon."
+       "text": "The tiers of Good spells (Holy Light, Fairy Chanting, Moon Blessing, God's Hand and Diamond Pickaxe) become available once you own Dragon."
       }
      ]
     },
@@ -1105,7 +1105,7 @@
       },
       {
        "title": "Spell Tiers",
-       "text": "The tiers of Gem Grinder, Lightning Strike, Grand Balance and Brainwave become available once you own Elder Dragon."
+       "text": "The tiers of Neutral spells (Gem Grinder, Lightning Strike, Grand Balance and Brainwave) become available once you own Elder Dragon."
       }
      ]
     },
