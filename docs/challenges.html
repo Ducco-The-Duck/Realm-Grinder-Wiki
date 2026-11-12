@@ -341,7 +341,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-title{margin:0 0 4px;padding:0 12px 4px;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:40px;line-height:1.1;color:var(--fg);border-bottom:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tray-body{display:flex;flex-direction:column}
 /* the way to a new section: a faint + under the lowest section; the whole space below it answers to the pointer with a glow that starts at the bottom of that section */
-.tray-addrow{position:relative;flex:1 0 64px;margin-top:8px;cursor:pointer;color:var(--muted);transition:background .25s;border-top:1px solid transparent;
+.tray-addrow{position:relative;flex:1 0 64px;cursor:pointer;color:var(--muted);transition:background .25s;border-top:1px solid transparent;
   border-image:linear-gradient(90deg,transparent,rgba(163,155,138,.4) 25%,rgba(163,155,138,.4) 75%,transparent) 1}
 .tray-addrow::before,.tray-addrow::after{content:"";position:absolute;left:50%;top:22px;background:currentColor;opacity:.3;border-radius:1px;transform:translate(-50%,-50%);transition:opacity .25s,background .25s}
 .tray-addrow::before{width:22px;height:3px}
@@ -366,6 +366,8 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .ts-name,.ts-in{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:34px;line-height:1.1;color:var(--fg)}
 .ts-h:hover .ts-name{color:var(--accent)}
 .tsub{margin:14px 0 4px 8px}
+.tsub .tgrid{margin-left:10px}      /* the objects of a subsection sit further in than those of its section */
+.tray-body>.ts+.ts{padding-top:10px;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(163,155,138,.4) 25%,rgba(163,155,138,.4) 75%,transparent) 1}      /* a thin faded line between sections */
 .tsub .ts-name,.tsub .ts-in{font-size:27px;color:var(--accent)}
 .ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:26px}
 .ts-ar{margin:0 0 4px}
