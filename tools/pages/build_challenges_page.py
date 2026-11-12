@@ -14,6 +14,8 @@ sections = [{'id': f['id'], 'name': f['name'], 'kind': f['kind'], 'items': [item
             for f in sorted(factions, key=lambda f: f['name'] == 'Mercenary')]      # the Mercenaries go last
 json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+import catalog
+catalog.write('challenge', {'sections': {s['name']: {'name': s['name'], 'items': catalog.unique('challenge', [(it['n'], it) for it in s['items']])} for s in sections}})      # for the tray, by faction name
 import html as _html
 bugs = [(it['name'], it['bug']) for f in factions for it in f['items'] if it.get('bug')]
 bug_html = ''.join(f'<p><b>Known bug, {_html.escape(n)}:</b> {_html.escape(t)}</p>' for n, t in bugs)

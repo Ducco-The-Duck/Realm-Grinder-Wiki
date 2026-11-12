@@ -18,6 +18,8 @@ for kind, label in (('quest', 'Quest Artifacts'), ('lore', 'Lore Artifacts')):
 json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), indent=0, sort_keys=True)
 data = json.dumps(sections, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(s['items']) for s in sections)
+import catalog
+catalog.write('artifact', {'items': catalog.unique('artifact', [(it['n'], it) for s in sections for it in s['items']])})      # for the tray
 
 html = tmpl.load('archaeology.html')
 import search_snippet

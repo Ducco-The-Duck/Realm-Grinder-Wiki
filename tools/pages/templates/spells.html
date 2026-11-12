@@ -113,13 +113,10 @@ __UC__
     return e;
   }
   function hideTip(){ tip.style.display='none'; }
-  function showTip(s, anchor){ spellTip(s, anchor, true); }
   window.addEventListener('scroll',hideTip,{passive:true});
   function cellFor(s){
-    var c=makeCell(s.name, '', 'spell|'+s.name), im=el('img'); im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
-    c.addEventListener('mouseenter',function(){ showTip(s,c); }); c.addEventListener('focus',function(){ showTip(s,c); });
+    var c=spellCell(s, true);
     c.addEventListener('click',function(){ hideTip(); showDetail(s); });
-    c.addEventListener('mouseleave',hideTip); c.addEventListener('blur',hideTip);
     return c;
   }
   // where a spell goes, from its tags: Common and Event on their own, the Alignment spells on the edges (first alignment on the left, second on top),

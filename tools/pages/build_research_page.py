@@ -178,6 +178,8 @@ payload = {'max': meta['max_ascension'], 'branches': BRANCHES, 'coins': costs.na
            'budget': {'common': BUDGET_COMMON, 'a4': BUDGET_A4, 'merc': BUDGET_MERC}}
 data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 total = sum(len(b['items']) for b in BRANCHES)
+import catalog
+catalog.write('research', {'coins': payload['coins'], 'maxnum': availability.MAXNUM, 'items': catalog.unique('research', [(it['n'], it) for b in BRANCHES for it in b['items']])})      # for the tray (the branch objects are not pinnable)
 
 html = tmpl.load('research.html')
 import search_snippet, availability

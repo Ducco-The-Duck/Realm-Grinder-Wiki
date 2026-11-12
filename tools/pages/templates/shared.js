@@ -237,13 +237,13 @@
   function upgCostText(it, ASC, COINS){      // the game's "Cost: ..." for the chosen Ascension; nothing for an upgrade that cannot be bought then
     return upgUnavailable(it, ASC) ? null : upgCost(it, ASC, COINS);
   }
-  function upgradeTip(it, anchor, ASC, COINS){
+  function upgradeTip(it, anchor, ASC, COINS, plain){
     var tip=document.getElementById('tip');
     tip.className='upg'; tip.textContent='';
     tip.appendChild(ce('b','t',it.n));
     var ct=upgCostText(it, ASC, COINS); if(ct) tip.appendChild(ce('div','cost',ct));      // right below the name, faded
     if(it.sub) tip.appendChild(ce('div','more',it.sub));
-    if(it.m || it.bl || it.lg || it.lp || it.st || it.cb) tip.appendChild(ce('div','more','Click for more info'));
+    if(!plain && (it.m || it.bl || it.lg || it.lp || it.st || it.cb)) tip.appendChild(ce('div','more','Click for more info'));
     if(it.o.length){
       var rs=[], os=[];
       var st=[];
@@ -365,15 +365,16 @@
   // ---- an upgrade of the Upgrades pages' data ({n, i, d, f, s, o, lo, ...} as build_upgrades_page.item makes it) as a cell: the icon, the popup (upgradeTip), the A marks of the Ascension penalty,
   // greyed out when it is not available in asc; a click opens what the upgrade holds (the perks of a Lineage, the upgrades of a Legacy Combos / Bloodlines / Lineages / Artifact Sets container)
   var UPG_TRIM={Fairy:1,Elven:1,Angel:1,Goblin:1,Undead:1,Demon:1,Titan:1,Druid:1,Faceless:1,Dwarven:1,Drow:1,Mercenary:1,Dragon:1,Archon:1,Djinn:1,Makers:1};
-  function upgItemCell(it, asc, coins){
+  function upgItemCell(it, asc, coins, plain){      // plain: no click (the object of the tray)
     var b=makeCell(it.n, '', 'upgrade|'+it.n), tip=document.getElementById('tip');
     if(it.fn && UPG_TRIM[it.fn]) b.classList.add('t-'+it.fn);
     if(it.i){ var im=ce('img'); im.src='assets/icons/'+encodeURIComponent(it.i); im.alt=''; b.appendChild(im); }
     var na=upgUnavailable(it,asc), k=na?0:upgPenalty(it,asc);
     b.classList.toggle('na',na); if(k) b.appendChild(ce('span','pen',upgAs(k)));
     function hide(){ tip.style.display='none'; }
-    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,asc,coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,asc,coins); });
+    b.addEventListener('mouseenter',function(){ upgradeTip(it,b,asc,coins,plain); }); b.addEventListener('focus',function(){ upgradeTip(it,b,asc,coins,plain); });
     b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+    if(plain) return b;
     var group = it.cb ? ['Legacy Combos',it.cb] : it.bl ? ['Bloodlines',it.bl] : it.lg ? ['Lineages',it.lg] : it.st ? ['Artifact Sets',it.st] : null;
     if(it.lp) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); upgPerks(it,asc,null,coins); });
     else if(group) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); openUpgGroup(group[0], group[1], asc, coins); });
@@ -557,6 +558,58 @@
     placeTip(anchor, false);
   }
 
+  // ---- a research (not a branch): its cell, and what the Ascension does to it (greyed out when it does not exist, the A marks of the penalty)
+  function resCell(it, cls, ref){
+    var b=makeCell(it.n, cls, ref);
+    if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
+    var tn=trimName(it.fn); if(tn) b.classList.add('t-'+tn);
+    if(!tn && (it.al==='Good' || it.al==='Evil')) b.classList.add('t-'+it.al);      // alignment-locked researches: the Good / Evil frame
+    function add(file, c){ var img=ce('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
+    if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
+    return b;
+  }
+  function resDecorate(b, it, A, maxnum){
+    var na=resUnavailable(it, A, maxnum), k=na?0:resPenalty(it, A), p=b.querySelector('.pen');
+    b.classList.toggle('na', na);
+    if(k){ if(!p){ p=ce('span','pen'); b.appendChild(p); } p.textContent=new Array(k+1).join('A'); }
+    else if(p){ p.remove(); }
+  }
+  // ---- a spell {name, icon, tags, desc}: its cell and the popup; hint: tell the visitor to click for the details (the Spells page)
+  function spellCell(s, hint){
+    var c=makeCell(s.name, '', 'spell|'+s.name), im=ce('img'), tip=document.getElementById('tip'); im.src='assets/icons/'+s.icon; im.alt=s.name; c.appendChild(im);
+    function hide(){ tip.style.display='none'; }
+    c.addEventListener('mouseenter',function(){ spellTip(s,c,hint); }); c.addEventListener('focus',function(){ spellTip(s,c,hint); });
+    c.addEventListener('mouseleave',hide); c.addEventListener('blur',hide);
+    return c;
+  }
+  // ---- the object a reference "type|name" stands for, drawn from the catalogue of its type (docs/assets/data/catalog-<type>.json, loaded when first needed):
+  // a Promise of the cell, without the click of the page it normally sits on. A: the Ascension it is shown at. A reference that no longer exists gives a grey "gone" cell.
+  var PINNABLE = ['upgrade','artifact','challenge','research','spell'];      // the types of object that can be pinned in the tray
+  var CATALOGS = {};
+  function loadCatalog(type){
+    if(!CATALOGS[type]) CATALOGS[type]=fetch('assets/data/catalog-'+type+'.json').then(function(r){ if(!r.ok) throw new Error(type); return r.json(); });
+    return CATALOGS[type];
+  }
+  function objectFor(ref, A){
+    var parts=ref.split('|'), type=parts[0];
+    function gone(){ var b=makeCell('No longer on the wiki: '+parts.slice(1).join(' | '), 'gone', ref); b.disabled=true; b.appendChild(ce('span',null,'?')); return b; }
+    if(PINNABLE.indexOf(type)<0) return Promise.resolve(gone());
+    return loadCatalog(type).then(function(cat){
+      var name=parts[parts.length-1], it, b;
+      if(type==='challenge'){ var sec=cat.sections[parts[1]]; it=sec && sec.items[name]; return it ? challengeCell(sec, it) : gone(); }
+      it=cat.items[name]; if(!it) return gone();
+      if(type==='upgrade') return upgItemCell(it, A, cat.coins, true);
+      if(type==='artifact') return artifactCell(it);
+      if(type==='spell') return spellCell(it, false);
+      b=resCell(it, '', ref); resDecorate(b, it, A, cat.maxnum);      // research
+      var tip=document.getElementById('tip'), X={coins:cat.coins, maxnum:cat.maxnum};
+      function show(){ researchTip(it, b, A, X); } function hide(){ tip.style.display='none'; }
+      b.addEventListener('mouseenter',show); b.addEventListener('focus',show); b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
+      return b;
+    }).catch(function(){ return gone(); });
+  }
+
+  window.objectFor=objectFor; window.PINNABLE=PINNABLE;      // for the tray and for tests
   // ---- the chips of a spell or faction (Good, Order, ...) and the labels of a board
   function chips(s){
     var d=ce('div','tags');

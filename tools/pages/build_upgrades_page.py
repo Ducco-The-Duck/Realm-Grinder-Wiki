@@ -287,7 +287,8 @@ def faction_upgrades():
     return {'items': items, 'f': out, 'umbrella': umbrella}
 
 
-json.dump(faction_upgrades(), open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
+FU_ALL = faction_upgrades()
+json.dump(FU_ALL, open(os.path.join(ROOT, 'data', 'derived/faction_upgrades.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
 
 
 sections = [
@@ -301,6 +302,11 @@ json.dump(icons, open(os.path.join(ROOT, 'data', 'generated/icons.json'), 'w'), 
 data = json.dumps({'max': meta['max_ascension'], 'sections': sections, 'factions': FACTIONS, 'coins': COIN_NAMES}, ensure_ascii=False,
                   separators=(',', ':')).replace('</', '<\\/')
 
+import catalog
+BIG = ('bl', 'lg', 'st', 'lp', 'cb')      # the lists that the click on a Bloodline, Lineage, Artifact Set, Legacy Combo object opens: a pinned object only shows its popup
+_up = catalog.unique('upgrade', [(it['n'], {k: v for k, v in it.items() if k not in BIG}) for s in sections for e in s['entries'] for it in e['items']])
+for _n, _it in FU_ALL['items'].items(): _up.setdefault(_n, {k: v for k, v in _it.items() if k not in BIG})      # the faction's own Bloodline, Lineage and Set live in the lists of the umbrella objects
+catalog.write('upgrade', {'coins': COIN_NAMES, 'items': _up})      # for the tray
 html = tmpl.load('upgrades.html')
 import search_snippet
 import re as _re

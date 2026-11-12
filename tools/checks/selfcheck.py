@@ -274,5 +274,25 @@ try:
 except OSError as e:
     print('16. object check failed:', e)
 
+# 17. the object catalogue (docs/assets/data/catalog-<type>.json, for the tray): every object that the pages show exists in the catalogue of its type, so a pinned object can be drawn anywhere
+try:
+    cd = os.path.join(ROOT, 'docs', 'assets', 'data')
+    cat = {t: json.load(open(os.path.join(cd, f'catalog-{t}.json'), encoding='utf8')) for t in ('upgrade', 'artifact', 'challenge', 'research', 'spell')}
+    lost = []
+    fu = json.load(open(os.path.join(ROOT, 'data', 'derived', 'faction_upgrades.json'), encoding='utf8'))
+    lost += [('upgrade', n) for n in list(fu['items']) + list(fu['umbrella']) if n not in cat['upgrade']['items']]
+    lost += [('spell', n) for n in json.load(open(os.path.join(ROOT, 'data', 'derived', 'spell_cards.json'), encoding='utf8')) if n not in cat['spell']['items']]
+    for page, key, typ in (('archaeology.html', None, 'artifact'), ('challenges.html', None, 'challenge'), ('research.html', 'branches', 'research')):
+        t = open(os.path.join(ROOT, 'docs', page), encoding='utf8').read()
+        d = json.loads(re.search(r'<script id="data" type="application/json">(.*?)</script>', t, re.S).group(1).replace('<\\/', '</'))
+        if typ == 'artifact': lost += [('artifact', it['n']) for s in d for it in s['items'] if it['n'] not in cat['artifact']['items']]
+        if typ == 'challenge': lost += [('challenge', s['name'] + '|' + it['n']) for s in d for it in s['items'] if it['n'] not in cat['challenge']['sections'].get(s['name'], {}).get('items', {})]
+        if typ == 'research': lost += [('research', it['n']) for b in d['branches'] for it in b['items'] if it['n'] not in cat['research']['items']]
+    print('17. object catalogue: ' + (f'MISSING {lost[:6]}' if lost else 'ok (' + ', '.join(f"{t} {len(c.get('items') or c['sections'])}" for t, c in cat.items()) + ')'))
+    if lost: problems.append(f'{len(lost)} object(s) of the pages are missing from the object catalogue (run the page builders)')
+except (OSError, ValueError, KeyError) as e:
+    print('17. object catalogue check failed:', e)
+    problems.append('object catalogue unreadable (run the page builders)')
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)

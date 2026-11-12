@@ -113,11 +113,9 @@ popups are always the base values <i>v</i>.</div>
     if(window.katex){ try{ katex.render('\\displaystyle '+tex,node,{throwOnError:false,displayMode:false}); return; }catch(e){} }
     node.textContent=tex;
   }
-  function penalty(it){ return resPenalty(it, ASC); }
   // the highest research number a branch can reach: the research facility level is capped by the Reincarnations you can have (triangular number up to 39 / 99
   // Reincarnations before Ascension 1 / 2: 780 and 4950; numbers from 5000 on also need Reincarnation 180, so not before Ascension 3; 7000 at Ascension 3; 14000 at Ascension 4)
   var MAXNUM=__MAXNUM__;
-  function unavailable(it){ return resUnavailable(it, ASC, MAXNUM); }
   var RCTX={coins:DATA.coins, maxnum:MAXNUM};      // what the shared popup of a research needs
   function tx(x){      // a number for a formula, in the game's format: 145000000 -> 1.45 \times 10^{8}
     if(x<1e6) return String(x);
@@ -207,13 +205,8 @@ popups are always the base values <i>v</i>.</div>
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
   function cell(it, cls){
-    var b=makeCell(it.n, cls, (it.nobuy ? 'branch|' : 'research|')+it.n);
+    var b=resCell(it, cls, (it.nobuy ? 'branch|' : 'research|')+it.n);
     if(it.d!=null){ var ds=[it.n,it.k,it.h,it.d,it.fn]; Object.keys(it.a||{}).forEach(function(k){ ds.push(it.a[k].d); }); b._s=normS(ds.join(' ')); }
-    if(it.fc || it.ac){ b.classList.add('fac'); b.style.setProperty('--fc', it.fc || it.ac); }
-    var tn=trimName(it.fn); if(tn) b.classList.add('t-'+tn);
-    if(!tn && (it.al==='Good' || it.al==='Evil')) b.classList.add('t-'+it.al);      // alignment-locked researches: the Good / Evil frame
-    function add(file, c){ var img=el('img',c); img.src='assets/icons/'+encodeURIComponent(file); img.alt=''; img.loading='lazy'; b.appendChild(img); }
-    if(it.b){ add(it.b); if(it.i) add(it.i,'ov'); } else if(it.i){ add(it.i); }
     function show(){ showTip(it,b); }
     b.addEventListener('mouseenter',show);
     b.addEventListener('mouseleave',hideTip);
@@ -233,10 +226,7 @@ popups are always the base values <i>v</i>.</div>
   searchInit(root);
   function apply(){
     cells.forEach(function(p){
-      var na=unavailable(p[1]), k=na?0:penalty(p[1]), b=p[0].querySelector('.pen');
-      p[0].classList.toggle('na', na);
-      if(k){ if(!b){ b=el('span','pen'); p[0].appendChild(b); } b.textContent=new Array(k+1).join('A'); }
-      else if(b){ b.remove(); }
+      resDecorate(p[0], p[1], ASC, MAXNUM);
     });
     hideTip();
   }
