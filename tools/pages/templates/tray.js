@@ -169,7 +169,13 @@
 
     // ---- dragging (mouse and pen) and the long press (touch)
     var drag=null, ghost=null, hold=null, lastTouch=false;
-    function pinnableCell(t){ var c=t && t.closest && t.closest('button.cell[data-obj], span.cell[data-obj]'); return c && PINNABLE.indexOf(c.getAttribute('data-obj').split('|')[0])>=0 ? c : null; }
+    function pinnableCell(t){
+      var c=t && t.closest && t.closest('button.cell[data-obj], span.cell[data-obj]'); if(!c) return null;
+      var type=c.getAttribute('data-obj').split('|')[0];
+      if(PINNABLE.indexOf(type)<0) return null;
+      if(!c.closest('#tray') && (document.body.getAttribute('data-nopin')||'').split(' ').indexOf(type)>=0) return null;      // a page can say which types of its own objects are not pinnable (data-nopin on the body); the objects already in the tray still move
+      return c;
+    }
     function where(x, y){      // the container under the pointer: {id, index} in the tray, or null
       var el=document.elementFromPoint(x,y), box=el && el.closest && el.closest('#tray .ts');
       if(!box){

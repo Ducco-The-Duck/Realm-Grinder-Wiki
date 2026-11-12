@@ -444,6 +444,7 @@ body.tray-dragging,body.tray-dragging *{cursor:grabbing!important;user-select:no
 #tray-toast{position:fixed;z-index:95;left:50%;bottom:18px;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:8px 12px;border-radius:8px;background:#201d18;color:#ece6d8;border:1px solid #4a443a;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:opacity .2s,transform .2s;font-size:.9rem}
 #tray-toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 #tip[data-own]{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
+body[data-nopin~="upgrade"] main button.cell[data-obj^="upgrade|"],body[data-nopin~="spell"] main button.cell[data-obj^="spell|"]{cursor:default}      /* not pinnable on this page */
 /*NAVCSS*/
 nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1.15;border:0;padding:0}
 nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
@@ -1398,7 +1399,13 @@ the base values <i>v</i>.</div>
 
     // ---- dragging (mouse and pen) and the long press (touch)
     var drag=null, ghost=null, hold=null, lastTouch=false;
-    function pinnableCell(t){ var c=t && t.closest && t.closest('button.cell[data-obj], span.cell[data-obj]'); return c && PINNABLE.indexOf(c.getAttribute('data-obj').split('|')[0])>=0 ? c : null; }
+    function pinnableCell(t){
+      var c=t && t.closest && t.closest('button.cell[data-obj], span.cell[data-obj]'); if(!c) return null;
+      var type=c.getAttribute('data-obj').split('|')[0];
+      if(PINNABLE.indexOf(type)<0) return null;
+      if(!c.closest('#tray') && (document.body.getAttribute('data-nopin')||'').split(' ').indexOf(type)>=0) return null;      // a page can say which types of its own objects are not pinnable (data-nopin on the body); the objects already in the tray still move
+      return c;
+    }
     function where(x, y){      // the container under the pointer: {id, index} in the tray, or null
       var el=document.elementFromPoint(x,y), box=el && el.closest && el.closest('#tray .ts');
       if(!box){

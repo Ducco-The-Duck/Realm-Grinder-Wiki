@@ -66,6 +66,7 @@ __UC__
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = __ASC__, MODE = '__MODE__';
+  document.body.setAttribute('data-nopin','upgrade spell');      // the upgrades and spells shown here are examples of the text: they cannot be pinned (the tray reads this)
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function linked(tag, text){      // text with links written as [words](page) and bold written as **words**
