@@ -1043,17 +1043,8 @@
    ]
   },
   "1": {
-   "overview": "Ascension 1 lasts from Reincarnation 40 to 99. It introduces the Ascension penalty, the quest that unlocks the Dragon, Lineages and research for the Mercenaries.",
+   "overview": "Ascension 1 introduces the prestige faction for Neutral factions; the mighty Dragons. It also makes spell tiers available, allowing you to multi-cast spells for improved effect, along with additional bonuses. It also gives a first taste of mercenaries' power when combined with research.",
    "entries": [
-    {
-     "title": "Reincarnation 40",
-     "sections": [
-      {
-       "title": "Ascension",
-       "text": "Ascension 1 begins at Reincarnation 40. An Ascension is a special kind of Reincarnation that resets your economy and introduces new mechanics. From Ascension 1 on, the Ascension penalty reduces the percentage bonuses of many upgrades, researches, spells and unique buildings. See [Progression](mechanics.html#progression) on the Mechanics page."
-      }
-     ]
-    },
     {
      "title": "Reincarnation 42",
      "sections": [
