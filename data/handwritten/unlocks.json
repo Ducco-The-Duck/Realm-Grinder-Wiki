@@ -587,7 +587,7 @@
     {
      "title": "Bloodline",
      "id": "bloodline",
-     "text": "Bloodlines are bonuses tied to a faction. Every faction except the Mercenaries has its own Bloodline. You can only have one Bloodline, it persists until you abdicate, and it does not suffer from Ascension penalties. Click the object to see all of them.",
+     "text": "Bloodlines are bonuses tied to a faction. Every faction except the Mercenaries has its own Bloodline. You can only have one Bloodline by default, it persists until you abdicate, and it does not suffer from Ascension penalties. Click the object to see all of them.",
      "side": [
       "Bloodline"
      ]
