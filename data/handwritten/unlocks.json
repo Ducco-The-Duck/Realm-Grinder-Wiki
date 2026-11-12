@@ -942,7 +942,7 @@
      "sections": [
       {
        "title": "Vanilla Faction Research",
-       "text": "Researches are unlocked for the vanilla factions by purchasing their unique building. The unique buildings each have an associated unlock quest that you must complete once. Prestige Factions cannot perform research yet, so allying with them will revoke your ability to buy your unique building, and thus access to research. See the [Research](research.html) page.",
+       "text": "Researches are unlocked for the vanilla factions by purchasing their unique building and at least one research facility, which becomes available to purchase once you own your unique building. The unique buildings each have an associated unlock quest that you must complete once. Each research facility unlocks a branch in the research page and must only be bought once. Each facility is made available to one of the six vanilla factions. Prestige Factions cannot perform research yet, so allying with them will revoke your ability to buy your unique building, and thus access to research. See the [Research](research.html) page.",
        "rows": [
         [
          "Enchanted Field Quest",
@@ -959,6 +959,14 @@
          "Goblin Bank",
          "Undercity",
          "Infernal Realm"
+        ],
+        [
+         "Spellweavery",
+         "Carpentry",
+         "Pantheon",
+         "Exchequer",
+         "Laboratory",
+         "Strategy Room"
         ]
        ]
       }
