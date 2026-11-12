@@ -47,6 +47,7 @@ table.rtab{border-collapse:collapse;width:100%}
 .rtab th,.rtab td{text-align:left;padding:6px 12px;border-bottom:1px solid var(--line)}
 .rtab th{color:var(--accent)}
 .rtab td.n{width:1%;white-space:nowrap}
+.rtab td:not(.n) div{padding-left:1.2em;text-indent:-1.2em}      /* an entry that runs onto a second line is indented there */
 /* the hover popup of a research (class "res" on #tip; researchTip in shared.js) and of a spell (class "spl"; spellTip) */
 #tip:where(.res) b{display:block;font-size:1rem}
 #tip:where(.res) .num{color:var(--muted);font-size:.8rem}
