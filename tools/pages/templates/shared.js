@@ -592,7 +592,7 @@
   }
   function objectFor(ref, A){
     var parts=ref.split('|'), type=parts[0];
-    function gone(){ var b=makeCell('No longer on the wiki: '+parts.slice(1).join(' | '), 'gone', ref); b.disabled=true; b.appendChild(ce('span',null,'?')); return b; }
+    function gone(){ var b=makeCell('No longer on the wiki: '+parts.slice(1).join(' | '), 'gone', ref); b.setAttribute('aria-disabled','true'); b.appendChild(ce('span',null,'?')); return b; }
     if(PINNABLE.indexOf(type)<0) return Promise.resolve(gone());
     return loadCatalog(type).then(function(cat){
       var name=parts[parts.length-1], it, b;

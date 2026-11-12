@@ -1,0 +1,64 @@
+/* the tray (tray.js): the left side of every page; the border is the tooltip's (the game's steel trim) */
+#tray{position:fixed;z-index:47;left:0;top:0;bottom:0;width:min(var(--tray-w,300px),100vw);box-sizing:border-box;display:flex;flex-direction:column;
+  border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;
+  --fg:#ece6d8;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--card:#201d18;--cell:#2b261f;--cellhi:#3a3328;color:var(--fg);font-size:.92rem;line-height:1.15;
+  transition:transform .22s ease}
+#tray.closed{transform:translateX(-110%);pointer-events:none}
+body{transition:padding-left .22s ease}
+body.tray-open{padding-left:var(--tray-w,300px)}
+body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cursor:ew-resize}
+#pop,#more{transition:left .22s ease}
+body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the windows of the page open beside the tray, which stays usable */
+@media (max-width:700px){body.tray-open{padding-left:0}body.tray-open #pop,body.tray-open #more{left:0}#tray{width:min(var(--tray-w,300px),88vw);box-shadow:0 0 40px rgba(0,0,0,.6)}}
+.tray-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:2px 2px 6px}
+.tray-add,#tray-toast button,.ts-b2{font:inherit;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:2px 8px;cursor:pointer}
+.tray-add:hover,.ts-b2:hover,#tray-toast button:hover{background:var(--cellhi);color:var(--accent)}
+.tray-close,.tray-tab{position:relative;width:30px;height:30px;padding:0;background:var(--cell);border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.tray-close::after,.tray-tab::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translate(-30%,-50%) rotate(45deg)}
+.tray-tab::after{transform:translate(-70%,-50%) rotate(-135deg)}
+.tray-close:hover::after,.tray-tab:hover::after{border-color:var(--accent)}
+.tray-tab{position:fixed;z-index:47;left:0;top:12px;width:26px;height:46px;border-radius:0 8px 8px 0;border-left:0;--muted:#a39b8a;--accent:#e0a64a;--line:#4a443a;--cell:#2b261f}
+.tray-tab[hidden]{display:none}
+.tray-body{flex:1;min-height:0;overflow:auto;padding:0 2px 8px}
+.tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
+.tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
+.tray-empty{color:var(--muted);opacity:.75;font-size:.85rem;margin:6px 4px}
+/* sections look like the sections and subsections of the Mechanics page: the game's font, the same colours, a chevron at the right */
+.ts{margin:0 0 10px}
+.ts-h{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;padding:0 0 2px;min-width:0}
+.ts-name,.ts-in{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:28px;line-height:1.1;color:var(--fg)}
+.ts-h:hover .ts-name{color:var(--accent)}
+.tsub{margin:6px 0 4px 8px}
+.tsub .ts-name,.tsub .ts-in{font-size:22px;color:var(--accent)}
+.ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:20px}
+.ts-asc{font:inherit;font-size:.8rem;color:var(--fg);background:var(--cell);border:1px solid var(--line);border-radius:6px;padding:1px 2px}
+.ts-b2{padding:0 7px;line-height:1.4}
+.ts-x{font-size:1.1rem;line-height:1.2}
+.ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 4px 3px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
+.ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}
+.ts.shut>.ts-b{display:none}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:4px;margin:4px 0}
+.ts.drop>.ts-h{outline:2px solid var(--accent);outline-offset:1px}
+.ts.drop>.ts-b>.tgrid{background:rgba(224,166,74,.08)}
+/* the objects of the tray: all the same square, whatever they are on their own page (a research is smaller there) */
+#tray .cell{position:relative;float:none;width:auto;height:auto;margin:0;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:3px;box-sizing:border-box;
+  border:1px solid var(--line);border-radius:8px;background:var(--cell);font:inherit;color:inherit;cursor:grab;-webkit-touch-callout:none}
+#tray .cell:hover,#tray .cell:focus-visible{background:var(--cellhi);outline:2px solid var(--accent);outline-offset:-1px}
+#tray .cell.fac{background:var(--fc);border-color:rgba(255,255,255,.22)}
+#tray .cell.fac:hover,#tray .cell.fac:focus-visible{background:var(--fc);filter:brightness(1.5)}
+#tray .cell.na{opacity:.35;filter:grayscale(1)}
+#tray .cell.gone{opacity:.45;cursor:default;border-style:dashed}
+#tray .cell.ph{opacity:.3}
+#tray .cell .pen{position:absolute;z-index:2;top:1px;right:2px;font:700 .6rem/1 system-ui,sans-serif;letter-spacing:-.02em;color:#fff;background:#a3341f;padding:1px 3px;border-radius:4px;pointer-events:none}
+#tray .cell .px{display:none;position:absolute;z-index:3;top:-5px;left:-5px;width:16px;height:16px;line-height:14px;text-align:center;border-radius:50%;background:#a3341f;color:#fff;font:700 12px/16px system-ui,sans-serif;cursor:pointer}
+@media (hover:hover){#tray .cell:hover .px{display:block}}
+#tray .cell.ins-b{box-shadow:-4px 0 0 0 var(--accent)}
+#tray .cell.ins-a{box-shadow:4px 0 0 0 var(--accent)}
+/* every object that can be pinned can be dragged */
+button.cell[data-obj^="upgrade|"],button.cell[data-obj^="artifact|"],button.cell[data-obj^="challenge|"],button.cell[data-obj^="research|"],button.cell[data-obj^="spell|"]{cursor:grab;user-select:none;-webkit-touch-callout:none}
+body.tray-dragging,body.tray-dragging *{cursor:grabbing!important;user-select:none!important}
+.cell.ghost{position:fixed!important;z-index:90;pointer-events:none;opacity:.9;margin:0!important;float:none!important;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.cell.ghost.out{outline:2px solid #a3341f;opacity:.55}
+#tray-toast{position:fixed;z-index:95;left:50%;bottom:18px;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:8px 12px;border-radius:8px;background:#201d18;color:#ece6d8;border:1px solid #4a443a;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:opacity .2s,transform .2s;font-size:.9rem}
+#tray-toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#tip[data-own]{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}

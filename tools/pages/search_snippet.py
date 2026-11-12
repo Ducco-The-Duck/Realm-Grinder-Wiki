@@ -6,14 +6,16 @@ text, description) on every cell it wants searchable, then calls `searchInit(roo
 """
 
 import tmpl
-CSS = tmpl.load('shared.css')
+CSS = tmpl.load('shared.css') + tmpl.load('tray.css')
 from frame_css import frame_css
 CSS = CSS.replace('/*FRAMES*/', frame_css())
 
 BAR = ('<div class="search"><input id="q" type="search" placeholder="__PLACEHOLDER__" autocomplete="off" '
        'aria-label="Search"><span class="qn" id="qn"></span></div>')
 
-JS = tmpl.load('shared.js')
+import json as _json, os as _os
+_MAXA = _json.load(open(_os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), '..', 'data', 'generated/research_meta.json'), encoding='utf8'))['max_ascension']
+JS = tmpl.load('shared.js') + tmpl.load('tray.js').replace('__MAXA__', str(_MAXA))      # the tray is part of the shared script: it uses its objects
 
 
 UPGRADE_PAGES = [('upgrades-allegiance.html', 'Allegiance'), ('upgrades-magic.html', 'Magic'),

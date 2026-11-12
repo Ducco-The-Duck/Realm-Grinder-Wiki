@@ -294,5 +294,17 @@ except (OSError, ValueError, KeyError) as e:
     print('17. object catalogue check failed:', e)
     problems.append('object catalogue unreadable (run the page builders)')
 
+# 18. every page that shows objects (the shared script with makeCell) also carries the tray
+try:
+    no_tray = []
+    for fn in sorted(os.listdir(os.path.join(ROOT, 'docs'))):
+        if not fn.endswith('.html'): continue
+        t = open(os.path.join(ROOT, 'docs', fn), encoding='utf8').read()
+        if 'function makeCell' in t and "var KEY='rg-tray'" not in t: no_tray.append(fn)
+    print('18. tray on every page with objects: ' + (f'MISSING on {no_tray}' if no_tray else 'ok'))
+    if no_tray: problems.append(f'no tray on {no_tray}')
+except OSError as e:
+    print('18. tray check failed:', e)
+
 print('\nOK' if not problems else '\nLOOK AT: ' + '; '.join(problems))
 sys.exit(1 if problems else 0)
