@@ -1131,7 +1131,7 @@
      "sections": [
       {
        "title": "Mercenary Research",
-       "text": "Research becomes available for the Mercenaries. It needs the Mercenary Encampment Quest (125,000 buildings), then one of the three Mercenary unique buildings, one for each alignment, and the Obsidian Shard artifact, which is found at 1,500 excavations. These unlock Secrets of the Warriors, which unlocks research for the Mercenaries.",
+       "text": "Researches are unlocked for the Mercenaries by purchasing their unique building and Secrets of the Warriors, which becomes available to purchase once you own your unique building and have found the Obsidian Shard artifact. The unique buildings have an associated unlock quest that you must complete once. Secrets of the Warriors must only be bought once. See the [Research](research.html) page.",
        "rows": [
         [
          "Mercenary Encampment Quest"
