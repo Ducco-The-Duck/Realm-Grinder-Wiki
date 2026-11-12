@@ -679,10 +679,11 @@ the base values <i>v</i>.</div>
   }
 
   // the perks of a Lineage in the #more popup of the page (the markup is on the Upgrades and Factions pages); keep(p) optionally picks the perks to show
-  function upgPerks(it, ASC, keep){
+  function upgPerks(it, ASC, keep, coins){
     var more=document.getElementById('more'), body=document.getElementById('morebody'); document.getElementById('moretitle').textContent=it.n+' perks'; body.textContent='';
     it.lp.filter(function(p){ return !keep || keep(p); }).forEach(function(p){
       var blk=ce('div','bonus'), head=ce('p'), pi=p.it;
+      if(pi){ var side=ce('div','upgside'); side.appendChild(upgItemCell(pi, ASC, coins)); blk.appendChild(side); blk.classList.add('withup'); }      // the upgrade the perk unlocks, at the right
       head.appendChild(ce('b',null,pi ? pi.n : 'Perk '+p.n)); blk.appendChild(head);
       if(pi){
         var pn=false;
@@ -766,7 +767,7 @@ the base values <i>v</i>.</div>
     b.addEventListener('mouseenter',function(){ upgradeTip(it,b,asc,coins); }); b.addEventListener('focus',function(){ upgradeTip(it,b,asc,coins); });
     b.addEventListener('mouseleave',hide); b.addEventListener('blur',hide);
     var group = it.cb ? ['Legacy Combos',it.cb] : it.bl ? ['Bloodlines',it.bl] : it.lg ? ['Lineages',it.lg] : it.st ? ['Artifact Sets',it.st] : null;
-    if(it.lp) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); upgPerks(it,asc); });
+    if(it.lp) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); upgPerks(it,asc,null,coins); });
     else if(group) b.addEventListener('click',function(e){ e.stopPropagation(); hide(); openUpgGroup(group[0], group[1], asc, coins); });
     return b;
   }
@@ -978,7 +979,7 @@ the base values <i>v</i>.</div>
     if(it.mn) morebody.appendChild(el('div','more',it.mn));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
-  function openPerks(it){ hideTip(); upgPerks(it, ASC, function(p){ return qmatch(perkS(it, p)); }); }      // while searching, only the perks that match (the lineage's own name counts for every perk of it)
+  function openPerks(it){ hideTip(); upgPerks(it, ASC, function(p){ return qmatch(perkS(it, p)); }, DATA.coins); }      // while searching, only the perks that match (the lineage's own name counts for every perk of it)
   function closeMore(){ more.classList.remove('open'); }
   document.getElementById('moreclose').addEventListener('click',closeMore);
   more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });

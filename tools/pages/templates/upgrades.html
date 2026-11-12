@@ -192,7 +192,7 @@ the base values <i>v</i>.</div>
     if(it.mn) morebody.appendChild(el('div','more',it.mn));
     hideTip(); more.classList.add('open'); document.getElementById('moreclose').focus();
   }
-  function openPerks(it){ hideTip(); upgPerks(it, ASC, function(p){ return qmatch(perkS(it, p)); }); }      // while searching, only the perks that match (the lineage's own name counts for every perk of it)
+  function openPerks(it){ hideTip(); upgPerks(it, ASC, function(p){ return qmatch(perkS(it, p)); }, DATA.coins); }      // while searching, only the perks that match (the lineage's own name counts for every perk of it)
   function closeMore(){ more.classList.remove('open'); }
   document.getElementById('moreclose').addEventListener('click',closeMore);
   more.addEventListener('click',function(e){ if(e.target===more) closeMore(); });
