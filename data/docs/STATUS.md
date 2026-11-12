@@ -52,7 +52,7 @@ Accepted without further checking: the Ascension-penalty flags (which values are
 
 ### Resolved (confirmed by the user; do not re-open)
 
-- Notes that point to other pages (Spells, Buildings, Excavations, Royal Exchanges: cost scaling and the multipliers): settled by the Mechanics page and its sections; confirmed by the user. (The note texts in `NOTES` of `tools/pages/build_upgrades_page.py` and `build_research_page.py` still say "the Excavations page" and "the Royal Exchanges page".)
+- Notes that point to other pages (Spells, Buildings, Excavations, Royal Exchanges: cost scaling and the multipliers): settled by the Mechanics page and its sections; confirmed by the user. The notes for Excavations and Royal Exchanges now say "See Excavations / Royal Exchanges on the Mechanics page."
 - Second Stone Fragment (2x factor): checked in game; 1312 buildings built give 0.00026%, matching the code (2 * B / 10^7; the old formula would give 0.00013).
 - Third Crystal Fragment (66x factor): checked in game; 61 Evil spells cast give 0.000061%, matching the code (T / 10^6; the old formula would give 0.00000092).
 - Second Crystal Fragment (4x factor): checked in game; 6x10^34 Faction Coins found give 0.041% and 10^35 give 0.042%, matching the code (the old formula would give about 0.010%).

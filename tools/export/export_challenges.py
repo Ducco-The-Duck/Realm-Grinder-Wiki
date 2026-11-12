@@ -480,7 +480,7 @@ TEXT_SUBS = [('Reduce Royal Exchange cost multiplier by -0.02 and', 'Reduce Roya
              ('Autoclick v₄ times per second and increase', 'Autoclick several times per second and increase'),
              ('Goblin Upgrade 6', 'Hobgoblin Gladiators')]
 BUILDING_COST = 'See the Buildings page for more on the building cost multiplier.'
-EXCHANGE_COST = 'See the Royal Exchanges page for more on the Royal Exchange cost multiplier.'
+EXCHANGE_COST = 'See Royal Exchanges on the Mechanics page.'
 # faded notes under one reward line: game name -> [(start of the line, note)]
 PARA_NOTES = {'Advanced Civilization': [('Reduces Elven Exchange', EXCHANGE_COST)],
               'Biased Architecture': [('Reduce Farms, Inns and Blacksmiths cost', BUILDING_COST)],
