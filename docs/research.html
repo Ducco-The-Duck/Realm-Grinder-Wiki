@@ -394,7 +394,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
 .tray-tab{position:fixed;z-index:47;left:0;top:10px}
 .tray-tab[hidden]{display:none}
-.tray-body{flex:1;min-height:0;overflow:auto;padding:0 2px 8px}
+.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
 .tray-empty{color:var(--muted);opacity:.75;font-size:.85rem;margin:6px 4px}
@@ -407,13 +407,12 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tsub .ts-name,.tsub .ts-in{font-size:22px;color:var(--accent)}
 .ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:20px}
 .ts-ar{margin:0 0 4px}
-.ts-sel{position:relative;flex:none;display:inline-flex}
-.ts-asc{appearance:none;-webkit-appearance:none;font:inherit;font-size:.8rem;line-height:1;color:var(--fg);border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 14px 0 2px;cursor:pointer;outline:none}
-.ts-sel::after{content:"";position:absolute;right:9px;top:50%;width:5px;height:5px;margin-top:-4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);pointer-events:none}
-.ts-asc:hover{color:var(--accent)}
-.ts-asc option{background:#201d18;color:#ece6d8}
 .ts-b2{flex:none;font:inherit;font-size:1.5rem;line-height:1;color:var(--muted);background:none;border:0;padding:0 3px;cursor:pointer}
 .ts-b2:hover{color:var(--accent)}
+.ts-plus{font-size:2.2rem;line-height:.8;padding:0 2px}
+.tray-add .plus{font-size:1.8em;line-height:.7;vertical-align:-.12em}
+#tray .cs{display:inline-block}
+#tray .cs>button{font-size:.85rem}
 .ts-x{font-size:1.35rem}
 .ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 4px 3px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
 .ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}
@@ -594,6 +593,7 @@ popups are always the base values <i>v</i>.</div>
       });
       sync();
     });
+    if(enhanceSelects.on) return; enhanceSelects.on=true;
     document.addEventListener('click',function(e){
       document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); });
       document.querySelectorAll('.dd-nav.open').forEach(function(w){ if(!w.contains(e.target)) w.classList.remove('open'); });
@@ -1242,13 +1242,13 @@ popups are always the base values <i>v</i>.</div>
       for(var a=0;a<=MAXA;a++){ var o=ce('option',null,'Asc '+a); o.value=String(a); s.appendChild(o); }
       s.value=String(sec.asc);
       s.addEventListener('change',function(){ sec.asc=parseInt(s.value,10); save(); render(); });
-      var w=ce('span','ts-sel'); w.appendChild(s); return w;      // the wrapper carries the arrow
+      var w=ce('span','ts-sel'); w.appendChild(s); return w;      // enhanceSelects (after each redraw) turns it into the page's own drop-down
     }
     function section(sec, sub, parentAsc){      // a subsection shows its objects at the Ascension of its section
       var box=ce('div','ts'+(sub?' tsub':'')+(sec.shut?' shut':'')); box.setAttribute('data-id',sec.id);
       var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name), click=null;
       h.appendChild(chev); nm.title='Double-click to rename'; h.appendChild(nm);
-      if(!sub){ var add=ce('button','ts-b2','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
+      if(!sub){ var add=ce('button','ts-b2 ts-plus','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
       var x=ce('button','ts-b2 ts-x','×'); x.type='button'; x.title='Delete'; x.setAttribute('aria-label','Delete '+sec.name); x.addEventListener('click',function(e){ e.stopPropagation(); remove(sec.id); }); h.appendChild(x);
       h.addEventListener('click',function(e){      // a click folds; a double click on the name renames (so the fold waits a moment)
         if(e.target.closest('select,button,input')) return;
@@ -1278,6 +1278,7 @@ popups are always the base values <i>v</i>.</div>
       T.secs.forEach(function(s){ host.appendChild(section(s,false)); });
       if(!T.secs.length) host.appendChild(ce('p','tray-empty','Drag an object from the wiki here to pin it'));
       if(countObjects()) ensureKatex();
+      enhanceSelects();
       layout();
     }
     function layout(){
@@ -1292,7 +1293,7 @@ popups are always the base values <i>v</i>.</div>
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var head=ce('div','tray-head'), add=ce('button','tray-add','+ Section'); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
+      var head=ce('div','tray-head'), add=ce('button','tray-add'); add.appendChild(ce('span','plus','+')); add.appendChild(document.createTextNode(' Section')); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
       head.appendChild(add); tray.appendChild(head); tray.appendChild(close);
       tray.appendChild(ce('div','tray-body'));

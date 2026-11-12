@@ -80,6 +80,7 @@
       });
       sync();
     });
+    if(enhanceSelects.on) return; enhanceSelects.on=true;
     document.addEventListener('click',function(e){
       document.querySelectorAll('.cs.open').forEach(function(w){ w.classList.remove('open'); });
       document.querySelectorAll('.dd-nav.open').forEach(function(w){ if(!w.contains(e.target)) w.classList.remove('open'); });

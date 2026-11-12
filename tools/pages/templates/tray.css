@@ -23,7 +23,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
 .tray-tab{position:fixed;z-index:47;left:0;top:10px}
 .tray-tab[hidden]{display:none}
-.tray-body{flex:1;min-height:0;overflow:auto;padding:0 2px 8px}
+.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 2px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
 .tray-empty{color:var(--muted);opacity:.75;font-size:.85rem;margin:6px 4px}
@@ -36,13 +36,12 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 .tsub .ts-name,.tsub .ts-in{font-size:22px;color:var(--accent)}
 .ts-in{background:var(--cell);border:1px solid var(--accent);border-radius:4px;padding:0 4px;outline:none;font-size:20px}
 .ts-ar{margin:0 0 4px}
-.ts-sel{position:relative;flex:none;display:inline-flex}
-.ts-asc{appearance:none;-webkit-appearance:none;font:inherit;font-size:.8rem;line-height:1;color:var(--fg);border:8px solid transparent;border-radius:0;background:none;border-image:url(assets/ui/trim/Steel.png) 8 fill / 8px / 0 stretch;image-rendering:pixelated;padding:0 14px 0 2px;cursor:pointer;outline:none}
-.ts-sel::after{content:"";position:absolute;right:9px;top:50%;width:5px;height:5px;margin-top:-4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);pointer-events:none}
-.ts-asc:hover{color:var(--accent)}
-.ts-asc option{background:#201d18;color:#ece6d8}
 .ts-b2{flex:none;font:inherit;font-size:1.5rem;line-height:1;color:var(--muted);background:none;border:0;padding:0 3px;cursor:pointer}
 .ts-b2:hover{color:var(--accent)}
+.ts-plus{font-size:2.2rem;line-height:.8;padding:0 2px}
+.tray-add .plus{font-size:1.8em;line-height:.7;vertical-align:-.12em}
+#tray .cs{display:inline-block}
+#tray .cs>button{font-size:.85rem}
 .ts-x{font-size:1.35rem}
 .ts-h .chev{order:5;flex:none;width:8px;height:8px;margin:0 4px 3px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(2px) rotate(-135deg);transition:transform .3s ease}
 .ts.shut>.ts-h .chev{transform:translateY(-3px) rotate(45deg)}

@@ -97,13 +97,13 @@
       for(var a=0;a<=MAXA;a++){ var o=ce('option',null,'Asc '+a); o.value=String(a); s.appendChild(o); }
       s.value=String(sec.asc);
       s.addEventListener('change',function(){ sec.asc=parseInt(s.value,10); save(); render(); });
-      var w=ce('span','ts-sel'); w.appendChild(s); return w;      // the wrapper carries the arrow
+      var w=ce('span','ts-sel'); w.appendChild(s); return w;      // enhanceSelects (after each redraw) turns it into the page's own drop-down
     }
     function section(sec, sub, parentAsc){      // a subsection shows its objects at the Ascension of its section
       var box=ce('div','ts'+(sub?' tsub':'')+(sec.shut?' shut':'')); box.setAttribute('data-id',sec.id);
       var h=ce('div','ts-h'), chev=ce('span','chev'), nm=ce('span','ts-name',sec.name), click=null;
       h.appendChild(chev); nm.title='Double-click to rename'; h.appendChild(nm);
-      if(!sub){ var add=ce('button','ts-b2','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
+      if(!sub){ var add=ce('button','ts-b2 ts-plus','+'); add.type='button'; add.title='Add a subsection'; add.setAttribute('aria-label','Add a subsection'); add.addEventListener('click',function(e){ e.stopPropagation(); addSection(sec.id); }); h.appendChild(add); }
       var x=ce('button','ts-b2 ts-x','×'); x.type='button'; x.title='Delete'; x.setAttribute('aria-label','Delete '+sec.name); x.addEventListener('click',function(e){ e.stopPropagation(); remove(sec.id); }); h.appendChild(x);
       h.addEventListener('click',function(e){      // a click folds; a double click on the name renames (so the fold waits a moment)
         if(e.target.closest('select,button,input')) return;
@@ -133,6 +133,7 @@
       T.secs.forEach(function(s){ host.appendChild(section(s,false)); });
       if(!T.secs.length) host.appendChild(ce('p','tray-empty','Drag an object from the wiki here to pin it'));
       if(countObjects()) ensureKatex();
+      enhanceSelects();
       layout();
     }
     function layout(){
@@ -147,7 +148,7 @@
     function build(){
       body=document.body;
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
-      var head=ce('div','tray-head'), add=ce('button','tray-add','+ Section'); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
+      var head=ce('div','tray-head'), add=ce('button','tray-add'); add.appendChild(ce('span','plus','+')); add.appendChild(document.createTextNode(' Section')); add.type='button'; add.addEventListener('click',function(){ addSection(null); });
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
       head.appendChild(add); tray.appendChild(head); tray.appendChild(close);
       tray.appendChild(ce('div','tray-body'));
