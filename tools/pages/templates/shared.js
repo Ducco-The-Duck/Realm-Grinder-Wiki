@@ -585,7 +585,7 @@
   }
   // ---- the object a reference "type|name" stands for, drawn from the catalogue of its type (docs/assets/data/catalog-<type>.json, loaded when first needed):
   // a Promise of the cell, without the click of the page it normally sits on. A: the Ascension it is shown at. A reference that no longer exists gives a grey "gone" cell.
-  var PINNABLE = ['upgrade','artifact','challenge','research','spell'];      // the types of object that can be pinned in the tray
+  var PINNABLE = ['upgrade','artifact','challenge','research'];      // the types of object that can be pinned in the tray
   var CATALOGS = {};
   function loadCatalog(type){
     if(!CATALOGS[type]) CATALOGS[type]=fetch('assets/data/catalog-'+type+'.json').then(function(r){ if(!r.ok) throw new Error(type); return r.json(); });
@@ -601,7 +601,6 @@
       it=cat.items[name]; if(!it) return gone();
       if(type==='upgrade') return upgItemCell(it, A, cat.coins, true);
       if(type==='artifact') return artifactCell(it);
-      if(type==='spell') return spellCell(it, false);
       b=resCell(it, '', ref); resDecorate(b, it, A, cat.maxnum);      // research
       var tip=document.getElementById('tip'), X={coins:cat.coins, maxnum:cat.maxnum};
       function show(){ researchTip(it, b, A, X); } function hide(){ tip.style.display='none'; }

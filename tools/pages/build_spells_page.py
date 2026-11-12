@@ -147,8 +147,6 @@ data = json.dumps([{'name': s['name'], 'icon': s['icon'] + '.png', 'cost': s.get
 
 json.dump({s['name']: {'icon': s['icon'] + '.png', 'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags']} for s in spells},
           open(os.path.join(ROOT, 'data', 'derived/spell_cards.json'), 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))      # for the Factions page
-import catalog
-catalog.write('spell', {'items': {s['name']: {'name': s['name'], 'icon': s['icon'] + '.png', 'desc': ov[s['name']]['description'], 'tags': ov[s['name']]['tags']} for s in spells}})      # for the tray
 html = tmpl.load('spells.html')
 import html as _html
 _mech = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Spells')

@@ -414,14 +414,14 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 #tray .cell.ins-b{box-shadow:-4px 0 0 0 var(--accent)}
 #tray .cell.ins-a{box-shadow:4px 0 0 0 var(--accent)}
 /* every object that can be pinned can be dragged */
-button.cell[data-obj^="upgrade|"],button.cell[data-obj^="artifact|"],button.cell[data-obj^="challenge|"],button.cell[data-obj^="research|"],button.cell[data-obj^="spell|"]{cursor:grab;user-select:none;-webkit-touch-callout:none}
+button.cell[data-obj^="upgrade|"],button.cell[data-obj^="artifact|"],button.cell[data-obj^="challenge|"],button.cell[data-obj^="research|"]{cursor:grab;user-select:none;-webkit-touch-callout:none}
 body.tray-dragging,body.tray-dragging *{cursor:grabbing!important;user-select:none!important}
 .cell.ghost{position:fixed!important;z-index:90;pointer-events:none;opacity:.9;margin:0!important;float:none!important;box-shadow:0 4px 14px rgba(0,0,0,.5)}
 .cell.ghost.out{outline:2px solid #a3341f;opacity:.55}
 #tray-toast{position:fixed;z-index:95;left:50%;bottom:18px;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:8px 12px;border-radius:8px;background:#201d18;color:#ece6d8;border:1px solid #4a443a;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:opacity .2s,transform .2s;font-size:.9rem}
 #tray-toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 #tip[data-own]{position:fixed;z-index:50;width:min(420px,calc(100vw - 16px));padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);pointer-events:none;display:none;font-size:.92rem}
-body[data-nopin~="upgrade"] main button.cell[data-obj^="upgrade|"],body[data-nopin~="spell"] main button.cell[data-obj^="spell|"]{cursor:default}      /* not pinnable on this page */
+body[data-nopin~="upgrade"] button.cell[data-obj^="upgrade|"]{cursor:default}      /* not pinnable on this page */
 /*NAVCSS*/
 nav.tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:0;margin:0 0 12px;--s:1.15;border:0;padding:0}
 nav.tabs .tab{position:relative;display:block;width:calc(92px*var(--s));height:calc(78px*var(--s));padding:0;border:0;margin:0;color:#fff;text-decoration:none;
@@ -483,7 +483,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('data').textContent), ASC = 1, MODE = 'unlocks';
-  document.body.setAttribute('data-nopin','upgrade spell');      // the upgrades and spells shown here are examples of the text: they cannot be pinned (the tray reads this)
+  if(MODE!=='mechanics') document.body.setAttribute('data-nopin','upgrade');      // the upgrades of the Unlocks pages cannot be pinned (the tray reads this; the Royal Market of the Mechanics page is a card, which never can)
   var root=document.getElementById('root');
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
   function linked(tag, text){      // text with links written as [words](page) and bold written as **words**
@@ -1202,7 +1202,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
   }
   // ---- the object a reference "type|name" stands for, drawn from the catalogue of its type (docs/assets/data/catalog-<type>.json, loaded when first needed):
   // a Promise of the cell, without the click of the page it normally sits on. A: the Ascension it is shown at. A reference that no longer exists gives a grey "gone" cell.
-  var PINNABLE = ['upgrade','artifact','challenge','research','spell'];      // the types of object that can be pinned in the tray
+  var PINNABLE = ['upgrade','artifact','challenge','research'];      // the types of object that can be pinned in the tray
   var CATALOGS = {};
   function loadCatalog(type){
     if(!CATALOGS[type]) CATALOGS[type]=fetch('assets/data/catalog-'+type+'.json').then(function(r){ if(!r.ok) throw new Error(type); return r.json(); });
@@ -1218,7 +1218,6 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       it=cat.items[name]; if(!it) return gone();
       if(type==='upgrade') return upgItemCell(it, A, cat.coins, true);
       if(type==='artifact') return artifactCell(it);
-      if(type==='spell') return spellCell(it, false);
       b=resCell(it, '', ref); resDecorate(b, it, A, cat.maxnum);      // research
       var tip=document.getElementById('tip'), X={coins:cat.coins, maxnum:cat.maxnum};
       function show(){ researchTip(it, b, A, X); } function hide(){ tip.style.display='none'; }
