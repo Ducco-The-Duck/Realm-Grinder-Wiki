@@ -1207,7 +1207,7 @@
       },
       {
        "title": "Faction Unions",
-       "text": "The Union of a faction becomes available once you own its second unique building.",
+       "text": "A faction's union becomes available once you own its second unique building.",
        "grids": [
         [
          "Fairies Union",
