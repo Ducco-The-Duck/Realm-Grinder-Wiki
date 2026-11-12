@@ -1049,15 +1049,10 @@
      "title": "Reincarnation 42",
      "sections": [
       {
-       "title": "Dragon Unlock Quest",
+       "title": "Hatch!",
        "text": "The Dragon is unlocked through a quest of four steps, one at each of Reincarnations 42, 44, 46 and 48. It starts when you find the Spiky Rough Egg artifact in an excavation, from 1,500 excavations at Reincarnation 42 or higher. Once you own it, Hatch! becomes available, and you can buy it after 2 hours.",
-       "rows": [
-        [
-         "Hatch!",
-         "Drakeling",
-         "Dragon",
-         "Elder Dragon"
-        ]
+       "side": [
+        "Hatch!"
        ]
       },
       {
@@ -1070,8 +1065,11 @@
      "title": "Reincarnation 44",
      "sections": [
       {
-       "title": "Dragon Unlock Quest",
-       "text": "Drakeling becomes available to buy. It needs 2 hours of Hellfire Blast active time."
+       "title": "Drakeling",
+       "text": "Drakeling becomes available to buy. It needs 2 hours of Hellfire Blast active time.",
+       "side": [
+        "Drakeling"
+       ]
       },
       {
        "title": "Spell Tiers",
@@ -1083,8 +1081,11 @@
      "title": "Reincarnation 46",
      "sections": [
       {
-       "title": "Dragon Unlock Quest",
-       "text": "Dragon becomes available to buy. It needs 2 hours and 5,000 assistants, while you are allied with the Fairy."
+       "title": "Dragon",
+       "text": "Dragon becomes available to buy. It needs 2 hours and 5,000 assistants, while you are allied with the Fairy.",
+       "side": [
+        "Dragon"
+       ]
       },
       {
        "title": "Spell Tiers",
@@ -1096,8 +1097,11 @@
      "title": "Reincarnation 48",
      "sections": [
       {
-       "title": "Dragon Unlock Quest",
-       "text": "Elder Dragon becomes available to buy. It needs 2 hours and 60,000 Maximum Mana. Buying it unlocks the Dragon."
+       "title": "Elder Dragon",
+       "text": "Elder Dragon becomes available to buy. It needs 2 hours and 60,000 Maximum Mana. Buying it unlocks the Dragon.",
+       "side": [
+        "Elder Dragon"
+       ]
       },
       {
        "title": "Spell Tiers",
@@ -1173,5 +1177,11 @@
     ]
    }
   ]
+ },
+ "upgrade_at": {
+  "Hatch!": 42,
+  "Drakeling": 44,
+  "Dragon": 46,
+  "Elder Dragon": 48
  }
 }

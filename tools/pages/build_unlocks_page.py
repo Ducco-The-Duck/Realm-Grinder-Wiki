@@ -26,6 +26,7 @@ def upgrade_cards():
             for sec in e.get('sections', []):      # the upgrades of a section: in a row ("upgrades"), at its right ("side"), or at the right of each item of a list (the "upgrades" of the list)
                 want += sec.get('upgrades', []) + sec.get('side', []) + [u for r in sec.get('rows', []) for u in r] + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
     want = list(dict.fromkeys(want))
+    AT = d.get('upgrade_at', {})
     pages = json.load(open(os.path.join(ROOT, 'data', 'generated/upgrade_pages.json'), encoding='utf8'))
     page_items = {u['name']: u for lst in pages.values() if isinstance(lst, list) for u in lst if isinstance(u, dict) and u.get('name') in want}
     derived = {u['name']: u for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('name') in want and u.get('class')}
@@ -41,6 +42,8 @@ def upgrade_cards():
         dst = os.path.basename(sprites[icon][0]['file'])      # the icon is copied from the game assets to docs/assets/icons
         path = os.path.join(ROOT, 'docs', 'assets', 'icons', dst)
         if not os.path.exists(path): shutil.copy(os.path.join(ROOT, sprites[icon][0]['file']), path)
+        if n in AT:      # the text as the game shows it at that number of Reincarnations (a step of the Dragon quest says what it needs only from its Reincarnation on)
+            desc = [t for t in costs.engine_desc([ix[n]], 1, AT[n], {81: 0})[ix[n]].split('\n') if t]
         gn, cs = (n, [None] * (costs.MAXA + 1)) if n in costs.NO_COST else ec[ix[n]]
         assert gn == n, (gn, n)
         out[n] = {'n': n, 'i': dst, 'd': desc, 's': [f"{x['kind']}: {x['name']}" for x in page_items[n]['sources']] + page_items[n]['requirements'] if n in page_items else [], 'c': [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in cs]}

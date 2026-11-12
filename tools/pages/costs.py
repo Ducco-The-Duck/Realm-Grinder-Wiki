@@ -159,15 +159,16 @@ def engine_costs(indexes):
     return out
 
 
-def engine_desc(indexes):
-    """{index: the game's own description text at Ascension 0} for upgrades whose text the data files hold only as code (a number worked out in the text)"""
+def engine_desc(indexes, asc=0, reinc=None, stats=None):
+    """{index: the game's own description text at an Ascension (and, if given, a number of Reincarnations)} for upgrades whose text the data files hold only as code (a number worked out in the text, or a text that changes with the Reincarnations); stats: {index: value} of the statistics to set first (the three arrays the game adds up)"""
     import json, quickjs
     names = json.load(open(os.path.join(ROOT, 'data', 'derived/engine_names.json'), encoding='utf8'))['names']
     J = lambda t: names[t]
     ctx = quickjs.Context()
     ctx.eval(open(os.path.join(ROOT, 'data', 'derived/engine.js'), encoding='utf8').read()); ctx.eval('__boot()')
-    prog = ('(function () { var G = %s, U = G.%s, out = {}, ix = %s; G.%s = 0; ix.forEach(function (i) { out[i] = U[i].%s(); }); return JSON.stringify(out); })()'
-            % (J('§8G§'), J('§-!4§'), json.dumps(list(indexes)), J('§,P§'), J('§@"§')))
+    prog = ('(function () { var G = %s, U = G.%s, out = {}, ix = %s; G.%s = %d; %s %s ix.forEach(function (i) { out[i] = U[i].%s(); }); return JSON.stringify(out); })()'
+            % (J('§8G§'), J('§-!4§'), json.dumps(list(indexes)), J('§,P§'), asc, '' if reinc is None else 'G.%s = %d;' % (J('§8!H§'), reinc),
+               ''.join('G.%s[%d] = %s;' % (J(arr), k, v) for k, v in (stats or {}).items() for arr in ('§5!V§', '§=y§', '§@w§')), J('§@"§')))
     return {int(k): v for k, v in json.loads(ctx.eval(prog)).items()}
 
 
