@@ -1492,5 +1492,10 @@
   "Dwarven Union": "DwarvenUnionOrder",
   "Drow Union": "DrowUnionChaos",
   "Dragon Union": "DragonUnionBalance"
+ },
+ "upgrade_text_cut": {
+  "Mercenary Union Contract": [
+   " (+0)"
+  ]
  }
 }

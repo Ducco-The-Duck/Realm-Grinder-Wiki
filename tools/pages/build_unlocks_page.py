@@ -39,6 +39,7 @@ def upgrade_cards():
         if n in page_items: icon, desc = page_items[n]['icon'] or derived[n]['icon'], [p['text'] for p in page_items[n]['description']]      # (the Prestige Unions have no icon on the Upgrades page: the game's data has it)
         elif 'description' in derived[n]: icon, desc = derived[n]['icon'], [derived[n]['description']]
         else: icon, desc = derived[n]['icon'], [costs.engine_desc([ix[n]])[ix[n]]]      # the text has a number worked out by the game (Secrets of the Ancients)
+        for cut in d.get('upgrade_text_cut', {}).get(n, []): desc = [t.replace(cut, '') for t in desc]      # a bit of the game's text left out by hand (a "+0" that only says nothing is chosen yet)
         icon = d.get('upgrade_icons', {}).get(n, icon)      # an icon chosen by hand (the Prestige Unions have one per second alignment)
         if icon not in sprites and icon + 'Order' in sprites: icon += 'Order'      # a Prestige Union has one icon per second alignment: the Order one stands for it here
         dst = os.path.basename(sprites[icon][0]['file'])      # the icon is copied from the game assets to docs/assets/icons
