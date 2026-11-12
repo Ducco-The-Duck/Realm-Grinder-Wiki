@@ -267,7 +267,19 @@
      }
     }
    ],
-   "page": "factions.html"
+   "page": "factions.html",
+   "faction_notes": {
+    "Titan": "Can be unlocked at Reincarnation 0",
+    "Druid": "Can be unlocked at Reincarnation 0",
+    "Faceless": "Can be unlocked at Reincarnation 0",
+    "Dwarf": "Can be unlocked at Reincarnation 0",
+    "Drow": "Can be unlocked at Reincarnation 0",
+    "Dragon": "Can be unlocked starting from Reincarnation 42",
+    "Archon": "Can be unlocked at Reincarnation 125",
+    "Djinn": "Can be unlocked at Reincarnation 125",
+    "Makers": "Can be unlocked at Reincarnation 125",
+    "Mercenary": "Can be unlocked at Reincarnation 3"
+   }
   },
   {
    "name": "Excavations",
@@ -449,7 +461,8 @@
     "§ !M§.§,4§",
     "§?7§.§7!K§",
     "§[k§.§%?§"
-   ]
+   ],
+   "note": "Unlocked at Reincarnation 0, at 1e9 Gems"
   },
   {
    "name": "Challenges",
@@ -474,7 +487,8 @@
       "text": "All challenges and their rewards"
      }
     }
-   ]
+   ],
+   "note": "First unlocked at Reincarnation 2. More are unlocked as you advance through Reincarnations"
   },
   {
    "name": "Researches",
@@ -492,7 +506,8 @@
      }
     }
    ],
-   "page": "research.html"
+   "page": "research.html",
+   "note": "Unlocked at Reincarnation 16"
   },
   {
    "name": "Legacies",
@@ -555,7 +570,8 @@
       "Legacy Combos"
      ]
     }
-   ]
+   ],
+   "note": "Unlocked at Ascension 4, Reincarnation 220"
   },
   {
    "name": "Bloodlines, Lineages and Sets",
@@ -590,7 +606,8 @@
      "text": "Bloodlines are bonuses tied to a faction. Every faction except the Mercenaries has its own Bloodline. You can only have one Bloodline by default, it persists until you abdicate, and it does not suffer from Ascension penalties. Click the object to see all of them.",
      "side": [
       "Bloodline"
-     ]
+     ],
+     "note": "Unlocked at Reincarnation 7"
     },
     {
      "title": "Lineage",
@@ -598,7 +615,8 @@
      "text": "Lineages are bonuses tied to a faction that grow with levels, and higher levels unlock perks. You can only have one Lineage, and it persists until you abdicate. It requires 400 Royal Exchanges and the Bloodline of a specific faction, and it cannot match any of your chosen factions. Click the object to see all of them, and click one to see its perks.",
      "side": [
       "Lineage"
-     ]
+     ],
+     "note": "Unlocked at Reincarnation 60"
     },
     {
      "title": "Artifact Set",
@@ -606,7 +624,8 @@
      "text": "Artifact Sets are bonuses that you unlock by finding the lore artifacts of a faction. You can only have one Set, and it persists until you abdicate. Most Sets give a second bonus once you also have their fourth artifact. Click the object to see all of them.",
      "side": [
       "Artifact Set"
-     ]
+     ],
+     "note": "Unlocked at Ascension 2, Reincarnation 100"
     }
    ]
   }

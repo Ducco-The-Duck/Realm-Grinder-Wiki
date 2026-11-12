@@ -32,6 +32,8 @@ out = []
 for f in factions.FACTIONS:
     out.append({'name': f['n'], 'icon': icon_file('MercenaryBadge' if f['n'] == 'Mercenary' else ICON.get(f['n'], f['n']) + 'Alliance'), 'al': AL.get(f.get('al')), 'ax': AX.get(f.get('ax')),
                 'i': f['i'], 'merc': f['role'] == 'merc', 'blurb': treaties['Mercenary First Contract' if f['role'] == 'merc' else TREATY.get(f['n'], f['n']) + ' Trade Treaty'], 'asp': FU['f'][str(f['i'])], 'tags': [t for t in (AL.get(f.get('al')), AX.get(f.get('ax'))) if t]})
+mech0 = next(m for m in json.load(open(os.path.join(ROOT, 'data', 'handwritten/unlocks.json'), encoding='utf8'))['mechanics'] if m['name'] == 'Factions')
+for f in out: f['note'] = mech0.get('faction_notes', {}).get(f['name'])      # when the faction can be unlocked (hand-written, shown under its name)
 assert len(out) == 16 and all((f['al'] or f['ax'] or f['merc']) for f in out)
 for n in sorted({c['tags'][0] for c in SC.values() if c['tags']} & {'Good', 'Evil', 'Neutral', 'Order', 'Chaos', 'Balance'}):      # the spell boxes of the game
     for st in ('Up', 'Hover', 'Down'):
