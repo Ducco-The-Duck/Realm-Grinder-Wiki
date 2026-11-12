@@ -1157,14 +1157,14 @@
    ]
   },
   "2": {
-   "overview": "Ascension 2 lasts from Reincarnation 100 to 159. It introduces the second alignment, Artifact Sets, the second unique buildings and Faction Unions, and the Astral Factions. The Prestige Factions come back at Reincarnation 110.",
+   "overview": "Ascension 2 introduces a new axis for you to align with; Order, Balance or Chaos. Each base faction is associated with a combination of alignments from now on; nine combinations for nine factions. It also introduces prestige factions for this new alignment too, known as Astral Factions. It also unlocks the diamond tier of upgrades and faction unions for each faction, locked behind a new unique building. Finally, it also allows you to wield the power of Artifact Sets.",
    "entries": [
     {
      "title": "Reincarnation 100",
      "sections": [
       {
        "title": "Second Alignment",
-       "text": "From Ascension 2 you can choose a second alignment once you have chosen your first: Order, Chaos or Balance. Each one lets you affiliate with three factions, one Good, one Neutral and one Evil: Order with the Angel, the Titan and the Undead, Chaos with the Fairy, the Faceless and the Demon, and Balance with the Elves, the Druids and the Goblins.",
+       "text": "You can choose a second alignment once you have chosen your first: Order, Chaos or Balance. Each one lets you affiliate with three factions, one Good, one Neutral and one Evil: Order with the Angel, the Titan and the Undead, Chaos with the Fairy, the Faceless and the Demon, and Balance with the Elves, the Druids and the Goblins.",
        "rows": [
         [
          "Proof of Order",
@@ -1180,7 +1180,7 @@
       {
        "title": "Second Unique Buildings",
        "text": "The six vanilla factions and the three Neutral Factions get a second unique building. Each one needs its own unlock quest, which only needs to be completed once.",
-       "rows": [
+       "grids": [
         [
          "Swarming Tower Quest",
          "Arboreal City Quest",
@@ -1208,7 +1208,7 @@
       {
        "title": "Faction Unions",
        "text": "The Union of a faction becomes available once you own its second unique building.",
-       "rows": [
+       "grids": [
         [
          "Fairies Union",
          "Elven Union",

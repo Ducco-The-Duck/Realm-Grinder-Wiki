@@ -35,6 +35,9 @@ main{max-width:780px;margin:0 auto;padding:16px 16px 80px}
 .mech .formula{padding:2px 0;overflow-x:auto;overflow-y:hidden}
 .upgrow.mid{display:flex;flex-wrap:wrap;justify-content:center}      /* a row of upgrades in the middle of the page */
 .upgrow.mid .cell{width:88px}
+.upgrids{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin:8px 0 6px}      /* grids of upgrades side by side, in the middle of the page */
+.upgrid{display:grid;grid-template-columns:repeat(3,88px);gap:6px}
+.upgrid .cell{float:none;width:88px;height:auto;aspect-ratio:1;margin:0}
 .mech hr.fsep{border:0;border-top:1px solid var(--line);margin:10px 0}
 .mech p.after{margin-top:14px}
 .mech p.line{margin-top:14px}
@@ -550,6 +553,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
             });
           });
           if(c.after) inner.appendChild(linked('p',c.after));      // a last paragraph, after the steps
+          if(c.grids){ var gw=el('div','upgrids'); c.grids.forEach(function(g){ var gd=el('div','upgrid'); g.forEach(function(n){ gd.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); gw.appendChild(gd); }); inner.appendChild(gw); }      // grids of nine upgrades, three by three, side by side
           (c.rows||[]).forEach(function(rw){ var rr=el('div','upgrow mid'); rw.forEach(function(n){ rr.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); inner.appendChild(rr); });      // rows of upgrades, one under the other
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); inner.appendChild(row); }
         });
