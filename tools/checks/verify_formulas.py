@@ -307,7 +307,7 @@ def main_costs():
         for e in pg['entries']:
             for sec in e.get('sections', []):
                 want += sec.get('upgrades', []) + sec.get('side', []) + [u for l in sec.get('lists', []) for u in l.get('upgrades', []) + l.get('side', [])]
-    want = list(dict.fromkeys(want))
+    want = [n for n in dict.fromkeys(want) if n not in costs.NO_COST]      # (the Tribute's price depends on time: no cost on the page)
     ix = costs.engine_find(want)
     ec = costs.engine_costs([ix[n] for n in want])
     for n in want:

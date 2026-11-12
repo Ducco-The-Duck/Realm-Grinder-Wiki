@@ -31,8 +31,7 @@ def upgrade_cards():
     derived = {u['name']: u for u in json.load(open(os.path.join(ROOT, 'data', 'derived/upgrades.json'), encoding='utf8')) if u.get('name') in want and u.get('class')}
     sprites = json.load(open(os.path.join(ROOT, 'data', 'derived/sprites.json')))
     ix = costs.engine_find(want)
-    NO_COST = ('Mercenary Tribute',)      # the price grows with the time played in the Era: the engine cannot give one number, the page shows the formula instead
-    ec = costs.engine_costs([ix[n] for n in want if n not in NO_COST])
+    ec = costs.engine_costs([ix[n] for n in want if n not in costs.NO_COST])
     out = {}
     for n in want:
         assert n in ix and (n in page_items or n in derived), ('upgrade not found in the game data', n)
@@ -41,7 +40,7 @@ def upgrade_cards():
         dst = os.path.basename(sprites[icon][0]['file'])      # the icon is copied from the game assets to docs/assets/icons
         path = os.path.join(ROOT, 'docs', 'assets', 'icons', dst)
         if not os.path.exists(path): shutil.copy(os.path.join(ROOT, sprites[icon][0]['file']), path)
-        gn, cs = (n, [None] * (costs.MAXA + 1)) if n in NO_COST else ec[ix[n]]
+        gn, cs = (n, [None] * (costs.MAXA + 1)) if n in costs.NO_COST else ec[ix[n]]
         assert gn == n, (gn, n)
         out[n] = {'n': n, 'i': dst, 'd': desc, 's': [f"{x['kind']}: {x['name']}" for x in page_items[n]['sources']] + page_items[n]['requirements'] if n in page_items else [], 'c': [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in cs]}
     return out
