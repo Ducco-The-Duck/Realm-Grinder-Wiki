@@ -332,7 +332,7 @@ body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cur
 #pop,#more{transition:left .22s ease}
 body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the windows of the page open beside the tray, which stays usable */
 @media (max-width:700px){body.tray-open{padding-left:0}body.tray-open #pop,body.tray-open #more{left:0}#tray{width:min(var(--tray-w,300px),88vw);box-shadow:0 0 40px rgba(0,0,0,.6)}}
-.tray-title{margin:0 0 4px;padding:0 4px 4px;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:40px;line-height:1.1;color:var(--fg);border-bottom:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tray-title{margin:0 0 4px;padding:0 12px 4px;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:40px;line-height:1.1;color:var(--fg);border-bottom:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tray-body{display:flex;flex-direction:column}
 /* the way to a new section: a faint + under the lowest section; the whole space below it answers to the pointer with a glow that starts at the bottom of that section */
 .tray-addrow{position:relative;flex:1 0 64px;cursor:pointer;color:var(--muted);transition:background .25s}
@@ -349,7 +349,7 @@ body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the w
 #tray.closed .tray-close::after{transform:translate(-70%,-50%) rotate(-135deg)}
 .tray-close:hover::after{border-color:var(--accent)}
 .tray-close{left:calc(100% + 10px);top:10px}      /* outside the tray, at its right edge; it moves with the tray */
-.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:4px 2px 8px}
+.tray-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:4px 12px 8px}
 .tray-rz{position:absolute;top:0;bottom:0;right:-6px;width:12px;cursor:ew-resize;z-index:2}
 .tray-rz:hover{background:linear-gradient(90deg,transparent,rgba(224,166,74,.35),transparent)}
 .tray-empty{color:var(--muted);opacity:.75;font-size:.85rem;margin:6px 4px}
