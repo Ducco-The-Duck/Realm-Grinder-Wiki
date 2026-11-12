@@ -661,6 +661,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       var ct=upgCost(u, asc, coins); if(ct) add('div','cost',ct);
       add('span','lbl','What it does');
       u.d.forEach(function(t){ add('p',null,t); });
+      if(u.f && u.f.length) upgFormulas(tip, u.f, null, asc);      // formulas written by hand for the card (the Tribute's cost)
       if(u.s && u.s.length){ add('span','lbl','Unlock requirement'); var ul=add('ul'); u.s.forEach(function(s){ add('li',null,s,ul); }); }
       placeTip(b, true);
     }

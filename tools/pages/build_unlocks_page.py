@@ -43,6 +43,9 @@ def upgrade_cards():
         gn, cs = (n, [None] * (costs.MAXA + 1)) if n in costs.NO_COST else ec[ix[n]]
         assert gn == n, (gn, n)
         out[n] = {'n': n, 'i': dst, 'd': desc, 's': [f"{x['kind']}: {x['name']}" for x in page_items[n]['sources']] + page_items[n]['requirements'] if n in page_items else [], 'c': [None if x is None else [int(x[0]) if x[0] < 1e15 and x[0] == int(x[0]) else x[0], [[i, int(v)] for i, v in x[1]]] for x in cs]}
+    for n, f in d.get('upgrade_formulas', {}).items():      # formulas the card shows as an effect of the upgrade (a cost that depends on time, which the engine cannot price)
+        assert n in out, n
+        out[n]['f'] = f
     return out
 
 
