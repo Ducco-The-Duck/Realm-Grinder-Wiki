@@ -1417,6 +1417,16 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
 
     // ---- dragging (mouse and pen) and the long press (touch)
     var drag=null, ghost=null, hold=null, lastTouch=false;
+    function inCatalog(ref){      // a Promise: is the object in the catalogue of its type?
+      var p=ref.split('|'), type=p[0], name=p[p.length-1];
+      return loadCatalog(type).then(function(cat){ return type==='challenge' ? !!(cat.sections[p[1]] && cat.sections[p[1]].items[name]) : !!cat.items[name]; }).catch(function(){ return false; });
+    }
+    function pinChecked(ref, sec, index){      // pin once the catalogue says the object can be drawn; otherwise say so
+      return inCatalog(ref).then(function(ok){
+        if(!ok){ say('This object cannot be pinned.'); return false; }
+        var s=sec && find(sec.id); return pin(ref, s ? s.sec : null, index);
+      });
+    }
     function pinnableCell(t){
       var c=t && t.closest && t.closest('button.cell[data-obj], span.cell[data-obj]'); if(!c) return null;
       var type=c.getAttribute('data-obj').split('|')[0];
@@ -1459,7 +1469,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       if(!w.id && T.secs.length) return;      // the empty space below the last section is not a section
       var sec=w.id && find(w.id); if(w.id && !sec) return;
       if(d.fromTray){ if(w.id) move(d.src, w.id, w.index); }
-      else pin(d.ref, sec && sec.sec, w.index);
+      else pinChecked(d.ref, sec && sec.sec, w.index);
     }
     function onDown(e){
       var c=pinnableCell(e.target); if(!c || e.button>0) return;
@@ -1472,17 +1482,18 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
           document.getElementById('tip').style.display='none';
           var swallow=function(ev){ ev.stopPropagation(); ev.preventDefault(); }; window.addEventListener('click',swallow,true); setTimeout(function(){ window.removeEventListener('click',swallow,true); },700);
           if(inTray) unpin(src.id, src.i);
-          else { var s=newest(); if(pin(ref, s)) say('Pinned to "'+(s?s.name:newest().name)+'".'); }
+          else { var s=newest(); pinChecked(ref, s).then(function(ok){ if(ok) say('Pinned to "'+newest().name+'".'); }); }
         }, 550), x:x0, y:y0};
         return;
       }
-      drag={c:c, ref:ref, fromTray:inTray, src:src, x:e.clientX, y:e.clientY, on:false};
+      drag={c:c, ref:ref, fromTray:inTray, src:src, x:e.clientX, y:e.clientY, on:false, ok:true};
+      if(!inTray){ var d0=drag; inCatalog(ref).then(function(ok){ d0.ok=ok; }); }
     }
     document.addEventListener('pointerdown', onDown, true);
     document.addEventListener('pointermove',function(e){
       if(hold && Math.hypot(e.clientX-hold.x, e.clientY-hold.y)>8){ clearTimeout(hold.timer); hold=null; }
       if(!drag) return;
-      if(!drag.on){ if(Math.hypot(e.clientX-drag.x, e.clientY-drag.y)<6) return; startDrag(e); }
+      if(!drag.on){ if(Math.hypot(e.clientX-drag.x, e.clientY-drag.y)<6) return; if(!drag.ok){ drag=null; return; } startDrag(e); }
       dragMove(e);
     }, true);
     function up(e){ if(hold){ clearTimeout(hold.timer); hold=null; } if(drag){ if(drag.on) dragEnd(e,false); else drag=null; } }
