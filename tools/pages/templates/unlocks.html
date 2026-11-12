@@ -123,7 +123,13 @@ __UC__
               });
               s.appendChild(ul);
             }
+            (l.formulas||[]).forEach(function(f,fi){      // the formulas of a step, below its text
+              if(fi) s.appendChild(el('hr','fsep'));
+              var fd=el('div','formula'); math(f.latex,fd); s.appendChild(fd);
+              if(f.vars){ var vl=el('ul','vars'); f.vars.forEach(function(v){ var li=el('li'), bb=el('b'); math(v[0],bb); li.appendChild(bb); li.appendChild(document.createTextNode(' \u2014 ')); rich(li, v[1]); vl.appendChild(li); }); s.appendChild(vl); }
+            });
           });
+          if(c.after) s.appendChild(linked('p',c.after));      // a last paragraph, after the steps
           if(c.upgrades){ var row=el('div','upgrow'); c.upgrades.forEach(function(n){ row.appendChild(upgradeCell(DATA.ups[n], ASC, DATA.coins)); }); s.appendChild(row); }
         });
         root.appendChild(s);

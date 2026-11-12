@@ -887,9 +887,9 @@
       {
        "title": "Challenges",
        "text": "Challenges are unlocked at Reincarnation 2. You gain access immediately upon reaching Reincarnation 2, and you must buy the Challenge Power upgrade to benefit from them. More unlock as you advance through Reincarnations. See the [Challenges](challenges.html) page for all of them.",
-     "side": [
-      "Challenge Power"
-     ]
+       "side": [
+        "Challenge Power"
+       ]
       }
      ]
     },
@@ -898,7 +898,48 @@
      "sections": [
       {
        "title": "Mercenaries",
-       "text": "From Reincarnation 3 the Mercenaries take an interest in you and the Mercenary Tribute upgrade becomes available, which unlocks their powers. The underworld Faction Coins, Royal Exchanges and Heritages are also unlocked from now on, without needing Underworld Diplomacy."
+       "text": "The Mercenaries are unlocked in two steps.",
+       "lists": [
+        {
+         "title": "**1. Mercenary Tribute.** From Reincarnation 3 this upgrade becomes available, and its cost grows the longer you play in the Era. Buying it unlocks the Mercenary Oath trophy.",
+         "items": [],
+         "side": [
+          "Mercenary Tribute"
+         ],
+         "formulas": [
+          {
+           "latex": "C = 10^{60} \\cdot \\left\\lceil \\frac{1 + t}{60} \\right\\rceil^{3.5}",
+           "vars": [
+            [
+             "C",
+             "the coins it costs"
+            ],
+            [
+             "t",
+             "time played in this Era (seconds)"
+            ]
+           ]
+          },
+          {
+           "latex": "F = 50000 \\cdot \\left\\lceil \\frac{1 + t}{60} \\right\\rceil^{0.5}",
+           "vars": [
+            [
+             "F",
+             "the Faction Coins it costs of each of the six base factions, the Dwarf and the Drow"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "title": "**2. Oath of the Mercenaries.** Once you own the Mercenary Oath trophy, this upgrade becomes available. Buying it allows you to ally with the Mercenaries.",
+         "items": [],
+         "side": [
+          "Oath of the Mercenaries"
+         ]
+        }
+       ],
+       "after": "From Reincarnation 3 the Dwarven and Drow Coins, Royal Exchanges and Heritages are also available, without needing to buy Underworld Diplomacy."
       }
      ]
     },
