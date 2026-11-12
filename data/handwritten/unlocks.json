@@ -1347,10 +1347,6 @@
         "Mercenary Duel",
         "Mercenary First Contract"
        ]
-      },
-      {
-       "title": "Faction Perks",
-       "text": "Every faction except the Mercenaries gets two more perks, Perk 5 and Perk 6."
       }
      ]
     },
@@ -1373,18 +1369,6 @@
        "text": "The Mercenary Building Contract becomes available at Reincarnation 165, once you have completed the Mercenary Duel. It lets you buy one Ascension 2 unique building of any faction.",
        "side": [
         "Mercenary Building Contract"
-       ]
-      }
-     ]
-    },
-    {
-     "title": "Reincarnation 170",
-     "sections": [
-      {
-       "title": "Reincarnation Power 4",
-       "text": "Reincarnation Power 4 becomes available at Reincarnation 170. It increases the research budget of every branch based on the Reincarnations you have made, and the production of all buildings.",
-       "side": [
-        "Reincarnation Power 4"
        ]
       }
      ]
