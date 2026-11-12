@@ -167,6 +167,11 @@ def section(sid, name, items):
     return {'id': sid, 'name': name, 'entries': es, 'count': sum(len(e['items']) for e in es) if es else 0}
 
 
+def lineage_lo(allu):
+    """the first Ascension of the Lineage object: the Lineages of the factions exist from then on"""
+    return next(lo_of(u) for u in allu if u['akind'] == 'lineage_c')
+
+
 def group_lists(allu):
     """the Bloodlines, the Lineages (with their perks) and the Artifact Sets, one of each faction, as the popups of the Bloodline, Lineage and Artifact Set objects list them"""
     bl_by = {u['faction']: item(u) for u in allu if u['akind'] == 'bloodline'}
@@ -179,6 +184,7 @@ def group_lists(allu):
     for u in allu:
         if u['akind'] != 'lineage': continue
         it = item(u)
+        if it['lo'] is None: it['lo'] = lineage_lo(allu)      # a Lineage exists from the Ascension its object does
         it['lp'] = [dict(p, it=perks.get((u['faction'], p['n']))) for p in u['perks']]
         lin_by[u['faction']] = it
     lineages = [lin_by[i] for i in range(16) if i in lin_by]
@@ -263,6 +269,7 @@ def faction_upgrades():
                         'combos': mc, 'spell': sp, 'uniques': [u['name'] for u in mine if u['akind'] == 'unique' and not u['name'].endswith(' Quest')]}
         for u in mine:
             if u['akind'] in ('tier', 'perk', 'heritage', 'bloodline', 'lineage', 'set') and u['name'] not in items: items[u['name']] = item(u)
+            if u['akind'] == 'lineage' and items[u['name']]['lo'] is None: items[u['name']]['lo'] = lineage_lo(al)
             if u.get('tier_no') == 4 and u['faction'] in UNION_PICK and not items[u['name']]['i']: items[u['name']]['i'] = items[u['name']]['ia'][str(UNION_PICK[u['faction']])]      # the Union of a prestige faction has one icon per path: one each, none twice
     perk_items = {(u['faction'], int(u['name'].rsplit(' ', 1)[1])): item(u) for u in al if u['akind'] == 'lineage_perk'}
     for u in al:      # a Lineage opens its perks when clicked
