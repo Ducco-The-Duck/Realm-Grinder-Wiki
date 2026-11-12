@@ -60,9 +60,12 @@ COINS = __import__('costs').names()      # the game's names of the coins
 RUNLOCKS = d['reincarnation_unlocks']      # the table on the overall Unlocks page (hand-written)
 
 
+FINISHED = ('unlocks-a0.html',)      # the pages without the "under construction" note
+
+
 def write(fn, title, sub, mode, asc, mechs):
     data = json.dumps({'mechanics': mechs, 'rows': RUNLOCKS, 'page': d.get('ascension_pages', {}).get(str(asc)) if mode == 'unlocks' else None, 'ups': UPS if mode == 'unlocks' else {}, 'arts': ARTS, 'items': ITEMS, 'coins': COINS},ensure_ascii=False, separators=(',', ':')).replace('</', '<\/')
-    page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__UC__', search_snippet.UNDER_CONSTRUCTION).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
+    page = html.replace('__DATA__', data).replace('__TITLE__', title).replace('__SUB__', sub).replace('__UC__', '' if fn in FINISHED else search_snippet.UNDER_CONSTRUCTION).replace('__FILE__', fn).replace('__MODE__', mode).replace('__ASC__', str(asc))
     page = search_snippet.apply(page, '', fn).replace('<title>' + title + '</title>', '<title>Realm Grinder ' + title + '</title>')
     open(os.path.join(ROOT, 'docs', fn), 'w', encoding='utf8').write(page)
 
