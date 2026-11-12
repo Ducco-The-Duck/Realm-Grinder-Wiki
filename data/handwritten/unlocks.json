@@ -1106,6 +1106,14 @@
       {
        "title": "Spell Tiers",
        "text": "The tiers of Neutral spells (Gem Grinder, Lightning Strike, Grand Balance and Brainwave) become available once you own Elder Dragon."
+      },
+      {
+       "title": "Wyrm's Den",
+       "text": "The Dragon's unique building needs to be unlocked by finishing the Wyrm's Den unlock quest, which only needs to be completed once.",
+       "side": [
+        "Wyrm's Den Quest",
+        "Wyrm's Den"
+       ]
       }
      ]
     },
