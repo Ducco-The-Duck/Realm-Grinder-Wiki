@@ -1373,5 +1373,10 @@
   "Drakeling": 44,
   "Dragon": 46,
   "Elder Dragon": 48
+ },
+ "upgrade_icons": {
+  "Dwarven Union": "DwarvenUnionOrder",
+  "Drow Union": "DrowUnionChaos",
+  "Dragon Union": "DragonUnionBalance"
  }
 }
