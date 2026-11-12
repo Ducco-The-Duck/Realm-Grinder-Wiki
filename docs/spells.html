@@ -349,6 +349,7 @@ body.tray-resizing,body.tray-resizing #tray{transition:none;user-select:none;cur
 #pop,#more{transition:left .22s ease}
 body.tray-open #pop,body.tray-open #more{left:var(--tray-w,300px)}      /* the windows of the page open beside the tray, which stays usable */
 @media (max-width:700px){body.tray-open{padding-left:0}body.tray-open #pop,body.tray-open #more{left:0}#tray{width:min(var(--tray-w,300px),88vw);box-shadow:0 0 40px rgba(0,0,0,.6)}}
+.tray-title{margin:0 0 4px;padding:0 4px 4px;font-family:"Liony",system-ui,sans-serif;font-weight:700;letter-spacing:.3px;font-size:40px;line-height:1.1;color:var(--fg);border-bottom:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tray-body{display:flex;flex-direction:column}
 /* the way to a new section: a faint + under the lowest section; the whole space below it answers to the pointer with a glow that starts at the bottom of that section */
 .tray-addrow{position:relative;flex:1 0 64px;cursor:pointer;color:var(--muted);transition:background .25s}
@@ -1354,6 +1355,7 @@ nav.tabs .dd-menu .uc-note svg{width:1.3em;height:1.3em}
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
       tray.appendChild(close);
+      tray.appendChild(ce('h2','tray-title','Pins'));      // the heading of the tray
       tray.appendChild(ce('div','tray-body'));
       var rz=ce('div','tray-rz'); rz.title='Drag to resize'; tray.appendChild(rz);
       rz.addEventListener('pointerdown',function(e){

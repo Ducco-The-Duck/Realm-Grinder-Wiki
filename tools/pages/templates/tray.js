@@ -153,6 +153,7 @@
       tray=ce('aside'); tray.id='tray'; tray.setAttribute('aria-label','Pinned objects');
       var close=ce('button','tray-close'); close.type='button'; close.title='Hide the tray'; close.setAttribute('aria-label','Hide the tray'); close.addEventListener('click',function(){ setOpen(false); });
       tray.appendChild(close);
+      tray.appendChild(ce('h2','tray-title','Pins'));      // the heading of the tray
       tray.appendChild(ce('div','tray-body'));
       var rz=ce('div','tray-rz'); rz.title='Drag to resize'; tray.appendChild(rz);
       rz.addEventListener('pointerdown',function(e){
